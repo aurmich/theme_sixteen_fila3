@@ -10,6 +10,7 @@ use function Livewire\Volt\{state, rules};
 
 <x-layouts.marketing>
 
+    {{--
     @volt('home')
         <div class="relative flex flex-col items-center justify-center w-full h-auto overflow-hidden" x-cloak>
 
@@ -32,5 +33,5 @@ use function Livewire\Volt\{state, rules};
 
         </div>
     @endvolt
-
+    --}}
 </x-layouts.marketing>
