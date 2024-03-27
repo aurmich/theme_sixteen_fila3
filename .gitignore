@@ -1,0 +1,6 @@
+/vendor
+*.lock
+*.phar
+/build
+package-lock.json
+node_modules
