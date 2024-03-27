@@ -1,0 +1,42 @@
+{
+    "name": "nwidart/seo",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Seo\\": ""
+        }
+    },
+    "require": {
+        "thecodingmachine/safe": "^2.5"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "nunomaduro/phpinsights": "^2.9",
+        "larastan/larastan": "^2.6",
+        "vimeo/psalm": "^5.15",
+        "psalm/plugin-laravel": "^2.8",
+        "enlightn/enlightn": "^2.5",
+        "driftingly/rector-laravel": "^0.26.2",
+        "symplify/phpstan-rules": "*",
+        "thecodingmachine/phpstan-safe-rule": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
