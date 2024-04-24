@@ -1,19 +1,26 @@
 <?php
 
-    use function Laravel\Folio\name;
-    use function Livewire\Volt\{state, rules};
+use function Laravel\Folio\name;
+use Livewire\Volt\Component;
+use Livewire\Attributes\Validate;
 
-    state(['password' => '']);
-    rules(['password' => 'required|current_password']);
-    name('password.confirm');
+name('password.confirm');
 
-    $confirm = function(){
+new class extends Component
+{
+    #[Validate('required|current_password')]
+    public $password = '';
+
+    public function confirm()
+    {
         $this->validate();
 
         session()->put('auth.password_confirmed_at', time());
 
         return redirect()->intended('/');
-    };
+    }
+};
+
 ?>
 
 <x-layouts.main>
@@ -35,13 +42,13 @@
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="px-10 py-0 sm:py-8 sm:shadow-sm sm:bg-white dark:sm:bg-gray-950/50 dark:border-gray-200/10 sm:border sm:rounded-lg border-gray-200/60">
                 @volt('auth.password.confirm')
-                    <form wire:submit="confirm" class="space-y-6">
-                        <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
-                        <div class="flex items-center justify-end text-sm">
-                            <x-ui.text-link href="{{ route('password.request') }}">Forgot your password?</x-ui.text-link>
-                        </div>
-                        <x-ui.button type="primary" rounded="md" submit="true">Confirm password</x-ui.button>
-                    </form>
+                <form wire:submit="confirm" class="space-y-6">
+                    <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
+                    <div class="flex items-center justify-end text-sm">
+                        <x-ui.text-link href="{{ route('password.request') }}">Forgot your password?</x-ui.text-link>
+                    </div>
+                    <x-ui.button type="primary" rounded="md" submit="true">Confirm password</x-ui.button>
+                </form>
                 @endvolt
             </div>
         </div>
