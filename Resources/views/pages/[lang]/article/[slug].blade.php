@@ -15,6 +15,7 @@ render(function (View $view, string $slug) {
         ->where('slug','')
         
         ->get();
+        dd($missing_slugs);
     foreach($missing_slugs as $row){
         $row->update(['slug'=>Str::slug($row->title)]);
     }
