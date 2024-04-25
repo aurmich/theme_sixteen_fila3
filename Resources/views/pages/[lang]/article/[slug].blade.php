@@ -11,6 +11,10 @@ render(function (View $view, string $slug) {
         return response('Unauthorized', 403);
     }
     */
+    $missing_slugs=Article::where('title','!=','')->where('slug','')->get();
+    dddx($missing_slugs);
+
+
     $post=Article::firstWhere('slug',$slug);
 
     return $view->with('post', $post);
