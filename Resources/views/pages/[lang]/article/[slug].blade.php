@@ -11,7 +11,9 @@ render(function (View $view, string $slug) {
         return response('Unauthorized', 403);
     }
     */
-    $missing_slugs=Article::where('title','!=','')->where('slug','')->get();
+    $missing_slugs=Article::where('title','!=','')
+        ->where('slug','')
+        ->get();
     dddx($missing_slugs);
 
 
