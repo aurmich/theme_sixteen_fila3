@@ -30,7 +30,7 @@ render(function (View $view, string $slug) {
 
 
     $post=Article::firstWhere('slug',$slug);
-    dd($post->txt);
+    
 
     return $view->with('post', $post);
 });
@@ -72,6 +72,7 @@ render(function (View $view, string $slug) {
                     @if ($post->content_blocks)
                         <x-render.blocks :blocks="$post->content_blocks" :model="$post" />
                     @endif
+                    {!! $post->txt !!}
                 </div>
             </div>
         </div>
