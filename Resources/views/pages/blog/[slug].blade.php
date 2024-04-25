@@ -12,9 +12,9 @@ render(function (View $view, string $slug) {
     }
     */
     $post=Article::firstWhere('slug',$slug);
-    dd($post);
+    
     if($post==null){
-        dd('a');
+        
         return response('Article not found!', 404);
     }
 

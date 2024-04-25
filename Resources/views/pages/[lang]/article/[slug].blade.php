@@ -30,6 +30,10 @@ render(function (View $view, string $slug) {
 
 
     $post=Article::firstWhere('slug',$slug);
+    if($post==null){
+        
+        return response('Article not found!', 404);
+    }
     
 
     return $view->with('post', $post);
