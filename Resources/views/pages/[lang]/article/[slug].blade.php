@@ -13,6 +13,7 @@ render(function (View $view, string $slug) {
     }
     */
     $missing_slugs=Article::where('title','!=','')
+        ->where('title','!=',null)
         ->where('slug','')
         
         ->get();
