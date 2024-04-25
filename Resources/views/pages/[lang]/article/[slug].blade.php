@@ -13,8 +13,9 @@ render(function (View $view, string $slug) {
     */
     $missing_slugs=Article::where('title','!=','')
         ->where('slug','')
+        ->limit(10)
         ->get();
-    dddx($missing_slugs);
+    dd($missing_slugs);
 
 
     $post=Article::firstWhere('slug',$slug);
