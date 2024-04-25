@@ -30,6 +30,7 @@ render(function (View $view, string $slug) {
 
 
     $post=Article::firstWhere('slug',$slug);
+    dd($post->txt);
 
     return $view->with('post', $post);
 });
