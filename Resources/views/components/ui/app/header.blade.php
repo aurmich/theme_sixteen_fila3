@@ -23,7 +23,7 @@
                     <div class="hidden w-[38px] h-[38px] overflow-hidden rounded-full sm:block" x-cloak>
                         <x-ui.light-dark-switch></x-ui.light-dark-switch>
                     </div>
-
+                    {{--
                     <!-- User Dropdown -->
                     <div x-data="{ dropdownOpen: false }"
                         :class="{ 'block z-50 w-full p-4 border-t border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-800' : open, 'hidden': ! open }"
@@ -53,6 +53,7 @@
                             </div>
                         </div>
                     </div>
+                    --}}
 
                     
 
