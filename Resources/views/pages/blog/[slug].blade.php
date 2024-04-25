@@ -14,6 +14,7 @@ render(function (View $view, string $slug) {
     $post=Article::firstWhere('slug',$slug);
 
     if($post==null){
+        dd('a');
         return response('Article not found!', 404);
     }
 
