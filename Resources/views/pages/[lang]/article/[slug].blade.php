@@ -18,7 +18,10 @@ render(function (View $view, string $slug) {
         ->get();
        
     foreach($missing_slugs as $row){
-        $data=['slug'=>Str::slug($row->title)];
+        $data=[
+            'title'=>$title,
+            'slug'=>Str::slug($row->title)
+            ];
         dd($data);
         $row->update($data);
     }
