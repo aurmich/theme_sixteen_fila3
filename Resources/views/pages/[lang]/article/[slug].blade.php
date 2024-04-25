@@ -19,7 +19,7 @@ render(function (View $view, string $slug) {
        
     foreach($missing_slugs as $row){
         $data=[
-            'title'=>$title,
+            'title'=>$row->title,
             'slug'=>Str::slug($row->title)
             ];
         dd($data);
