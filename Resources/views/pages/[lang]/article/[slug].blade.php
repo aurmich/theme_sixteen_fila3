@@ -13,9 +13,11 @@ render(function (View $view, string $slug) {
     */
     $missing_slugs=Article::where('title','!=','')
         ->where('slug','')
-        ->limit(10)
+        
         ->get();
-    dd($missing_slugs);
+    foreach($missing_slugs as $row){
+        $row->update(['slug'=>Str::slug($row->title)]);
+    }
 
 
     $post=Article::firstWhere('slug',$slug);
