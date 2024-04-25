@@ -1,6 +1,7 @@
 <?php
 use Modules\Blog\Models\Article;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
 
 use function Laravel\Folio\render;
 
@@ -15,9 +16,11 @@ render(function (View $view, string $slug) {
         ->where('slug','')
         
         ->get();
-        dd($missing_slugs);
+       
     foreach($missing_slugs as $row){
-        $row->update(['slug'=>Str::slug($row->title)]);
+        $data=['slug'=>Str::slug($row->title)];
+        dd($data);
+        $row->update($data);
     }
 
 
