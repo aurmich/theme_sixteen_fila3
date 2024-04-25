@@ -24,7 +24,7 @@ render(function (View $view, string $slug) {
             
             'slug'=>Str::slug($row->getAttributes()['title'])
             ];
-        dd($data);
+        
         $row->update($data);
     }
 
