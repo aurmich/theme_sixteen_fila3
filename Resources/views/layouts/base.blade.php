@@ -22,7 +22,7 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         @filamentStyles
-        @vite(['Resources/sass/app.scss'],'themes/One/dist')
+        @vite(['Resources/css/app.css'],'themes/Sixteen/dist')
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -34,6 +34,6 @@
         @livewire('notifications')
 
         @filamentScripts
-        @vite(['Resources/js/app.js'],'themes/One/dist')
+        @vite(['Resources/js/app.js'],'themes/Sixteen/dist')
     </body>
 </html>
