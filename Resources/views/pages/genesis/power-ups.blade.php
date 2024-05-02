@@ -14,7 +14,12 @@ new class extends Component
 
     public function mount()
     {
-        $this->powerupsJSON = json_decode(file_get_contents(public_path('/genesis/power-ups.json')));
+        $json_path=public_path('/genesis/power-ups.json');
+        if(!File::exists($json_path)){
+            return ;
+        }
+
+        $this->powerupsJSON = json_decode(file_get_contents($json_path));
         foreach ($this->powerupsJSON as $powerup) {
             $repo = key($powerup);
             $installed = $powerup->{$repo};
