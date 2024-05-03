@@ -13,7 +13,6 @@ new class extends Component
 ?>
 
 <x-layouts.marketing>
-    <br/><br/><br/><br/>
     {!! $_theme->showPageContent('home') !!}
 
 </x-layouts.marketing>
