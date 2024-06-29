@@ -1,49 +1,45 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Fixcity\Providers;
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use BezhanSalleh\FilamentLanguageSwitch\Http\Middleware\SwitchLanguageLocale;
+use Illuminate\Routing\Router;
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
+class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     /**
-     * Called before routes are registered.
-     *
-     * Register any model bindings or pattern based filters.
+     * The module namespace to assume when generating URLs to actions.
      */
-    public function boot(): void
+    protected string $moduleNamespace = 'Modules\Fixcity\Http\Controllers';
+
+    protected string $module_dir = __DIR__;
+
+    protected string $module_ns = __NAMESPACE__;
+
+    public function bootCallback(): void
     {
-        parent::boot();
+        // 36     Cannot access offset 'router' on Illuminate\Contracts\Foundation\Application
+        // $router = $this->app['router'];
+        // $router = app('router');
+        // dddx([$router, $router1]);
+
+        // $this->registerLang();
+        // $this->registerRoutePattern($router);
+        // $this->registerMyMiddleware($router);
     }
 
-    /**
-     * Define the routes for the application.
-     */
-    public function map(): void
+    public function registerCallback(): void
     {
-        $this->mapApiRoutes();
-
-        $this->mapWebRoutes();
+        // dddx('b');
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     */
-    protected function mapWebRoutes(): void
-    {
-        Route::middleware('web')->group(module_path('Fixcity', '/routes/web.php'));
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     */
-    protected function mapApiRoutes(): void
-    {
-        Route::middleware('api')->prefix('api')->name('api.')->group(module_path('Fixcity', '/routes/api.php'));
-    }
+    // public function registerMyMiddleware(Router $router): void
+    // {
+    // $router->pushMiddlewareToGroup('web', SetDefaultLocaleForUrlsMiddleware::class);
+    // $router->appendMiddlewareToGroup('web', SwitchLanguageLocale::class);
+    // $router->appendMiddlewareToGroup('api', SwitchLanguageLocale::class);
+    // }
 }
