@@ -12,14 +12,23 @@
                 }
             }
         </script>
+        <style>
+			[x-cloak] {
+			display: none !important;
+			}
+		</style>
+		@filamentStyles
 
 
-        @vite(['Resources/css/app.css', 'Resources/js/app.js'],'themes/Sixteen/dist')
+        @vite(['Resources/css/app.css'],'themes/Sixteen/dist')
 
         <title>{{ $title ?? 'Genesis' }}</title>
     </head>
     <body class="min-h-screen antialiased bg-white dark:bg-gradient-to-b dark:from-gray-950 dark:to-gray-900">
         {{ $slot }}
         <livewire:toast />
+        @livewire('notifications')
+		@filamentScripts
+        @vite(['Resources/js/app.js'],'themes/Sixteen/dist')
     </body>
 </html>
