@@ -20,7 +20,7 @@
 		@filamentStyles
 
 
-        @vite(['Resources/css/app.css'],'themes/Sixteen/dist')
+        @vite([/*'Resources/css/filament/theme.css',*/'Resources/css/app.css',],'themes/Sixteen/dist')
 
         <title>{{ $title ?? 'Genesis' }}</title>
     </head>

@@ -4,7 +4,8 @@
 //);
 
 import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import laravel, { refreshPaths } from 'laravel-vite-plugin'
+
 
 
 export default defineConfig({
@@ -12,7 +13,7 @@ export default defineConfig({
 		//outDir: '../../../public_html/build/ewall',
 		outDir: './Resources/dist',
 		emptyOutDir: false,
-		manifest: true,
+		manifest: 'manifest.json',
 		rollupOptions: {
 			output: {
 				entryFileNames: `assets/[name].js`,
@@ -33,10 +34,10 @@ export default defineConfig({
 				//__dirname + '/Resources/scss/app-mix.scss',
                 __dirname + '/Resources/css/app.css',
 				__dirname + '/Resources/js/app.js',
-				//__dirname + '/Resources/css/filament/admin/theme.css'
+				__dirname + '/Resources/css/filament/theme.css'
 			],
 			refresh: [
-                // ...refreshPaths,
+                 ...refreshPaths,
                 'app/Livewire/**',
             ],
 		}),

@@ -1,6 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
+//import preset from '../../vendor/filament/support/tailwind.config.preset';
 
 module.exports = {
+    //presets: [preset],
     darkMode: 'class',
     theme: {
         extend: {
@@ -14,24 +16,20 @@ module.exports = {
             backgroundColor: ['active'],
         }
     },
+
     content: [
-        './app/**/*.php',
-        "./resources/**/*.{php,html,js,jsx,ts,tsx,vue,twig}",
+
         '../../app/Filament/**/*.php',
-        '../../resources/views/filament/**/*.blade.php',
+        '../../resources/views/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
-        "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
-        "./storage/framework/views/*.php",
-        "./resources/views/**/*.blade.php",
-        "./Resources/views/**/*.blade.php",
         "../../Modules/**/Filament/**/*.php",
-        "../../Modules/Resources/views/**/*.blade.php",
-        "../../resources/views/filament/**/*.blade.php",
-        "../../vendor/filament/**/*.blade.php",
-        "../../resources/views/**/*.blade.php",
+        "../../Modules/**/Resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./node_modules/flowbite/**/*.js",
+        "./Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+        "../../Themes/**/Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+        "../../../public_html/vendor/**/*.blade.php",
     ],
     plugins: [
         require('@tailwindcss/forms'),
