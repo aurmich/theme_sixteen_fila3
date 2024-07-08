@@ -913,3 +913,21 @@ Nessun risultato
 
     <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
 </div>
+
+
+<button
+                                style="--c-300:var(--gray-300);--c-400:var(--gray-400);--c-500:var(--gray-500);--c-600:var(--gray-600);" class="fi-icon-btn relative flex items-center justify-center rounded-lg outline-none transition duration-75 focus-visible:ring-2 -m-1.5 h-9 w-9 text-gray-400 hover:text-gray-500 focus-visible:ring-primary-600 dark:text-gray-500 dark:hover:text-gray-400 dark:focus-visible:ring-primary-500 fi-color-gray ms-auto hidden lg:flex" title="Comprimi sidebar" type="button" x-cloak="x-cloak" x-data="{}" x-on:click="$store.sidebar.close()" x-show="$store.sidebar.isOpen"
+    >
+        <!--[if BLOCK]><![endif]-->            <span class="sr-only">
+                Comprimi sidebar
+            </span>
+        <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]-->    <svg class="fi-icon-btn-icon h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
+</svg><!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    </button>
