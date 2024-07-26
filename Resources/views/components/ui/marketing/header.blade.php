@@ -32,7 +32,7 @@
             @foreach($_theme->getMenu('headernav_right') as $item)
             <div class="flex items-center w-auto">
 
-                <x-ui.button type="success" submit="true" tag="a" href="#" wire:click='ciao'>{{ $item['title'] }}</x-ui.button>
+                <x-ui.button type="success" submit="true" tag="a" href="{{ $_theme->getMenuUrl($item) }}" wire:click='ciao'>{{ $item['title'] }}</x-ui.button>
 
 
             </div>
