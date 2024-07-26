@@ -17,11 +17,7 @@ class AdminPanelProvider extends XotBasePanelProvider
     {
         $panel->plugins([
             // FilamentPeekPlugin::make(),
-<<<<<<< HEAD
             // SpatieLaravelTranslatablePlugin::make(),
-=======
-            //SpatieLaravelTranslatablePlugin::make(),
->>>>>>> b14a224 (up)
         ]);
 
         return parent::panel($panel);
