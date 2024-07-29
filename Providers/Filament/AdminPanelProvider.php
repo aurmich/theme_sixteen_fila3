@@ -13,13 +13,13 @@ class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Fixcity';
 
-    public function panel(Panel $panel): Panel
-    {
-        $panel->plugins([
-            // FilamentPeekPlugin::make(),
-            //SpatieLaravelTranslatablePlugin::make(),
-        ]);
+    // public function panel(Panel $panel): Panel
+    // {
+    //     $panel->plugins([
+    //         // FilamentPeekPlugin::make(),
+    //         //SpatieLaravelTranslatablePlugin::make(),
+    //     ]);
 
-        return parent::panel($panel);
-    }
+    //     return parent::panel($panel);
+    // }
 }

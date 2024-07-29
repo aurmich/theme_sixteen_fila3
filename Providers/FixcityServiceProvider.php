@@ -12,5 +12,5 @@ class FixcityServiceProvider extends XotBaseServiceProvider
 
     protected string $module_ns = __NAMESPACE__;
 
-    public string $module_name = 'blog';
+    public string $module_name = 'fixcity';
 }
