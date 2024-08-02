@@ -7,11 +7,6 @@ namespace Modules\Fixcity\Models;
 use Modules\User\Models\BaseProfile as UserBaseProfile;
 
 /**
-<<<<<<< HEAD
- * 
- *
-=======
->>>>>>> 3b9749f (.)
  * @property int                                                                                                           $id
  * @property string|null                                                                                                   $type
  * @property string|null                                                                                                   $first_name
@@ -48,10 +43,7 @@ use Modules\User\Models\BaseProfile as UserBaseProfile;
  * @property int|null                                                                                                      $teams_count
  * @property \Modules\User\Models\User|null                                                                                $user
  * @property string|null                                                                                                   $user_name
-<<<<<<< HEAD
-=======
  *
->>>>>>> 3b9749f (.)
  * @method static \Modules\Gdpr\Database\Factories\ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newQuery()
@@ -75,25 +67,19 @@ use Modules\User\Models\BaseProfile as UserBaseProfile;
  * @method static Builder|BaseProfile                             withExtraAttributes()
  * @method static Builder|BaseProfile                             withoutPermission($permissions)
  * @method static Builder|BaseProfile                             withoutRole($roles, $guard = null)
-<<<<<<< HEAD
-=======
  *
->>>>>>> 3b9749f (.)
  * @property float                           $credits
  * @property string|null                     $slug
  * @property \Modules\User\Models\DeviceUser $pivot
  * @property \Modules\User\Models\Membership $membership
-<<<<<<< HEAD
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereExtra($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereSlug($value)
-=======
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereExtra($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereExtra($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereSlug($value)
  *
->>>>>>> 3b9749f (.)
  * @mixin \Eloquent
  */
 class Profile extends UserBaseProfile
