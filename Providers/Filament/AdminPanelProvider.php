@@ -20,6 +20,6 @@ class AdminPanelProvider extends XotBasePanelProvider
             // SpatieLaravelTranslatablePlugin::make(),
         ]);
 
-    //     return parent::panel($panel);
-    // }
+        return parent::panel($panel);
+    }
 }
