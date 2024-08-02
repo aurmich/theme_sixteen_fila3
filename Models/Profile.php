@@ -76,12 +76,6 @@ use Modules\User\Models\BaseProfile as UserBaseProfile;
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereExtra($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereSlug($value)
-<<<<<<< HEAD
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereExtra($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereSlug($value)
-=======
->>>>>>> 3b9749f (.)
  *
  * @mixin \Eloquent
  */
