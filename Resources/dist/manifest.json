@@ -13,6 +13,9 @@
     "file": "assets/app2.js",
     "name": "app",
     "src": "Resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "css": [
+      "assets/app2.css"
+    ]
   }
 }

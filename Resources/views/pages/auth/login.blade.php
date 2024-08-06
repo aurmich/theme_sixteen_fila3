@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Illuminate\Auth\Events\Login;
 use function Laravel\Folio\{middleware, name};
 use Livewire\Attributes\Validate;
