@@ -40,10 +40,15 @@
                 <x-ui.light-dark-switch></x-ui.light-dark-switch>
             </div>
             @auth
+                {{--  
                 <div class="flex items-center w-auto">
                     <x-ui.button type="primary" submit="true" tag="a" href="{{ route('profile.edit') }}">
                         View Dashboard
                     </x-ui.button>
+                </div>
+                --}}
+                <div class="flex items-center w-auto">
+                    <x-profile.dropdown></x-profile.dropdown>
                 </div>
             @else
                 <div class="flex items-center w-auto">
