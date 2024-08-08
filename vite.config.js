@@ -9,39 +9,39 @@ import laravel, { refreshPaths } from 'laravel-vite-plugin'
 
 
 export default defineConfig({
-	build: {
-		//outDir: '../../../public_html/build/ewall',
-		outDir: './Resources/dist',
-		emptyOutDir: false,
-		manifest: 'manifest.json',
-		rollupOptions: {
-			output: {
-				entryFileNames: `assets/[name].js`,
-				chunkFileNames: `assets/[name].js`,
-				assetFileNames: `assets/[name].[ext]`
-			}
-		}
-	},
-    ssr:{
+    build: {
+        //outDir: '../../../public_html/build/ewall',
+        outDir: './Resources/dist',
+        emptyOutDir: false,
+        manifest: 'manifest.json',
+        rollupOptions: {
+            output: {
+                entryFileNames: `assets/[name].js`,
+                chunkFileNames: `assets/[name].js`,
+                assetFileNames: `assets/[name].[ext]`
+            }
+        }
+    },
+    ssr: {
         noExternal: ['chart.js/**']
     },
-	plugins: [
-		laravel({
-			publicDirectory: '../../../public_html/',
-			// buildDirectory: 'assets/',
-			input: [
-				//__dirname + '/Resources/sass/app.scss',
-				//__dirname + '/Resources/scss/app-mix.scss',
+    plugins: [
+        laravel({
+            publicDirectory: '../../../public_html/',
+            // buildDirectory: 'assets/',
+            input: [
+                //__dirname + '/Resources/sass/app.scss',
+                //__dirname + '/Resources/scss/app-mix.scss',
                 __dirname + '/Resources/css/app.css',
-				__dirname + '/Resources/js/app.js',
-				__dirname + '/Resources/css/filament/theme.css'
-			],
-			refresh: [
-                 ...refreshPaths,
+                __dirname + '/Resources/js/app.js',
+                //__dirname + '/Resources/css/filament/theme.css'
+            ],
+            refresh: [
+                ...refreshPaths,
                 'app/Livewire/**',
             ],
-		}),
-	],
+        }),
+    ],
 });
 
 

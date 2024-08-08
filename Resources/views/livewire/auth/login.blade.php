@@ -1,78 +1,78 @@
-<?php
+@section('title', __('user::auth.Sign in to your account'))
 
-use App\Models\User;
-use Illuminate\Auth\Events\Login;
-use function Laravel\Folio\{middleware, name};
-use Livewire\Attributes\Validate;
-use Livewire\Volt\Component;
+<div>
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
 
-middleware(['guest']);
-name('login');
-
-new class extends Component
-{
-    #[Validate('required|email')]
-    public $email = '';
-
-    #[Validate('required')]
-    public $password = '';
-
-    public $remember = false;
-
-    public function authenticate()
-    {
-        $this->validate();
-
-        if (!Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
-            $this->addError('email', trans('auth.failed'));
-
-            return;
-        }
-
-        event(new Login(auth()->guard('web'), User::where('email', $this->email)->first(), $this->remember));
-
-        return redirect()->intended('/');
-    }
-};
-
-?>
-
-<x-layouts.main>
-
-    <div class="flex flex-col items-stretch justify-center w-screen min-h-screen py-10 sm:items-center">
-
-        <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <x-ui.link href="{{ route('home') }}">
-                <x-ui.logo class="w-auto h-10 mx-auto text-gray-700 fill-current dark:text-gray-100" />
-            </x-ui.link>
-
-            <h2 class="mt-5 text-2xl font-extrabold leading-9 text-center text-gray-800 dark:text-gray-200">Sign in to
-                your account</h2>
-            <div class="text-sm leading-5 text-center text-gray-600 dark:text-gray-400 space-x-0.5">
-                <span>Or</span>
-                <x-ui.text-link href="{{ route('register') }}">create a new account</x-ui.text-link>
-            </div>
-        </div>
-
-        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="px-10 py-0 sm:py-8 sm:shadow-sm sm:bg-white dark:sm:bg-gray-950/50 dark:border-gray-200/10 sm:border sm:rounded-lg border-gray-200/60">
-                @volt('auth.login')
-                <form wire:submit="authenticate" class="space-y-6">
-
-                    <x-ui.input label="Email address" type="email" id="email" name="email" wire:model="email" />
-                    <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
-
-                    <div class="flex items-center justify-between mt-6 text-sm leading-5">
-                        <x-ui.checkbox label="Remember me" id="remember" name="remember" wire:model="remember" />
-                        <x-ui.text-link href="{{ route('password.request') }}">Forgot your password?</x-ui.text-link>
-                    </div>
-
-                    <x-ui.button type="primary" rounded="md" submit="true">Sign in</x-ui.button>
-                </form>
-                @endvolt
-            </div>
-        </div>
-
+        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9 ">
+            <a href="{{ route('home') }}">
+            <x-filament-panels::logo class="w-full" />
+            </a>
+            {{ __('user::auth.Sign in to your account') }}
+        </h2>
+        @if (Route::has('register'))
+            <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
+                {{ __('user::auth.Or') }}
+                <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                    {{ __('user::auth.create a new account') }}
+                </a>
+            </p>
+        @endif
     </div>
 
-</x-layouts.main>
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+            <form wire:submit.prevent="authenticate">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 leading-5">
+                        {{ __('user::auth.Email address') }}
+                    </label>
+
+                    <div class="mt-1 rounded-md shadow-sm">
+                        <input wire:model.lazy="email" id="email" name="email" type="email" required autofocus class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                    </div>
+
+                    @error('email')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mt-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700 leading-5">
+                        {{ __('user::auth.Password') }}
+                    </label>
+
+                    <div class="mt-1 rounded-md shadow-sm">
+                        <input wire:model.lazy="password" id="password" type="password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                    </div>
+
+                    @error('password')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+                    <div class="flex items-center">
+                        <input wire:model.lazy="remember" id="remember" type="checkbox" class="form-checkbox w-4 h-4 text-indigo-600 transition duration-150 ease-in-out" />
+                        <label for="remember" class="block ml-2 text-sm text-gray-900 leading-5">
+                             {{ __('user::auth.Remember') }}
+                        </label>
+                    </div>
+
+                    <div class="text-sm leading-5">
+                        <a href="{{ route('password.request') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                            {{ __('user::auth.Forgot your password?') }}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <span class="block w-full rounded-md shadow-sm">
+                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                            {{ __('user::auth.Sign in') }}
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
