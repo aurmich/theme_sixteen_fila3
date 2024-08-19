@@ -19,4 +19,3 @@ class ProfileFactory extends Factory
         return [];
     }
 }
-

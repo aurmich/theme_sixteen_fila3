@@ -11,9 +11,5 @@ class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
-<<<<<<< HEAD
-    // protected static string $view = 'fixcity::filament.pages.dashboard';
-=======
     protected static string $view = 'fixcity::filament.pages.dashboard';
->>>>>>> adec8b0 (.)
 }
