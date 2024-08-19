@@ -6,7 +6,11 @@
     "priority": 0,
     "providers": [
         "Modules\\Fixcity\\Providers\\FixcityServiceProvider",
+<<<<<<< HEAD
         "Modules\\Fixcity\\Providers\\Filament\\AdminPanelProvider"
+=======
+        "Modules\\Idoteca\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> b14a224 (up)
     ],
     "files": []
 }
