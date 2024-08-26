@@ -8,9 +8,6 @@
     "file": "assets/app2.js",
     "name": "app",
     "src": "Resources/js/app.js",
-    "isEntry": true,
-    "css": [
-      "assets/app2.css"
-    ]
+    "isEntry": true
   }
 }
