@@ -1,49 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Seo\Providers;
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
+class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     /**
-     * Called before routes are registered.
-     *
-     * Register any model bindings or pattern based filters.
+     * The module namespace to assume when generating URLs to actions.
      */
-    public function boot(): void
-    {
-        parent::boot();
-    }
+    protected string $moduleNamespace = 'Modules\Seo\Http\Controllers';
 
-    /**
-     * Define the routes for the application.
-     */
-    public function map(): void
-    {
-        $this->mapApiRoutes();
+    protected string $module_dir = __DIR__;
 
-        $this->mapWebRoutes();
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     */
-    protected function mapWebRoutes(): void
-    {
-        Route::middleware('web')->group(module_path('Seo', '/routes/web.php'));
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     */
-    protected function mapApiRoutes(): void
-    {
-        Route::middleware('api')->prefix('api')->name('api.')->group(module_path('Seo', '/routes/api.php'));
-    }
+    protected string $module_ns = __NAMESPACE__;
 }
