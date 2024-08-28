@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace Modules\Fixcity\Models;
 
 use Modules\User\Models\BaseProfile as UserBaseProfile;
-use Spatie\Comments\Models\Concerns\InteractsWithComments;
-use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
+
+// use Spatie\Comments\Models\Concerns\InteractsWithComments;
+// use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 
 /**
- * 
- *
  * @property int                                                                                                           $id
  * @property string|null                                                                                                   $type
  * @property string|null                                                                                                   $first_name
@@ -47,6 +46,7 @@ use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
  * @property int|null                                                                                                      $teams_count
  * @property \Modules\User\Models\User|null                                                                                $user
  * @property string|null                                                                                                   $user_name
+ *
  * @method static \Modules\Gdpr\Database\Factories\ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newQuery()
@@ -70,26 +70,31 @@ use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
  * @method static Builder|BaseProfile                             withExtraAttributes()
  * @method static Builder|BaseProfile                             withoutPermission($permissions)
  * @method static Builder|BaseProfile                             withoutRole($roles, $guard = null)
+ *
  * @property float                           $credits
  * @property string|null                     $slug
  * @property \Modules\User\Models\DeviceUser $pivot
  * @property \Modules\User\Models\Membership $membership
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereExtra($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereSlug($value)
- * @property Profile|null $creator
- * @property Profile|null $updater
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Comments\Models\Comment> $commentatorComments
- * @property-read int|null $commentator_comments_count
- * @property-read \Spatie\Comments\Models\Collections\ReactionCollection<int, \Spatie\Comments\Models\Reaction> $reactions
- * @property-read int|null $reactions_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Comments\Models\CommentNotificationSubscription> $subscriberNotificationSubscriptions
- * @property-read int|null $subscriber_notification_subscriptions_count
+ *
+ * @property Profile|null                                                                                           $creator
+ * @property Profile|null                                                                                           $updater
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Comments\Models\Comment>                         $commentatorComments
+ * @property int|null                                                                                               $commentator_comments_count
+ * @property \Spatie\Comments\Models\Collections\ReactionCollection<int, \Spatie\Comments\Models\Reaction>          $reactions
+ * @property int|null                                                                                               $reactions_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Comments\Models\CommentNotificationSubscription> $subscriberNotificationSubscriptions
+ * @property int|null                                                                                               $subscriber_notification_subscriptions_count
+ *
  * @mixin \Eloquent
  */
-class Profile extends UserBaseProfile implements CanComment
+class Profile extends UserBaseProfile
 {
-    use InteractsWithComments;
+    // implements CanComment
+    // use InteractsWithComments;
 
     /** @var string */
     protected $connection = 'fixcity';
