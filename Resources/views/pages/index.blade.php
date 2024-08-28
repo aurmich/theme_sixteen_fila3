@@ -11,13 +11,13 @@ use Livewire\Volt\Component;
 name('home');
 //middleware(['redirect-to-dashboard']);
 
-//dddx(auth()->user());
+
 
 new class extends Component
 {
     public function test()
     {
-
+        //dddx(auth()->user()->consecutiveDaysLogin());
         //Notifications::alignment(Alignment::Center);
         //Notifications::verticalAlignment(VerticalAlignment::Center);
         Notification::make()
