@@ -14,13 +14,13 @@ export default defineConfig({
         outDir: './Resources/dist',
         emptyOutDir: false,
         manifest: 'manifest.json',
-        rollupOptions: {
-            output: {
-                entryFileNames: `assets/[name].js`,
-                chunkFileNames: `assets/[name].js`,
-                assetFileNames: `assets/[name].[ext]`
-            }
-        }
+        //rollupOptions: {
+        //    output: {
+        //        entryFileNames: `assets/[name].js`,
+        //        chunkFileNames: `assets/[name].js`,
+        //        assetFileNames: `assets/[name].[ext]`
+        //    }
+        //}
     },
     ssr: {
         noExternal: ['chart.js/**']

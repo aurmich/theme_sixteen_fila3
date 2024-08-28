@@ -1,8 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-//import preset from '../../vendor/filament/support/tailwind.config.preset';
+import preset from './vendor/filament/support/tailwind.config.preset';
 
 module.exports = {
-    //presets: [preset],
+    presets: [preset],
     darkMode: 'class',
     theme: {
         extend: {

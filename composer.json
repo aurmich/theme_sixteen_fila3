@@ -17,6 +17,7 @@
         "role": "Developer"
     }],
     "require": {
+        "filament/filament": "^3.2"
     },
     "extra": {
         "laravel": {
@@ -48,5 +49,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^9.4"
+    }
 }
