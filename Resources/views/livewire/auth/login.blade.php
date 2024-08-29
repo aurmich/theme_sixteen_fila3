@@ -72,6 +72,9 @@
                         </button>
                     </span>
                 </div>
+                
+                @livewire('socialite.buttons')
+
             </form>
         </div>
     </div>
