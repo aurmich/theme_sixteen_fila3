@@ -3,8 +3,9 @@ use Modules\Blog\Models\Article;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
 
-use function Laravel\Folio\render;
-
+use function Laravel\Folio\{withTrashed,middleware, name,render};
+withTrashed();
+name('article.view');
 
 render(function (View $view, string $slug) {
     /*

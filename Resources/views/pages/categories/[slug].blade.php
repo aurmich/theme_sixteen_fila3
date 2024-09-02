@@ -6,11 +6,11 @@ use Illuminate\View\View;
 use function Laravel\Folio\{withTrashed,middleware, name,render};
 
 withTrashed();
-name('category_slug.show');
+name('category.view');
 //middleware(['auth', 'verified']);
 
-render(function (View $view, string $category_slug) {
-    $category = Category::firstWhere(['slug' => $category_slug]);
+render(function (View $view, string $slug) {
+    $category = Category::firstWhere(['slug' => $slug]);
     if($category == null){
       return view('pub_theme::404');
     }
