@@ -23,14 +23,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Seo\\": ""
+            "Modules\\Seo\\": "",
+            "Modules\\Seo\\Database\\Factories\\": "database/factories/",
+            "Modules\\Seo\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "require_comment": {
         "openai-php/laravel": "^0.4.1",
         "thecodingmachine/safe": "^2.5"
     },
-    
+
     "require-dev_comment": {
         "laravel/pint": "^1.13",
         "nunomaduro/phpinsights": "^2.11",
