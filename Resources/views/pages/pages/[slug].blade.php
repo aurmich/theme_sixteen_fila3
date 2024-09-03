@@ -6,11 +6,11 @@ use Illuminate\View\View;
 use function Laravel\Folio\{withTrashed,middleware, name,render};
 
 withTrashed();
-name('page_slug.show');
+name('page_slug.view');
 //middleware(['auth', 'verified']);
 
-render(function (View $view, string $page_slug) {
-    $page = Page::firstWhere(['slug' => $page_slug]);
+render(function (View $view, string $slug) {
+    $page = Page::firstWhere(['slug' => $slug]);
     return $view->with('page', $page);
 });
 
