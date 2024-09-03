@@ -23,7 +23,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Seo\\": "",
+            "Modules\\Seo\\": ""
+
+
+        },
+        "psr-4_comment": {
             "Modules\\Seo\\Database\\Factories\\": "database/factories/",
             "Modules\\Seo\\Database\\Seeders\\": "database/seeders/"
         }
