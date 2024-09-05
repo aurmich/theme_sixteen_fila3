@@ -10,9 +10,9 @@ use Livewire\Volt\Component;
 new class extends Component
 {
     public $powerups = [];
-    public $powerupsJSON = null;
+    public $powerupsJSON;
 
-    public function mount()
+    public function mount(): void
     {
         $json_path=public_path('/genesis/power-ups.json');
         if(!File::exists($json_path)){
@@ -27,7 +27,7 @@ new class extends Component
         }
     }
 
-    protected function fetchPowerup($repo, $installed)
+    protected function fetchPowerup(string $repo, $installed): \stdClass|array
     {
         $response = Http::get('https://raw.githubusercontent.com/' . $repo . '/main/powerup.json');
         if ($response->successful()) {
@@ -39,7 +39,7 @@ new class extends Component
         return [];
     }
 
-    public function install($repo, $index)
+    public function install(string $repo, $index)
     {
         foreach ($this->powerupsJSON as $powerUpIndex => $powerup) {
             if (key($powerup) == $repo) {

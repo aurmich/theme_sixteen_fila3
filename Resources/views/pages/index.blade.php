@@ -15,7 +15,7 @@ name('home');
 
 new class extends Component
 {
-    public function test()
+    public function test(): void
     {
         //dddx(auth()->user()->consecutiveDaysLogin());
         //Notifications::alignment(Alignment::Center);

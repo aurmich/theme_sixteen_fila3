@@ -14,7 +14,7 @@ new class extends Component
 {
 
 
-    public function logout()
+    public function logout(): never
     {
         dd('a');
         app(LogoutUserAction::class)->execute(auth()->user());

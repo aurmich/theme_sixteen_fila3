@@ -25,7 +25,7 @@ new class extends Component
     public $password;
     public $passwordConfirmation;
 
-    public function mount($token)
+    public function mount($token): void
     {
         $this->email = request()->query('email', '');
         $this->token = $token;
@@ -41,7 +41,7 @@ new class extends Component
                 'email' => $this->email,
                 'password' => $this->password,
             ],
-            function ($user, $password) {
+            function ($user, $password): void {
                 $user->password = Hash::make($password);
 
                 $user->setRememberToken(Str::random(60));
@@ -61,6 +61,7 @@ new class extends Component
         }
 
         $this->addError('email', trans($response));
+        return null;
     }
 };
 
