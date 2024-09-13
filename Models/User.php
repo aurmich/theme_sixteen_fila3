@@ -9,8 +9,6 @@ use Spatie\Comments\Models\Concerns\InteractsWithComments;
 use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 
 /**
- * 
- *
  * @property string $id
  * @property string|null $name
  * @property string|null $first_name
@@ -59,6 +57,7 @@ use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
  * @property-read int|null $tenants_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\OauthAccessToken> $tokens
  * @property-read int|null $tokens_count
+ *
  * @method static \Modules\User\Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
@@ -86,6 +85,7 @@ use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedBy($value)
  * @method static Builder|User withoutPermission($permissions)
  * @method static Builder|User withoutRole($roles, $guard = null)
+ *
  * @mixin \Eloquent
  */
 class User extends BaseUser implements CanComment
