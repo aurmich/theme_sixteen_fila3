@@ -63,4 +63,4 @@ render(function (View $view, string $slug) {
             </div>
         @endif
     </div>
-<x-layouts.marketing>
+</x-layouts.marketing>
