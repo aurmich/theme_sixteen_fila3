@@ -10,12 +10,12 @@
             {{ __('user::auth.Sign in to your account') }}
         </h2>
         @if (Route::has('register'))
-            <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
+            <!-- <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
                 {{ __('user::auth.Or') }}
                 <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                     {{ __('user::auth.create a new account') }}
                 </a>
-            </p>
+            </p> -->
         @endif
     </div>
 
