@@ -1,11 +1,11 @@
-<div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+<div class="flex items-center space-x-1 md:order-2 md:space-x-0 rtl:space-x-reverse">
   <button type="button" data-dropdown-toggle="profile-dropdown-menu"
-      class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+      class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-900 rounded-lg cursor-pointer dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
       <x-filament::avatar src="{{ $_profile->getAvatarUrl() }}" />
   </button>
 
   <!-- Dropdown -->
-  <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+  <div class="hidden z-50 my-4 text-base list-none bg-white rounded-lg divide-y divide-gray-100 shadow dark:bg-gray-700"
       id="profile-dropdown-menu">
       <ul class="py-2 font-medium" role="none">
           @can('go-to-admin')
@@ -13,8 +13,8 @@
               <a href="{{ url('idoteca/admin/') }}"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                   role="menuitem">
-                  <div class="inline-flex items-center  whitespace-nowrap">
-                      <x-fas-toolbox class="h-3.5 w-3.5 me-2" />
+                  <div class="inline-flex items-center whitespace-nowrap">
+                      <x-fas-toolbox class="w-3.5 h-3.5 me-2" />
                       Area admin
                   </div>
               </a>
@@ -25,7 +25,7 @@
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                   role="menuitem">
                   <div class="inline-flex items-center">
-                      <x-fas-sign-out-alt class="h-3.5 w-3.5 me-2" />
+                      <x-fas-sign-out-alt class="w-3.5 h-3.5 me-2" />
                       Log Out
                   </div>
               </a>
