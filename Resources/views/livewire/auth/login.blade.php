@@ -5,7 +5,7 @@
 
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9 ">
             <a href="{{ route('home') }}">
-            <x-filament-panels::logo class="w-full" />
+            <x-filament-panels::logo class="h-auto max-w-full mx-auto" />
             </a>
             {{ __('user::auth.Sign in to your account') }}
         </h2>
