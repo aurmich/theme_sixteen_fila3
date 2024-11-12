@@ -1,6 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
+use function Safe\getcwd;
+
 /*
 
 use Illuminate\Foundation\Application;
