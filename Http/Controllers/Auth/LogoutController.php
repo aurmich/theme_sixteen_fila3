@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Themes\Sixteen\Http\Controllers\Auth;
 
-use Themes\Sixteen\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Themes\Sixteen\Http\Controllers\BaseController;
 
-class LogoutController extends Controller
+class LogoutController extends BaseController
 {
     public function __invoke(): RedirectResponse
     {
