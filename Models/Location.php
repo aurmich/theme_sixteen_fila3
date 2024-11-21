@@ -153,7 +153,7 @@ class Place extends BaseModel
         'latitude', 'longitude', 'formatted_address', 'nearest_street', 'address',
     ];
 
-    /** @var array<int, string> */
+    /** @var list<string> */
     protected $appends = ['value'];
 
     // ----- mutators -----
