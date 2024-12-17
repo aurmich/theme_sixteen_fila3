@@ -17,13 +17,13 @@ $base_middleware=[];
 
 name('counter');
 middleware(['guest']);
- 
+
 new class extends LoginComponent {
-} 
+}
 
 
 ?>
- 
+
 <x-layouts.main>
 
     <div class="flex flex-col items-stretch justify-center w-screen min-h-screen py-10 sm:items-center">
@@ -35,7 +35,7 @@ new class extends LoginComponent {
 
             <h2 class="mt-5 text-2xl font-extrabold leading-9 text-center text-gray-800 dark:text-gray-200">Sign in to
                 your account</h2>
-                
+
             <div class="text-sm leading-5 text-center text-gray-600 dark:text-gray-400 space-x-0.5">
                 <span>Or</span>
                 <x-ui.text-link href="{{ route('register') }}">create a new account</x-ui.text-link>
@@ -47,7 +47,7 @@ new class extends LoginComponent {
                 @volt('auth.login')
                 <form wire:submit="authenticate" class="space-y-6">
 
-                    <h1>{{ $count }}</h1>
+                    <h1>{{-- $count --}}</h1>
                     <button wire:click="increment">+</button>
                     <x-ui.input label="Email address" type="email" id="email" name="email" wire:model="email" />
                     <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
