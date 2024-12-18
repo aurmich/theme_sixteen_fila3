@@ -1,0 +1,29 @@
+{
+    "id": "2",
+    "slug": "test",
+    "title": "test",
+    "content_blocks": [
+        {
+            "type": "hero",
+            "data": {
+                "title": "Test",
+                "text": null,
+                "background": null,
+                "_tpl": "card_with_background_image",
+                "buttons": [
+                    {
+                        "label": "Test",
+                        "class": null,
+                        "link": null
+                    }
+                ]
+            }
+        }
+    ],
+    "sidebar_blocks": [],
+    "footer_blocks": "",
+    "created_by": "9ccfceb0-2329-4fbf-8a4e-62ffc8750718",
+    "updated_by": "9ccfceb0-2329-4fbf-8a4e-62ffc8750718",
+    "created_at": "2024-08-21T13:23:48.000000Z",
+    "updated_at": "2024-08-21T13:23:48.000000Z"
+}
