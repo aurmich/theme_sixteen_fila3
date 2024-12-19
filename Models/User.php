@@ -44,7 +44,7 @@ use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
  * @property int|null                                                                                                      $owned_teams_count
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\Permission>                                $permissions
  * @property int|null                                                                                                      $permissions_count
- * @property \Modules\Fixcity\Models\Profile|null                                                                          $profile
+ * @property \Modules\Xot\Contracts\ProfileContract|null                                                                   $profile
  * @property \Spatie\Comments\Models\Collections\ReactionCollection<int, \Spatie\Comments\Models\Reaction>                 $reactions
  * @property int|null                                                                                                      $reactions_count
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\Role>                                      $roles
