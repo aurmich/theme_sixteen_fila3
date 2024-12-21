@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Resources\LocationResource\Pages;
 
 use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps;
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Geo\Filament\Resources\LocationResource;
+use Webmozart\Assert\Assert;
 
 class EditLocation extends EditRecord
 {
@@ -25,7 +26,9 @@ class EditLocation extends EditRecord
 
     protected function getRedirectUrl(): string
     {
-        return $this->getResource()::getUrl('index');
+        Assert::string($url = $this->getResource()::getUrl('index'));
+
+        return $url;
     }
 
     protected function getHeaderWidgets(): array

@@ -7,6 +7,7 @@ namespace Modules\Geo\Filament\Resources\LocationResource\Pages;
 use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps;
 use Filament\Resources\Pages\CreateRecord;
 use Modules\Geo\Filament\Resources\LocationResource;
+use Webmozart\Assert\Assert;
 
 class CreateLocation extends CreateRecord
 {
@@ -16,6 +17,8 @@ class CreateLocation extends CreateRecord
 
     protected function getRedirectUrl(): string
     {
-        return $this->getResource()::getUrl('index');
+        Assert::string($url = $this->getResource()::getUrl('index'));
+
+        return $url;
     }
 }
