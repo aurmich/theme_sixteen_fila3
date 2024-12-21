@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Webmozart\Assert\Assert;
+
 class FilterCoordinatesInRadius
 {
     // filtra Coordinate In Raggio
@@ -12,8 +14,9 @@ class FilterCoordinatesInRadius
         $coordinateInRaggio = [];
 
         foreach ($coordinateArray as $coordinate) {
-            $lat = $coordinate['latitude'];
-            $lon = $coordinate['longitude'];
+            Assert::isArray($coordinate);
+            Assert::string($lat = $coordinate['latitude']);
+            Assert::string($lon = $coordinate['longitude']);
 
             $distanza = $this->calcolaDistanzaGeografica($latPartenza, $lonPartenza, $lat, $lon);
 
