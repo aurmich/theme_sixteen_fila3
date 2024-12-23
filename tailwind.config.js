@@ -1,8 +1,12 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-import preset from './vendor/filament/support/tailwind.config.preset';
+import defaultTheme from 'tailwindcss/defaultTheme';
+// import preset from './../../vendor/filament/support/tailwind.config.preset';
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
+import daisyui from 'daisyui'
+
 
 module.exports = {
-    presets: [preset],
+    // presets: [preset],
     darkMode: 'class',
     theme: {
         extend: {
@@ -125,8 +129,8 @@ module.exports = {
         },
     },
     plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
-        require('daisyui'),
+        forms,
+typography,
+daisyui
     ],
 }
