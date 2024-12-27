@@ -12,7 +12,7 @@ use Modules\Xot\Providers\XotBaseServiceProvider;
  */
 class GeoServiceProvider extends XotBaseServiceProvider
 {
-    public string $name = 'geo';
+    public string $name = 'Geo';
 
     protected string $module_dir = __DIR__;
 
