@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Fixcity\\": "",
+            "Modules\\Fixcity\\": "app/",
             "Modules\\Fixcity\\Database\\Factories\\": "database/factories/",
             "Modules\\Fixcity\\Database\\Seeders\\": "database/seeders/"
         }
