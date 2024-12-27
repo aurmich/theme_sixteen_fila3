@@ -8,7 +8,7 @@ use Modules\Xot\Providers\XotBaseServiceProvider;
 
 class SeoServiceProvider extends XotBaseServiceProvider
 {
-    public string $module_name = 'Seo';
+    public string $name = 'Seo';
 
     protected string $module_dir = __DIR__;
 
