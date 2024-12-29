@@ -29,6 +29,6 @@ new class extends Component
 
 <x-layouts.marketing>
     <div>
-        {{ $_theme->showPageContent('home') }}
+        {{!! $_theme->showPageContent('home') !!}}
     </div>
 </x-layouts.marketing>
