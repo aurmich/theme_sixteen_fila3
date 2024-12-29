@@ -21,7 +21,7 @@ mix.options({
 //mix.setPublicPath('../../public').mergeManifest();
 
  var src=__dirname + '/Resources';
- var dest= 'Resources/dist'
+ var dest= 'resources/dist'
 
  mix.js(src+'/js/app.js', dest+'/js/geo.js')
     .sass(src + '/sass/app.scss', dest+'/css/geo.css')
