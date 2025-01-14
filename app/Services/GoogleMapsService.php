@@ -14,7 +14,11 @@ class GoogleMapsService
 
     public function __construct()
     {
-        $this->apiKey = config('services.google.maps_api_key');
+        $apiKey = config('services.google.maps_api_key');
+        if (!$apiKey) {
+            throw new \RuntimeException('Google Maps API key is not configured. Please set GOOGLE_MAPS_API_KEY in your .env file.');
+        }
+        $this->apiKey = $apiKey;
     }
 
     public function getDistanceMatrix(string $origins, string $destinations): ?array
