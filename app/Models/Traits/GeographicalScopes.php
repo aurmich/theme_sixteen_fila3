@@ -36,8 +36,8 @@ trait GeographicalScopes
                 sin(radians(latitude))
             )) 
         ";
-        if (null !== $label) {
-            $sql .= " AS $label";
+        if (null !== $alias) {
+            $sql .= " AS $alias";
         }
 
         return \DB::raw($sql);
