@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Http;
 class GoogleMapsService
 {
     protected string $apiKey;
+
     protected string $baseUrl = 'https://maps.googleapis.com/maps/api';
 
     public function __construct()
@@ -32,7 +33,7 @@ class GoogleMapsService
                 'key' => $this->apiKey,
             ]);
 
-            if (! $response->successful() || 'OK' !== $response->json('status')) {
+            if (! $response->successful() || $response->json('status') !== 'OK') {
                 return null;
             }
 
@@ -51,7 +52,7 @@ class GoogleMapsService
             ]);
 
             if (! $response->successful()
-                || 'OK' !== $response->json('status')
+                || $response->json('status') !== 'OK'
                 || empty($response->json('results'))) {
                 return null;
             }
