@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Geo\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -8,11 +10,6 @@ trait GeographicalScopes
 {
     /**
      * Scope per calcolare la distanza tra due punti.
-     *
-     * @param Builder $query
-     * @param float $latitude
-     * @param float $longitude
-     * @return Builder
      */
     public function scopeWithDistance(Builder $query, float $latitude, float $longitude): Builder
     {
@@ -29,12 +26,9 @@ trait GeographicalScopes
 
     /**
      * Scope per ordinare i risultati per distanza.
-     *
-     * @param Builder $query
-     * @return Builder
      */
     public function scopeOrderByDistance(Builder $query): Builder
     {
         return $query->orderBy('distance');
     }
-} 
+}
