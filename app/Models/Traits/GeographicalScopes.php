@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Geo\Traits;
+namespace Modules\Geo\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 
