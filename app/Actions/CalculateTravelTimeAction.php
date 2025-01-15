@@ -13,7 +13,8 @@ class CalculateTravelTimeAction
 
     public function __construct(
         protected GoogleMapsService $googleMapsService,
-    ) {}
+    ) {
+    }
 
     public function execute($origin, $destination): string
     {
