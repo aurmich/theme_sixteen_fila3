@@ -34,7 +34,8 @@ trait GeographicalScopes
                 cos(radians(longitude) - radians($longitude)) +
                 sin(radians($latitude)) *
                 sin(radians(latitude))
-            )) AS distance
+            )) 
         ");
+        // AS distance
     }
 }
