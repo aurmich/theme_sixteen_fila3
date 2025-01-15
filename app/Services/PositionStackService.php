@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Geo\Services;
 
 use Illuminate\Support\Facades\Http;
@@ -17,19 +19,20 @@ class PositionStackService implements GeocodingServiceInterface
 
     public function getCoordinates(string $address): ?array
     {
-        if (!$this->apiKey) {
+        if (! $this->apiKey) {
             return null;
         }
 
         try {
-            $response = Http::get($this->baseUrl . '/forward', [
+            $response = Http::get($this->baseUrl.'/forward', [
                 'access_key' => $this->apiKey,
                 'query' => $address,
                 'limit' => 1,
             ]);
 
-            if ($response->successful() && !empty($response->json()['data'])) {
+            if ($response->successful() && ! empty($response->json()['data'])) {
                 $data = $response->json()['data'][0];
+
                 return [
                     'latitude' => (float) $data['latitude'],
                     'longitude' => (float) $data['longitude'],

@@ -4,21 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Spatie\QueueableAction\QueueableAction;
 use Modules\Geo\Services\GoogleMapsService;
+use Spatie\QueueableAction\QueueableAction;
 
 class CalculateTravelTimeAction
 {
     use QueueableAction;
 
     public function __construct(
-        protected GoogleMapsService $googleMapsService
-    ) {}
+        protected GoogleMapsService $googleMapsService,
+    ) {
+    }
 
     public function execute($origin, $destination): string
     {
-        if (empty($origin->latitude) || empty($origin->longitude) || 
-            empty($destination->latitude) || empty($destination->longitude)) {
+        if (empty($origin->latitude) || empty($origin->longitude)
+            || empty($destination->latitude) || empty($destination->longitude)) {
             return 'N/D';
         }
 

@@ -13,7 +13,7 @@ class SearchPlacesAction
     public function execute(
         string $query,
         ?string $country = null,
-        int $limit = 10
+        int $limit = 10,
     ): array {
         try {
             $params = [
