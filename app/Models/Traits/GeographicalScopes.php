@@ -14,7 +14,7 @@ trait GeographicalScopes
      */
     public function scopeWithDistance(Builder $query, float $latitude, float $longitude): Builder
     {
-        return $query->select('*', $this->getDistanceExpression($latitude, $longitude));
+        return $query->select('*', $this->getDistanceExpression($latitude, $longitude, 'distance'));
     }
 
     /**
@@ -25,9 +25,9 @@ trait GeographicalScopes
         return $query->orderBy($this->getDistanceExpression($latitude, $longitude));
     }
 
-    public function getDistanceExpression(float $latitude, float $longitude): Expression
+    public function getDistanceExpression(float $latitude, float $longitude, ?string $alias = null): Expression
     {
-        return \DB::raw("
+        $sql = "
             (6371 * acos(
                 cos(radians($latitude)) *
                 cos(radians(latitude)) *
@@ -35,7 +35,12 @@ trait GeographicalScopes
                 sin(radians($latitude)) *
                 sin(radians(latitude))
             )) 
-        ");
+        ";
+        if (null !== $label) {
+            $sql .= " AS $label";
+        }
+
+        return \DB::raw($sql);
         // AS distance
     }
 }
