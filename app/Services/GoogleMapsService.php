@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 class GoogleMapsService
 {
@@ -15,7 +15,7 @@ class GoogleMapsService
     public function __construct()
     {
         $apiKey = config('services.google.maps_api_key');
-        if (!$apiKey) {
+        if (! $apiKey) {
             throw new \RuntimeException('Google Maps API key is not configured. Please set GOOGLE_MAPS_API_KEY in your .env file.');
         }
         $this->apiKey = $apiKey;
@@ -32,7 +32,7 @@ class GoogleMapsService
                 'key' => $this->apiKey,
             ]);
 
-            if (! $response->successful() || $response->json('status') !== 'OK') {
+            if (! $response->successful() || 'OK' !== $response->json('status')) {
                 return null;
             }
 
@@ -42,7 +42,7 @@ class GoogleMapsService
 
     public function getCoordinatesByAddress(string $address): ?array
     {
-        $cacheKey = "geocode:" . md5($address);
+        $cacheKey = 'geocode:'.md5($address);
 
         return Cache::remember($cacheKey, now()->addWeek(), function () use ($address) {
             $response = Http::get("{$this->baseUrl}/geocode/json", [
@@ -50,9 +50,9 @@ class GoogleMapsService
                 'key' => $this->apiKey,
             ]);
 
-            if (! $response->successful() || 
-                $response->json('status') !== 'OK' || 
-                empty($response->json('results'))) {
+            if (! $response->successful()
+                || 'OK' !== $response->json('status')
+                || empty($response->json('results'))) {
                 return null;
             }
 

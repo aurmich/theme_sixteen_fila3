@@ -9,7 +9,7 @@ class GetBoundingBoxAction
     public function execute(
         float $latitude,
         float $longitude,
-        float $distanceKm
+        float $distanceKm,
     ): array {
         $earthRadius = 6371; // km
 

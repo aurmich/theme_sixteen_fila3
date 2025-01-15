@@ -9,13 +9,13 @@ class FormatCoordinatesAction
     public function execute(
         float $latitude,
         float $longitude,
-        string $format = 'decimal'
+        string $format = 'decimal',
     ): string {
         return match ($format) {
             'dms' => $this->toDMS($latitude, $longitude),
             'decimal' => $this->toDecimal($latitude, $longitude),
             'google' => $this->toGoogleMapsUrl($latitude, $longitude),
-            default => throw new \InvalidArgumentException('Formato non supportato')
+            default => throw new \InvalidArgumentException('Formato non supportato'),
         };
     }
 
