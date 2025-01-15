@@ -33,7 +33,7 @@ class GoogleMapsService
                 'key' => $this->apiKey,
             ]);
 
-            if (! $response->successful() || $response->json('status') !== 'OK') {
+            if (! $response->successful() || 'OK' !== $response->json('status')) {
                 return null;
             }
 
@@ -52,7 +52,7 @@ class GoogleMapsService
             ]);
 
             if (! $response->successful()
-                || $response->json('status') !== 'OK'
+                || 'OK' !== $response->json('status')
                 || empty($response->json('results'))) {
                 return null;
             }
