@@ -13,8 +13,7 @@ class UpdateCoordinatesAction
 
     public function __construct(
         protected GoogleMapsService $googleMapsService,
-    ) {
-    }
+    ) {}
 
     public function execute(string $address): ?array
     {

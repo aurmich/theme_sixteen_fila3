@@ -10,6 +10,7 @@ use Modules\Geo\Contracts\GeocodingServiceInterface;
 class PositionStackService implements GeocodingServiceInterface
 {
     protected string $baseUrl = 'http://api.positionstack.com/v1';
+
     protected ?string $apiKey;
 
     public function __construct()

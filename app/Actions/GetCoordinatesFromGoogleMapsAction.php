@@ -16,7 +16,7 @@ class GetCoordinatesFromGoogleMapsAction
                 'key' => config('services.google.maps_api_key'),
             ]);
 
-            if ($response->successful() && 'OK' === $response->json('status')) {
+            if ($response->successful() && $response->json('status') === 'OK') {
                 $location = $response->json('results.0.geometry.location');
 
                 return [
