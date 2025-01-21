@@ -4,114 +4,88 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-use Illuminate\Support\Facades\Log;
-use Modules\Geo\Datas\LocationData;
-
-use function Safe\json_decode;
-
-use Webmozart\Assert\Assert;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
+use Modules\Geo\Datas\AddressData;
 
 /**
- * Action per ottenere l'indirizzo da coordinate tramite Google Maps.
- *
- * Questa classe utilizza l'API Google Maps Reverse Geocoding per convertire
- * coordinate geografiche in un indirizzo formattato.
+ * Classe per ottenere i dati dell'indirizzo dal servizio Google Maps.
  */
 class GetAddressFromGoogleMapsAction
 {
-    private const API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
-
-    public function __construct(
-        private readonly Client $client,
-    ) {
-    }
+    private const BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
     /**
-     * Ottiene l'indirizzo dalle coordinate.
+     * Esegue la ricerca dell'indirizzo su Google Maps.
      *
-     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
-     */
-    public function execute(float $latitude, float $longitude): LocationData
-    {
-        $this->validateInput($latitude, $longitude);
-
-        try {
-            $response = $this->makeApiRequest($latitude, $longitude);
-
-            return $this->parseResponse($response, $latitude, $longitude);
-        } catch (GuzzleException $e) {
-            Log::error('Google Maps Reverse Geocoding API request failed', [
-                'error' => $e->getMessage(),
-                'coordinates' => compact('latitude', 'longitude'),
-            ]);
-
-            throw new \RuntimeException('Failed to get address from coordinates');
-        }
-    }
-
-    /**
-     * Valida i dati di input.
+     * @param string $address L'indirizzo da cercare
      *
-     * @throws \RuntimeException Se la chiave API non è configurata
+     * @throws \Exception Se la chiave API non è configurata
+     *
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
-    private function validateInput(float $latitude, float $longitude): void
+    public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.google.maps_api_key');
-        Assert::notEmpty($apiKey, 'Google Maps API key not configured');
-        Assert::range($latitude, -90, 90, 'Invalid latitude');
-        Assert::range($longitude, -180, 180, 'Invalid longitude');
-    }
 
-    /**
-     * Effettua la richiesta all'API di Google Maps.
-     *
-     * @throws GuzzleException Se la richiesta fallisce
-     */
-    private function makeApiRequest(float $latitude, float $longitude): string
-    {
-        $response = $this->client->get(self::API_URL, [
-            'query' => [
-                'latlng' => sprintf('%F,%F', $latitude, $longitude),
-                'key' => config('services.google.maps_api_key'),
-            ],
+        if (empty($apiKey)) {
+            throw new \Exception('Google Maps API key not configured');
+        }
+
+        $response = Http::get(self::BASE_URL, [
+            'address' => $address,
+            'key' => $apiKey,
         ]);
 
-        return $response->getBody()->getContents();
-    }
+        if (! $response->successful()) {
+            return null;
+        }
 
-    /**
-     * Elabora la risposta dell'API.
-     *
-     * @throws \RuntimeException Se la risposta non è valida
-     */
-    private function parseResponse(string $response, float $latitude, float $longitude): LocationData
-    {
-        /** @var array{
-         *     results: array<array{
-         *         formatted_address: string,
-         *         geometry: array{
-         *             location: array{
-         *                 lat: float,
-         *                 lng: float
-         *             }
-         *         }
-         *     }>,
-         *     status: string
-         * } $data */
-        $data = json_decode($response, true);
+        $data = $response->json();
 
-        if ('OK' !== $data['status'] || empty($data['results'][0])) {
-            throw new \RuntimeException('No address found for coordinates');
+        if (empty($data['results'][0])) {
+            return null;
         }
 
         $result = $data['results'][0];
+        $location = $result['geometry']['location'] ?? null;
 
-        return new LocationData(
-            address: $result['formatted_address'],
-            latitude: $latitude,
-            longitude: $longitude
-        );
+        if (empty($location)) {
+            return null;
+        }
+
+        /** @var Collection<int, array{long_name: string, short_name: string, types: array<string>}> */
+        $components = collect($result['address_components'] ?? []);
+
+        $getComponent = function (array $types) use ($components): ?string {
+            $component = $components->first(function ($component) use ($types) {
+                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+
+            return $component['long_name'] ?? null;
+        };
+
+        $getShortComponent = function (array $types) use ($components): ?string {
+            $component = $components->first(function ($component) use ($types) {
+                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+
+            return $component['short_name'] ?? null;
+        };
+
+        return AddressData::from([
+            'latitude' => (float) ($location['lat'] ?? 0),
+            'longitude' => (float) ($location['lng'] ?? 0),
+            'country' => $getComponent(['country']) ?? 'Italia',
+            'city' => $getComponent(['locality']) ?? '',
+            'country_code' => $getShortComponent(['country']) ?? 'IT',
+            'postal_code' => (int) ($getComponent(['postal_code']) ?? 0),
+            'locality' => $getComponent(['sublocality']) ?? '',
+            'county' => $getComponent(['administrative_area_level_2']) ?? '',
+            'street' => $getComponent(['route']) ?? '',
+            'street_number' => $getComponent(['street_number']) ?? '',
+            'district' => $getComponent(['sublocality_level_1']) ?? '',
+            'state' => $getComponent(['administrative_area_level_1']) ?? '',
+        ]);
     }
 }
