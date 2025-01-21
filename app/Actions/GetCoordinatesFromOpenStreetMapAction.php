@@ -8,18 +8,20 @@ use Modules\Geo\Actions\Nominatim\FetchCoordinatesAction;
 use Modules\Geo\Datas\LocationData;
 
 /**
- * Classe per ottenere le coordinate da OpenStreetMap
+ * Classe per ottenere le coordinate da OpenStreetMap.
  */
 class GetCoordinatesFromOpenStreetMapAction
 {
     public function __construct(
-        private readonly FetchCoordinatesAction $fetchCoordinatesAction
-    ) {}
+        private readonly FetchCoordinatesAction $fetchCoordinatesAction,
+    ) {
+    }
 
     /**
-     * Ottiene le coordinate geografiche da un indirizzo usando OpenStreetMap
+     * Ottiene le coordinate geografiche da un indirizzo usando OpenStreetMap.
      *
      * @param string $address Indirizzo da geocodificare
+     *
      * @return LocationData|null Dati della posizione o null se non trovata
      */
     public function execute(string $address): ?LocationData

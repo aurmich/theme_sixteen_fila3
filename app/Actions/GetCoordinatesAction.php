@@ -6,6 +6,7 @@ namespace Modules\Geo\Actions;
 
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
+
 use function Safe\json_decode;
 
 /**
@@ -21,7 +22,7 @@ class GetCoordinatesAction
     public function execute(string $formattedAddress): ?LocationData
     {
         $apiKey = config('services.google.maps.key');
-        if (!$apiKey) {
+        if (! $apiKey) {
             throw new \RuntimeException('Google Maps API key not found');
         }
 
@@ -30,7 +31,7 @@ class GetCoordinatesAction
             'key' => $apiKey,
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             throw new \RuntimeException('Failed to get coordinates from Google Maps API');
         }
 

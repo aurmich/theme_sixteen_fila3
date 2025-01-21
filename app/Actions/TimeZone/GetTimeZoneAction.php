@@ -7,11 +7,8 @@ namespace Modules\Geo\Actions\TimeZone;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\TimeZoneData;
-use RuntimeException;
+
 use function Safe\json_decode;
-use function Safe\date;
-use function Safe\date_sunrise;
-use function Safe\date_sunset;
 
 /**
  * Action per ottenere il fuso orario da coordinate geografiche.
@@ -30,16 +27,13 @@ class GetTimeZoneAction
     }
 
     /**
-     * @param float $latitude
-     * @param float $longitude
-     * @return TimeZoneData
      * @throws GuzzleException
      */
     public function execute(float $latitude, float $longitude): TimeZoneData
     {
         $response = $this->client->get(self::API_URL, [
             'query' => [
-                'location' => $latitude . ',' . $longitude,
+                'location' => $latitude.','.$longitude,
                 'timestamp' => time(),
                 'key' => $this->apiKey,
             ],
@@ -48,8 +42,8 @@ class GetTimeZoneAction
         /** @var array{status: string, timeZoneId: string, timeZoneName: string, rawOffset: int, dstOffset: int, countryCode?: string} $data */
         $data = json_decode($response->getBody()->getContents(), true);
 
-        if ($data['status'] !== 'OK') {
-            throw new RuntimeException('Failed to get timezone: ' . ($data['errorMessage'] ?? $data['status']));
+        if ('OK' !== $data['status']) {
+            throw new \RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
         }
 
         return new TimeZoneData(

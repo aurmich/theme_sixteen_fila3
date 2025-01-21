@@ -38,4 +38,4 @@ interface HasGeolocation
      * Ottiene l'icona per la mappa.
      */
     public function getMapIcon(): ?string;
-} 
+}

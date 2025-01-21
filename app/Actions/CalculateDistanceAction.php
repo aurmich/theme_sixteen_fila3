@@ -14,7 +14,7 @@ use Modules\Geo\Datas\LocationData;
 class CalculateDistanceAction
 {
     public function __construct(
-        private readonly CalculateDistanceMatrixAction $distanceMatrixAction
+        private readonly CalculateDistanceMatrixAction $distanceMatrixAction,
     ) {
     }
 

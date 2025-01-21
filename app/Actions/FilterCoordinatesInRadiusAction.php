@@ -22,7 +22,7 @@ use Modules\Geo\Datas\LocationData;
 class FilterCoordinatesInRadiusAction
 {
     public function __construct(
-        private readonly CalculateDistanceAction $calculateDistanceAction
+        private readonly CalculateDistanceAction $calculateDistanceAction,
     ) {
     }
 
@@ -35,7 +35,7 @@ class FilterCoordinatesInRadiusAction
         float $centerLatitude,
         float $centerLongitude,
         array $coordinates,
-        int $radius
+        int $radius,
     ): array {
         $centerLocation = new LocationData(
             latitude: $centerLatitude,

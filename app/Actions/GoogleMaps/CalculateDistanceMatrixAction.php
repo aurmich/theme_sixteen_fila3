@@ -19,7 +19,7 @@ class CalculateDistanceMatrixAction
     private const API_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
 
     public function __construct(
-        private readonly Client $client
+        private readonly Client $client,
     ) {
     }
 

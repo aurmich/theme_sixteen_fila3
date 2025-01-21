@@ -12,7 +12,7 @@ use Modules\Geo\Models\Place;
 class UpdateCoordinatesAction
 {
     public function __construct(
-        private readonly GetCoordinatesAction $getCoordinates
+        private readonly GetCoordinatesAction $getCoordinates,
     ) {
     }
 

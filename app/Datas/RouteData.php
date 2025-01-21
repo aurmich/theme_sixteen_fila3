@@ -26,7 +26,7 @@ class RouteData extends Data
         public readonly Collection $originalWaypoints,
         public readonly int $totalDistance,
         public readonly int $totalDuration,
-        public readonly array $steps
+        public readonly array $steps,
     ) {
     }
 

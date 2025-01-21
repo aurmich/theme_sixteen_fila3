@@ -12,8 +12,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Modules\Geo\Models\Location;
 use Modules\Geo\Filament\Resources\LocationResource\Pages;
+use Modules\Geo\Models\Location;
 
 /**
  * Resource per la gestione dei luoghi.
