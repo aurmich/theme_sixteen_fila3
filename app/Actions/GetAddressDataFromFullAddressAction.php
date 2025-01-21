@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions;
 
 use Filament\Notifications\Notification;
+use Illuminate\Support\Collection;
 use Modules\Geo\Actions\BingMaps\GetAddressFromBingMapsAction;
 use Modules\Geo\Actions\GoogleMaps\GetAddressFromGoogleMapsAction;
 use Modules\Geo\Actions\Here\GetAddressFromHereMapsAction;
@@ -20,6 +21,8 @@ use Webmozart\Assert\Assert;
  */
 class GetAddressDataFromFullAddressAction
 {
+    public Collection $errors;
+
     /**
      * Ottiene i dati dell'indirizzo da un indirizzo completo.
      *
@@ -31,6 +34,7 @@ class GetAddressDataFromFullAddressAction
      */
     public function execute(string $fullAddress): ?AddressData
     {
+        $this->errors = collect();
         $services = [
             GetAddressFromPhotonAction::class,
             GetAddressFromNominatimAction::class,
@@ -54,6 +58,7 @@ class GetAddressDataFromFullAddressAction
                 }
             } catch (\Exception $e) {
                 // Logga l'errore o gestiscilo in altro modo
+                $this->errors->push($e->getMessage());
             }
         }
         $message = 'Nessun servizio di geocoding ha restituito un risultato valido.';
@@ -65,5 +70,10 @@ class GetAddressDataFromFullAddressAction
             ->persistent();
 
         return null;
+    }
+
+    public function getErrors(): Collection
+    {
+        return $this->errors;
     }
 }
