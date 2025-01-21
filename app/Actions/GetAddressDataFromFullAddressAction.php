@@ -10,6 +10,7 @@ use Modules\Geo\Actions\GoogleMaps\GetAddressFromGoogleMapsAction;
 use Modules\Geo\Actions\Here\GetAddressFromHereMapsAction;
 use Modules\Geo\Actions\Mapbox\GetAddressFromMapboxAction;
 use Modules\Geo\Actions\Nominatim\GetAddressFromNominatimAction;
+use Modules\Geo\Actions\OpenCage\GetAddressFromOpenCageAction;
 use Modules\Geo\Actions\Photon\GetAddressFromPhotonAction;
 use Modules\Geo\Datas\AddressData;
 use Webmozart\Assert\Assert;
