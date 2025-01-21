@@ -5,7 +5,14 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions;
 
 use Filament\Notifications\Notification;
+use Modules\Geo\Actions\BingMaps\GetAddressFromBingMapsAction;
+use Modules\Geo\Actions\GoogleMaps\GetAddressFromGoogleMapsAction;
+use Modules\Geo\Actions\Here\GetAddressFromHereMapsAction;
+use Modules\Geo\Actions\Mapbox\GetAddressFromMapboxAction;
+use Modules\Geo\Actions\Nominatim\GetAddressFromNominatimAction;
+use Modules\Geo\Actions\Photon\GetAddressFromPhotonAction;
 use Modules\Geo\Datas\AddressData;
+use Webmozart\Assert\Assert;
 
 /**
  * Classe per ottenere i dati dell'indirizzo utilizzando diversi servizi di geocoding.
@@ -21,15 +28,15 @@ class GetAddressDataFromFullAddressAction
      *
      * @return AddressData I dati dell'indirizzo trovato
      */
-    public function execute(string $fullAddress): AddressData
+    public function execute(string $fullAddress): ?AddressData
     {
         $services = [
             GetAddressFromPhotonAction::class,
             GetAddressFromNominatimAction::class,
             GetAddressFromBingMapsAction::class,
             GetAddressFromGoogleMapsAction::class,
-            // GetAddressFromHereMapsAction::class,
-            // GetAddressFromMapboxAction::class,
+            GetAddressFromHereMapsAction::class,
+            GetAddressFromMapboxAction::class,
             // GetAddressFromMapTilerAction::class,
             GetAddressFromOpenCageAction::class,
             // GetAddressFromOpenStreetMapAction::class,
@@ -38,6 +45,7 @@ class GetAddressDataFromFullAddressAction
         ];
 
         foreach ($services as $service) {
+            Assert::classExists($service);
             try {
                 $result = app($service)->execute($fullAddress);
                 if ($result instanceof AddressData) {

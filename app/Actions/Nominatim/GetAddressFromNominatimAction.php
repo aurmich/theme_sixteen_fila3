@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Geo\Actions;
+namespace Modules\Geo\Actions\Nominatim;
 
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
