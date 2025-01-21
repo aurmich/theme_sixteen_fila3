@@ -38,7 +38,7 @@ class GetAddressFromNominatimAction
 
         /** @var array<int, array{lat?: string, lon?: string, address?: array{country?: string, city?: string, town?: string, village?: string, country_code?: string, postcode?: string, suburb?: string, county?: string, road?: string, house_number?: string, state?: string}}> $data */
         $data = $response->json();
-        dddx($data);
+
         if (empty($data[0])) {
             return null;
         }
