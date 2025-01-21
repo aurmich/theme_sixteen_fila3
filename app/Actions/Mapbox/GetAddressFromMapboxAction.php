@@ -52,10 +52,10 @@ class GetAddressFromMapboxAction
         return AddressData::from([
             'latitude' => (float) ($geometry['coordinates'][1] ?? 0),
             'longitude' => (float) ($geometry['coordinates'][0] ?? 0),
-            'country' => $context->firstWhere('short_code', 'country')?['text'] ?? 'Italia',
-            'city' => $context->firstWhere('short_code', 'place')?['text'] ?? '',
-            'postal_code' => (int) ($context->firstWhere('short_code', 'postcode')?['text'] ?? 0),
-            'street' => $context->firstWhere('short_code', 'address')?['text'] ?? '',
+            'country' => $context->firstWhere('short_code', 'country')['text'] ?? 'Italia',
+            'city' => $context->firstWhere('short_code', 'place')['text'] ?? '',
+            'postal_code' => (int) ($context->firstWhere('short_code', 'postcode')['text'] ?? 0),
+            'street' => $context->firstWhere('short_code', 'address')['text'] ?? '',
             'street_number' => '',
         ]);
     }
