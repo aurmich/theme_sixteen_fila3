@@ -10,8 +10,8 @@ use Modules\Geo\Datas\AddressData;
 
 /**
  * Classe che recupera i dati completi di un indirizzo utilizzando diversi servizi di geocoding
- * Prova ogni servizio in sequenza fino a quando non trova un risultato valido
- * 
+ * Prova ogni servizio in sequenza fino a quando non trova un risultato valido.
+ *
  * I servizi supportati sono:
  * - Google Maps
  * - Bing Maps
@@ -23,7 +23,7 @@ use Modules\Geo\Datas\AddressData;
 class GetAddressDataFromFullAddressAction
 {
     private Collection $errors;
-    
+
     private array $services = [
         'Google Maps' => GetAddressFromGoogleMapsAction::class,
         'Bing Maps' => GetAddressFromBingMapsAction::class,
@@ -40,9 +40,10 @@ class GetAddressDataFromFullAddressAction
     }
 
     /**
-     * Esegue la ricerca dell'indirizzo completo su multipli servizi di geocoding
-     * 
+     * Esegue la ricerca dell'indirizzo completo su multipli servizi di geocoding.
+     *
      * @param string $address L'indirizzo da cercare
+     *
      * @return AddressData|null I dati completi dell'indirizzo trovato o null se nessun servizio ha trovato risultati
      */
     public function execute(string $address): ?AddressData
@@ -50,16 +51,16 @@ class GetAddressDataFromFullAddressAction
         foreach ($this->services as $serviceName => $serviceClass) {
             try {
                 $addressData = app($serviceClass)->execute($address);
-                
+
                 if ($addressData instanceof AddressData) {
                     return $addressData;
                 }
             } catch (\Exception $e) {
-                $this->errors->push($serviceName . ': ' . $e->getMessage());
+                $this->errors->push($serviceName.': '.$e->getMessage());
             }
         }
 
-        \Log::warning('Geocoding failed for address: ' . $address, [
+        \Log::warning('Geocoding failed for address: '.$address, [
             'errors' => $this->errors->toArray(),
         ]);
 

@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
 /**
- * Classe per ottenere i dati completi dell'indirizzo dal servizio Nominatim di OpenStreetMap
- * 
+ * Classe per ottenere i dati completi dell'indirizzo dal servizio Nominatim di OpenStreetMap.
+ *
  * Nominatim è il servizio di geocoding ufficiale di OpenStreetMap.
  * Vantaggi:
  * - Gratuito e senza limiti di utilizzo
  * - Dati molto dettagliati e aggiornati frequentemente
  * - Supporto per indirizzi in tutto il mondo
- * 
+ *
  * Limitazioni:
  * - Max 1 richiesta al secondo
  * - Necessario un User-Agent personalizzato
@@ -26,23 +26,24 @@ class GetAddressFromNominatimAction
     private const BASE_URL = 'https://nominatim.openstreetmap.org';
 
     /**
-     * Esegue la ricerca dell'indirizzo completo su Nominatim
-     * 
+     * Esegue la ricerca dell'indirizzo completo su Nominatim.
+     *
      * @param string $address L'indirizzo da cercare
+     *
      * @return AddressData|null I dati completi dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {
         $response = Http::withHeaders([
             'User-Agent' => 'TechPlanner/1.0',
-        ])->get(self::BASE_URL . '/search', [
+        ])->get(self::BASE_URL.'/search', [
             'q' => $address,
             'format' => 'json',
             'limit' => 1,
             'addressdetails' => 1,
         ]);
 
-        if (!$response->successful() || empty($response->json())) {
+        if (! $response->successful() || empty($response->json())) {
             return null;
         }
 
@@ -61,7 +62,7 @@ class GetAddressFromNominatimAction
             'street' => $address['road'] ?? '',
             'street_number' => $address['house_number'] ?? '',
             'district' => $address['suburb'] ?? '',
-            'state' => $address['state'] ?? ''
+            'state' => $address['state'] ?? '',
         ]);
     }
 }

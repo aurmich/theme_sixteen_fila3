@@ -9,23 +9,25 @@ use Modules\Geo\Datas\AddressData;
 
 /**
  * Classe per ottenere i dati dell'indirizzo dal servizio OpenCage
- * OpenCage è un servizio di geocoding che aggrega dati da diverse fonti
+ * OpenCage è un servizio di geocoding che aggrega dati da diverse fonti.
  */
 class GetAddressFromOpenCageAction
 {
     private const BASE_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
     /**
-     * Esegue la ricerca dell'indirizzo su OpenCage
-     * 
+     * Esegue la ricerca dell'indirizzo su OpenCage.
+     *
      * @param string $address L'indirizzo da cercare
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     *
      * @throws \Exception Se la chiave API non è configurata
+     *
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.opencage.api_key');
-        
+
         if (empty($apiKey)) {
             throw new \Exception('OpenCage API key not configured');
         }
@@ -35,7 +37,7 @@ class GetAddressFromOpenCageAction
             'key' => $apiKey,
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             return null;
         }
 
@@ -59,7 +61,7 @@ class GetAddressFromOpenCageAction
             'street' => $components['road'] ?? '',
             'street_number' => $components['house_number'] ?? '',
             'district' => $components['suburb'] ?? '',
-            'state' => $components['state'] ?? ''
+            'state' => $components['state'] ?? '',
         ]);
     }
 }
