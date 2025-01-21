@@ -56,7 +56,7 @@ class GetGeocodingDataAction
      */
     private function validateInput(string $address): void
     {
-        $apiKey = config('geo.google_maps.api_key');
+        $apiKey = config('services.google_maps.api_key');
         Assert::notEmpty($apiKey, 'Chiave API Google Maps non configurata');
         Assert::notEmpty($address, 'Indirizzo non può essere vuoto');
         Assert::maxLength($address, 1000, 'Indirizzo troppo lungo');
