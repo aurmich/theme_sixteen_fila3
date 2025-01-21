@@ -11,7 +11,7 @@ class LocationDTO
         public readonly float $longitude,
         public readonly ?string $address = null,
         public readonly ?string $city = null,
-        public readonly ?string $country = null
+        public readonly ?string $country = null,
     ) {
     }
 
