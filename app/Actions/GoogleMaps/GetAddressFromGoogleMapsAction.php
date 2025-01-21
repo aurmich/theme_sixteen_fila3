@@ -43,10 +43,6 @@ class GetAddressFromGoogleMapsAction
 
         $data = $response->json();
 
-        dddx([
-            'data' => $data,
-        ]);
-
         if (empty($data['results'][0])) {
             return null;
         }
