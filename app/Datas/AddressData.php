@@ -19,14 +19,14 @@ class AddressData extends Data
     "name" => "Biblioteca di Marghera"
     //"type" => "house"
     */
-    public string $country="Italia";
-    public string $city;// => "Marghera"
-    public string $country_code = "IT";
-    public int $postal_code;//" => "30175"
-    public string $locality;//" => "Catene"
-    public string $county;//" => "Venezia"
-    public string $street;//" => "Piazza del Mercato"
-    public string $street_number;//" => "40"
-    public string $district;//" => "Marghera"
-    public string $state;//" => "Veneto"
+    public string $country = 'Italia';
+    public string $city; // => "Marghera"
+    public string $country_code = 'IT';
+    public int $postal_code; // " => "30175"
+    public string $locality; // " => "Catene"
+    public string $county; // " => "Venezia"
+    public string $street; // " => "Piazza del Mercato"
+    public string $street_number; // " => "40"
+    public string $district; // " => "Marghera"
+    public string $state; // " => "Veneto"
 }

@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
 /**
- * Classe per ottenere i dati completi dell'indirizzo dal servizio Photon
- * 
+ * Classe per ottenere i dati completi dell'indirizzo dal servizio Photon.
+ *
  * Photon è un servizio di geocoding basato su OpenStreetMap, ottimizzato per prestazioni.
  * Vantaggi:
  * - Completamente gratuito
  * - Molto veloce grazie all'indicizzazione Elasticsearch
  * - Supporto per ricerca con autocompletamento
  * - Non richiede API key
- * 
+ *
  * Limitazioni:
  * - Dati limitati rispetto a Nominatim
  * - Aggiornamenti meno frequenti
@@ -27,19 +27,20 @@ class GetAddressFromPhotonAction
     private const BASE_URL = 'https://photon.komoot.io';
 
     /**
-     * Esegue la ricerca dell'indirizzo completo su Photon
-     * 
+     * Esegue la ricerca dell'indirizzo completo su Photon.
+     *
      * @param string $address L'indirizzo da cercare
+     *
      * @return AddressData|null I dati completi dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {
-        $response = Http::get(self::BASE_URL . '/api', [
+        $response = Http::get(self::BASE_URL.'/api', [
             'q' => $address,
             'limit' => 1,
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             return null;
         }
 
@@ -64,7 +65,7 @@ class GetAddressFromPhotonAction
             'street' => $properties['street'] ?? '',
             'street_number' => $properties['housenumber'] ?? '',
             'district' => $properties['district'] ?? '',
-            'state' => $properties['state'] ?? ''
+            'state' => $properties['state'] ?? '',
         ]);
     }
 }

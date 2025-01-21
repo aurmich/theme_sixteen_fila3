@@ -8,23 +8,25 @@ use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
 /**
- * Classe per ottenere i dati dell'indirizzo dal servizio Bing Maps
+ * Classe per ottenere i dati dell'indirizzo dal servizio Bing Maps.
  */
 class GetAddressFromBingMapsAction
 {
     private const BASE_URL = 'http://dev.virtualearth.net/REST/v1/Locations';
 
     /**
-     * Esegue la ricerca dell'indirizzo su Bing Maps
-     * 
+     * Esegue la ricerca dell'indirizzo su Bing Maps.
+     *
      * @param string $address L'indirizzo da cercare
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     *
      * @throws \Exception Se la chiave API non è configurata
+     *
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.bing.maps_api_key');
-        
+
         if (empty($apiKey)) {
             throw new \Exception('Bing Maps API key not configured');
         }
@@ -35,7 +37,7 @@ class GetAddressFromBingMapsAction
             'output' => 'json',
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             return null;
         }
 
@@ -60,7 +62,7 @@ class GetAddressFromBingMapsAction
             'street' => $address['addressLine'] ?? '',
             'street_number' => '',  // Bing non fornisce il numero civico separatamente
             'district' => $address['neighborhood'] ?? '',
-            'state' => $address['adminDistrict'] ?? ''
+            'state' => $address['adminDistrict'] ?? '',
         ]);
     }
 }
