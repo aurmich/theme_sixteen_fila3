@@ -4,26 +4,41 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Modules\Geo\DataTransferObjects\LocationDTO;
+use Modules\Geo\Exceptions\InvalidLocationException;
+
 class ClusterLocationsAction
 {
-    public function execute(array $points, float $maxDistance = 1.0): array
+    public function __construct(
+        private CalculateDistanceAction $distanceCalculator
+    ) {
+    }
+
+    /**
+     * @param array<LocationDTO> $locations
+     * @return array<array{center: LocationDTO, points: array<LocationDTO>}>
+     */
+    public function execute(array $locations, float $maxDistance = 1.0): array
     {
         $clusters = [];
-        $distanceCalculator = app(CalculateDistanceAction::class);
 
-        foreach ($points as $point) {
+        foreach ($locations as $location) {
+            if (! $location instanceof LocationDTO) {
+                throw new InvalidLocationException('Invalid location data');
+            }
+
             $assigned = false;
 
             foreach ($clusters as &$cluster) {
-                $distance = $distanceCalculator->execute(
-                    $cluster['center']['latitude'],
-                    $cluster['center']['longitude'],
-                    $point['latitude'],
-                    $point['longitude']
+                $distance = $this->distanceCalculator->execute(
+                    $cluster['center']->latitude,
+                    $cluster['center']->longitude,
+                    $location->latitude,
+                    $location->longitude
                 );
 
                 if ($distance <= $maxDistance) {
-                    $cluster['points'][] = $point;
+                    $cluster['points'][] = $location;
                     $this->updateClusterCenter($cluster);
                     $assigned = true;
                     break;
@@ -32,8 +47,8 @@ class ClusterLocationsAction
 
             if (! $assigned) {
                 $clusters[] = [
-                    'center' => $point,
-                    'points' => [$point],
+                    'center' => $location,
+                    'points' => [$location],
                 ];
             }
         }
@@ -41,15 +56,26 @@ class ClusterLocationsAction
         return $clusters;
     }
 
+    /**
+     * @param array{center: LocationDTO, points: array<LocationDTO>} $cluster
+     */
     private function updateClusterCenter(array &$cluster): void
     {
-        $latSum = array_sum(array_column($cluster['points'], 'latitude'));
-        $lonSum = array_sum(array_column($cluster['points'], 'longitude'));
+        $latSum = array_sum(array_map(
+            fn (LocationDTO $point) => $point->latitude,
+            $cluster['points']
+        ));
+        
+        $lonSum = array_sum(array_map(
+            fn (LocationDTO $point) => $point->longitude,
+            $cluster['points']
+        ));
+        
         $count = count($cluster['points']);
 
-        $cluster['center'] = [
-            'latitude' => $latSum / $count,
-            'longitude' => $lonSum / $count,
-        ];
+        $cluster['center'] = new LocationDTO(
+            latitude: $latSum / $count,
+            longitude: $lonSum / $count
+        );
     }
 }
