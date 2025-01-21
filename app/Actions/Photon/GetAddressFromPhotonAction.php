@@ -42,7 +42,7 @@ class GetAddressFromPhotonAction
         $result = $data['features'][0];
         $geometry = $result['geometry'] ?? [];
         $properties = $result['properties'] ?? [];
-
+        dddx($properties);
         $res = AddressData::from([
             'latitude' => (float) ($geometry['coordinates'][1] ?? 0),
             'longitude' => (float) ($geometry['coordinates'][0] ?? 0),
