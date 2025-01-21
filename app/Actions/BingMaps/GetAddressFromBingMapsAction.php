@@ -36,7 +36,7 @@ class GetAddressFromBingMapsAction
             'key' => $apiKey,
             'maxResults' => 1,
         ]);
-
+        dddx($response);
         if (! $response->successful()) {
             return null;
         }
