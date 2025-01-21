@@ -43,7 +43,7 @@ class GetAddressFromPhotonAction
         $geometry = $result['geometry'] ?? [];
         $properties = $result['properties'] ?? [];
 
-        return AddressData::from([
+        $res = AddressData::from([
             'latitude' => (float) ($geometry['coordinates'][1] ?? 0),
             'longitude' => (float) ($geometry['coordinates'][0] ?? 0),
             'country' => $properties['country'] ?? 'Italia',
@@ -52,5 +52,8 @@ class GetAddressFromPhotonAction
             'street' => $properties['street'] ?? '',
             'street_number' => $properties['housenumber'] ?? '',
         ]);
+        dddx($res);
+
+        return $res;
     }
 }
