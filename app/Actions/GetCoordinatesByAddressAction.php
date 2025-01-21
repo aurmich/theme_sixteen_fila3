@@ -59,17 +59,17 @@ class GetCoordinatesByAddressAction
         }
 
         /** @var array{
-            results?: array<array{
-                geometry: array{
-                    location: array{
-                        lat: float,
-                        lng: float
-                    }
-                }
-            }>
-        }|null $data */
+         * results?: array<array{
+         * geometry: array{
+         * location: array{
+         * lat: float,
+         * lng: float
+         * }
+         * }
+         * }>
+         * }|null $data */
         $data = $response->json();
-        
+
         if (empty($data['results'])) {
             return null;
         }
@@ -96,16 +96,16 @@ class GetCoordinatesByAddressAction
         }
 
         /** @var array{
-            resourceSets?: array<array{
-                resources: array<array{
-                    point: array{
-                        coordinates: array{float, float}
-                    }
-                }>
-            }>
-        }|null $data */
+         * resourceSets?: array<array{
+         * resources: array<array{
+         * point: array{
+         * coordinates: array{float, float}
+         * }
+         * }>
+         * }>
+         * }|null $data */
         $data = $response->json();
-        
+
         if (empty($data['resourceSets'][0]['resources'])) {
             return null;
         }
@@ -132,15 +132,15 @@ class GetCoordinatesByAddressAction
         }
 
         /** @var array{
-            results?: array<array{
-                geometry: array{
-                    lat: float,
-                    lng: float
-                }
-            }>
-        }|null $data */
+         * results?: array<array{
+         * geometry: array{
+         * lat: float,
+         * lng: float
+         * }
+         * }>
+         * }|null $data */
         $data = $response->json();
-        
+
         if (empty($data['results'])) {
             return null;
         }
@@ -165,11 +165,11 @@ class GetCoordinatesByAddressAction
         }
 
         /** @var array<array{
-            lat: string,
-            lon: string
-        }>|null $data */
+         * lat: string,
+         * lon: string
+         * }>|null $data */
         $data = $response->json();
-        
+
         if (empty($data)) {
             return null;
         }
@@ -194,13 +194,13 @@ class GetCoordinatesByAddressAction
         }
 
         /** @var array{
-            results?: array<array{
-                latitude: float,
-                longitude: float
-            }>
-        }|null $data */
+         * results?: array<array{
+         * latitude: float,
+         * longitude: float
+         * }>
+         * }|null $data */
         $data = $response->json();
-        
+
         if (empty($data['results'])) {
             return null;
         }

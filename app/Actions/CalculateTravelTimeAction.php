@@ -22,8 +22,8 @@ class CalculateTravelTimeAction
      */
     public function execute(object $origin, object $destination): string
     {
-        if (!isset($origin->latitude) || !isset($origin->longitude)
-            || !isset($destination->latitude) || !isset($destination->longitude)) {
+        if (! isset($origin->latitude) || ! isset($origin->longitude)
+            || ! isset($destination->latitude) || ! isset($destination->longitude)) {
             return 'N/D';
         }
 
@@ -39,15 +39,15 @@ class CalculateTravelTimeAction
             "{$destination->latitude},{$destination->longitude}"
         );
 
-        if (! $response || 
-            empty($response['rows']) ||
-            empty($response['rows'][0]['elements']) ||
-            !isset($response['rows'][0]['elements'][0]['duration']['value'])) {
+        if (! $response
+            || empty($response['rows'])
+            || empty($response['rows'][0]['elements'])
+            || ! isset($response['rows'][0]['elements'][0]['duration']['value'])) {
             return 'N/D';
         }
 
         $durationSeconds = (int) $response['rows'][0]['elements'][0]['duration']['value'];
-        
+
         return $this->formatDuration($durationSeconds);
     }
 

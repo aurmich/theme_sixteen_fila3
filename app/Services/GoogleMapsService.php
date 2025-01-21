@@ -54,18 +54,19 @@ class GoogleMapsService
             }
 
             /** @var array{
-                destination_addresses: array<string>,
-                origin_addresses: array<string>,
-                rows: array<array{
-                    elements: array<array{
-                        distance?: array{text: string, value: int},
-                        duration?: array{text: string, value: int},
-                        status: string
-                    }>
-                }>,
-                status: string
-            }|null $data */
+             * destination_addresses: array<string>,
+             * origin_addresses: array<string>,
+             * rows: array<array{
+             * elements: array<array{
+             * distance?: array{text: string, value: int},
+             * duration?: array{text: string, value: int},
+             * status: string
+             * }>
+             * }>,
+             * status: string
+             * }|null $data */
             $data = $response->json();
+
             return $data;
         });
 
@@ -94,7 +95,7 @@ class GoogleMapsService
 
             /** @var array{results: array<array{geometry: array{location: array{lat: float, lng: float}}}>} $data */
             $data = $response->json();
-            
+
             if (empty($data['results'][0]['geometry']['location'])) {
                 return null;
             }
