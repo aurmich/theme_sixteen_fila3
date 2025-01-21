@@ -10,12 +10,13 @@ use Modules\Geo\Exceptions\InvalidLocationException;
 class ClusterLocationsAction
 {
     public function __construct(
-        private CalculateDistanceAction $distanceCalculator
+        private CalculateDistanceAction $distanceCalculator,
     ) {
     }
 
     /**
      * @param array<LocationDTO> $locations
+     *
      * @return array<array{center: LocationDTO, points: array<LocationDTO>}>
      */
     public function execute(array $locations, float $maxDistance = 1.0): array
@@ -65,12 +66,12 @@ class ClusterLocationsAction
             fn (LocationDTO $point) => $point->latitude,
             $cluster['points']
         ));
-        
+
         $lonSum = array_sum(array_map(
             fn (LocationDTO $point) => $point->longitude,
             $cluster['points']
         ));
-        
+
         $count = count($cluster['points']);
 
         $cluster['center'] = new LocationDTO(
