@@ -5,28 +5,27 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Collection;
 use Modules\Geo\Datas\AddressData;
 
 /**
- * Classe per ottenere i dati dell'indirizzo dal servizio Google Maps.
+ * Classe per ottenere i dati dell'indirizzo dal servizio Google Maps
  */
 class GetAddressFromGoogleMapsAction
 {
     private const BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
     /**
-     * Esegue la ricerca dell'indirizzo su Google Maps.
+     * Esegue la ricerca dell'indirizzo su Google Maps
      *
      * @param string $address L'indirizzo da cercare
-     *
-     * @throws \Exception Se la chiave API non è configurata
-     *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     * @throws \Exception Se la chiave API non è configurata
      */
     public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.google.maps_api_key');
-
+        
         if (empty($apiKey)) {
             throw new \Exception('Google Maps API key not configured');
         }
@@ -36,44 +35,53 @@ class GetAddressFromGoogleMapsAction
             'key' => $apiKey,
         ]);
 
-        if (! $response->successful()) {
+        if (!$response->successful()) {
             return null;
         }
 
         $data = $response->json();
-        if (empty($data['results'])) {
+        
+        if (empty($data['results'][0])) {
             return null;
         }
 
         $result = $data['results'][0];
-        $location = $result['geometry']['location'];
-        $components = collect($result['address_components']);
+        $location = $result['geometry']['location'] ?? null;
+        
+        if (empty($location)) {
+            return null;
+        }
 
-        $getComponent = function (string $type) use ($components) {
-            return $components->first(function ($component) use ($type) {
-                return in_array($type, $component['types']);
-            })['long_name'] ?? '';
+        /** @var Collection<int, array{long_name: string, short_name: string, types: array<string>}> */
+        $components = collect($result['address_components'] ?? []);
+        
+        $getComponent = function(array $types) use ($components): ?string {
+            $component = $components->first(function($component) use ($types) {
+                return !empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+            return $component['long_name'] ?? null;
         };
 
-        $getShortComponent = function (string $type) use ($components) {
-            return $components->first(function ($component) use ($type) {
-                return in_array($type, $component['types']);
-            })['short_name'] ?? '';
+        $getShortComponent = function(array $types) use ($components): ?string {
+            $component = $components->first(function($component) use ($types) {
+                return !empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+            return $component['short_name'] ?? null;
         };
 
         return AddressData::from([
-            'latitude' => (float) $location['lat'],
-            'longitude' => (float) $location['lng'],
-            'country' => $getComponent('country') ?: 'Italia',
-            'city' => $getComponent('locality') ?: $getComponent('administrative_area_level_3'),
-            'country_code' => $getShortComponent('country') ?: 'IT',
-            'postal_code' => (int) ($getComponent('postal_code') ?: 0),
-            'locality' => $getComponent('sublocality') ?: $getComponent('neighborhood'),
-            'county' => $getComponent('administrative_area_level_2'),
-            'street' => $getComponent('route'),
-            'street_number' => $getComponent('street_number'),
-            'district' => $getComponent('sublocality_level_1'),
-            'state' => $getComponent('administrative_area_level_1'),
+            'latitude' => (float) ($location['lat'] ?? 0),
+            'longitude' => (float) ($location['lng'] ?? 0),
+            'country' => $getComponent(['country']) ?? 'Italia',
+            'city' => $getComponent(['locality']) ?? '',
+            'country_code' => $getShortComponent(['country']) ?? 'IT',
+            'postal_code' => (int) ($getComponent(['postal_code']) ?? 0),
+            'locality' => $getComponent(['sublocality']) ?? '',
+            'county' => $getComponent(['administrative_area_level_2']) ?? '',
+            'street' => $getComponent(['route']) ?? '',
+            'street_number' => $getComponent(['street_number']) ?? '',
+            'district' => $getComponent(['sublocality_level_1']) ?? '',
+            'state' => $getComponent(['administrative_area_level_1']) ?? ''
         ]);
     }
 }
