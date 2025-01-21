@@ -41,6 +41,7 @@ class GetAddressFromBingMapsAction
             return null;
         }
 
+        /** @var array{resourceSets?: array<int, array{resources?: array<int, array{point?: array{coordinates?: array<int, float>}, address?: array{countryRegion?: string, locality?: string, countryRegionIso2?: string, postalCode?: string, neighborhood?: string, adminDistrict2?: string, addressLine?: string, adminDistrict?: string}}>}>} $data */
         $data = $response->json();
 
         if (empty($data['resourceSets'][0]['resources'][0])) {

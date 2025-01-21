@@ -4,79 +4,103 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Illuminate\Support\Collection;
+use Modules\Geo\Datas\LocationData;
 use Modules\Geo\DataTransferObjects\LocationDTO;
-use Modules\Geo\Exceptions\InvalidLocationException;
 
+/**
+ * Classe per raggruppare le posizioni in cluster.
+ */
 class ClusterLocationsAction
 {
-    public function __construct(
-        private CalculateDistanceAction $distanceCalculator,
-    ) {
-    }
-
     /**
-     * @param array<LocationDTO> $locations
+     * Raggruppa le posizioni in cluster in base alla distanza.
      *
-     * @return array<array{center: LocationDTO, points: array<LocationDTO>}>
+     * @param Collection<int, LocationData|LocationDTO> $locations   Lista di posizioni da raggruppare
+     * @param float                                     $maxDistance Distanza massima in metri tra i punti di un cluster
+     *
+     * @return Collection<int, Collection<int, LocationData>> Collezione di cluster di posizioni
      */
-    public function execute(array $locations, float $maxDistance = 1.0): array
+    public function execute(Collection $locations, float $maxDistance): Collection
     {
-        $clusters = [];
+        if ($locations->isEmpty()) {
+            return collect();
+        }
 
-        foreach ($locations as $location) {
-            if (! $location instanceof LocationDTO) {
-                throw new InvalidLocationException('Invalid location data');
-            }
+        /** @var Collection<int, Collection<int, LocationData>> $clusters */
+        $clusters = collect([collect([$this->toLocationData($locations->first())])]);
 
-            $assigned = false;
+        $locations->skip(1)->each(function ($location) use ($clusters, $maxDistance): void {
+            $locationData = $this->toLocationData($location);
+            $added = false;
 
-            foreach ($clusters as &$cluster) {
-                $distance = $this->distanceCalculator->execute(
-                    $cluster['center']->latitude,
-                    $cluster['center']->longitude,
-                    $location->latitude,
-                    $location->longitude
-                );
+            foreach ($clusters as $cluster) {
+                $center = $this->calculateClusterCenter($cluster);
+                $distance = $this->calculateDistance($center, $locationData);
 
                 if ($distance <= $maxDistance) {
-                    $cluster['points'][] = $location;
-                    $this->updateClusterCenter($cluster);
-                    $assigned = true;
+                    $cluster->push($locationData);
+                    $added = true;
                     break;
                 }
             }
 
-            if (! $assigned) {
-                $clusters[] = [
-                    'center' => $location,
-                    'points' => [$location],
-                ];
+            if (! $added) {
+                /** @var Collection<int, LocationData> $newCluster */
+                $newCluster = collect([$locationData]);
+                $clusters->push($newCluster);
             }
-        }
+        });
 
         return $clusters;
     }
 
     /**
-     * @param array{center: LocationDTO, points: array<LocationDTO>} $cluster
+     * @param Collection<int, LocationData> $cluster
      */
-    private function updateClusterCenter(array &$cluster): void
+    private function calculateClusterCenter(Collection $cluster): LocationData
     {
-        $latSum = array_sum(array_map(
-            fn (LocationDTO $point) => $point->latitude,
-            $cluster['points']
-        ));
+        /** @var float $avgLat */
+        $avgLat = $cluster->avg(fn (LocationData $location): float => $location->latitude);
+        /** @var float $avgLng */
+        $avgLng = $cluster->avg(fn (LocationData $location): float => $location->longitude);
 
-        $lonSum = array_sum(array_map(
-            fn (LocationDTO $point) => $point->longitude,
-            $cluster['points']
-        ));
-
-        $count = count($cluster['points']);
-
-        $cluster['center'] = new LocationDTO(
-            latitude: $latSum / $count,
-            longitude: $lonSum / $count
+        return new LocationData(
+            latitude: $avgLat,
+            longitude: $avgLng
         );
+    }
+
+    private function calculateDistance(LocationData $location1, LocationData $location2): float
+    {
+        $earthRadius = 6371000; // raggio della Terra in metri
+
+        $lat1 = deg2rad($location1->latitude);
+        $lat2 = deg2rad($location2->latitude);
+        $lng1 = deg2rad($location1->longitude);
+        $lng2 = deg2rad($location2->longitude);
+
+        $latDelta = $lat2 - $lat1;
+        $lngDelta = $lng2 - $lng1;
+
+        $a = sin($latDelta / 2) * sin($latDelta / 2) +
+            cos($lat1) * cos($lat2) *
+            sin($lngDelta / 2) * sin($lngDelta / 2);
+
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+
+        return $earthRadius * $c;
+    }
+
+    private function toLocationData(LocationData|LocationDTO $location): LocationData
+    {
+        if ($location instanceof LocationDTO) {
+            return new LocationData(
+                latitude: $location->latitude,
+                longitude: $location->longitude
+            );
+        }
+
+        return $location;
     }
 }

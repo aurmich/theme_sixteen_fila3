@@ -11,11 +11,11 @@ use RuntimeException;
 use function Safe\json_decode;
 
 /**
- * Action per ottenere l'indirizzo da coordinate geografiche usando Nominatim.
+ * Action per ottenere le coordinate geografiche da un indirizzo usando Nominatim.
  */
-class ReverseGeocodeAction
+class FetchCoordinatesAction
 {
-    private const API_URL = 'https://nominatim.openstreetmap.org/reverse';
+    private const API_URL = 'https://nominatim.openstreetmap.org/search';
 
     private Client $client;
 
@@ -25,34 +25,39 @@ class ReverseGeocodeAction
     }
 
     /**
-     * Ottiene l'indirizzo da coordinate geografiche.
+     * Ottiene le coordinate geografiche da un indirizzo.
      *
-     * @param float $latitude Latitudine
-     * @param float $longitude Longitudine
+     * @param string $address Indirizzo da geocodificare
      * @return LocationData
      * @throws GuzzleException
      * @throws RuntimeException
      */
-    public function execute(float $latitude, float $longitude): LocationData
+    public function execute(string $address): LocationData
     {
         $response = $this->client->get(self::API_URL, [
             'query' => [
-                'lat' => $latitude,
-                'lon' => $longitude,
+                'q' => $address,
                 'format' => 'json',
+                'limit' => 1,
             ],
             'headers' => [
                 'User-Agent' => 'TechPlanner/1.0',
             ],
         ]);
 
-        /** @var array{lat: string, lon: string, display_name: string} $data */
+        /** @var array<int, array{lat: string, lon: string, display_name: string}> $data */
         $data = json_decode($response->getBody()->getContents(), true);
 
+        if (empty($data)) {
+            throw new RuntimeException('No results found for address: ' . $address);
+        }
+
+        $result = $data[0];
+
         return new LocationData(
-            latitude: $latitude,
-            longitude: $longitude,
-            address: $data['display_name']
+            latitude: (float) $result['lat'],
+            longitude: (float) $result['lon'],
+            address: $result['display_name']
         );
     }
 }

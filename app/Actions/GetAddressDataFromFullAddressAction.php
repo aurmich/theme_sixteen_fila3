@@ -4,55 +4,57 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Filament\Notifications\Notification;
-use Illuminate\Support\Collection;
-use Modules\Geo\Datas\AddressData;
+use Modules\Geo\Actions\GoogleMaps\GetGeocodingDataAction;
+use Modules\Geo\Datas\GeocodingData;
 
 /**
+<<<<<<< HEAD
  * Classe per ottenere i dati dell'indirizzo da diversi servizi di geocoding.
+=======
+ * Classe per ottenere i dati dell'indirizzo utilizzando diversi servizi di geocoding.
+>>>>>>> 023759a (up)
  */
 class GetAddressDataFromFullAddressAction
 {
-    /** @var Collection<int, string> */
-    private Collection $errors;
-
-    /** @var array<class-string<object>> */
-    private array $services = [
-        GetAddressFromGoogleMapsAction::class,
-        GetAddressFromBingMapsAction::class,
-        GetAddressFromOpenCageAction::class,
-        GetAddressFromNominatimAction::class,
-        GetAddressFromPhotonAction::class,
-        GetAddressFromLocationIQAction::class,
-    ];
-
-    public function __construct()
-    {
-        $this->errors = collect();
+    public function __construct(
+        private readonly GetGeocodingDataAction $geocodingAction,
+        // private GetAddressFromGoogleMapsAction $googleMapsAction,
+        // private GetAddressFromBingMapsAction $bingMapsAction,
+        // private GetAddressFromLocationIQAction $locationIQAction,
+        // private GetAddressFromNominatimAction $nominatimAction,
+        // private GetAddressFromOpenCageAction $openCageAction,
+        // private GetAddressFromPhotonAction $photonAction,
+    ) {
+        // $this->errors = collect([]);
     }
 
     /**
+<<<<<<< HEAD
      * Esegue la ricerca dell'indirizzo su tutti i servizi disponibili.
      *
      * @param string $address L'indirizzo da cercare
      *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+=======
+     * Ottiene i dati dell'indirizzo da un indirizzo completo.
+     *
+     * @param string $fullAddress L'indirizzo da cercare
+     *
+     * @throws \RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
+     *
+     * @return GeocodingData I dati dell'indirizzo trovato
+>>>>>>> 023759a (up)
      */
-    public function execute(string $address): ?AddressData
+    public function execute(string $fullAddress): GeocodingData
     {
-        foreach ($this->services as $service) {
-            try {
-                /** @var GetAddressFromGoogleMapsAction|GetAddressFromBingMapsAction|GetAddressFromOpenCageAction|GetAddressFromNominatimAction|GetAddressFromPhotonAction|GetAddressFromLocationIQAction $instance */
-                $instance = app($service);
-                $result = $instance->execute($address);
+        try {
+            $result = $this->geocodingAction->execute($fullAddress);
 
-                if ($result) {
-                    return $result;
-                }
-            } catch (\Exception $e) {
-                $this->errors->push("Error with {$service}: {$e->getMessage()}");
-            }
+            return $result;
+        } catch (\Exception $e) {
+            throw new \RuntimeException('Errore durante il recupero dei dati dell\'indirizzo: '.$e->getMessage());
         }
+<<<<<<< HEAD
 
         if ($this->errors->isNotEmpty()) {
             Notification::make()
@@ -73,5 +75,7 @@ class GetAddressDataFromFullAddressAction
     public function getErrors(): Collection
     {
         return $this->errors;
+=======
+>>>>>>> 023759a (up)
     }
 }

@@ -4,61 +4,39 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Modules\Geo\Services\GoogleMapsService;
-use Spatie\QueueableAction\QueueableAction;
+use Illuminate\Support\Collection;
+use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
+use Modules\Geo\Datas\LocationData;
 
+/**
+ * Classe per calcolare la distanza tra due punti.
+ */
 class CalculateDistanceAction
 {
-    use QueueableAction;
-
     public function __construct(
-        protected GoogleMapsService $googleMapsService,
+        private readonly CalculateDistanceMatrixAction $distanceMatrixAction
     ) {
     }
 
     /**
-     * @param object{latitude: float|int|string, longitude: float|int|string} $origin
-     * @param object{latitude: float|int|string, longitude: float|int|string} $destination
+     * Calcola la distanza tra due punti.
+     *
+     * @param LocationData $origin      Punto di origine
+     * @param LocationData $destination Punto di destinazione
+     *
+     * @return array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, status: string}
      */
-    public function execute(object $origin, object $destination): string
+    public function execute(LocationData $origin, LocationData $destination): array
     {
-        if (! isset($origin->latitude) || ! isset($origin->longitude)
-            || ! isset($destination->latitude) || ! isset($destination->longitude)) {
-            return 'N/D';
-        }
-
-        /** @var array{
-         *     rows?: array<array{
-         *         elements: array<array{
-         *             distance?: array{value: int}
-         *         }>
-         *     }>
-         * }|null $response */
-        $response = $this->googleMapsService->getDistanceMatrix(
-            "{$origin->latitude},{$origin->longitude}",
-            "{$destination->latitude},{$destination->longitude}"
+        $response = $this->distanceMatrixAction->execute(
+            new Collection([$origin]),
+            new Collection([$destination])
         );
 
-        if (! $response
-            || empty($response['rows'])
-            || empty($response['rows'][0]['elements'])
-            || ! isset($response['rows'][0]['elements'][0]['distance']['value'])) {
-            return 'N/D';
+        if (empty($response) || empty($response[0]) || empty($response[0][0])) {
+            throw new \RuntimeException('Errore nel calcolo della distanza: risposta non valida.');
         }
 
-        $distanceMeters = (int) $response['rows'][0]['elements'][0]['distance']['value'];
-
-        return $this->formatDistance($distanceMeters);
-    }
-
-    protected function formatDistance(int $meters): string
-    {
-        if ($meters < 1000) {
-            return $meters.' m';
-        }
-
-        $kilometers = round($meters / 1000, 1);
-
-        return $kilometers.' km';
+        return $response[0][0];
     }
 }
