@@ -26,7 +26,7 @@ class GetAddressFromBingMapsAction
     public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.bing.key');
-        dddx($apiKey);
+
         if (empty($apiKey)) {
             throw new \Exception('Bing Maps API key not configured');
         }
