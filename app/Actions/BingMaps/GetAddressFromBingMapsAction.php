@@ -25,6 +25,7 @@ class GetAddressFromBingMapsAction
      */
     public function execute(string $address): ?AddressData
     {
+        dddx('aa');
         $apiKey = config('services.bing.key');
 
         if (empty($apiKey)) {
