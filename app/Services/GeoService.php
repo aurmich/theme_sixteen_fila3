@@ -173,7 +173,7 @@ class GeoService
 
         /** @var array<array{lat: float, lng: float}>|null $original_data */
         $original_data = json_decode($polygon, true, 512, JSON_THROW_ON_ERROR);
-        if (!is_array($original_data) || empty($original_data)) {
+        if (! is_array($original_data) || empty($original_data)) {
             return false;
         }
 

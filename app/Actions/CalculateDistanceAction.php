@@ -22,8 +22,8 @@ class CalculateDistanceAction
      */
     public function execute(object $origin, object $destination): string
     {
-        if (!isset($origin->latitude) || !isset($origin->longitude)
-            || !isset($destination->latitude) || !isset($destination->longitude)) {
+        if (! isset($origin->latitude) || ! isset($origin->longitude)
+            || ! isset($destination->latitude) || ! isset($destination->longitude)) {
             return 'N/D';
         }
 
@@ -39,15 +39,15 @@ class CalculateDistanceAction
             "{$destination->latitude},{$destination->longitude}"
         );
 
-        if (! $response || 
-            empty($response['rows']) ||
-            empty($response['rows'][0]['elements']) ||
-            !isset($response['rows'][0]['elements'][0]['distance']['value'])) {
+        if (! $response
+            || empty($response['rows'])
+            || empty($response['rows'][0]['elements'])
+            || ! isset($response['rows'][0]['elements'][0]['distance']['value'])) {
             return 'N/D';
         }
 
         $distanceMeters = (int) $response['rows'][0]['elements'][0]['distance']['value'];
-        
+
         return $this->formatDistance($distanceMeters);
     }
 
@@ -58,6 +58,7 @@ class CalculateDistanceAction
         }
 
         $kilometers = round($meters / 1000, 1);
+
         return $kilometers.' km';
     }
 }
