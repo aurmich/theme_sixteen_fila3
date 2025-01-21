@@ -4,39 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Elevation;
 
-use Illuminate\Support\Facades\Http;
+use Modules\Geo\Actions\Elevation\FetchOpenElevationAction;
+use Modules\Geo\Datas\ElevationData;
 
+/**
+ * Classe per ottenere i dati dell'elevazione da Open Elevation
+ */
 class GetElevationAction
 {
-    private const ENDPOINT = 'https://api.open-elevation.com/api/v1/lookup';
+    public function __construct(
+        private readonly FetchOpenElevationAction $fetchOpenElevationAction
+    ) {}
 
-    public function execute(float $latitude, float $longitude): ?array
+    /**
+     * Ottiene l'elevazione per le coordinate specificate
+     *
+     * @param float $latitude Latitudine
+     * @param float $longitude Longitudine
+     * @return ElevationData|null Dati dell'elevazione o null se non disponibili
+     */
+    public function execute(float $latitude, float $longitude): ?ElevationData
     {
-        try {
-            $response = Http::post(self::ENDPOINT, [
-                'locations' => [
-                    [
-                        'latitude' => $latitude,
-                        'longitude' => $longitude,
-                    ],
-                ],
-            ]);
-
-            if ($response->successful()) {
-                $data = $response->json()['results'][0];
-
-                return [
-                    'elevation' => $data['elevation'],
-                    'latitude' => $data['latitude'],
-                    'longitude' => $data['longitude'],
-                ];
-            }
-
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('Elevation lookup error: '.$e->getMessage());
-
-            return null;
-        }
+        return $this->fetchOpenElevationAction->execute($latitude, $longitude);
     }
 }

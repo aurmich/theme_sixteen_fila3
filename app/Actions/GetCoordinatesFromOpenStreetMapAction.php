@@ -4,37 +4,30 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Illuminate\Support\Facades\Http;
+use Modules\Geo\Actions\Nominatim\FetchCoordinatesAction;
+use Modules\Geo\Datas\LocationData;
 
+/**
+ * Classe per ottenere le coordinate da OpenStreetMap
+ */
 class GetCoordinatesFromOpenStreetMapAction
 {
-    private const NOMINATIM_ENDPOINT = 'https://nominatim.openstreetmap.org/search';
+    public function __construct(
+        private readonly FetchCoordinatesAction $fetchCoordinatesAction
+    ) {}
 
-    public function execute(string $address): ?array
+    /**
+     * Ottiene le coordinate geografiche da un indirizzo usando OpenStreetMap
+     *
+     * @param string $address Indirizzo da geocodificare
+     * @return LocationData|null Dati della posizione o null se non trovata
+     */
+    public function execute(string $address): ?LocationData
     {
-        try {
-            $response = Http::withHeaders([
-                'User-Agent' => config('app.name').' Application',
-            ])->get(self::NOMINATIM_ENDPOINT, [
-                'q' => $address,
-                'format' => 'json',
-                'limit' => 1,
-            ]);
-
-            if ($response->successful() && ! empty($response->json())) {
-                $result = $response->json()[0];
-
-                return [
-                    'latitude' => (float) $result['lat'],
-                    'longitude' => (float) $result['lon'],
-                ];
-            }
-
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('OpenStreetMap geocoding error: '.$e->getMessage());
-
+        if (empty($address)) {
             return null;
         }
+
+        return $this->fetchCoordinatesAction->execute($address);
     }
 }
