@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Modules\Geo\Datas\AddressData;
 
 /**
- * Classe per ottenere i dati dell'indirizzo da diversi servizi di geocoding
+ * Classe per ottenere i dati dell'indirizzo da diversi servizi di geocoding.
  */
 class GetAddressDataFromFullAddressAction
 {
@@ -32,9 +32,10 @@ class GetAddressDataFromFullAddressAction
     }
 
     /**
-     * Esegue la ricerca dell'indirizzo su tutti i servizi disponibili
+     * Esegue la ricerca dell'indirizzo su tutti i servizi disponibili.
      *
      * @param string $address L'indirizzo da cercare
+     *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
@@ -65,8 +66,8 @@ class GetAddressDataFromFullAddressAction
     }
 
     /**
-     * Restituisce la collezione degli errori
-     * 
+     * Restituisce la collezione degli errori.
+     *
      * @return Collection<int, string>
      */
     public function getErrors(): Collection
