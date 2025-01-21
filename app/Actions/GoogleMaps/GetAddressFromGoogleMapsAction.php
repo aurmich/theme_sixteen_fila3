@@ -37,13 +37,13 @@ class GetAddressFromGoogleMapsAction
             'key' => $apiKey,
         ]);
 
-        dddx($response);
-
         if (! $response->successful()) {
             return null;
         }
 
         $data = $response->json();
+
+        dddx($data);
 
         if (empty($data['results'][0])) {
             return null;
