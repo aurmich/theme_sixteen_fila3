@@ -9,29 +9,21 @@ use Illuminate\Support\Collection;
 use Modules\Geo\Datas\AddressData;
 
 /**
- * Classe che recupera i dati completi di un indirizzo utilizzando diversi servizi di geocoding
- * Prova ogni servizio in sequenza fino a quando non trova un risultato valido.
- *
- * I servizi supportati sono:
- * - Google Maps
- * - Bing Maps
- * - OpenCage
- * - OpenStreetMap (Nominatim)
- * - Photon
- * - LocationIQ
+ * Classe per ottenere i dati dell'indirizzo da diversi servizi di geocoding
  */
 class GetAddressDataFromFullAddressAction
 {
+    /** @var Collection<int, string> */
     private Collection $errors;
 
+    /** @var array<class-string<object>> */
     private array $services = [
-        'Google Maps' => GetAddressFromGoogleMapsAction::class,
-        'Bing Maps' => GetAddressFromBingMapsAction::class,
-        'OpenCage' => GetAddressFromOpenCageAction::class,
-        'OpenStreetMap' => GetAddressFromOpenStreetMapAction::class,
-        'Nominatim' => GetAddressFromNominatimAction::class,
-        'Photon' => GetAddressFromPhotonAction::class,
-        'LocationIQ' => GetAddressFromLocationIQAction::class,
+        GetAddressFromGoogleMapsAction::class,
+        GetAddressFromBingMapsAction::class,
+        GetAddressFromOpenCageAction::class,
+        GetAddressFromNominatimAction::class,
+        GetAddressFromPhotonAction::class,
+        GetAddressFromLocationIQAction::class,
     ];
 
     public function __construct()
@@ -40,42 +32,43 @@ class GetAddressDataFromFullAddressAction
     }
 
     /**
-     * Esegue la ricerca dell'indirizzo completo su multipli servizi di geocoding.
+     * Esegue la ricerca dell'indirizzo su tutti i servizi disponibili
      *
      * @param string $address L'indirizzo da cercare
-     *
-     * @return AddressData|null I dati completi dell'indirizzo trovato o null se nessun servizio ha trovato risultati
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {
-        foreach ($this->services as $serviceName => $serviceClass) {
+        foreach ($this->services as $service) {
             try {
-                $addressData = app($serviceClass)->execute($address);
+                /** @var GetAddressFromGoogleMapsAction|GetAddressFromBingMapsAction|GetAddressFromOpenCageAction|GetAddressFromNominatimAction|GetAddressFromPhotonAction|GetAddressFromLocationIQAction $instance */
+                $instance = app($service);
+                $result = $instance->execute($address);
 
-                if ($addressData instanceof AddressData) {
-                    return $addressData;
+                if ($result) {
+                    return $result;
                 }
             } catch (\Exception $e) {
-                $this->errors->push($serviceName.': '.$e->getMessage());
+                $this->errors->push("Error with {$service}: {$e->getMessage()}");
             }
         }
 
-        \Log::warning('Geocoding failed for address: '.$address, [
-            'errors' => $this->errors->toArray(),
-        ]);
-
-        foreach ($this->errors as $error) {
+        if ($this->errors->isNotEmpty()) {
             Notification::make()
+                ->warning()
                 ->title('Geocoding Error')
-                ->body($error)
-                ->danger()
-                ->persistent()
+                ->body($this->errors->join("\n"))
                 ->send();
         }
 
         return null;
     }
 
+    /**
+     * Restituisce la collezione degli errori
+     * 
+     * @return Collection<int, string>
+     */
     public function getErrors(): Collection
     {
         return $this->errors;
