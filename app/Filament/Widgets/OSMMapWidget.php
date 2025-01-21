@@ -17,7 +17,7 @@ class OSMMapWidget extends MapWidget
 {
     protected static string $view = 'geo::filament.widgets.osm-map-widget';
 
-    protected int | string | array $columnSpan = 'full';
+    protected int|string|array $columnSpan = 'full';
 
     protected function getData(): array
     {
@@ -64,6 +64,7 @@ class OSMMapWidget extends MapWidget
 
     /**
      * @param Collection<int, Place> $places
+     *
      * @return array{lat: float, lng: float}
      */
     protected function getMapCenter(Collection $places): array
@@ -72,8 +73,8 @@ class OSMMapWidget extends MapWidget
             return ['lat' => 41.9028, 'lng' => 12.4964]; // Rome, Italy
         }
 
-        $latitudes = $places->pluck('latitude')->filter(fn($lat) => is_float($lat));
-        $longitudes = $places->pluck('longitude')->filter(fn($lng) => is_float($lng));
+        $latitudes = $places->pluck('latitude')->filter(fn ($lat) => is_float($lat));
+        $longitudes = $places->pluck('longitude')->filter(fn ($lng) => is_float($lng));
 
         return [
             'lat' => $latitudes->average() ?? 0.0,
@@ -108,7 +109,7 @@ class OSMMapWidget extends MapWidget
         $type = $place->type->slug ?? 'default';
 
         $iconPath = resource_path("images/markers/{$type}.png");
-        if (!file_exists($iconPath)) {
+        if (! file_exists($iconPath)) {
             return null;
         }
 

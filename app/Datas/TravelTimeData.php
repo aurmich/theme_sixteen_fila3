@@ -20,7 +20,7 @@ class TravelTimeData extends Data
         public readonly int $distance_meters,
         public readonly string $formatted_duration,
         public readonly string $formatted_distance,
-        public readonly string $status = 'OK'
+        public readonly string $status = 'OK',
     ) {
     }
 
@@ -80,4 +80,4 @@ class TravelTimeData extends Data
             status: $response['status']
         );
     }
-} 
+}

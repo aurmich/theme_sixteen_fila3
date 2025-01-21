@@ -7,24 +7,24 @@ namespace Modules\Geo\Datas;
 use Spatie\LaravelData\Data;
 
 /**
- * Data object per la gestione delle informazioni degli indirizzi
+ * Data object per la gestione delle informazioni degli indirizzi.
  *
  * Questo oggetto rappresenta un indirizzo completo con tutte le sue componenti,
  * incluse le coordinate geografiche. È utilizzato per standardizzare il formato
  * degli indirizzi attraverso diversi provider di geocoding.
  *
- * @property float $latitude Latitudine dell'indirizzo
- * @property float $longitude Longitudine dell'indirizzo
- * @property string $country Nome del paese (default: 'Italia')
- * @property string $country_code Codice del paese (default: 'IT')
- * @property string $city Nome della città
- * @property string $state Nome della regione/stato
- * @property string $county Nome della provincia
- * @property string $district Nome del quartiere/distretto
- * @property string $locality Nome della località
- * @property string $street Nome della via
+ * @property float  $latitude      Latitudine dell'indirizzo
+ * @property float  $longitude     Longitudine dell'indirizzo
+ * @property string $country       Nome del paese (default: 'Italia')
+ * @property string $country_code  Codice del paese (default: 'IT')
+ * @property string $city          Nome della città
+ * @property string $state         Nome della regione/stato
+ * @property string $county        Nome della provincia
+ * @property string $district      Nome del quartiere/distretto
+ * @property string $locality      Nome della località
+ * @property string $street        Nome della via
  * @property string $street_number Numero civico
- * @property int $postal_code Codice postale
+ * @property int    $postal_code   Codice postale
  */
 class AddressData extends Data
 {
@@ -41,26 +41,27 @@ class AddressData extends Data
         public int $postal_code,
         public string $country = 'Italia',
         public string $country_code = 'IT',
-    ) {}
+    ) {
+    }
 
     /**
-     * Restituisce l'indirizzo formattato come stringa
+     * Restituisce l'indirizzo formattato come stringa.
      */
     public function getFormattedAddress(): string
     {
         $parts = [
-            $this->street . ' ' . $this->street_number,
-            $this->postal_code . ' ' . $this->city,
+            $this->street.' '.$this->street_number,
+            $this->postal_code.' '.$this->city,
             $this->county,
             $this->state,
-            $this->country
+            $this->country,
         ];
 
         return implode(', ', array_filter($parts));
     }
 
     /**
-     * Crea un'istanza da un array di dati OpenStreetMap
+     * Crea un'istanza da un array di dati OpenStreetMap.
      *
      * @param array{
      *     lat: string|float,

@@ -12,16 +12,16 @@ trait HandlesCoordinates
     /**
      * Valida le coordinate geografiche.
      *
-     * @param float|null $latitude La latitudine da validare
+     * @param float|null $latitude  La latitudine da validare
      * @param float|null $longitude La longitudine da validare
      */
     protected function areValidCoordinates(?float $latitude, ?float $longitude): bool
     {
-        return $latitude !== null 
-            && $longitude !== null
-            && $latitude >= -90 
+        return null !== $latitude
+            && null !== $longitude
+            && $latitude >= -90
             && $latitude <= 90
-            && $longitude >= -180 
+            && $longitude >= -180
             && $longitude <= 180;
     }
 
@@ -52,9 +52,9 @@ trait HandlesCoordinates
     /**
      * Formatta le coordinate in una stringa leggibile.
      *
-     * @param float $latitude La latitudine da formattare
+     * @param float $latitude  La latitudine da formattare
      * @param float $longitude La longitudine da formattare
-     * @param int $decimals Il numero di decimali da mostrare
+     * @param int   $decimals  Il numero di decimali da mostrare
      */
     protected function formatCoordinates(float $latitude, float $longitude, int $decimals = 6): string
     {
@@ -64,4 +64,4 @@ trait HandlesCoordinates
             number_format($longitude, $decimals)
         );
     }
-} 
+}

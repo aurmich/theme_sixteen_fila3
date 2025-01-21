@@ -7,16 +7,16 @@ namespace Modules\Geo\Datas;
 use Spatie\LaravelData\Data;
 
 /**
- * Data object per la gestione delle informazioni di localizzazione
+ * Data object per la gestione delle informazioni di localizzazione.
  *
- * @property float $latitude Latitudine della posizione
- * @property float $longitude Longitudine della posizione
- * @property string|null $address Indirizzo completo
- * @property string|null $street Via
- * @property string|null $number Numero civico
- * @property string|null $city Città
- * @property string|null $state Stato/Regione
- * @property string|null $country Nazione
+ * @property float       $latitude   Latitudine della posizione
+ * @property float       $longitude  Longitudine della posizione
+ * @property string|null $address    Indirizzo completo
+ * @property string|null $street     Via
+ * @property string|null $number     Numero civico
+ * @property string|null $city       Città
+ * @property string|null $state      Stato/Regione
+ * @property string|null $country    Nazione
  * @property string|null $postalCode Codice postale
  */
 class LocationData extends Data
@@ -31,10 +31,11 @@ class LocationData extends Data
         public readonly ?string $state = null,
         public readonly ?string $country = null,
         public readonly ?string $postalCode = null,
-    ) {}
+    ) {
+    }
 
     /**
-     * Restituisce l'indirizzo formattato
+     * Restituisce l'indirizzo formattato.
      */
     public function getFormattedAddress(): string
     {
@@ -43,7 +44,7 @@ class LocationData extends Data
         if ($this->street) {
             $parts[] = $this->street;
             if ($this->number) {
-                $parts[count($parts) - 1] .= ', ' . $this->number;
+                $parts[count($parts) - 1] .= ', '.$this->number;
             }
         }
 

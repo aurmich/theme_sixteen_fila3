@@ -13,7 +13,7 @@ use Modules\Geo\Datas\LocationData;
 class OptimizeRouteAction
 {
     public function __construct(
-        private readonly CalculateDistanceAction $calculateDistance
+        private readonly CalculateDistanceAction $calculateDistance,
     ) {
     }
 

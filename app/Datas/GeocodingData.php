@@ -21,7 +21,7 @@ class GeocodingData extends Data
         public readonly ?string $administrative_area,
         public readonly ?string $country,
         public readonly ?string $postal_code,
-        public readonly ?string $error = null
+        public readonly ?string $error = null,
     ) {
     }
 
