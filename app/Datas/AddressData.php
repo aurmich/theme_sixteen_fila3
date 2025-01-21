@@ -84,7 +84,7 @@ class AddressData extends Data
      */
     public static function fromOpenStreetMap(array $data): self
     {
-        $address = $data['address'];
+        $address = $data['address'] ?? [];
 
         return new self(
             latitude: (float) $data['lat'],
