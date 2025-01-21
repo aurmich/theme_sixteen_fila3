@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Filament\Notifications\Notification;
 use Modules\Geo\Datas\AddressData;
 
 /**
@@ -46,7 +47,14 @@ class GetAddressDataFromFullAddressAction
                 // Logga l'errore o gestiscilo in altro modo
             }
         }
+        $message = 'Nessun servizio di geocoding ha restituito un risultato valido.';
+        // throw new \RuntimeException('Nessun servizio di geocoding ha restituito un risultato valido.');
+        Notification::make()
+            ->title('Error')
+            ->body($message)
+            ->danger()
+            ->persistent();
 
-        throw new \RuntimeException('Nessun servizio di geocoding ha restituito un risultato valido.');
+        return null;
     }
 }
