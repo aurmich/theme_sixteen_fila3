@@ -4,26 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Modules\Geo\Actions\GoogleMaps\GetGeocodingDataAction;
-use Modules\Geo\Datas\GeocodingData;
+use Modules\Geo\Datas\AddressData;
 
 /**
  * Classe per ottenere i dati dell'indirizzo utilizzando diversi servizi di geocoding.
  */
 class GetAddressDataFromFullAddressAction
 {
-    public function __construct(
-        private readonly GetGeocodingDataAction $geocodingAction,
-        // private GetAddressFromGoogleMapsAction $googleMapsAction,
-        // private GetAddressFromBingMapsAction $bingMapsAction,
-        // private GetAddressFromLocationIQAction $locationIQAction,
-        // private GetAddressFromNominatimAction $nominatimAction,
-        // private GetAddressFromOpenCageAction $openCageAction,
-        // private GetAddressFromPhotonAction $photonAction,
-    ) {
-        // $this->errors = collect([]);
-    }
-
     /**
      * Ottiene i dati dell'indirizzo da un indirizzo completo.
      *
@@ -31,26 +18,35 @@ class GetAddressDataFromFullAddressAction
      *
      * @throws \RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
      *
-     * @return GeocodingData I dati dell'indirizzo trovato
+     * @return AddressData I dati dell'indirizzo trovato
      */
-    public function execute(string $fullAddress): GeocodingData
+    public function execute(string $fullAddress): AddressData
     {
-        try {
-            $result = $this->geocodingAction->execute($fullAddress);
+        $services = [
+            GetAddressFromPhotonAction::class,
+            GetAddressFromNominatimAction::class,
+            GetAddressFromBingMapsAction::class,
+            GetAddressFromGoogleMapsAction::class,
+            // GetAddressFromHereMapsAction::class,
+            // GetAddressFromMapboxAction::class,
+            // GetAddressFromMapTilerAction::class,
+            GetAddressFromOpenCageAction::class,
+            // GetAddressFromOpenStreetMapAction::class,
+            // GetAddressFromPeliasAction::class,
+            // GetAddressFromTomTomAction::class,
+        ];
 
-            return $result;
-        } catch (\Exception $e) {
-            throw new \RuntimeException('Errore durante il recupero dei dati dell\'indirizzo: '.$e->getMessage());
+        foreach ($services as $service) {
+            try {
+                $result = app($service)->execute($fullAddress);
+                if ($result instanceof AddressData) {
+                    return $result;
+                }
+            } catch (\Exception $e) {
+                // Logga l'errore o gestiscilo in altro modo
+            }
         }
-    }
 
-    /**
-     * Restituisce la collezione degli errori.
-     *
-     * @return Collection<int, string>
-     */
-    public function getErrors(): Collection
-    {
-        return $this->errors;
+        throw new \RuntimeException('Nessun servizio di geocoding ha restituito un risultato valido.');
     }
 }
