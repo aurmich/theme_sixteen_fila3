@@ -34,7 +34,7 @@ class GetAddressFromPhotonAction
 
         /** @var array{features?: array<int, array{geometry: array{coordinates: array<int, float>}, properties: array{country?: string, city?: string, postcode?: string, street?: string, housenumber?: string}}>}> $data */
         $data = $response->json();
-        dddx($data);
+
         if (empty($data['features'][0])) {
             return null;
         }
