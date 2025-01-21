@@ -146,12 +146,14 @@ class GeoService
         // dddx([$latitude, $longitude, $polygon]);
 
         for ($i = 0, $j = $points_polygon; $i < $points_polygon; $j = $i++) {
-            $polygon[$i] = (object) $polygon[$i];
-            $polygon[$j] = (object) $polygon[$j];
+            /** @var array{lat: float, lng: float} $pointI */
+            $pointI = $polygon[$i];
+            /** @var array{lat: float, lng: float} $pointJ */
+            $pointJ = $polygon[$j];
 
             if (
-                ($polygon[$i]->lat > $latitude !== ($polygon[$j]->lat > $latitude))
-                && ($longitude < ($polygon[$j]->lng - $polygon[$i]->lng) * ($latitude - $polygon[$i]->lat) / ($polygon[$j]->lat - $polygon[$i]->lat) + $polygon[$i]->lng)
+                ($pointI['lat'] > $latitude !== ($pointJ['lat'] > $latitude))
+                && ($longitude < ($pointJ['lng'] - $pointI['lng']) * ($latitude - $pointI['lat']) / ($pointJ['lat'] - $pointI['lat']) + $pointI['lng'])
             ) {
                 $c = ! $c;
             }
@@ -160,15 +162,19 @@ class GeoService
         return (bool) $c;
     }
 
+    /**
+     * @throws \JsonException
+     */
     public static function pointInPolygon(float $lat, float $lng, ?string $polygon): bool
     {
         if (null === $polygon || '' === $polygon) {
             return false;
         }
 
+        /** @var array<array{lat: float, lng: float}>|null $original_data */
         $original_data = json_decode($polygon, true, 512, JSON_THROW_ON_ERROR);
-        if (! \is_array($original_data)) {
-            throw new \Exception('['.__LINE__.']['.__FILE__.']');
+        if (!is_array($original_data) || empty($original_data)) {
+            return false;
         }
 
         if (self::is_in_polygon($lat, $lng, $original_data)) {
