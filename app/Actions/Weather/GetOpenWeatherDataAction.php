@@ -1,10 +1,11 @@
 <?php
-
 declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Weather;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Arr;
 
 class GetOpenWeatherDataAction
 {
@@ -21,32 +22,35 @@ class GetOpenWeatherDataAction
                 'lang' => 'it',
             ]);
 
-            if ($response->successful()) {
-                $data = $response->json();
-
-                return [
-                    'temperature' => $data['main']['temp'],
-                    'feels_like' => $data['main']['feels_like'],
-                    'humidity' => $data['main']['humidity'],
-                    'pressure' => $data['main']['pressure'],
-                    'weather' => [
-                        'main' => $data['weather'][0]['main'],
-                        'description' => $data['weather'][0]['description'],
-                        'icon' => $data['weather'][0]['icon'],
-                    ],
-                    'wind' => [
-                        'speed' => $data['wind']['speed'],
-                        'direction' => $data['wind']['deg'],
-                    ],
-                    'clouds' => $data['clouds']['all'],
-                    'timestamp' => $data['dt'],
-                ];
+            if (!$response->successful()) {
+                return null;
             }
 
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('OpenWeather API error: '.$e->getMessage());
+            $data = $response->json();
 
+            if (!is_array($data)) {
+                return null;
+            }
+
+            return [
+                'temperature' => Arr::get($data, 'main.temp'),
+                'feels_like' => Arr::get($data, 'main.feels_like'),
+                'humidity' => Arr::get($data, 'main.humidity'),
+                'pressure' => Arr::get($data, 'main.pressure'),
+                'weather' => [
+                    'main' => Arr::get($data, 'weather.0.main'),
+                    'description' => Arr::get($data, 'weather.0.description'),
+                    'icon' => Arr::get($data, 'weather.0.icon'),
+                ],
+                'wind' => [
+                    'speed' => Arr::get($data, 'wind.speed'),
+                    'direction' => Arr::get($data, 'wind.deg'),
+                ],
+                'clouds' => Arr::get($data, 'clouds.all'),
+                'timestamp' => Arr::get($data, 'dt'),
+            ];
+        } catch (\Exception $e) {
+            Log::error('OpenWeather API error: '.$e->getMessage());
             return null;
         }
     }
