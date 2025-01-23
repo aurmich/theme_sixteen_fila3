@@ -6,63 +6,57 @@ namespace Modules\Geo\Actions\Photon;
 
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
+use Modules\Geo\Datas\Photon\PhotonAddressData;
 
-/**
- * Classe per ottenere i dati dell'indirizzo dal servizio Photon.
- */
 class GetAddressFromPhotonAction
 {
     private const BASE_URL = 'https://photon.komoot.io/api';
 
-    /**
-     * Esegue la ricerca dell'indirizzo su Photon.
-     *
-     * @param string $address L'indirizzo da cercare
-     *
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
-     */
     public function execute(string $address): ?AddressData
     {
-        $response = Http::get(self::BASE_URL, [
-            'q' => $address,
-            'limit' => 1,
-        ]);
+        try {
+            $response = Http::get(self::BASE_URL, [
+                'q' => $address,
+                'limit' => 1,
+            ]);
 
-        if (! $response->successful()) {
+            if (! $response->successful()) {
+                \Log::error('Photon API request failed', [
+                    'status' => $response->status(),
+                    'address' => $address,
+                ]);
+
+                return null;
+            }
+
+            $data = $response->json();
+
+            if (empty($data['features'][0])) {
+                \Log::warning('No features found in Photon response', [
+                    'address' => $address,
+                ]);
+
+                return null;
+            }
+
+            $photonData = PhotonAddressData::fromPhotonFeature($data['features'][0]);
+
+            return new AddressData(
+                country: $photonData->country,
+                city: $photonData->city,
+                postcode: $photonData->postcode,
+                street: $photonData->street,
+                housenumber: $photonData->housenumber,
+                latitude: $photonData->coordinates['latitude'],
+                longitude: $photonData->coordinates['longitude']
+            );
+        } catch (\Exception $e) {
+            \Log::error('Exception during Photon API request', [
+                'exception' => $e->getMessage(),
+                'address' => $address,
+            ]);
+
             return null;
         }
-
-        /** @var array{features?: array<int, array{geometry: array{coordinates: array<int, float>}, properties: array{country?: string, city?: string, postcode?: string, street?: string, housenumber?: string}}>}> $data */
-        $data = $response->json();
-
-        if (empty($data['features'][0])) {
-            return null;
-        }
-
-        $result = $data['features'][0];
-        $geometry = $result['geometry'] ?? [];
-        $properties = $result['properties'] ?? [];
-        /*
-        dddx([
-            'address' => $address,
-            'data' => $data,
-            'result' => $result,
-            'geometry' => $geometry,
-            'properties' => $properties,
-        ]);
-        */
-
-        $data = [
-            'latitude' => (float) ($geometry['coordinates'][1] ?? 0),
-            'longitude' => (float) ($geometry['coordinates'][0] ?? 0),
-            'country' => $properties['country'] ?? 'Italia',
-            'city' => $properties['city'] ?? '',
-            'postal_code' => (int) ($properties['postcode'] ?? 0),
-            'street' => $properties['street'] ?? '',
-            'street_number' => $properties['housenumber'] ?? '',
-        ];
-        $res = AddressData::from($data);
-
-        return $res;
     }
 }

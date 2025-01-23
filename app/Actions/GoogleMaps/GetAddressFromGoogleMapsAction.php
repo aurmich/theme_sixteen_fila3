@@ -4,88 +4,123 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
-use Illuminate\Support\Collection;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
+use Modules\Geo\Datas\GoogleMaps\GoogleMapResponseData;
+use Modules\Geo\Datas\GoogleMaps\GoogleMapResultData;
+use Spatie\LaravelData\DataCollection;
 
 /**
- * Classe per ottenere i dati dell'indirizzo dal servizio Google Maps.
+ * Handles Google Maps Geocoding API requests and response processing.
  */
-class GetAddressFromGoogleMapsAction
+final class GetAddressFromGoogleMapsAction
 {
     private const BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const REQUIRED_ADDRESS_COMPONENTS = [
+        'country',
+        'administrative_area_level_3',
+        'postal_code',
+        'locality',
+        'administrative_area_level_2',
+        'route',
+        'street_number',
+        'sublocality_level_1',
+        'administrative_area_level_1',
+    ];
 
     /**
-     * Esegue la ricerca dell'indirizzo su Google Maps.
-     *
-     * @param string $address L'indirizzo da cercare
-     *
-     * @throws \Exception Se la chiave API non è configurata
-     *
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     * @throws GoogleMapsApiException
      */
-    public function execute(string $address): ?AddressData
+    public function execute(string $address): AddressData
+    {
+        $apiKey = $this->getApiKey();
+        $response = $this->makeApiRequest($address, $apiKey);
+
+        $responseData = $this->validateResponse($response);
+        $firstResult = $this->getFirstResult($responseData);
+
+        return $this->mapResponseToAddressData($firstResult);
+    }
+
+    private function getApiKey(): string
     {
         $apiKey = config('services.google.maps_api_key');
 
         if (empty($apiKey)) {
-            throw new \Exception('Google Maps API key not configured');
+            throw GoogleMapsApiException::missingApiKey();
         }
 
+        return $apiKey;
+    }
+
+    private function makeApiRequest(string $address, string $apiKey): Response
+    {
         $response = Http::get(self::BASE_URL, [
             'address' => $address,
             'key' => $apiKey,
         ]);
 
         if (! $response->successful()) {
-            return null;
+            throw GoogleMapsApiException::requestFailed($response->status());
         }
 
-        $data = $response->json();
+        return $response;
+    }
 
-        if (empty($data['results'][0])) {
-            return null;
+    private function validateResponse(Response $response): GoogleMapResponseData
+    {
+        /** @var GoogleMapResponseData $responseData */
+        $responseData = GoogleMapResponseData::from($response->json());
+
+        if (0 === $responseData->results->count()) {
+            throw GoogleMapsApiException::noResultsFound();
         }
 
-        $result = $data['results'][0];
-        $location = $result['geometry']['location'] ?? null;
+        return $responseData;
+    }
 
-        if (empty($location)) {
-            return null;
+    private function getFirstResult(GoogleMapResponseData $responseData): GoogleMapResultData
+    {
+        $firstResult = $responseData->results->first();
+
+        if (null === $firstResult->geometry?->location) {
+            throw GoogleMapsApiException::invalidLocationData();
         }
 
-        /** @var Collection<int, array{long_name: string, short_name: string, types: array<string>}> */
-        $components = collect($result['address_components'] ?? []);
+        return $firstResult;
+    }
 
-        $getComponent = function (array $types) use ($components): ?string {
-            $component = $components->first(function ($component) use ($types) {
-                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
-            });
-
-            return $component['long_name'] ?? null;
-        };
-
-        $getShortComponent = function (array $types) use ($components): ?string {
-            $component = $components->first(function ($component) use ($types) {
-                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
-            });
-
-            return $component['short_name'] ?? null;
-        };
-
+    private function mapResponseToAddressData(GoogleMapResultData $result): AddressData
+    {
         return AddressData::from([
-            'latitude' => (float) ($location['lat'] ?? 0),
-            'longitude' => (float) ($location['lng'] ?? 0),
-            'country' => $getComponent(['country']) ?? 'Italia',
-            'city' => $getComponent(['locality']) ?? '',
-            'country_code' => $getShortComponent(['country']) ?? 'IT',
-            'postal_code' => (int) ($getComponent(['postal_code']) ?? 0),
-            'locality' => $getComponent(['sublocality']) ?? '',
-            'county' => $getComponent(['administrative_area_level_2']) ?? '',
-            'street' => $getComponent(['route']) ?? '',
-            'street_number' => $getComponent(['street_number']) ?? '',
-            'district' => $getComponent(['sublocality_level_1']) ?? '',
-            'state' => $getComponent(['administrative_area_level_1']) ?? '',
+            'latitude' => $result->geometry->location->lat,
+            'longitude' => $result->geometry->location->lng,
+            'country' => $this->getComponent($result->address_components, ['country']),
+            'city' => $this->getComponent($result->address_components, ['administrative_area_level_3']),
+            'country_code' => $this->getComponent($result->address_components, ['country'], true),
+            'postal_code' => (int) $this->getComponent($result->address_components, ['postal_code']),
+            'locality' => $this->getComponent($result->address_components, ['locality']) ?? '',
+            'county' => $this->getComponent($result->address_components, ['administrative_area_level_2']),
+            'street' => $this->getComponent($result->address_components, ['route']) ?? '',
+            'street_number' => $this->getComponent($result->address_components, ['street_number']) ?? '',
+            'district' => $this->getComponent($result->address_components, ['sublocality_level_1']) ?? '',
+            'state' => $this->getComponent($result->address_components, ['administrative_area_level_1']),
         ]);
+    }
+
+    private function getComponent(
+        DataCollection $components,
+        array $types,
+        bool $short = false
+    ): ?string {
+        $component = $components
+            ->toCollection()
+            ->firstWhere(
+                fn ($component) => ! empty($component->types)
+                    && count(array_intersect($component->types, $types)) > 0
+            );
+
+        return $component?->{$short ? 'short_name' : 'long_name'};
     }
 }

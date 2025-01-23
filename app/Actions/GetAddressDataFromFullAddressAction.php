@@ -36,10 +36,10 @@ class GetAddressDataFromFullAddressAction
     {
         $this->errors = collect();
         $services = [
+            GetAddressFromGoogleMapsAction::class,
             GetAddressFromPhotonAction::class,
             GetAddressFromNominatimAction::class,
             GetAddressFromBingMapsAction::class,
-            GetAddressFromGoogleMapsAction::class,
             GetAddressFromHereMapsAction::class,
             GetAddressFromMapboxAction::class,
             // GetAddressFromMapTilerAction::class,

@@ -67,7 +67,7 @@ class LocationMapTableWidget extends MapTableWidget
         return $config;
     }
 
-    protected function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\Section::make()->schema([

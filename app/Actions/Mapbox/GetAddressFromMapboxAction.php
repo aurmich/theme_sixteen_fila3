@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Mapbox;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
+use Modules\Geo\Datas\MapboxMapData;
+use Webmozart\Assert\Assert;
 
 /**
  * Classe per ottenere i dati dell'indirizzo dal servizio Mapbox.
@@ -29,34 +32,68 @@ class GetAddressFromMapboxAction
             throw new \Exception('Mapbox API key not configured');
         }
 
-        $response = Http::get(self::BASE_URL.'/'.urlencode($address).'.json', [
-            'access_token' => $apiKey,
-            'limit' => 1,
+        $response = Http::get(self::BASE_URL, [
+            'address' => $address,
+            'key' => $apiKey,
         ]);
 
         if (! $response->successful()) {
             return null;
         }
 
-        /** @var array{features?: array<int, array{geometry: array{coordinates: array<int, float>}, place_name?: string, context?: array<array{short_code?: string, text?: string}>}>} $data */
-        $data = $response->json();
-
-        if (empty($data['features'][0])) {
+        Assert::isArray($data = $response->json());
+        Assert::isArray($results = $data['results']);
+        if (empty($data['results'][0])) {
             return null;
         }
 
-        $result = $data['features'][0];
-        $geometry = $result['geometry'] ?? [];
-        $context = collect($result['context'] ?? []);
+        $result = $data['results'][0];
+        $location = $result['geometry']['location'] ?? null;
 
-        return AddressData::from([
-            'latitude' => (float) ($geometry['coordinates'][1] ?? 0),
-            'longitude' => (float) ($geometry['coordinates'][0] ?? 0),
-            'country' => $context->firstWhere('short_code', 'country')['text'] ?? 'Italia',
-            'city' => $context->firstWhere('short_code', 'place')['text'] ?? '',
-            'postal_code' => (int) ($context->firstWhere('short_code', 'postcode')['text'] ?? 0),
-            'street' => $context->firstWhere('short_code', 'address')['text'] ?? '',
-            'street_number' => '',
-        ]);
+        if (empty($location)) {
+            return null;
+        }
+
+        /** @var Collection<int, array{long_name: string, short_name: string, types: array<string>}> */
+        $components = collect($result['address_components'] ?? []);
+
+        $getComponent = function (array $types) use ($components): ?string {
+            $component = $components->first(function ($component) use ($types) {
+                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+
+            return $component['long_name'] ?? null;
+        };
+
+        $getShortComponent = function (array $types) use ($components): ?string {
+            $component = $components->first(function ($component) use ($types) {
+                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+
+            return $component['short_name'] ?? null;
+        };
+
+        $mapboxMapData = new MapboxMapData(
+            latitude: (float) ($location['lat'] ?? 0),
+            longitude: (float) ($location['lng'] ?? 0),
+            country: $getComponent(['country']) ?? 'Italia',
+            city: $getComponent(['administrative_area_level_3']) ?? '',
+            country_code: $getShortComponent(['country']) ?? 'IT',
+            postal_code: (int) ($getComponent(['postal_code']) ?? 0),
+            locality: $getComponent(['locality']) ?? '',
+            county: $getComponent(['administrative_area_level_2']) ?? '',
+            street: $getComponent(['route']) ?? '',
+            street_number: $getComponent(['street_number']) ?? '',
+            district: $getComponent(['sublocality_level_1']) ?? '',
+            state: $getComponent(['administrative_area_level_1']) ?? ''
+        );
+
+        try {
+            $res = AddressData::from($mapboxMapData->toArray());
+        } catch (\Exception $e) {
+            dddx($e->getMessage());
+        }
+
+        return $res;
     }
 }

@@ -57,7 +57,7 @@ class DotswanMap extends Page implements HasForms
         return 1;
     }
 
-    protected function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Map::make('location')
