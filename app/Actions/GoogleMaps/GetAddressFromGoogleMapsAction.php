@@ -112,7 +112,7 @@ final class GetAddressFromGoogleMapsAction
     private function getComponent(
         DataCollection $components,
         array $types,
-        bool $short = false
+        bool $short = false,
     ): ?string {
         $component = $components
             ->toCollection()

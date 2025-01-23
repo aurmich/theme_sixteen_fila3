@@ -12,7 +12,7 @@ class GoogleMapResponseData extends Data
     public function __construct(
         public string $status,
         /** @var DataCollection<GoogleMapResultData> */
-        public DataCollection $results
+        public DataCollection $results,
     ) {
     }
 }
