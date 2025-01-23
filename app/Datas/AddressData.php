@@ -28,21 +28,18 @@ use Spatie\LaravelData\Data;
  */
 class AddressData extends Data
 {
-    public function __construct(
-        public float $latitude,
-        public float $longitude,
-        public string $city,
-        public string $state,
-        public string $county,
-        public string $district,
-        public string $locality,
-        public string $street,
-        public string $street_number,
-        public int $postal_code,
-        public string $country = 'Italia',
-        public string $country_code = 'IT',
-    ) {
-    }
+    public float $latitude;
+    public float $longitude;
+    public string $city;
+    public string $state;
+    public string $county;
+    public string $district;
+    public string $locality;
+    public string $street;
+    public string $street_number;
+    public int $postal_code;
+    public string $country = 'Italia';
+    public string $country_code = 'IT';
 
     /**
      * Restituisce l'indirizzo formattato come stringa.
@@ -60,28 +57,7 @@ class AddressData extends Data
         return implode(', ', array_filter($parts));
     }
 
-    /**
-     * Crea un'istanza da un array di dati OpenStreetMap.
-     *
-     * @param array{
-     *     lat: string|float,
-     *     lon: string|float,
-     *     address: array{
-     *         city?: string,
-     *         town?: string,
-     *         state?: string,
-     *         county?: string,
-     *         suburb?: string,
-     *         district?: string,
-     *         locality?: string,
-     *         road?: string,
-     *         house_number?: string,
-     *         postcode?: string,
-     *         country?: string,
-     *         country_code?: string
-     *     }
-     * } $data
-     */
+    /*
     public static function fromOpenStreetMap(array $data): self
     {
         $address = $data['address'] ?? [];
@@ -101,4 +77,6 @@ class AddressData extends Data
             country_code: strtoupper($address['country_code'] ?? 'IT'),
         );
     }
+
+        */
 }

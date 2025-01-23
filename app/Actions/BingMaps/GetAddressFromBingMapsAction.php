@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\BingMaps;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
+use Modules\Geo\Datas\BingMapData;
+use Webmozart\Assert\Assert;
 
 /**
  * Classe per ottenere i dati dell'indirizzo dal servizio Bing Maps.
@@ -31,44 +34,68 @@ class GetAddressFromBingMapsAction
             throw new \Exception('Bing Maps API key not configured');
         }
 
-        $response = Http::get(self::BASE_URL.'/Locations', [
-            'query' => $address,
+        $response = Http::get(self::BASE_URL, [
+            'address' => $address,
             'key' => $apiKey,
-            'maxResults' => 1,
         ]);
-        dddx($response);
+
         if (! $response->successful()) {
             return null;
         }
 
-        /** @var array{resourceSets?: array<int, array{resources?: array<int, array{point?: array{coordinates?: array<int, float>}, address?: array{countryRegion?: string, locality?: string, countryRegionIso2?: string, postalCode?: string, neighborhood?: string, adminDistrict2?: string, addressLine?: string, adminDistrict?: string}}>}>} $data */
-        $data = $response->json();
-
-        if (empty($data['resourceSets'][0]['resources'][0])) {
+        Assert::isArray($data = $response->json());
+        Assert::isArray($results = $data['results']);
+        if (empty($data['results'][0])) {
             return null;
         }
 
-        $result = $data['resourceSets'][0]['resources'][0];
-        $point = $result['point'] ?? null;
-        $address = $result['address'] ?? [];
+        $result = $data['results'][0];
+        $location = $result['geometry']['location'] ?? null;
 
-        if (empty($point['coordinates'])) {
+        if (empty($location)) {
             return null;
         }
 
-        return AddressData::from([
-            'latitude' => (float) ($point['coordinates'][0] ?? 0),
-            'longitude' => (float) ($point['coordinates'][1] ?? 0),
-            'country' => $address['countryRegion'] ?? 'Italia',
-            'city' => $address['locality'] ?? '',
-            'country_code' => $address['countryRegionIso2'] ?? 'IT',
-            'postal_code' => (int) ($address['postalCode'] ?? 0),
-            'locality' => $address['neighborhood'] ?? '',
-            'county' => $address['adminDistrict2'] ?? '',
-            'street' => $address['addressLine'] ?? '',
-            'street_number' => '',
-            'district' => $address['neighborhood'] ?? '',
-            'state' => $address['adminDistrict'] ?? '',
-        ]);
+        /** @var Collection<int, array{long_name: string, short_name: string, types: array<string>}> */
+        $components = collect($result['address_components'] ?? []);
+
+        $getComponent = function (array $types) use ($components): ?string {
+            $component = $components->first(function ($component) use ($types) {
+                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+
+            return $component['long_name'] ?? null;
+        };
+
+        $getShortComponent = function (array $types) use ($components): ?string {
+            $component = $components->first(function ($component) use ($types) {
+                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
+            });
+
+            return $component['short_name'] ?? null;
+        };
+
+        $bingMapData = new BingMapData(
+            latitude: (float) ($location['lat'] ?? 0),
+            longitude: (float) ($location['lng'] ?? 0),
+            country: $getComponent(['country']) ?? 'Italia',
+            city: $getComponent(['administrative_area_level_3']) ?? '',
+            country_code: $getShortComponent(['country']) ?? 'IT',
+            postal_code: (int) ($getComponent(['postal_code']) ?? 0),
+            locality: $getComponent(['locality']) ?? '',
+            county: $getComponent(['administrative_area_level_2']) ?? '',
+            street: $getComponent(['route']) ?? '',
+            street_number: $getComponent(['street_number']) ?? '',
+            district: $getComponent(['sublocality_level_1']) ?? '',
+            state: $getComponent(['administrative_area_level_1']) ?? ''
+        );
+
+        try {
+            $res = AddressData::from($bingMapData->toArray());
+        } catch (\Exception $e) {
+            dddx($e->getMessage());
+        }
+
+        return $res;
     }
 }
