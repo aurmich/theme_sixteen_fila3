@@ -12,7 +12,7 @@ class GoogleMapGeometryData extends Data
         public ?GoogleMapLocationData $location,
         public string $location_type,
         public ?GoogleMapBoundsData $bounds,
-        public ?GoogleMapBoundsData $viewport
+        public ?GoogleMapBoundsData $viewport,
     ) {
     }
 }

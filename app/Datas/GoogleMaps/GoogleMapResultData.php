@@ -14,7 +14,7 @@ class GoogleMapResultData extends Data
         /** @var DataCollection<GoogleMapComponentData> */
         public DataCollection $address_components,
         public string $formatted_address,
-        public array $types
+        public array $types,
     ) {
     }
 }
