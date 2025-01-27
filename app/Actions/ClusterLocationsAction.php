@@ -10,7 +10,7 @@ use Modules\Geo\Exceptions\InvalidLocationException;
 class ClusterLocationsAction
 {
     public function __construct(
-        private CalculateDistanceAction $distanceCalculator
+        private readonly CalculateDistanceAction $distanceCalculator
     ) {
     }
 
@@ -30,14 +30,11 @@ class ClusterLocationsAction
             $assigned = false;
 
             foreach ($clusters as &$cluster) {
-                $distance = $this->distanceCalculator->execute(
-                    $cluster['center']->latitude,
-                    $cluster['center']->longitude,
-                    $location->latitude,
-                    $location->longitude
+                $distanceKm = (float)str_replace(' km', '', 
+                    $this->distanceCalculator->execute($cluster['center'], $location)
                 );
 
-                if ($distance <= $maxDistance) {
+                if ($distanceKm <= $maxDistance) {
                     $cluster['points'][] = $location;
                     $this->updateClusterCenter($cluster);
                     $assigned = true;

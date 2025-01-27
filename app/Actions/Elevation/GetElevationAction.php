@@ -4,39 +4,34 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Elevation;
 
-use Illuminate\Support\Facades\Http;
+use Modules\Geo\DataTransferObjects\ElevationResultDTO;
+use Modules\Geo\Exceptions\InvalidElevationDataException;
+use Modules\Geo\Services\GoogleMapsService;
 
 class GetElevationAction
 {
-    private const ENDPOINT = 'https://api.open-elevation.com/api/v1/lookup';
+    public function __construct(
+        private readonly GoogleMapsService $googleMapsService
+    ) {
+    }
 
-    public function execute(float $latitude, float $longitude): ?array
+    /**
+     * @throws InvalidElevationDataException
+     */
+    public function execute(float $latitude, float $longitude): ElevationResultDTO
     {
-        try {
-            $response = Http::post(self::ENDPOINT, [
-                'locations' => [
-                    [
-                        'latitude' => $latitude,
-                        'longitude' => $longitude,
-                    ],
-                ],
-            ]);
+        $response = $this->googleMapsService->getElevation($latitude, $longitude);
 
-            if ($response->successful()) {
-                $data = $response->json()['results'][0];
-
-                return [
-                    'elevation' => $data['elevation'],
-                    'latitude' => $data['latitude'],
-                    'longitude' => $data['longitude'],
-                ];
-            }
-
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('Elevation lookup error: '.$e->getMessage());
-
-            return null;
+        if (!isset($response['results'][0])) {
+            throw new InvalidElevationDataException('Invalid elevation data');
         }
+
+        $result = $response['results'][0];
+
+        return new ElevationResultDTO(
+            elevation: (float)$result['elevation'],
+            latitude: (float)$result['location']['lat'],
+            longitude: (float)$result['location']['lng']
+        );
     }
 }

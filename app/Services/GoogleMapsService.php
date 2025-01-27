@@ -25,6 +25,34 @@ class GoogleMapsService
 
     /**
      * @return array{
+     *     results: array<array{
+     *         elevation: float,
+     *         location: array{lat: float, lng: float},
+     *         resolution: float
+     *     }>,
+     *     status: string
+     * }
+     */
+    public function getElevation(float $latitude, float $longitude): array
+    {
+        $cacheKey = "elevation:{$latitude},{$longitude}";
+
+        return Cache::remember($cacheKey, now()->addDay(), function () use ($latitude, $longitude) {
+            $response = Http::get("{$this->baseUrl}/elevation/json", [
+                'locations' => "{$latitude},{$longitude}",
+                'key' => $this->apiKey,
+            ]);
+
+            if (! $response->successful() || 'OK' !== $response->json('status')) {
+                throw new \RuntimeException('Failed to get elevation data');
+            }
+
+            return $response->json();
+        });
+    }
+
+    /**
+     * @return array{
      *     destination_addresses: array<string>,
      *     origin_addresses: array<string>,
      *     rows: array<array{
