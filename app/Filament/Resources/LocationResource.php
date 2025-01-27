@@ -5,50 +5,80 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Resources;
 
 use Cheesegrits\FilamentGoogleMaps\Actions\RadiusAction;
-use Cheesegrits\FilamentGoogleMaps\Fields\Geocomplete;
 use Cheesegrits\FilamentGoogleMaps\Fields\Map;
 use Cheesegrits\FilamentGoogleMaps\Filters\RadiusFilter;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Table;
 use Modules\Geo\Filament\Resources\LocationResource\Pages;
 use Modules\Geo\Models\Location;
 
-// use Modules\Geo\Filament\Resources\LocationResource\RelationManagers;
-
+/**
+ * Resource per la gestione dei luoghi.
+ *
+ * Questa classe gestisce l'interfaccia amministrativa per i luoghi,
+ * fornendo funzionalità per la creazione, modifica e visualizzazione dei luoghi
+ * sulla mappa.
+ *
+ * @property string|null $model           La classe del modello associato (Location)
+ * @property string|null $navigationIcon  L'icona da mostrare nel menu di navigazione
+ * @property string|null $navigationGroup Il gruppo di navigazione a cui appartiene
+ * @property int|null    $navigationSort  L'ordine di visualizzazione nel menu
+ */
 class LocationResource extends Resource
 {
     protected static ?string $model = Location::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-map-pin';
 
+    protected static ?string $navigationGroup = 'Geo';
+
+    protected static ?int $navigationSort = 2;
+
+    /**
+     * Converte le coordinate in formato float.
+     *
+     * @param array{lat?: string|float|null, lng?: string|float|null} $coordinates Le coordinate da convertire
+     *
+     * @return array{lat: float, lng: float} Le coordinate convertite in float
+     */
+    private static function formatCoordinates(array $coordinates): array
+    {
+        return [
+            'lat' => (float) ($coordinates['lat'] ?? 0),
+            'lng' => (float) ($coordinates['lng'] ?? 0),
+        ];
+    }
+
+    /**
+     * Definisce il form per la creazione e modifica dei luoghi.
+     *
+     * Il form include campi per:
+     * - Nome del luogo
+     * - Indirizzo (con autocompletamento delle coordinate via Google Maps)
+     * - Latitudine
+     * - Longitudine
+     * - Mappa interattiva per la selezione visuale del luogo
+     *
+     * @param Form $form Il form da configurare
+     *
+     * @return Form Il form configurato
+     */
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->maxLength(256),
-                Forms\Components\TextInput::make('lat')
-                    ->afterStateUpdated(function ($state, callable $get, callable $set) {
-                        $set('location', [
-                            'lat' => floatval($state),
-                            'lng' => floatval($get('lng')),
-                        ]);
-                    })
-                    ->lazy()
-                    ->maxLength(32),
-                Forms\Components\TextInput::make('lng')
-                    ->afterStateUpdated(function ($state, callable $get, callable $set) {
-                        $set('location', [
-                            'lat' => floatval($get('lat')),
-                            'lng' => floatval($state),
-                        ]);
-                    })
-                    ->lazy()
-                    ->maxLength(32),
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('latitude')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('longitude')
+                    ->required()
+                    ->numeric(),
                 Forms\Components\TextInput::make('street')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('city')
@@ -60,25 +90,9 @@ class LocationResource extends Resource
                 Forms\Components\TextInput::make('formatted_address')
                     ->maxLength(1024),
 
-                //                	            Geocomplete::make('formatted_address')
-                //                //                    ->types(['airport'])
-                //                //                    ->placeField('name')
-                // //                		            ->isLocation()
-                // //                		            ->updateLatLng()
-                //                		            ->reverseGeocode([
-                //                			            'city'   => '%L',
-                //                			            'zip'    => '%z',
-                //                			            'state'  => '%A1',
-                //                			            'street' => '%n %S',
-                //                		            ])
-                //                		            ->prefix('Choose:')
-                //                		            ->placeholder('Start typing an address ...')
-                //                		            ->maxLength(1024)
-                //                		            ->geolocate(),
-
                 Map::make('location')
                     ->reactive()
-                    ->afterStateUpdated(function ($state, callable $get, callable $set) {
+                    ->afterStateUpdated(function (array $state, callable $set, callable $get) {
                         $set('lat', $state['lat']);
                         $set('lng', $state['lng']);
                     })
@@ -89,9 +103,6 @@ class LocationResource extends Resource
                     ])
                     ->debug()
                     ->clickable()
-//                    ->layers([
-//                        'https://googlearchive.github.io/js-v2-samples/ggeoxml/cta.kml',
-//                    ])
                     ->autocomplete('formatted_address')
                     ->autocompleteReverse()
                     ->reverseGeocode([
@@ -101,36 +112,37 @@ class LocationResource extends Resource
                         'street' => '%n %S',
                     ])
                     ->geolocate()
-//                    ->reverseGeocodeUsing(function (callable $set, array $results) {
-//                        $set('city', 'foo bar');
-//                    })
-//                    ->placeUpdatedUsing(function (callable $set, array $place) {
-//                        $set('city', 'foo wibble');
-//                    })
                     ->columnSpan(2),
             ]);
     }
 
+    /**
+     * Definisce la tabella per la visualizzazione dei luoghi.
+     *
+     * La tabella include colonne per:
+     * - Nome del luogo
+     * - Indirizzo
+     * - Città
+     * - Stato
+     * - CAP
+     * Con funzionalità di ricerca e ordinamento per ogni colonna
+     *
+     * @param Table $table La tabella da configurare
+     *
+     * @return Table La tabella configurata
+     */
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                //                Tables\Columns\TextColumn::make('lat'),
-                //                Tables\Columns\TextColumn::make('lng'),
                 Tables\Columns\TextColumn::make('street'),
                 Tables\Columns\TextColumn::make('city')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('state')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('zip'),
-                //                Tables\Columns\TextColumn::make('formatted_address'),
-                //                MapColumn::make('location'),
-                //                Tables\Columns\TextColumn::make('created_at')
-                //                    ->dateTime(),
-                //                Tables\Columns\TextColumn::make('updated_at')
-                //                    ->dateTime(),
             ])
             ->filters([
                 Tables\Filters\TernaryFilter::make('processed'),
@@ -152,20 +164,27 @@ class LocationResource extends Resource
             ]);
     }
 
+    /**
+     * Definisce le relazioni disponibili per questo resource.
+     *
+     * @return array Le relazioni configurate
+     */
     public static function getRelations(): array
     {
         return [
         ];
     }
 
-    public static function getWidgets(): array
-    {
-        return [
-            //            LocationResource\Widgets\LocationMapWidget::class,
-            //            LocationResource\Widgets\LocationMapTableWidget::class,
-        ];
-    }
-
+    /**
+     * Definisce le pagine disponibili per questo resource.
+     *
+     * Include le pagine per:
+     * - Lista dei luoghi
+     * - Creazione nuovo luogo
+     * - Modifica luogo esistente
+     *
+     * @return array Le pagine configurate
+     */
     public static function getPages(): array
     {
         return [

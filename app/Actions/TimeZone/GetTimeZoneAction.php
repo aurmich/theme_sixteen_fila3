@@ -4,41 +4,54 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\TimeZone;
 
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Modules\Geo\Datas\TimeZoneData;
 
+use function Safe\json_decode;
+
+/**
+ * Action per ottenere il fuso orario da coordinate geografiche.
+ */
 class GetTimeZoneAction
 {
-    private const ENDPOINT = 'http://api.geonames.org/timezoneJSON';
+    private const API_URL = 'https://maps.googleapis.com/maps/api/timezone/json';
 
-    public function execute(float $latitude, float $longitude): ?array
+    private Client $client;
+    private ?string $apiKey;
+
+    public function __construct(?string $apiKey = null)
     {
-        try {
-            $response = Http::get(self::ENDPOINT, [
-                'lat' => $latitude,
-                'lng' => $longitude,
-                'username' => config('services.geonames.username'),
-            ]);
+        $this->client = new Client();
+        $this->apiKey = $apiKey;
+    }
 
-            if ($response->successful()) {
-                $data = $response->json();
+    /**
+     * @throws GuzzleException
+     */
+    public function execute(float $latitude, float $longitude): TimeZoneData
+    {
+        $response = $this->client->get(self::API_URL, [
+            'query' => [
+                'location' => $latitude.','.$longitude,
+                'timestamp' => time(),
+                'key' => $this->apiKey,
+            ],
+        ]);
 
-                return [
-                    'timezone_id' => $data['timezoneId'],
-                    'timezone_name' => $data['timeZoneName'],
-                    'dst_offset' => $data['dstOffset'],
-                    'gmt_offset' => $data['gmtOffset'],
-                    'raw_offset' => $data['rawOffset'],
-                    'time' => $data['time'],
-                    'sunrise' => $data['sunrise'],
-                    'sunset' => $data['sunset'],
-                ];
-            }
+        /** @var array{status: string, timeZoneId: string, timeZoneName: string, rawOffset: int, dstOffset: int, countryCode?: string} $data */
+        $data = json_decode($response->getBody()->getContents(), true);
 
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('Timezone lookup error: '.$e->getMessage());
-
-            return null;
+        if ('OK' !== $data['status']) {
+            throw new \RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
         }
+
+        return new TimeZoneData(
+            timeZoneId: $data['timeZoneId'],
+            timeZoneName: $data['timeZoneName'],
+            rawOffset: $data['rawOffset'],
+            dstOffset: $data['dstOffset'],
+            countryCode: $data['countryCode'] ?? '',
+        );
     }
 }

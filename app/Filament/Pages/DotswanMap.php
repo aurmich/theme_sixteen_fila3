@@ -9,7 +9,12 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Set;
 use Filament\Pages\Page;
+use Illuminate\Support\Collection;
+use Modules\Geo\Models\Place;
 
+/**
+ * Pagina per visualizzare la mappa dei luoghi.
+ */
 class DotswanMap extends Page implements HasForms
 {
     use InteractsWithForms;
@@ -18,7 +23,28 @@ class DotswanMap extends Page implements HasForms
 
     protected static string $view = 'geo::filament.pages.dotswan-map';
 
+    protected static ?string $navigationGroup = 'Geo';
+
+    protected static ?int $navigationSort = 1;
+
     public array $location;
+
+    /**
+     * @return Collection<int, array{lat: float, lng: float, title: string}>
+     */
+    public function getMapMarkers(): Collection
+    {
+        /** @var Collection<int, Place> $places */
+        $places = Place::query()
+            ->whereNotNull(['latitude', 'longitude'])
+            ->get();
+
+        return $places->map(fn (Place $place): array => [
+            'lat' => (float) $place->latitude,
+            'lng' => (float) $place->longitude,
+            'title' => (string) ($place->getAttribute('name') ?? 'Unnamed Place'),
+        ]);
+    }
 
     protected function getHeaderWidgets(): array
     {
@@ -31,7 +57,7 @@ class DotswanMap extends Page implements HasForms
         return 1;
     }
 
-    protected function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Map::make('location')
