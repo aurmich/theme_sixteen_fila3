@@ -4,44 +4,59 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Modules\Geo\Datas\LocationData;
 
+use function Safe\json_decode;
+
+/**
+ * Action per cercare un luogo usando Nominatim.
+ */
 class LookupPlaceAction
 {
-    private const ENDPOINT = 'https://nominatim.openstreetmap.org/lookup';
+    private const API_URL = 'https://nominatim.openstreetmap.org/lookup';
 
-    public function execute(string $osmType, int $osmId): ?array
+    private Client $client;
+
+    public function __construct()
     {
-        try {
-            $response = Http::withHeaders([
-                'User-Agent' => config('app.name').' Application',
-            ])->get(self::ENDPOINT, [
-                'osm_ids' => "{$osmType}{$osmId}",
+        $this->client = new Client();
+    }
+
+    /**
+     * Cerca un luogo usando il suo OSM ID.
+     *
+     * @param string $osmId ID OpenStreetMap del luogo
+     *
+     * @throws GuzzleException
+     * @throws \RuntimeException
+     */
+    public function execute(string $osmId): LocationData
+    {
+        $response = $this->client->get(self::API_URL, [
+            'query' => [
+                'osm_ids' => $osmId,
                 'format' => 'json',
-                'addressdetails' => 1,
-                'accept-language' => 'it',
-            ]);
+            ],
+            'headers' => [
+                'User-Agent' => 'TechPlanner/1.0',
+            ],
+        ]);
 
-            if ($response->successful() && ! empty($response->json())) {
-                $place = $response->json()[0];
+        /** @var array<int, array{lat: string, lon: string, display_name: string}> $data */
+        $data = json_decode($response->getBody()->getContents(), true);
 
-                return [
-                    'name' => $place['display_name'],
-                    'latitude' => (float) $place['lat'],
-                    'longitude' => (float) $place['lon'],
-                    'address' => $place['address'],
-                    'osm_type' => $place['osm_type'],
-                    'osm_id' => $place['osm_id'],
-                    'class' => $place['class'],
-                    'type' => $place['type'],
-                ];
-            }
-
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('Nominatim lookup error: '.$e->getMessage());
-
-            return null;
+        if (empty($data)) {
+            throw new \RuntimeException('No results found for OSM ID: '.$osmId);
         }
+
+        $result = $data[0];
+
+        return new LocationData(
+            latitude: (float) $result['lat'],
+            longitude: (float) $result['lon'],
+            address: $result['display_name']
+        );
     }
 }

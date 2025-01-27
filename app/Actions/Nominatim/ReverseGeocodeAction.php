@@ -4,48 +4,55 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Modules\Geo\Datas\LocationData;
 
+use function Safe\json_decode;
+
+/**
+ * Action per ottenere l'indirizzo da coordinate geografiche usando Nominatim.
+ */
 class ReverseGeocodeAction
 {
-    private const ENDPOINT = 'https://nominatim.openstreetmap.org/reverse';
+    private const API_URL = 'https://nominatim.openstreetmap.org/reverse';
 
-    public function execute(float $latitude, float $longitude): ?array
+    private Client $client;
+
+    public function __construct()
     {
-        try {
-            $response = Http::withHeaders([
-                'User-Agent' => config('app.name').' Application',
-            ])->get(self::ENDPOINT, [
+        $this->client = new Client();
+    }
+
+    /**
+     * Ottiene l'indirizzo da coordinate geografiche.
+     *
+     * @param float $latitude  Latitudine
+     * @param float $longitude Longitudine
+     *
+     * @throws GuzzleException
+     * @throws \RuntimeException
+     */
+    public function execute(float $latitude, float $longitude): LocationData
+    {
+        $response = $this->client->get(self::API_URL, [
+            'query' => [
                 'lat' => $latitude,
                 'lon' => $longitude,
                 'format' => 'json',
-                'addressdetails' => 1,
-                'accept-language' => 'it',
-            ]);
+            ],
+            'headers' => [
+                'User-Agent' => 'TechPlanner/1.0',
+            ],
+        ]);
 
-            if ($response->successful()) {
-                $data = $response->json();
+        /** @var array{lat: string, lon: string, display_name: string} $data */
+        $data = json_decode($response->getBody()->getContents(), true);
 
-                return [
-                    'full_address' => $data['display_name'],
-                    'address' => [
-                        'street' => $data['address']['road'] ?? null,
-                        'house_number' => $data['address']['house_number'] ?? null,
-                        'postcode' => $data['address']['postcode'] ?? null,
-                        'city' => $data['address']['city'] ?? $data['address']['town'] ?? $data['address']['village'] ?? null,
-                        'state' => $data['address']['state'] ?? null,
-                        'country' => $data['address']['country'] ?? null,
-                    ],
-                    'osm_type' => $data['osm_type'] ?? null,
-                    'osm_id' => $data['osm_id'] ?? null,
-                ];
-            }
-
-            return null;
-        } catch (\Exception $e) {
-            \Log::error('Nominatim reverse geocoding error: '.$e->getMessage());
-
-            return null;
-        }
+        return new LocationData(
+            latitude: $latitude,
+            longitude: $longitude,
+            address: $data['display_name']
+        );
     }
 }

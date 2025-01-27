@@ -4,33 +4,38 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Modules\Geo\Services\GoogleMapsService;
-use Spatie\QueueableAction\QueueableAction;
+use Modules\Geo\Models\Place;
 
+/**
+ * Action per aggiornare le coordinate di un luogo.
+ */
 class UpdateCoordinatesAction
 {
-    use QueueableAction;
-
     public function __construct(
-        protected GoogleMapsService $googleMapsService,
+        private readonly GetCoordinatesAction $getCoordinates,
     ) {
     }
 
-    public function execute(string $address): ?array
+    /**
+     * Aggiorna le coordinate di un luogo usando il suo indirizzo.
+     *
+     * @throws \RuntimeException Se non è possibile ottenere le coordinate
+     */
+    public function execute(Place $place): void
     {
-        if (empty($address)) {
-            return null;
+        if (! $place->address || ! is_string($place->address->formatted_address)) {
+            throw new \RuntimeException('Place address is required');
         }
 
-        $coordinates = $this->googleMapsService->getCoordinatesByAddress($address);
+        $location = $this->getCoordinates->execute($place->address->formatted_address);
 
-        if (! $coordinates) {
-            return null;
+        if (! $location) {
+            throw new \RuntimeException('Could not get coordinates for address: '.$place->address->formatted_address);
         }
 
-        return [
-            'latitude' => $coordinates['lat'],
-            'longitude' => $coordinates['lng'],
-        ];
+        $place->update([
+            'latitude' => $location->latitude,
+            'longitude' => $location->longitude,
+        ]);
     }
 }
