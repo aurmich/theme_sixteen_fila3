@@ -9,7 +9,10 @@
     ],
     "extra": {
         "laravel": {
-            "providers": [],
+            "providers": [
+                "Modules\\Fixcity\\Providers\\FixcityServiceProvider",
+                "Modules\\Fixcity\\Providers\\Filament\\AdminPanelProvider"
+            ],
             "aliases": {
 
             }
