@@ -9,7 +9,7 @@ class ElevationResultDTO
     public function __construct(
         public readonly float $elevation,
         public readonly float $latitude,
-        public readonly float $longitude
+        public readonly float $longitude,
     ) {
     }
 }

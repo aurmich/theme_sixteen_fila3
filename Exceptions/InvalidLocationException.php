@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Exceptions;
 
-use InvalidArgumentException;
-
-class InvalidLocationException extends InvalidArgumentException
+class InvalidLocationException extends \InvalidArgumentException
 {
     public static function invalidCoordinates(): self
     {
