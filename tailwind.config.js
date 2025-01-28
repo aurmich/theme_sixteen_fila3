@@ -3,6 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
+import colors from 'tailwindcss/colors';
 
 
 module.exports = {
@@ -12,6 +13,13 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                primary: colors.blue,
+                secondary: colors.gray,
+                success: colors.green,
+                warning: colors.yellow,
+                danger: colors.red,
             },
         },
     },
@@ -130,7 +138,10 @@ module.exports = {
     },
     plugins: [
         forms,
-typography,
-daisyui
+        typography,
+        daisyui
     ],
+    daisyui: {
+        themes: ['light', 'dark'],
+    },
 }

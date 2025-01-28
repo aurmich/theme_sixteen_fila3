@@ -34,7 +34,8 @@ export default defineConfig({
                 //__dirname + '/resources/scss/app-mix.scss',
                 __dirname + '/resources/css/app.css',
                 __dirname + '/resources/js/app.js',
-                //__dirname + '/resources/css/filament/theme.css'
+                // Aggiungiamo i CSS di Filament
+                //__dirname + '/vendor/filament/**/*.css',
             ],
             refresh: [
                 ...refreshPaths,
@@ -42,6 +43,11 @@ export default defineConfig({
             ],
         }),
     ],
+    resolve: {
+        alias: {
+            '@': '/resources',
+        },
+    },
 });
 
 
