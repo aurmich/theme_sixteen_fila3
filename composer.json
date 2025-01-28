@@ -1,33 +1,21 @@
 {
-    "name": "nwidart/fixcity",
+    "name": "laraxot/module_fixcity",
     "description": "",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Marco Xot",
+            "email": "marco.sottana@gmail.com"
         }
     ],
     "extra": {
         "laravel": {
-            "providers": [
-                "Modules\\Fixcity\\Providers\\FixcityServiceProvider",
-                "Modules\\Fixcity\\Providers\\Filament\\AdminPanelProvider"
-            ],
-            "aliases": {
-
-            }
+            "providers": [],
+            "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Fixcity\\": "app/",
-            "Modules\\Fixcity\\Database\\Factories\\": "database/factories/",
-            "Modules\\Fixcity\\Database\\Seeders\\": "database/seeders/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Modules\\Fixcity\\Tests\\": "tests/"
+            "Modules\\Fixcity\\": "app/"
         }
     }
 }
