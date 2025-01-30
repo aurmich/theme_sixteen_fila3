@@ -4,15 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-<<<<<<< HEAD
-use Modules\Geo\DataTransferObjects\LocationDTO;
-use Modules\Geo\Exceptions\InvalidLocationException;
-use Modules\Geo\Services\GoogleMapsService;
-=======
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
 use Modules\Geo\Datas\LocationData;
->>>>>>> e46023e4e4295af58fc905ea1e415be6acef15a5
 
 /**
  * Classe per calcolare la distanza tra due punti.
@@ -20,39 +14,6 @@ use Modules\Geo\Datas\LocationData;
 class CalculateDistanceAction
 {
     public function __construct(
-<<<<<<< HEAD
-        private readonly GoogleMapsService $googleMapsService
-    ) {
-    }
-
-    public function execute(LocationDTO $origin, LocationDTO $destination): string
-    {
-        $response = $this->googleMapsService->getDistanceMatrix(
-            "{$origin->latitude},{$origin->longitude}",
-            "{$destination->latitude},{$destination->longitude}"
-        );
-
-        if (!$response || 
-            empty($response['rows']) ||
-            empty($response['rows'][0]['elements']) ||
-            !isset($response['rows'][0]['elements'][0]['distance']['value'])
-        ) {
-            return 'N/D';
-        }
-
-        $distanceMeters = (int)$response['rows'][0]['elements'][0]['distance']['value'];
-        return $this->formatDistance($distanceMeters);
-    }
-
-    private function formatDistance(int $meters): string
-    {
-        if ($meters < 1000) {
-            return $meters.' m';
-        }
-
-        $kilometers = round($meters / 1000, 1);
-        return $kilometers.' km';
-=======
         private readonly CalculateDistanceMatrixAction $distanceMatrixAction,
     ) {
     }
@@ -77,6 +38,19 @@ class CalculateDistanceAction
         }
 
         return $response[0][0];
->>>>>>> e46023e4e4295af58fc905ea1e415be6acef15a5
+    }
+
+    /**
+     * Formatta la distanza in metri in una stringa leggibile.
+     */
+    private function formatDistance(int $meters): string
+    {
+        if ($meters < 1000) {
+            return sprintf('%d m', $meters);
+        }
+
+        $kilometers = round($meters / 1000, 1);
+
+        return sprintf('%.1f km', $kilometers);
     }
 }
