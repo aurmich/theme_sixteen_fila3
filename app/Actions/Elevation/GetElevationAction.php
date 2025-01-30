@@ -57,10 +57,7 @@ class GetElevationAction
                 throw $e;
             }
 
-            throw ElevationException::serviceError(
-                'Errore nel recupero dell\'elevazione: ' . $e->getMessage(),
-                $e
-            );
+            throw ElevationException::serviceError('Errore nel recupero dell\'elevazione: '.$e->getMessage(), $e);
         }
     }
 
@@ -86,15 +83,11 @@ class GetElevationAction
     private function validateCoordinates(LocationData $location): void
     {
         if ($location->latitude < -90 || $location->latitude > 90) {
-            throw new \InvalidArgumentException(
-                sprintf('Latitudine non valida: %f', $location->latitude)
-            );
+            throw new \InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
         }
 
         if ($location->longitude < -180 || $location->longitude > 180) {
-            throw new \InvalidArgumentException(
-                sprintf('Longitudine non valida: %f', $location->longitude)
-            );
+            throw new \InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
         }
     }
 }

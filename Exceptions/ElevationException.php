@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Exceptions;
 
-use RuntimeException;
-
 /**
  * Eccezione lanciata quando si verificano errori durante il recupero dell'elevazione.
  */
-class ElevationException extends RuntimeException
+class ElevationException extends \RuntimeException
 {
     /**
      * Crea una nuova istanza per risposta non valida.
@@ -26,4 +24,4 @@ class ElevationException extends RuntimeException
     {
         return new self($message, 0, $previous);
     }
-} 
+}
