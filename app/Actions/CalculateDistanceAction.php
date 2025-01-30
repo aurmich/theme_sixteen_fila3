@@ -56,12 +56,12 @@ class CalculateDistanceAction
             );
 
             if (empty($response) || empty($response[0]) || empty($response[0][0])) {
-                throw new DistanceCalculationException('Risposta non valida dal servizio di calcolo distanze');
+                throw DistanceCalculationException::invalidResponse();
             }
 
             return $response[0][0];
         } catch (\Throwable $e) {
-            throw new DistanceCalculationException('Errore nel calcolo della distanza: '.$e->getMessage(), previous: $e);
+            throw DistanceCalculationException::calculationError('Errore nel calcolo della distanza: '.$e->getMessage(), $e);
         }
     }
 
@@ -72,7 +72,7 @@ class CalculateDistanceAction
      *
      * @throws \InvalidArgumentException Se il valore in metri è negativo
      */
-    private function formatDistance(int $meters): string
+    public function formatDistance(int $meters): string
     {
         if ($meters < 0) {
             throw new \InvalidArgumentException('La distanza non può essere negativa');
