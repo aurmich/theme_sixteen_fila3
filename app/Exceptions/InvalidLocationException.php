@@ -29,13 +29,19 @@ class InvalidLocationException extends \RuntimeException
         ));
     }
 
+    /**
+     * Crea una nuova istanza per indirizzo non valido.
+     */
     public static function invalidAddress(): self
     {
-        return new self('Invalid address provided');
+        return new self('Indirizzo non valido');
     }
 
+    /**
+     * Crea una nuova istanza per tipo non valido.
+     */
     public static function invalidType(string $expectedType): self
     {
-        return new self(sprintf('Invalid location type, expected %s', $expectedType));
+        return new self(sprintf('Tipo di posizione non valido, atteso %s', $expectedType));
     }
 }
