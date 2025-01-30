@@ -4,32 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
-
-use function Safe\json_decode;
+use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
 
 /**
- * Action per calcolare la matrice delle distanze tra punti usando Google Maps Distance Matrix API.
+ * Classe per calcolare la matrice delle distanze tra punti usando Google Maps.
  */
 class CalculateDistanceMatrixAction
 {
-    private const API_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
-
-    public function __construct(
-        private readonly Client $client,
-    ) {
-    }
+    private const BASE_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
 
     /**
-     * Calcola la matrice delle distanze tra punti di origine e destinazione.
+     * Calcola la matrice delle distanze tra origini e destinazioni.
      *
-     * @param Collection<int, LocationData> $origins      Punti di origine
-     * @param Collection<int, LocationData> $destinations Punti di destinazione
+     * @param Collection<LocationData> $origins      Punti di origine
+     * @param Collection<LocationData> $destinations Punti di destinazione
      *
-     * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
+     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
      *
      * @return array<array<array{
      *     distance: array{text: string, value: int},
@@ -39,91 +32,49 @@ class CalculateDistanceMatrixAction
      */
     public function execute(Collection $origins, Collection $destinations): array
     {
-        try {
-            $response = $this->makeApiRequest($origins, $destinations);
-            $parsedResponse = $this->parseResponse($response);
+        $apiKey = $this->getApiKey();
 
-            if (empty($parsedResponse)) {
-                throw new \RuntimeException('La risposta della matrice delle distanze è vuota o non valida.');
-            }
-
-            return $parsedResponse;
-        } catch (GuzzleException $e) {
-            throw new \RuntimeException('Failed to calculate distance matrix: '.$e->getMessage());
-        }
-    }
-
-    /**
-     * @param Collection<int, LocationData> $origins
-     * @param Collection<int, LocationData> $destinations
-     *
-     * @throws GuzzleException
-     */
-    private function makeApiRequest(Collection $origins, Collection $destinations): string
-    {
-        $originsString = $origins->map(
-            fn (LocationData $location): string => sprintf('%f,%f', $location->latitude, $location->longitude)
-        )->join('|');
-
-        $destinationsString = $destinations->map(
-            fn (LocationData $location): string => sprintf('%f,%f', $location->latitude, $location->longitude)
-        )->join('|');
-
-        $response = $this->client->get(self::API_URL, [
-            'query' => [
-                'origins' => $originsString,
-                'destinations' => $destinationsString,
-                'key' => config('services.google.maps_api_key'),
-            ],
+        $response = Http::get(self::BASE_URL, [
+            'origins' => $origins->map(fn (LocationData $location) => sprintf('%f,%f', $location->latitude, $location->longitude))->join('|'),
+            'destinations' => $destinations->map(fn (LocationData $location) => sprintf('%f,%f', $location->latitude, $location->longitude))->join('|'),
+            'key' => $apiKey,
         ]);
 
-        return $response->getBody()->getContents();
+        if (! $response->successful()) {
+            throw GoogleMapsApiException::requestFailed((string) $response->status());
+        }
+
+        $data = $response->json();
+
+        if ('OK' !== ($data['status'] ?? null)) {
+            throw GoogleMapsApiException::requestFailed('Stato della risposta non valido: '.($data['status'] ?? 'sconosciuto'));
+        }
+
+        if (empty($data['rows'])) {
+            throw GoogleMapsApiException::noResultsFound();
+        }
+
+        return array_map(
+            fn (array $row) => array_map(
+                fn (array $element) => [
+                    'distance' => $element['distance'] ?? ['text' => '0 km', 'value' => 0],
+                    'duration' => $element['duration'] ?? ['text' => '0 min', 'value' => 0],
+                    'status' => $element['status'] ?? 'ZERO_RESULTS',
+                ],
+                $row['elements'] ?? []
+            ),
+            $data['rows']
+        );
     }
 
-    /**
-     * @throws \RuntimeException Se la risposta non è nel formato atteso
-     *
-     * @return array<array<array{
-     *     distance: array{text: string, value: int},
-     *     duration: array{text: string, value: int},
-     *     status: string
-     * }>>
-     */
-    private function parseResponse(string $response): array
+    private function getApiKey(): string
     {
-        /** @var array{
-         *     status: string,
-         *     rows: array<array{
-         *         elements: array<array{
-         *             status: string,
-         *             distance: array{text: string, value: int},
-         *             duration: array{text: string, value: int}
-         *         }>
-         *     }>
-         * } $data */
-        $data = json_decode($response, true);
+        $apiKey = config('services.google.maps_api_key');
 
-        if ('OK' !== $data['status']) {
-            throw new \RuntimeException('Distance matrix request failed: '.($data['error_message'] ?? 'Unknown error'));
+        if (empty($apiKey)) {
+            throw GoogleMapsApiException::missingApiKey();
         }
 
-        $result = [];
-        foreach ($data['rows'] as $row) {
-            $resultRow = [];
-            foreach ($row['elements'] as $element) {
-                if ('OK' !== $element['status']) {
-                    throw new \RuntimeException('Distance matrix element failed: '.($element['status'] ?? 'Unknown error'));
-                }
-
-                $resultRow[] = [
-                    'distance' => $element['distance'],
-                    'duration' => $element['duration'],
-                    'status' => $element['status'],
-                ];
-            }
-            $result[] = $resultRow;
-        }
-
-        return $result;
+        return $apiKey;
     }
 }
