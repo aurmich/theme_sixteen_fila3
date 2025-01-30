@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\GoogleMaps\GoogleMapResponseData;
 use Modules\Geo\Datas\GoogleMaps\GoogleMapResultData;
+use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
 use Spatie\LaravelData\DataCollection;
 
 /**
- * Handles Google Maps Geocoding API requests and response processing.
+ * Gestisce le richieste e l'elaborazione delle risposte dell'API di geocodifica di Google Maps.
  */
 final class GetAddressFromGoogleMapsAction
 {
@@ -30,7 +31,7 @@ final class GetAddressFromGoogleMapsAction
     ];
 
     /**
-     * @throws GoogleMapsApiException
+     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
      */
     public function execute(string $address): AddressData
     {
@@ -62,7 +63,7 @@ final class GetAddressFromGoogleMapsAction
         ]);
 
         if (! $response->successful()) {
-            throw GoogleMapsApiException::requestFailed($response->status());
+            throw GoogleMapsApiException::requestFailed((string) $response->status());
         }
 
         return $response;
@@ -109,17 +110,19 @@ final class GetAddressFromGoogleMapsAction
         ]);
     }
 
-    private function getComponent(
-        DataCollection $components,
-        array $types,
-        bool $short = false,
-    ): ?string {
-        $component = $components
-            ->toCollection()
-            ->firstWhere(
-                fn ($component) => ! empty($component->types)
-                    && count(array_intersect($component->types, $types)) > 0
-            );
+    /**
+     * Ottiene un componente dell'indirizzo dal risultato di Google Maps.
+     *
+     * @param DataCollection $components Componenti dell'indirizzo
+     * @param array<string> $types      Tipi di componente da cercare
+     * @param bool $short               Se true, restituisce il nome breve invece di quello lungo
+     */
+    private function getComponent(DataCollection $components, array $types, bool $short = false): ?string
+    {
+        $component = $components->toCollection()->first(function ($component) use ($types) {
+            return ! empty($component->types)
+                && count(array_intersect($component->types, $types)) > 0;
+        });
 
         return $component?->{$short ? 'short_name' : 'long_name'};
     }
