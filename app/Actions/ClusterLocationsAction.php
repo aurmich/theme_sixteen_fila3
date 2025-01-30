@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Modules\Geo\DataTransferObjects\LocationDTO;
+use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\InvalidLocationException;
 
 class ClusterLocationsAction
@@ -15,25 +15,29 @@ class ClusterLocationsAction
     }
 
     /**
-     * @param array<LocationDTO> $locations
+     * Raggruppa le posizioni in cluster basati sulla distanza.
      *
-     * @return array<array{center: LocationDTO, points: array<LocationDTO>}>
+     * @param array<LocationData> $locations   Lista delle posizioni da raggruppare
+     * @param float $maxDistance              Distanza massima in km tra i punti di un cluster
+     *
+     * @return array<array{center: LocationData, points: array<LocationData>}>
+     *
+     * @throws InvalidLocationException Se i dati della posizione non sono validi
      */
     public function execute(array $locations, float $maxDistance = 1.0): array
     {
         $clusters = [];
 
         foreach ($locations as $location) {
-            if (! $location instanceof LocationDTO) {
-                throw new InvalidLocationException('Invalid location data');
+            if (! $location instanceof LocationData) {
+                throw InvalidLocationException::invalidData();
             }
 
             $assigned = false;
 
             foreach ($clusters as &$cluster) {
-                $distanceKm = (float) str_replace(' km', '',
-                    $this->distanceCalculator->execute($cluster['center'], $location)
-                );
+                $distance = $this->distanceCalculator->execute($cluster['center'], $location);
+                $distanceKm = (float) $distance['distance']['value'] / 1000;
 
                 if ($distanceKm <= $maxDistance) {
                     $cluster['points'][] = $location;
@@ -55,23 +59,25 @@ class ClusterLocationsAction
     }
 
     /**
-     * @param array{center: LocationDTO, points: array<LocationDTO>} $cluster
+     * Aggiorna il centro del cluster calcolando la media delle coordinate.
+     *
+     * @param array{center: LocationData, points: array<LocationData>} $cluster
      */
     private function updateClusterCenter(array &$cluster): void
     {
         $latSum = array_sum(array_map(
-            fn (LocationDTO $point) => $point->latitude,
+            fn (LocationData $point) => $point->latitude,
             $cluster['points']
         ));
 
         $lonSum = array_sum(array_map(
-            fn (LocationDTO $point) => $point->longitude,
+            fn (LocationData $point) => $point->longitude,
             $cluster['points']
         ));
 
         $count = count($cluster['points']);
 
-        $cluster['center'] = new LocationDTO(
+        $cluster['center'] = new LocationData(
             latitude: $latSum / $count,
             longitude: $lonSum / $count
         );

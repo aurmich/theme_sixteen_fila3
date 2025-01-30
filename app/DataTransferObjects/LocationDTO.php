@@ -31,7 +31,7 @@ class LocationDTO
         return new self(
             latitude: $data->latitude,
             longitude: $data->longitude,
-            name: $data->name ?? null,
+            name: $data->name,
         );
     }
 
