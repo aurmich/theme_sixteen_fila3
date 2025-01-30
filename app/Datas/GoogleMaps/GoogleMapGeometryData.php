@@ -6,13 +6,16 @@ namespace Modules\Geo\Datas\GoogleMaps;
 
 use Spatie\LaravelData\Data;
 
+/**
+ * Data Transfer Object per i dati geometrici dell'API di Google Maps.
+ */
 class GoogleMapGeometryData extends Data
 {
+    /**
+     * @param GoogleMapLocationData $location Posizione geografica
+     */
     public function __construct(
-        public ?GoogleMapLocationData $location,
-        public string $location_type,
-        public ?GoogleMapBoundsData $bounds,
-        public ?GoogleMapBoundsData $viewport,
+        public readonly GoogleMapLocationData $location,
     ) {
     }
 }
