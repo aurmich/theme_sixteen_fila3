@@ -12,9 +12,9 @@ use Modules\Geo\Datas\LocationData;
 class LocationDTO
 {
     /**
-     * @param float $latitude   Latitudine in gradi decimali
-     * @param float $longitude  Longitudine in gradi decimali
-     * @param string|null $name Nome opzionale della posizione
+     * @param float       $latitude  Latitudine in gradi decimali
+     * @param float       $longitude Longitudine in gradi decimali
+     * @param string|null $name      Nome opzionale della posizione
      */
     public function __construct(
         public readonly float $latitude,
@@ -46,4 +46,4 @@ class LocationDTO
             name: $this->name,
         );
     }
-} 
+}
