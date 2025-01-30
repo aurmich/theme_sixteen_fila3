@@ -13,7 +13,7 @@ class MapboxMapData
      * @param array<string, mixed> $data Dati grezzi dalla risposta di Mapbox
      */
     public function __construct(
-        private readonly array $data
+        private readonly array $data,
     ) {
     }
 
@@ -26,4 +26,4 @@ class MapboxMapData
     {
         return $this->data;
     }
-} 
+}
