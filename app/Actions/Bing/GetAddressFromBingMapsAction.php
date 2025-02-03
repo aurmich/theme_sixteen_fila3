@@ -89,4 +89,4 @@ class GetAddressFromBingMapsAction
             state: $res['address']['adminDistrict'] ?? null,
         );
     }
-} 
+}
