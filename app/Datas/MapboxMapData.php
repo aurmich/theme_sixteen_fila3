@@ -4,23 +4,51 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Datas;
 
+use Spatie\LaravelData\Data;
+
 /**
- * Data Transfer Object per i dati delle mappe Mapbox.
+ * Classe per gestire i dati grezzi di Mapbox.
  */
-class MapboxMapData
+class MapboxMapData extends Data
 {
     /**
-     * @param array<string, mixed> $data Dati grezzi dalla risposta di Mapbox
+     * @param array{
+     *     center: array{0: float, 1: float},
+     *     text: string,
+     *     address: ?string,
+     *     context: array{
+     *         country: ?string,
+     *         country_code: ?string,
+     *         place: ?string,
+     *         postcode: ?string,
+     *         locality: ?string,
+     *         region: ?string,
+     *         neighborhood: ?string
+     *     }
+     * } $data
      */
     public function __construct(
-        private readonly array $data,
+        private readonly array $data
     ) {
     }
 
     /**
-     * Converte l'oggetto in un array.
+     * Converte i dati in un array.
      *
-     * @return array<string, mixed>
+     * @return array{
+     *     center: array{0: float, 1: float},
+     *     text: string,
+     *     address: ?string,
+     *     context: array{
+     *         country: ?string,
+     *         country_code: ?string,
+     *         place: ?string,
+     *         postcode: ?string,
+     *         locality: ?string,
+     *         region: ?string,
+     *         neighborhood: ?string
+     *     }
+     * }
      */
     public function toArray(): array
     {

@@ -6,21 +6,84 @@ namespace Modules\Geo\Services;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
 
-class GoogleMapsService
+/**
+ * Servizio per le interazioni con l'API di Google Maps.
+ */
+class GoogleMapsService extends BaseGeoService
 {
-    protected string $apiKey;
+    private const GEOCODING_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const DISTANCE_MATRIX_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
+    private const ELEVATION_URL = 'https://maps.googleapis.com/maps/api/elevation/json';
 
-    protected string $baseUrl = 'https://maps.googleapis.com/maps/api';
-
-    public function __construct()
+    protected function getServiceName(): string
     {
-        /** @var string|null $apiKey */
-        $apiKey = config('services.google.maps_api_key');
-        if (! is_string($apiKey) || empty($apiKey)) {
-            throw new \RuntimeException('Google Maps API key is not configured. Please set GOOGLE_MAPS_API_KEY in your .env file.');
+        return 'google_maps';
+    }
+
+    /**
+     * Esegue una richiesta di geocodifica inversa.
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce
+     *
+     * @return array<string, mixed>
+     */
+    public function reverseGeocode(float $latitude, float $longitude): array
+    {
+        try {
+            return $this->makeRequest('GET', self::GEOCODING_URL, [
+                'latlng' => "{$latitude},{$longitude}",
+                'key' => $this->getApiKey(),
+                'language' => 'it',
+            ]);
+        } catch (\Throwable $e) {
+            throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
-        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * Calcola la matrice delle distanze.
+     *
+     * @param array<string> $origins      Punti di origine (formato: "lat,lng|lat,lng|...")
+     * @param array<string> $destinations Punti di destinazione (formato: "lat,lng|lat,lng|...")
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce
+     *
+     * @return array<string, mixed>
+     */
+    public function getDistanceMatrix(array $origins, array $destinations): array
+    {
+        try {
+            return $this->makeRequest('GET', self::DISTANCE_MATRIX_URL, [
+                'origins' => implode('|', $origins),
+                'destinations' => implode('|', $destinations),
+                'key' => $this->getApiKey(),
+                'language' => 'it',
+                'units' => 'metric',
+            ]);
+        } catch (\Throwable $e) {
+            throw GoogleMapsApiException::requestFailed($e->getMessage());
+        }
+    }
+
+    /**
+     * Ottiene l'elevazione per un punto.
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce
+     *
+     * @return array<string, mixed>
+     */
+    public function getElevation(float $latitude, float $longitude): array
+    {
+        try {
+            return $this->makeRequest('GET', self::ELEVATION_URL, [
+                'locations' => "{$latitude},{$longitude}",
+                'key' => $this->getApiKey(),
+            ]);
+        } catch (\Throwable $e) {
+            throw GoogleMapsApiException::requestFailed($e->getMessage());
+        }
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\MapboxMapData;
+use Modules\Geo\Exceptions\InvalidLocationException;
 use Webmozart\Assert\Assert;
 
 /**
@@ -18,82 +19,112 @@ class GetAddressFromMapboxAction
     private const BASE_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
 
     /**
-     * Esegue la ricerca dell'indirizzo su Mapbox.
+     * Ottiene l'indirizzo da coordinate geografiche.
      *
-     * @param string $address L'indirizzo da cercare
-     *
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     * @throws InvalidLocationException Se la richiesta fallisce o i dati non sono validi
      */
-    public function execute(string $address): ?AddressData
+    public function execute(float $latitude, float $longitude): AddressData
     {
-        $apiKey = config('services.mapbox.key');
+        $this->validateCoordinates($latitude, $longitude);
+        $apiKey = $this->getApiKey();
+        $response = $this->makeApiRequest($latitude, $longitude, $apiKey);
+        $data = $this->parseResponse($response);
 
-        if (empty($apiKey)) {
-            throw new \Exception('Mapbox API key not configured');
+        return $this->mapResponseToAddressData($data);
+    }
+
+    private function validateCoordinates(float $latitude, float $longitude): void
+    {
+        if ($latitude < -90 || $latitude > 90) {
+            throw InvalidLocationException::invalidData('Latitudine non valida: deve essere compresa tra -90 e 90');
         }
 
-        $response = Http::get(self::BASE_URL, [
-            'address' => $address,
-            'key' => $apiKey,
+        if ($longitude < -180 || $longitude > 180) {
+            throw InvalidLocationException::invalidData('Longitudine non valida: deve essere compresa tra -180 e 180');
+        }
+    }
+
+    private function getApiKey(): string
+    {
+        $apiKey = config('services.mapbox.api_key');
+
+        if (empty($apiKey)) {
+            throw InvalidLocationException::invalidData('API key di Mapbox non configurata');
+        }
+
+        return $apiKey;
+    }
+
+    private function makeApiRequest(float $latitude, float $longitude, string $apiKey): array
+    {
+        $response = Http::get(self::BASE_URL."/{$longitude},{$latitude}.json", [
+            'access_token' => $apiKey,
+            'types' => 'address',
+            'limit' => 1,
+            'language' => 'it',
         ]);
 
         if (! $response->successful()) {
-            return null;
+            throw InvalidLocationException::invalidData('Richiesta a Mapbox fallita');
         }
 
-        Assert::isArray($data = $response->json());
-        Assert::isArray($results = $data['results']);
-        if (empty($data['results'][0])) {
-            return null;
-        }
+        return $response->json();
+    }
 
-        $result = $data['results'][0];
-        $location = $result['geometry']['location'] ?? null;
+    private function parseResponse(array $response): MapboxMapData
+    {
+        $features = collect($response['features'] ?? []);
+        $location = $features->first();
 
         if (empty($location)) {
-            return null;
+            throw InvalidLocationException::invalidData('Nessun risultato trovato');
         }
 
-        /** @var Collection<int, array{long_name: string, short_name: string, types: array<string>}> */
-        $components = collect($result['address_components'] ?? []);
+        // Estrai il contesto dal risultato
+        $context = collect($location['context'] ?? [])->mapWithKeys(function (array $item) {
+            $id = $item['id'] ?? '';
+            $text = $item['text'] ?? '';
+            $shortCode = $item['short_code'] ?? '';
 
-        $getComponent = function (array $types) use ($components): ?string {
-            $component = $components->first(function ($component) use ($types) {
-                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
-            });
+            // Determina il tipo di contesto dal prefisso dell'ID
+            $type = explode('.', $id)[0] ?? '';
 
-            return $component['long_name'] ?? null;
-        };
+            return [$type => [
+                'text' => $text,
+                'short_code' => $shortCode,
+            ]];
+        })->toArray();
 
-        $getShortComponent = function (array $types) use ($components): ?string {
-            $component = $components->first(function ($component) use ($types) {
-                return ! empty($component['types']) && count(array_intersect($component['types'], $types)) > 0;
-            });
+        $location['context'] = [
+            'country' => $context['country']['text'] ?? null,
+            'country_code' => $context['country']['short_code'] ?? 'it',
+            'place' => $context['place']['text'] ?? null,
+            'postcode' => $context['postcode']['text'] ?? null,
+            'locality' => $context['locality']['text'] ?? null,
+            'region' => $context['region']['text'] ?? null,
+            'neighborhood' => $context['neighborhood']['text'] ?? null,
+        ];
 
-            return $component['short_name'] ?? null;
-        };
+        return new MapboxMapData($location);
+    }
 
-        $mapboxMapData = new MapboxMapData(
-            latitude: (float) ($location['lat'] ?? 0),
-            longitude: (float) ($location['lng'] ?? 0),
-            country: $getComponent(['country']) ?? 'Italia',
-            city: $getComponent(['administrative_area_level_3']) ?? '',
-            country_code: $getShortComponent(['country']) ?? 'IT',
-            postal_code: (int) ($getComponent(['postal_code']) ?? 0),
-            locality: $getComponent(['locality']) ?? '',
-            county: $getComponent(['administrative_area_level_2']) ?? '',
-            street: $getComponent(['route']) ?? '',
-            street_number: $getComponent(['street_number']) ?? '',
-            district: $getComponent(['sublocality_level_1']) ?? '',
-            state: $getComponent(['administrative_area_level_1']) ?? ''
+    private function mapResponseToAddressData(MapboxMapData $data): AddressData
+    {
+        $res = $data->toArray();
+
+        return new AddressData(
+            latitude: (float) ($res['center'][1] ?? 0),
+            longitude: (float) ($res['center'][0] ?? 0),
+            country: $res['context']['country'] ?? null,
+            city: $res['context']['place'] ?? null,
+            country_code: strtoupper($res['context']['country_code'] ?? 'IT'),
+            postal_code: (int) ($res['context']['postcode'] ?? 0),
+            locality: $res['context']['locality'] ?? null,
+            county: $res['context']['region'] ?? null,
+            street: $res['text'] ?? null,
+            street_number: $res['address'] ?? null,
+            district: $res['context']['neighborhood'] ?? null,
+            state: $res['context']['region'] ?? null,
         );
-
-        try {
-            $res = AddressData::from($mapboxMapData->toArray());
-        } catch (\Exception $e) {
-            dddx($e->getMessage());
-        }
-
-        return $res;
     }
 }
