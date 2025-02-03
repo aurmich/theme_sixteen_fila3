@@ -14,6 +14,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Geo\Filament\Resources\LocationResource\Pages;
 use Modules\Geo\Models\Location;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Resource per la gestione dei luoghi.
@@ -27,7 +28,7 @@ use Modules\Geo\Models\Location;
  * @property string|null $navigationGroup Il gruppo di navigazione a cui appartiene
  * @property int|null    $navigationSort  L'ordine di visualizzazione nel menu
  */
-class LocationResource extends Resource
+class LocationResource extends XotBaseResource
 {
     protected static ?string $model = Location::class;
 
@@ -52,68 +53,53 @@ class LocationResource extends Resource
         ];
     }
 
-    /**
-     * Definisce il form per la creazione e modifica dei luoghi.
-     *
-     * Il form include campi per:
-     * - Nome del luogo
-     * - Indirizzo (con autocompletamento delle coordinate via Google Maps)
-     * - Latitudine
-     * - Longitudine
-     * - Mappa interattiva per la selezione visuale del luogo
-     *
-     * @param Form $form Il form da configurare
-     *
-     * @return Form Il form configurato
-     */
-    public static function form(Form $form): Form
+    public static function getFormSchema(): array
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('latitude')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('longitude')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('street')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('city')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('state')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('zip')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('formatted_address')
-                    ->maxLength(1024),
+        return [
+            Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+            Forms\Components\TextInput::make('latitude')
+                ->required()
+                ->numeric(),
+            Forms\Components\TextInput::make('longitude')
+                ->required()
+                ->numeric(),
+            Forms\Components\TextInput::make('street')
+                ->maxLength(255),
+            Forms\Components\TextInput::make('city')
+                ->maxLength(255),
+            Forms\Components\TextInput::make('state')
+                ->maxLength(255),
+            Forms\Components\TextInput::make('zip')
+                ->maxLength(255),
+            Forms\Components\TextInput::make('formatted_address')
+                ->maxLength(1024),
 
-                Map::make('location')
-                    ->reactive()
-                    ->afterStateUpdated(function (array $state, callable $set, callable $get) {
-                        $set('lat', $state['lat']);
-                        $set('lng', $state['lng']);
-                    })
-                    ->drawingControl()
-                    ->defaultLocation([39.526610, -107.727261])
-                    ->mapControls([
-                        'zoomControl' => true,
-                    ])
-                    ->debug()
-                    ->clickable()
-                    ->autocomplete('formatted_address')
-                    ->autocompleteReverse()
-                    ->reverseGeocode([
-                        'city' => '%L',
-                        'zip' => '%z',
-                        'state' => '%A1',
-                        'street' => '%n %S',
-                    ])
-                    ->geolocate()
-                    ->columnSpan(2),
-            ]);
+            Map::make('location')
+                ->reactive()
+                ->afterStateUpdated(function (array $state, callable $set, callable $get) {
+                    $set('lat', $state['lat']);
+                    $set('lng', $state['lng']);
+                })
+                ->drawingControl()
+                ->defaultLocation([39.526610, -107.727261])
+                ->mapControls([
+                    'zoomControl' => true,
+                ])
+                ->debug()
+                ->clickable()
+                ->autocomplete('formatted_address')
+                ->autocompleteReverse()
+                ->reverseGeocode([
+                    'city' => '%L',
+                    'zip' => '%z',
+                    'state' => '%A1',
+                    'street' => '%n %S',
+                ])
+                ->geolocate()
+                ->columnSpan(2),
+        ];
     }
 
     /**
