@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Exceptions;
 
-use RuntimeException;
-
 /**
  * Eccezione lanciata quando si verificano errori durante il calcolo della distanza.
  */
-class DistanceCalculationException extends RuntimeException
+class DistanceCalculationException extends \RuntimeException
 {
     /**
      * Crea una nuova istanza per risposta non valida.

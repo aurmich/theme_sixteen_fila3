@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Mapbox;
 
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\MapboxMapData;
 use Modules\Geo\Exceptions\InvalidLocationException;
-use Webmozart\Assert\Assert;
 
 /**
  * Classe per ottenere i dati dell'indirizzo dal servizio Mapbox.

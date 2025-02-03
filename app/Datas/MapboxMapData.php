@@ -28,7 +28,7 @@ class MapboxMapData extends Data
      * } $data
      */
     public function __construct(
-        private readonly array $data
+        private readonly array $data,
     ) {
     }
 
