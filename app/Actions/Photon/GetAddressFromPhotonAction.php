@@ -4,59 +4,91 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Photon;
 
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\Photon\PhotonAddressData;
 
+use function Safe\json_decode;
+
+use Webmozart\Assert\Assert;
+
+/**
+ * Action per ottenere l'indirizzo e le coordinate tramite Photon.
+ *
+ * Questa classe utilizza l'API Photon per convertire
+ * un indirizzo in coordinate geografiche e dettagli dell'indirizzo.
+ */
 class GetAddressFromPhotonAction
 {
-    private const BASE_URL = 'https://photon.komoot.io/api';
+    private const API_URL = 'https://photon.komoot.io/api';
 
+    public function __construct(
+        private readonly Client $client,
+    ) {
+    }
+
+    /**
+     * Ottiene i dettagli dell'indirizzo utilizzando Photon.
+     */
     public function execute(string $address): ?AddressData
     {
+        $this->validateInput($address);
+
         try {
-            $response = Http::get(self::BASE_URL, [
-                'q' => $address,
-                'limit' => 1,
-            ]);
-
-            if (! $response->successful()) {
-                \Log::error('Photon API request failed', [
-                    'status' => $response->status(),
-                    'address' => $address,
-                ]);
-
-                return null;
-            }
-
-            $data = $response->json();
+            $response = $this->makeApiRequest($address);
+            /** @var array{features: array<array{properties: array<string, mixed>, geometry: array{coordinates: array<float>}}>} $data */
+            $data = json_decode($response, true);
 
             if (empty($data['features'][0])) {
-                \Log::warning('No features found in Photon response', [
-                    'address' => $address,
-                ]);
-
                 return null;
             }
 
             $photonData = PhotonAddressData::fromPhotonFeature($data['features'][0]);
 
             return new AddressData(
+                latitude: $photonData->coordinates['latitude'],
+                longitude: $photonData->coordinates['longitude'],
                 country: $photonData->country,
                 city: $photonData->city,
-                postcode: $photonData->postcode,
+                postal_code: (int) ($photonData->postcode ?: 0),
                 street: $photonData->street,
-                housenumber: $photonData->housenumber,
-                latitude: $photonData->coordinates['latitude'],
-                longitude: $photonData->coordinates['longitude']
+                street_number: $photonData->housenumber
             );
         } catch (\Exception $e) {
-            \Log::error('Exception during Photon API request', [
+            Log::error('Exception during Photon API request', [
                 'exception' => $e->getMessage(),
                 'address' => $address,
             ]);
 
             return null;
         }
+    }
+
+    /**
+     * Valida i dati di input.
+     */
+    private function validateInput(string $address): void
+    {
+        Assert::notEmpty($address, 'Address cannot be empty');
+        Assert::maxLength($address, 200, 'Address is too long');
+    }
+
+    /**
+     * Effettua la richiesta all'API di Photon.
+     *
+     * @throws GuzzleException Se la richiesta fallisce
+     */
+    private function makeApiRequest(string $address): string
+    {
+        $response = $this->client->get(self::API_URL, [
+            'query' => [
+                'q' => $address,
+                'limit' => 1,
+            ],
+        ]);
+
+        return $response->getBody()->getContents();
     }
 }

@@ -5,28 +5,16 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Pages;
 
 use Dotswan\MapPicker\Fields\Map;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Set;
-use Filament\Pages\Page;
 use Illuminate\Support\Collection;
 use Modules\Geo\Models\Place;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Pagina per visualizzare la mappa dei luoghi.
  */
-class DotswanMap extends Page implements HasForms
+class DotswanMap extends XotBasePage
 {
-    use InteractsWithForms;
-
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
-
-    protected static string $view = 'geo::filament.pages.dotswan-map';
-
-    protected static ?string $navigationGroup = 'Geo';
-
-    protected static ?int $navigationSort = 1;
-
     public array $location;
 
     /**
@@ -48,8 +36,7 @@ class DotswanMap extends Page implements HasForms
 
     protected function getHeaderWidgets(): array
     {
-        return [
-        ];
+        return [];
     }
 
     public function getHeaderWidgetsColumns(): int|array
@@ -63,10 +50,6 @@ class DotswanMap extends Page implements HasForms
             Map::make('location')
                 ->label('Location')
                 ->columnSpanFull()
-                // ->default([
-                //     'lat' => 40.4168,
-                //     'lng' => -3.7038
-                // ])
                 ->afterStateUpdated(function (Set $set, ?array $state): void {
                     if (is_array($state)) {
                         $set('latitude', $state['lat']);
@@ -87,14 +70,8 @@ class DotswanMap extends Page implements HasForms
                 ->showZoomControl()
                 ->draggable()
                 ->tilesUrl('https://tile.openstreetmap.de/{z}/{x}/{y}.png')
-                // ->zoom(15)
-                // ->detectRetina()
                 ->showMyLocationButton()
                 ->extraTileControl([]),
-            // ->extraControl([
-            //     'zoomDelta'           => 1,
-            //     'zoomSnap'            => 2,
-            // ])
         ];
     }
 }
