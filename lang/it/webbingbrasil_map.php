@@ -1,7 +1,10 @@
-<?php return array (
-  'navigation' => 
-  array (
-    'label' => 'webbingbrasil map.navigation',
-    'group' => 'webbingbrasil map.navigation',
-  ),
-);
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => [
+        'label' => 'webbingbrasil map.navigation',
+        'group' => 'webbingbrasil map.navigation',
+    ],
+];

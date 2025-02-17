@@ -27,4 +27,4 @@ return [
         'saved' => 'Impostazioni salvate con successo',
         'error' => 'Errore durante il salvataggio delle impostazioni',
     ],
-]; 
+];

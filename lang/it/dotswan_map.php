@@ -1,14 +1,15 @@
-<?php return array (
-  'navigation' => 
-  array (
-    'label' => 'dotswan map.navigation',
-    'group' => 'dotswan map.navigation',
-  ),
-  'fields' => 
-  array (
-    'location' => 
-    array (
-      'label' => 'location',
-    ),
-  ),
-);
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => [
+        'label' => 'dotswan map.navigation',
+        'group' => 'dotswan map.navigation',
+    ],
+    'fields' => [
+        'location' => [
+            'label' => 'location',
+        ],
+    ],
+];

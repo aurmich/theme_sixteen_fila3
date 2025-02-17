@@ -138,7 +138,7 @@ class GetAddressFromMapboxAction
         // Estrai numero civico e via dal place_name
         $addressParts = explode(',', $feature['place_name']);
         $streetAddress = trim($addressParts[0]);
-        
+
         // Tenta di separare il numero civico dalla via
         preg_match('/^(.*?)\s*(\d+\w*)?$/', $streetAddress, $matches);
         $street = trim($matches[1] ?? $streetAddress);
@@ -155,4 +155,4 @@ class GetAddressFromMapboxAction
             'province' => $province,
         ]);
     }
-} 
+}

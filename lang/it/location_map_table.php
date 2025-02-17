@@ -1,7 +1,10 @@
-<?php return array (
-  'navigation' => 
-  array (
-    'label' => 'location map table.navigation',
-    'group' => 'location map table.navigation',
-  ),
-);
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => [
+        'label' => 'location map table.navigation',
+        'group' => 'location map table.navigation',
+    ],
+];
