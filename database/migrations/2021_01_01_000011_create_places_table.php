@@ -28,6 +28,7 @@ return new class extends XotBaseMigration {
             $blueprint->text('formatted_address')->nullable();
             $blueprint->decimal('latitude', 15, 10)->nullable();
             $blueprint->decimal('longitude', 15, 10)->nullable();
+            /*
             $address_components = MyModel::$address_components;
             foreach ($address_components as $address_component) {
                 if (! $this->hasColumn($address_component)) {
@@ -37,7 +38,7 @@ return new class extends XotBaseMigration {
                     $blueprint->text($address_component.'_short')->nullable();
                 }
             }
-
+            */
             $blueprint->text('nearest_street')->nullable();
             $blueprint->string('created_by')->nullable();
             $blueprint->string('updated_by')->nullable();
