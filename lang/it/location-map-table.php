@@ -26,4 +26,4 @@ return [
         'edit_coordinates' => 'Modifica coordinate',
         'export' => 'Esporta dati',
     ],
-]; 
+];

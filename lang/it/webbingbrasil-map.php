@@ -27,4 +27,4 @@ return [
         'marker_removed' => 'Marker rimosso con successo',
         'marker_updated' => 'Marker aggiornato con successo',
     ],
-]; 
+];
