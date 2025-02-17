@@ -4,125 +4,155 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Mapbox;
 
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
-use Modules\Geo\Datas\MapboxMapData;
-use Modules\Geo\Exceptions\InvalidLocationException;
+
+use function Safe\json_decode;
+
+use Webmozart\Assert\Assert;
 
 /**
- * Classe per ottenere i dati dell'indirizzo dal servizio Mapbox.
+ * Action per ottenere l'indirizzo e le coordinate tramite Mapbox.
+ *
+ * Questa classe utilizza l'API Mapbox Geocoding per convertire
+ * un indirizzo in coordinate geografiche e dettagli dell'indirizzo.
  */
 class GetAddressFromMapboxAction
 {
-    private const BASE_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
+    private const API_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
+
+    public function __construct(
+        private readonly Client $client,
+    ) {
+    }
 
     /**
-     * Ottiene l'indirizzo da coordinate geografiche.
+     * Ottiene i dettagli dell'indirizzo utilizzando Mapbox.
      *
-     * @throws InvalidLocationException Se la richiesta fallisce o i dati non sono validi
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
-    public function execute(float $latitude, float $longitude): AddressData
+    public function execute(string $address): ?AddressData
     {
-        $this->validateCoordinates($latitude, $longitude);
-        $apiKey = $this->getApiKey();
-        $response = $this->makeApiRequest($latitude, $longitude, $apiKey);
-        $data = $this->parseResponse($response);
+        $this->validateInput($address);
 
-        return $this->mapResponseToAddressData($data);
-    }
+        try {
+            $response = $this->makeApiRequest($address);
 
-    private function validateCoordinates(float $latitude, float $longitude): void
-    {
-        if ($latitude < -90 || $latitude > 90) {
-            throw InvalidLocationException::invalidData('Latitudine non valida: deve essere compresa tra -90 e 90');
-        }
+            return $this->parseResponse($response);
+        } catch (GuzzleException $e) {
+            Log::error('Mapbox Geocoding API request failed', [
+                'error' => $e->getMessage(),
+                'address' => $address,
+            ]);
 
-        if ($longitude < -180 || $longitude > 180) {
-            throw InvalidLocationException::invalidData('Longitudine non valida: deve essere compresa tra -180 e 180');
+            return null;
         }
     }
 
-    private function getApiKey(): string
+    /**
+     * Valida i dati di input.
+     *
+     * @throws \RuntimeException Se la chiave API non è configurata
+     */
+    private function validateInput(string $address): void
     {
-        $apiKey = config('services.mapbox.api_key');
-
-        if (empty($apiKey)) {
-            throw InvalidLocationException::invalidData('API key di Mapbox non configurata');
-        }
-
-        return $apiKey;
+        $apiKey = config('services.mapbox.access_token');
+        Assert::notEmpty($apiKey, 'Mapbox access token not configured');
+        Assert::notEmpty($address, 'Address cannot be empty');
+        Assert::maxLength($address, 1000, 'Address is too long');
     }
 
-    private function makeApiRequest(float $latitude, float $longitude, string $apiKey): array
+    /**
+     * Effettua la richiesta all'API di Mapbox.
+     *
+     * @throws GuzzleException Se la richiesta fallisce
+     */
+    private function makeApiRequest(string $address): string
     {
-        $response = Http::get(self::BASE_URL."/{$longitude},{$latitude}.json", [
-            'access_token' => $apiKey,
-            'types' => 'address',
-            'limit' => 1,
-            'language' => 'it',
+        $encodedAddress = urlencode($address);
+        $url = sprintf('%s/%s.json', self::API_URL, $encodedAddress);
+
+        $response = $this->client->get($url, [
+            'query' => [
+                'access_token' => config('services.mapbox.access_token'),
+                'limit' => 1,
+                'types' => 'address',
+                'country' => 'IT',
+                'language' => 'it',
+            ],
         ]);
 
-        if (! $response->successful()) {
-            throw InvalidLocationException::invalidData('Richiesta a Mapbox fallita');
-        }
-
-        return $response->json();
+        return $response->getBody()->getContents();
     }
 
-    private function parseResponse(array $response): MapboxMapData
+    /**
+     * Elabora la risposta dell'API.
+     *
+     * @throws \RuntimeException Se la risposta non è valida
+     */
+    private function parseResponse(string $response): ?AddressData
     {
-        $features = collect($response['features'] ?? []);
-        $location = $features->first();
+        /** @var array{
+         *     features: array<array{
+         *         center: array<float>,
+         *         context: array<array{
+         *             id: string,
+         *             text: string,
+         *             short_code?: string
+         *         }>,
+         *         place_name: string,
+         *         address?: string,
+         *         text: string
+         *     }>
+         * } $data */
+        $data = json_decode($response, true);
 
-        if (empty($location)) {
-            throw InvalidLocationException::invalidData('Nessun risultato trovato');
+        if (empty($data['features'][0])) {
+            return null;
         }
 
-        // Estrai il contesto dal risultato
-        $context = collect($location['context'] ?? [])->mapWithKeys(function (array $item) {
+        $feature = $data['features'][0];
+        $context = $feature['context'] ?? [];
+
+        // Estrai informazioni dal contesto
+        $city = '';
+        $province = '';
+        $postalCode = '';
+        $country = 'Italia';
+
+        foreach ($context as $item) {
             $id = $item['id'] ?? '';
-            $text = $item['text'] ?? '';
-            $shortCode = $item['short_code'] ?? '';
+            if (str_starts_with($id, 'place')) {
+                $city = $item['text'];
+            } elseif (str_starts_with($id, 'region')) {
+                $province = $item['short_code'] ?? '';
+                // Rimuovi il prefisso IT- se presente
+                $province = str_replace('IT-', '', $province);
+            } elseif (str_starts_with($id, 'postcode')) {
+                $postalCode = $item['text'];
+            }
+        }
 
-            // Determina il tipo di contesto dal prefisso dell'ID
-            $type = explode('.', $id)[0] ?? '';
+        // Estrai numero civico e via dal place_name
+        $addressParts = explode(',', $feature['place_name']);
+        $streetAddress = trim($addressParts[0]);
+        
+        // Tenta di separare il numero civico dalla via
+        preg_match('/^(.*?)\s*(\d+\w*)?$/', $streetAddress, $matches);
+        $street = trim($matches[1] ?? $streetAddress);
+        $streetNumber = trim($matches[2] ?? '');
 
-            return [$type => [
-                'text' => $text,
-                'short_code' => $shortCode,
-            ]];
-        })->toArray();
-
-        $location['context'] = [
-            'country' => $context['country']['text'] ?? null,
-            'country_code' => $context['country']['short_code'] ?? 'it',
-            'place' => $context['place']['text'] ?? null,
-            'postcode' => $context['postcode']['text'] ?? null,
-            'locality' => $context['locality']['text'] ?? null,
-            'region' => $context['region']['text'] ?? null,
-            'neighborhood' => $context['neighborhood']['text'] ?? null,
-        ];
-
-        return new MapboxMapData($location);
+        return AddressData::from([
+            'latitude' => (float) ($feature['center'][1] ?? 0),
+            'longitude' => (float) ($feature['center'][0] ?? 0),
+            'country' => $country,
+            'city' => $city,
+            'postal_code' => (int) ($postalCode ?: 0),
+            'street' => $street,
+            'street_number' => $streetNumber,
+            'province' => $province,
+        ]);
     }
-
-    private function mapResponseToAddressData(MapboxMapData $data): AddressData
-    {
-        $res = $data->toArray();
-
-        return new AddressData(
-            latitude: (float) ($res['center'][1] ?? 0),
-            longitude: (float) ($res['center'][0] ?? 0),
-            country: $res['context']['country'] ?? null,
-            city: $res['context']['place'] ?? null,
-            country_code: strtoupper($res['context']['country_code'] ?? 'IT'),
-            postal_code: (int) ($res['context']['postcode'] ?? 0),
-            locality: $res['context']['locality'] ?? null,
-            county: $res['context']['region'] ?? null,
-            street: $res['text'] ?? null,
-            street_number: $res['address'] ?? null,
-            district: $res['context']['neighborhood'] ?? null,
-            state: $res['context']['region'] ?? null,
-        );
-    }
-}
+} 
