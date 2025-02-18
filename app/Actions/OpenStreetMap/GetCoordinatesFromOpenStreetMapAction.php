@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Geo\Actions;
+namespace Modules\Geo\Actions\OpenStreetMap;
 
 use Modules\Geo\Actions\Nominatim\FetchCoordinatesAction;
 use Modules\Geo\Datas\LocationData;
