@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Geo\DataTransferObjects;
+namespace Modules\Geo\Datas;
 
 class ElevationResultDTO
 {
