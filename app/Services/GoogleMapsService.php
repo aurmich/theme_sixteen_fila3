@@ -14,7 +14,9 @@ use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
 class GoogleMapsService extends BaseGeoService
 {
     private const GEOCODING_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+
     private const DISTANCE_MATRIX_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
+
     private const ELEVATION_URL = 'https://maps.googleapis.com/maps/api/elevation/json';
 
     protected function getServiceName(): string
@@ -25,9 +27,9 @@ class GoogleMapsService extends BaseGeoService
     /**
      * Esegue una richiesta di geocodifica inversa.
      *
-     * @throws GoogleMapsApiException Se la richiesta fallisce
-     *
      * @return array<string, mixed>
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce
      */
     public function reverseGeocode(float $latitude, float $longitude): array
     {
@@ -45,12 +47,11 @@ class GoogleMapsService extends BaseGeoService
     /**
      * Calcola la matrice delle distanze.
      *
-     * @param array<string> $origins      Punti di origine (formato: "lat,lng|lat,lng|...")
-     * @param array<string> $destinations Punti di destinazione (formato: "lat,lng|lat,lng|...")
+     * @param  array<string>  $origins  Punti di origine (formato: "lat,lng|lat,lng|...")
+     * @param  array<string>  $destinations  Punti di destinazione (formato: "lat,lng|lat,lng|...")
+     * @return array<string, mixed>
      *
      * @throws GoogleMapsApiException Se la richiesta fallisce
-     *
-     * @return array<string, mixed>
      */
     public function getDistanceMatrix(array $origins, array $destinations): array
     {
@@ -70,9 +71,9 @@ class GoogleMapsService extends BaseGeoService
     /**
      * Ottiene l'elevazione per un punto.
      *
-     * @throws GoogleMapsApiException Se la richiesta fallisce
-     *
      * @return array<string, mixed>
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce
      */
     public function getElevation(float $latitude, float $longitude): array
     {
@@ -106,7 +107,7 @@ class GoogleMapsService extends BaseGeoService
                 'key' => $this->apiKey,
             ]);
 
-            if (! $response->successful() || 'OK' !== $response->json('status')) {
+            if (! $response->successful() || $response->json('status') !== 'OK') {
                 throw new \RuntimeException('Failed to get elevation data');
             }
 
@@ -140,7 +141,7 @@ class GoogleMapsService extends BaseGeoService
                 'key' => $this->apiKey,
             ]);
 
-            if (! $response->successful() || 'OK' !== $response->json('status')) {
+            if (! $response->successful() || $response->json('status') !== 'OK') {
                 return null;
             }
 
@@ -179,7 +180,7 @@ class GoogleMapsService extends BaseGeoService
             ]);
 
             if (! $response->successful()
-                || 'OK' !== $response->json('status')
+                || $response->json('status') !== 'OK'
                 || empty($response->json('results'))) {
                 return null;
             }
