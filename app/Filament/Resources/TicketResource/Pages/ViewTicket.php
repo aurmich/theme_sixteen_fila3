@@ -2,10 +2,10 @@
 
 namespace Modules\Fixcity\Filament\Resources\TicketResource\Pages;
 
-use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
+use Filament\Resources\Pages\ViewRecord;
 use Modules\Fixcity\Filament\Resources\TicketResource;
 
-class ViewTicket extends XotBaseViewRecord
+class ViewTicket extends ViewRecord
 {
     protected static string $resource = TicketResource::class;
-} 
+}

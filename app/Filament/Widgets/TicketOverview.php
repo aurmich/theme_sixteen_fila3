@@ -4,7 +4,7 @@ namespace Modules\Fixcity\Filament\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
-use Modules\Ticket\Models\Ticket;
+use Modules\Fixcity\Models\Ticket;
 
 class TicketOverview extends BaseWidget
 {

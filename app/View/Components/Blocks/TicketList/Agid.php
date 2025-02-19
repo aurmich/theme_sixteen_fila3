@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\View\Components\Blocks\TicketList;
 
-use Modules\Ticket\View\Components\Blocks\TicketList\Agid as BaseAgid;
+use Modules\Fixcity\View\Components\Blocks\TicketList\Agid as BaseAgid;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Modules\Fixcity\Enums\ReportStatusEnum;

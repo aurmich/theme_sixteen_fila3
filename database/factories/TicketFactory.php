@@ -3,7 +3,7 @@
 namespace Modules\Fixcity\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Ticket\Models\Ticket;
+use Modules\Fixcity\Models\Ticket;
 use Modules\User\Models\User;
 use Modules\Category\Models\Category;
 

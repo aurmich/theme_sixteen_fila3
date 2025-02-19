@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Fixcity\Filament\Resources\TicketResource\Pages;
 
-use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Modules\Fixcity\Filament\Resources\TicketResource;
+use Filament\Resources\Pages\CreateRecord;
 
-class CreateTicket extends XotBaseCreateRecord
+class CreateTicket extends CreateRecord
 {
     protected static string $resource = TicketResource::class;
 } 

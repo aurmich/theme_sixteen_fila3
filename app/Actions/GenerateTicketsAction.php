@@ -5,7 +5,7 @@ namespace Modules\Fixcity\Actions;
 use Filament\Forms;
 use Filament\Actions\Action;
 use Illuminate\Support\Facades\Bus;
-use Modules\Ticket\Models\Ticket;
+use Modules\Fixcity\Models\Ticket;
 use Spatie\QueueableAction\QueueableAction;
 
 class GenerateTicketsAction
