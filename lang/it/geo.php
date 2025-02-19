@@ -7,7 +7,7 @@ return [
         'name' => 'Geo',
         'group' => 'Mappe',
         'sort' => 20,
-        'icon' => 'geo-globe',
+        'icon' => 'geo-menu',
         'badge' => [
             'color' => 'success',
             'label' => 'Online',
@@ -20,7 +20,7 @@ return [
                 'name' => 'Mappa',
                 'group' => 'Geo',
                 'sort' => 10,
-                'icon' => 'geo-map',
+                'icon' => 'geo-map',  // Questo è già corretto
                 'badge' => [
                     'color' => 'info',
                     'label' => 'Interattiva',
@@ -46,7 +46,7 @@ return [
                 'name' => 'Posizioni',
                 'group' => 'Geo',
                 'sort' => 20,
-                'icon' => 'geo-location',
+                'icon' => 'geo-location',  // Questo è già corretto
                 'badge' => [
                     'color' => 'warning',
                     'label' => 'Da Verificare',

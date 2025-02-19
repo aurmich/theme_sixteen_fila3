@@ -6,7 +6,7 @@ return [
     'navigation' => [
         'label' => 'Tabella Posizioni',
         'group' => 'Gestione Territorio',
-        'icon' => 'heroicon-o-table',
+        'icon' => 'geo-location',
         'sort' => 15,
     ],
     'table' => [
