@@ -12,7 +12,7 @@ return [
         ],
         'label' => 'Impostazioni',
         'sort' => 34,
-        'icon' => 'geo-settings',
+        'icon' => 'settings', // Aggiornamento dell'icona delle impostazioni
     ],
     'fields' => [
         'default_map_provider' => 'Provider Mappa Predefinito',

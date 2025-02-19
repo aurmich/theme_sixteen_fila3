@@ -12,7 +12,7 @@ return [
         ],
         'label' => 'Dashboard',
         'sort' => 30,
-        'icon' => 'geo-dashboard',
+        'icon' => 'dashboard', // Aggiornamento dell'icona della dashboard usando la nuova icona dashboard
     ],
     'widgets' => [
         'total_locations' => 'Totale Località',

@@ -12,7 +12,7 @@ return [
         ],
         'label' => 'Mappe',
         'sort' => 33,
-        'icon' => 'geo-map-animated',  // Usa l'icona animata
+        'icon' => 'geo-map',
     ],
     'fields' => [
         'title' => 'Titolo',
