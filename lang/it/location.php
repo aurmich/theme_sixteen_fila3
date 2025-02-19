@@ -12,7 +12,7 @@ return [
         ],
         'label' => 'Località',
         'sort' => 94,
-        'icon' => 'geo-location-animated',
+        'icon' => 'geo-location',
     ],
     'fields' => [
         'name' => 'Nome',

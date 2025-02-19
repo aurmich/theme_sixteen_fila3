@@ -12,7 +12,7 @@ return [
         ],
         'label' => 'Luoghi',
         'sort' => 32,
-        'icon' => 'geo-place-animated',  // Usa l'icona animata
+        'icon' => 'geo-place',
     ],
     'fields' => [
         'name' => 'Nome',
