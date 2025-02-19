@@ -64,5 +64,13 @@
     array (
       'label' => 'type',
     ),
+    'media' => 
+    array (
+      'label' => 'media',
+    ),
+    'status' => 
+    array (
+      'label' => 'status',
+    ),
   ),
 );
