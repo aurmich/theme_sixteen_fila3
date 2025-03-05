@@ -4,17 +4,23 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\RoleResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Actions\DeleteAction;
 use Filament\Pages\Actions\ViewAction;
+=======
+>>>>>>> debecd5e (.)
 use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Modules\User\Filament\Resources\RoleResource;
+use Webmozart\Assert\Assert;
 use Modules\User\Models\Role;
 use Modules\User\Support\Utils;
-use Webmozart\Assert\Assert;
+use Filament\Actions\DeleteAction;
+use Illuminate\Support\Collection;
+use Filament\Pages\Actions\ViewAction;
+use Modules\User\Filament\Resources\RoleResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-class EditRole extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
+class EditRole extends XotBaseEditRecord
 {
     // //
     public Collection $permissions;
