@@ -9,16 +9,13 @@
         @else
             <title>{{ config('app.name') }}</title>
         @endif
-
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
-
         <style>
             [x-cloak] {
                 display: none !important;
             }
         </style>
-
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         @filamentStyles
