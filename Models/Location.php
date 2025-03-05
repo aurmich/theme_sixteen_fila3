@@ -6,10 +6,8 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
-use Modules\Xot\Contracts\ProfileContract;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -19,7 +17,7 @@ use Modules\Xot\Traits\Updater;
  * @method static \Illuminate\Database\Eloquent\Builder|Location newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Location query()
  *
- * @property int $id
+ * @property int         $id
  * @property string|null $model_type
  * @property string|null $model_id
  * @property string|null $name
@@ -31,9 +29,9 @@ use Modules\Xot\Traits\Updater;
  * @property string|null $zip
  * @property string|null $formatted_address
  * @property string|null $description
- * @property bool|null $processed
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property bool|null   $processed
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property string|null $deleted_at

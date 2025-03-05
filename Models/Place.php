@@ -44,56 +44,56 @@ use Modules\Xot\Traits\Updater;
  * @property Carbon|null     $updated_at
  * @property string          $value
  * @property Model|\Eloquent $linked
- * @property mixed $address
- * @property mixed $latlng
+ * @property mixed           $address
+ * @property mixed           $latlng
  *
  * @method static \Modules\Geo\Database\Factories\PlaceFactory factory($count = null, $state = [])
- * @method static Builder|Place newModelQuery()
- * @method static Builder|Place newQuery()
- * @method static Builder|Place query()
- * @method static Builder|Place whereAdministrativeAreaLevel1($value)
- * @method static Builder|Place whereAdministrativeAreaLevel1Short($value)
- * @method static Builder|Place whereAdministrativeAreaLevel2($value)
- * @method static Builder|Place whereAdministrativeAreaLevel2Short($value)
- * @method static Builder|Place whereAdministrativeAreaLevel3($value)
- * @method static Builder|Place whereAdministrativeAreaLevel3Short($value)
- * @method static Builder|Place whereCampground($value)
- * @method static Builder|Place whereCampgroundShort($value)
- * @method static Builder|Place whereCountry($value)
- * @method static Builder|Place whereCountryShort($value)
- * @method static Builder|Place whereCreatedAt($value)
- * @method static Builder|Place whereCreatedBy($value)
- * @method static Builder|Place whereDeletedBy($value)
- * @method static Builder|Place whereFormattedAddress($value)
- * @method static Builder|Place whereGoogleplaceUrl($value)
- * @method static Builder|Place whereGoogleplaceUrlShort($value)
- * @method static Builder|Place whereId($value)
- * @method static Builder|Place whereLatitude($value)
- * @method static Builder|Place whereLocality($value)
- * @method static Builder|Place whereLocalityShort($value)
- * @method static Builder|Place whereLongitude($value)
- * @method static Builder|Place whereNearestStreet($value)
- * @method static Builder|Place wherePointOfInterest($value)
- * @method static Builder|Place wherePointOfInterestShort($value)
- * @method static Builder|Place wherePolitical($value)
- * @method static Builder|Place wherePoliticalShort($value)
- * @method static Builder|Place wherePostId($value)
- * @method static Builder|Place wherePostType($value)
- * @method static Builder|Place wherePostalCode($value)
- * @method static Builder|Place wherePostalCodeShort($value)
- * @method static Builder|Place wherePostalTown($value)
- * @method static Builder|Place wherePostalTownShort($value)
- * @method static Builder|Place wherePremise($value)
- * @method static Builder|Place wherePremiseShort($value)
- * @method static Builder|Place whereRoute($value)
- * @method static Builder|Place whereRouteShort($value)
- * @method static Builder|Place whereStreetNumber($value)
- * @method static Builder|Place whereStreetNumberShort($value)
- * @method static Builder|Place whereUpdatedAt($value)
- * @method static Builder|Place whereUpdatedBy($value)
+ * @method static Builder|Place                                newModelQuery()
+ * @method static Builder|Place                                newQuery()
+ * @method static Builder|Place                                query()
+ * @method static Builder|Place                                whereAdministrativeAreaLevel1($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel1Short($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel2($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel2Short($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel3($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel3Short($value)
+ * @method static Builder|Place                                whereCampground($value)
+ * @method static Builder|Place                                whereCampgroundShort($value)
+ * @method static Builder|Place                                whereCountry($value)
+ * @method static Builder|Place                                whereCountryShort($value)
+ * @method static Builder|Place                                whereCreatedAt($value)
+ * @method static Builder|Place                                whereCreatedBy($value)
+ * @method static Builder|Place                                whereDeletedBy($value)
+ * @method static Builder|Place                                whereFormattedAddress($value)
+ * @method static Builder|Place                                whereGoogleplaceUrl($value)
+ * @method static Builder|Place                                whereGoogleplaceUrlShort($value)
+ * @method static Builder|Place                                whereId($value)
+ * @method static Builder|Place                                whereLatitude($value)
+ * @method static Builder|Place                                whereLocality($value)
+ * @method static Builder|Place                                whereLocalityShort($value)
+ * @method static Builder|Place                                whereLongitude($value)
+ * @method static Builder|Place                                whereNearestStreet($value)
+ * @method static Builder|Place                                wherePointOfInterest($value)
+ * @method static Builder|Place                                wherePointOfInterestShort($value)
+ * @method static Builder|Place                                wherePolitical($value)
+ * @method static Builder|Place                                wherePoliticalShort($value)
+ * @method static Builder|Place                                wherePostId($value)
+ * @method static Builder|Place                                wherePostType($value)
+ * @method static Builder|Place                                wherePostalCode($value)
+ * @method static Builder|Place                                wherePostalCodeShort($value)
+ * @method static Builder|Place                                wherePostalTown($value)
+ * @method static Builder|Place                                wherePostalTownShort($value)
+ * @method static Builder|Place                                wherePremise($value)
+ * @method static Builder|Place                                wherePremiseShort($value)
+ * @method static Builder|Place                                whereRoute($value)
+ * @method static Builder|Place                                whereRouteShort($value)
+ * @method static Builder|Place                                whereStreetNumber($value)
+ * @method static Builder|Place                                whereStreetNumberShort($value)
+ * @method static Builder|Place                                whereUpdatedAt($value)
+ * @method static Builder|Place                                whereUpdatedBy($value)
  *
  * @property string|null $model_type
- * @property int|null $model_id
+ * @property int|null    $model_id
  *
  * @method static Builder|Place whereAddress($value)
  * @method static Builder|Place whereModelId($value)
@@ -106,7 +106,8 @@ use Modules\Xot\Traits\Updater;
  */
 class Place extends Model
 {
-    use HasFactory, Updater;
+    use HasFactory;
+    use Updater;
 
     /** @var array<string> */
     public static array $address_components = [
