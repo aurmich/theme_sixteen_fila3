@@ -211,7 +211,7 @@ new class extends Component
                                 <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
                                 <div class="space-y-2">
                                     <p>Tipologia di segnalazione</p>
-                                    <p><strong>{{ $ticket->type->getLabel() }}</strong></p>
+                                    <p><strong>{{ $ticket->type?->getLabel() ?? 'Non specificato' }}</strong></p>
                                 </div>
                                 @if(in_array($ticket->id, $expandedTickets))
                                 <div class="space-y-4">
