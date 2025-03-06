@@ -45,5 +45,5 @@ Pensa ad alta voce e parla a te stesso. prima di rispondere, analizza la richies
 formula un ragionamento passo passo,
 devi sempre controllare prima la docs per capire cosa e' gia' fatto e cosa non e' fatto
 
-rilancia phpstan analizza tutto Modules a livello 2 , aggiorna la cartella docs piu' vicina , studiala di continuo , e poi procedi con implementazione correzione
+rilancia phpstan analizza tutto Modules a livello 7 , aggiorna la cartella docs piu' vicina , studiala di continuo , e poi procedi con implementazione correzione
 
