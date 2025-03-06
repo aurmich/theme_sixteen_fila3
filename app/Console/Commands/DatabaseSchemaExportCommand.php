@@ -76,6 +76,11 @@ class DatabaseSchemaExportCommand extends Command
     protected $description = 'Esporta lo schema del database in un file JSON completo per facilitare la creazione di modelli e migrazioni';
 
     /**
+     * @var array<string, mixed>
+     */
+    protected array $schema = [];
+
+    /**
      * Execute the console command.
      */
     public function handle(): int
@@ -90,8 +95,7 @@ class DatabaseSchemaExportCommand extends Command
 
         $this->info("Estrazione schema dal database usando la connessione: {$connection}");
 
-        /** @var Schema */
-        $schema = [
+        $this->schema = [
             'database' => '',
             'connection' => $connection,
             'tables' => [],
@@ -103,7 +107,7 @@ class DatabaseSchemaExportCommand extends Command
             // Imposta la connessione database
             DB::setDefaultConnection($connection);
             $databaseName = DB::connection()->getDatabaseName();
-            $schema['database'] = $databaseName;
+            $this->schema['database'] = $databaseName;
 
             $this->info("Connesso al database: {$databaseName}");
 
@@ -195,7 +199,7 @@ class DatabaseSchemaExportCommand extends Command
                     ];
 
                     // Registra anche nella sezione delle relazioni
-                    $schema['relationships'][] = [
+                    $this->schema['relationships'][] = [
                         'type' => 'belongsTo',
                         'local_table' => $tableName,
                         'local_column' => $fk[2],
@@ -205,7 +209,7 @@ class DatabaseSchemaExportCommand extends Command
                     ];
                 }
 
-                $schema['tables'][$tableName] = $tableSchema;
+                $this->schema['tables'][$tableName] = $tableSchema;
                 $bar->advance();
             }
 
@@ -219,13 +223,13 @@ class DatabaseSchemaExportCommand extends Command
             }
 
             // Salva lo schema in un file JSON
-            $jsonContent = json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            $jsonContent = json_encode($this->schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
             File::put($outputPath, $jsonContent);
 
             $this->info("Schema del database esportato con successo in: {$outputPath}");
 
             // Genera un report riassuntivo
-            $this->generateReport($schema);
+            $this->generateReport();
 
             return 0;
         } catch (\Safe\Exceptions\JsonException $e) {
@@ -268,64 +272,23 @@ class DatabaseSchemaExportCommand extends Command
 
     /**
      * Genera un report riassuntivo dello schema.
-     *
-     * @param array{
-     *     database: string,
-     *     connection: string,
-     *     tables: array<string, array{
-     *         name: string,
-     *         columns: array<string, array{
-     *             name: string,
-     *             type: string,
-     *             null: bool,
-     *             key: string,
-     *             default: mixed,
-     *             extra: string,
-     *             comment: string
-     *         }>,
-     *         indices: array<array{
-     *             name: string,
-     *             columns: array<array{name: string, order: int}>,
-     *             unique: bool,
-     *             type: string
-     *         }>,
-     *         foreign_keys: array<array{
-     *             name: string,
-     *             column: string,
-     *             references_table: string,
-     *             references_column: string
-     *         }>,
-     *         primary_key: ?string,
-     *         model_name: string,
-     *         migration_name: string
-     *     }>,
-     *     relationships: array<array{
-     *         type: string,
-     *         local_table: string,
-     *         local_column: string,
-     *         foreign_table: string,
-     *         foreign_column: string,
-     *         constraint_name: string
-     *     }>,
-     *     generated_at: string
-     * } $schema
      */
-    protected function generateReport(array $schema): void
+    protected function generateReport(): void
     {
         $this->info('Riepilogo Schema Database');
         $this->info('=============================================');
-        $this->info('Database: '.$schema['database']);
-        $this->info('Numero tabelle: '.count($schema['tables']));
-        $this->info('Numero relazioni: '.count($schema['relationships']));
+        $this->info('Database: '.$this->schema['database']);
+        $this->info('Numero tabelle: '.count($this->schema['tables']));
+        $this->info('Numero relazioni: '.count($this->schema['relationships']));
 
         $this->newLine();
         $this->info('Tabelle principali:');
 
         // Mostra le tabelle più rilevanti (con più relazioni o colonne)
         /** @var Collection<string, array{name: string, columns: int, relations: int, model: string}> */
-        $relevantTables = collect($schema['tables'])
-            ->map(function (array $table, string $tableName) use ($schema) {
-                $relationCount = collect($schema['relationships'])
+        $relevantTables = collect($this->schema['tables'])
+            ->map(function (array $table, string $tableName) {
+                $relationCount = collect($this->schema['relationships'])
                     ->filter(function (array $rel) use ($tableName) {
                         return $rel['local_table'] === $tableName || $rel['foreign_table'] === $tableName;
                     })
@@ -361,6 +324,6 @@ class DatabaseSchemaExportCommand extends Command
     protected function exportSchema(): array
     {
         // ... existing code ...
-        return json_encode($schema, JSON_PRETTY_PRINT);
+        return json_encode($this->schema, JSON_PRETTY_PRINT);
     }
 }
