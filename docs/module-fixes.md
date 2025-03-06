@@ -1,5 +1,28 @@
 # Correzioni nel Modulo Xot
 
+## Nuovi Errori PHPStan (Livello 2)
+
+### Errori di Sintassi ✅
+1. DatabaseSchemaExporterCommand.php
+   - ✅ Corretto: Aggiunto punto e virgola mancante dopo `use function Safe\json_encode`
+
+2. FetchUserApiTokenCommand.php (Modulo User)
+   - ✅ Verificato: Il file è sintatticamente corretto
+   - ⚠️ Possibile problema di percorso: Il file è in una cartella duplicata `app/app`
+
+### Problemi di Metodi Astratti
+1. SessionResource.php
+   - Errore: `Non-abstract class contains abstract method getFormSchema()`
+   - ✅ Verificato: Il metodo è già dichiarato correttamente come `public static`
+   - ⚠️ Possibile problema di cache PHPStan
+
+### Problemi di Ambiente
+- PHPStan segnala possibili problemi con le variabili d'ambiente
+- Azioni intraprese:
+  - Pulizia cache PHPStan
+  - Pulizia cache Laravel
+  - Riavvio analisi
+
 ## Stato Attuale delle Correzioni
 
 ### Resource Classes ✅
@@ -95,9 +118,25 @@ public static function getFormSchema(): array
    - Specificate le eccezioni lanciate
    - Documentati i tipi di ritorno
 
+4. **Ambiente**
+   - Verificare la configurazione dell'ambiente
+   - Assicurarsi che le variabili d'ambiente siano corrette
+   - Controllare la corrispondenza tra ambiente di sviluppo e test
+
 ## Prossimi Passi
 
-1. Eseguire nuovamente PHPStan per verificare le correzioni
-2. Monitorare eventuali nuovi errori
-3. Aggiornare la documentazione con i risultati
-4. Pianificare refactoring incrementali se necessario 
+1. Verificare i risultati dopo la pulizia della cache:
+   - Confermare la risoluzione dell'errore in SessionResource.php
+   - Controllare eventuali nuovi errori
+
+2. Correggere la struttura delle cartelle:
+   - Spostare FetchUserApiTokenCommand.php nella posizione corretta
+   - Rimuovere la cartella duplicata `app/app`
+
+3. Verificare la configurazione dell'ambiente:
+   - File .env
+   - Variabili d'ambiente
+   - Permessi dei file
+
+4. Rilanciare PHPStan dopo le correzioni
+5. Aggiornare la documentazione con i risultati finali 

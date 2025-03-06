@@ -13,21 +13,14 @@ use Webmozart\Assert\Assert;
 /**
  * Trait Updater.
  * https://dev.to/hasanmn/automatically-update-createdby-and-updatedby-in-laravel-using-bootable-traits-28g9.
+ *
+ * @property int|null $created_by ID dell'utente che ha creato il record
+ * @property int|null $updated_by ID dell'utente che ha modificato il record
  */
 trait Updater
 {
     /**
-     * @var int|null
-     */
-    public $created_by;
-
-    /**
-     * @var int|null 
-     */
-    public $updated_by;
-
-    /**
-     * Summary of creator.
+     * Get the user who created the model.
      *
      * @return BelongsTo<ProfileContract&Model, static>
      */
@@ -69,25 +62,26 @@ trait Updater
     {
         static::creating(
             static function (Model $model): void {
-                $model->created_by = authId();
-                $model->updated_by = authId();
+                if ($model->isFillable('created_by')) {
+                    $model->setAttribute('created_by', authId());
+                }
+                if ($model->isFillable('updated_by')) {
+                    $model->setAttribute('updated_by', authId());
+                }
             }
         );
 
         static::updating(
             static function (Model $model): void {
-                $model->updated_by = authId();
+                if ($model->isFillable('updated_by')) {
+                    $model->setAttribute('updated_by', authId());
+                }
             }
         );
-        /*
-         * Deleting a model is slightly different than creating or deleting.
-         * For deletes we need to save the model first with the deleted_by field
-         */
+
         static::deleting(
             static function (Model $model): void {
-                Assert::isArray($attributes = $model->attributes);
-
-                if (\in_array('deleted_by', array_keys($attributes), false)) {
+                if ($model->isFillable('deleted_by')) {
                     $model->update(['deleted_by' => authId()]);
                 }
             }

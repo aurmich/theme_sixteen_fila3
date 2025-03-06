@@ -24,8 +24,8 @@ abstract class XotBaseRelationManager extends RelationManager
 
     protected static string $relationship = '';
 
-    /** @var class-string<XotBaseResource> */
-    protected static string $resource;
+    /** @var class-string<XotBaseResource>|null */
+    protected static ?string $resourceClass = null;
 
     public static function getModuleName(): string
     {
@@ -60,12 +60,14 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     public function getFormSchema(): array
     {
-        return $this->getResource()::getFormSchema();
+        $resourceClass = $this->getResource();
+        return $resourceClass::getFormSchema();
     }
 
     public function getListTableColumns(): array
     {
-        $index = Arr::get($this->getResource()::getPages(), 'index');
+        $resourceClass = $this->getResource();
+        $index = Arr::get($resourceClass::getPages(), 'index');
         $index_page = $index->getPage();
         $columns = app($index_page)->getListTableColumns();
 
@@ -106,10 +108,11 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     protected function getResource(): string
     {
+        if (static::$resourceClass !== null) {
+            return static::$resourceClass;
+        }
+
         try {
-            /* @var class-string<XotBaseResource> */
-            return static::$resource;
-        } catch (\Exception $e) {
             $class = $this::class;
             $resource_name = Str::of(class_basename($this))
                 ->beforeLast('RelationManager')
@@ -122,7 +125,15 @@ abstract class XotBaseRelationManager extends RelationManager
                 ->toString();
             Assert::classExists($resource_class = $ns.'\\'.$resource_name);
 
+            static::$resourceClass = $resource_class;
             return $resource_class;
+        } catch (\Throwable $e) {
+            throw new \RuntimeException(
+                'Impossibile determinare la classe Resource per ' . static::class . 
+                '. Definisci la proprietà statica $resourceClass o sovrascrivi il metodo getResource().',
+                0,
+                $e
+            );
         }
     }
 }

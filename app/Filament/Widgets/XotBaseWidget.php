@@ -20,9 +20,7 @@ abstract class XotBaseWidget extends Widget
 
     public string $icon = '';
 
-    /**
-     * @var view-string
-     */
+    /** @var view-string */
     protected static string $view = 'ui::empty';
 
     public function __construct()

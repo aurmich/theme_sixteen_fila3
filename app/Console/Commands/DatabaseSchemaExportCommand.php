@@ -14,6 +14,7 @@ use function Safe\file_get_contents;
 use function Safe\file_put_contents;
 use function Safe\json_decode;
 use function Safe\json_encode;
+use function Safe\mkdir;
 
 /**
  * Class DatabaseSchemaExportCommand.

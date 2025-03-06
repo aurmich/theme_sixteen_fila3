@@ -39,7 +39,7 @@ class TranslatorHelper
         // Se è un oggetto Translator, gestiscilo in modo specifico
         if ($value instanceof Translator) {
             try {
-                return (string) $value;
+                return 'Translator[' . $value->getLocale() . ']';
             } catch (\Throwable) {
                 return 'Translator Object';
             }
