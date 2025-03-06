@@ -7,7 +7,7 @@ namespace Modules\Geo\Providers\Filament;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 /**
- * Undocumented class
+ * Undocumented class.
  */
 class AdminPanelProvider extends XotBasePanelProvider
 {
