@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
@@ -12,6 +13,52 @@ use Illuminate\Support\Str;
 use function Safe\json_encode;
 use function Safe\preg_match_all;
 
+/**
+ * @phpstan-type SchemaTable array{
+ *     name: string,
+ *     columns: array<string, array{
+ *         name: string,
+ *         type: string,
+ *         null: bool,
+ *         key: string,
+ *         default: mixed,
+ *         extra: string,
+ *         comment: string
+ *     }>,
+ *     indices: array<array{
+ *         name: string,
+ *         columns: array<array{name: string, order: int}>,
+ *         unique: bool,
+ *         type: string
+ *     }>,
+ *     foreign_keys: array<array{
+ *         name: string,
+ *         column: string,
+ *         references_table: string,
+ *         references_column: string
+ *     }>,
+ *     primary_key: ?string,
+ *     model_name: string,
+ *     migration_name: string
+ * }
+ * 
+ * @phpstan-type SchemaRelationship array{
+ *     type: string,
+ *     local_table: string,
+ *     local_column: string,
+ *     foreign_table: string,
+ *     foreign_column: string,
+ *     constraint_name: string
+ * }
+ * 
+ * @phpstan-type Schema array{
+ *     database: string,
+ *     connection: string,
+ *     tables: array<string, SchemaTable>,
+ *     relationships: array<SchemaRelationship>,
+ *     generated_at: string
+ * }
+ */
 class DatabaseSchemaExportCommand extends Command
 {
     /**
@@ -43,6 +90,7 @@ class DatabaseSchemaExportCommand extends Command
 
         $this->info("Estrazione schema dal database usando la connessione: {$connection}");
 
+        /** @var Schema */
         $schema = [
             'database' => '',
             'connection' => $connection,
@@ -226,9 +274,27 @@ class DatabaseSchemaExportCommand extends Command
      *     connection: string,
      *     tables: array<string, array{
      *         name: string,
-     *         columns: array,
-     *         indices: array,
-     *         foreign_keys: array,
+     *         columns: array<string, array{
+     *             name: string,
+     *             type: string,
+     *             null: bool,
+     *             key: string,
+     *             default: mixed,
+     *             extra: string,
+     *             comment: string
+     *         }>,
+     *         indices: array<array{
+     *             name: string,
+     *             columns: array<array{name: string, order: int}>,
+     *             unique: bool,
+     *             type: string
+     *         }>,
+     *         foreign_keys: array<array{
+     *             name: string,
+     *             column: string,
+     *             references_table: string,
+     *             references_column: string
+     *         }>,
      *         primary_key: ?string,
      *         model_name: string,
      *         migration_name: string
@@ -256,6 +322,7 @@ class DatabaseSchemaExportCommand extends Command
         $this->info('Tabelle principali:');
 
         // Mostra le tabelle più rilevanti (con più relazioni o colonne)
+        /** @var Collection<string, array{name: string, columns: int, relations: int, model: string}> */
         $relevantTables = collect($schema['tables'])
             ->map(function (array $table, string $tableName) use ($schema) {
                 $relationCount = collect($schema['relationships'])
