@@ -220,6 +220,29 @@ class DatabaseSchemaExportCommand extends Command
 
     /**
      * Genera un report riassuntivo dello schema.
+     *
+     * @param array{
+     *     database: string,
+     *     connection: string,
+     *     tables: array<string, array{
+     *         name: string,
+     *         columns: array,
+     *         indices: array,
+     *         foreign_keys: array,
+     *         primary_key: ?string,
+     *         model_name: string,
+     *         migration_name: string
+     *     }>,
+     *     relationships: array<array{
+     *         type: string,
+     *         local_table: string,
+     *         local_column: string,
+     *         foreign_table: string,
+     *         foreign_column: string,
+     *         constraint_name: string
+     *     }>,
+     *     generated_at: string
+     * } $schema
      */
     protected function generateReport(array $schema): void
     {
@@ -234,9 +257,9 @@ class DatabaseSchemaExportCommand extends Command
 
         // Mostra le tabelle più rilevanti (con più relazioni o colonne)
         $relevantTables = collect($schema['tables'])
-            ->map(function ($table, $tableName) use ($schema) {
+            ->map(function (array $table, string $tableName) use ($schema) {
                 $relationCount = collect($schema['relationships'])
-                    ->filter(function ($rel) use ($tableName) {
+                    ->filter(function (array $rel) use ($tableName) {
                         return $rel['local_table'] === $tableName || $rel['foreign_table'] === $tableName;
                     })
                     ->count();
@@ -249,15 +272,17 @@ class DatabaseSchemaExportCommand extends Command
                 ];
             })
             ->sortByDesc('relations')
-            ->take(10);
+            ->take(5);
 
-        $this->table(
-            ['Tabella', 'Colonne', 'Relazioni', 'Modello Suggerito'],
-            $relevantTables->values()->toArray()
-        );
-
-        $this->newLine();
-        $this->info('File JSON generato correttamente. Puoi usarlo per creare modelli, migrazioni, factories e seeder.');
+        foreach ($relevantTables as $table) {
+            $this->info(sprintf(
+                '- %s (Colonne: %d, Relazioni: %d, Modello: %s)',
+                $table['name'],
+                $table['columns'],
+                $table['relations'],
+                $table['model']
+            ));
+        }
     }
 
     protected function extractTableNames(string $sql): array
