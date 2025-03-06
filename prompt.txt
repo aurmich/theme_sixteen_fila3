@@ -33,3 +33,7 @@ ragiona e migliora e sistema
 Quando correggi qualsiasi cosa devi focalizzarti sullo scopo non solo sulla correzione
 non voglio  ->label(   le label son gestite tramite langserviceprovider coi file di traduzioni
 
+
+
+rilancia phpstan analizza tutto Modules a livello 2 , aggiorna la cartella docs piu' vicina , studiala di continuo , e poi procedi con implementazione correzione
+
