@@ -16,40 +16,38 @@ class SessionResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
-            TextInput::make('id')
+            'id' => TextInput::make('id')
                 ->required()
-                ->maxLength(255),
+                ->maxLength(255)
+                ->placeholder('Inserisci ID')
+                ->helperText('Identificativo univoco della sessione'),
 
-            TextInput::make('user_id')
-                ->numeric(),
+            'user_id' => TextInput::make('user_id')
+                ->numeric()
+                ->placeholder('ID dell\'utente')
+                ->helperText('ID dell\'utente associato alla sessione'),
 
-            TextInput::make('ip_address')
-                ->maxLength(45),
+            'ip_address' => TextInput::make('ip_address')
+                ->maxLength(45)
+                ->placeholder('Indirizzo IP')
+                ->helperText('Indirizzo IP dell\'utente'),
 
-            TextInput::make('user_agent')
-                ->maxLength(255),
+            'user_agent' => TextInput::make('user_agent')
+                ->maxLength(255)
+                ->placeholder('User Agent del browser')
+                ->helperText('Informazioni sul browser dell\'utente'),
 
-            KeyValue::make('payload')
-                ->columnSpanFull(),
+            'payload' => KeyValue::make('payload')
+                ->columnSpanFull()
+                ->helperText('Dati della sessione in formato chiave-valore'),
 
-            TextInput::make('last_activity')
+            'last_activity' => TextInput::make('last_activity')
                 ->required()
-                ->numeric(),
+                ->numeric()
+                ->placeholder('Timestamp ultima attività')
+                ->helperText('Timestamp dell\'ultima attività dell\'utente'),
         ];
     }
 
-    public static function getRelations(): array
-    {
-        return [
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListSessions::route('/'),
-            'create' => Pages\CreateSession::route('/create'),
-            'edit' => Pages\EditSession::route('/{record}/edit'),
-        ];
-    }
+   
 }

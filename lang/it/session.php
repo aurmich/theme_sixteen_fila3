@@ -15,54 +15,50 @@ return [
         'icon' => 'xot-session',
     ],
     'fields' => [
-        'identification' => [
-            'id' => [
-                'label' => 'ID Sessione',
-                'help' => 'Identificativo univoco della sessione',
-            ],
-            'user_id' => [
-                'label' => 'Utente',
-                'placeholder' => 'Seleziona l\'utente',
-                'help' => 'Utente proprietario della sessione',
-            ],
+        'id' => [
+            'label' => 'ID',
+            'placeholder' => 'Inserisci ID',
+            'help' => 'Identificativo univoco della sessione',
         ],
-        'connection' => [
-            'ip_address' => [
-                'label' => 'Indirizzo IP',
-                'help' => 'IP di origine della connessione',
-            ],
-            'user_agent' => [
-                'label' => 'User Agent',
-                'help' => 'Browser e sistema operativo utilizzati',
-            ],
-            'location' => [
-                'label' => 'Posizione',
-                'help' => 'Localizzazione geografica approssimativa',
-            ],
+        'user_id' => [
+            'label' => 'ID Utente',
+            'placeholder' => 'ID dell\'utente',
+            'help' => 'ID dell\'utente associato alla sessione',
         ],
-        'data' => [
-            'payload' => [
-                'label' => 'Dati Sessione',
-                'help' => 'Contenuto della sessione (criptato)',
-            ],
-            'size' => [
-                'label' => 'Dimensione',
-                'help' => 'Dimensione dei dati in memoria',
-            ],
+        'ip_address' => [
+            'label' => 'Indirizzo IP',
+            'placeholder' => 'Indirizzo IP',
+            'help' => 'Indirizzo IP dell\'utente',
         ],
-        'timing' => [
-            'created_at' => [
-                'label' => 'Data Creazione',
-                'help' => 'Momento di inizio della sessione',
-            ],
-            'last_activity' => [
-                'label' => 'Ultima Attività',
-                'help' => 'Ultimo accesso alla sessione',
-            ],
-            'expires_at' => [
-                'label' => 'Scadenza',
-                'help' => 'Momento di scadenza previsto',
-            ],
+        'user_agent' => [
+            'label' => 'User Agent',
+            'placeholder' => 'User Agent del browser',
+            'help' => 'Informazioni sul browser dell\'utente',
+        ],
+        'payload' => [
+            'label' => 'Payload',
+            'help' => 'Dati della sessione in formato chiave-valore',
+        ],
+        'last_activity' => [
+            'label' => 'Ultima Attività',
+            'placeholder' => 'Timestamp ultima attività',
+            'help' => 'Timestamp dell\'ultima attività dell\'utente',
+        ],
+        'location' => [
+            'label' => 'Posizione',
+            'help' => 'Localizzazione geografica approssimativa',
+        ],
+        'size' => [
+            'label' => 'Dimensione',
+            'help' => 'Dimensione dei dati in memoria',
+        ],
+        'created_at' => [
+            'label' => 'Data Creazione',
+            'help' => 'Momento di inizio della sessione',
+        ],
+        'expires_at' => [
+            'label' => 'Scadenza',
+            'help' => 'Momento di scadenza previsto',
         ],
     ],
     'actions' => [

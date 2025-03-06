@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Helpers;
 
 use Illuminate\Support\Str;
+use function Safe\file_get_contents;
 
 class ResourceFormSchemaGenerator
 {

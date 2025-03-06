@@ -15,15 +15,15 @@ class CacheLockResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
-            TextInput::make('key')
+            'key' => TextInput::make('key')
                 ->required()
                 ->maxLength(255),
 
-            TextInput::make('owner')
+            'owner' => TextInput::make('owner')
                 ->required()
                 ->maxLength(255),
 
-            TextInput::make('expiration')
+            'expiration' => TextInput::make('expiration')
                 ->required()
                 ->numeric(),
         ];
