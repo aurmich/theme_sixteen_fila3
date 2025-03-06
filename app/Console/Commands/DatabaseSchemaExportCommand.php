@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
+use function Safe\json_encode;
+use function Safe\preg_match_all;
 
 class DatabaseSchemaExportCommand extends Command
 {
@@ -29,7 +31,7 @@ class DatabaseSchemaExportCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): int
     {
         $connection = $this->argument('connection') ?: $this->ask('Inserisci il nome della connessione database');
         $outputPath = $this->option('output');
@@ -41,24 +43,25 @@ class DatabaseSchemaExportCommand extends Command
 
         $this->info("Estrazione schema dal database usando la connessione: {$connection}");
 
+        $schema = [
+            'database' => '',
+            'connection' => $connection,
+            'tables' => [],
+            'relationships' => [],
+            'generated_at' => now()->toIso8601String(),
+        ];
+
         try {
             // Imposta la connessione database
             DB::setDefaultConnection($connection);
             $databaseName = DB::connection()->getDatabaseName();
+            $schema['database'] = $databaseName;
 
             $this->info("Connesso al database: {$databaseName}");
 
             // Ottieni tutte le tabelle
             $tables = DB::select('SHOW TABLES');
             $tablesKey = 'Tables_in_'.$databaseName;
-
-            $schema = [
-                'database' => $databaseName,
-                'connection' => $connection,
-                'tables' => [],
-                'relationships' => [],
-                'generated_at' => now()->toIso8601String(),
-            ];
 
             $bar = $this->output->createProgressBar(count($tables));
             $bar->start();
@@ -76,7 +79,12 @@ class DatabaseSchemaExportCommand extends Command
                 $createTableSql = $createTable[0]->{'Create Table'};
 
                 // Estrai foreign keys
-                preg_match_all('/CONSTRAINT\s+`([^`]+)`\s+FOREIGN\s+KEY\s+\(`([^`]+)`\)\s+REFERENCES\s+`([^`]+)`\s+\(`([^`]+)`\)/i', $createTableSql, $foreignKeys, PREG_SET_ORDER);
+                preg_match_all(
+                    '/CONSTRAINT\s+`([^`]+)`\s+FOREIGN\s+KEY\s+\(`([^`]+)`\)\s+REFERENCES\s+`([^`]+)`\s+\(`([^`]+)`\)/i',
+                    $createTableSql,
+                    $foreignKeys,
+                    PREG_SET_ORDER
+                );
 
                 $tableSchema = [
                     'name' => $tableName,
@@ -163,19 +171,25 @@ class DatabaseSchemaExportCommand extends Command
             }
 
             // Salva lo schema in un file JSON
-            File::put($outputPath, json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+            $jsonContent = json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            File::put($outputPath, $jsonContent);
 
             $this->info("Schema del database esportato con successo in: {$outputPath}");
 
             // Genera un report riassuntivo
             $this->generateReport($schema);
-        } catch (\Exception $e) {
-            $this->error("Errore durante l'estrazione dello schema: ".$e->getMessage());
 
+            return 0;
+        } catch (\Safe\Exceptions\JsonException $e) {
+            $this->error("Errore durante la codifica JSON: " . $e->getMessage());
+            return 1;
+        } catch (\Safe\Exceptions\PcreException $e) {
+            $this->error("Errore durante l'analisi delle foreign keys: " . $e->getMessage());
+            return 1;
+        } catch (\Exception $e) {
+            $this->error("Errore durante l'estrazione dello schema: " . $e->getMessage());
             return 1;
         }
-
-        return 0;
     }
 
     /**
@@ -244,5 +258,17 @@ class DatabaseSchemaExportCommand extends Command
 
         $this->newLine();
         $this->info('File JSON generato correttamente. Puoi usarlo per creare modelli, migrazioni, factories e seeder.');
+    }
+
+    protected function extractTableNames(string $sql): array
+    {
+        preg_match_all('/CREATE TABLE `([^`]+)`/', $sql, $matches);
+        return $matches[1] ?? [];
+    }
+
+    protected function exportSchema(): array
+    {
+        // ... existing code ...
+        return json_encode($schema, JSON_PRETTY_PRINT);
     }
 }
