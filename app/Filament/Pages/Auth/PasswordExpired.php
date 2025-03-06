@@ -4,25 +4,26 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Pages\Auth;
 
-use Filament\Actions\Action;
-use Filament\Actions\ActionGroup;
-use Filament\Forms\ComponentContainer;
-use Filament\Forms\Components\Component;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
-use Filament\Notifications\Notification;
-use Filament\Pages\Concerns\InteractsWithFormActions;
 use Filament\Pages\Page;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Validation\Rules\Password as PasswordRule;
-use Modules\User\Datas\PasswordData;
-use Modules\User\Events\NewPasswordSet;
-use Modules\User\Http\Response\PasswordResetResponse;
-use Modules\Xot\Filament\Traits\NavigationPageLabelTrait;
+use Filament\Actions\Action;
 use Webmozart\Assert\Assert;
+use Filament\Actions\ActionGroup;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Modules\User\Datas\PasswordData;
+use Filament\Forms\ComponentContainer;
+use Filament\Forms\Contracts\HasForms;
+use Illuminate\Support\Facades\Schema;
+use Modules\User\Events\NewPasswordSet;
+use Filament\Forms\Components\Component;
+use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
+use Filament\Pages\Concerns\InteractsWithFormActions;
+use Modules\User\Http\Response\PasswordResetResponse;
+use Illuminate\Validation\Rules\Password as PasswordRule;
+use Modules\Xot\Filament\Traits\NavigationPageLabelTrait;
 
 /**
  * @property ComponentContainer $form
