@@ -95,6 +95,9 @@ abstract class XotBaseResource extends FilamentResource
         }
     }
 
+    /**
+     * Undocumented function.
+     */
     public static function getPages(): array
     {
         $prefix = static::class.'\Pages\\';

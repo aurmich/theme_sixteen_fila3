@@ -25,6 +25,9 @@ use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Datas\XotData;
 use Webmozart\Assert\Assert;
 
+/**
+ * Undocumented class.
+ */
 abstract class XotBasePanelProvider extends PanelProvider
 {
     protected string $module;
