@@ -106,15 +106,5 @@ return [
         ],
         'notify' => 'Profilo aggiornato correttamente!',
     ],
-    'navigation' => [
-        'name' => 'Profilo',
-        'plural' => 'Profili',
-        'group' => [
-            'name' => 'Gestione Utenti',
-            'description' => 'Gestione dei profili',
-        ],
-        'label' => 'profili',
-        'sort' => 71,
-        'icon' => 'user-profile',
-    ],
+
 ];
