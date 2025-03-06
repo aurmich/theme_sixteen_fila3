@@ -17,23 +17,21 @@ use Spatie\LaravelData\Data;
 class MetatagData extends Data implements Wireable
 {
     use WireableData;
+
     public string $title;
 
     public string $sitename;
 
     public string $subtitle;
 
-    // ' => 'Find restaurants, specials, and coupons for free',
     public ?string $generator = 'xot';
 
     public string $charset = 'UTF-8';
 
     public ?string $author = 'xot';
 
-    // ' => '',
     public ?string $description;
 
-    // ' => '',
     public ?string $keywords;
 
     public string $nome_regione;
@@ -50,7 +48,7 @@ class MetatagData extends Data implements Wireable
 
     public string $logo_header_dark;
 
-    public ?string $logo_height = '2em';
+    public string $logo_height = '2em';
 
     public string $logo_footer;
 
@@ -106,10 +104,6 @@ class MetatagData extends Data implements Wireable
 
     public function getLogoHeight(): string
     {
-        if (null == $this->logo_height) {
-            $this->logo_height = '2em';
-        }
-
         return $this->logo_height;
     }
 
@@ -118,6 +112,9 @@ class MetatagData extends Data implements Wireable
         return app(\Modules\Xot\Actions\File\AssetAction::class)->execute($this->favicon);
     }
 
+    /**
+     * @return array<array<string>|string>
+     */
     public function getFilamentColors(): array
     {
         return [
@@ -128,45 +125,6 @@ class MetatagData extends Data implements Wireable
             'success' => 'success',
             'warning' => 'warning',
         ];
-    }
-
-    public function getAllColors(): array
-    {
-        $colors = array_keys(Color::all());
-        $colors = array_combine($colors, $colors);
-
-        return $colors;
-    }
-
-    public function getColors(): array
-    {
-        $mapped = Arr::mapWithKeys(
-            $this->colors,
-            function (array $item, int|string $key): array {
-                $k = $item['key'];
-                $v = $item['color'];
-                if ('custom' != $v) {
-                    $v = Arr::get(Color::all(), $v);
-                }
-                if ('custom' == $v) {
-                    $v = Color::hex($item['hex']);
-                }
-
-                return [$k => $v];
-            }
-        );
-
-        return $mapped;
-        /*
-        return [
-            'danger' => 'danger',
-            'gray' => 'gray',
-            'info' => 'info',
-            'primary' => 'primary',
-            'success' => 'success',
-            'warning' => 'warning',
-        ];
-        */
     }
 
     /**
@@ -207,19 +165,5 @@ class MetatagData extends Data implements Wireable
         );
 
         return $mapped;
-    }
-
-    public static function fromMeta(array $meta): self
-    {
-        return new self(
-            title: $meta['title'] ?? null,
-            description: $meta['description'] ?? null,
-            image: $meta['image'] ?? null,
-            url: $meta['url'] ?? null,
-            type: $meta['type'] ?? 'website',
-            site_name: $meta['site_name'] ?? null,
-            locale: $meta['locale'] ?? null,
-            custom: $meta['custom'] ?? [],
-        );
     }
 }
