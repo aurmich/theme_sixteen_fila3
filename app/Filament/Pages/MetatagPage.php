@@ -22,6 +22,7 @@ use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 use Webmozart\Assert\Assert;
 
 /**
+ * MetatagPage
  * @property ComponentContainer $form
  */
 class MetatagPage extends Page implements HasForms

@@ -316,6 +316,7 @@ class DatabaseSchemaExportCommand extends Command
     {
         $this->info('Riepilogo Schema Database');
         $this->info('=============================================');
+        assert(is_string($this->schema['database']));
         $this->info('Database: '.$this->schema['database']);
         $this->info('Numero tabelle: '.count($this->schema['tables']));
         $this->info('Numero relazioni: '.count($this->schema['relationships']));
