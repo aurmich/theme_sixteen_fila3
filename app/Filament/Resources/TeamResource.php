@@ -48,20 +48,5 @@ class TeamResource extends XotBaseResource
         ];
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            UsersRelationManager::class,
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListTeams::route('/'),
-            'create' => CreateTeam::route('/create'),
-            'view' => ViewTeam::route('/{record}'),
-            'edit' => EditTeam::route('/{record}/edit'),
-        ];
-    }
+   
 }
