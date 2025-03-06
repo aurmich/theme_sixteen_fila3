@@ -23,16 +23,14 @@ class DevicesRelationManager extends XotBaseRelationManager
         ];
     }
 
-    public function form(Form $form): Form
+    public function getFormSchema():array
     {
-        return $form
-            ->schema(
-                [
+        return [
                     TextInput::make('device')
                         ->required()
                         ->maxLength(255),
                 ]
-            );
+            ;
     }
 
     public function table(Table $table): Table

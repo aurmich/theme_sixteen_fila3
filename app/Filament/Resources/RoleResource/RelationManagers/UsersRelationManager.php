@@ -34,13 +34,7 @@ final class UsersRelationManager extends XotBaseRelationManager
 
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
-    /**
-     * Defines the form schema for creating or editing a user within this relation.
-     */
-    public function form(Form $form): Form
-    {
-        return $form->schema($this->getFormSchema());
-    }
+    
 
     /**
      * Returns the form schema structure, defining the input fields for user data.

@@ -20,18 +20,11 @@ use Modules\Xot\Filament\Traits\HasXotTable;
  */
 class SocialiteUsersRelationManager extends XotBaseRelationManager
 {
-    use HasXotTable;
+    
 
     protected static string $relationship = 'socialiteUsers';
 
-    /**
-     * Configure the form schema for managing Socialite User data.
-     */
-    public function form(Form $form): Form
-    {
-        return $form->schema($this->getFormSchema());
-    }
-
+   
     /**
      * Define form fields in a dedicated method for reusability.
      *

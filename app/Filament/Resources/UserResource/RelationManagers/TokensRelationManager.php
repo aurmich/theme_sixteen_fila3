@@ -19,16 +19,14 @@ class TokensRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'tokens';
 
-    public function form(Form $form): Form
+    public function getFormSchema():array
     {
-        return $form
-            ->schema(
-                [
+        return [
                     TextInput::make('name')
                         ->required()
                         ->maxLength(255),
                 ]
-            );
+            ;
     }
 
     public function table(Table $table): Table

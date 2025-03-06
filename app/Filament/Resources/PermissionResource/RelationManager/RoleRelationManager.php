@@ -20,42 +20,7 @@ class RoleRelationManager extends XotBaseRelationManager
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public function form(Form $form): Form
-    {
-        return $form
-            ->schema(
-                [
-                    TextInput::make('name'),
-                    TextInput::make('guard_name'),
-                ]
-            );
-    }
+   
 
-    public function table(Table $table): Table
-    {
-        return $table
-            ->columns(
-                [
-                    TextColumn::make('name')
-                        ->searchable(),
-                    TextColumn::make('guard_name')
-                        ->searchable(),
-                ]
-            )
-            ->filters(
-                [
-                ]
-            );
-    }
-
-    protected static function getModelLabel(): ?string
-    {
-        // return __('filament-spatie-roles-permissions::filament-spatie.section.role');
-        return __('filament-spatie-roles-permissions::filament-spatie.section.role');
-    }
-
-    protected static function getPluralModelLabel(): string
-    {
-        return __('filament-spatie-roles-permissions::filament-spatie.section.roles');
-    }
+    
 }

@@ -29,11 +29,9 @@ class RolesRelationManager extends XotBaseRelationManager
     //
     // }
 
-    public function form(Form $form): Form
+    public function getFormSchema():array
     {
-        return $form
-            ->schema(
-                [
+        return [
                     TextInput::make('name')
                         ->required()
                         ->maxLength(255),
@@ -42,7 +40,7 @@ class RolesRelationManager extends XotBaseRelationManager
                     ->relationship('teams', 'name'),
                 */
                 ]
-            );
+            ;
     }
 
     public function table(Table $table): Table
