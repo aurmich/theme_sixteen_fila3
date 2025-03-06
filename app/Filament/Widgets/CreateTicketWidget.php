@@ -19,6 +19,7 @@ use Filament\Forms\Components\Wizard\Step;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Widgets\Widget as BaseWidget;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 use Modules\Fixcity\Events\TicketCreatedEvent;
 use Modules\Fixcity\Filament\Resources\TicketResource;
@@ -32,8 +33,9 @@ use Illuminate\Support\Facades\Blade;
 /**
  * @property ComponentContainer $form
  */
-class CreateTicketWidget extends XotBaseWidget 
+class CreateTicketWidget extends BaseWidget implements HasForms
 {
+    use InteractsWithForms;
     
     protected static string $view = 'fixcity::filament.widgets.create-ticket';
 
