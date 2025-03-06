@@ -76,7 +76,46 @@ class DatabaseSchemaExportCommand extends Command
     protected $description = 'Esporta lo schema del database in un file JSON completo per facilitare la creazione di modelli e migrazioni';
 
     /**
-     * @var array<string, mixed>
+     * @var array{
+     *     database: string,
+     *     connection: string,
+     *     tables: array<string, array{
+     *         name: string,
+     *         columns: array<string, array{
+     *             name: string,
+     *             type: string,
+     *             null: bool,
+     *             key: string,
+     *             default: mixed,
+     *             extra: string,
+     *             comment: string
+     *         }>,
+     *         indices: array<array{
+     *             name: string,
+     *             columns: array<array{name: string, order: int}>,
+     *             unique: bool,
+     *             type: string
+     *         }>,
+     *         foreign_keys: array<array{
+     *             name: string,
+     *             column: string,
+     *             references_table: string,
+     *             references_column: string
+     *         }>,
+     *         primary_key: ?string,
+     *         model_name: string,
+     *         migration_name: string
+     *     }>,
+     *     relationships: array<array{
+     *         type: string,
+     *         local_table: string,
+     *         local_column: string,
+     *         foreign_table: string,
+     *         foreign_column: string,
+     *         constraint_name: string
+     *     }>,
+     *     generated_at: string
+     * }
      */
     protected array $schema = [];
 
@@ -287,9 +326,9 @@ class DatabaseSchemaExportCommand extends Command
         // Mostra le tabelle più rilevanti (con più relazioni o colonne)
         /** @var Collection<string, array{name: string, columns: int, relations: int, model: string}> */
         $relevantTables = collect($this->schema['tables'])
-            ->map(function (array $table, string $tableName) {
+            ->map(function (array $table, string $tableName): array {
                 $relationCount = collect($this->schema['relationships'])
-                    ->filter(function (array $rel) use ($tableName) {
+                    ->filter(function (array $rel) use ($tableName): bool {
                         return $rel['local_table'] === $tableName || $rel['foreign_table'] === $tableName;
                     })
                     ->count();
