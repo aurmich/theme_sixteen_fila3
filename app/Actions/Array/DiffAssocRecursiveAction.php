@@ -5,16 +5,24 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Array;
 
 use Spatie\QueueableAction\QueueableAction;
+use InvalidArgumentException;
+use function Safe\json_encode;
 
 /**
- * ---.
+ * Class DiffAssocRecursiveAction
+ * 
+ * Calcola la differenza ricorsiva tra due array associativi.
  */
 class DiffAssocRecursiveAction
 {
     use QueueableAction;
 
     /**
-     * Undocumented function.
+     * Corregge i tipi dei valori nell'array.
+     * 
+     * @param array<int|string,array<string,mixed>> $data
+     * @return array<int|string,array<string,mixed>>
+     * @throws InvalidArgumentException Se un elemento non è un array
      */
     public static function fixType(array $data): array
     {
@@ -22,7 +30,7 @@ class DiffAssocRecursiveAction
             ->map(
                 static function ($item) {
                     if (! is_array($item)) {
-                        throw new \Exception('['.__LINE__.']['.__CLASS__.']');
+                        throw new InvalidArgumentException('Ogni elemento deve essere un array');
                     }
 
                     return collect($item)
@@ -42,7 +50,12 @@ class DiffAssocRecursiveAction
     }
 
     /**
-     * ---.
+     * Calcola la differenza tra due array.
+     * 
+     * @param array<int|string,array<string,mixed>> $arr_1 Primo array
+     * @param array<int|string,array<string,mixed>> $arr_2 Secondo array
+     * @return array<int|string,array<string,mixed>> Array contenente gli elementi presenti in $arr_1 ma non in $arr_2
+     * @throws InvalidArgumentException Se c'è un errore durante il confronto
      */
     public function execute(array $arr_1, array $arr_2): array
     {
@@ -54,7 +67,14 @@ class DiffAssocRecursiveAction
                 try {
                     return ! \in_array($value, $arr_2, false);
                 } catch (\Exception $exception) {
-                    dddx(['err' => $exception->getMessage(), 'value' => $value, 'key' => $key, 'arr_2' => $arr_2]);
+                    throw new InvalidArgumentException(
+                        sprintf(
+                            'Errore durante il confronto degli array: %s [value: %s, key: %s]',
+                            $exception->getMessage(),
+                            json_encode($value) ?: 'non codificabile',
+                            $key
+                        )
+                    );
                 }
             }
         );

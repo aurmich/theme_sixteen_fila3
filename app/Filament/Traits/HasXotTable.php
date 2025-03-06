@@ -197,7 +197,7 @@ trait HasXotTable
      * mantenendo la retrocompatibilità e prevenendo errori.
      * @deprecated Questo metodo non deve più essere usato. Usa `getListTableColumns()` al suo posto.
      *
-     * Ultimo aggiornamento: 10/2023
+     * metterla final
      */
     public function table(Table $table): Table
     {

@@ -1,173 +1,249 @@
-# Correzioni PHPStan
+# Correzioni PHPStan nel Modulo Xot
 
-## Trait HasXotTable
+## Correzioni Implementate
 
-### Problemi Risolti
-1. Accesso a metodi non definiti
-   - Aggiunto controllo `method_exists()` prima di chiamare metodi opzionali
-   - Implementati metodi di fallback per funzionalità essenziali
+### 1. Gestione Email
+- ✅ Implementato `RecordMail` con tipo di ritorno corretto
+- ✅ Aggiunto controllo tipi nei parametri del costruttore
+- ✅ Migliorata la gestione dei dati del record
+- ✅ Template email con validazione dei dati
 
-2. Accesso statico a proprietà di istanza
-   - Rimossi accessi statici non sicuri
-   - Implementata gestione corretta delle proprietà di istanza
+### 2. Schema Manager
+- ✅ Corretto tipo di ritorno per `getDoctrineSchemaManager()`
+- ✅ Aggiunta validazione del modello
+- ✅ Implementata gestione errori con eccezioni tipizzate
+- ✅ Migliorata documentazione PHPDoc
 
-3. Gestione Errori
-   - Migliorata la gestione delle eccezioni
-   - Aggiunti messaggi di errore più descrittivi
-   - Implementato logging appropriato
+### 3. Store Action
+- ✅ Corretta gestione delle relazioni
+- ✅ Implementata validazione dei dati
+- ✅ Aggiunto controllo tipi per i parametri
+- ✅ Migliorata gestione degli ID utente
 
-### Best Practices
-1. Verifica Metodi
+### 4. Count Action
+- ✅ Implementato metodo statico con tipo di ritorno corretto
+- ✅ Aggiunta validazione della classe modello
+- ✅ Migliorata gestione delle eccezioni
+- ✅ Documentazione PHPDoc completa
+
+## Best Practices
+
+### 1. Gestione Tipi
 ```php
-if (method_exists($this, 'shouldShowViewAction') && $this->shouldShowViewAction()) {
-    // Implementazione sicura
+/**
+ * @param class-string<Model> $modelClass
+ * @return AbstractSchemaManager
+ * @throws \RuntimeException
+ */
+public function execute(string $modelClass): AbstractSchemaManager
+{
+    Assert::classExists($modelClass);
+    Assert::subclassOf($modelClass, Model::class);
+    // ...
 }
 ```
 
-2. Gestione Modelli
+### 2. Validazione Dati
 ```php
-public function getModelClass(): string
+/**
+ * @param array<string, mixed> $data
+ * @throws InvalidArgumentException
+ */
+private function validateData(array $data): void
 {
-    if (property_exists($this, 'model')) {
-        return $this->model;
-    }
+    Assert::keyExists($data, 'required_field');
+    Assert::string($data['required_field']);
+    // ...
+}
+```
 
-    if (method_exists($this, 'getRelationship')) {
-        $relationship = $this->getRelationship();
-        if ($relationship instanceof \Illuminate\Database\Eloquent\Relations\Relation) {
-            return get_class($relationship->getModel());
+### 3. Gestione Relazioni
+```php
+/**
+ * @param Model $model
+ * @param array<string, mixed> $data
+ * @return array<string, object>
+ */
+public function execute(Model $model, array $data): array
+{
+    $filtered = [];
+    foreach ($data as $name => $value) {
+        if ($this->isValidRelation($model, $name)) {
+            $filtered[$name] = $this->processRelation($model, $name, $value);
         }
     }
-
-    throw new \Exception('No model found');
+    return $filtered;
 }
 ```
 
-3. Gestione Errori
+### 4. Documentazione
 ```php
-try {
-    $modelClass = $this->getModelClass();
-    $model = app($modelClass);
-    Assert::isInstanceOf($model, \Illuminate\Database\Eloquent\Model::class);
-} catch (\Exception $e) {
-    Notification::make()
-        ->title('Error')
-        ->body('Unable to determine table name: '.$e->getMessage())
-        ->persistent()
-        ->danger()
-        ->send();
-}
+/**
+ * Class ExampleAction
+ * 
+ * @property string $name Nome dell'azione
+ * @property array<string, mixed> $config Configurazione
+ * @method void execute(array $data)
+ */
 ```
 
-## Resource Classes
+## Problemi Comuni e Soluzioni
 
-### Regole per XotBaseResource
-1. Non implementare `form()` come `protected static`
-   - Il metodo è già gestito dalla classe base
-   - Usare `getFormSchema()` per definire i campi del form
+1. **Undefined Method**
+   - Utilizzare `method_exists()` prima di chiamare metodi dinamici
+   - Implementare metodi di fallback
+   - Documentare i metodi magici
 
-2. Non definire `protected static ?string $navigationIcon`
-   - Le icone sono gestite tramite file di traduzione
-   - Usare il sistema di traduzione per personalizzare le icone
+2. **Type Mismatch**
+   - Utilizzare type hints PHP 8
+   - Aggiungere asserzioni per i tipi
+   - Documentare i tipi nei PHPDoc
 
-3. Implementazione corretta di `getFormSchema()`
-```php
-public static function getFormSchema(): array
-{
-    return [
-        'field_name' => [
-            'label' => 'Label',
-            'tooltip' => 'Tooltip',
-            'placeholder' => 'Placeholder',
-            'icon' => 'heroicon-o-user',
-            'color' => 'primary',
-        ],
-    ];
-}
-```
+3. **Null Safety**
+   - Utilizzare operatore null-safe (`?->`)
+   - Implementare controlli null espliciti
+   - Utilizzare tipi nullable quando appropriato
 
-### Traduzioni
-1. Formato Corretto
-```php
-'field_name' => [
-    'label' => 'Label Text',
-    'tooltip' => 'Tooltip Text',
-    'placeholder' => 'Placeholder Text',
-],
-```
+## Prossimi Passi
 
-2. Icone di Navigazione
-```php
-'navigation' => [
-    'icon' => 'heroicon-o-user',
-    'color' => 'primary',
-],
-```
+1. **Miglioramenti Prioritari**
+   - [ ] Implementare test unitari per ogni azione
+   - [ ] Aggiungere logging strutturato
+   - [ ] Migliorare la gestione delle eccezioni
+   - [ ] Completare la documentazione API
 
-## Funzioni Safe
+2. **Refactoring**
+   - [ ] Estrarre logica comune in trait
+   - [ ] Implementare pattern repository
+   - [ ] Migliorare la gestione delle dipendenze
+   - [ ] Ottimizzare le query al database
 
-### Funzioni da Usare
-1. File System
-   - `Safe\file_get_contents` invece di `file_get_contents`
-   - `Safe\file_put_contents` invece di `file_put_contents`
-   - `Safe\unlink` invece di `unlink`
-
-2. JSON
-   - `Safe\json_decode` invece di `json_decode`
-   - `Safe\json_encode` invece di `json_encode`
-
-3. Regex
-   - `Safe\preg_match` invece di `preg_match`
-   - `Safe\preg_replace` invece di `preg_replace`
-
-### Gestione Eccezioni
-```php
-try {
-    $content = Safe\file_get_contents($file);
-} catch (\Safe\Exceptions\FilesystemException $e) {
-    throw new \RuntimeException("Errore lettura file: {$e->getMessage()}");
-}
-```
-
-## Correzioni Effettuate
-
-### 1. ImportCsvAction
-- Corretto costruttore `ColumnData`
-- Aggiunto tipo di default per le colonne
-- Migliorata gestione errori
-
-### 2. SendMailByRecordAction
-- Rimossa istanziazione con parametri
-- Utilizzato container Laravel per l'istanziazione
-- Migliorata gestione delle dipendenze
-
-### 3. HasXotTable
-- Aggiunto controllo metodi
-- Migliorata gestione errori
-- Implementata gestione sicura delle proprietà
-- Aggiunta documentazione completa
+3. **Documentazione**
+   - [ ] Aggiornare esempi di codice
+   - [ ] Documentare casi d'uso comuni
+   - [ ] Aggiungere diagrammi di flusso
+   - [ ] Creare guida per sviluppatori
 
 ## Note Importanti
 
 1. **Sicurezza**
-   - Usare sempre funzioni Safe
-   - Validare input utente
-   - Gestire correttamente le eccezioni
+   - Validare sempre input utente
+   - Utilizzare prepared statements
+   - Implementare autorizzazioni appropriate
 
 2. **Performance**
-   - Evitare accessi statici non necessari
-   - Utilizzare il container per le dipendenze
+   - Ottimizzare query N+1
    - Implementare caching dove appropriato
+   - Utilizzare code per operazioni pesanti
 
 3. **Manutenibilità**
-   - Documentare il codice
-   - Seguire le convenzioni di naming
-   - Mantenere la coerenza del codice
+   - Seguire PSR-12
+   - Mantenere documentazione aggiornata
+   - Implementare CI/CD
+
+## Errori Critici (Livello 7)
+
+### 1. Metodo Final Override in ListRatings
+- ❌ Errore: Cannot override final method `Modules\Xot\Filament\Resources\Pages\XotBaseListRecords::table()`
+- 📍 Posizione: `Modules/Rating/app/Filament/Resources/RatingResource/Pages/ListRatings.php:79`
+- ✅ Risolto: Implementato `getTableColumns()` e `getTableConfiguration()`
+
+### 2. Metodo Final Override in UsersRelationManager
+- ❌ Errore: Cannot override final method `Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager::form()`
+- 📍 Posizione: `Modules/User/app/Filament/Resources/TeamResource/RelationManagers/UsersRelationManager.php:21`
+- 🔧 Soluzione necessaria:
+  - Rimuovere l'override del metodo `form()`
+  - Utilizzare `getFormSchema()` per personalizzare il form
+  - Implementare la logica corretta per la gestione delle relazioni
+
+### 3. Metodo Final Override in DomainsRelationManager
+- ❌ Errore: Cannot override final method `Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager::form()`
+- 📍 Posizione: `Modules/User/app/Filament/Resources/TenantResource/RelationManagers/DomainsRelationManager.php:20`
+- 🔧 Soluzione necessaria:
+  - Rimuovere l'override del metodo `form()`
+  - Implementare `getFormSchema()` per la configurazione del form
+  - Mantenere la stessa logica di validazione e struttura
+
+### Pattern Comuni di Errore
+1. **Override di Metodi Final**
+   - Problema: Tentativo di sovrascrivere metodi marcati come `final`
+   - Soluzione: Utilizzare i metodi di configurazione previsti
+   - Esempio: `getFormSchema()` invece di `form()`
+
+2. **Incompatibilità di Firma**
+   - Problema: Metodi con firma non compatibile con la classe base
+   - Soluzione: Rispettare la firma esatta del metodo base
+   - Esempio: `public function getFormSchema(): array`
+
+3. **Gestione delle Relazioni**
+   - Problema: Configurazione non corretta delle relazioni
+   - Soluzione: Utilizzare i metodi dedicati per ogni aspetto
+   - Esempio: Separare form, tabelle e azioni
+
+### Best Practices per RelationManager
+1. **Configurazione Form**
+   ```php
+   public function getFormSchema(): array
+   {
+       return [
+           Forms\Components\TextInput::make('name')
+               ->required()
+               ->maxLength(255),
+           Forms\Components\TextInput::make('domain')
+               ->required()
+               ->url(),
+       ];
+   }
+   ```
+
+2. **Configurazione Tabella**
+   ```php
+   protected function getTableColumns(): array
+   {
+       return [
+           Tables\Columns\TextColumn::make('name')
+               ->sortable()
+               ->searchable(),
+       ];
+   }
+   ```
+
+3. **Azioni e Validazione**
+   ```php
+   protected function getTableActions(): array
+   {
+       return [
+           Tables\Actions\EditAction::make()
+               ->using(function (Model $record, array $data) {
+                   $record->update($this->mutateFormDataBeforeSave($data));
+               }),
+       ];
+   }
+   ```
 
 ## Prossimi Passi
 
-1. Verificare altre classi per problemi simili
-2. Implementare test automatici
-3. Aggiornare la documentazione API
-4. Monitorare le performance
-5. Pianificare refactoring incrementali 
+1. **Correzioni Immediate**
+   - [ ] Correggere override metodo final in ListRatings
+   - [ ] Verificare altri possibili override di metodi final
+   - [ ] Aggiornare la documentazione delle classi base
+   - [ ] Implementare test per verificare la corretta estensione
+
+### Override di metodi final in RelationManager
+
+Errore trovato in:
+- `Modules/User/app/Filament/Resources/TenantResource/RelationManagers/UsersRelationManager.php:21`
+
+Il metodo `form()` è dichiarato come final nella classe base `XotBaseRelationManager` e non può essere sovrascritto.
+
+Soluzione:
+- Rimuovere l'override del metodo `form()`
+- Utilizzare `getFormSchema()` per personalizzare il form
+- Implementare `getTableColumns()` per definire le colonne
+- Utilizzare `getTableConfiguration()` per le impostazioni della tabella
+
+Best Practices:
+- Utilizzare i metodi previsti per la personalizzazione invece di sovrascrivere metodi final
+- Mantenere la coerenza nella struttura dei form tra i vari RelationManager
+- Validare i dati utilizzando le regole di validazione di Laravel
+- Documentare le personalizzazioni nel codice 

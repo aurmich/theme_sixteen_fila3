@@ -4,17 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Widgets;
 
-use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Filament\Widgets\Widget;
-use Modules\Xot\Actions\View\GetViewByClassAction;
 use Illuminate\Contracts\View\View;
+use Filament\Forms\Contracts\HasForms;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Modules\Xot\Actions\View\GetViewByClassAction;
+use Filament\Widgets\Concerns\InteractsWithPageFilters;
 
 /**
  * @property bool $shouldRender
  */
-abstract class XotBaseWidget extends Widget
+abstract class XotBaseWidget extends Widget implements HasForms
 {
     use InteractsWithPageFilters;
+    use InteractsWithForms;
+
 
     public string $title = '';
 

@@ -4,29 +4,37 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Console\Commands;
 
+use Doctrine\DBAL\Schema\Column;
+use Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use Doctrine\DBAL\Schema\Index;
 use Illuminate\Console\Command;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema as SchemaFacade;
 use Illuminate\Support\Str;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
-use function Safe\file_get_contents;
 use function Safe\file_put_contents;
-use function Safe\json_decode;
 use function Safe\json_encode;
 use function Safe\mkdir;
 
 /**
- * Class DatabaseSchemaExportCommand.
+ * Class DatabaseSchemaExportCommand
+ * 
+ * Esporta lo schema del database in file JSON.
  */
 class DatabaseSchemaExportCommand extends Command
 {
+    /**
+     * @var string
+     */
     protected $signature = 'db:schema:export {table?} {--module=}';
 
-    protected $description = 'Export database schema into JSON files';
+    /**
+     * @var string
+     */
+    protected $description = 'Esporta lo schema del database in file JSON';
 
     /**
-     * Execute the console command.
+     * Esegue il comando.
      *
      * @throws FilesystemException
      * @throws JsonException
@@ -38,7 +46,6 @@ class DatabaseSchemaExportCommand extends Command
 
         if (null !== $table) {
             $this->exportTable($table, $module);
-
             return;
         }
 
@@ -49,14 +56,22 @@ class DatabaseSchemaExportCommand extends Command
     }
 
     /**
-     * Export a table schema to JSON.
+     * Esporta lo schema di una tabella in JSON.
      *
+     * @param string $table Nome della tabella
+     * @param string|null $module Nome del modulo
      * @throws FilesystemException
      * @throws JsonException
      */
     protected function exportTable(string $table, ?string $module = null): void
     {
         $schema = SchemaFacade::getConnection()->getDoctrineSchemaManager();
+        
+        if (!$schema->tablesExist([$table])) {
+            $this->error("La tabella [{$table}] non esiste");
+            return;
+        }
+
         $columns = $schema->listTableColumns($table);
         $indexes = $schema->listTableIndexes($table);
         $foreignKeys = $schema->listTableForeignKeys($table);
@@ -72,13 +87,13 @@ class DatabaseSchemaExportCommand extends Command
         $json = json_encode($data, JSON_PRETTY_PRINT);
         file_put_contents($path, $json);
 
-        $this->info("Schema exported for table [{$table}]");
+        $this->info("Schema esportato per la tabella [{$table}]");
     }
 
     /**
-     * Format columns for JSON export.
+     * Formatta le colonne per l'esportazione JSON.
      *
-     * @param array<string, mixed> $columns
+     * @param Column[] $columns
      * @return array<string, array<string, mixed>>
      */
     protected function formatColumns(array $columns): array
@@ -86,10 +101,13 @@ class DatabaseSchemaExportCommand extends Command
         $formatted = [];
         foreach ($columns as $column) {
             $formatted[$column->getName()] = [
-                'type' => $column->getType()->getName(),
+                'type' => $column->getType()->getTypeName(),
                 'length' => $column->getLength(),
-                'nullable' => ! $column->getNotnull(),
+                'nullable' => !$column->getNotnull(),
                 'default' => $column->getDefault(),
+                'unsigned' => $column->getUnsigned(),
+                'autoincrement' => $column->getAutoincrement(),
+                'comment' => $column->getComment(),
             ];
         }
 
@@ -97,9 +115,9 @@ class DatabaseSchemaExportCommand extends Command
     }
 
     /**
-     * Format indexes for JSON export.
+     * Formatta gli indici per l'esportazione JSON.
      *
-     * @param array<string, mixed> $indexes
+     * @param Index[] $indexes
      * @return array<string, array<string, mixed>>
      */
     protected function formatIndexes(array $indexes): array
@@ -110,6 +128,8 @@ class DatabaseSchemaExportCommand extends Command
                 'columns' => $index->getColumns(),
                 'unique' => $index->isUnique(),
                 'primary' => $index->isPrimary(),
+                'flags' => $index->getFlags(),
+                'options' => $index->getOptions(),
             ];
         }
 
@@ -117,9 +137,9 @@ class DatabaseSchemaExportCommand extends Command
     }
 
     /**
-     * Format foreign keys for JSON export.
+     * Formatta le chiavi esterne per l'esportazione JSON.
      *
-     * @param array<string, mixed> $foreignKeys
+     * @param ForeignKeyConstraint[] $foreignKeys
      * @return array<string, array<string, mixed>>
      */
     protected function formatForeignKeys(array $foreignKeys): array
@@ -130,8 +150,9 @@ class DatabaseSchemaExportCommand extends Command
                 'localColumns' => $foreignKey->getLocalColumns(),
                 'foreignTable' => $foreignKey->getForeignTableName(),
                 'foreignColumns' => $foreignKey->getForeignColumns(),
-                'onDelete' => $foreignKey->getOptions()['onDelete'] ?? null,
-                'onUpdate' => $foreignKey->getOptions()['onUpdate'] ?? null,
+                'onDelete' => $foreignKey->onDelete(),
+                'onUpdate' => $foreignKey->onUpdate(),
+                'options' => $foreignKey->getOptions(),
             ];
         }
 
@@ -139,21 +160,26 @@ class DatabaseSchemaExportCommand extends Command
     }
 
     /**
-     * Get the export path for a table schema.
+     * Ottiene il percorso di esportazione per lo schema di una tabella.
+     *
+     * @param string $table Nome della tabella
+     * @param string|null $module Nome del modulo
+     * @return string Percorso completo del file
+     * @throws FilesystemException
      */
     protected function getExportPath(string $table, ?string $module = null): string
     {
-        $filename = Str::snake($table).'.json';
+        $filename = Str::snake($table) . '.json';
         $basePath = base_path('database/schema');
 
         if (null !== $module) {
             $basePath = base_path("Modules/{$module}/database/schema");
         }
 
-        if (! is_dir($basePath)) {
+        if (!is_dir($basePath)) {
             mkdir($basePath, 0755, true);
         }
 
-        return $basePath.'/'.$filename;
+        return $basePath . '/' . $filename;
     }
 }

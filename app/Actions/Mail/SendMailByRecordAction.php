@@ -4,27 +4,29 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions\Mail;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Mail;
+use Modules\Xot\Mail\RecordMail;
 use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
+/**
+ * Class SendMailByRecordAction
+ * 
+ * Invia una mail utilizzando un record come dati.
+ */
 class SendMailByRecordAction
 {
     use QueueableAction;
 
     /**
-     * Undocumented function.
+     * Invia la mail.
      *
-     * @return bool
+     * @param array<string, mixed> $data I dati del record
+     * @param string $to Indirizzo email del destinatario
+     * @return void
      */
-    public function execute(Model $record, string $mailClass): void
+    public function execute(array $data, string $to): void
     {
-        Assert::classExists($mailClass);
-        Assert::implementsInterface($mailClass, Mailable::class);
-
-        /** @var Mailable $mail */
-        $mail = new $mailClass($record);
-        $mail->send();
+        $mailable = new RecordMail($data);
+        Mail::to($to)->send($mailable);
     }
 }
