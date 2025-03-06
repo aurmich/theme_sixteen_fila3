@@ -9,13 +9,10 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\UserResource\Pages;
 
 use Filament\Actions\DeleteAction;
-<<<<<<< HEAD
-=======
-use Filament\Resources\Pages\EditRecord;
->>>>>>> 8501391d (up)
 use Modules\User\Filament\Resources\UserResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-class EditUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
+class EditUser extends XotBaseEditRecord
 {
     // //
     protected static string $resource = UserResource::class;

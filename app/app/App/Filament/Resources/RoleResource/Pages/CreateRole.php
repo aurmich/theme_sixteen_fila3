@@ -5,14 +5,8 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\RoleResource\Pages;
 
 use Illuminate\Support\Arr;
-<<<<<<< HEAD
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-=======
-use Illuminate\Support\Str;
-use Illuminate\Support\Collection;
-use Filament\Resources\Pages\CreateRecord;
->>>>>>> 8501391d (up)
 use Modules\User\Filament\Resources\RoleResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 

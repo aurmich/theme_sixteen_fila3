@@ -79,6 +79,24 @@ composer format        # Formatta il codice
 6. Implementare validazione input
 7. Gestire correttamente le password
 8. Proteggere i dati sensibili
+9. Utilizzare le classi base del modulo Xot per l'ereditarietà
+10. Mantenere un ordine coerente nelle importazioni
+
+## Gestione dei Conflitti
+### Linee Guida per il Merge
+1. **Ereditarietà delle Classi**:
+   - Preferire l'utilizzo delle classi base del modulo Xot (XotBaseCreateRecord, XotBaseEditRecord, etc.)
+   - Mantenere la coerenza nell'ereditarietà tra file correlati
+
+2. **Organizzazione delle Importazioni**:
+   - Raggruppare le importazioni per namespace
+   - Mantenere l'ordine: Illuminate > Modules > Altri namespace
+   - Evitare importazioni duplicate
+
+3. **Risoluzione Conflitti**:
+   - Verificare la compatibilità con le classi base
+   - Mantenere la coerenza tra i file correlati
+   - Testare dopo ogni risoluzione
 
 ## Troubleshooting
 ### Problemi Comuni

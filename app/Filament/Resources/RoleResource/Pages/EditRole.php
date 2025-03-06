@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\RoleResource\Pages;
 
-<<<<<<< HEAD
-use Filament\Actions\DeleteAction;
-use Filament\Pages\Actions\ViewAction;
-=======
->>>>>>> debecd5e (.)
+
+
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Webmozart\Assert\Assert;
@@ -51,13 +48,6 @@ class EditRole extends XotBaseEditRecord
         $this->record->syncPermissions($permissionModels);
     }
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            ViewAction::make(),
-            DeleteAction::make(),
-        ];
-    }
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
