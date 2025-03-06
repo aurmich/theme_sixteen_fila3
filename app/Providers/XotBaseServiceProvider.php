@@ -66,6 +66,14 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         $this->registerBladeIcons();
     }
 
+    /**
+     * Translate a label using the module's translation system.
+     */
+    public function translateLabel(string $label): string
+    {
+        return __($this->nameLower.'::'.$label);
+    }
+
     public function registerBladeIcons(): void
     {
         if ('' === $this->name) {

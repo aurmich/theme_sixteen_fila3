@@ -1,75 +1,173 @@
-# Correzioni PHPStan Livello 1
+# Correzioni PHPStan
 
-## Errori Principali e Soluzioni
+## Trait HasXotTable
 
-### 1. Classi Resource non Astratte con Metodi Astratti
+### Problemi Risolti
+1. Accesso a metodi non definiti
+   - Aggiunto controllo `method_exists()` prima di chiamare metodi opzionali
+   - Implementati metodi di fallback per funzionalità essenziali
 
-Le seguenti classi devono implementare il metodo astratto `getFormSchema()`:
-- `CacheLockResource`
-- `ExtraResource`
-- `SessionResource`
+2. Accesso statico a proprietà di istanza
+   - Rimossi accessi statici non sicuri
+   - Implementata gestione corretta delle proprietà di istanza
 
-Soluzione: Implementare il metodo in ogni classe o renderle astratte.
+3. Gestione Errori
+   - Migliorata la gestione delle eccezioni
+   - Aggiunti messaggi di errore più descrittivi
+   - Implementato logging appropriato
 
-### 2. Funzioni Unsafe
-
-Sostituire le seguenti funzioni con le loro versioni sicure da `thecodingmachine/safe`:
-
+### Best Practices
+1. Verifica Metodi
 ```php
-use function Safe\json_decode;
-use function Safe\json_encode;
-use function Safe\preg_match;
-use function Safe\preg_replace;
-use function Safe\file_get_contents;
-use function Safe\file_put_contents;
-use function Safe\glob;
-use function Safe\date;
-use function Safe\error_log;
+if (method_exists($this, 'shouldShowViewAction') && $this->shouldShowViewAction()) {
+    // Implementazione sicura
+}
 ```
 
-### 3. Accesso a Proprietà non Definite
+2. Gestione Modelli
+```php
+public function getModelClass(): string
+{
+    if (property_exists($this, 'model')) {
+        return $this->model;
+    }
 
-Nel modello `DatabaseConnection`:
-- Definire le proprietà mancanti nel modello o usare `$fillable`/`$guarded`
-- Aggiungere PHPDoc per le proprietà
+    if (method_exists($this, 'getRelationship')) {
+        $relationship = $this->getRelationship();
+        if ($relationship instanceof \Illuminate\Database\Eloquent\Relations\Relation) {
+            return get_class($relationship->getModel());
+        }
+    }
 
-### 4. Problemi nei Test
+    throw new \Exception('No model found');
+}
+```
 
-In `ExampleTest.php`:
-- Estendere la classe di test corretta
-- Implementare i metodi mancanti
-- Definire le proprietà necessarie
+3. Gestione Errori
+```php
+try {
+    $modelClass = $this->getModelClass();
+    $model = app($modelClass);
+    Assert::isInstanceOf($model, \Illuminate\Database\Eloquent\Model::class);
+} catch (\Exception $e) {
+    Notification::make()
+        ->title('Error')
+        ->body('Unable to determine table name: '.$e->getMessage())
+        ->persistent()
+        ->danger()
+        ->send();
+}
+```
 
-### 5. Problemi di Namespace e Classi non Trovate
+## Resource Classes
 
-- Correggere i namespace delle classi
-- Importare le classi mancanti
-- Verificare l'autoloading dei moduli
+### Regole per XotBaseResource
+1. Non implementare `form()` come `protected static`
+   - Il metodo è già gestito dalla classe base
+   - Usare `getFormSchema()` per definire i campi del form
 
-## Best Practices per le Correzioni
+2. Non definire `protected static ?string $navigationIcon`
+   - Le icone sono gestite tramite file di traduzione
+   - Usare il sistema di traduzione per personalizzare le icone
 
-1. **Resource Classes**:
-   - Implementare sempre `getFormSchema()`
-   - Usare le traduzioni per le label
-   - Seguire la struttura standard dei form
+3. Implementazione corretta di `getFormSchema()`
+```php
+public static function getFormSchema(): array
+{
+    return [
+        'field_name' => [
+            'label' => 'Label',
+            'tooltip' => 'Tooltip',
+            'placeholder' => 'Placeholder',
+            'icon' => 'heroicon-o-user',
+            'color' => 'primary',
+        ],
+    ];
+}
+```
 
-2. **Safe Functions**:
-   - Usare sempre le funzioni del pacchetto `Safe`
-   - Aggiungere i use statement all'inizio del file
+### Traduzioni
+1. Formato Corretto
+```php
+'field_name' => [
+    'label' => 'Label Text',
+    'tooltip' => 'Tooltip Text',
+    'placeholder' => 'Placeholder Text',
+],
+```
+
+2. Icone di Navigazione
+```php
+'navigation' => [
+    'icon' => 'heroicon-o-user',
+    'color' => 'primary',
+],
+```
+
+## Funzioni Safe
+
+### Funzioni da Usare
+1. File System
+   - `Safe\file_get_contents` invece di `file_get_contents`
+   - `Safe\file_put_contents` invece di `file_put_contents`
+   - `Safe\unlink` invece di `unlink`
+
+2. JSON
+   - `Safe\json_decode` invece di `json_decode`
+   - `Safe\json_encode` invece di `json_encode`
+
+3. Regex
+   - `Safe\preg_match` invece di `preg_match`
+   - `Safe\preg_replace` invece di `preg_replace`
+
+### Gestione Eccezioni
+```php
+try {
+    $content = Safe\file_get_contents($file);
+} catch (\Safe\Exceptions\FilesystemException $e) {
+    throw new \RuntimeException("Errore lettura file: {$e->getMessage()}");
+}
+```
+
+## Correzioni Effettuate
+
+### 1. ImportCsvAction
+- Corretto costruttore `ColumnData`
+- Aggiunto tipo di default per le colonne
+- Migliorata gestione errori
+
+### 2. SendMailByRecordAction
+- Rimossa istanziazione con parametri
+- Utilizzato container Laravel per l'istanziazione
+- Migliorata gestione delle dipendenze
+
+### 3. HasXotTable
+- Aggiunto controllo metodi
+- Migliorata gestione errori
+- Implementata gestione sicura delle proprietà
+- Aggiunta documentazione completa
+
+## Note Importanti
+
+1. **Sicurezza**
+   - Usare sempre funzioni Safe
+   - Validare input utente
    - Gestire correttamente le eccezioni
 
-3. **Model Properties**:
-   - Definire tutte le proprietà nel modello
-   - Usare PHPDoc per documentare le proprietà
-   - Implementare i metodi accessor/mutator necessari
+2. **Performance**
+   - Evitare accessi statici non necessari
+   - Utilizzare il container per le dipendenze
+   - Implementare caching dove appropriato
 
-4. **Testing**:
-   - Estendere la classe di test appropriata
-   - Implementare i setup necessari
-   - Documentare i test cases
+3. **Manutenibilità**
+   - Documentare il codice
+   - Seguire le convenzioni di naming
+   - Mantenere la coerenza del codice
 
-## Documentazione Correlata
+## Prossimi Passi
 
-- [Filament Resources](./filament-resources.md)
-- [Database Models](./models.md)
-- [Testing Guidelines](./testing.md) 
+1. Verificare altre classi per problemi simili
+2. Implementare test automatici
+3. Aggiornare la documentazione API
+4. Monitorare le performance
+5. Pianificare refactoring incrementali 

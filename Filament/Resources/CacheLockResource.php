@@ -9,12 +9,32 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Resources\CacheLockResource\Pages;
 use Modules\Xot\Models\CacheLock;
+use Filament\Forms;
 
 class CacheLockResource extends XotBaseResource
 {
     protected static ?string $model = CacheLock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    /**
+     * Get the form schema for the resource.
+     *
+     * @return array<Forms\Components\Component>
+     */
+    public function getFormSchema(): array
+    {
+        return [
+            Forms\Components\TextInput::make('key')
+                ->required()
+                ->maxLength(255),
+            Forms\Components\TextInput::make('owner')
+                ->required()
+                ->maxLength(255),
+            Forms\Components\DateTimePicker::make('expiration')
+                ->required(),
+        ];
+    }
 
     public static function form(Form $form): Form
     {

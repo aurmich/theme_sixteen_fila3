@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources;
 
-use Filament\Forms\Components\KeyValue;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms;
 use Modules\Xot\Filament\Resources\SessionResource\Pages;
 use Modules\Xot\Models\Session;
 
@@ -13,41 +12,36 @@ class SessionResource extends XotBaseResource
 {
     protected static ?string $model = Session::class;
 
+    /**
+     * Get the form schema for the resource.
+     *
+     * @return array<string, Forms\Components\Component>
+     */
     public static function getFormSchema(): array
     {
         return [
-            'id' => TextInput::make('id')
+            'id' => Forms\Components\TextInput::make('id')
                 ->required()
-                ->maxLength(255)
-                ->placeholder('Inserisci ID')
-                ->helperText('Identificativo univoco della sessione'),
-
-            'user_id' => TextInput::make('user_id')
-                ->numeric()
-                ->placeholder('ID dell\'utente')
-                ->helperText('ID dell\'utente associato alla sessione'),
-
-            'ip_address' => TextInput::make('ip_address')
-                ->maxLength(45)
-                ->placeholder('Indirizzo IP')
-                ->helperText('Indirizzo IP dell\'utente'),
-
-            'user_agent' => TextInput::make('user_agent')
-                ->maxLength(255)
-                ->placeholder('User Agent del browser')
-                ->helperText('Informazioni sul browser dell\'utente'),
-
-            'payload' => KeyValue::make('payload')
-                ->columnSpanFull()
-                ->helperText('Dati della sessione in formato chiave-valore'),
-
-            'last_activity' => TextInput::make('last_activity')
-                ->required()
-                ->numeric()
-                ->placeholder('Timestamp ultima attività')
-                ->helperText('Timestamp dell\'ultima attività dell\'utente'),
+                ->maxLength(255),
+            'user_id' => Forms\Components\TextInput::make('user_id')
+                ->numeric(),
+            'ip_address' => Forms\Components\TextInput::make('ip_address')
+                ->maxLength(45),
+            'user_agent' => Forms\Components\TextInput::make('user_agent')
+                ->maxLength(255),
+            'payload' => Forms\Components\Textarea::make('payload')
+                ->required(),
+            'last_activity' => Forms\Components\DateTimePicker::make('last_activity')
+                ->required(),
         ];
     }
 
-   
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListSessions::route('/'),
+            'create' => Pages\CreateSession::route('/create'),
+            'edit' => Pages\EditSession::route('/{record}/edit'),
+        ];
+    }
 }

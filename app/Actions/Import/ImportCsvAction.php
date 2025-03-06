@@ -133,16 +133,16 @@ class ImportCsvAction
     }
 
     /**
-     * @param array<mixed> $columns
-     *
+     * @param array<string> $columns
      * @return array<ColumnData>
      */
     public function execute1(array $columns): array
     {
-        return array_map(function ($column): ColumnData {
-            Assert::string($column, 'Column must be a string');
-
-            return new ColumnData($column);
+        return array_map(function (string $column): ColumnData {
+            return new ColumnData(
+                name: $column,
+                type: 'string' // Tipo di default per le colonne
+            );
         }, $columns);
     }
 }

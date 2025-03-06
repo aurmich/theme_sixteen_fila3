@@ -5,365 +5,154 @@ declare(strict_types=1);
 namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema as SchemaFacade;
 use Illuminate\Support\Str;
+use Safe\Exceptions\FilesystemException;
+use Safe\Exceptions\JsonException;
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
+use function Safe\json_decode;
 use function Safe\json_encode;
-use function Safe\preg_match_all;
 
 /**
- * @phpstan-type SchemaTable array{
- *     name: string,
- *     columns: array<string, array{
- *         name: string,
- *         type: string,
- *         null: bool,
- *         key: string,
- *         default: mixed,
- *         extra: string,
- *         comment: string
- *     }>,
- *     indices: array<array{
- *         name: string,
- *         columns: array<array{name: string, order: int}>,
- *         unique: bool,
- *         type: string
- *     }>,
- *     foreign_keys: array<array{
- *         name: string,
- *         column: string,
- *         references_table: string,
- *         references_column: string
- *     }>,
- *     primary_key: ?string,
- *     model_name: string,
- *     migration_name: string
- * }
- * 
- * @phpstan-type SchemaRelationship array{
- *     type: string,
- *     local_table: string,
- *     local_column: string,
- *     foreign_table: string,
- *     foreign_column: string,
- *     constraint_name: string
- * }
- * 
- * @phpstan-type Schema array{
- *     database: string,
- *     connection: string,
- *     tables: array<string, SchemaTable>,
- *     relationships: array<SchemaRelationship>,
- *     generated_at: string
- * }
+ * Class DatabaseSchemaExportCommand.
  */
 class DatabaseSchemaExportCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'xot:schema-export {connection? : Nome della connessione database} {--output=docs/db_schema.json : Percorso file di output}';
+    protected $signature = 'db:schema:export {table?} {--module=}';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Esporta lo schema del database in un file JSON completo per facilitare la creazione di modelli e migrazioni';
-
-    /**
-     * @var array{
-     *     database: string,
-     *     connection: string,
-     *     tables: array<string, array{
-     *         name: string,
-     *         columns: array<string, array{
-     *             name: string,
-     *             type: string,
-     *             null: bool,
-     *             key: string,
-     *             default: mixed,
-     *             extra: string,
-     *             comment: string
-     *         }>,
-     *         indices: array<array{
-     *             name: string,
-     *             columns: array<array{name: string, order: int}>,
-     *             unique: bool,
-     *             type: string
-     *         }>,
-     *         foreign_keys: array<array{
-     *             name: string,
-     *             column: string,
-     *             references_table: string,
-     *             references_column: string
-     *         }>,
-     *         primary_key: ?string,
-     *         model_name: string,
-     *         migration_name: string
-     *     }>,
-     *     relationships: array<array{
-     *         type: string,
-     *         local_table: string,
-     *         local_column: string,
-     *         foreign_table: string,
-     *         foreign_column: string,
-     *         constraint_name: string
-     *     }>,
-     *     generated_at: string
-     * }
-     */
-    protected array $schema = [];
+    protected $description = 'Export database schema into JSON files';
 
     /**
      * Execute the console command.
+     *
+     * @throws FilesystemException
+     * @throws JsonException
      */
-    public function handle(): int
+    public function handle(): void
     {
-        $connection = $this->argument('connection') ?: $this->ask('Inserisci il nome della connessione database');
-        $outputPath = $this->option('output');
+        $module = $this->option('module');
+        $table = $this->argument('table');
 
-        // Assicurati che il percorso sia assoluto
-        if (! Str::startsWith($outputPath, '/')) {
-            $outputPath = base_path($outputPath);
+        if (null !== $table) {
+            $this->exportTable($table, $module);
+
+            return;
         }
 
-        $this->info("Estrazione schema dal database usando la connessione: {$connection}");
+        $tables = SchemaFacade::getAllTables();
+        foreach ($tables as $table) {
+            $this->exportTable($table->name, $module);
+        }
+    }
 
-        $this->schema = [
-            'database' => '',
-            'connection' => $connection,
-            'tables' => [],
-            'relationships' => [],
-            'generated_at' => now()->toIso8601String(),
+    /**
+     * Export a table schema to JSON.
+     *
+     * @throws FilesystemException
+     * @throws JsonException
+     */
+    protected function exportTable(string $table, ?string $module = null): void
+    {
+        $schema = SchemaFacade::getConnection()->getDoctrineSchemaManager();
+        $columns = $schema->listTableColumns($table);
+        $indexes = $schema->listTableIndexes($table);
+        $foreignKeys = $schema->listTableForeignKeys($table);
+
+        $data = [
+            'name' => $table,
+            'columns' => $this->formatColumns($columns),
+            'indexes' => $this->formatIndexes($indexes),
+            'foreignKeys' => $this->formatForeignKeys($foreignKeys),
         ];
 
-        try {
-            // Imposta la connessione database
-            DB::setDefaultConnection($connection);
-            $databaseName = DB::connection()->getDatabaseName();
-            $this->schema['database'] = $databaseName;
+        $path = $this->getExportPath($table, $module);
+        $json = json_encode($data, JSON_PRETTY_PRINT);
+        file_put_contents($path, $json);
 
-            $this->info("Connesso al database: {$databaseName}");
-
-            // Ottieni tutte le tabelle
-            $tables = DB::select('SHOW TABLES');
-            $tablesKey = 'Tables_in_'.$databaseName;
-
-            $bar = $this->output->createProgressBar(count($tables));
-            $bar->start();
-
-            foreach ($tables as $table) {
-                $tableName = $table->$tablesKey;
-                $this->info("\nAnalyzing table: {$tableName}");
-
-                // Ottieni la struttura della tabella
-                $columns = DB::select("SHOW FULL COLUMNS FROM `{$tableName}`");
-                $indices = DB::select("SHOW INDEX FROM `{$tableName}`");
-
-                // Ottieni la DDL della tabella per poi estrarre le FK constraints
-                $createTable = DB::select("SHOW CREATE TABLE `{$tableName}`");
-                $createTableSql = $createTable[0]->{'Create Table'};
-
-                // Estrai foreign keys
-                preg_match_all(
-                    '/CONSTRAINT\s+`([^`]+)`\s+FOREIGN\s+KEY\s+\(`([^`]+)`\)\s+REFERENCES\s+`([^`]+)`\s+\(`([^`]+)`\)/i',
-                    $createTableSql,
-                    $foreignKeys,
-                    PREG_SET_ORDER
-                );
-
-                $tableSchema = [
-                    'name' => $tableName,
-                    'columns' => [],
-                    'indices' => [],
-                    'foreign_keys' => [],
-                    'primary_key' => null,
-                    'model_name' => $this->getModelName($tableName),
-                    'migration_name' => $this->getMigrationName($tableName),
-                ];
-
-                // Processa colonne
-                foreach ($columns as $column) {
-                    $columnSchema = [
-                        'name' => $column->Field,
-                        'type' => $column->Type,
-                        'null' => 'YES' === $column->Null,
-                        'key' => $column->Key,
-                        'default' => $column->Default,
-                        'extra' => $column->Extra,
-                        'comment' => $column->Comment,
-                    ];
-
-                    if ('PRI' === $column->Key) {
-                        $tableSchema['primary_key'] = $column->Field;
-                    }
-
-                    $tableSchema['columns'][$column->Field] = $columnSchema;
-                }
-
-                // Processa indici
-                $groupedIndices = [];
-                foreach ($indices as $index) {
-                    $indexName = $index->Key_name;
-
-                    if (! isset($groupedIndices[$indexName])) {
-                        $groupedIndices[$indexName] = [
-                            'name' => $indexName,
-                            'columns' => [],
-                            'unique' => ! $index->Non_unique,
-                            'type' => $index->Index_type,
-                        ];
-                    }
-
-                    $groupedIndices[$indexName]['columns'][] = [
-                        'name' => $index->Column_name,
-                        'order' => $index->Seq_in_index,
-                    ];
-                }
-
-                $tableSchema['indices'] = array_values($groupedIndices);
-
-                // Processa foreign keys
-                foreach ($foreignKeys as $fk) {
-                    $tableSchema['foreign_keys'][] = [
-                        'name' => $fk[1],
-                        'column' => $fk[2],
-                        'references_table' => $fk[3],
-                        'references_column' => $fk[4],
-                    ];
-
-                    // Registra anche nella sezione delle relazioni
-                    $this->schema['relationships'][] = [
-                        'type' => 'belongsTo',
-                        'local_table' => $tableName,
-                        'local_column' => $fk[2],
-                        'foreign_table' => $fk[3],
-                        'foreign_column' => $fk[4],
-                        'constraint_name' => $fk[1],
-                    ];
-                }
-
-                $this->schema['tables'][$tableName] = $tableSchema;
-                $bar->advance();
-            }
-
-            $bar->finish();
-            $this->newLine(2);
-
-            // Crea directory se non esiste
-            $directory = dirname($outputPath);
-            if (! File::exists($directory)) {
-                File::makeDirectory($directory, 0755, true);
-            }
-
-            // Salva lo schema in un file JSON
-            $jsonContent = json_encode($this->schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-            File::put($outputPath, $jsonContent);
-
-            $this->info("Schema del database esportato con successo in: {$outputPath}");
-
-            // Genera un report riassuntivo
-            $this->generateReport();
-
-            return 0;
-        } catch (\Safe\Exceptions\JsonException $e) {
-            $this->error("Errore durante la codifica JSON: " . $e->getMessage());
-            return 1;
-        } catch (\Safe\Exceptions\PcreException $e) {
-            $this->error("Errore durante l'analisi delle foreign keys: " . $e->getMessage());
-            return 1;
-        } catch (\Exception $e) {
-            $this->error("Errore durante l'estrazione dello schema: " . $e->getMessage());
-            return 1;
-        }
+        $this->info("Schema exported for table [{$table}]");
     }
 
     /**
-     * Genera un nome per il modello in base al nome della tabella.
+     * Format columns for JSON export.
+     *
+     * @param array<string, mixed> $columns
+     * @return array<string, array<string, mixed>>
      */
-    protected function getModelName(string $tableName): string
+    protected function formatColumns(array $columns): array
     {
-        // Rimuovi eventuali prefissi comuni
-        $prefixes = ['tbl_', 'anagr_'];
-        foreach ($prefixes as $prefix) {
-            if (Str::startsWith($tableName, $prefix)) {
-                $tableName = Str::substr($tableName, strlen($prefix));
-                break;
-            }
+        $formatted = [];
+        foreach ($columns as $column) {
+            $formatted[$column->getName()] = [
+                'type' => $column->getType()->getName(),
+                'length' => $column->getLength(),
+                'nullable' => ! $column->getNotnull(),
+                'default' => $column->getDefault(),
+            ];
         }
 
-        // Converti da snake_case a PascalCase
-        return Str::studly(Str::singular($tableName));
+        return $formatted;
     }
 
     /**
-     * Genera un nome per la migrazione in base al nome della tabella.
+     * Format indexes for JSON export.
+     *
+     * @param array<string, mixed> $indexes
+     * @return array<string, array<string, mixed>>
      */
-    protected function getMigrationName(string $tableName): string
+    protected function formatIndexes(array $indexes): array
     {
-        return 'create_'.$tableName.'_table';
+        $formatted = [];
+        foreach ($indexes as $index) {
+            $formatted[$index->getName()] = [
+                'columns' => $index->getColumns(),
+                'unique' => $index->isUnique(),
+                'primary' => $index->isPrimary(),
+            ];
+        }
+
+        return $formatted;
     }
 
     /**
-     * Genera un report riassuntivo dello schema.
+     * Format foreign keys for JSON export.
+     *
+     * @param array<string, mixed> $foreignKeys
+     * @return array<string, array<string, mixed>>
      */
-    protected function generateReport(): void
+    protected function formatForeignKeys(array $foreignKeys): array
     {
-        $this->info('Riepilogo Schema Database');
-        $this->info('=============================================');
-        assert(is_string($this->schema['database']));
-        $this->info('Database: '.$this->schema['database']);
-        $this->info('Numero tabelle: '.count($this->schema['tables']));
-        $this->info('Numero relazioni: '.count($this->schema['relationships']));
-
-        $this->newLine();
-        $this->info('Tabelle principali:');
-
-        // Mostra le tabelle più rilevanti (con più relazioni o colonne)
-        /** @var Collection<string, array{name: string, columns: int, relations: int, model: string}> */
-        $relevantTables = collect($this->schema['tables'])
-            ->map(function (array $table, string $tableName): array {
-                $relationCount = collect($this->schema['relationships'])
-                    ->filter(function (array $rel) use ($tableName): bool {
-                        return $rel['local_table'] === $tableName || $rel['foreign_table'] === $tableName;
-                    })
-                    ->count();
-
-                return [
-                    'name' => $tableName,
-                    'columns' => count($table['columns']),
-                    'relations' => $relationCount,
-                    'model' => $table['model_name'],
-                ];
-            })
-            ->sortByDesc('relations')
-            ->take(5);
-
-        foreach ($relevantTables as $table) {
-            $this->info(sprintf(
-                '- %s (Colonne: %d, Relazioni: %d, Modello: %s)',
-                $table['name'],
-                $table['columns'],
-                $table['relations'],
-                $table['model']
-            ));
+        $formatted = [];
+        foreach ($foreignKeys as $foreignKey) {
+            $formatted[$foreignKey->getName()] = [
+                'localColumns' => $foreignKey->getLocalColumns(),
+                'foreignTable' => $foreignKey->getForeignTableName(),
+                'foreignColumns' => $foreignKey->getForeignColumns(),
+                'onDelete' => $foreignKey->getOptions()['onDelete'] ?? null,
+                'onUpdate' => $foreignKey->getOptions()['onUpdate'] ?? null,
+            ];
         }
+
+        return $formatted;
     }
 
-    protected function extractTableNames(string $sql): array
+    /**
+     * Get the export path for a table schema.
+     */
+    protected function getExportPath(string $table, ?string $module = null): string
     {
-        preg_match_all('/CREATE TABLE `([^`]+)`/', $sql, $matches);
-        return $matches[1] ?? [];
-    }
+        $filename = Str::snake($table).'.json';
+        $basePath = base_path('database/schema');
 
-    protected function exportSchema(): array
-    {
-        // ... existing code ...
-        return json_encode($this->schema, JSON_PRETTY_PRINT);
+        if (null !== $module) {
+            $basePath = base_path("Modules/{$module}/database/schema");
+        }
+
+        if (! is_dir($basePath)) {
+            mkdir($basePath, 0755, true);
+        }
+
+        return $basePath.'/'.$filename;
     }
 }

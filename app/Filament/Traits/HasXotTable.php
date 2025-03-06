@@ -195,6 +195,7 @@ trait HasXotTable
      *
      * Soluzione: Verifica condizionale dell'esistenza dei metodi prima di chiamarli,
      * mantenendo la retrocompatibilità e prevenendo errori.
+     * @deprecated Questo metodo non deve più essere usato. Usa `getListTableColumns()` al suo posto.
      *
      * Ultimo aggiornamento: 10/2023
      */
@@ -348,34 +349,33 @@ trait HasXotTable
     }
 
     /**
-     * Get model class.
+     * Get the model class.
      *
-     * @throws \Exception Se non viene trovata una classe modello valida
-     *
-     * @return class-string<Model>
+     * @return class-string<\Illuminate\Database\Eloquent\Model>
+     * @throws \Exception
      */
     public function getModelClass(): string
     {
-        if (method_exists($this, 'getRelationship')) {
-            $relationship = $this->getRelationship();
-            if ($relationship instanceof Relation) {
-                /* @var class-string<Model> */
-                return get_class($relationship->getModel());
-            }
+        if (property_exists($this, 'model')) {
+            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
+            return $this->model;
         }
 
-        if (method_exists($this, 'getModel')) {
-            $model = $this->getModel();
-            if (is_string($model)) {
-                Assert::classExists($model);
+        $relationship = $this->getRelationship();
+        if ($relationship instanceof Relation) {
+            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
+            return get_class($relationship->getModel());
+        }
 
-                /* @var class-string<Model> */
-                return $model;
-            }
-            if ($model instanceof Model) {
-                /* @var class-string<Model> */
-                return get_class($model);
-            }
+        $model = $this->getModel();
+        if (is_string($model)) {
+            Assert::classExists($model);
+            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
+            return $model;
+        }
+        if ($model instanceof Model) {
+            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
+            return get_class($model);
         }
 
         throw new \Exception('No model found in '.class_basename(__CLASS__).'::'.__FUNCTION__);

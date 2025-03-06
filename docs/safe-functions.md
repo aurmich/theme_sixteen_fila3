@@ -94,4 +94,103 @@ Quando si migrano le funzioni da PHP native a Safe:
 2. Aggiungere gli import necessari
 3. Aggiornare la gestione degli errori
 4. Testare il nuovo comportamento
-5. Aggiornare la documentazione 
+5. Aggiornare la documentazione
+
+# Utilizzo delle Safe Functions in Laraxot
+
+## Introduzione
+Le funzioni PHP native possono restituire `false` in caso di errore invece di lanciare eccezioni. Per garantire una gestione più robusta degli errori, utilizziamo il pacchetto `thecodingmachine/safe`.
+
+## Regole Fondamentali
+
+### 1. Import delle Funzioni Safe
+All'inizio di ogni file che usa funzioni potenzialmente unsafe, importare le versioni sicure:
+
+```php
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
+use function Safe\preg_match;
+use function Safe\preg_replace;
+use function Safe\glob;
+```
+
+### 2. Funzioni da Sostituire Sempre
+
+| Funzione PHP Nativa | Versione Safe da Usare | Motivo |
+|-------------------|------------------------|---------|
+| `file_get_contents` | `Safe\file_get_contents` | Può restituire false se il file non esiste |
+| `file_put_contents` | `Safe\file_put_contents` | Può fallire silenziosamente |
+| `preg_match` | `Safe\preg_match` | Può restituire false per errori di sintassi |
+| `preg_replace` | `Safe\preg_replace` | Può restituire null o false |
+| `glob` | `Safe\glob` | Può restituire false per errori di permessi |
+| `json_decode` | `Safe\json_decode` | Può restituire null per JSON invalido |
+| `json_encode` | `Safe\json_encode` | Può restituire false per errori di codifica |
+
+### 3. Gestione delle Eccezioni
+Le funzioni Safe lanciano sempre eccezioni in caso di errore:
+
+```php
+try {
+    $content = Safe\file_get_contents($filename);
+} catch (\Safe\Exceptions\FilesystemException $e) {
+    // Gestione appropriata dell'errore
+    throw new \Exception('Impossibile leggere il file: '.$e->getMessage());
+}
+```
+
+### 4. Casi Speciali nel ResourceFormSchemaGenerator
+
+Nel contesto del `ResourceFormSchemaGenerator`, è particolarmente importante usare le funzioni Safe per:
+
+1. Lettura file di classe:
+```php
+$fileContents = Safe\file_get_contents($filename);
+```
+
+2. Ricerca file con glob:
+```php
+$resourceFiles = Safe\glob($pattern);
+```
+
+3. Manipolazione contenuti:
+```php
+Safe\preg_match('/pattern/', $content, $matches);
+Safe\file_put_contents($filename, $modifiedContents);
+```
+
+### 5. Best Practices
+
+1. **Mai Usare Funzioni Native**:
+   ```php
+   // ❌ NON FARE
+   $content = file_get_contents($file);
+   
+   // ✅ CORRETTO
+   $content = Safe\file_get_contents($file);
+   ```
+
+2. **Gestire Sempre le Eccezioni**:
+   ```php
+   // ❌ NON FARE
+   Safe\file_put_contents($file, $content);
+   
+   // ✅ CORRETTO
+   try {
+       Safe\file_put_contents($file, $content);
+   } catch (\Safe\Exceptions\FilesystemException $e) {
+       // Log e gestione appropriata
+   }
+   ```
+
+3. **Documentare le Eccezioni**:
+   ```php
+   /**
+    * @throws \Safe\Exceptions\FilesystemException Se il file non può essere letto
+    */
+   public function readConfig(string $filename): array
+   ```
+
+## Riferimenti
+- [Documentazione thecodingmachine/safe](https://github.com/thecodingmachine/safe)
+- [Lista completa funzioni Safe](https://github.com/thecodingmachine/safe/blob/master/generated/Safe.php)
+- [Gestione Eccezioni in PHP](https://www.php.net/manual/en/language.exceptions.php) 

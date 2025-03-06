@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources;
 
-use Filament\Forms\Components\TextInput;
+use Filament\Forms;
 use Modules\Xot\Filament\Resources\CacheLockResource\Pages;
 use Modules\Xot\Models\CacheLock;
 
@@ -12,20 +12,22 @@ class CacheLockResource extends XotBaseResource
 {
     protected static ?string $model = CacheLock::class;
 
+    /**
+     * Get the form schema for the resource.
+     *
+     * @return array<string, Forms\Components\Component>
+     */
     public static function getFormSchema(): array
     {
         return [
-            'key' => TextInput::make('key')
+            'key' => Forms\Components\TextInput::make('key')
                 ->required()
                 ->maxLength(255),
-
-            'owner' => TextInput::make('owner')
+            'owner' => Forms\Components\TextInput::make('owner')
                 ->required()
                 ->maxLength(255),
-
-            'expiration' => TextInput::make('expiration')
-                ->required()
-                ->numeric(),
+            'expiration' => Forms\Components\DateTimePicker::make('expiration')
+                ->required(),
         ];
     }
 

@@ -17,6 +17,16 @@ use Webmozart\Assert\Assert;
 trait Updater
 {
     /**
+     * @var int|null
+     */
+    public $created_by;
+
+    /**
+     * @var int|null 
+     */
+    public $updated_by;
+
+    /**
      * Summary of creator.
      *
      * @return BelongsTo<ProfileContract&Model, static>
@@ -59,16 +69,13 @@ trait Updater
     {
         static::creating(
             static function (Model $model): void {
-                // @phpstan-ignore property.notFound
                 $model->created_by = authId();
-                // @phpstan-ignore property.notFound
                 $model->updated_by = authId();
             }
         );
 
         static::updating(
             static function (Model $model): void {
-                // @phpstan-ignore property.notFound
                 $model->updated_by = authId();
             }
         );

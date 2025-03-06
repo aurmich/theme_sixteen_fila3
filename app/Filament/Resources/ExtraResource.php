@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources;
 
+use Filament\Forms;
 use Filament\Forms\Components\KeyValue;
-use Filament\Forms\Components\TextInput;
 use Modules\Xot\Filament\Resources\ExtraResource\Pages;
 use Modules\Xot\Models\Extra;
 
@@ -13,26 +13,25 @@ class ExtraResource extends XotBaseResource
 {
     protected static ?string $model = Extra::class;
 
+    /**
+     * Get the form schema for the resource.
+     *
+     * @return array<string, Forms\Components\Component>
+     */
     public static function getFormSchema(): array
     {
         return [
-            TextInput::make('id')
-                ->required()
-                ->maxLength(36),
-
-            TextInput::make('post_type')
+            'post_type' => Forms\Components\TextInput::make('post_type')
                 ->required()
                 ->maxLength(255),
-
-            TextInput::make('post_id')
+            'post_id' => Forms\Components\TextInput::make('post_id')
                 ->required()
                 ->numeric(),
-
-            KeyValue::make('value')
-                ->keyLabel('Chiave')
-                ->valueLabel('Valore')
-                ->reorderable()
-                ->columnSpanFull(),
+            'value' => Forms\Components\TextInput::make('value')
+                ->required(),
+            'key' => Forms\Components\TextInput::make('key')
+                ->required()
+                ->maxLength(255),
         ];
     }
 

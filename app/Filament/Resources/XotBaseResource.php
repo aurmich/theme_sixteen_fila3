@@ -63,6 +63,9 @@ abstract class XotBaseResource extends FilamentResource
      */
     abstract public static function getFormSchema(): array;
 
+    /**
+     * @deprecated Questo metodo non deve più essere usato. Usa `getFormSchema()` al suo posto.
+     */
     public static function form(Form $form): Form
     {
         return $form
