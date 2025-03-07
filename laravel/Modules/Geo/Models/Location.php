@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Contracts\ProfileContract;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Traits\Updater;
 
 /**
  * @property array $location
@@ -13,25 +19,25 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Location newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Location query()
  *
- * @property int                             $id
- * @property string|null                     $model_type
- * @property string|null                     $model_id
- * @property string|null                     $name
- * @property string|null                     $lat
- * @property string|null                     $lng
- * @property string|null                     $street
- * @property string|null                     $city
- * @property string|null                     $state
- * @property string|null                     $zip
- * @property string|null                     $formatted_address
- * @property string|null                     $description
- * @property bool|null                       $processed
+ * @property int $id
+ * @property string|null $model_type
+ * @property string|null $model_id
+ * @property string|null $name
+ * @property string|null $lat
+ * @property string|null $lng
+ * @property string|null $street
+ * @property string|null $city
+ * @property string|null $state
+ * @property string|null $zip
+ * @property string|null $formatted_address
+ * @property string|null $description
+ * @property bool|null $processed
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property string|null                     $updated_by
- * @property string|null                     $created_by
- * @property string|null                     $deleted_at
- * @property string|null                     $deleted_by
+ * @property string|null $updated_by
+ * @property string|null $created_by
+ * @property string|null $deleted_at
+ * @property string|null $deleted_by
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Location whereCity($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Location whereCreatedAt($value)
@@ -58,52 +64,54 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @mixin \Eloquent
  */
-class Location extends BaseModel
+class Location extends Model
 {
+    use Updater;
+
     protected $fillable = [
+        'id',
         'name',
-        'lat',
-        'lng',
-        'street',
+        'address',
         'city',
         'state',
-        'zip',
-        'formatted_address',
-        'processed',
-        'location',
-        'description',
+        'country',
+        'postal_code',
+        'latitude',
+        'longitude',
+        'type',
     ];
 
-    protected $appends = [
-        'location',
-    ];
+    /** @var list<string> */
+    protected $appends = ['value'];
 
     protected $casts = [
+        'latitude' => 'float',
+        'longitude' => 'float',
         'processed' => 'bool',
     ];
 
     /**
-     * The following code was generated for use with Filament Google Maps.
-     *
-     * php artisan fgm:model-code Location --lat=lat --lng=lng --location=location --terse
+     * Accessor for the "location" attribute.
      */
-    public function getLocationAttribute(): array
+    protected function location(): Attribute
     {
-        return [
-            'lat' => (float) $this->lat,
-            'lng' => (float) $this->lng,
-        ];
+        return Attribute::make(
+            get: fn (): array => [
+                'lat' => (float) $this->lat,
+                'lng' => (float) $this->lng,
+            ],
+            set: function (?array $value): void {
+                if (is_array($value)) {
+                    $this->attributes['lat'] = $value['lat'] ?? null;
+                    $this->attributes['lng'] = $value['lng'] ?? null;
+                }
+            }
+        );
     }
 
-    public function setLocationAttribute(?array $location): void
-    {
-        if (is_array($location)) {
-            $this->attributes['lat'] = $location['lat'];
-            $this->attributes['lng'] = $location['lng'];
-            unset($this->attributes['location']);
-        }
-    }
-
+    /**
+     * Get the latitude and longitude attributes.
+     */
     public static function getLatLngAttributes(): array
     {
         return [
@@ -112,8 +120,21 @@ class Location extends BaseModel
         ];
     }
 
+    /**
+     * Get the computed location attribute name.
+     */
     public static function getComputedLocation(): string
     {
         return 'location';
+    }
+
+    /**
+     * Scope to filter by a specific distance from a given point.
+     */
+    public function scopeWithinDistance(Builder $query, float $latitude, float $longitude, float $distanceInKm): Builder
+    {
+        $haversine = "(6371 * acos(cos(radians($latitude)) * cos(radians(lat)) * cos(radians(lng) - radians($longitude)) + sin(radians($latitude)) * sin(radians(lat))))";
+
+        return $query->whereRaw("$haversine <= ?", [$distanceInKm]);
     }
 }

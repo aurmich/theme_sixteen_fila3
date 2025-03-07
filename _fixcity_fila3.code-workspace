@@ -8,12 +8,6 @@
 		"better-phpunit.phpunitBinary": "phpunit",
 		"editor.formatOnSave": true,
 		"editor.parameterHints.enabled": false,
-		"better-phpunit.phpunitBinary": "phpunit",
-		"editor.formatOnSave": true,
-		"editor.parameterHints.enabled": false,
-		"better-phpunit.phpunitBinary": "phpunit",
-		"editor.formatOnSave": true,
-		"editor.parameterHints.enabled": false,
 		"php-cs-fixer.onsave": true,
 		"php-cs-fixer.formatHtml": true,
 		"php-cs-fixer.config": ".php-cs-fixer.php",
@@ -28,11 +22,9 @@
 		"php-cs-fixer.allowRisky": true,
 		"phpformatter.composer": true,
 		"editor.defaultFormatter": "junstyle.php-cs-fixer",
+		"editor.semanticTokenColorCustomizations": true,
 		"[php]": {
 			"editor.defaultFormatter": "junstyle.php-cs-fixer"
-		},
-		"editor.tokenColorCustomizations": {
-			"semanticHighlighting": true
 		},
 		"vscode-php-cs-fixer.useCache": true,
 		"editor.wordWrapColumn": 120,

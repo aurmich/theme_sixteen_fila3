@@ -13,7 +13,7 @@
     "AI": true,
     "Limesurvey": true,
     "Activity": true,
-    "Geo":true,
+    "Geo": true,
     "User": true,
     "Setting": true,
     "BarberShop": true,
@@ -27,5 +27,7 @@
     "Predict": true,
     "Shop": true,
     "Ticket": true,
-    "Fixcity": true
+    "Rating": true,
+    "Fixcity": true,
+    "Comment": true
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Spatie\Comments\Actions\ApproveCommentAction;
 use Spatie\Comments\Actions\ProcessCommentAction;
 use Spatie\Comments\Actions\RejectCommentAction;
@@ -9,6 +7,8 @@ use Spatie\Comments\Actions\SendNotificationsForApprovedCommentAction;
 use Spatie\Comments\Actions\SendNotificationsForPendingCommentAction;
 use Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer;
 use Spatie\Comments\Models\Comment;
+use Spatie\Comments\Models\CommentNotificationSubscription;
+use Spatie\Comments\Models\Reaction;
 use Spatie\Comments\Notifications\ApprovedCommentNotification;
 use Spatie\Comments\Notifications\PendingCommentNotification;
 use Spatie\Comments\Support\CommentSanitizer;
@@ -73,19 +73,19 @@ return [
          * The model you want to use as a Comment model. It needs to be or
          * extend the `Spatie\Comments\Models\Comment::class` model.
          */
-        'comment' => Modules\Comment\Models\Comment::class,
+        'comment' => Comment::class,
 
         /*
          * The model you want to use as a React model. It needs to be or
          * extend the `Spatie\Comments\Models\Reaction::class` model.
          */
-        'reaction' => Modules\Comment\Models\Reaction::class,
+        'reaction' => Reaction::class,
 
         /*
          * The model you want to use as an subscription model. It needs to be or
          * extend the `Spatie\Comments\Models\CommentNotificationSubscription::class` model.
          */
-        'comment_notification_subscription' => Modules\Comment\Models\CommentNotificationSubscription::class,
+        'comment_notification_subscription' => CommentNotificationSubscription::class,
     ],
 
     'notifications' => [

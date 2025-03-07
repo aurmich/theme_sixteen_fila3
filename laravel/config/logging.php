@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
@@ -18,7 +19,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => config('logging.default', 'stack'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,13 +46,12 @@ return [
     | utilizes the Monolog PHP logging library, which includes a variety
     | of powerful log handlers and formatters that you're free to use.
     |
-    | Available Drivers: "single", "daily", "slack", "syslog",
+    | Available drivers: "single", "daily", "slack", "syslog",
     |                    "errorlog", "monolog", "custom", "stack"
     |
     */
 
     'channels' => [
-
         'stack' => [
             'driver' => 'stack',
             'channels' => explode(',', env('LOG_STACK', 'single')),
@@ -80,15 +80,6 @@ return [
             'emoji' => env('LOG_SLACK_EMOJI', ':boom:'),
             'level' => env('LOG_LEVEL', 'critical'),
             'replace_placeholders' => true,
-        ],
-        'slack_errors' => [
-            'driver' => 'slack',
-            'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'ErrorBot',
-            'emoji' => ':boom:',
-            // 'icon_url' => 'https://avatars.githubusercontent.com/u/64027033?s=200&v=4',
-            // 'icon' => 'https://avatars.githubusercontent.com/u/64027033?s=200&v=4',
-            'level' => 'debug',
         ],
 
         'papertrail' => [
@@ -135,7 +126,5 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-
     ],
-
 ];

@@ -53,3 +53,4 @@ Homestead.json
 *.tmp
 *.swp
 *.swo
+.php-cs-fixer.cache

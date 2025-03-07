@@ -1,12 +1,13 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
      * The disk on which to store added files and derived images by default. Choose
      * one or more of the disks you've configured in config/filesystems.php.
      */
-    'disk_name' => env('MEDIA_DISK', 'public'),
+    'disk_name' => config('media-library.disk_name', 'public'),
 
     /*
      * The maximum file size of an item in bytes.
@@ -24,7 +25,7 @@ return [
      * This queue will be used to generate derived and responsive images.
      * Leave empty to use the default queue.
      */
-    'queue_name' => '',
+    'queue_name' => env('MEDIA_QUEUE', ''),
 
     /*
      * By default all conversions will be performed on a queue.
@@ -32,9 +33,14 @@ return [
     'queue_conversions_by_default' => env('QUEUE_CONVERSIONS_BY_DEFAULT', true),
 
     /*
+     * Should database transactions be run after database commits?
+     */
+    'queue_conversions_after_database_commit' => env('QUEUE_CONVERSIONS_AFTER_DB_COMMIT', true),
+
+    /*
      * The fully qualified class name of the media model.
      */
-    //'media_model' => Spatie\MediaLibrary\MediaCollections\Models\Media::class,
+    // 'media_model' => Spatie\MediaLibrary\MediaCollections\Models\Media::class,
     'media_model' => Modules\Media\Models\Media::class,
 
     /*
@@ -50,7 +56,7 @@ return [
      *
      * This model is only used in Media Library Pro (https://medialibrary.pro)
      */
-    //'temporary_upload_model' => Spatie\MediaLibraryPro\Models\TemporaryUpload::class,
+    // 'temporary_upload_model' => Spatie\MediaLibraryPro\Models\TemporaryUpload::class,
     'temporary_upload_model' => Modules\Media\Models\TemporaryUpload::class,
 
     /*
@@ -138,7 +144,7 @@ return [
             '-m 6', // for the slowest compression method in order to get the best compression.
             '-pass 10', // for maximizing the amount of analysis pass.
             '-mt', // multithreading for some speed improvements.
-            '-q 90', //quality factor that brings the least noticeable changes.
+            '-q 90', // quality factor that brings the least noticeable changes.
         ],
         Spatie\ImageOptimizer\Optimizers\Avifenc::class => [
             '-a cq-level=23', // constant quality level, lower values mean better quality and greater file size (0-63).
@@ -199,6 +205,13 @@ return [
      * need to add additional flags, possibly using curl.
      */
     'media_downloader' => Spatie\MediaLibrary\Downloaders\DefaultDownloader::class,
+
+    /*
+     * When using the addMediaFromUrl method the SSL is verified by default.
+     * This is option disables SSL verification when downloading remote media.
+     * Please note that this is a security risk and should only be false in a local environment.
+     */
+    'media_downloader_ssl' => env('MEDIA_DOWNLOADER_SSL', true),
 
     'remote' => [
         /*
@@ -261,4 +274,10 @@ return [
      * If you set this to `/my-subdir`, all your media will be stored in a `/my-subdir` directory.
      */
     'prefix' => env('MEDIA_PREFIX', ''),
+
+    /*
+     * When forcing lazy loading, media will be loaded even if you don't eager load media and you have
+     * disabled lazy loading globally in the service provider.
+     */
+    'force_lazy_loading' => env('FORCE_MEDIA_LIBRARY_LAZY_LOADING', true),
 ];
