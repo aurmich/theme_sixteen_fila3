@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -95,3 +96,11 @@ laravel/app/View/Components/vendor/
 public_html/themes/
 *.phar
 *.phar
+=======
+node_modules
+vendor
+vendor/
+build/
+docs/cache/
+cache/
+>>>>>>> aa5d01de4a938833d2568394214400a6d6cfd751
