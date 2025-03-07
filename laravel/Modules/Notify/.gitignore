@@ -64,3 +64,7 @@ docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+.git-blame-ignore-revs
+*.exe
+.php-cs-fixer.cache
+*:Zone.Identifier

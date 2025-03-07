@@ -11,7 +11,7 @@
                 "type": "slider",
                 "data": {
                     "method": "getBanner",
-                    "_tpl": "swiper"
+                    "view": "ui::components.blocks.slider.swiper"
                 }
             },
             {
@@ -21,7 +21,7 @@
                     "sub_title": null,
                     "method": "getHotTopics",
                     "limit": null,
-                    "_tpl": "hot_topics"
+                    "view": "blog::components.blocks.article_list.hot_topics"
                 }
             },
             {
@@ -31,7 +31,7 @@
                     "sub_title": null,
                     "method": "getArticlesLatest",
                     "limit": null,
-                    "_tpl": "play_money_markets"
+                    "view": "blog::components.blocks.article_list.play_money_markets"
                 }
             }
         ]
@@ -41,7 +41,7 @@
     },
     "footer_blocks": null,
     "created_at": "2024-08-26T19:41:37.000000Z",
-    "updated_at": "2024-08-27T10:31:00.000000Z",
+    "updated_at": "2024-12-04T10:48:19.000000Z",
     "created_by": null,
     "updated_by": "9b379b79-bd04-4b4a-a6f9-69988f356976"
 }

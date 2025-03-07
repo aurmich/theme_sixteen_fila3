@@ -1,13 +1,25 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-import preset from './vendor/filament/support/tailwind.config.preset';
+import defaultTheme from 'tailwindcss/defaultTheme';
+// import preset from './../../vendor/filament/support/tailwind.config.preset';
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
+import daisyui from 'daisyui'
+import colors from 'tailwindcss/colors';
+
 
 module.exports = {
-    presets: [preset],
+    // presets: [preset],
     darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                primary: colors.blue,
+                secondary: colors.gray,
+                success: colors.green,
+                warning: colors.yellow,
+                danger: colors.red,
             },
         },
     },
@@ -23,12 +35,12 @@ module.exports = {
         '../../resources/views/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
         "../../Modules/**/Filament/**/*.php",
-        "../../Modules/**/Resources/views/**/*.blade.php",
+        "../../Modules/**/resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./node_modules/flowbite/**/*.js",
-        "./Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
-        "../../Themes/**/Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+        "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+        "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../../public_html/vendor/**/*.blade.php",
     ],
     colors: {
@@ -125,7 +137,11 @@ module.exports = {
         },
     },
     plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
+        forms,
+        typography,
+        daisyui
     ],
+    daisyui: {
+        themes: ['light', 'dark'],
+    },
 }

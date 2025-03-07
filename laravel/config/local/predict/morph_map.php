@@ -25,4 +25,5 @@ return [
     'rating' => 'Modules\Rating\Models\Rating',
     'survey_pdf' => 'Modules\Quaeris\Models\SurveyPdf',
     'user' => 'Modules\User\Models\User',
+    'category' => 'Modules\Predict\Models\Category',
 ];

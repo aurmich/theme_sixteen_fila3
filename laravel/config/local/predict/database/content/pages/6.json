@@ -13,7 +13,8 @@
                 "title": "Leaderboard",
                 "sub_title": null,
                 "limit": null,
-                "_tpl": "tailwind_version2"
+                "_tpl": "tailwind_version2",
+                "view":"blog::components.blocks.leaderboard.tailwind_version2"
             }
         },
         "it": {
@@ -23,7 +24,8 @@
                     "title": "Classifica",
                     "sub_title": null,
                     "limit": null,
-                    "_tpl": "tailwind_version2"
+                    "_tpl": "tailwind_version2",
+                    "view":"blog::components.blocks.leaderboard.tailwind_version2"
                 }
             }
         },
@@ -34,7 +36,8 @@
                     "title": "Leaderboards",
                     "sub_title": null,
                     "limit": null,
-                    "_tpl": "tailwind_version2"
+                    "_tpl": "tailwind_version2",
+                    "view":"blog::components.blocks.leaderboard.tailwind_version2"
                 }
             }
         ]
@@ -43,7 +46,8 @@
         "0": {
             "type": "profile_or_login",
             "data": {
-                "_tpl": "profile_or_login"
+                "_tpl": "profile_or_login",
+                "view":"blog::components.blocks.profile_or_login.profile_or_login"
             }
         },
         "1": {
@@ -53,14 +57,16 @@
                 "sub_title": null,
                 "method": "getArticlesLatest",
                 "limit": "3",
-                "_tpl": "hot_markets"
+                "_tpl": "hot_markets",
+                "view":"blog::components.blocks.article_list.hot_markets"
             }
         },
         "it": {
             "1ec45c58-65c1-4290-b924-bf59c91bbad2": {
                 "type": "profile_or_login",
                 "data": {
-                    "_tpl": "profile_or_login"
+                    "_tpl": "profile_or_login",
+                    "view":"blog::components.blocks.profile_or_login.profile_or_login"
                 }
             },
             "952a1f5a-a903-412d-9ee7-11755ce8d26b": {
@@ -70,7 +76,8 @@
                     "sub_title": null,
                     "method": "getArticlesLatest",
                     "limit": "3",
-                    "_tpl": "hot_markets"
+                    "_tpl": "hot_markets",
+                    "view":"blog::components.blocks.article_list.hot_markets"
                 }
             }
         },
@@ -78,7 +85,8 @@
             {
                 "type": "profile_or_login",
                 "data": {
-                    "_tpl": "profile_or_login"
+                    "_tpl": "profile_or_login",
+                    "view":"blog::components.blocks.profile_or_login.profile_or_login"
                 }
             },
             {
@@ -88,7 +96,8 @@
                     "sub_title": null,
                     "method": "getArticlesLatest",
                     "limit": "3",
-                    "_tpl": "hot_markets"
+                    "_tpl": "hot_markets",
+                    "view":"blog::components.blocks.article_list.hot_markets"
                 }
             }
         ]

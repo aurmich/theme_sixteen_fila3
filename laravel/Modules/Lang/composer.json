@@ -13,9 +13,7 @@
         "mcamara/laravel-localization": "^2.2",
         "spatie/laravel-sluggable": "*"
     },
-    "require-dev": {
-        
-    },
+    "require-dev": {},
     "repositories": [
         {
             "type": "path",
@@ -32,18 +30,14 @@
     ],
     "autoload": {
         "psr-4": {
-            "Modules\\Lang\\": "",
+            "Modules\\Lang\\": "app/",
             "Modules\\Lang\\Database\\Factories\\": "database/factories/",
             "Modules\\Lang\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "scripts": {
-        "post-autoload-dump": [
-
-        ],
-        "post-update-cmd": [
-
-        ],
+        "post-autoload-dump": [],
+        "post-update-cmd": [],
         "analyse": "vendor/bin/phpstan analyse",
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",

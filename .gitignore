@@ -67,8 +67,6 @@ docker
 vendor
 /public_html/deploy/config.php
 *.lock
-bashscripts
-*.lock
 /public_html/css
 /public_html/js
 
@@ -92,5 +90,5 @@ laravel/public
 laravel/stubs/
 public_html/js
 cache/
-wget-log
-wget-log.*
+orbit.sqlite
+cache

@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Predict\\": ""
+            "Modules\\Predict\\": "app/"
         }
     },
     "repositories": [
@@ -35,6 +35,21 @@
         {
             "type": "path",
             "url": "../UI"
+        },
+        {
+            "type": "path",
+            "url": "./packages/wire-elements/pro"
         }
-    ]
+
+    ],
+    "repositories_comment": [
+        {
+            "type": "composer",
+            "url": "https://wire-elements-pro.composer.sh"
+        }
+    ],
+
+    "require": {
+        "wire-elements/pro": "*"
+    }
 }

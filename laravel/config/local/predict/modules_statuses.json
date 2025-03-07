@@ -22,7 +22,8 @@
     "Gdpr": true,
     "Media": true,
     "Predict": true,
-    "Shop": true,
     "Ticket": true,
-    "Rating": true
+    "Rating": true,
+    "Comment": true,
+    "Seo": true
 }

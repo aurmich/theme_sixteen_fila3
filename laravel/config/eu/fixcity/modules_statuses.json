@@ -13,7 +13,7 @@
     "Activity": true,
     "User": true,
     "Setting": true,
-    "BarberShop": true,
+    "Rating": true,
     "RealEstate": true,
     "Blog": true,
     "Booking": true,
