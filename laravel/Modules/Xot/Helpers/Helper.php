@@ -37,6 +37,7 @@ if (! function_exists('isRunningTestBench')) {
         } catch (Exception $e) {
             return false;
         }
+            
         $res = Str::startsWith(base_path(), $testbench);
         if (false == $res) {
             dd([

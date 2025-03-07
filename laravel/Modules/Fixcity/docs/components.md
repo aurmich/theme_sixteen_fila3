@@ -56,15 +56,49 @@ Durante lo sviluppo del modulo, sono stati identificati e risolti diversi confli
 2. `app/Filament/Widgets/TicketsMapWidget.php`
    - Risolti conflitti relativi alla gestione della posizione utente
    - Risolti conflitti nei filtri di visualizzazione dei ticket sulla mappa
+   - Mantenuta la funzionalità di geolocalizzazione dell'utente
+   - Preservata la visualizzazione dei marker sulla mappa
 
 3. `app/Filament/Widgets/CreateTicketWidget.php`
    - Risolti conflitti nelle funzionalità di creazione ticket
+   - Mantenuta l'estensione corretta della classe base `BaseWidget` con l'implementazione dell'interfaccia `HasForms`
+   - Preservato il sistema di validazione dei form
 
-4. `database/factories` e `database/migrations`
-   - Risolti conflitti nei factory e nelle migrazioni per garantire la coerenza del database
+4. `database/factories/TicketSubscriberFactory.php` e `database/factories/TicketHourFactory.php`
+   - Risolti conflitti nei factory per garantire la corretta associazione con i modelli
+   - Corretti i namespace e le classi di riferimento
 
-### Linee Guida per la Risoluzione dei Conflitti
-- Mantenere la funzionalità di filtro per stato dei ticket
-- Preservare la funzionalità di geolocalizzazione dell'utente
-- Garantire che i ticket siano visualizzati correttamente sia in elenco che sulla mappa
-- Assicurare che le migrazioni del database siano coerenti con il modello dati attuale 
+5. `database/migrations/2023_01_01_000000_create_ticket_subscribers_table.php` e `database/migrations/2023_01_01_000000_create_ticket_hours_table.php`
+   - Risolti conflitti nelle migrazioni per garantire la coerenza del database
+   - Mantenute le relazioni corrette tra le tabelle
+
+6. `app/Models/BaseModel.php`
+   - Risolti conflitti nel modello base
+   - Mantenuto il namespace corretto `Modules\Fixcity\Models`
+   - Preservate le proprietà specifiche per il modulo Fixcity
+
+7. `README.md`
+   - Combinato il contenuto delle due versioni in conflitto
+   - Integrata la documentazione di installazione con la descrizione del modulo
+
+### Strategie di Risoluzione
+Per risolvere i conflitti git sono state adottate le seguenti strategie:
+
+1. **Analisi del contesto**: Prima di risolvere ogni conflitto, è stata analizzata la funzionalità del codice per comprendere lo scopo delle modifiche.
+
+2. **Preservazione delle funzionalità**: Sono state mantenute tutte le funzionalità importanti come:
+   - Filtri per stato dei ticket
+   - Geolocalizzazione dell'utente
+   - Visualizzazione dei ticket sulla mappa
+   - Sistema di creazione ticket
+
+3. **Coerenza del database**: Le migrazioni e i factory sono stati allineati per garantire la coerenza del database.
+
+4. **Documentazione**: Ogni risoluzione è stata documentata per facilitare la comprensione delle modifiche apportate.
+
+### Verifica Post-Risoluzione
+Dopo la risoluzione dei conflitti, è stata effettuata una verifica per assicurarsi che:
+- Non ci siano più marker di conflitto git nel codice
+- Le funzionalità principali siano preservate
+- La documentazione sia aggiornata
+- I namespace e le relazioni tra i modelli siano corretti 

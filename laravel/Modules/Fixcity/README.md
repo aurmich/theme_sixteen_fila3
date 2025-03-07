@@ -17,10 +17,20 @@ FixCity è un modulo Laravel progettato per la gestione delle segnalazioni e dei
 - Modulo Xot installato
 
 ## Installazione
+
+### Installazione tramite Composer
 ```bash
 composer require modules/fixcity
 php artisan module:migrate Fixcity
 php artisan module:seed Fixcity
+```
+
+### Installazione tramite Git
+```bash
+git clone --recurse-submodules https://github.com/aurmich/base_fixcity_fila3.git 
+cd base_fixcity_fila3
+cd laravel
+cp .env.latest .env
 ```
 
 ## Struttura
