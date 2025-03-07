@@ -87,6 +87,11 @@ class TicketsMapWidget extends MapWidget
                 'lat' => $this->userLatitude,
                 'lng' => $this->userLongitude,
             ];
+        } else {
+            $config['center'] = [
+                'lat' => 34.730369,
+                'lng' => -86.586104,
+            ];
         }
 
         return json_encode($config);
@@ -99,6 +104,8 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
+        Log::error('Getting map data with filters', ['categories' => $this->categoryFilter]);
+
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
@@ -114,6 +121,12 @@ class TicketsMapWidget extends MapWidget
         });
 
         $locations = $query->latest()->get();
+        
+        Log::error('Filtered locations', [
+            'sql' => $query->toSql(),
+            'bindings' => $query->getBindings(),
+            'count' => $locations->count()
+        ]);
 
         $data = [];
 
@@ -138,7 +151,6 @@ class TicketsMapWidget extends MapWidget
     {
         $this->dispatchBrowserEvent('open-ticket-modal', ['ticketId' => $ticketId]); // Dispatch the event to open the modal
     }
-
 
     protected function getMapOptions(): array
     {
@@ -173,5 +185,6 @@ class TicketsMapWidget extends MapWidget
     public function mount()
     {
         parent::mount();
+        Log::error('Widget mounted with filters', ['categories' => $this->categoryFilter]);
     }
 }

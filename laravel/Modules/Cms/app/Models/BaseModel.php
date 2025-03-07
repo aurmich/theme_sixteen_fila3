@@ -6,10 +6,9 @@ namespace Modules\Cms\Models;
 
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Factories\Factory;
-// ---------- traits
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// //use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
 use Modules\Xot\Traits\Updater;
 
@@ -19,6 +18,7 @@ use Modules\Xot\Traits\Updater;
 abstract class BaseModel extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     // use Searchable;
     // use Cachable;
@@ -33,12 +33,6 @@ abstract class BaseModel extends Model
      */
     public static $snakeAttributes = true;
 
-    /** @var bool */
-    public $incrementing = true;
-
-    /** @var bool */
-    public $timestamps = true;
-
     /** @var int */
     protected $perPage = 30;
 
@@ -51,9 +45,22 @@ abstract class BaseModel extends Model
     protected $keyType = 'string';
 
     /** @var list<string> */
+    protected $fillable = ['id', 'created_at', 'updated_at', 'published_at'];
+
+    /**
+     * @var string[]
+     */
+    protected $dates = ['published_at', 'created_at', 'updated_at'];
+
+    /** @var bool */
+    public $incrementing = true;
+    /** @var list<string> */
     protected $hidden = [
         // 'password'
     ];
+
+    /** @var bool */
+    public $timestamps = true;
 
     /**
      * Create a new factory instance for the model.
@@ -65,13 +72,4 @@ abstract class BaseModel extends Model
         return app(GetFactoryAction::class)->execute(static::class);
     }
 
-    /** @return array<string, string> */
-    protected function casts(): array
-    {
-        return [
-            'id' => 'string',
-            'uuid' => 'string',
-            'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime',
-        ];
-    }
 }

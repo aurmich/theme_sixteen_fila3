@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -25,8 +24,9 @@ use function Safe\preg_match;
 use function Safe\realpath;
 
 use Webmozart\Assert\Assert;
+use Illuminate\Support\Facades\Log;
 
-// ------------------------------------------------
+
 
 if (! function_exists('isRunningTestBench')) {
     function isRunningTestBench(): bool
@@ -940,14 +940,19 @@ if (! function_exists('debugStack')) {
             throw new RuntimeException('XDebug must be installed to use this function');
         }
 
-        xdebug_set_filter(
-            XDEBUG_FILTER_TRACING,
-            XDEBUG_PATH_EXCLUDE,
-            // [LARAVEL_DIR.'/vendor/']
-            [__DIR__.'/../../vendor/']
-        );
+        if (function_exists('xdebug_set_filter') 
+            && defined('XDEBUG_FILTER_TRACING') 
+            && defined('XDEBUG_PATH_EXCLUDE')) {
+            xdebug_set_filter(
+                XDEBUG_FILTER_TRACING,
+                XDEBUG_PATH_EXCLUDE,
+                [__DIR__.'/../../vendor/']
+            );
+        }
 
-        xdebug_print_function_stack();
+        if (function_exists('xdebug_print_function_stack')) {
+            xdebug_print_function_stack();
+        }
     }
 }
 
@@ -1100,16 +1105,20 @@ if (! function_exists('authId')) {
     function authId(): ?string
     {
         try {
-            $id = Filament::auth()->id() ?? auth()->id();
+            // Try standard Laravel auth first
+            $id = auth()->id();
+            
+            // If no ID from standard auth, try Filament auth if available
+            if (null === $id && class_exists(\Filament\Facades\Filament::class)) {
+                $user = \Filament\Facades\Filament::auth()->user();
+                $id = $user ? $user->getAuthIdentifier() : null;
+            }
         } catch (Exception $e) {
             return null;
         } catch (Error $e) {
             return null;
         }
-        if (null === $id) {
-            return null;
-        }
-
-        return (string) $id;
+        
+        return $id ? (string) $id : null;
     }
 }

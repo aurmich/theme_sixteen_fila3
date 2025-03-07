@@ -8,7 +8,8 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class .
  */
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     /**
      * Run the migrations.
      */
@@ -37,6 +38,9 @@ return new class extends XotBaseMigration {
                     $table->renameColumn('name', 'title');
                 }
 
+                // if (! $this->hasColumn('order_column')) {
+                //    $table->integer('order_column')->nullable();
+                // }
                 $this->updateTimestamps(table: $table, hasSoftDeletes: true);
             }
         );

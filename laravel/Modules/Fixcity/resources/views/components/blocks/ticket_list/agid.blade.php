@@ -53,7 +53,6 @@ new class extends Component
             ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
     }
 
-
     public function loadMore()
     {
         $this->perPage += 3;
