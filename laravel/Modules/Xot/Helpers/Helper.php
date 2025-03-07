@@ -26,7 +26,7 @@ use function Safe\realpath;
 
 use Webmozart\Assert\Assert;
 
-// ------------------------------------------------
+
 
 if (! function_exists('isRunningTestBench')) {
     function isRunningTestBench(): bool
