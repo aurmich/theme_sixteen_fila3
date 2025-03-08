@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Modules\Fixcity\Http\Controllers\Api\TicketController;
+use Modules\Fixcity\Ticket\Http\Controllers\Api\TicketController;
 
 Route::middleware(['api', 'auth:sanctum'])->prefix('api/ticket')->group(function () {
     // Lista e creazione ticket

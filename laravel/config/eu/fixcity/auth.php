@@ -69,7 +69,6 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            // 'model' => Modules\User\Models\User::class,
             'model' => Modules\Fixcity\Models\User::class,
         ],
 

@@ -32,12 +32,12 @@ namespace Modules\Activity\Models{
  * @property Model|\Eloquent                 $causer
  * @property Collection                      $changes
  * @property Model|\Eloquent                 $subject
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               causedBy(\Illuminate\Database\Eloquent\Model $causer)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               forBatch(string $batchUuid)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               forEvent(string $event)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               forSubject(\Illuminate\Database\Eloquent\Model $subject)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               hasBatch()
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               inLog(...$logNames)
+ * @method static Builder|Activity                               causedBy(\Illuminate\Database\Eloquent\Model $causer)
+ * @method static Builder|Activity                               forBatch(string $batchUuid)
+ * @method static Builder|Activity                               forEvent(string $event)
+ * @method static Builder|Activity                               forSubject(\Illuminate\Database\Eloquent\Model $subject)
+ * @method static Builder|Activity                               hasBatch()
+ * @method static Builder|Activity                               inLog(...$logNames)
  * @method static \Illuminate\Database\Eloquent\Builder|Activity newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity query()
@@ -58,12 +58,12 @@ namespace Modules\Activity\Models{
  * @property Model|\Eloquent $causer
  * @property Collection      $changes
  * @property Model|\Eloquent $subject
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               causedBy(\Illuminate\Database\Eloquent\Model $causer)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               forBatch(string $batchUuid)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               forEvent(string $event)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               forSubject(\Illuminate\Database\Eloquent\Model $subject)
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               hasBatch()
- * @method static \Illuminate\Database\Eloquent\Builder|Activity                               inLog(...$logNames)
+ * @method static Builder|Activity                               causedBy(\Illuminate\Database\Eloquent\Model $causer)
+ * @method static Builder|Activity                               forBatch(string $batchUuid)
+ * @method static Builder|Activity                               forEvent(string $event)
+ * @method static Builder|Activity                               forSubject(\Illuminate\Database\Eloquent\Model $subject)
+ * @method static Builder|Activity                               hasBatch()
+ * @method static Builder|Activity                               inLog(...$logNames)
  * @method static \Illuminate\Database\Eloquent\Builder|Activity newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity query()
@@ -91,7 +91,7 @@ namespace Modules\Activity\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot query()
- * @method static \Illuminate\Database\Eloquent\Builder|EloquentSnapshot                       uuid(string $uuid)
+ * @method static Builder|EloquentSnapshot                       uuid(string $uuid)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereAggregateUuid($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereAggregateVersion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereCreatedAt($value)
@@ -100,7 +100,7 @@ namespace Modules\Activity\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereState($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|EloquentSnapshot                       uuid(string $uuid)
+ * @method static Builder|EloquentSnapshot                       uuid(string $uuid)
  * @mixin \Eloquent
  */
 	class Snapshot extends \Eloquent {}
@@ -784,9 +784,9 @@ namespace Modules\Blog\Models{
  * @method static \Modules\Blog\Database\Factories\ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             permission($permissions, $without = false)
+ * @method static Builder|BaseProfile                             permission($permissions, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   query()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             role($roles, $guard = null, $without = false)
+ * @method static Builder|BaseProfile                             role($roles, $guard = null, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCredits($value)
@@ -801,9 +801,9 @@ namespace Modules\Blog\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withExtraAttributes()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withoutPermission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withoutRole($roles, $guard = null)
+ * @method static Builder|BaseProfile                             withExtraAttributes()
+ * @method static Builder|BaseProfile                             withoutPermission($permissions)
+ * @method static Builder|BaseProfile                             withoutRole($roles, $guard = null)
  * @property \Modules\User\Models\DeviceUser                                                 $pivot
  * @property \Modules\User\Models\Membership                                                 $membership
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Blog\Models\Transaction> $transanctions
@@ -871,30 +871,30 @@ namespace Modules\Blog\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null                     $updated_by
  * @property string|null                     $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               containing(string $name, $locale = null)
+ * @method static Builder|Tag                               containing(string $name, $locale = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               ordered(string $direction = 'asc')
+ * @method static Builder|Tag                               ordered(string $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|Tag query()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               whereLocale(string $column, string $locale)
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               whereLocales(string $column, array $locales)
+ * @method static Builder|Tag                               whereLocale(string $column, string $locale)
+ * @method static Builder|Tag                               whereLocales(string $column, array $locales)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereOrderColumn($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               withType(?string $type = null)
+ * @method static Builder|Tag                               withType(?string $type = null)
  * @property mixed       $translations
  * @property string|null $deleted_at
  * @property string|null $deleted_by
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               whereJsonContainsLocale(string $column, string $locale, ?mixed $value)
- * @method static \Illuminate\Database\Eloquent\Builder|Tag                               whereJsonContainsLocales(string $column, array $locales, ?mixed $value)
+ * @method static Builder|Tag                               whereJsonContainsLocale(string $column, string $locale, ?mixed $value)
+ * @method static Builder|Tag                               whereJsonContainsLocales(string $column, array $locales, ?mixed $value)
  * @mixin \Eloquent
  */
 	class Tag extends \Eloquent {}
@@ -1070,11 +1070,11 @@ namespace Modules\Cms\Models{
  *
  * @property int         $id
  * @property string|null $name
- * @method static \Illuminate\Database\Eloquent\Builder|Conf newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Conf newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Conf query()
- * @method static \Illuminate\Database\Eloquent\Builder|Conf whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Conf whereName($value)
+ * @method static Builder|Conf newModelQuery()
+ * @method static Builder|Conf newQuery()
+ * @method static Builder|Conf query()
+ * @method static Builder|Conf whereId($value)
+ * @method static Builder|Conf whereName($value)
  * @mixin IdeHelperConf
  * @mixin \Eloquent
  */
@@ -1181,11 +1181,11 @@ namespace Modules\Cms\Models{
  * @property int         $id
  * @property string|null $name
  * @method static ModuleFactory  factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Module newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Module newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Module query()
- * @method static \Illuminate\Database\Eloquent\Builder|Module whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Module whereName($value)
+ * @method static Builder|Module newModelQuery()
+ * @method static Builder|Module newQuery()
+ * @method static Builder|Module query()
+ * @method static Builder|Module whereId($value)
+ * @method static Builder|Module whereName($value)
  * @mixin IdeHelperModule
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
@@ -1286,9 +1286,9 @@ namespace Modules\Fixcity\Models{
  * @method static \Modules\Gdpr\Database\Factories\ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             permission($permissions, $without = false)
+ * @method static Builder|BaseProfile                             permission($permissions, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   query()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             role($roles, $guard = null, $without = false)
+ * @method static Builder|BaseProfile                             role($roles, $guard = null, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereDeletedAt($value)
@@ -1303,9 +1303,9 @@ namespace Modules\Fixcity\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withExtraAttributes()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withoutPermission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withoutRole($roles, $guard = null)
+ * @method static Builder|BaseProfile                             withExtraAttributes()
+ * @method static Builder|BaseProfile                             withoutPermission($permissions)
+ * @method static Builder|BaseProfile                             withoutRole($roles, $guard = null)
  * @property float                           $credits
  * @property string|null                     $slug
  * @property \Modules\User\Models\DeviceUser $pivot
@@ -1461,9 +1461,9 @@ namespace Modules\Gdpr\Models{
  * @method static \Modules\Gdpr\Database\Factories\ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             permission($permissions, $without = false)
+ * @method static Builder|BaseProfile                             permission($permissions, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   query()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             role($roles, $guard = null, $without = false)
+ * @method static Builder|BaseProfile                             role($roles, $guard = null, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereDeletedAt($value)
@@ -1478,9 +1478,9 @@ namespace Modules\Gdpr\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile   whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withExtraAttributes()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withoutPermission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                             withoutRole($roles, $guard = null)
+ * @method static Builder|BaseProfile                             withExtraAttributes()
+ * @method static Builder|BaseProfile                             withoutPermission($permissions)
+ * @method static Builder|BaseProfile                             withoutRole($roles, $guard = null)
  * @property string|null $deleted_by
  * @property int         $is_active
  * @method static \Modules\Gdpr\Database\Factories\ProfileFactory factory($count = null, $state = [])
@@ -1533,32 +1533,32 @@ namespace Modules\Gdpr\Models{
  * @property string|null                     $created_by
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @method static \Modules\Gdpr\Database\Factories\TreatmentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 query()
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereDocumentUrl($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereDocumentVersion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereRequired($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereWeight($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 query()
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereDocumentUrl($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereDocumentVersion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereRequired($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Treatment                                 whereWeight($value)
+ * @method static Builder|Treatment                                 newModelQuery()
+ * @method static Builder|Treatment                                 newQuery()
+ * @method static Builder|Treatment                                 query()
+ * @method static Builder|Treatment                                 whereActive($value)
+ * @method static Builder|Treatment                                 whereCreatedAt($value)
+ * @method static Builder|Treatment                                 whereDescription($value)
+ * @method static Builder|Treatment                                 whereDocumentUrl($value)
+ * @method static Builder|Treatment                                 whereDocumentVersion($value)
+ * @method static Builder|Treatment                                 whereId($value)
+ * @method static Builder|Treatment                                 whereName($value)
+ * @method static Builder|Treatment                                 whereRequired($value)
+ * @method static Builder|Treatment                                 whereUpdatedAt($value)
+ * @method static Builder|Treatment                                 whereWeight($value)
+ * @method static Builder|Treatment                                 newModelQuery()
+ * @method static Builder|Treatment                                 newQuery()
+ * @method static Builder|Treatment                                 query()
+ * @method static Builder|Treatment                                 whereActive($value)
+ * @method static Builder|Treatment                                 whereCreatedAt($value)
+ * @method static Builder|Treatment                                 whereDescription($value)
+ * @method static Builder|Treatment                                 whereDocumentUrl($value)
+ * @method static Builder|Treatment                                 whereDocumentVersion($value)
+ * @method static Builder|Treatment                                 whereId($value)
+ * @method static Builder|Treatment                                 whereName($value)
+ * @method static Builder|Treatment                                 whereRequired($value)
+ * @method static Builder|Treatment                                 whereUpdatedAt($value)
+ * @method static Builder|Treatment                                 whereWeight($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Treatment   whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Treatment   whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Treatment   whereDeletedBy($value)
@@ -1605,9 +1605,9 @@ namespace Modules\Geo\Models{
 /**
  * Modules\Geo\Models\GeoNamesCap.
  *
- * @method static \Illuminate\Database\Eloquent\Builder|GeoNamesCap newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|GeoNamesCap newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|GeoNamesCap query()
+ * @method static Builder|GeoNamesCap newModelQuery()
+ * @method static Builder|GeoNamesCap newQuery()
+ * @method static Builder|GeoNamesCap query()
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1717,54 +1717,54 @@ namespace Modules\Geo\Models{
  * @property mixed           $address
  * @property mixed           $latlng
  * @method static \Modules\Geo\Database\Factories\PlaceFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereAdministrativeAreaLevel1($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereAdministrativeAreaLevel1Short($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereAdministrativeAreaLevel2($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereAdministrativeAreaLevel2Short($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereAdministrativeAreaLevel3($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereAdministrativeAreaLevel3Short($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereCampground($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereCampgroundShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereCountry($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereCountryShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereFormattedAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereGoogleplaceUrl($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereGoogleplaceUrlShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereLatitude($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereLocality($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereLocalityShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereLongitude($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereNearestStreet($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePointOfInterest($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePointOfInterestShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePolitical($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePoliticalShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePostId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePostType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePostalCode($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePostalCodeShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePostalTown($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePostalTownShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePremise($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                wherePremiseShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereRoute($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereRouteShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereStreetNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereStreetNumberShort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place                                whereUpdatedBy($value)
+ * @method static Builder|Place                                newModelQuery()
+ * @method static Builder|Place                                newQuery()
+ * @method static Builder|Place                                query()
+ * @method static Builder|Place                                whereAdministrativeAreaLevel1($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel1Short($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel2($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel2Short($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel3($value)
+ * @method static Builder|Place                                whereAdministrativeAreaLevel3Short($value)
+ * @method static Builder|Place                                whereCampground($value)
+ * @method static Builder|Place                                whereCampgroundShort($value)
+ * @method static Builder|Place                                whereCountry($value)
+ * @method static Builder|Place                                whereCountryShort($value)
+ * @method static Builder|Place                                whereCreatedAt($value)
+ * @method static Builder|Place                                whereCreatedBy($value)
+ * @method static Builder|Place                                whereDeletedBy($value)
+ * @method static Builder|Place                                whereFormattedAddress($value)
+ * @method static Builder|Place                                whereGoogleplaceUrl($value)
+ * @method static Builder|Place                                whereGoogleplaceUrlShort($value)
+ * @method static Builder|Place                                whereId($value)
+ * @method static Builder|Place                                whereLatitude($value)
+ * @method static Builder|Place                                whereLocality($value)
+ * @method static Builder|Place                                whereLocalityShort($value)
+ * @method static Builder|Place                                whereLongitude($value)
+ * @method static Builder|Place                                whereNearestStreet($value)
+ * @method static Builder|Place                                wherePointOfInterest($value)
+ * @method static Builder|Place                                wherePointOfInterestShort($value)
+ * @method static Builder|Place                                wherePolitical($value)
+ * @method static Builder|Place                                wherePoliticalShort($value)
+ * @method static Builder|Place                                wherePostId($value)
+ * @method static Builder|Place                                wherePostType($value)
+ * @method static Builder|Place                                wherePostalCode($value)
+ * @method static Builder|Place                                wherePostalCodeShort($value)
+ * @method static Builder|Place                                wherePostalTown($value)
+ * @method static Builder|Place                                wherePostalTownShort($value)
+ * @method static Builder|Place                                wherePremise($value)
+ * @method static Builder|Place                                wherePremiseShort($value)
+ * @method static Builder|Place                                whereRoute($value)
+ * @method static Builder|Place                                whereRouteShort($value)
+ * @method static Builder|Place                                whereStreetNumber($value)
+ * @method static Builder|Place                                whereStreetNumberShort($value)
+ * @method static Builder|Place                                whereUpdatedAt($value)
+ * @method static Builder|Place                                whereUpdatedBy($value)
  * @property string|null $model_type
  * @property int|null    $model_id
- * @method static \Illuminate\Database\Eloquent\Builder|Place whereAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Place whereModelType($value)
+ * @method static Builder|Place whereAddress($value)
+ * @method static Builder|Place whereModelId($value)
+ * @method static Builder|Place whereModelType($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1789,9 +1789,9 @@ namespace Modules\Job\Models{
  * 
  *
  * @method static \Modules\Job\Database\Factories\ExportFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Export                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Export                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Export                                query()
+ * @method static Builder|Export                                newModelQuery()
+ * @method static Builder|Export                                newQuery()
+ * @method static Builder|Export                                query()
  * @property int                             $id
  * @property \Illuminate\Support\Carbon|null $completed_at
  * @property string                          $file_disk
@@ -1807,21 +1807,21 @@ namespace Modules\Job\Models{
  * @property string|null                     $created_by
  * @property string|null                     $deleted_at
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereCompletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereExporter($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereFileDisk($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereFileName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereProcessedRows($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereSuccessfulRows($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereTotalRows($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Export whereUserId($value)
+ * @method static Builder|Export whereCompletedAt($value)
+ * @method static Builder|Export whereCreatedAt($value)
+ * @method static Builder|Export whereCreatedBy($value)
+ * @method static Builder|Export whereDeletedAt($value)
+ * @method static Builder|Export whereDeletedBy($value)
+ * @method static Builder|Export whereExporter($value)
+ * @method static Builder|Export whereFileDisk($value)
+ * @method static Builder|Export whereFileName($value)
+ * @method static Builder|Export whereId($value)
+ * @method static Builder|Export whereProcessedRows($value)
+ * @method static Builder|Export whereSuccessfulRows($value)
+ * @method static Builder|Export whereTotalRows($value)
+ * @method static Builder|Export whereUpdatedAt($value)
+ * @method static Builder|Export whereUpdatedBy($value)
+ * @method static Builder|Export whereUserId($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1834,9 +1834,9 @@ namespace Modules\Job\Models{
  * 
  *
  * @method static \Modules\Job\Database\Factories\FailedImportRowFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow                                query()
+ * @method static Builder|FailedImportRow                                newModelQuery()
+ * @method static Builder|FailedImportRow                                newQuery()
+ * @method static Builder|FailedImportRow                                query()
  * @property int                             $id
  * @property array                           $data
  * @property int                             $import_id
@@ -1845,14 +1845,14 @@ namespace Modules\Job\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null                     $updated_by
  * @property string|null                     $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereData($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereImportId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedImportRow whereValidationError($value)
+ * @method static Builder|FailedImportRow whereCreatedAt($value)
+ * @method static Builder|FailedImportRow whereCreatedBy($value)
+ * @method static Builder|FailedImportRow whereData($value)
+ * @method static Builder|FailedImportRow whereId($value)
+ * @method static Builder|FailedImportRow whereImportId($value)
+ * @method static Builder|FailedImportRow whereUpdatedAt($value)
+ * @method static Builder|FailedImportRow whereUpdatedBy($value)
+ * @method static Builder|FailedImportRow whereValidationError($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1865,9 +1865,9 @@ namespace Modules\Job\Models{
  * Modules\Job\Models\FailedJob.
  *
  * @method static \Modules\Job\Database\Factories\FailedJobFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob                                query()
+ * @method static Builder|FailedJob                                newModelQuery()
+ * @method static Builder|FailedJob                                newQuery()
+ * @method static Builder|FailedJob                                query()
  * @property int    $id
  * @property string $uuid
  * @property string $connection
@@ -1875,13 +1875,13 @@ namespace Modules\Job\Models{
  * @property array  $payload
  * @property string $exception
  * @property string $failed_at
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob whereConnection($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob whereException($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob whereFailedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob wherePayload($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob whereQueue($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FailedJob whereUuid($value)
+ * @method static Builder|FailedJob whereConnection($value)
+ * @method static Builder|FailedJob whereException($value)
+ * @method static Builder|FailedJob whereFailedAt($value)
+ * @method static Builder|FailedJob whereId($value)
+ * @method static Builder|FailedJob wherePayload($value)
+ * @method static Builder|FailedJob whereQueue($value)
+ * @method static Builder|FailedJob whereUuid($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1905,17 +1905,17 @@ namespace Modules\Job\Models{
  * @property int|null                                       $parameters_count
  * @property Task|null                                      $task
  * @method static \Modules\Job\Database\Factories\FrequencyFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereInterval($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereLabel($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereTaskId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Frequency                                whereUpdatedBy($value)
+ * @method static Builder|Frequency                                newModelQuery()
+ * @method static Builder|Frequency                                newQuery()
+ * @method static Builder|Frequency                                query()
+ * @method static Builder|Frequency                                whereCreatedAt($value)
+ * @method static Builder|Frequency                                whereCreatedBy($value)
+ * @method static Builder|Frequency                                whereId($value)
+ * @method static Builder|Frequency                                whereInterval($value)
+ * @method static Builder|Frequency                                whereLabel($value)
+ * @method static Builder|Frequency                                whereTaskId($value)
+ * @method static Builder|Frequency                                whereUpdatedAt($value)
+ * @method static Builder|Frequency                                whereUpdatedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1928,9 +1928,9 @@ namespace Modules\Job\Models{
  * 
  *
  * @method static \Modules\Job\Database\Factories\ImportFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Import                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Import                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Import                                query()
+ * @method static Builder|Import                                newModelQuery()
+ * @method static Builder|Import                                newQuery()
+ * @method static Builder|Import                                query()
  * @property int                             $id
  * @property \Illuminate\Support\Carbon|null $completed_at
  * @property string                          $file_name
@@ -1946,23 +1946,23 @@ namespace Modules\Job\Models{
  * @property string|null                     $created_by
  * @property string|null                     $deleted_at
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereCompletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereFileName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereFilePath($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereImporter($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereProcessedRows($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereSuccessfulRows($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereTotalRows($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereUserId($value)
+ * @method static Builder|Import whereCompletedAt($value)
+ * @method static Builder|Import whereCreatedAt($value)
+ * @method static Builder|Import whereCreatedBy($value)
+ * @method static Builder|Import whereDeletedAt($value)
+ * @method static Builder|Import whereDeletedBy($value)
+ * @method static Builder|Import whereFileName($value)
+ * @method static Builder|Import whereFilePath($value)
+ * @method static Builder|Import whereId($value)
+ * @method static Builder|Import whereImporter($value)
+ * @method static Builder|Import whereProcessedRows($value)
+ * @method static Builder|Import whereSuccessfulRows($value)
+ * @method static Builder|Import whereTotalRows($value)
+ * @method static Builder|Import whereUpdatedAt($value)
+ * @method static Builder|Import whereUpdatedBy($value)
+ * @method static Builder|Import whereUserId($value)
  * @property string|null $user_type
- * @method static \Illuminate\Database\Eloquent\Builder|Import whereUserType($value)
+ * @method static Builder|Import whereUserType($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -1985,19 +1985,19 @@ namespace Modules\Job\Models{
  * @property string|null $updated_by
  * @property Carbon|null $updated_at
  * @method static \Modules\Job\Database\Factories\JobFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereAttempts($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereAvailableAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                wherePayload($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereQueue($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereReservedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Job                                whereUpdatedBy($value)
+ * @method static Builder|Job                                newModelQuery()
+ * @method static Builder|Job                                newQuery()
+ * @method static Builder|Job                                query()
+ * @method static Builder|Job                                whereAttempts($value)
+ * @method static Builder|Job                                whereAvailableAt($value)
+ * @method static Builder|Job                                whereCreatedAt($value)
+ * @method static Builder|Job                                whereCreatedBy($value)
+ * @method static Builder|Job                                whereId($value)
+ * @method static Builder|Job                                wherePayload($value)
+ * @method static Builder|Job                                whereQueue($value)
+ * @method static Builder|Job                                whereReservedAt($value)
+ * @method static Builder|Job                                whereUpdatedAt($value)
+ * @method static Builder|Job                                whereUpdatedBy($value)
  * @property mixed $display_name
  * @property mixed $status
  * @mixin \Eloquent
@@ -2022,19 +2022,19 @@ namespace Modules\Job\Models{
  * @property Carbon          $created_at
  * @property Carbon|null     $finished_at
  * @method static \Modules\Job\Database\Factories\JobBatchFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereCancelledAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereFailedJobIds($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereFailedJobs($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereFinishedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereOptions($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                wherePendingJobs($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JobBatch                                whereTotalJobs($value)
+ * @method static Builder|JobBatch                                newModelQuery()
+ * @method static Builder|JobBatch                                newQuery()
+ * @method static Builder|JobBatch                                query()
+ * @method static Builder|JobBatch                                whereCancelledAt($value)
+ * @method static Builder|JobBatch                                whereCreatedAt($value)
+ * @method static Builder|JobBatch                                whereFailedJobIds($value)
+ * @method static Builder|JobBatch                                whereFailedJobs($value)
+ * @method static Builder|JobBatch                                whereFinishedAt($value)
+ * @method static Builder|JobBatch                                whereId($value)
+ * @method static Builder|JobBatch                                whereName($value)
+ * @method static Builder|JobBatch                                whereOptions($value)
+ * @method static Builder|JobBatch                                wherePendingJobs($value)
+ * @method static Builder|JobBatch                                whereTotalJobs($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -2139,17 +2139,17 @@ namespace Modules\Job\Models{
  * @property Carbon|null    $updated_at
  * @property Frequency|null $task
  * @method static \Modules\Job\Database\Factories\ParameterFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereFrequencyId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Parameter                                whereValue($value)
+ * @method static Builder|Parameter                                newModelQuery()
+ * @method static Builder|Parameter                                newQuery()
+ * @method static Builder|Parameter                                query()
+ * @method static Builder|Parameter                                whereCreatedAt($value)
+ * @method static Builder|Parameter                                whereCreatedBy($value)
+ * @method static Builder|Parameter                                whereFrequencyId($value)
+ * @method static Builder|Parameter                                whereId($value)
+ * @method static Builder|Parameter                                whereName($value)
+ * @method static Builder|Parameter                                whereUpdatedAt($value)
+ * @method static Builder|Parameter                                whereUpdatedBy($value)
+ * @method static Builder|Parameter                                whereValue($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -2198,15 +2198,15 @@ namespace Modules\Job\Models{
  * @property array                                                                              $options
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Job\Models\ScheduleHistory> $histories
  * @property int|null                                                                           $histories_count
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                active()
+ * @method static Builder|Schedule                                active()
  * @method static \Modules\Job\Database\Factories\ScheduleFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                inactive()
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule                                withoutTrashed()
+ * @method static Builder|Schedule                                inactive()
+ * @method static Builder|Schedule                                newModelQuery()
+ * @method static Builder|Schedule                                newQuery()
+ * @method static Builder|Schedule                                onlyTrashed()
+ * @method static Builder|Schedule                                query()
+ * @method static Builder|Schedule                                withTrashed()
+ * @method static Builder|Schedule                                withoutTrashed()
  * @property int                             $id
  * @property string                          $command
  * @property string|null                     $command_custom
@@ -2232,33 +2232,33 @@ namespace Modules\Job\Models{
  * @property string|null                     $updated_by
  * @property string|null                     $created_by
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereCommand($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereCommandCustom($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereEmailOutput($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereEnvironments($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereEvenInMaintenanceMode($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereExpression($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereLogError($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereLogFilename($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereLogSuccess($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereOnOneServer($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereOptions($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereOptionsWithValue($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereParams($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereRunInBackground($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereSendmailError($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereSendmailSuccess($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereStatus($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereWebhookAfter($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereWebhookBefore($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereWithoutOverlapping($value)
+ * @method static Builder|Schedule whereCommand($value)
+ * @method static Builder|Schedule whereCommandCustom($value)
+ * @method static Builder|Schedule whereCreatedAt($value)
+ * @method static Builder|Schedule whereCreatedBy($value)
+ * @method static Builder|Schedule whereDeletedAt($value)
+ * @method static Builder|Schedule whereDeletedBy($value)
+ * @method static Builder|Schedule whereEmailOutput($value)
+ * @method static Builder|Schedule whereEnvironments($value)
+ * @method static Builder|Schedule whereEvenInMaintenanceMode($value)
+ * @method static Builder|Schedule whereExpression($value)
+ * @method static Builder|Schedule whereId($value)
+ * @method static Builder|Schedule whereLogError($value)
+ * @method static Builder|Schedule whereLogFilename($value)
+ * @method static Builder|Schedule whereLogSuccess($value)
+ * @method static Builder|Schedule whereOnOneServer($value)
+ * @method static Builder|Schedule whereOptions($value)
+ * @method static Builder|Schedule whereOptionsWithValue($value)
+ * @method static Builder|Schedule whereParams($value)
+ * @method static Builder|Schedule whereRunInBackground($value)
+ * @method static Builder|Schedule whereSendmailError($value)
+ * @method static Builder|Schedule whereSendmailSuccess($value)
+ * @method static Builder|Schedule whereStatus($value)
+ * @method static Builder|Schedule whereUpdatedAt($value)
+ * @method static Builder|Schedule whereUpdatedBy($value)
+ * @method static Builder|Schedule whereWebhookAfter($value)
+ * @method static Builder|Schedule whereWebhookBefore($value)
+ * @method static Builder|Schedule whereWithoutOverlapping($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -2339,34 +2339,34 @@ namespace Modules\Job\Models{
  * @property int|null                                                  $notifications_count
  * @property Collection<int, \Modules\Job\Models\Result>               $results
  * @property int|null                                                  $results_count
- * @method static \Illuminate\Database\Eloquent\Builder|Task newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Task newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Task query()
- * @method static \Illuminate\Database\Eloquent\Builder|Task sortableBy(array $sortableColumns, array $defaultSort = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereAutoCleanupNum($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereAutoCleanupType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereCommand($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereDontOverlap($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereExpression($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereNotificationEmailAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereNotificationPhoneNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereNotificationSlackWebhook($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereParameters($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereRunInBackground($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereRunInMaintenance($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereRunOnOneServer($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereTimezone($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereUpdatedBy($value)
+ * @method static Builder|Task newModelQuery()
+ * @method static Builder|Task newQuery()
+ * @method static Builder|Task query()
+ * @method static Builder|Task sortableBy(array $sortableColumns, array $defaultSort = [])
+ * @method static Builder|Task whereAutoCleanupNum($value)
+ * @method static Builder|Task whereAutoCleanupType($value)
+ * @method static Builder|Task whereCommand($value)
+ * @method static Builder|Task whereCreatedAt($value)
+ * @method static Builder|Task whereCreatedBy($value)
+ * @method static Builder|Task whereDescription($value)
+ * @method static Builder|Task whereDontOverlap($value)
+ * @method static Builder|Task whereExpression($value)
+ * @method static Builder|Task whereId($value)
+ * @method static Builder|Task whereIsActive($value)
+ * @method static Builder|Task whereNotificationEmailAddress($value)
+ * @method static Builder|Task whereNotificationPhoneNumber($value)
+ * @method static Builder|Task whereNotificationSlackWebhook($value)
+ * @method static Builder|Task whereParameters($value)
+ * @method static Builder|Task whereRunInBackground($value)
+ * @method static Builder|Task whereRunInMaintenance($value)
+ * @method static Builder|Task whereRunOnOneServer($value)
+ * @method static Builder|Task whereTimezone($value)
+ * @method static Builder|Task whereUpdatedAt($value)
+ * @method static Builder|Task whereUpdatedBy($value)
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Task whereDeletedBy($value)
+ * @method static Builder|Task whereDeletedAt($value)
+ * @method static Builder|Task whereDeletedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -2410,40 +2410,40 @@ namespace Modules\Lang\Models{
  * @property string|null     $linkable_type
  * @property int|null        $views_count
  * @property Model|\Eloquent $linkable
- * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Post newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Post query()
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereAuthorId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereCategoryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereContent($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereGuid($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereImageAlt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereImageResizeSrc($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereImageSrc($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereImageTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereLang($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereLinkableType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereLinkedCount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereMetaDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereMetaKeywords($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post wherePostId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post wherePostType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post wherePublished($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereRelatedCount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereRelatedrevCount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereSubtitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereTxt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereUrl($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereUrlLang($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereViewsCount($value)
+ * @method static Builder|Post newModelQuery()
+ * @method static Builder|Post newQuery()
+ * @method static Builder|Post query()
+ * @method static Builder|Post whereAuthorId($value)
+ * @method static Builder|Post whereCategoryId($value)
+ * @method static Builder|Post whereContent($value)
+ * @method static Builder|Post whereCreatedAt($value)
+ * @method static Builder|Post whereCreatedBy($value)
+ * @method static Builder|Post whereGuid($value)
+ * @method static Builder|Post whereId($value)
+ * @method static Builder|Post whereImage($value)
+ * @method static Builder|Post whereImageAlt($value)
+ * @method static Builder|Post whereImageResizeSrc($value)
+ * @method static Builder|Post whereImageSrc($value)
+ * @method static Builder|Post whereImageTitle($value)
+ * @method static Builder|Post whereLang($value)
+ * @method static Builder|Post whereLinkableType($value)
+ * @method static Builder|Post whereLinkedCount($value)
+ * @method static Builder|Post whereMetaDescription($value)
+ * @method static Builder|Post whereMetaKeywords($value)
+ * @method static Builder|Post wherePostId($value)
+ * @method static Builder|Post wherePostType($value)
+ * @method static Builder|Post wherePublished($value)
+ * @method static Builder|Post whereRelatedCount($value)
+ * @method static Builder|Post whereRelatedrevCount($value)
+ * @method static Builder|Post whereSubtitle($value)
+ * @method static Builder|Post whereTitle($value)
+ * @method static Builder|Post whereTxt($value)
+ * @method static Builder|Post whereUpdatedAt($value)
+ * @method static Builder|Post whereUpdatedBy($value)
+ * @method static Builder|Post whereUrl($value)
+ * @method static Builder|Post whereUrlLang($value)
+ * @method static Builder|Post whereUserId($value)
+ * @method static Builder|Post whereViewsCount($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -2466,23 +2466,23 @@ namespace Modules\Lang\Models{
  * @property string      $namespace
  * @property string      $group
  * @property string|null $item
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 ofTranslatedGroup(string $group)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 orderByGroupKeys(bool $ordered)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 query()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 selectDistinctGroup()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereGroup($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereItem($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereKey($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereLang($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereNamespace($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation                                 whereValue($value)
+ * @method static Builder|Translation                                 newModelQuery()
+ * @method static Builder|Translation                                 newQuery()
+ * @method static Builder|Translation                                 ofTranslatedGroup(string $group)
+ * @method static Builder|Translation                                 orderByGroupKeys(bool $ordered)
+ * @method static Builder|Translation                                 query()
+ * @method static Builder|Translation                                 selectDistinctGroup()
+ * @method static Builder|Translation                                 whereCreatedAt($value)
+ * @method static Builder|Translation                                 whereCreatedBy($value)
+ * @method static Builder|Translation                                 whereGroup($value)
+ * @method static Builder|Translation                                 whereId($value)
+ * @method static Builder|Translation                                 whereItem($value)
+ * @method static Builder|Translation                                 whereKey($value)
+ * @method static Builder|Translation                                 whereLang($value)
+ * @method static Builder|Translation                                 whereNamespace($value)
+ * @method static Builder|Translation                                 whereUpdatedAt($value)
+ * @method static Builder|Translation                                 whereUpdatedBy($value)
+ * @method static Builder|Translation                                 whereValue($value)
  * @method static \Modules\Lang\Database\Factories\TranslationFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
@@ -2533,43 +2533,43 @@ namespace Modules\Media\Models{
  * @property TemporaryUpload|null $temporaryUpload
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> all($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
- * @method static \Illuminate\Database\Eloquent\Builder|Media newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Media newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Media ordered()
- * @method static \Illuminate\Database\Eloquent\Builder|Media query()
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereAlt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereCaption($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereCollectionName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereConversionsDisk($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereCurations($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereCustomProperties($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereDirectory($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereDisk($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereExif($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereExt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereFileName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereGeneratedConversions($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereHeight($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereManipulations($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereMimeType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereModelType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereOrderColumn($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media wherePath($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereResponsiveImages($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereSize($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereUuid($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereWidth($value)
+ * @method static Builder|Media newModelQuery()
+ * @method static Builder|Media newQuery()
+ * @method static Builder|Media ordered()
+ * @method static Builder|Media query()
+ * @method static Builder|Media whereAlt($value)
+ * @method static Builder|Media whereCaption($value)
+ * @method static Builder|Media whereCollectionName($value)
+ * @method static Builder|Media whereConversionsDisk($value)
+ * @method static Builder|Media whereCreatedAt($value)
+ * @method static Builder|Media whereCreatedBy($value)
+ * @method static Builder|Media whereCurations($value)
+ * @method static Builder|Media whereCustomProperties($value)
+ * @method static Builder|Media whereDescription($value)
+ * @method static Builder|Media whereDirectory($value)
+ * @method static Builder|Media whereDisk($value)
+ * @method static Builder|Media whereExif($value)
+ * @method static Builder|Media whereExt($value)
+ * @method static Builder|Media whereFileName($value)
+ * @method static Builder|Media whereGeneratedConversions($value)
+ * @method static Builder|Media whereHeight($value)
+ * @method static Builder|Media whereId($value)
+ * @method static Builder|Media whereManipulations($value)
+ * @method static Builder|Media whereMimeType($value)
+ * @method static Builder|Media whereModelId($value)
+ * @method static Builder|Media whereModelType($value)
+ * @method static Builder|Media whereName($value)
+ * @method static Builder|Media whereOrderColumn($value)
+ * @method static Builder|Media wherePath($value)
+ * @method static Builder|Media whereResponsiveImages($value)
+ * @method static Builder|Media whereSize($value)
+ * @method static Builder|Media whereTitle($value)
+ * @method static Builder|Media whereType($value)
+ * @method static Builder|Media whereUpdatedAt($value)
+ * @method static Builder|Media whereUpdatedBy($value)
+ * @method static Builder|Media whereUserId($value)
+ * @method static Builder|Media whereUuid($value)
+ * @method static Builder|Media whereWidth($value)
  * @property mixed $extension
  * @property mixed $human_readable_size
  * @property mixed $original_url
@@ -2586,8 +2586,8 @@ namespace Modules\Media\Models{
  * @property string|null $deleted_by
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> all($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Media whereDeletedBy($value)
+ * @method static Builder|Media whereDeletedAt($value)
+ * @method static Builder|Media whereDeletedBy($value)
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> all($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> all($columns = ['*'])
@@ -2728,13 +2728,13 @@ namespace Modules\Media\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, Media> $media
  * @property int|null $media_count
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload query()
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload whereSessionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryUpload whereUpdatedAt($value)
+ * @method static Builder|TemporaryUpload newModelQuery()
+ * @method static Builder|TemporaryUpload newQuery()
+ * @method static Builder|TemporaryUpload query()
+ * @method static Builder|TemporaryUpload whereCreatedAt($value)
+ * @method static Builder|TemporaryUpload whereId($value)
+ * @method static Builder|TemporaryUpload whereSessionId($value)
+ * @method static Builder|TemporaryUpload whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 	class TemporaryUpload extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
@@ -2784,52 +2784,52 @@ namespace Modules\Notify\Models{
  * @property int|null $duplicate_count
  * @property int|null $order_column
  * @method static \Modules\Notify\Database\Factories\ContactFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Contact newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Contact newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Contact query()
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereContactType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereModelType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereLastName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereMailCount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereMailSentAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereMobilePhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereOrderColumn($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereSmsCount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereSmsSentAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereSmsStatusCode($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereSmsStatusTxt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereSurveyPdfId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereValue($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereVerifiedAt($value)
+ * @method static Builder|Contact newModelQuery()
+ * @method static Builder|Contact newQuery()
+ * @method static Builder|Contact query()
+ * @method static Builder|Contact whereContactType($value)
+ * @method static Builder|Contact whereCreatedAt($value)
+ * @method static Builder|Contact whereCreatedBy($value)
+ * @method static Builder|Contact whereId($value)
+ * @method static Builder|Contact whereModelId($value)
+ * @method static Builder|Contact whereModelType($value)
+ * @method static Builder|Contact whereLastName($value)
+ * @method static Builder|Contact whereMailCount($value)
+ * @method static Builder|Contact whereMailSentAt($value)
+ * @method static Builder|Contact whereMobilePhone($value)
+ * @method static Builder|Contact whereOrderColumn($value)
+ * @method static Builder|Contact whereSmsCount($value)
+ * @method static Builder|Contact whereSmsSentAt($value)
+ * @method static Builder|Contact whereSmsStatusCode($value)
+ * @method static Builder|Contact whereSmsStatusTxt($value)
+ * @method static Builder|Contact whereSurveyPdfId($value)
+ * @method static Builder|Contact whereToken($value)
+ * @method static Builder|Contact whereUpdatedAt($value)
+ * @method static Builder|Contact whereUpdatedBy($value)
+ * @method static Builder|Contact whereUserId($value)
+ * @method static Builder|Contact whereValue($value)
+ * @method static Builder|Contact whereVerifiedAt($value)
  * @mixin Eloquent
  * @property string|null $email
  * @property string|null $mobile_phone
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute1($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute10($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute11($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute12($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute13($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute14($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute2($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute3($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute4($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute5($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute6($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute7($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute8($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereAttribute9($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereDuplicateCount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereFirstName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Contact whereUsesleft($value)
+ * @method static Builder|Contact whereAttribute1($value)
+ * @method static Builder|Contact whereAttribute10($value)
+ * @method static Builder|Contact whereAttribute11($value)
+ * @method static Builder|Contact whereAttribute12($value)
+ * @method static Builder|Contact whereAttribute13($value)
+ * @method static Builder|Contact whereAttribute14($value)
+ * @method static Builder|Contact whereAttribute2($value)
+ * @method static Builder|Contact whereAttribute3($value)
+ * @method static Builder|Contact whereAttribute4($value)
+ * @method static Builder|Contact whereAttribute5($value)
+ * @method static Builder|Contact whereAttribute6($value)
+ * @method static Builder|Contact whereAttribute7($value)
+ * @method static Builder|Contact whereAttribute8($value)
+ * @method static Builder|Contact whereAttribute9($value)
+ * @method static Builder|Contact whereDuplicateCount($value)
+ * @method static Builder|Contact whereEmail($value)
+ * @method static Builder|Contact whereFirstName($value)
+ * @method static Builder|Contact whereUsesleft($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -2857,8 +2857,8 @@ namespace Modules\Notify\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Notification newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Notification newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Notification query()
- * @method static \Illuminate\Database\Eloquent\Builder|DatabaseNotification                       read()
- * @method static \Illuminate\Database\Eloquent\Builder|DatabaseNotification                       unread()
+ * @method static Builder|DatabaseNotification                       read()
+ * @method static Builder|DatabaseNotification                       unread()
  * @method static \Illuminate\Database\Eloquent\Builder|Notification whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Notification whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Notification whereData($value)
@@ -2975,28 +2975,28 @@ namespace Modules\Notify\Models{
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null $media_count
  * @method static \Modules\Notify\Database\Factories\NotifyThemeFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme query()
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereBody($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereBodyHtml($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereFrom($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereFromEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereLang($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereLogoHeight($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereLogoSrc($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereLogoWidth($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme wherePostId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme wherePostType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereSubject($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereTheme($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyTheme whereViewParams($value)
+ * @method static Builder|NotifyTheme newModelQuery()
+ * @method static Builder|NotifyTheme newQuery()
+ * @method static Builder|NotifyTheme query()
+ * @method static Builder|NotifyTheme whereBody($value)
+ * @method static Builder|NotifyTheme whereBodyHtml($value)
+ * @method static Builder|NotifyTheme whereCreatedAt($value)
+ * @method static Builder|NotifyTheme whereCreatedBy($value)
+ * @method static Builder|NotifyTheme whereFrom($value)
+ * @method static Builder|NotifyTheme whereFromEmail($value)
+ * @method static Builder|NotifyTheme whereId($value)
+ * @method static Builder|NotifyTheme whereLang($value)
+ * @method static Builder|NotifyTheme whereLogoHeight($value)
+ * @method static Builder|NotifyTheme whereLogoSrc($value)
+ * @method static Builder|NotifyTheme whereLogoWidth($value)
+ * @method static Builder|NotifyTheme wherePostId($value)
+ * @method static Builder|NotifyTheme wherePostType($value)
+ * @method static Builder|NotifyTheme whereSubject($value)
+ * @method static Builder|NotifyTheme whereTheme($value)
+ * @method static Builder|NotifyTheme whereType($value)
+ * @method static Builder|NotifyTheme whereUpdatedAt($value)
+ * @method static Builder|NotifyTheme whereUpdatedBy($value)
+ * @method static Builder|NotifyTheme whereViewParams($value)
  * @mixin Eloquent
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
@@ -3017,17 +3017,17 @@ namespace Modules\Notify\Models{
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property int|null $notify_theme_id
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable query()
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereModelType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereNotifyThemeId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|NotifyThemeable whereUpdatedBy($value)
+ * @method static Builder|NotifyThemeable newModelQuery()
+ * @method static Builder|NotifyThemeable newQuery()
+ * @method static Builder|NotifyThemeable query()
+ * @method static Builder|NotifyThemeable whereCreatedAt($value)
+ * @method static Builder|NotifyThemeable whereCreatedBy($value)
+ * @method static Builder|NotifyThemeable whereId($value)
+ * @method static Builder|NotifyThemeable whereModelId($value)
+ * @method static Builder|NotifyThemeable whereModelType($value)
+ * @method static Builder|NotifyThemeable whereNotifyThemeId($value)
+ * @method static Builder|NotifyThemeable whereUpdatedAt($value)
+ * @method static Builder|NotifyThemeable whereUpdatedBy($value)
  * @mixin Eloquent
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
@@ -3042,10 +3042,10 @@ namespace Modules\Rating\Models{
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
  * @property RuleEnum                                          $rule
- * @method static \Illuminate\Database\Eloquent\Builder|Rating newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Rating newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Rating query()
- * @method static \Illuminate\Database\Eloquent\Builder|Rating withExtraAttributes()
+ * @method static Builder|Rating newModelQuery()
+ * @method static Builder|Rating newQuery()
+ * @method static Builder|Rating query()
+ * @method static Builder|Rating withExtraAttributes()
  * @property int                                           $id
  * @property string|null                                   $related_type
  * @property string|null                                   $created_by
@@ -3062,22 +3062,22 @@ namespace Modules\Rating\Models{
  * @property bool|null                                     $is_readonly
  * @property int|null                                      $order_column
  * @property \Illuminate\Database\Eloquent\Model|\Eloquent $linkedTo
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereColor($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereIcon($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereIsDisabled($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereIsReadonly($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereOrderColumn($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating wherePostId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereRelatedType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereRule($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereTxt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rating whereUpdatedBy($value)
+ * @method static Builder|Rating whereColor($value)
+ * @method static Builder|Rating whereCreatedAt($value)
+ * @method static Builder|Rating whereCreatedBy($value)
+ * @method static Builder|Rating whereDeletedBy($value)
+ * @method static Builder|Rating whereIcon($value)
+ * @method static Builder|Rating whereId($value)
+ * @method static Builder|Rating whereIsDisabled($value)
+ * @method static Builder|Rating whereIsReadonly($value)
+ * @method static Builder|Rating whereOrderColumn($value)
+ * @method static Builder|Rating wherePostId($value)
+ * @method static Builder|Rating whereRelatedType($value)
+ * @method static Builder|Rating whereRule($value)
+ * @method static Builder|Rating whereTitle($value)
+ * @method static Builder|Rating whereTxt($value)
+ * @method static Builder|Rating whereUpdatedAt($value)
+ * @method static Builder|Rating whereUpdatedBy($value)
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                                                                                   $media_count
  * @mixin \Eloquent
@@ -3213,11 +3213,11 @@ namespace Modules\Tenant\Models{
 	class Domain extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
- * @method static \Modules\Fixcity\Database\Factories\ActivityFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\ActivityFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Activity     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity     onlyTrashed()
@@ -3231,7 +3231,7 @@ namespace Modules\Fixcity\Models{
 	class Activity extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3250,9 +3250,9 @@ namespace Modules\Fixcity\Models{
  * @property Epic|null                                                                    $parent
  * @property Project|null                                                                 $project
  * @property Sprint|null                                                                  $sprint
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Fixcity\Database\Factories\EpicFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\EpicFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Epic     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Epic     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Epic     onlyTrashed()
@@ -3278,7 +3278,7 @@ namespace Modules\Fixcity\Models{
 	class Epic extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3308,22 +3308,22 @@ namespace Modules\Fixcity\Models{
  * @property TicketStatusEnum                                                                                        $status
  * @property TicketPriority|null                                                                                        $priority
  * @property TicketType|null                                                                                            $type
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketActivity>                       $activities
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketActivity>                       $activities
  * @property int|null                                                                                                   $activities_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketComment>                        $comments
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketComment>                        $comments
  * @property int|null                                                                                                   $comments_count
  * @property mixed                                                                                                      $completude_percentage
  * @property Epic|null                                                                                                  $epic
  * @property mixed                                                                                                      $estimation_for_humans
  * @property int|null                                                                                                   $estimation_in_seconds
  * @property float                                                                                                      $estimation_progress
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketHour>                           $hours
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketHour>                           $hours
  * @property int|null                                                                                                   $hours_count
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                                                                                   $media_count
  * @property \Modules\User\Models\User|null                                                                             $owner
  * @property Project|null                                                                                               $project
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketRelation>                       $relations
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketRelation>                       $relations
  * @property int|null                                                                                                   $relations_count
  * @property \Modules\User\Models\User|null                                                                             $responsible
  * @property Sprint|null                                                                                                $sprint
@@ -3336,7 +3336,7 @@ namespace Modules\Fixcity\Models{
  * @property mixed                                                                                                      $total_logged_in_hours
  * @property mixed                                                                                                      $total_logged_seconds
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     currentStatus(...$names)
- * @method static \Modules\Fixcity\Database\Factories\TicketFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     onlyTrashed()
@@ -3379,9 +3379,9 @@ namespace Modules\Fixcity\Models{
 	class Ticket extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
- * Modules\Fixcity\Models\Profile.
+ * Modules\Ticket\Models\Profile.
  *
  * @property Collection<int, Customer>   $customers
  * @property int|null                    $customers_count
@@ -3421,13 +3421,13 @@ namespace Modules\Fixcity\Models{
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereFirstName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereLastName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUpdatedBy($value)
+ * @method static Builder|Profile whereCreatedAt($value)
+ * @method static Builder|Profile whereCreatedBy($value)
+ * @method static Builder|Profile whereFirstName($value)
+ * @method static Builder|Profile whereId($value)
+ * @method static Builder|Profile whereLastName($value)
+ * @method static Builder|Profile whereUpdatedAt($value)
+ * @method static Builder|Profile whereUpdatedBy($value)
  * @property Collection<int, Project>                                                                                      $favoriteProjects
  * @property int|null                                                                                                      $favorite_projects_count
  * @property Collection<int, TicketHour>                                                                                   $hours
@@ -3466,17 +3466,17 @@ namespace Modules\Fixcity\Models{
  * @property Collection<int, \Modules\User\Models\Team>                                                                    $teams
  * @property int|null                                                                                                      $teams_count
  * @property string|null                                                                                                   $user_name
- * @method static \Modules\Fixcity\Database\Factories\ProfileFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereCredits($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereExtra($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                               withExtraAttributes()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                               withoutPermission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile                               withoutRole($roles, $guard = null)
+ * @method static \Modules\Ticket\Database\Factories\ProfileFactory factory($count = null, $state = [])
+ * @method static Builder|Profile                                   whereCredits($value)
+ * @method static Builder|Profile                                   whereDeletedAt($value)
+ * @method static Builder|Profile                                   whereDeletedBy($value)
+ * @method static Builder|Profile                                   whereEmail($value)
+ * @method static Builder|Profile                                   whereExtra($value)
+ * @method static Builder|Profile                                   whereSlug($value)
+ * @method static Builder|Profile                                   whereUserId($value)
+ * @method static Builder|BaseProfile                               withExtraAttributes()
+ * @method static Builder|BaseProfile                               withoutPermission($permissions)
+ * @method static Builder|BaseProfile                               withoutRole($roles, $guard = null)
  * @property \Modules\User\Models\DeviceUser $pivot
  * @property \Modules\User\Models\Membership $membership
  * @mixin \Eloquent
@@ -3486,14 +3486,14 @@ namespace Modules\Fixcity\Models{
 	class Profile extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
- * Modules\Fixcity\Models\ProfileProject.
+ * Modules\Ticket\Models\ProfileProject.
  *
  * @property Project|null $project
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject query()
+ * @method static Builder|ProfileProject newModelQuery()
+ * @method static Builder|ProfileProject newQuery()
+ * @method static Builder|ProfileProject query()
  * @property Profile|null                    $profile
  * @property string                          $id
  * @property string|null                     $user_id
@@ -3506,17 +3506,17 @@ namespace Modules\Fixcity\Models{
  * @property string|null                     $created_by
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereProfileId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereProjectId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereRole($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject whereUserId($value)
+ * @method static Builder|ProfileProject whereCreatedAt($value)
+ * @method static Builder|ProfileProject whereCreatedBy($value)
+ * @method static Builder|ProfileProject whereDeletedAt($value)
+ * @method static Builder|ProfileProject whereDeletedBy($value)
+ * @method static Builder|ProfileProject whereId($value)
+ * @method static Builder|ProfileProject whereProfileId($value)
+ * @method static Builder|ProfileProject whereProjectId($value)
+ * @method static Builder|ProfileProject whereRole($value)
+ * @method static Builder|ProfileProject whereUpdatedAt($value)
+ * @method static Builder|ProfileProject whereUpdatedBy($value)
+ * @method static Builder|ProfileProject whereUserId($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -3524,7 +3524,7 @@ namespace Modules\Fixcity\Models{
 	class ProfileProject extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3545,7 +3545,7 @@ namespace Modules\Fixcity\Models{
  * @property mixed                                                                                                      $contributors
  * @property mixed                                                                                                      $cover
  * @property mixed                                                                                                      $current_sprint
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Epic>                                 $epics
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Epic>                                 $epics
  * @property int|null                                                                                                   $epics_count
  * @property mixed                                                                                                      $epics_first_date
  * @property mixed                                                                                                      $epics_last_date
@@ -3553,12 +3553,12 @@ namespace Modules\Fixcity\Models{
  * @property int|null                                                                                                   $media_count
  * @property mixed                                                                                                      $next_sprint
  * @property \Modules\User\Models\User|null                                                                             $owner
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Sprint>                               $sprints
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Sprint>                               $sprints
  * @property int|null                                                                                                   $sprints_count
  * @property ProjectStatus                                                                                              $status
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketStatus>                         $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketStatus>                         $statuses
  * @property int|null                                                                                                   $statuses_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket>                               $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket>                               $tickets
  * @property int|null                                                                                                   $tickets_count
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\User>                                   $users
  * @property int|null                                                                                                   $users_count
@@ -3587,7 +3587,7 @@ namespace Modules\Fixcity\Models{
 	class Project extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3621,7 +3621,7 @@ namespace Modules\Fixcity\Models{
 	class ProjectFavorite extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3636,9 +3636,9 @@ namespace Modules\Fixcity\Models{
  * @property string|null                                                                   $updated_by
  * @property string|null                                                                   $created_by
  * @property string|null                                                                   $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Project> $projects
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Project> $projects
  * @property int|null                                                                      $projects_count
- * @method static \Modules\Fixcity\Database\Factories\ProjectStatusFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\ProjectStatusFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus     onlyTrashed()
@@ -3663,7 +3663,7 @@ namespace Modules\Fixcity\Models{
 	class ProjectStatus extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3699,7 +3699,7 @@ namespace Modules\Fixcity\Models{
 	class ProjectUser extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3721,9 +3721,9 @@ namespace Modules\Fixcity\Models{
  * @property Epic|null                                                                    $epic
  * @property Project|null                                                                 $project
  * @property mixed                                                                        $remaining
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Fixcity\Database\Factories\SprintFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\SprintFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Sprint     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Sprint     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Sprint     onlyTrashed()
@@ -3752,9 +3752,9 @@ namespace Modules\Fixcity\Models{
 	class Sprint extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
- * Modules\Fixcity\Models\Ticket.
+ * Modules\Ticket\Models\Ticket.
  *
  * @property string                                                                                                     $name
  * @property string                                                                                                     $slug
@@ -3780,23 +3780,23 @@ namespace Modules\Fixcity\Models{
  * @property string|null                                                                                                $updated_by
  * @property string|null                                                                                                $created_by
  * @property string|null                                                                                                $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketActivity>                       $activities
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketActivity>                       $activities
  * @property int|null                                                                                                   $activities_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketComment>                        $comments
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketComment>                        $comments
  * @property int|null                                                                                                   $comments_count
  * @property mixed                                                                                                      $completude_percentage
  * @property Epic|null                                                                                                  $epic
  * @property mixed                                                                                                      $estimation_for_humans
  * @property mixed                                                                                                      $estimation_in_seconds
  * @property mixed                                                                                                      $estimation_progress
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketHour>                           $hours
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketHour>                           $hours
  * @property int|null                                                                                                   $hours_count
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                                                                                   $media_count
  * @property \Modules\User\Models\User|null                                                                             $owner
  * @property TicketPriority|null                                                                                        $priority
  * @property Project|null                                                                                               $project
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketRelation>                       $relations
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketRelation>                       $relations
  * @property int|null                                                                                                   $relations_count
  * @property \Modules\User\Models\User|null                                                                             $responsible
  * @property Sprint|null                                                                                                $sprint
@@ -3808,7 +3808,7 @@ namespace Modules\Fixcity\Models{
  * @property mixed                                                                                                      $total_logged_in_hours
  * @property mixed                                                                                                      $total_logged_seconds
  * @property TicketType|null                                                                                            $type
- * @method static \Modules\Fixcity\Database\Factories\TicketFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     onlyTrashed()
@@ -3853,7 +3853,7 @@ namespace Modules\Fixcity\Models{
 	class Ticket extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3872,7 +3872,7 @@ namespace Modules\Fixcity\Models{
  * @property TicketStatus|null               $oldStatus
  * @property Ticket|null                     $ticket
  * @property \Modules\User\Models\User|null  $user
- * @method static \Modules\Fixcity\Database\Factories\TicketActivityFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketActivityFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketActivity     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketActivity     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketActivity     onlyTrashed()
@@ -3897,7 +3897,7 @@ namespace Modules\Fixcity\Models{
 	class TicketActivity extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3913,7 +3913,7 @@ namespace Modules\Fixcity\Models{
  * @property string|null                     $deleted_by
  * @property Ticket|null                     $ticket
  * @property \Modules\User\Models\User|null  $user
- * @method static \Modules\Fixcity\Database\Factories\TicketCommentFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketCommentFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketComment     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketComment     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketComment     onlyTrashed()
@@ -3937,7 +3937,7 @@ namespace Modules\Fixcity\Models{
 	class TicketComment extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3957,7 +3957,7 @@ namespace Modules\Fixcity\Models{
  * @property mixed                           $for_humans
  * @property Ticket|null                     $ticket
  * @property \Modules\User\Models\User|null  $user
- * @method static \Modules\Fixcity\Database\Factories\TicketHourFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketHourFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketHour     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketHour     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketHour     onlyTrashed()
@@ -3983,7 +3983,7 @@ namespace Modules\Fixcity\Models{
 	class TicketHour extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -3997,9 +3997,9 @@ namespace Modules\Fixcity\Models{
  * @property string|null                                                                  $updated_by
  * @property string|null                                                                  $created_by
  * @property string|null                                                                  $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Fixcity\Database\Factories\TicketPriorityFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketPriorityFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketPriority     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketPriority     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketPriority     onlyTrashed()
@@ -4023,7 +4023,7 @@ namespace Modules\Fixcity\Models{
 	class TicketPriority extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -4040,7 +4040,7 @@ namespace Modules\Fixcity\Models{
  * @property string|null                     $deleted_by
  * @property Ticket|null                     $relation
  * @property Ticket|null                     $ticket
- * @method static \Modules\Fixcity\Database\Factories\TicketRelationFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketRelationFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketRelation     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketRelation     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketRelation     onlyTrashed()
@@ -4065,7 +4065,7 @@ namespace Modules\Fixcity\Models{
 	class TicketRelation extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -4082,9 +4082,9 @@ namespace Modules\Fixcity\Models{
  * @property string|null                                                                  $created_by
  * @property string|null                                                                  $deleted_by
  * @property Project|null                                                                 $project
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Fixcity\Database\Factories\TicketStatusFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketStatusFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketStatus     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketStatus     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketStatus     onlyTrashed()
@@ -4110,7 +4110,7 @@ namespace Modules\Fixcity\Models{
 	class TicketStatus extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -4124,7 +4124,7 @@ namespace Modules\Fixcity\Models{
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
  * @property Ticket|null                     $ticket
- * @method static \Modules\Fixcity\Database\Factories\TicketSubscriberFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketSubscriberFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketSubscriber     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketSubscriber     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketSubscriber     onlyTrashed()
@@ -4148,7 +4148,7 @@ namespace Modules\Fixcity\Models{
 	class TicketSubscriber extends \Eloquent {}
 }
 
-namespace Modules\Fixcity\Models{
+namespace Modules\Ticket\Models{
 /**
  * 
  *
@@ -4163,9 +4163,9 @@ namespace Modules\Fixcity\Models{
  * @property string|null                                                                  $updated_by
  * @property string|null                                                                  $created_by
  * @property string|null                                                                  $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Fixcity\Database\Factories\TicketTypeFactory factory($count = null, $state = [])
+ * @method static \Modules\Ticket\Database\Factories\TicketTypeFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketType     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketType     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketType     onlyTrashed()
@@ -4197,9 +4197,9 @@ namespace Modules\User\Models{
  * @property Collection<int, \Modules\User\Models\User> $users
  * @property int|null                                   $users_count
  * @method static DeviceFactory  factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Device newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Device newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Device query()
+ * @method static Builder|Device newModelQuery()
+ * @method static Builder|Device newQuery()
+ * @method static Builder|Device query()
  * @property int         $id
  * @property string|null $mobile_id
  * @property array|null  $languages
@@ -4217,23 +4217,23 @@ namespace Modules\User\Models{
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereBrowser($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereDevice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereIsDesktop($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereIsMobile($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereIsPhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereIsRobot($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereIsTablet($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereLanguages($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereMobileId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device wherePlatform($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereRobot($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Device whereVersion($value)
+ * @method static Builder|Device whereBrowser($value)
+ * @method static Builder|Device whereCreatedAt($value)
+ * @method static Builder|Device whereCreatedBy($value)
+ * @method static Builder|Device whereDevice($value)
+ * @method static Builder|Device whereId($value)
+ * @method static Builder|Device whereIsDesktop($value)
+ * @method static Builder|Device whereIsMobile($value)
+ * @method static Builder|Device whereIsPhone($value)
+ * @method static Builder|Device whereIsRobot($value)
+ * @method static Builder|Device whereIsTablet($value)
+ * @method static Builder|Device whereLanguages($value)
+ * @method static Builder|Device whereMobileId($value)
+ * @method static Builder|Device wherePlatform($value)
+ * @method static Builder|Device whereRobot($value)
+ * @method static Builder|Device whereUpdatedAt($value)
+ * @method static Builder|Device whereUpdatedBy($value)
+ * @method static Builder|Device whereVersion($value)
  * @property DeviceUser $pivot
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
@@ -4247,9 +4247,9 @@ namespace Modules\User\Models{
  * Modules\User\Models\DeviceUser.
  *
  * @property Device|null $device
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser query()
+ * @method static Builder|DeviceUser newModelQuery()
+ * @method static Builder|DeviceUser newQuery()
+ * @method static Builder|DeviceUser query()
  * @property int         $id
  * @property string      $device_id
  * @property string      $user_id
@@ -4261,17 +4261,17 @@ namespace Modules\User\Models{
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereDeviceId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereLoginAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereLogoutAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser wherePushNotificationsEnabled($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser wherePushNotificationsToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DeviceUser whereUserId($value)
+ * @method static Builder|DeviceUser whereCreatedAt($value)
+ * @method static Builder|DeviceUser whereCreatedBy($value)
+ * @method static Builder|DeviceUser whereDeviceId($value)
+ * @method static Builder|DeviceUser whereId($value)
+ * @method static Builder|DeviceUser whereLoginAt($value)
+ * @method static Builder|DeviceUser whereLogoutAt($value)
+ * @method static Builder|DeviceUser wherePushNotificationsEnabled($value)
+ * @method static Builder|DeviceUser wherePushNotificationsToken($value)
+ * @method static Builder|DeviceUser whereUpdatedAt($value)
+ * @method static Builder|DeviceUser whereUpdatedBy($value)
+ * @method static Builder|DeviceUser whereUserId($value)
  * @property ProfileContract|null $profile
  * @property \Modules\Xot\Contracts\UserContract|null            $user
  * @mixin \Eloquent
@@ -4289,7 +4289,7 @@ namespace Modules\User\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Extra newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Extra newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Extra query()
- * @method static \Illuminate\Database\Eloquent\Builder|Extra                               withExtraAttributes()
+ * @method static Builder|Extra                               withExtraAttributes()
  * @mixin \Eloquent
  * @property int $id
  * @property string $model_type
@@ -4319,9 +4319,9 @@ namespace Modules\User\Models{
  * Modules\User\Models\Membership.
  *
  * @property string $role
- * @method static \Illuminate\Database\Eloquent\Builder|Membership newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Membership newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Membership query()
+ * @method static Builder|Membership newModelQuery()
+ * @method static Builder|Membership newQuery()
+ * @method static Builder|Membership query()
  * @property int         $id
  * @property string      $uuid
  * @property string|null $team_id
@@ -4331,20 +4331,20 @@ namespace Modules\User\Models{
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $customer_id
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereCustomerId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereRole($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUuid($value)
+ * @method static Builder|Membership whereCreatedAt($value)
+ * @method static Builder|Membership whereCreatedBy($value)
+ * @method static Builder|Membership whereCustomerId($value)
+ * @method static Builder|Membership whereId($value)
+ * @method static Builder|Membership whereRole($value)
+ * @method static Builder|Membership whereTeamId($value)
+ * @method static Builder|Membership whereUpdatedAt($value)
+ * @method static Builder|Membership whereUpdatedBy($value)
+ * @method static Builder|Membership whereUserId($value)
+ * @method static Builder|Membership whereUuid($value)
  * @property Carbon|null $deleted_at
  * @property string|null $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereDeletedBy($value)
+ * @method static Builder|Membership whereDeletedAt($value)
+ * @method static Builder|Membership whereDeletedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4361,21 +4361,21 @@ namespace Modules\User\Models{
  * @property string $model_type
  * @property string $model_id
  * @method static ModelHasPermissionFactory  factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission query()
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereModelType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission wherePermissionId($value)
+ * @method static Builder|ModelHasPermission newModelQuery()
+ * @method static Builder|ModelHasPermission newQuery()
+ * @method static Builder|ModelHasPermission query()
+ * @method static Builder|ModelHasPermission whereId($value)
+ * @method static Builder|ModelHasPermission whereModelId($value)
+ * @method static Builder|ModelHasPermission whereModelType($value)
+ * @method static Builder|ModelHasPermission wherePermissionId($value)
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasPermission whereUpdatedBy($value)
+ * @method static Builder|ModelHasPermission whereCreatedAt($value)
+ * @method static Builder|ModelHasPermission whereCreatedBy($value)
+ * @method static Builder|ModelHasPermission whereUpdatedAt($value)
+ * @method static Builder|ModelHasPermission whereUpdatedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4397,20 +4397,20 @@ namespace Modules\User\Models{
  * @property string|null $updated_by
  * @property string|null $created_by
  * @method static ModelHasRoleFactory  factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole query()
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereModelType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereRoleId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereUpdatedBy($value)
+ * @method static Builder|ModelHasRole newModelQuery()
+ * @method static Builder|ModelHasRole newQuery()
+ * @method static Builder|ModelHasRole query()
+ * @method static Builder|ModelHasRole whereCreatedAt($value)
+ * @method static Builder|ModelHasRole whereCreatedBy($value)
+ * @method static Builder|ModelHasRole whereId($value)
+ * @method static Builder|ModelHasRole whereModelId($value)
+ * @method static Builder|ModelHasRole whereModelType($value)
+ * @method static Builder|ModelHasRole whereRoleId($value)
+ * @method static Builder|ModelHasRole whereTeamId($value)
+ * @method static Builder|ModelHasRole whereUpdatedAt($value)
+ * @method static Builder|ModelHasRole whereUpdatedBy($value)
  * @property string $uuid (DC2Type:guid)
- * @method static \Illuminate\Database\Eloquent\Builder|ModelHasRole whereUuid($value)
+ * @method static Builder|ModelHasRole whereUuid($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4456,21 +4456,21 @@ namespace Modules\User\Models{
  * Modules\User\Models\OauthAuthCode.
  *
  * @property OauthClient|null $client
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode query()
+ * @method static Builder|OauthAuthCode newModelQuery()
+ * @method static Builder|OauthAuthCode newQuery()
+ * @method static Builder|OauthAuthCode query()
  * @property string      $id
  * @property string|null $user_id
  * @property string|null $client_id
  * @property string|null $scopes
  * @property bool        $revoked
  * @property Carbon|null $expires_at
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode whereClientId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode whereExpiresAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode whereRevoked($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode whereScopes($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthAuthCode whereUserId($value)
+ * @method static Builder|OauthAuthCode whereClientId($value)
+ * @method static Builder|OauthAuthCode whereExpiresAt($value)
+ * @method static Builder|OauthAuthCode whereId($value)
+ * @method static Builder|OauthAuthCode whereRevoked($value)
+ * @method static Builder|OauthAuthCode whereScopes($value)
+ * @method static Builder|OauthAuthCode whereUserId($value)
  * @mixin \Eloquent
  */
 	class OauthAuthCode extends \Eloquent {}
@@ -4532,19 +4532,19 @@ namespace Modules\User\Models{
  * @property Carbon|null      $created_at
  * @property Carbon|null      $updated_at
  * @property OauthClient|null $client
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient query()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereClientId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereUuid($value)
+ * @method static Builder|OauthPersonalAccessClient newModelQuery()
+ * @method static Builder|OauthPersonalAccessClient newQuery()
+ * @method static Builder|OauthPersonalAccessClient query()
+ * @method static Builder|OauthPersonalAccessClient whereClientId($value)
+ * @method static Builder|OauthPersonalAccessClient whereCreatedAt($value)
+ * @method static Builder|OauthPersonalAccessClient whereUpdatedAt($value)
+ * @method static Builder|OauthPersonalAccessClient whereUuid($value)
  * @property int $id
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereId($value)
+ * @method static Builder|OauthPersonalAccessClient whereId($value)
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthPersonalAccessClient whereUpdatedBy($value)
+ * @method static Builder|OauthPersonalAccessClient whereCreatedBy($value)
+ * @method static Builder|OauthPersonalAccessClient whereUpdatedBy($value)
  * @mixin \Eloquent
  */
 	class OauthPersonalAccessClient extends \Eloquent {}
@@ -4555,17 +4555,17 @@ namespace Modules\User\Models{
  * Modules\User\Models\OauthRefreshToken.
  *
  * @property OauthAccessToken|null $accessToken
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken query()
+ * @method static Builder|OauthRefreshToken newModelQuery()
+ * @method static Builder|OauthRefreshToken newQuery()
+ * @method static Builder|OauthRefreshToken query()
  * @property string      $id
  * @property string      $access_token_id
  * @property bool        $revoked
  * @property Carbon|null $expires_at
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken whereAccessTokenId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken whereExpiresAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OauthRefreshToken whereRevoked($value)
+ * @method static Builder|OauthRefreshToken whereAccessTokenId($value)
+ * @method static Builder|OauthRefreshToken whereExpiresAt($value)
+ * @method static Builder|OauthRefreshToken whereId($value)
+ * @method static Builder|OauthRefreshToken whereRevoked($value)
  * @mixin \Eloquent
  */
 	class OauthRefreshToken extends \Eloquent {}
@@ -4584,17 +4584,17 @@ namespace Modules\User\Models{
  * @property string|null $updated_by
  * @property string|null $created_by
  * @method static PasswordResetFactory  factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset query()
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereUserId($value)
+ * @method static Builder|PasswordReset newModelQuery()
+ * @method static Builder|PasswordReset newQuery()
+ * @method static Builder|PasswordReset query()
+ * @method static Builder|PasswordReset whereCreatedAt($value)
+ * @method static Builder|PasswordReset whereCreatedBy($value)
+ * @method static Builder|PasswordReset whereEmail($value)
+ * @method static Builder|PasswordReset whereId($value)
+ * @method static Builder|PasswordReset whereToken($value)
+ * @method static Builder|PasswordReset whereUpdatedAt($value)
+ * @method static Builder|PasswordReset whereUpdatedBy($value)
+ * @method static Builder|PasswordReset whereUserId($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4617,22 +4617,22 @@ namespace Modules\User\Models{
  * @property int|null                                   $roles_count
  * @property Collection<int, \Modules\User\Models\User> $users
  * @property int|null                                   $users_count
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               permission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               query()
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               role($roles, $guard = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               whereGuardName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission                               whereUpdatedAt($value)
+ * @method static Builder|Permission                               newModelQuery()
+ * @method static Builder|Permission                               newQuery()
+ * @method static Builder|Permission                               permission($permissions)
+ * @method static Builder|Permission                               query()
+ * @method static Builder|Permission                               role($roles, $guard = null)
+ * @method static Builder|Permission                               whereCreatedAt($value)
+ * @method static Builder|Permission                               whereGuardName($value)
+ * @method static Builder|Permission                               whereId($value)
+ * @method static Builder|Permission                               whereName($value)
+ * @method static Builder|Permission                               whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Permission withoutPermission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder|Permission withoutRole($roles, $guard = null)
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|Permission whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Permission whereUpdatedBy($value)
+ * @method static Builder|Permission whereCreatedBy($value)
+ * @method static Builder|Permission whereUpdatedBy($value)
  * @mixin \Eloquent
  */
 	class Permission extends \Eloquent {}
@@ -4653,22 +4653,22 @@ namespace Modules\User\Models{
  * @property Team|null                                        $team
  * @property Collection<int, \Modules\User\Models\User>       $users
  * @property int|null                                         $users_count
- * @method static \Illuminate\Database\Eloquent\Builder|Role newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Role newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Role permission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|Role query()
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereGuardName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereUuid($value)
+ * @method static Builder|Role newModelQuery()
+ * @method static Builder|Role newQuery()
+ * @method static Builder|Role permission($permissions)
+ * @method static Builder|Role query()
+ * @method static Builder|Role whereCreatedAt($value)
+ * @method static Builder|Role whereGuardName($value)
+ * @method static Builder|Role whereName($value)
+ * @method static Builder|Role whereTeamId($value)
+ * @method static Builder|Role whereUpdatedAt($value)
+ * @method static Builder|Role whereUuid($value)
  * @property int $id
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereId($value)
+ * @method static Builder|Role whereId($value)
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereUpdatedBy($value)
+ * @method static Builder|Role whereCreatedBy($value)
+ * @method static Builder|Role whereUpdatedBy($value)
  * @mixin Eloquent
  * @method static \Illuminate\Database\Eloquent\Builder|Role withoutPermission($permissions)
  * @mixin \Eloquent
@@ -4683,20 +4683,20 @@ namespace Modules\User\Models{
  * @property int $id
  * @property int $permission_id
  * @property int $role_id
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission query()
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission wherePermissionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission whereRoleId($value)
+ * @method static Builder|RoleHasPermission newModelQuery()
+ * @method static Builder|RoleHasPermission newQuery()
+ * @method static Builder|RoleHasPermission query()
+ * @method static Builder|RoleHasPermission whereId($value)
+ * @method static Builder|RoleHasPermission wherePermissionId($value)
+ * @method static Builder|RoleHasPermission whereRoleId($value)
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|RoleHasPermission whereUpdatedBy($value)
+ * @method static Builder|RoleHasPermission whereCreatedAt($value)
+ * @method static Builder|RoleHasPermission whereCreatedBy($value)
+ * @method static Builder|RoleHasPermission whereUpdatedAt($value)
+ * @method static Builder|RoleHasPermission whereUpdatedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4801,25 +4801,25 @@ namespace Modules\User\Models{
  * @property Team|null         $team
  * @property TeamContract|null $team
  * @method static TeamInvitationFactory  factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation query()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereRole($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereUpdatedAt($value)
+ * @method static Builder|TeamInvitation newModelQuery()
+ * @method static Builder|TeamInvitation newQuery()
+ * @method static Builder|TeamInvitation query()
+ * @method static Builder|TeamInvitation whereCreatedAt($value)
+ * @method static Builder|TeamInvitation whereEmail($value)
+ * @method static Builder|TeamInvitation whereId($value)
+ * @method static Builder|TeamInvitation whereRole($value)
+ * @method static Builder|TeamInvitation whereTeamId($value)
+ * @method static Builder|TeamInvitation whereUpdatedAt($value)
  * @property string      $uuid
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property Carbon|null $deleted_at
  * @property string|null $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamInvitation whereUuid($value)
+ * @method static Builder|TeamInvitation whereCreatedBy($value)
+ * @method static Builder|TeamInvitation whereDeletedAt($value)
+ * @method static Builder|TeamInvitation whereDeletedBy($value)
+ * @method static Builder|TeamInvitation whereUpdatedBy($value)
+ * @method static Builder|TeamInvitation whereUuid($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4831,9 +4831,9 @@ namespace Modules\User\Models{
 /**
  * Modules\User\Models\TeamUser.
  *
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser query()
+ * @method static Builder|TeamUser newModelQuery()
+ * @method static Builder|TeamUser newQuery()
+ * @method static Builder|TeamUser query()
  * @property int         $id
  * @property string      $uuid
  * @property string|null $team_id
@@ -4844,20 +4844,20 @@ namespace Modules\User\Models{
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $customer_id
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereCustomerId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereRole($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUuid($value)
+ * @method static Builder|TeamUser whereCreatedAt($value)
+ * @method static Builder|TeamUser whereCreatedBy($value)
+ * @method static Builder|TeamUser whereCustomerId($value)
+ * @method static Builder|TeamUser whereId($value)
+ * @method static Builder|TeamUser whereRole($value)
+ * @method static Builder|TeamUser whereTeamId($value)
+ * @method static Builder|TeamUser whereUpdatedAt($value)
+ * @method static Builder|TeamUser whereUpdatedBy($value)
+ * @method static Builder|TeamUser whereUserId($value)
+ * @method static Builder|TeamUser whereUuid($value)
  * @property Carbon|null $deleted_at
  * @property string|null $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereDeletedBy($value)
+ * @method static Builder|TeamUser whereDeletedAt($value)
+ * @method static Builder|TeamUser whereDeletedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4886,9 +4886,9 @@ namespace Modules\User\Models{
 /**
  * Modules\User\Models\TenantUser.
  *
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser query()
+ * @method static Builder|TeamUser newModelQuery()
+ * @method static Builder|TeamUser newQuery()
+ * @method static Builder|TeamUser query()
  * @property int         $id
  * @property string|null $tenant_id
  * @property string|null $user_id
@@ -4896,21 +4896,21 @@ namespace Modules\User\Models{
  * @property Carbon|null $updated_at
  * @property string|null $created_by
  * @property string|null $updated_by
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereCustomerId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereRole($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamUser whereUuid($value)
+ * @method static Builder|TeamUser whereCreatedAt($value)
+ * @method static Builder|TeamUser whereCreatedBy($value)
+ * @method static Builder|TeamUser whereCustomerId($value)
+ * @method static Builder|TeamUser whereId($value)
+ * @method static Builder|TeamUser whereRole($value)
+ * @method static Builder|TeamUser whereTeamId($value)
+ * @method static Builder|TeamUser whereUpdatedAt($value)
+ * @method static Builder|TeamUser whereUpdatedBy($value)
+ * @method static Builder|TeamUser whereUserId($value)
+ * @method static Builder|TeamUser whereUuid($value)
  * @property string|null $deleted_at
  * @property string|null $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|TenantUser whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TenantUser whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TenantUser whereTenantId($value)
+ * @method static Builder|TenantUser whereDeletedAt($value)
+ * @method static Builder|TenantUser whereDeletedBy($value)
+ * @method static Builder|TenantUser whereTenantId($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -4942,11 +4942,11 @@ namespace Modules\User\Models{
  * @property Collection<int, \Modules\User\Models\OauthAccessToken> $tokens
  * @property int|null                                               $tokens_count
  * @method static \Modules\User\Database\Factories\UserFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|User                                 newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|User                                 newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|User                                 permission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|User                                 query()
- * @method static \Illuminate\Database\Eloquent\Builder|User                                 role($roles, $guard = null)
+ * @method static Builder|User                                 newModelQuery()
+ * @method static Builder|User                                 newQuery()
+ * @method static Builder|User                                 permission($permissions)
+ * @method static Builder|User                                 query()
+ * @method static Builder|User                                 role($roles, $guard = null)
  * @property string                          $id
  * @property string                          $name
  * @property string                          $first_name
@@ -4962,36 +4962,36 @@ namespace Modules\User\Models{
  * @property string|null                     $deleted_at
  * @property string|null                     $lang
  * @property bool                            $is_active
- * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereCurrentTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereEmailVerifiedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereFirstName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereLang($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereLastName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereProfilePhotoPath($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
+ * @method static Builder|User whereCreatedAt($value)
+ * @method static Builder|User whereCurrentTeamId($value)
+ * @method static Builder|User whereDeletedAt($value)
+ * @method static Builder|User whereEmail($value)
+ * @method static Builder|User whereEmailVerifiedAt($value)
+ * @method static Builder|User whereFirstName($value)
+ * @method static Builder|User whereId($value)
+ * @method static Builder|User whereIsActive($value)
+ * @method static Builder|User whereLang($value)
+ * @method static Builder|User whereLastName($value)
+ * @method static Builder|User whereName($value)
+ * @method static Builder|User wherePassword($value)
+ * @method static Builder|User whereProfilePhotoPath($value)
+ * @method static Builder|User whereRememberToken($value)
+ * @method static Builder|User whereUpdatedAt($value)
  * @mixin Eloquent
  * @property Collection<int, \Modules\User\Models\Tenant> $tenants
  * @property int|null                                     $tenants_count
- * @method static \Illuminate\Database\Eloquent\Builder|User withoutPermission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder|User withoutRole($roles, $guard = null)
+ * @method static Builder|User withoutPermission($permissions)
+ * @method static Builder|User withoutRole($roles, $guard = null)
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property string|null $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedBy($value)
+ * @method static Builder|User whereCreatedBy($value)
+ * @method static Builder|User whereDeletedBy($value)
+ * @method static Builder|User whereUpdatedBy($value)
  * @property string $surname
- * @method static \Illuminate\Database\Eloquent\Builder|User whereSurname($value)
+ * @method static Builder|User whereSurname($value)
  * @property string|null $facebook_id
- * @method static \Illuminate\Database\Eloquent\Builder|User whereFacebookId($value)
+ * @method static Builder|User whereFacebookId($value)
  * @property TenantUser $pivot
  * @property Membership $membership
  * @mixin \Eloquent
@@ -5007,20 +5007,20 @@ namespace Modules\Xot\Models{
  * @property string $value
  * @property int    $expiration
  * @method static \Modules\Xot\Database\Factories\CacheFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                whereExpiration($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                whereKey($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                whereValue($value)
+ * @method static Builder|Cache                                newModelQuery()
+ * @method static Builder|Cache                                newQuery()
+ * @method static Builder|Cache                                query()
+ * @method static Builder|Cache                                whereExpiration($value)
+ * @method static Builder|Cache                                whereKey($value)
+ * @method static Builder|Cache                                whereValue($value)
  * @property int $expiration
  * @method static \Modules\Xot\Database\Factories\CacheFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                whereExpiration($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                whereKey($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cache                                whereValue($value)
+ * @method static Builder|Cache                                newModelQuery()
+ * @method static Builder|Cache                                newQuery()
+ * @method static Builder|Cache                                query()
+ * @method static Builder|Cache                                whereExpiration($value)
+ * @method static Builder|Cache                                whereKey($value)
+ * @method static Builder|Cache                                whereValue($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -5036,20 +5036,20 @@ namespace Modules\Xot\Models{
  * @property string $owner
  * @property int    $expiration
  * @method static \Modules\Xot\Database\Factories\CacheLockFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                whereExpiration($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                whereKey($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                whereOwner($value)
+ * @method static Builder|CacheLock                                newModelQuery()
+ * @method static Builder|CacheLock                                newQuery()
+ * @method static Builder|CacheLock                                query()
+ * @method static Builder|CacheLock                                whereExpiration($value)
+ * @method static Builder|CacheLock                                whereKey($value)
+ * @method static Builder|CacheLock                                whereOwner($value)
  * @property int $expiration
  * @method static \Modules\Xot\Database\Factories\CacheLockFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                whereExpiration($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                whereKey($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CacheLock                                whereOwner($value)
+ * @method static Builder|CacheLock                                newModelQuery()
+ * @method static Builder|CacheLock                                newQuery()
+ * @method static Builder|CacheLock                                query()
+ * @method static Builder|CacheLock                                whereExpiration($value)
+ * @method static Builder|CacheLock                                whereKey($value)
+ * @method static Builder|CacheLock                                whereOwner($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -5067,27 +5067,27 @@ namespace Modules\Xot\Models{
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModel disableCache()
  * @method static \Modules\Xot\Database\Factories\ExtraFactory    factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Extra                                   newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Extra                                   newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Extra                                   query()
+ * @method static Builder|Extra                                   newModelQuery()
+ * @method static Builder|Extra                                   newQuery()
+ * @method static Builder|Extra                                   query()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModel withCacheCooldownSeconds(?int $seconds = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra                                   withExtraAttributes()
+ * @method static Builder|Extra                                   withExtraAttributes()
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null                     $updated_by
  * @property string|null                     $created_by
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereExtraAttributes($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereModelId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereModelType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Extra whereUpdatedBy($value)
+ * @method static Builder|Extra whereCreatedAt($value)
+ * @method static Builder|Extra whereCreatedBy($value)
+ * @method static Builder|Extra whereDeletedAt($value)
+ * @method static Builder|Extra whereDeletedBy($value)
+ * @method static Builder|Extra whereExtraAttributes($value)
+ * @method static Builder|Extra whereId($value)
+ * @method static Builder|Extra whereModelId($value)
+ * @method static Builder|Extra whereModelType($value)
+ * @method static Builder|Extra whereUpdatedAt($value)
+ * @method static Builder|Extra whereUpdatedBy($value)
  * @mixin \Eloquent
  */
 	class Extra extends \Eloquent {}
@@ -5098,12 +5098,12 @@ namespace Modules\Xot\Models{
  * Modules\Xot\Models\Feed.
  *
  * @method static \Modules\Xot\Database\Factories\FeedFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                query()
+ * @method static Builder|Feed                                newModelQuery()
+ * @method static Builder|Feed                                newQuery()
+ * @method static Builder|Feed                                query()
+ * @method static Builder|Feed                                newModelQuery()
+ * @method static Builder|Feed                                newQuery()
+ * @method static Builder|Feed                                query()
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -5154,19 +5154,19 @@ namespace Modules\Xot\Models{
  * Modules\Xot\Models\Feed.
  *
  * @method static \Modules\Xot\Database\Factories\FeedFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Feed                                query()
+ * @method static Builder|Feed                                newModelQuery()
+ * @method static Builder|Feed                                newQuery()
+ * @method static Builder|Feed                                query()
+ * @method static Builder|Feed                                newModelQuery()
+ * @method static Builder|Feed                                newQuery()
+ * @method static Builder|Feed                                query()
  * @property string|null $id
  * @property string|null $name
  * @property int|null    $size
  * @property string|null $file_content
- * @method static \Illuminate\Database\Eloquent\Builder|Log whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Log whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Log whereSize($value)
+ * @method static Builder|Log whereId($value)
+ * @method static Builder|Log whereName($value)
+ * @method static Builder|Log whereSize($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater
@@ -5213,19 +5213,19 @@ namespace Modules\Xot\Models{
  * @property string|null                     $created_by
  * @property string|null                     $updated_by
  * @method static \Modules\Xot\Database\Factories\SessionFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereIpAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereLastActivity($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                wherePayload($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUserAgent($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUserId($value)
+ * @method static Builder|Session                                newModelQuery()
+ * @method static Builder|Session                                newQuery()
+ * @method static Builder|Session                                query()
+ * @method static Builder|Session                                whereCreatedAt($value)
+ * @method static Builder|Session                                whereCreatedBy($value)
+ * @method static Builder|Session                                whereId($value)
+ * @method static Builder|Session                                whereIpAddress($value)
+ * @method static Builder|Session                                whereLastActivity($value)
+ * @method static Builder|Session                                wherePayload($value)
+ * @method static Builder|Session                                whereUpdatedAt($value)
+ * @method static Builder|Session                                whereUpdatedBy($value)
+ * @method static Builder|Session                                whereUserAgent($value)
+ * @method static Builder|Session                                whereUserId($value)
  * @property int                             $id
  * @property int|null                        $user_id
  * @property string|null                     $ip_address
@@ -5237,23 +5237,23 @@ namespace Modules\Xot\Models{
  * @property string|null                     $created_by
  * @property string|null                     $updated_by
  * @method static \Modules\Xot\Database\Factories\SessionFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereIpAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereLastActivity($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                wherePayload($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUserAgent($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session                                whereUserId($value)
+ * @method static Builder|Session                                newModelQuery()
+ * @method static Builder|Session                                newQuery()
+ * @method static Builder|Session                                query()
+ * @method static Builder|Session                                whereCreatedAt($value)
+ * @method static Builder|Session                                whereCreatedBy($value)
+ * @method static Builder|Session                                whereId($value)
+ * @method static Builder|Session                                whereIpAddress($value)
+ * @method static Builder|Session                                whereLastActivity($value)
+ * @method static Builder|Session                                wherePayload($value)
+ * @method static Builder|Session                                whereUpdatedAt($value)
+ * @method static Builder|Session                                whereUpdatedBy($value)
+ * @method static Builder|Session                                whereUserAgent($value)
+ * @method static Builder|Session                                whereUserId($value)
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
- * @method static \Illuminate\Database\Eloquent\Builder|Session whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Session whereDeletedBy($value)
+ * @method static Builder|Session whereDeletedAt($value)
+ * @method static Builder|Session whereDeletedBy($value)
  * @mixin \Eloquent
  * @property-read \Modules\Fixcity\Models\Profile|null $creator
  * @property-read \Modules\Fixcity\Models\Profile|null $updater

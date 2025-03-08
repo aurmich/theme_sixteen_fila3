@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Activity\\": "app/",
+            "Modules\\Activity\\": "",
             "Modules\\Activity\\Database\\Factories\\": "database/factories/",
             "Modules\\Activity\\Database\\Seeders\\": "database/seeders/"
         }
@@ -28,8 +28,11 @@
     "require": {
         "spatie/laravel-activitylog": "*",
         "spatie/laravel-event-sourcing": "*"
+
     },
-    "require-dev": {},
+    "require-dev": {
+        
+    },
     "repositories": [
         {
             "type": "path",
@@ -45,7 +48,9 @@
         }
     ],
     "scripts": {
-        "post-autoload-dump": [],
+        "post-autoload-dump": [
+            
+        ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],

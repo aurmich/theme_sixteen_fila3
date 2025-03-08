@@ -1,20 +1,7 @@
-# Changelog del Modulo Xot
+# Changelog
 
-## Versione Attuale (10/2023)
+All notable changes to `:package_name` will be documented in this file.
 
-### Correzioni di Bug
-- **Risolto**: Errore "Method Filament\Actions\Action::table does not exist" nel trait `HasXotTable`
-  - Modificato il metodo `table()` per verificare l'esistenza dei metodi prima di chiamarli
-  - Aggiunto supporto condizionale per `headerActions()`, `actions()` e `bulkActions()`
-  - Questo risolve l'incompatibilità con Filament 3
+## 1.0.0 - 202X-XX-XX
 
-### Miglioramenti
-- Aggiunta documentazione nel codice per spiegare le modifiche e prevenire futuri problemi
-
-## Note di Compatibilità
-- Si consiglia di verificare le implementazioni di `getTableActions()` e metodi simili nelle classi che estendono `XotBaseListRecords`
-- Se si incontrano errori simili, consultare il documento `xot_compatibility.md` nel modulo Broker
-
----
-
-*Ultimo aggiornamento: 10/2023*
+- initial release

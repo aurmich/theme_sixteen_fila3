@@ -15,7 +15,6 @@ return [
     'nome_regione' => '',
     'nome_comune' => '',
     'site_title' => '',
-    'logo_height'=>'2em',
     'logo_img' => 'fixcity::images/logo.svg',
     'logo_square' => 'fixcity::images/logo.svg',
     'logo_footer_img' => 'fixcity::images/logo.svg',
