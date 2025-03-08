@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -123,3 +124,49 @@ cache/
 *:Zone.Identifier
 .php-cs-fixer.cache
 **/*.Zone.Identifier
+=======
+*.jar
+*.log
+*.lock
+package-lock.json
+*.phar
+.git-rewrite
+.php-cs-fixer.cache
+package-lock.json
+vendor/
+node_modules/
+.env
+/.vagrant
+.phpunit.result.cache
+.DS_Store
+error_log
+.phpintel
+/.idea
+
+*.lock
+package-lock.json
+*.stackdump
+*.cache
+/build
+.git-blame-ignore-revs
+.git-rewrite
+.php-cs-fixer.cache
+*.phar
+.git-rewrite/
+
+node_modules
+.git-blame-ignore-revs
+.git-blame-ignore-revs
+node_modules
+vendor
+.git-blame-ignore-revs
+build/
+vendor/
+build/
+node_modules
+docs/cache/
+cache/
+.git-blame-ignore-revs
+.php-cs-fixer.cache
+*.exe
+>>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
