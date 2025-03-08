@@ -24,7 +24,6 @@ class GdprServiceProvider extends XotBaseServiceProvider
         $lang_path = realpath($this->module_dir.'/../Resources/lang');
 
         $this->loadTranslationsFrom($lang_path, 'cookie-consent');
-<<<<<<< HEAD
         $router = app('router');
 
         // $this->app['router']->pushMiddlewareToGroup('web', \Statikbe\CookieConsent\CookieConsentMiddleware::class);
@@ -34,10 +33,6 @@ class GdprServiceProvider extends XotBaseServiceProvider
     public function registerMyMiddleware(Router $router): void
     {
         $router->pushMiddlewareToGroup('web', \Statikbe\CookieConsent\CookieConsentMiddleware::class);
-=======
-
-        $this->app['router']->pushMiddlewareToGroup('web', \Statikbe\CookieConsent\CookieConsentMiddleware::class);
->>>>>>> 45f99fd86 (.)
     }
 
     public function register(): void

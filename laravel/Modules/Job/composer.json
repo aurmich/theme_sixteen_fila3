@@ -22,14 +22,10 @@
         "role": "Developer"
     }],
     "require": {
-<<<<<<< HEAD
-        
+
     },
     "require-dev": {
-        
-=======
 
->>>>>>> 91f436d49 (up)
     },
     "repositories": [
         {

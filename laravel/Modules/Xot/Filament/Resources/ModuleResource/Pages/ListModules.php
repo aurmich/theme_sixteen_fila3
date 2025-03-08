@@ -11,19 +11,12 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\Layout\Stack;
-use Filament\Tables\Enums\ActionsPosition;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Tables\Table;
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
 use Modules\Xot\Filament\Resources\ModuleResource;
 use Nwidart\Modules\Facades\Module;
 
-<<<<<<< HEAD
 class ListModules extends XotBaseListRecords
-=======
-class ListModules extends \Modules\Xot\Filament\Pages\XotBaseListRecords
->>>>>>> 5a9a90183 (up)
 {
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
@@ -83,8 +76,6 @@ class ListModules extends \Modules\Xot\Filament\Pages\XotBaseListRecords
             DeleteBulkAction::make(),
         ];
     }
-
-
 
     protected function getHeaderActions(): array
     {

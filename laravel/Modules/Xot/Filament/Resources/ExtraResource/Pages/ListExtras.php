@@ -4,29 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources\ExtraResource\Pages;
 
-<<<<<<< HEAD
 use Filament\Actions;
-=======
->>>>>>> 5a9a90183 (up)
 use Filament\Tables;
-use Filament\Actions;
-use Filament\Tables\Table;
-<<<<<<< HEAD
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
-=======
-use Modules\UI\Enums\TableLayoutEnum;
-use Filament\Resources\Pages\ListRecords;
->>>>>>> 5a9a90183 (up)
 use Modules\Xot\Filament\Resources\ExtraResource;
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
-use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
 
 class ListExtras extends XotBaseListRecords
 {
-<<<<<<< HEAD
-=======
-    
->>>>>>> 5a9a90183 (up)
     protected static string $resource = ExtraResource::class;
 
     public function getTableColumns(): array
@@ -57,8 +41,6 @@ class ListExtras extends XotBaseListRecords
             Tables\Actions\DeleteBulkAction::make(),
         ];
     }
-
-
 
     protected function getHeaderActions(): array
     {

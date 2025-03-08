@@ -44,7 +44,6 @@ Homestead.json
 # Git specific
 .git-blame-ignore-revs
 .git-rewrite/
-<<<<<<< HEAD
 
 # Documentation
 /docs/
@@ -54,21 +53,10 @@ Homestead.json
 *.tmp
 *.swp
 *.swo
-=======
-<<<<<<< HEAD
 /docs/cache/
 docs/cache/
-=======
 /docs/cache
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 .git-rewrite/
 *.log
->>>>>>> 89a8cd4 (up)
-=======
->>>>>>> 9868256 (🔧 chore(.gitignore): remove unnecessary files and directories from git tracking)
->>>>>>> 766a056 (rebase 20)
 node_modules
 docs/cache
->>>>>>> 66af4f06c (.)
