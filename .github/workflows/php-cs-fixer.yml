@@ -5,9 +5,12 @@ on: [push]
 jobs:
   php-cs-fixer:
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: PHP-CS-Fixer
 =======
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
     runs-on: ubuntu-latest
 
     steps:

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Rector\Config\RectorConfig;
 <<<<<<< HEAD
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
@@ -37,11 +38,19 @@ use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+use Rector\Config\RectorConfig;
+use Rector\PHPUnit\Set\PHPUnitLevelSetList;
+use Rector\Set\ValueObject\LevelSetList;
+use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector;
+use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector;
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths(
         [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             __DIR__.'/Modules',
@@ -79,11 +88,15 @@ return static function (RectorConfig $rectorConfig): void {
             '*/docs',
             '*/vendor',
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+            __DIR__,
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
         ]
     );
 
     // register a single rule
     // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
@@ -93,11 +106,25 @@ return static function (RectorConfig $rectorConfig): void {
 =======
     $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+    // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
+    // $rectorConfig->rules([
+    //    ReturnTypeFromStrictNativeCallRector::class,
+    //    ReturnTypeFromStrictScalarReturnExprRector::class,
+    // ]);
+    $rectorConfig->rules(
+        [
+            ReturnTypeFromStrictNativeCallRector::class,
+            ReturnTypeFromStrictScalarReturnExprRector::class,
+        ]
+    );
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 
     // define sets of rules
     $rectorConfig->sets(
         [
             PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             // SetList::DEAD_CODE,
@@ -125,11 +152,23 @@ return static function (RectorConfig $rectorConfig): void {
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
             // SetList::CODING_STYLE,
             // SetList::PRIVATIZATION,//problemi con final
+=======
+            // SetList::DEAD_CODE,
+            // SetList::CODE_QUALITY,
+            LevelSetList::UP_TO_PHP_81,
+            LaravelSetList::LARAVEL_100,
+
+            // SetList::NAMING, // error on injection
+            // SetList::TYPE_DECLARATION,  //------------------------ vedere cosa fa
+            // SetList::CODING_STYLE,
+            // SetList::PRIVATIZATION, //error "final class"
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
             // SetList::EARLY_RETURN,
             // SetList::INSTANCEOF,
         ]
     );
 
+<<<<<<< HEAD
     $rectorConfig->importNames();
 };
 <<<<<<< HEAD
@@ -139,3 +178,18 @@ return static function (RectorConfig $rectorConfig): void {
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+    $rectorConfig->skip(
+        [
+            // testdummy files
+            '*/build',
+            '*/docs',
+            '*/vendor',
+            './vendor/',
+            __DIR__.'/vendor',
+        ]
+    );
+
+    $rectorConfig->importNames();
+};
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)

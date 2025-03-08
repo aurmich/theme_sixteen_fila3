@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://github.com/shuvroroy/filament-spatie-laravel-backup
 =======
 
@@ -11,3 +12,11 @@ https://medium.com/@laravelprotips/laravel-filament-top-12-plugins-simplified-wi
 
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
+=======
+https://github.com/Althinect/filament-spatie-roles-permissions
+https://github.com/ryangjchandler/filament-profile
+
+https://github.com/andrewdwallo/filament-companies
+
+
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)

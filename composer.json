@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -37,10 +38,15 @@
 =======
     "name": "laraxot/module_job_fila3",
     "description": "job module enables efficient background task execution. It lets you offload resource-heavy processes, like sending emails or data processing, improving app performance. Through simple job definition and dispatching, you can enhance user experience while tasks run seamlessly in the background.",
+=======
+    "name": "laraxot/module_user_fila3",
+    "description": "user module for user management",
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
     "keywords": [
         "laraxot",
         "laravel",
         "filament",
+<<<<<<< HEAD
         "module_job",
         "Laravel",
         "Job module",
@@ -51,10 +57,21 @@
         "user experience"
     ],
     "homepage": "https://github.com/laraxot/module_job_fila3.git",
+=======
+        "module_user",
+        "Laravel",
+        "User module",
+        "Users",
+        "Users management",
+        "Xot"
+    ],
+    "homepage": "https://github.com/laraxot/module_user_fila3",
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
     "license": "MIT",
     "authors": [
         {
             "name": "Marco Sottana",
+<<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
@@ -129,12 +146,48 @@
             "url": "../User"
         },
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+            "email": "marco.sottana@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Livewire\\LivewireServiceProvider",
+                "Modules\\User\\Providers\\UserServiceProvider",
+                "Modules\\User\\Providers\\Filament\\AdminPanelProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\User\\": "app/",
+            "Modules\\User\\Database\\Factories\\": "database/factories/",
+            "Modules\\User\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+        "flowframe/laravel-trend": "*",
+        "jenssegers/agent": "*",
+        "laravel/passport": "*",
+        "socialiteproviders/auth0": "*",
+        "spatie/laravel-personal-data-export": "*"
+    },
+    "require-dev": {},
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
             "url": "./packages/coolsam/panel-modules"
         },
@@ -255,6 +308,18 @@
     }],
 
     "scripts": {
+=======
+            "url": "../UI"
+        }
+    ],
+    "scripts": {
+        "post-autoload-dump1": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
+        ],
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
         "analyse": "vendor/bin/phpstan analyse",
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",
@@ -263,7 +328,10 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+<<<<<<< HEAD
             "phpstan/extension-installer": true,
+=======
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
             "pestphp/pest-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "wikimedia/composer-merge-plugin": true
@@ -271,6 +339,7 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 }
 =======
@@ -278,3 +347,6 @@
     "prefer-stable": true
 }
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+}
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)

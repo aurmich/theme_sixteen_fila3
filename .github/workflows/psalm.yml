@@ -8,10 +8,14 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 <<<<<<< HEAD
+<<<<<<< HEAD
             - uses: shivammathur/setup-php@v2
 =======
             - uses: shivammathur/setup-php@latest
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+            - uses: shivammathur/setup-php@latest
+>>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
               with:
                   php-version: 8.1
             - run: composer install --prefer-dist --no-progress
