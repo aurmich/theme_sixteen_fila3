@@ -8,8 +8,12 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class .
  */
+<<<<<<< HEAD
 return new class extends XotBaseMigration
 {
+=======
+return new class extends XotBaseMigration {
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     /**
      * Run the migrations.
      */
@@ -38,9 +42,12 @@ return new class extends XotBaseMigration
                     $table->renameColumn('name', 'title');
                 }
 
+<<<<<<< HEAD
                 // if (! $this->hasColumn('order_column')) {
                 //    $table->integer('order_column')->nullable();
                 // }
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
                 $this->updateTimestamps(table: $table, hasSoftDeletes: true);
             }
         );

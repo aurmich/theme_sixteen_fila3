@@ -44,6 +44,10 @@ Homestead.json
 # Git specific
 .git-blame-ignore-revs
 .git-rewrite/
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
 # Documentation
 /docs/
@@ -53,9 +57,30 @@ Homestead.json
 *.tmp
 *.swp
 *.swo
+<<<<<<< HEAD
 /docs/cache/
 docs/cache/
 .git-rewrite/
 *.log
 node_modules
 docs/cache
+=======
+=======
+<<<<<<< HEAD
+/docs/cache/
+docs/cache/
+=======
+/docs/cache
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.git-rewrite/
+*.log
+>>>>>>> 89a8cd4 (up)
+=======
+>>>>>>> 9868256 (🔧 chore(.gitignore): remove unnecessary files and directories from git tracking)
+>>>>>>> 766a056 (rebase 20)
+node_modules
+docs/cache
+>>>>>>> 66af4f06c (.)
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

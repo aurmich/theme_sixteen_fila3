@@ -153,7 +153,15 @@ class Place extends BaseModel
         'latitude', 'longitude', 'formatted_address', 'nearest_street', 'address',
     ];
 
+<<<<<<< HEAD
     /** @var list<string> */
+=======
+<<<<<<< HEAD
+    /** @var list<string> */
+=======
+     /** @var list<string> */
+>>>>>>> 9a8b209cb (up)
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     protected $appends = ['value'];
 
     // ----- mutators -----

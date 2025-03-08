@@ -5,6 +5,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 ~~~bash
 git clone --recurse-submodules https://github.com/aurmich/base_fixcity_fila3.git 
 cd base_fixcity_fila3
@@ -103,6 +106,7 @@ cp .env.latest .env
 code ..
 ~~~
 
+<<<<<<< HEAD
 =======
 # Module Xot Fila3 🔥 The Ultimate Laravel Multi-module Solution 🚀
 
@@ -665,3 +669,5 @@ Discover more of my work at marco76tv!
 =======
 Discover more of my work at marco76tv!
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

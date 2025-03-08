@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -101,3 +102,11 @@ vendor/
 build/
 docs/cache/
 cache/
+=======
+node_modules
+vendor
+vendor/
+build/
+docs/cache/
+cache/
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

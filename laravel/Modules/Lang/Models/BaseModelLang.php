@@ -75,6 +75,10 @@ abstract class BaseModelLang extends Model
     protected static function newFactory()
     {
         return app(GetFactoryAction::class)->execute(static::class);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     }
 
     /**
@@ -84,5 +88,10 @@ abstract class BaseModelLang extends Model
         return [
             'id' => 'string',
             'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 8b32dd218 (Check & fix styling)
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     }
 }

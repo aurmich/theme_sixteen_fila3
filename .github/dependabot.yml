@@ -4,6 +4,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 # To get started with Dependabot version updates, you'll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for more information:
@@ -16,6 +19,7 @@ updates:
    directory: "/"
    schedule:
      interval: weekly
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
@@ -73,3 +77,5 @@ updates:
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 # Laraxot Framework
 
 ## Panoramica
@@ -3510,6 +3513,7 @@ Modules/
   - Title section
   - Content area
   - Feedback section
+<<<<<<< HEAD
   - Contact section 
 =======
 # Laravel XOT Architecture Documentation
@@ -12298,3 +12302,6 @@ class ClientMapWidget extends Widget
 5. La reattività funziona automaticamente con Livewire 3
   - Contact section 
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
+=======
+  - Contact section 
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

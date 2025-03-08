@@ -8,6 +8,7 @@ use Modules\Fixcity\Enums\TicketStatusEnum;
 use Illuminate\Support\Facades\Log;
 use Filament\Support\RawJs;
 use Livewire\Attributes\Reactive;
+<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Infolists\Components\Card;
 use Filament\Infolists\Components\ImageEntry;
@@ -63,6 +64,11 @@ class TicketsMapWidget extends MapWidget
         return 15;
     }
 
+=======
+
+class TicketsMapWidget extends MapWidget
+{
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     #[Reactive]
     public array $categoryFilter = [];
 
@@ -72,7 +78,11 @@ class TicketsMapWidget extends MapWidget
 
     protected static ?bool $clustering = true;
 
+<<<<<<< HEAD
     protected static ?bool $fitToBounds = false;
+=======
+    protected static ?bool $fitToBounds = true;
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
     protected static ?string $mapId = 'incidents';
 
@@ -82,6 +92,7 @@ class TicketsMapWidget extends MapWidget
     {
         $config = json_decode(parent::getMapConfig(), true);
 
+<<<<<<< HEAD
         if ($this->userLatitude && $this->userLongitude) {
             $config['center'] = [
                 'lat' => $this->userLatitude,
@@ -93,6 +104,12 @@ class TicketsMapWidget extends MapWidget
                 'lng' => -86.586104,
             ];
         }
+=======
+        $config['center'] = [
+            'lat' => 34.730369,
+            'lng' => -86.586104,
+        ];
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
         return json_encode($config);
     }
@@ -147,11 +164,14 @@ class TicketsMapWidget extends MapWidget
         return $data;
     }
 
+<<<<<<< HEAD
     public function openTicketModal($ticketId)
     {
         $this->dispatchBrowserEvent('open-ticket-modal', ['ticketId' => $ticketId]); // Dispatch the event to open the modal
     }
 
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     protected function getMapOptions(): array
     {
         return [
@@ -171,6 +191,7 @@ class TicketsMapWidget extends MapWidget
     {
         return array_merge(parent::getListeners(), [
             'categoryFilterUpdated' => 'rerender',
+<<<<<<< HEAD
             'updateMapCenter' => 'updateMapCenter',
         ]);
     }
@@ -182,9 +203,18 @@ class TicketsMapWidget extends MapWidget
         $this->rerender();
     }
 
+=======
+        ]);
+    }
+
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     public function mount()
     {
         parent::mount();
         Log::error('Widget mounted with filters', ['categories' => $this->categoryFilter]);
     }
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

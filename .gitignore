@@ -5,6 +5,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
 
 /vendor/
@@ -97,6 +100,7 @@ public_html/js/
 public_html/themes/
 cache/
 laravel/.phive/
+<<<<<<< HEAD
 .git-rewrite
 .fuse_hidden*
 .fuse_hidden**.lock
@@ -467,3 +471,5 @@ build
 *:Zone.Identifier
 *:Zone.Identifier
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

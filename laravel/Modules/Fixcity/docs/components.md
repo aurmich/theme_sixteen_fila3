@@ -40,6 +40,7 @@ Recupera la lista delle categorie dal database con:
 
 #### Correzioni Recenti
 - Risolto un problema di riferimento circolare nella definizione della classe
+<<<<<<< HEAD
 - Rimossa l'estensione errata `BaseAgid` in favore di `Component` 
 
 ## Risoluzione Conflitti Git
@@ -102,3 +103,6 @@ Dopo la risoluzione dei conflitti, è stata effettuata una verifica per assicura
 - Le funzionalità principali siano preservate
 - La documentazione sia aggiornata
 - I namespace e le relazioni tra i modelli siano corretti 
+=======
+- Rimossa l'estensione errata `BaseAgid` in favore di `Component` 
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

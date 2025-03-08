@@ -1,10 +1,13 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 declare(strict_types=1);
 
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 $finder = PhpCsFixer\Finder::create()
     ->notPath('bootstrap/cache')
     ->notPath('storage')
@@ -27,10 +30,14 @@ $config
         'declare_strict_types' => true,
         'combine_consecutive_unsets' => true,
 <<<<<<< HEAD
+<<<<<<< HEAD
         //'binary_operator_spaces' => ['align_double_arrow' => false],
 =======
         // 'binary_operator_spaces' => ['align_double_arrow' => false],
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+        //'binary_operator_spaces' => ['align_double_arrow' => false],
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
         'array_syntax' => ['syntax' => 'short'],
         'linebreak_after_opening_tag' => true,
         'not_operator_with_successor_space' => true,
@@ -49,7 +56,11 @@ $config
 ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 return $config;
 =======
 return $config;
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+return $config;
+>>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
