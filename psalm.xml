@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <psalm
 <<<<<<< HEAD
+<<<<<<< HEAD
     errorLevel="1"
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -16,6 +17,9 @@
 =======
     errorLevel="4"
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+    errorLevel="4"
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -24,6 +28,7 @@
     findUnusedCode="true"
 >
     <projectFiles>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -87,6 +92,8 @@
     </plugins>
 </psalm>
 =======
+=======
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
         <file name="Actions/DB/DownloadAction.php"/>
         <file name="Config/config.php"/>
         <file name="Config/setting-filament.php"/>
@@ -101,7 +108,11 @@
         <file name="Providers/FilamentServiceProvider.php"/>
         <file name="Providers/RouteServiceProvider.php"/>
         <file name="Providers/SettingServiceProvider.php"/>
+<<<<<<< HEAD
         <file name="Resources/views/index.blade.php"/>
+=======
+        <file name="resources/views/index.blade.php"/>
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
         <file name="Routes/api.php"/>
         <file name="Routes/web.php"/>
         <file name="Settings/GeneralSettings.php"/>
@@ -121,4 +132,7 @@
         </ignoreFiles>
     </projectFiles>
 <plugins><pluginClass class="Psalm\LaravelPlugin\Plugin"/></plugins></psalm>
+<<<<<<< HEAD
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)

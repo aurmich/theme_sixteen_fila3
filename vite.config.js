@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const dotenvExpand = require('dotenv-expand');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -135,6 +136,8 @@ export default defineConfig(
 =======
 =======
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 const dotenvExpand = require('dotenv-expand');
 dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/}));
 
@@ -144,10 +147,14 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     build: {
 <<<<<<< HEAD
+<<<<<<< HEAD
         outDir: '../../public/build-blog',
 =======
         outDir: '../../public/build-user',
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+        outDir: '../../public/build-user',
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
         emptyOutDir: true,
         manifest: true,
     },
@@ -155,10 +162,14 @@ export default defineConfig({
         laravel({
             publicDirectory: '../../public',
 <<<<<<< HEAD
+<<<<<<< HEAD
             buildDirectory: 'build-blog',
 =======
             buildDirectory: 'build-user',
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+            buildDirectory: 'build-user',
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
             input: [
                 __dirname + '/resources/assets/sass/app.scss',
                 __dirname + '/resources/assets/js/app.js'
@@ -168,6 +179,9 @@ export default defineConfig({
     ],
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 =======
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)

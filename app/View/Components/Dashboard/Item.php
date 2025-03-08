@@ -2,9 +2,14 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\View\Components\Dashboard;
 
 use Illuminate\Contracts\Support\Renderable;
+=======
+namespace Modules\Rating\View\Components\Dashboard;
+
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 use Illuminate\View\Component;
 
 // use Modules\Xot\View\Components\XotBaseComponent;
@@ -14,6 +19,7 @@ use Illuminate\View\Component;
  */
 class Item extends Component
 {
+<<<<<<< HEAD
     public function render(): Renderable
     {
         /**
@@ -25,5 +31,10 @@ class Item extends Component
         ];
 
         return view($view, $view_params);
+=======
+    public function render()
+    {
+        return '';
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
     }
 }

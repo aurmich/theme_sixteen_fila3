@@ -21,7 +21,11 @@ jobs:
     - name: Build Jigsaw site
       run: ./vendor/bin/jigsaw build production
     - name: Create CNAME File
+<<<<<<< HEAD
       run: echo "laraxot.github.io/doc_extrafield" >> build_production/CNAME
+=======
+      run: echo "privacyfed.github.io/doc_extrafield" >> build_production/CNAME
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
     - name: Stage Files
       run: git add -f build_production
     - name: Commit files

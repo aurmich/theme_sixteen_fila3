@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 ~~~bash
@@ -521,11 +522,16 @@ Gestione degli utenti, ruoli, permessi tramite l'utilizzo di filament.
 # Module Cms
 Modulo dedicato alla gestione dei temi applicabili al progetto
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+# Module Rating
+Modulo dedicato alla gestione delle valutazioni
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 
 ## Aggiungere Modulo nella base del progetto
 Dentro la cartella laravel/Modules
 
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 git submodule add https://github.com/laraxot/module_setting_fila3.git Setting
@@ -545,11 +551,18 @@ git submodule add https://github.com/laraxot/module_cms_fila3.git Cms
 
 ## Verificare che il modulo sia attivo
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+git submodule add https://github.com/laraxot/module_rating_fila3.git Rating
+```
+
+## Verificare che il modulo sia attivo
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 ```bash
 php artisan module:list
 ```
 in caso abilitarlo
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -560,10 +573,14 @@ php artisan module:enable User
 =======
 php artisan module:enable Cms
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+php artisan module:enable Rating
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 ```
 
 ## Eseguire le migrazioni
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 php artisan module:migrate Setting
@@ -880,3 +897,7 @@ Take your content creation to the next level with **Module Blog Fila3**! 💥
 php artisan module:migrate Cms
 ```
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+php artisan module:migrate Rating
+```
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)

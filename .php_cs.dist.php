@@ -1,11 +1,18 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 $finder = Symfony\Component\Finder\Finder::create()
     ->in([
         __DIR__.'/src',
         __DIR__.'/tests',
+=======
+$finder = Symfony\Component\Finder\Finder::create()
+    ->in([
+        __DIR__ . '/src',
+        __DIR__ . '/tests',
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
     ])
     ->name('*.php')
     ->notName('*.blade.php')

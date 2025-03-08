@@ -30,10 +30,17 @@ jobs:
       run: npm run prod
 
     - name: CNAME
+<<<<<<< HEAD
       run: echo "laraxot.github.io/doc_extrafield" > ./build_production/CNAME
 
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@latest
+=======
+      run: echo "privacyfed.github.io/doc_extrafield" > ./build_production/CNAME
+
+    - name: gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.2
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
       with:
         branch: gh-pages
         folder: build_production

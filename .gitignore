@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
@@ -138,6 +139,8 @@ cache/
 .php-cs-fixer.cache
 **/*.Zone.Identifier
 =======
+=======
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 *.jar
 *.log
 *.lock
@@ -156,6 +159,7 @@ error_log
 .phpintel
 /.idea
 
+<<<<<<< HEAD
 *.lock
 package-lock.json
 *.stackdump
@@ -460,10 +464,24 @@ node_modules
 node_modules
 vendor
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+*.stackdump
+*.cache
+*.log
+*.lock
+package-lock.json
+
+node_modules
+.git-blame-ignore-revs
+node_modules
+vendor
+.git-blame-ignore-revs
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 build/
 vendor/
 build/
 node_modules
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
@@ -581,3 +599,7 @@ node_modules
 docs/cache/
 cache/
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+docs/cache/
+cache/
+>>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
