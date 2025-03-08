@@ -10,6 +10,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -342,4 +343,10 @@ return [
         'phone' => env('GDPR_DPO_PHONE', ''),
     ],
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+    'name' => 'Blog',
+    // 'icon' => 'heroicon-o-cog', // icon on dashboard
+    'icon' => 'fas-blog', // icon on dashboard
+    'navigation_sort' => 1,
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 ];

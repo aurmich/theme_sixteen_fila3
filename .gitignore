@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
@@ -179,6 +180,15 @@ vendor
 /vendor/
 node_modules/
 npm-debug.log
+=======
+/vendor/
+node_modules/
+npm-debug.log
+*.cache
+*.phar
+*.lock
+package-lock.json
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 yarn-error.log
 
 # Laravel 4 specific
@@ -199,6 +209,7 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 *.lock
@@ -502,3 +513,29 @@ docs/cache/
 cache/
 .php-cs-fixer.cache
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+*.lock
+package-lock.json
+build
+/docs/package-lock.json
+.git-blame-ignore-revs
+
+*.phar
+*.cache
+*.log
+*.lock
+.git-blame-ignore-revs
+package-lock.json
+.php-cs-fixer.cache
+package-lock.json
+.git-rewrite/
+
+node_modules
+
+.git-blame-ignore-revs
+/vendor
+vendor
+vendor/
+build/docs/cache/
+cache/
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

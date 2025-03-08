@@ -6,10 +6,14 @@ on:
       - master
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 permissions:
 =======
 permissions: 
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+permissions: 
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
   contents: write
 
 jobs:
@@ -29,6 +33,7 @@ jobs:
 
     - name: Node
       run: cd docs && npm install
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     - name: Production
@@ -58,6 +63,8 @@ jobs:
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
 =======
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
       
     - name: Production
       run: cd docs && npm run prod
@@ -65,9 +72,14 @@ jobs:
     - name: CNAME
       run: cd docs && echo "laraxot.github.io/module_activity" > ./build_production/CNAME
     
+<<<<<<< HEAD
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@latest
+=======
+    - name: gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
       with:
         branch: gh-pages
         folder: ./docs/build_production

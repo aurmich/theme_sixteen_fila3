@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\User\Filament\Resources;
 
 use Modules\User\Models\Profile;
@@ -59,10 +60,29 @@ class ProfileResource extends XotBaseResource
                 ->required(),
         ];
     }
+=======
+namespace Modules\Blog\Filament\Resources;
+
+use Filament\Resources\Concerns\Translatable;
+use Modules\Blog\Filament\Resources\ProfileResource\Pages;
+use Modules\Blog\Filament\Resources\ProfileResource\RelationManagers;
+use Modules\Blog\Models\Profile;
+use Modules\User\Filament\Resources\BaseProfileResource;
+
+class ProfileResource extends BaseProfileResource
+{
+    use Translatable;
+
+    protected static ?string $model = Profile::class;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
     public static function getRelations(): array
     {
         return [
+<<<<<<< HEAD
+=======
+            RelationManagers\RatingMorphsRelationManager::class,
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         ];
     }
 
@@ -72,7 +92,14 @@ class ProfileResource extends XotBaseResource
             'index' => Pages\ListProfiles::route('/'),
             'create' => Pages\CreateProfile::route('/create'),
             'edit' => Pages\EditProfile::route('/{record}/edit'),
+<<<<<<< HEAD
         ];
     }
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+            'view' => Pages\ViewProfile::route('/{record}'),
+            // 'getcredits' => Pages\GetCreditProfile::route('/{record}/getcredits'),
+        ];
+    }
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 }

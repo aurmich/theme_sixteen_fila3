@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Notify\Models;
 =======
 namespace Modules\Gdpr\Models;
@@ -10,6 +11,13 @@ namespace Modules\Gdpr\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 // //use Laravel\Scout\Searchable;
+=======
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Relations\Pivot;
+// //use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -17,12 +25,20 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BasePivot extends Pivot
 {
+<<<<<<< HEAD
+=======
+    use SoftDeletes;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
+<<<<<<< HEAD
      * @see https://laravel-news.com/6-eloquent-secrets
+=======
+     * @see  https://laravel-news.com/6-eloquent-secrets
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
      *
      * @var bool
      */
@@ -35,6 +51,7 @@ abstract class BasePivot extends Pivot
     protected $perPage = 30;
 
     // use Searchable;
+<<<<<<< HEAD
     /** @var string */
 <<<<<<< HEAD
     protected $connection = 'notify';
@@ -43,10 +60,16 @@ abstract class BasePivot extends Pivot
 =======
     protected $connection = 'user';
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+
+    /** @var string */
+    protected $connection = 'blog';
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
     /** @var list<string> */
     protected $appends = [];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     /**
      * Undocumented variable.
@@ -61,10 +84,22 @@ abstract class BasePivot extends Pivot
 
     /** @return array<string, string> */
     public function casts(): array
+=======
+    /**
+     * Undocumented variable.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
+    /** @return array<string, string> */
+    protected function casts(): array
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     {
         return [
             'id' => 'string', // must be string else primary key of related model will be typed as int
             'uuid' => 'string',
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -76,6 +111,10 @@ abstract class BasePivot extends Pivot
             'updated_by' => 'string',
             'created_by' => 'string',
             'deleted_by' => 'string',
+=======
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         ];
     }
 }

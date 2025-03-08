@@ -7,6 +7,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -40,10 +41,17 @@ namespace Modules\Notify\Providers;
 namespace Modules\Gdpr\Providers;
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
+=======
+namespace Modules\Blog\Providers;
+
+use BezhanSalleh\FilamentLanguageSwitch\Http\Middleware\SwitchLanguageLocale;
+use Illuminate\Routing\Router;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -68,6 +76,12 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 =======
     protected string $moduleNamespace = 'Modules\Gdpr\Http\Controllers';
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     */
+    protected string $moduleNamespace = 'Modules\Blog\Http\Controllers';
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
     protected string $module_dir = __DIR__;
 
@@ -77,12 +91,17 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    public string $name = 'Blog';
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
     public function boot(): void
     {
         parent::boot();
         // 36     Cannot access offset 'router' on Illuminate\Contracts\Foundation\Application
         // $router = $this->app['router'];
+<<<<<<< HEAD
         $router = app('router');
         // dddx([$router, $router1]);
 
@@ -186,4 +205,26 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
     public string $name = 'Gdpr';
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+        // $router = app('router');
+        // dddx([$router, $router1]);
+
+        // $this->registerLang();
+        // $this->registerRoutePattern($router);
+        // $this->registerMyMiddleware($router);
+    }
+
+    public function register(): void
+    {
+        parent::register();
+        // dddx('b');
+    }
+
+    // public function registerMyMiddleware(Router $router): void
+    // {
+    // $router->pushMiddlewareToGroup('web', SetDefaultLocaleForUrlsMiddleware::class);
+    // $router->appendMiddlewareToGroup('web', SwitchLanguageLocale::class);
+    // $router->appendMiddlewareToGroup('api', SwitchLanguageLocale::class);
+    // }
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 }

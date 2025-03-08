@@ -1,13 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 name: Check & fix styling
 =======
 name: lint
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+name: lint
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 on: [push]
 
 jobs:
   php-cs-fixer:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -18,15 +23,21 @@ jobs:
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: actions/checkout@v3
 =======
         uses: actions/checkout@master
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+        uses: actions/checkout@master
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         with:
           ref: ${{ github.head_ref }}
 
@@ -36,6 +47,7 @@ jobs:
           args: --config=.php-cs-fixer.dist.php --allow-risky=yes
 
       - name: Commit changes
+<<<<<<< HEAD
         uses: stefanzweifel/git-auto-commit-action@latest
         with:
 <<<<<<< HEAD
@@ -43,3 +55,8 @@ jobs:
 =======
           commit_message: Lint
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Lint
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

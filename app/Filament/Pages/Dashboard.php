@@ -6,6 +6,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
@@ -36,6 +37,9 @@ namespace Modules\Media\Filament\Pages;
 =======
 namespace Modules\Notify\Filament\Pages;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+namespace Modules\Blog\Filament\Pages;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 use Filament\Pages\Page;
 
@@ -45,8 +49,12 @@ class Dashboard extends Page
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected static string $view = 'job::filament.pages.dashboard';
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+    protected static string $view = 'blog::filament.pages.dashboard';
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
     // public function mount(): void {
     //     $user = auth()->user();
@@ -54,6 +62,7 @@ class Dashboard extends Page
     //         redirect('/admin');
     //     }
     // }
+<<<<<<< HEAD
 =======
     protected static string $view = 'media::filament.pages.dashboard';
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
@@ -81,4 +90,6 @@ class Dashboard extends BaseDashboard
 
     // protected static string $view = 'gdpr::filament.pages.dashboard';
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 }

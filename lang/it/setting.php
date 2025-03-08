@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 return [
@@ -10,3 +11,14 @@ return [
         'icon' => 'heroicon-o-cog-6-tooth',
     ],
 ];
+=======
+<?php return array (
+  'fields' => 
+  array (
+    'version' => 
+    array (
+      'label' => 'version',
+    ),
+  ),
+);
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

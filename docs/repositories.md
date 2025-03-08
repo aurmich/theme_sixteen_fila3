@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Tracker gathers a lot of information from your requests to identify and store:
 - Sessions
@@ -29,3 +30,11 @@ https://github.com/codedor/filament-mail-templates/
 
 https://www.mailcoach.app/resources/blog/using-the-mailcoach-markdown-editor-in-filament
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+https://github.com/guillaumebriday/laravel-blog
+
+
+
+
+
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

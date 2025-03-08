@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 []
 =======
 [{"name":"broad","class":"Broad","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Broad"},{"name":"job.status","class":"Job\\Status","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Job\\Status"},{"name":"schedule.crud","class":"Schedule\\Crud","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Schedule\\Crud"},{"name":"schedule.status","class":"Schedule\\Status","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Schedule\\Status"}]
@@ -15,3 +16,6 @@
 =======
 []
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+[{"name":"article.chunk","class":"Article\\Chunk","module":null,"path":null,"ns":"Modules\\Blog\\Http\\Livewire\\Article\\Chunk"},{"name":"article.lists","class":"Article\\Lists","module":null,"path":null,"ns":"Modules\\Blog\\Http\\Livewire\\Article\\Lists"},{"name":"headernav.search-bar","class":"Headernav\\SearchBar","module":null,"path":null,"ns":"Modules\\Blog\\Http\\Livewire\\Headernav\\SearchBar"},{"name":"profile","class":"Profile","module":null,"path":null,"ns":"Modules\\Blog\\Http\\Livewire\\Profile"},{"name":"profile.setting","class":"Profile\\Setting","module":null,"path":null,"ns":"Modules\\Blog\\Http\\Livewire\\Profile\\Setting"}]
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

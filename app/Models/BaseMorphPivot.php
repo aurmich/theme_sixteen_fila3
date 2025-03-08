@@ -5,6 +5,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 =======
 namespace Modules\Job\Models;
@@ -21,6 +22,12 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
+=======
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Relations\MorphPivot;
+use Illuminate\Database\Eloquent\SoftDeletes;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -28,6 +35,7 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseMorphPivot extends MorphPivot
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     use Updater;
 
@@ -48,11 +56,21 @@ abstract class BaseMorphPivot extends MorphPivot
      * Indicates whether attributes are snake cased on arrays.
      *
      * @see https://laravel-news.com/6-eloquent-secrets
+=======
+    use SoftDeletes;
+    use Updater;
+
+    /**
+     * Indicates whether attributes are snake cased on arrays.
+     *
+     * @see  https://laravel-news.com/6-eloquent-secrets
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
      *
      * @var bool
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     /** @var bool */
     public $incrementing = true;
@@ -69,10 +87,19 @@ abstract class BaseMorphPivot extends MorphPivot
     public $timestamps = true;
 
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    /** @var bool */
+    public $incrementing = true;
+
+    /** @var bool */
+    public $timestamps = true;
+
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     /** @var int */
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     protected $connection = 'xot';
@@ -93,6 +120,9 @@ abstract class BaseMorphPivot extends MorphPivot
     /** @var string */
     protected $connection = 'user';
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+    protected $connection = 'blog';
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
     /** @var list<string> */
     protected $appends = [];
@@ -112,6 +142,7 @@ abstract class BaseMorphPivot extends MorphPivot
         'note',
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -159,6 +190,14 @@ abstract class BaseMorphPivot extends MorphPivot
             'updated_by' => 'string',
             'created_by' => 'string',
             'deleted_by' => 'string',
+=======
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string',
+            'created_at' => 'datetime', 'updated_at' => 'datetime', 'deleted_at' => 'datetime',
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         ];
     }
 }

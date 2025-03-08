@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -35,10 +36,16 @@
         "filament"
     ],
     "homepage": "https://github.com/laraxot/module_xot_fila3",
+=======
+    "name": "laraxot/module_blog_fila3",
+    "description": "",
+    "homepage": "https://github.com/laraxot/module_blog_fila3",
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     "license": "MIT",
     "authors": [
         {
             "name": "marco sottana",
+<<<<<<< HEAD
 =======
     "name": "laraxot/module_job_fila3",
     "description": "job module enables efficient background task execution. It lets you offload resource-heavy processes, like sending emails or data processing, improving app performance. Through simple job definition and dispatching, you can enhance user experience while tasks run seamlessly in the background.",
@@ -138,10 +145,13 @@
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -257,10 +267,22 @@
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             ],
             "aliases": {}
+=======
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Blog\\Providers\\BlogServiceProvider",
+                "Modules\\Blog\\Providers\\Filament\\AdminPanelProvider"
+            ],
+            "aliases": {
+
+            }
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "Modules\\User\\": "app/",
@@ -304,11 +326,19 @@
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     },
     "require-dev": {},
+=======
+            "Modules\\Blog\\": "app/",
+            "Modules\\Blog\\Database\\Factories\\": "database/factories/",
+            "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     "repositories": [
         {
             "type": "path",
             "url": "../Xot"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
@@ -318,12 +348,15 @@
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -592,3 +625,38 @@
 =======
 }
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+            "url": "../UI"
+        }
+    ],
+    "require": {
+        "pboivin/filament-peek": "^2.0",
+        "staudenmeir/laravel-adjacency-list": "^1.22",
+        "spatie/laravel-feed": "^4.4",
+        "staudenmeir/eloquent-has-many-deep": "*",
+        "filament/spatie-laravel-tags-plugin": "^3.2",
+        "codewithdennis/filament-select-tree": "^3.1"
+    },
+    "require_comment": {
+        "thecodingmachine/safe": "^2.5"
+    },
+    "require-dev_comment": {
+        "laravel/pint": "^1.13",
+        "nunomaduro/phpinsights": "^2.11",
+        "larastan/larastan": "^2.7",
+        "vimeo/psalm": "^5.17",
+        "psalm/plugin-laravel": "^2.8",
+        "enlightn/enlightn": "^2.7",
+        "driftingly/rector-laravel": "^0.26.2",
+        "symplify/phpstan-rules": "*",
+        "rector/rector": "*",
+        "thecodingmachine/phpstan-safe-rule": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+
+}
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

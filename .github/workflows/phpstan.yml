@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 name: PHPStan
 
 on:
@@ -10,6 +13,7 @@ on:
     paths:
       - '**.php'
       - 'phpstan.neon.dist'
+<<<<<<< HEAD
 <<<<<<< HEAD
   pull_request:
     paths:
@@ -28,6 +32,8 @@ on: [push]
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 jobs:
   phpstan:
@@ -40,15 +46,20 @@ jobs:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: shivammathur/setup-php@v2
 =======
         uses: shivammathur/setup-php@latest
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+        uses: shivammathur/setup-php@v2
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         with:
           php-version: '8.1'
           coverage: none
 
       - name: Install composer dependencies
+<<<<<<< HEAD
         uses: ramsey/composer-install@latest
 
 <<<<<<< HEAD
@@ -79,3 +90,9 @@ jobs:
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+        uses: ramsey/composer-install@v2
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan --error-format=github
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

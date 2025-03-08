@@ -2,11 +2,16 @@
 <psalm
     errorLevel="1"
 <<<<<<< HEAD
+<<<<<<< HEAD
      cacheDirectory="build/psalm"
     errorBaseline="psalm-baseline.xml"
 =======
     cacheDirectory="build/psalm"
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+     cacheDirectory="build/psalm"
+    errorBaseline="psalm-baseline.xml"
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -15,6 +20,7 @@
     findUnusedCode="true"
 >
     <projectFiles>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -37,12 +43,15 @@
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
             <directory name="docs" />
 =======
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         <directory name="." />
 
         <ignoreFiles>
              <directory name="build"/>
             <directory name="vendor"/>
             <directory name="docs"/>
+<<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
         <directory name="." />
@@ -64,6 +73,8 @@
 =======
             <directory name="docs" />
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
         </ignoreFiles>
     </projectFiles>
     <plugins>

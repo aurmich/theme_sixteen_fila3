@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Http\Middleware;
 =======
 namespace Modules\Job\Http\Middleware;
@@ -11,11 +12,15 @@ namespace Modules\Job\Http\Middleware;
 =======
 namespace Modules\Notify\Http\Middleware;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+namespace Modules\Blog\Http\Middleware;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 use Modules\Xot\Http\Middleware\XotBaseFilamentMiddleware;
 
 class FilamentMiddleware extends XotBaseFilamentMiddleware
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public static string $module = 'Setting';
@@ -73,4 +78,9 @@ class FilamentMiddleware extends XotBaseFilamentMiddleware
 
     public static string $context = 'filament';
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    public static string $module = 'Blog';
+
+    public static string $context = 'filament';
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 }

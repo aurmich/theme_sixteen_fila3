@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const dotenvExpand = require('dotenv-expand');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,3 +131,29 @@ export default defineConfig(
     }
 );
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+const dotenvExpand = require('dotenv-expand');
+dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/}));
+
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+export default defineConfig({
+    build: {
+        outDir: '../../public/build-blog',
+        emptyOutDir: true,
+        manifest: true,
+    },
+    plugins: [
+        laravel({
+            publicDirectory: '../../public',
+            buildDirectory: 'build-blog',
+            input: [
+                __dirname + '/resources/assets/sass/app.scss',
+                __dirname + '/resources/assets/js/app.js'
+            ],
+            refresh: true,
+        }),
+    ],
+});
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

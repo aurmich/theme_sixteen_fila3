@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #	url = git@github.com:laraxot/doc_setting.git
 =======
 #	url = git@github.com:laraxot/doc_job.git
@@ -24,3 +25,6 @@
 #	url = https://github.com/laraxot/doc_gdpr.git
 #   url = git@github.com:laraxot/doc_gdpr.git
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+#	url = https://github.com/laraxot/doc_blog.git
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)

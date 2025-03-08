@@ -7,16 +7,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
@@ -167,4 +171,21 @@
     "vite": "^3.2.8"
   }
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.17",
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "dotenv-expand": "^5.1.0",
+    "laravel-vite-plugin": "^0.6.1",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.33",
+    "postcss-nesting": "^12.0.2",
+    "tailwindcss": "^3.4.1",
+    "tippy.js": "^6.3.7",
+    "vite": "^5.4.1"
+  }
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 }

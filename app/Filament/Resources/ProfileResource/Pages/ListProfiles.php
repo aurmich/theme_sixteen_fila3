@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\User\Filament\Resources\ProfileResource\Pages;
 
 use Filament\Actions;
@@ -19,12 +20,20 @@ namespace Modules\Gdpr\Filament\Resources\ProfileResource\Pages;
 
 use Filament\Tables;
 use Modules\Gdpr\Filament\Resources\ProfileResource;
+=======
+namespace Modules\Blog\Filament\Resources\ProfileResource\Pages;
+
+use Filament\Tables\Columns\TextColumn;
+use Modules\Blog\Filament\Actions\Profile\ModifyCredits;
+use Modules\Blog\Filament\Resources\ProfileResource;
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 use Modules\User\Filament\Resources\BaseProfileResource\Pages\ListProfiles as UserListProfiles;
 
 class ListProfiles extends UserListProfiles
 {
     protected static string $resource = ProfileResource::class;
 
+<<<<<<< HEAD
     /**
      * @return array<string, Tables\Columns\Column>
      */
@@ -68,4 +77,30 @@ class ListProfiles extends UserListProfiles
         ];
     }
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+    // protected function getHeaderActions(): array
+    // {
+    //    return [
+    //        Actions\CreateAction::make(),
+    //    ];
+    // }
+
+    protected function getTableColumns(): array
+    {
+        $res = parent::getTableColumns();
+
+        $res[] = TextColumn::make('credits');
+
+        return $res;
+    }
+
+    protected function getTableActions(): array
+    {
+        $res = parent::getTableActions();
+
+        // $res[] = ModifyCredits::make();
+
+        return $res;
+    }
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 }

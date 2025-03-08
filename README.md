@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 ~~~bash
@@ -166,21 +167,41 @@ The **GDPR Fila3** module is designed to help developers and businesses comply w
 Inside the `laravel/Modules` folder:
 
 **Module GDPR Fila3** is the ultimate solution for integrating GDPR compliance into your Laravel project. With powerful features to manage user data, consent requests, and access requests, this module helps you ensure your project is fully compliant with GDPR regulations, saving you time and effort. 🛡️
+=======
+# Module Blog Fila3 📚 Create, Manage, and Engage with Powerful Blog Features! 🚀
+
+[![Latest Release](https://img.shields.io/github/v/release/laraxot/module_blog_fila3)](https://github.com/laraxot/module_blog_fila3/releases)
+[![Build Status](https://img.shields.io/travis/laraxot/module_blog_fila3/master)](https://travis-ci.org/laraxot/module_blog_fila3)
+[![Total Downloads](https://img.shields.io/packagist/dt/laraxot/module_blog_fila3)](https://packagist.org/packages/laraxot/module_blog_fila3)
+[![License](https://img.shields.io/github/license/laraxot/module_blog_fila3)](LICENSE)
+
+**Module Blog Fila3** is the ultimate blogging module for Laravel, allowing you to easily create, manage, and publish engaging blog content with robust functionality and seamless integration! ✨
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 ---
 
 ### Key Features 🌟
+<<<<<<< HEAD
 - **User Data Management**: Collect, store, and process user data in compliance with GDPR.
 - **Consent Requests**: Manage and record user consent for data processing seamlessly.
 - **Data Access & Deletion**: Handle user data requests (access, modification, deletion) with ease.
 - **Compliance Reporting**: Generate GDPR compliance reports to stay on top of regulations.
 - **Automatic Logging**: Log all data access and processing activities for compliance.
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+
+- **Create and Manage Articles**: Write, edit, and publish engaging content effortlessly.
+- **Category Management**: Organize your articles into clear, structured categories.
+- **Banner Support**: Showcase featured articles with rotating banners.
+- **User Profiles**: Manage author profiles to attribute and showcase contributors.
+- **Frontend Flexibility**: Easily integrate the blog into your frontend with customizable templates.
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 ---
 
 ### Installation Guide 💻
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 1. **Install via Composer:**
@@ -196,10 +217,16 @@ Inside the `laravel/Modules` folder:
     ```bash
     git submodule add https://github.com/laraxot/module_gdpr_fila3.git Gdpr
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+1. **Install the module:**
+    ```bash
+    git submodule add https://github.com/laraxot/module_blog_fila3.git Blog
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     ```
 
 2. **Run Migrations:**
     ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     php artisan module:migrate Xot
@@ -223,21 +250,32 @@ Inside the `laravel/Modules` folder:
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
     php artisan module:migrate Gdpr
+=======
+    php artisan module:migrate Blog
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     ```
 
 3. **Enable the module:**
     ```bash
+<<<<<<< HEAD
     php artisan module:enable Gdpr
+=======
+    php artisan module:enable Blog
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     ```
 
 4. **Check Active Modules:**
     ```bash
     php artisan module:list
+<<<<<<< HEAD
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
     ```
 
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### Supercharged Console Commands 🚀
 
@@ -364,11 +402,42 @@ Per aggiungere nuovi test:
 =======
 Customize the module to fit your app's GDPR needs. Update configurations via `module_gdpr_fila3.php` to adapt logging, consent handling, and more.
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+### Models and Their Purpose 🛠️
+
+- **Article**: Represents blog posts with rich content, including text, images, and custom blocks.
+- **Category**: Groups articles under specific themes, such as Sports, Politics, or Science.
+- **Banner**: Displays highlighted content as a carousel on the homepage for more visibility.
+- **Profile**: Manages user profiles, allowing for author details and bio presentation on posts.
+
+---
+
+### Supercharged Console Commands 🚀
+
+- **List Articles:**
+    ```bash
+    php artisan blog:articles
+    ```
+    _View all published blog articles._
+
+- **Create a New Article:**
+    ```bash
+    php artisan blog:create <title>
+    ```
+    _Easily draft a new blog post._
+
+- **Manage Categories:**
+    ```bash
+    php artisan blog:categories
+    ```
+    _View and manage the article categories._
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 ---
 
 ### FAQ ❓
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 - **Q: Can I add modules dynamically?**
   A: Absolutely! Modules are automatically discovered and configured without the need for manual updates to your config files.
@@ -400,6 +469,13 @@ We 💖 open source! Want to improve this package? Fork the repo and submit a pu
 - **Q: Is logging data access automatic?**
   A: Yes! All user data access and processing are automatically logged and can be reviewed at any time.
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+- **Q: How do I display the blog on my site?**
+  A: The module integrates seamlessly with your frontend, providing customizable templates for listing articles, categories, and more.
+
+- **Q: Can I schedule posts for future publication?**
+  A: Yes! You can set publish dates for articles, allowing you to plan content ahead.
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 
 ---
 
@@ -416,6 +492,7 @@ This package is open-sourced under the [MIT license](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 **Boost your Laravel app with powerful modular capabilities using Module Xot Fila3!** 💥
@@ -779,3 +856,6 @@ php artisan module:enable Gdpr
 php artisan module:migrate Gdpr
 ```
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+Take your content creation to the next level with **Module Blog Fila3**! 💥
+>>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
