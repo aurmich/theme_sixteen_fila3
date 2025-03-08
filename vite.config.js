@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const dotenvExpand = require('dotenv-expand');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -238,3 +239,97 @@ export default defineConfig({
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 =======
 >>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
+=======
+//const dotenvExpand = require('dotenv-expand');
+//dotenvExpand(
+//	require('dotenv').config({ path: '../../.env' /*, debug: true*/ }),
+//);
+
+import { defineConfig } from 'vite';
+import laravel, { refreshPaths } from 'laravel-vite-plugin'
+
+
+
+export default defineConfig({
+    build: {
+        //outDir: '../../../public_html/build/ewall',
+        outDir: './resources/dist',
+        emptyOutDir: false,
+        manifest: 'manifest.json',
+        //rollupOptions: {
+        //    output: {
+        //        entryFileNames: `assets/[name].js`,
+        //        chunkFileNames: `assets/[name].js`,
+        //        assetFileNames: `assets/[name].[ext]`
+        //    }
+        //}
+    },
+    ssr: {
+        noExternal: ['chart.js/**']
+    },
+    plugins: [
+        laravel({
+            publicDirectory: '../../../public_html/',
+            // buildDirectory: 'assets/',
+            input: [
+                //__dirname + '/resources/sass/app.scss',
+                //__dirname + '/resources/scss/app-mix.scss',
+                __dirname + '/resources/css/app.css',
+                __dirname + '/resources/js/app.js',
+                // Aggiungiamo i CSS di Filament
+                //__dirname + '/vendor/filament/**/*.css',
+            ],
+            refresh: [
+                ...refreshPaths,
+                'app/Livewire/**',
+            ],
+        }),
+    ],
+    resolve: {
+        alias: {
+            '@': '/resources',
+        },
+    },
+});
+
+
+/*
+import collectModuleAssetsPaths from './../../vite-module-loader.js';
+
+async function getConfig() {
+    const paths = [
+        'resources/css/app.css',
+        'resources/js/app.js',
+    ];
+    const allPaths = await collectModuleAssetsPaths(paths, 'Modules');
+
+    return defineConfig({
+        plugins: [
+            laravel({
+                input: allPaths,
+                refresh: true,
+            })
+        ]
+    });
+}
+
+export default getConfig();
+*/
+
+/*
+var $from = './resources/dist';
+var $to = '../../../public_html/themes/Five/dist';
+console.log('from :' + $from);
+console.log('to :' + $to);
+
+//mix.copyDirectory($from, $to);
+viteStaticCopy({
+    targets: [
+        {
+            src: $from,
+            dest: $to
+        }
+    ]
+})
+*/
+>>>>>>> 18b8a43387 (Squashed 'laravel/Themes/Sixteen/' content from commit 72d590c7f9)

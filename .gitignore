@@ -14,6 +14,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
@@ -659,6 +660,11 @@ vendor
 /vendor
 vendor/
 .php-cs-fixer.cache
+=======
+node_modules/
+node_modules
+vendor
+>>>>>>> 18b8a43387 (Squashed 'laravel/Themes/Sixteen/' content from commit 72d590c7f9)
 .git-blame-ignore-revs
 build/
 vendor/
@@ -666,6 +672,7 @@ build/
 node_modules
 docs/cache/
 cache/
+<<<<<<< HEAD
 *.exe
 
 *:Zone.Identifier
@@ -703,3 +710,5 @@ cache/
 =======
 bin/venv/
 >>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
+=======
+>>>>>>> 18b8a43387 (Squashed 'laravel/Themes/Sixteen/' content from commit 72d590c7f9)

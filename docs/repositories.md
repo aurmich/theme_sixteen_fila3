@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Tracker gathers a lot of information from your requests to identify and store:
 - Sessions
@@ -70,3 +71,6 @@ https://github.com/RubixML/ML
 
 
 >>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
+=======
+https://github.com/thedevdojo/blog/blob/main/resources/views/pages/blog/index.blade.php
+>>>>>>> 18b8a43387 (Squashed 'laravel/Themes/Sixteen/' content from commit 72d590c7f9)
