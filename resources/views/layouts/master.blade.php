@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
@@ -109,6 +110,8 @@
     </body>
 </html>
 =======
+=======
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -117,7 +120,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<<<<<<< HEAD
     <title>Media Module - {{ config('app.name', 'Laravel') }}</title>
+=======
+    <title>Fixcity Module - {{ config('app.name', 'Laravel') }}</title>
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 
     <meta name="description" content="{{ $description ?? '' }}">
     <meta name="keywords" content="{{ $keywords ?? '' }}">
@@ -128,6 +135,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     {{-- Vite CSS --}}
+<<<<<<< HEAD
     {{-- {{ module_vite('build-media', 'resources/assets/sass/app.scss') }} --}}
 </head>
 
@@ -174,3 +182,15 @@
     </body>
 </html>
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+    {{-- {{ module_vite('build-fixcity', 'resources/assets/sass/app.scss') }} --}}
+</head>
+
+<body>
+
+    @yield('content')
+
+    {{-- Vite JS --}}
+    {{-- {{ module_vite('build-fixcity', 'resources/assets/js/app.js') }} --}}
+</body>
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)

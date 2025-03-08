@@ -6,6 +6,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Notify\Models;
 =======
 namespace Modules\Gdpr\Models;
@@ -32,6 +33,13 @@ namespace Modules\Geo\Models;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 // //use Laravel\Scout\Searchable;
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+namespace Modules\Fixcity\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+// //use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -42,6 +50,7 @@ abstract class BasePivot extends Pivot
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     use SoftDeletes;
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
@@ -49,11 +58,15 @@ abstract class BasePivot extends Pivot
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+    use HasFactory;
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
     use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,6 +80,9 @@ abstract class BasePivot extends Pivot
 =======
      * @see  https://laravel-news.com/6-eloquent-secrets
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+     * @see  https://laravel-news.com/6-eloquent-secrets
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
      *
      * @var bool
      */
@@ -75,6 +91,7 @@ abstract class BasePivot extends Pivot
     /** @var bool */
     public $incrementing = true;
 
+<<<<<<< HEAD
     /** @var int */
     protected $perPage = 30;
 
@@ -100,10 +117,22 @@ abstract class BasePivot extends Pivot
     /** @var string */
     protected $connection = 'cms';
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+    /**
+     * @var int
+     */
+    protected $perPage = 30;
+
+    // use Searchable;
+
+    /** @var string */
+    protected $connection = 'fixcity';
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 
     /** @var list<string> */
     protected $appends = [];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,17 +204,30 @@ abstract class BasePivot extends Pivot
 
     protected $appends = [];
 
+=======
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
     /** @var array<string, string> */
     protected $casts = [
         'id' => 'string', // must be string else primary key of related model will be typed as int
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
+<<<<<<< HEAD
+=======
+        'deleted_at' => 'datetime',
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
     ];
 
     /**
      * Undocumented variable.
+<<<<<<< HEAD
      */
     /** @var string */
     protected $primaryKey = 'id';
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id';
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 }

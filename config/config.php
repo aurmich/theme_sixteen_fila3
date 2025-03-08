@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
@@ -445,4 +446,10 @@ return [
         ],
     ],
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+return [
+    'name' => 'Fixcity',
+    'icon' => 'fixcity-fixcity', // icon on dashboard
+    'navigation_sort' => 1,
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 ];

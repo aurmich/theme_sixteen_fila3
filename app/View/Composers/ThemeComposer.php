@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Blog\View\Composers;
 
 use Illuminate\Contracts\Pagination\Paginator;
@@ -583,4 +584,13 @@ class ThemeComposer
         );
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     }
+=======
+namespace Modules\Fixcity\View\Composers;
+
+/**
+ * -----.
+ */
+class ThemeComposer {
+
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 }

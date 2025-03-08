@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 If you need to translate just the text and want to build your own UI - Spatie package is a good choice.
 If you need to translate the routes - Mcamara package
 If you need to translate just the text but don't want to build your UI - You can use Nikaia package or MohmmedAshraf package
@@ -92,3 +93,6 @@ outhebox/laravel-translations
 
 
 
+=======
+https://italia.github.io/design-comuni-pagine-statiche/sito/
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)

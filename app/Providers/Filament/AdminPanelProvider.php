@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -141,15 +142,24 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Providers\Filament;
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+declare(strict_types=1);
+
+namespace Modules\Fixcity\Providers\Filament;
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 
 use Filament\Panel;
 use Filament\SpatieLaravelTranslatablePlugin;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 use Pboivin\FilamentPeek\FilamentPeekPlugin;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
+<<<<<<< HEAD
     protected string $module = 'Blog';
 =======
 
@@ -183,4 +193,17 @@ class AdminPanelProvider extends XotBasePanelProvider
 =======
     protected string $module = 'Geo';
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+    protected string $module = 'Fixcity';
+
+    // public function panel(Panel $panel): Panel
+    // {
+    //     $panel->plugins([
+    //         // FilamentPeekPlugin::make(),
+    //         //SpatieLaravelTranslatablePlugin::make(),
+    //     ]);
+
+    //     return parent::panel($panel);
+    // }
+>>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
 }
