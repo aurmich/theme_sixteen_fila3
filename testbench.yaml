@@ -3,6 +3,7 @@ providers:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Modules\Xot\Providers\XotServiceProvider
   - Modules\Xot\Providers\Filament\AdminPanelProvider
   - Nwidart\Modules\LaravelModulesServiceProvider
@@ -19,3 +20,9 @@ providers:
 =======
   - Modules\Notify\Providers\NotifyServiceProvider
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+  - Modules\Tenant\Providers\TenantServiceProvider
+  - Modules\Tenant\Providers\Filament\AdminPanelProvider
+  - Nwidart\Modules\LaravelModulesServiceProvider
+
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -23,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 // use Modules\User\Http\Controllers\Api\UserController;
 
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,6 +37,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -132,3 +137,10 @@ Route::middleware('guest')->group(function () {
 });
 */
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+/*
+Route::middleware('auth:api')->get('/tenant', function (Request $request) {
+    return $request->user();
+});
+*/
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

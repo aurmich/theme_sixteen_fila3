@@ -6,6 +6,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -33,10 +34,14 @@ namespace Modules\Job\Models;
 =======
 namespace Modules\Notify\Models;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+namespace Modules\Tenant\Models;
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
@@ -47,10 +52,14 @@ use Modules\Xot\Traits\Updater;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+use Modules\Xot\Traits\Updater;
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
 /**
  * Class BaseModel.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 abstract class BaseModel extends Model
 {
@@ -83,6 +92,11 @@ abstract class BaseModel extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+abstract class BaseModel extends Model
+{
+    use HasFactory;
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     use Updater;
 
     /**
@@ -94,6 +108,7 @@ abstract class BaseModel extends Model implements HasMedia
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -118,6 +133,8 @@ abstract class BaseModel extends Model implements HasMedia
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     /** @var bool */
     public $incrementing = true;
 
@@ -131,10 +148,14 @@ abstract class BaseModel extends Model implements HasMedia
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     protected $connection = 'setting';
 
     /** @var list<string> */
     protected $appends = [];
+<<<<<<< HEAD
 =======
     protected $connection = 'job';
 
@@ -158,11 +179,14 @@ abstract class BaseModel extends Model implements HasMedia
     /** @var list<string> */
     protected $appends = [];
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
     /** @var string */
     protected $primaryKey = 'id';
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -173,6 +197,8 @@ abstract class BaseModel extends Model implements HasMedia
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -180,6 +206,7 @@ abstract class BaseModel extends Model implements HasMedia
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -227,10 +254,17 @@ abstract class BaseModel extends Model implements HasMedia
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return Factory
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
      */
     protected static function newFactory()
     {
         return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
      */
@@ -243,16 +277,22 @@ abstract class BaseModel extends Model implements HasMedia
     /** @return array<string, string> */
     protected function casts(): array
 =======
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     }
 
     /** @return array<string, string> */
     public function casts(): array
+<<<<<<< HEAD
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
             'published_at' => 'datetime',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -268,6 +308,11 @@ abstract class BaseModel extends Model implements HasMedia
 
             'verified_at' => 'datetime',
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+
+            'verified_at' => 'datetime',
+
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

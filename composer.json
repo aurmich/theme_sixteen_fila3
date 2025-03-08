@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -52,10 +53,15 @@
     "name": "laraxot/module_notify_fila3",
     "description": "notify module dedicated to managing notifications",
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    "name": "laraxot/module_tenant_fila3",
+    "description": "tenant module for software architecture that allows a single instance of a software application to serve multiple tenants",
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     "keywords": [
         "laraxot",
         "laravel",
         "filament",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -112,10 +118,22 @@
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+        "module_tenant",
+        "Laravel",
+        "Tenant module"
+    ],
+    "homepage": "https://github.com/laraxot/module_tenant_fila3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Xot",
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -191,10 +209,16 @@
     "require-dev": {},
     "repositories": [
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+    "require": {},
+    "require-dev": {},
+    "repositories_comment": [
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
         {
             "type": "path",
             "url": "../User"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
@@ -304,6 +328,11 @@
             "Modules\\Job\\Database\\Seeders\\": "database/seeders/"
 =======
             "url": "../UI"
+=======
+        {
+            "type": "path",
+            "url": "../Media"
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
         },
         {
             "type": "path",
@@ -313,14 +342,20 @@
     "extra": {
         "laravel": {
             "providers": [
+<<<<<<< HEAD
                 "Modules\\Media\\Providers\\MediaServiceProvider",
                 "Modules\\Media\\Providers\\Filament\\AdminPanelProvider"
+=======
+                "Modules\\Tenant\\Providers\\TenantServiceProvider",
+                "Modules\\Tenant\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
             ],
             "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Media\\": "app/",
             "Modules\\Media\\Database\\Factories\\": "database/factories/",
             "Modules\\Media\\Database\\Seeders\\": "database/seeders/"
@@ -431,6 +466,13 @@
             "url": "../UI"
         }
     ],
+=======
+            "Modules\\Tenant\\": "app/",
+            "Modules\\Tenant\\Database\\Factories\\": "database/factories/",
+            "Modules\\Tenant\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     "scripts": {
         "post-autoload-dump1": [
             "@php vendor/bin/testbench package:discover --ansi"
@@ -439,9 +481,12 @@
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
         "analyse": "vendor/bin/phpstan analyse",
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",
@@ -452,11 +497,15 @@
         "allow-plugins": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "phpstan/extension-installer": true,
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+            "phpstan/extension-installer": true,
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
             "pestphp/pest-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "wikimedia/composer-merge-plugin": true
@@ -464,6 +513,7 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
@@ -490,3 +540,6 @@
 =======
 }
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+}
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('setting::layouts.master')
 =======
 @extends('job::layouts.master')
@@ -15,10 +16,14 @@
 =======
 @extends('notify::layouts.master')
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+@extends('tenant::layouts.master')
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
 @section('content')
     <h1>Hello World</h1>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <p>
@@ -40,4 +45,9 @@
         This view is loaded from module: {!! config('notify.name') !!}
     </p>
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    <p>
+        This view is loaded from module: {!! config('tenant.name') !!}
+    </p>
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 @endsection

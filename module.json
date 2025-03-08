@@ -4,14 +4,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "Xot",
     "alias": "xot",
+=======
+    "name": "Tenant",
+    "alias": "tenant",
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     "description": "",
     "keywords": [],
     "priority": 2,
     "active": 1,
     "order": 2,
     "providers": [
+<<<<<<< HEAD
         "Modules\\Xot\\Providers\\XotServiceProvider",
         "Modules\\Xot\\Providers\\Filament\\AdminPanelProvider"
 =======
@@ -26,10 +32,15 @@
         "Modules\\Job\\Providers\\JobServiceProvider",
         "Modules\\Job\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+        "Modules\\Tenant\\Providers\\TenantServiceProvider",
+        "Modules\\Tenant\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     ],
     "aliases": [],
     "files": [],
     "requires": []
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     "name": "Setting",
@@ -91,3 +102,6 @@
 =======
 }
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+}
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

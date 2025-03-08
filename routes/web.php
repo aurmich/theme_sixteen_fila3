@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 <<<<<<< HEAD
 
@@ -25,6 +26,10 @@ use Modules\Xot\Datas\XotData;
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+declare(strict_types=1);
+
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +40,7 @@ use Modules\Xot\Datas\XotData;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -105,3 +111,10 @@ declare(strict_types=1);
 
 // Filament will handle all routes for this module
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+/*
+Route::prefix('tenant')->group(function() {
+    Route::get('/', 'TenantController@index');
+});
+*/
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

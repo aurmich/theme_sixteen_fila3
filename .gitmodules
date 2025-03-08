@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #	url = git@github.com:laraxot/doc_setting.git
 =======
 #	url = git@github.com:laraxot/doc_job.git
@@ -15,3 +16,6 @@
 #	url = git@github.com:laraxot/doc_notify.git
 #	url = https://github.com/laraxot/doc_notify.git
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+#	url = git@github.com:laraxot/doc_tenant.git
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

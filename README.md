@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ~~~bash
 git clone --recurse-submodules https://github.com/aurmich/base_fixcity_fila3.git 
 cd base_fixcity_fila3
@@ -533,19 +534,67 @@ Getting started with the Fila3 Notify Module is easy! Follow these steps to inte
    ```bash
    git clone https://github.com/laraxot/module_notify_fila3.git
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+# 🌐 Simplify Multi-Tenancy with the Fila3 Tenant Module! 🚀
+
+![GitHub issues](https://img.shields.io/github/issues/laraxot/module_tenant_fila3)
+![GitHub forks](https://img.shields.io/github/forks/laraxot/module_tenant_fila3)
+![GitHub stars](https://img.shields.io/github/stars/laraxot/module_tenant_fila3)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+Welcome to the **Fila3 Tenant Module**! This powerful multi-tenancy solution is designed to help developers build scalable applications that can serve multiple clients with ease. Streamline your architecture and enhance user experience by managing tenants effortlessly!
+
+## 📦 What’s Inside?
+
+The Fila3 Tenant Module provides a comprehensive suite of features for handling multi-tenancy, including:
+
+- **Tenant Management**: Create, update, and delete tenant profiles with ease.
+- **Isolation**: Ensure data and configurations are securely isolated between tenants.
+- **Flexible Architecture**: Choose between a shared database or separate databases for each tenant.
+- **Dynamic Configuration**: Customize settings for each tenant to suit their unique requirements.
+
+## 🌟 Key Features
+
+- **User Authentication**: Built-in support for tenant-based user authentication.
+- **Role-Based Access Control**: Assign roles and permissions per tenant to maintain security.
+- **Tenant-Specific Routes**: Easily manage routing and access control tailored for each tenant.
+- **Automatic Tenant Switching**: Implement seamless tenant switching based on user context.
+- **Centralized Dashboard**: Monitor all tenants from a single dashboard for administrative ease.
+- **Extensible API**: Integrate with external services and extend functionality effortlessly.
+
+## 🚀 Why Choose Fila3 Tenant?
+
+- **Scalable & Efficient**: Designed for high performance, making it suitable for both small applications and large enterprises.
+- **Developer-Friendly**: Easy to set up and integrate into existing projects.
+- **Community Support**: Engage with an active community of developers ready to help you succeed.
+
+## 🔧 Installation
+
+Getting started with the Fila3 Tenant Module is straightforward! Follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/laraxot/module_tenant_fila3.git
+
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
 Navigate to the project directory:
 bash
 Copia codice
 <<<<<<< HEAD
+<<<<<<< HEAD
 cd module_media_fila3
 =======
 cd module_notify_fila3
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+cd module_tenant_fila3
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 Install dependencies:
 bash
 Copia codice
 npm install
+<<<<<<< HEAD
 <<<<<<< HEAD
 Configure your settings in the config file.
 Start your application and watch the magic happen!
@@ -574,6 +623,32 @@ notify.on('notificationReceived', (data) => {
 🤝 Contributing
 We love contributions! If you have ideas, bug fixes, or enhancements, check out the contributing guidelines to get started.
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+Configure tenant settings in the config file.
+Launch your application and experience effortless multi-tenancy!
+📜 Usage Examples
+Here are a few snippets to demonstrate how to use the Fila3 Tenant Module in your application:
+
+Creating a New Tenant
+javascript
+Copia codice
+tenantManager.create({
+  name: "Tenant A",
+  database: "tenant_a_db",
+  settings: { /* tenant-specific settings */ }
+});
+Switching Tenants
+javascript
+Copia codice
+tenantManager.switchTo("Tenant A");
+Retrieving Tenant Information
+javascript
+Copia codice
+const tenantInfo = tenantManager.getCurrentTenant();
+console.log("Current Tenant:", tenantInfo);
+🤝 Contributing
+We welcome contributions! If you have ideas, bug fixes, or enhancements, check out the contributing guidelines to get started.
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -581,8 +656,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 👤 Author
 Marco Sottana
 <<<<<<< HEAD
+<<<<<<< HEAD
 Check out more of my work at marco76tv!
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 Discover more of my work at marco76tv!
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+Discover more of my work at marco76tv!
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)

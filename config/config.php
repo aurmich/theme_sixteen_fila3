@@ -8,6 +8,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -46,12 +47,21 @@ return [
         'enabled' => true,
         'sort' => 70,
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    'name' => 'Tenant',
+    'description' => 'Modulo per la gestione multi-tenant dell\'applicazione',
+    'icon' => 'heroicon-o-building-office',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 80,
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -79,4 +89,8 @@ return [
         'Modules\\Notify\\Providers\\NotifyServiceProvider',
     ],
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+        'Modules\\Tenant\\Providers\\TenantServiceProvider',
+    ],
+>>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 ];
