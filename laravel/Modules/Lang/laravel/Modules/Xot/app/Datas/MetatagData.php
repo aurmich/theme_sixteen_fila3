@@ -17,6 +17,7 @@ use Spatie\LaravelData\Data;
 class MetatagData extends Data implements Wireable
 {
     use WireableData;
+
     public string $title;
 
     public string $sitename;
@@ -106,7 +107,7 @@ class MetatagData extends Data implements Wireable
 
     public function getLogoHeight(): string
     {
-        if (null == $this->logo_height) {
+        if ($this->logo_height == null) {
             $this->logo_height = '2em';
         }
 
@@ -145,10 +146,10 @@ class MetatagData extends Data implements Wireable
             function (array $item, int|string $key): array {
                 $k = $item['key'];
                 $v = $item['color'];
-                if ('custom' != $v) {
+                if ($v != 'custom') {
                     $v = Arr::get(Color::all(), $v);
                 }
-                if ('custom' == $v) {
+                if ($v == 'custom') {
                     $v = Color::hex($item['hex']);
                 }
 
@@ -197,8 +198,8 @@ class MetatagData extends Data implements Wireable
                 $colorValue = is_string($item['color'] ?? null) ? $item['color'] : '';
 
                 $value = match (true) {
-                    'custom' === $colorValue && is_string($item['hex'] ?? null) => Color::hex($item['hex']),
-                    'custom' !== $colorValue => Arr::get(Color::all(), $colorValue, ''),
+                    $colorValue === 'custom' && is_string($item['hex'] ?? null) => Color::hex($item['hex']),
+                    $colorValue !== 'custom' => Arr::get(Color::all(), $colorValue, ''),
                     default => '',
                 };
 

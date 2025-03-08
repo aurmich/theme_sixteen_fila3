@@ -7,6 +7,7 @@ namespace Modules\Xot\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+
 use function Safe\json_encode;
 
 class DatabaseSchemaExporterCommand extends Command
@@ -141,7 +142,7 @@ class DatabaseSchemaExporterCommand extends Command
         foreach ($columnInfo as $column) {
             $columns[$column->Field] = [
                 'type' => $column->Type,
-                'nullable' => 'YES' === $column->Null,
+                'nullable' => $column->Null === 'YES',
                 'default' => $column->Default,
                 'comment' => $column->Comment ?? '',
                 'extra' => $column->Extra ?? '',

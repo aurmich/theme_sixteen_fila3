@@ -82,11 +82,10 @@ class LangServiceProvider extends XotBaseServiceProvider
             $component = app(AutoLabelAction::class)->execute($component);
             Assert::isInstanceOf($component, Column::class);
             $component = $component
-                    ->wrapHeader()
-                    ->verticallyAlignStart()
-                    ->grow()
-                    // ->wrap()
-            ;
+                ->wrapHeader()
+                ->verticallyAlignStart()
+                ->grow();
+            // ->wrap()
 
             return $component;
         });

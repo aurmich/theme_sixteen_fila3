@@ -8,19 +8,12 @@ use Filament\Actions;
 use Filament\Tables;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Enums\ActionsPosition;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Tables\Table;
 use Modules\Gdpr\Filament\Resources\EventResource;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
 
 class ListEvents extends XotBaseListRecords
 {
     protected static string $resource = EventResource::class;
-
-
-
-
 
     public function getListTableColumns(): array
     {

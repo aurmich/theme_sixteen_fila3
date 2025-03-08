@@ -36,6 +36,4 @@ class FailedImportRowResource extends XotBaseResource
             'edit' => Pages\EditFailedImportRow::route('/{record}/edit'),
         ];
     }
-
-
 }

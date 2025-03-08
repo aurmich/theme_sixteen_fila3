@@ -116,13 +116,10 @@ class FailedJobResource extends XotBaseResource
             );
     }
 
-
     public static function getPages(): array
     {
         return [
             'index' => ListFailedJobs::route('/'),
         ];
     }
-
-
 }

@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources;
 
-use Illuminate\Support\Str;
 use Filament\Pages\SubNavigationPosition;
-use Modules\Xot\Actions\ModelClass\CountAction;
 use Filament\Resources\Resource as FilamentResource;
+use Illuminate\Support\Str;
+use Modules\Xot\Actions\ModelClass\CountAction;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 
 abstract class XotBaseResource extends FilamentResource
@@ -26,6 +26,7 @@ abstract class XotBaseResource extends FilamentResource
     // protected static bool $shouldRegisterNavigation = false;
     // protected static ?string $navigationGroup = 'Parametri di Sistema';
     protected static ?int $navigationSort = 3;
+
     protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
 
     public static function getModuleName(): string
@@ -81,6 +82,7 @@ abstract class XotBaseResource extends FilamentResource
             return $db;
             */
             $count = app(CountAction::class)->execute(static::getModel());
+
             return number_format($count, 0);
         } catch (\Exception $e) {
             return '---';

@@ -2,8 +2,6 @@
 
 namespace Modules\Fixcity\Actions;
 
-use Filament\Forms;
-use Filament\Actions\Action;
 use Illuminate\Support\Facades\Bus;
 use Modules\Fixcity\Models\Ticket;
 use Spatie\QueueableAction\QueueableAction;
@@ -20,8 +18,8 @@ class GenerateTicketsAction
             collect(range(1, $count))
                 ->map(fn () => function () use ($states) {
                     $state = $this->faker->randomElement($states);
-                    
-                    match($state) {
+
+                    match ($state) {
                         'open' => Ticket::factory()->open()->create(),
                         'urgent' => Ticket::factory()->urgent()->create(),
                         'resolved' => Ticket::factory()->resolved()->create(),
@@ -30,4 +28,4 @@ class GenerateTicketsAction
                 })
         )->dispatch();
     }
-} 
+}

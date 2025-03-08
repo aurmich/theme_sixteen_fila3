@@ -14,7 +14,7 @@ return [
 
     'paths' => [
         'content' => base_path('database/content'),
-        //'cache' => storage_path('framework/cache/orbit'),
+        // 'cache' => storage_path('framework/cache/orbit'),
         'cache' => TenantService::filePath(''),
     ],
 

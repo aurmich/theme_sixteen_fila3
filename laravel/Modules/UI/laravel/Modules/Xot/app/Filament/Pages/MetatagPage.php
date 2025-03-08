@@ -23,6 +23,7 @@ use Webmozart\Assert\Assert;
 
 /**
  * MetatagPage
+ *
  * @property ComponentContainer $form
  */
 class MetatagPage extends Page implements HasForms
@@ -81,21 +82,21 @@ class MetatagPage extends Page implements HasForms
                         ->helperText('logo for dark css'),
                     TextInput::make('logo_height'),
                     Repeater::make('colors')
-                    ->schema([
-                        Select::make('key')
-                            // ->label('Color Key')
-                            ->required()
-                            ->options($metatag->getFilamentColors()),
-                        Select::make('color')
-                            // ->label('Color')
-                            ->required()
-                            ->reactive()
-                            ->options(array_merge(['custom' => '--- custom ---'], $metatag->getAllColors())),
-                        ColorPicker::make('hex')
-                            // ->label('custom Color')
-                            ->visible(fn (Get $get): bool => 'custom' == $get('color'))
-                            ->required(), // e.g., '#0071b0'
-                    ])
+                        ->schema([
+                            Select::make('key')
+                                // ->label('Color Key')
+                                ->required()
+                                ->options($metatag->getFilamentColors()),
+                            Select::make('color')
+                                // ->label('Color')
+                                ->required()
+                                ->reactive()
+                                ->options(array_merge(['custom' => '--- custom ---'], $metatag->getAllColors())),
+                            ColorPicker::make('hex')
+                                // ->label('custom Color')
+                                ->visible(fn (Get $get): bool => $get('color') == 'custom')
+                                ->required(), // e.g., '#0071b0'
+                        ])
                     // ->keyValueArray(true) // Store as key-value pairs in the 'colors' array
                         ->columns(3),
                 ]

@@ -37,7 +37,7 @@ abstract class XotBaseMigration extends Migration
      */
     public function getModelClass(): string
     {
-        if (null !== $this->model_class) {
+        if ($this->model_class !== null) {
             return $this->model_class;
         }
 
@@ -58,7 +58,7 @@ abstract class XotBaseMigration extends Migration
         $mod_path = Module::getPath();
 
         // Controllo che $filename sia valido prima di passarlo a Str::of()
-        $mod_name = false !== $filename
+        $mod_name = $filename !== false
             ? Str::of($filename)
                 ->after($mod_path)
                 ->explode(\DIRECTORY_SEPARATOR)[1]
@@ -103,9 +103,9 @@ abstract class XotBaseMigration extends Migration
     /**
      * Get the table indexes using Doctrine's schema manager.
      *
-     * @throws \Doctrine\DBAL\Exception
-     *
      * @return array<\Doctrine\DBAL\Schema\Index>
+     *
+     * @throws \Doctrine\DBAL\Exception
      */
     // public function getTableIndexes(): array
     // {
@@ -274,11 +274,11 @@ abstract class XotBaseMigration extends Migration
         $methodName = 'updateUserKey'.Str::studly($this->model->getKeyType());
         $this->{$methodName}($table);
 
-        if ($this->hasColumn('model_id') && 'bigint' === $this->getColumnType('model_id')) {
+        if ($this->hasColumn('model_id') && $this->getColumnType('model_id') === 'bigint') {
             $table->string('model_id', 36)->index()->change();
         }
 
-        if ($this->hasColumn('team_id') && 'bigint' === $this->getColumnType('team_id')) {
+        if ($this->hasColumn('team_id') && $this->getColumnType('team_id') === 'bigint') {
             $table->uuid('team_id')->nullable()->change();
         }
     }
@@ -289,11 +289,11 @@ abstract class XotBaseMigration extends Migration
             $table->uuid('id')->primary()->first();
         }
 
-        if ($this->hasColumn('id') && 'bigint' === $this->getColumnType('id')) {
+        if ($this->hasColumn('id') && $this->getColumnType('id') === 'bigint') {
             $table->uuid('id')->change();
         }
 
-        if ($this->hasColumn('user_id') && 'bigint' === $this->getColumnType('user_id')) {
+        if ($this->hasColumn('user_id') && $this->getColumnType('user_id') === 'bigint') {
             $table->uuid('user_id')->change();
         }
     }

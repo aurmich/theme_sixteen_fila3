@@ -6,8 +6,6 @@ namespace Modules\Gdpr\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Modules\Gdpr\Filament\Resources\EventResource\Pages;
 use Modules\Gdpr\Models\Event;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -43,8 +41,6 @@ class EventResource extends XotBaseResource
                 ]
             );
     }
-
-
 
     public static function getRelations(): array
     {

@@ -14,12 +14,11 @@ use Modules\User\Models\Membership;
 use Modules\User\Models\Team;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
-
-use function Safe\realpath;
-
 use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Webmozart\Assert\Assert;
+
+use function Safe\realpath;
 
 /**
  * Class Modules\Xot\Datas\XotData.
@@ -121,17 +120,18 @@ class XotData extends Data implements Wireable
     /**
      * Ottiene un utente tramite email.
      *
-     * @param string $email L'indirizzo email dell'utente
+     * @param  string  $email  L'indirizzo email dell'utente
      * @return UserContract L'utente trovato o creato
+     *
      * @throws \InvalidArgumentException Se la classe utente non è configurata correttamente
      */
     public function getUserByEmail(string $email): UserContract
     {
         $userClass = $this->getUserClass();
-        
+
         /** @var Model&UserContract $userInstance */
-        $userInstance = new $userClass();
-        
+        $userInstance = new $userClass;
+
         if (! in_array('email', $userInstance->getFillable(), true)) {
             throw new \InvalidArgumentException(
                 sprintf('Attributo email non trovato nei fillable del modello %s', get_class($userInstance))
@@ -247,8 +247,9 @@ class XotData extends Data implements Wireable
     /**
      * Ottiene un profilo tramite email.
      *
-     * @param string $email L'indirizzo email dell'utente
+     * @param  string  $email  L'indirizzo email dell'utente
      * @return ProfileContract Il profilo associato all'utente
+     *
      * @throws \InvalidArgumentException Se l'utente non viene trovato
      */
     public function getProfileByEmail(string $email): ProfileContract
@@ -256,9 +257,9 @@ class XotData extends Data implements Wireable
         /** @var UserContract $user */
         $user = $this->getUserByEmail($email);
         Assert::notNull($user->getKey(), 'User ID non può essere null');
-        
+
         /** @var ProfileContract $profile */
-        $profile = $this->getProfileModelByUserId((string)$user->getKey());
+        $profile = $this->getProfileModelByUserId((string) $user->getKey());
         Assert::implementsInterface($profile, ProfileContract::class);
 
         return $profile;
@@ -271,7 +272,7 @@ class XotData extends Data implements Wireable
     {
         /** @var UserContract|null */
         $user = \Illuminate\Support\Facades\Auth::user();
-        if (null === $user) {
+        if ($user === null) {
             return false;
         }
 
@@ -280,7 +281,7 @@ class XotData extends Data implements Wireable
 
     public function getProfileModel(): ProfileContract
     {
-        if (null !== $this->profile) {
+        if ($this->profile !== null) {
             return $this->profile;
         }
         $user_id = (string) authId();

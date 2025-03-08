@@ -62,8 +62,6 @@ class ScheduleResource extends XotBaseResource
         ];
     }
 
-
-
     public static function getFormSchema(): array
     {
         // --- occorre aggiornare getCOmmandsAction per laravel 11 che ah rimosso il kernel

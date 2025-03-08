@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\PcreException;
+
 use function Safe\file_get_contents;
 use function Safe\file_put_contents;
 use function Safe\glob;
@@ -51,6 +51,7 @@ class GenerateResourceFormSchemaCommand extends Command
 
             if (! isset($namespaceMatch[1]) || ! isset($classMatch[1])) {
                 $this->warn("Skipping {$file}: Invalid file format");
+
                 continue;
             }
 
@@ -60,6 +61,7 @@ class GenerateResourceFormSchemaCommand extends Command
 
             if (! $this->needsFormSchema($content)) {
                 $this->info("Skipping {$className}: Form schema already exists");
+
                 continue;
             }
 

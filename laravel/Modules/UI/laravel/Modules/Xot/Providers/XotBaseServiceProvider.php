@@ -14,13 +14,12 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Modules\Xot\Actions\Blade\RegisterBladeComponentsAction;
 use Modules\Xot\Actions\Livewire\RegisterLivewireComponentsAction;
+use Webmozart\Assert\Assert;
 
 use function Safe\glob;
 use function Safe\json_decode;
 use function Safe\json_encode;
 use function Safe\realpath;
-
-use Webmozart\Assert\Assert;
 
 /**
  * Class XotBaseServiceProvider.
@@ -152,7 +151,7 @@ abstract class XotBaseServiceProvider extends ServiceProvider
                 Str::before($this->module_ns, '\Providers'),
                 $prefix,
             );
-        if (0 == $comps->count()) {
+        if ($comps->count() == 0) {
             return;
         }
         $commands = Arr::map($comps->items(), function ($item) {
@@ -208,7 +207,7 @@ abstract class XotBaseServiceProvider extends ServiceProvider
                     ];
                     if (class_exists($event) && class_exists($listener)) {
                         // \Event::listen($event, $listener);
-                        $tmp = new \stdClass();
+                        $tmp = new \stdClass;
                         $tmp->event = $event;
                         $tmp->listener = $listener;
                         $events[] = $tmp;

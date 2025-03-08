@@ -14,9 +14,8 @@ class TranslatorHelper
     /**
      * Converte in modo sicuro un oggetto Translator o qualsiasi altro valore in una stringa.
      *
-     * @param mixed  $value   Il valore da convertire in stringa
-     * @param string $default Valore predefinito se non è possibile convertire
-     *
+     * @param  mixed  $value  Il valore da convertire in stringa
+     * @param  string  $default  Valore predefinito se non è possibile convertire
      * @return string La stringa risultante
      */
     public static function toString(mixed $value, string $default = ''): string

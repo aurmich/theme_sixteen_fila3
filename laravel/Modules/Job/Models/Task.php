@@ -51,6 +51,7 @@ use Webmozart\Assert\Assert;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Job\Models\Result> $results
  * @property-read int|null $results_count
  * @property-read \Modules\Camping\Models\Profile|null $updater
+ *
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task query()
@@ -80,6 +81,7 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task whereTimezone($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task whereUpdatedBy($value)
+ *
  * @mixin \Eloquent
  */
 class Task extends BaseModel
@@ -163,7 +165,7 @@ class Task extends BaseModel
     public function getLastResultAttribute(): ?Result
     {
         $res = $this->results()->orderBy('id', 'desc')->first();
-        if (null == $res) {
+        if ($res == null) {
             return null;
         }
         Assert::isInstanceOf($res, Result::class);
@@ -211,7 +213,7 @@ class Task extends BaseModel
     public function autoCleanup(): void
     {
         if ($this->auto_cleanup_num > 0) {
-            if ('results' === $this->auto_cleanup_type) {
+            if ($this->auto_cleanup_type === 'results') {
                 $oldest_id = $this->results()
                     ->orderBy('ran_at', 'desc')
                     ->limit($this->auto_cleanup_num)

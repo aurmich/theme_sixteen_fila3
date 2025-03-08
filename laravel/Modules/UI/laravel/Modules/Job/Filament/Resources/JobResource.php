@@ -13,7 +13,9 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class JobResource extends XotBaseResource
 {
     protected static ?string $model = Job::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-circle-stack';
+
     protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
@@ -47,6 +49,4 @@ class JobResource extends XotBaseResource
             Widgets\JobStatsOverview::class,
         ];
     }
-
-
 }

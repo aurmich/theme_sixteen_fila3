@@ -15,30 +15,30 @@ use function Safe\json_encode;
 /**
  * Modules\Gdpr\Models\Event.
  *
- * @property string                            $id
- * @property string|null                       $treatment_id
- * @property string|null                       $consent_id
- * @property string                            $subject_id
- * @property string                            $ip
- * @property string                            $action
- * @property string                            $payload
- * @property Carbon|null                       $created_at
- * @property Carbon|null                       $updated_at
+ * @property string $id
+ * @property string|null $treatment_id
+ * @property string|null $consent_id
+ * @property string $subject_id
+ * @property string $ip
+ * @property string $action
+ * @property string $payload
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property \Modules\Gdpr\Models\Consent|null $consent
  *
  * @method static \Modules\Gdpr\Database\Factories\EventFactory factory($count = null, $state = [])
- * @method static Builder|Event                                 newModelQuery()
- * @method static Builder|Event                                 newQuery()
- * @method static Builder|Event                                 query()
- * @method static Builder|Event                                 whereAction($value)
- * @method static Builder|Event                                 whereConsentId($value)
- * @method static Builder|Event                                 whereCreatedAt($value)
- * @method static Builder|Event                                 whereId($value)
- * @method static Builder|Event                                 whereIp($value)
- * @method static Builder|Event                                 wherePayload($value)
- * @method static Builder|Event                                 whereSubjectId($value)
- * @method static Builder|Event                                 whereTreatmentId($value)
- * @method static Builder|Event                                 whereUpdatedAt($value)
+ * @method static Builder|Event newModelQuery()
+ * @method static Builder|Event newQuery()
+ * @method static Builder|Event query()
+ * @method static Builder|Event whereAction($value)
+ * @method static Builder|Event whereConsentId($value)
+ * @method static Builder|Event whereCreatedAt($value)
+ * @method static Builder|Event whereId($value)
+ * @method static Builder|Event whereIp($value)
+ * @method static Builder|Event wherePayload($value)
+ * @method static Builder|Event whereSubjectId($value)
+ * @method static Builder|Event whereTreatmentId($value)
+ * @method static Builder|Event whereUpdatedAt($value)
  *
  * @mixin \Eloquent
  */

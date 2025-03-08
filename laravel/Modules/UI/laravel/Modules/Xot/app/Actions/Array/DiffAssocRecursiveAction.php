@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions\Array;
 
-use Spatie\QueueableAction\QueueableAction;
 use InvalidArgumentException;
+use Spatie\QueueableAction\QueueableAction;
+
 use function Safe\json_encode;
 
 /**
  * Class DiffAssocRecursiveAction
- * 
+ *
  * Calcola la differenza ricorsiva tra due array associativi.
  */
 class DiffAssocRecursiveAction
@@ -19,9 +20,10 @@ class DiffAssocRecursiveAction
 
     /**
      * Corregge i tipi dei valori nell'array.
-     * 
-     * @param array<int|string,array<string,mixed>> $data
+     *
+     * @param  array<int|string,array<string,mixed>>  $data
      * @return array<int|string,array<string,mixed>>
+     *
      * @throws InvalidArgumentException Se un elemento non è un array
      */
     public static function fixType(array $data): array
@@ -51,10 +53,11 @@ class DiffAssocRecursiveAction
 
     /**
      * Calcola la differenza tra due array.
-     * 
-     * @param array<int|string,array<string,mixed>> $arr_1 Primo array
-     * @param array<int|string,array<string,mixed>> $arr_2 Secondo array
+     *
+     * @param  array<int|string,array<string,mixed>>  $arr_1  Primo array
+     * @param  array<int|string,array<string,mixed>>  $arr_2  Secondo array
      * @return array<int|string,array<string,mixed>> Array contenente gli elementi presenti in $arr_1 ma non in $arr_2
+     *
      * @throws InvalidArgumentException Se c'è un errore durante il confronto
      */
     public function execute(array $arr_1, array $arr_2): array

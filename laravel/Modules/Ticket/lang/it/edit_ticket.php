@@ -1,28 +1,23 @@
-<?php return array (
-  'actions' => 
-  array (
-    'delete' => 
-    array (
-      'label' => 'delete',
-    ),
-    'cancel' => 
-    array (
-      'label' => 'cancel',
-    ),
-    'save' => 
-    array (
-      'label' => 'save',
-    ),
-  ),
-  'fields' => 
-  array (
-    'images' => 
-    array (
-      'label' => 'images',
-    ),
-    'location' => 
-    array (
-      'label' => 'location',
-    ),
-  ),
-);
+<?php
+
+return [
+    'actions' => [
+        'delete' => [
+            'label' => 'delete',
+        ],
+        'cancel' => [
+            'label' => 'cancel',
+        ],
+        'save' => [
+            'label' => 'save',
+        ],
+    ],
+    'fields' => [
+        'images' => [
+            'label' => 'images',
+        ],
+        'location' => [
+            'label' => 'location',
+        ],
+    ],
+];

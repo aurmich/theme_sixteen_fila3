@@ -13,18 +13,14 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Modules\User\Models\SocialiteUser;
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
-use Modules\Xot\Filament\Traits\HasXotTable;
 
 /**
  * Class Modules\User\Filament\Resources\UserResource\RelationManagers\SocialiteUsersRelationManager.
  */
 class SocialiteUsersRelationManager extends XotBaseRelationManager
 {
-    
-
     protected static string $relationship = 'socialiteUsers';
 
-   
     /**
      * Define form fields in a dedicated method for reusability.
      *

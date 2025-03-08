@@ -7,7 +7,6 @@ namespace Modules\Job\Filament\Resources\ScheduleResource\Pages;
 use Filament\Actions;
 use Filament\Tables;
 use Filament\Tables\Columns\Column;
-use Filament\Tables\Table;
 use Illuminate\Support\Carbon;
 use Modules\Job\Filament\Columns\ActionGroup;
 use Modules\Job\Filament\Columns\ScheduleArguments;
@@ -25,7 +24,7 @@ class ListSchedules extends XotBaseListRecords
         return [
             Tables\Columns\TextColumn::make('command')
                 ->getStateUsing(function ($record) {
-                    if ('custom' === $record->command) {
+                    if ($record->command === 'custom') {
                         return $record->command_custom;
                     }
 
@@ -143,8 +142,6 @@ class ListSchedules extends XotBaseListRecords
             Tables\Actions\DeleteBulkAction::make(),
         ];
     }
-
-
 
     protected function getHeaderActions(): array
     {

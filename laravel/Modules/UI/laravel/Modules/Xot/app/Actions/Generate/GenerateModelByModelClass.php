@@ -13,7 +13,7 @@ use Webmozart\Assert\Assert;
 
 /**
  * Class GenerateModelByModelClass
- * 
+ *
  * Genera un modello a partire da una classe modello.
  */
 class GenerateModelByModelClass
@@ -25,7 +25,7 @@ class GenerateModelByModelClass
     /**
      * Esegue la generazione del modello.
      *
-     * @param string $modelClass Nome della classe modello
+     * @param  string  $modelClass  Nome della classe modello
      * @return string Il percorso del modello generato
      */
     public function execute(string $modelClass): string
@@ -62,7 +62,7 @@ class GenerateModelByModelClass
         $table_start = mb_strpos($content, 'protected $table');
         Assert::integer($fillable_start = mb_strpos($content, 'protected $fillable'), '['.__LINE__.']['.class_basename($this).']');
         $fillable_end = mb_strpos($content, '];', $fillable_start);
-        if (false === $table_start) {
+        if ($table_start === false) {
             $before = mb_substr($content, 0, $fillable_end + 2);
             $after = mb_substr($content, $fillable_end + 2);
             $content = $before.PHP_EOL.'    protected $table = "'.$value.'";'.PHP_EOL.$after;
@@ -74,8 +74,7 @@ class GenerateModelByModelClass
     /**
      * Create a factory for the given model class.
      *
-     * @param string $model_class The class name of the model to create the factory for
-     *
+     * @param  string  $model_class  The class name of the model to create the factory for
      * @return void
      */
     public function generate(string $model_class)

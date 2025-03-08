@@ -39,7 +39,7 @@ class SanitizeFieldsHeaderAction extends Action
                         if ($string != $item) {
                             $row->{$field} = $string;
                             $save = true;
-                            ++$c;
+                            $c++;
                         }
                     }
                     if ($save) {
@@ -49,8 +49,7 @@ class SanitizeFieldsHeaderAction extends Action
                 Notification::make()
                     ->title(''.$c.' record sanitized')
                     ->success()
-                    ->send()
-                ;
+                    ->send();
             });
     }
 

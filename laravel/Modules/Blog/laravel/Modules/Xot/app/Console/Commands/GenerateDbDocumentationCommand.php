@@ -40,7 +40,7 @@ class GenerateDbDocumentationCommand extends Command
         $schemaContent = File::get($schemaFilePath);
         $schema = json_decode($schemaContent, true);
 
-        if (JSON_ERROR_NONE !== json_last_error()) {
+        if (json_last_error() !== JSON_ERROR_NONE) {
             $this->error('Errore nella decodifica del file JSON: '.json_last_error_msg());
 
             return 1;
@@ -108,7 +108,7 @@ MARKDOWN;
         // Aggiungi gli ER per le relazioni
         $processedRelationships = [];
         foreach ($schema['relationships'] as $relationship) {
-            if ('belongs_to' === $relationship['type']) {
+            if ($relationship['type'] === 'belongs_to') {
                 $from = $relationship['from_table'];
                 $to = $relationship['to_table'];
                 $key = "{$from}_{$to}";
@@ -170,7 +170,7 @@ MARKDOWN;
             $content .= "|------|---------|-------|\n";
 
             foreach ($indexes as $indexName => $index) {
-                if ('PRIMARY' === $indexName) {
+                if ($indexName === 'PRIMARY') {
                     continue;
                 }
 
@@ -264,9 +264,9 @@ MARKDOWN;
                 continue;
             }
 
-            if ($relationship['from_table'] === $tableName && 'belongs_to' === $relationship['type']) {
+            if ($relationship['from_table'] === $tableName && $relationship['type'] === 'belongs_to') {
                 $tableRelationships['belongs_to'][] = $relationship;
-            } elseif ($relationship['from_table'] === $tableName && 'has_many' === $relationship['type']) {
+            } elseif ($relationship['from_table'] === $tableName && $relationship['type'] === 'has_many') {
                 $tableRelationships['has_many'][] = $relationship;
             }
         }

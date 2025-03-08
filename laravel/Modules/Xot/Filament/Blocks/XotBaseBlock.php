@@ -19,7 +19,7 @@ abstract class XotBaseBlock
         return Block::make($name)
             ->schema($schema)
 
-            ->columns('form' === $context ? 3 : 1);
+            ->columns($context === 'form' ? 3 : 1);
     }
 
     public static function getBlockSchema(): array
@@ -30,11 +30,11 @@ abstract class XotBaseBlock
     public static function getBlockVarSchema(): array
     {
         $options = app(GetViewBlocksOptionsByTypeAction::class)
-           ->execute('article_list', false);
+            ->execute('article_list', false);
 
         return [
             Select::make('view')
-                       ->options($options),
+                ->options($options),
         ];
     }
 }

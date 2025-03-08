@@ -17,7 +17,7 @@ return [
     'disable_frontend_dynamic_route' => false,
     'register_adm_theme' => false,
     'register_pub_theme' => false,
-    //'super_admin' => 'vair81@gmail.com',
+    // 'super_admin' => 'vair81@gmail.com',
     'super_admin' => 'marco.sottana@gmail.com',
 
     'team_class' => \Modules\Quaeris\Models\Customer::class,

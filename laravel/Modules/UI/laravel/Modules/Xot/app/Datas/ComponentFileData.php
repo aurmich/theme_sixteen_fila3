@@ -11,9 +11,9 @@ use Spatie\LaravelData\DataCollection;
 
 /**
  * Class ComponentFileData
- * 
+ *
  * Rappresenta i dati di un file componente.
- * 
+ *
  * @property string $name Nome del componente
  * @property string $class Classe del componente
  * @property string|null $module Nome del modulo (opzionale)
@@ -33,7 +33,7 @@ class ComponentFileData extends Data
     /**
      * Crea una collezione di ComponentFileData.
      *
-     * @param EloquentCollection|Collection|array<int|string,mixed> $data
+     * @param  EloquentCollection|Collection|array<int|string,mixed>  $data
      */
     public static function collection(EloquentCollection|Collection|array $data): DataCollection
     {

@@ -25,7 +25,5 @@ abstract class XotBaseEventServiceProvider extends LaravelEventServiceProvider
     /**
      * Configure the proper event listeners for email verification.
      */
-    protected function configureEmailVerification(): void
-    {
-    }
+    protected function configureEmailVerification(): void {}
 }

@@ -14,9 +14,8 @@ class TranslatorHelper
     /**
      * Converte in modo sicuro un oggetto Translator o qualsiasi altro valore in una stringa.
      *
-     * @param mixed  $value   Il valore da convertire in stringa
-     * @param string $default Valore predefinito se non è possibile convertire
-     *
+     * @param  mixed  $value  Il valore da convertire in stringa
+     * @param  string  $default  Valore predefinito se non è possibile convertire
      * @return string La stringa risultante
      */
     public static function toString(mixed $value, string $default = ''): string
@@ -39,7 +38,7 @@ class TranslatorHelper
         // Se è un oggetto Translator, gestiscilo in modo specifico
         if ($value instanceof Translator) {
             try {
-                return 'Translator[' . $value->getLocale() . ']';
+                return 'Translator['.$value->getLocale().']';
             } catch (\Throwable) {
                 return 'Translator Object';
             }

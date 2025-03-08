@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Ticket\Database\Seeders;
 
-use Webmozart\Assert\Assert;
 use Illuminate\Database\Seeder;
 use Modules\Ticket\Models\Activity;
+use Webmozart\Assert\Assert;
 
 class ActivitySeeder extends Seeder
 {

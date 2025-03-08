@@ -14,9 +14,6 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 // use Modules\Job\JobsWaitingPlugin;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Modules\Job\Filament\Resources\JobsWaitingResource\Pages\ListJobsWaiting;
 use Modules\Job\Filament\Resources\JobsWaitingResource\Widgets\JobsWaitingOverview;
 use Modules\Job\Models\Job;
@@ -54,8 +51,6 @@ class JobsWaitingResource extends XotBaseResource
             );
     }
 
-
-
     public static function getRelations(): array
     {
         return [
@@ -75,7 +70,6 @@ class JobsWaitingResource extends XotBaseResource
             JobsWaitingOverview::class,
         ];
     }
-
 
     /*
     public static function getNavigationBadge(): ?string {

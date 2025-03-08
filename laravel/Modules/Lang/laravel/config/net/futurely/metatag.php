@@ -20,7 +20,7 @@ return [
     'logo_footer_img' => 'blog::images/logo.svg',
     'logo_alt' => 'Logo',
     'logo_header_dark' => 'blog::images/logo.svg',
-'logo_header' => 'blog::images/logo.svg',
+    'logo_header' => 'blog::images/logo.svg',
     'hide_megamenu' => false,
     'hero_type' => 'with_megamenu_bottom',
     'facebook_href' => 'aa',

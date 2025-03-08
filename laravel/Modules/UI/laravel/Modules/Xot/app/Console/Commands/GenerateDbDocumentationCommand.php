@@ -7,8 +7,8 @@ namespace Modules\Xot\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Safe\Exceptions\JsonException;
+
 use function Safe\json_decode;
-use function Safe\json_encode;
 
 /**
  * Class GenerateDbDocumentationCommand.
@@ -55,12 +55,12 @@ class GenerateDbDocumentationCommand extends Command
     /**
      * Generate documentation from schema.
      *
-     * @param array<string, mixed> $schema
+     * @param  array<string, mixed>  $schema
      */
     protected function generateDocumentation(array $schema): string
     {
         $doc = "# Database Documentation\n\n";
-        $doc .= "Generated on: ".now()->format('Y-m-d H:i:s')."\n\n";
+        $doc .= 'Generated on: '.now()->format('Y-m-d H:i:s')."\n\n";
 
         foreach ($schema['tables'] as $tableName => $table) {
             $doc .= $this->generateTableDocumentation($tableName, $table);
@@ -79,7 +79,7 @@ class GenerateDbDocumentationCommand extends Command
     /**
      * Generate documentation for a table.
      *
-     * @param array<string, mixed> $table
+     * @param  array<string, mixed>  $table
      */
     protected function generateTableDocumentation(string $tableName, array $table): string
     {
@@ -142,7 +142,7 @@ class GenerateDbDocumentationCommand extends Command
     /**
      * Generate documentation for a relationship.
      *
-     * @param array<string, string> $relationship
+     * @param  array<string, string>  $relationship
      */
     protected function generateRelationshipDocumentation(array $relationship): string
     {

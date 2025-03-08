@@ -10,6 +10,7 @@ use Spatie\Activitylog\Models\Activity as SpatieActivity;
  * Class Activity.
  *
  * This class extends the Spatie Activity model to represent activities in the application.
+ *
  * @mixin \Eloquent
  */
 class Activity extends SpatieActivity

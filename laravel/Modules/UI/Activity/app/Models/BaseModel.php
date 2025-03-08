@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Base Model for Activity Module.
  */
-abstract class BaseModel extends Model {
+abstract class BaseModel extends Model
+{
     /**
      * Indicates if the IDs are auto-incrementing.
      *
@@ -63,4 +64,4 @@ abstract class BaseModel extends Model {
      * @var list<string>
      */
     protected $fillable = [];
-} 
+}

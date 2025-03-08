@@ -23,11 +23,11 @@ class RegisterLivewireComponentsAction
                 Livewire::component($comp->name, $comp->ns);
             } catch (\Error $e) {
                 Notification::make()
-                ->title('Error')
-                ->body($e->getMessage())
-                ->persistent()
-                ->danger()
-                ->send();
+                    ->title('Error')
+                    ->body($e->getMessage())
+                    ->persistent()
+                    ->danger()
+                    ->send();
             }
         }
     }

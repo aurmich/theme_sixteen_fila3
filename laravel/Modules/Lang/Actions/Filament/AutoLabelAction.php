@@ -23,8 +23,7 @@ class AutoLabelAction
      * Undocumented function.
      * return number of input added.
      *
-     * @param Field|BaseFilter|Column|Step|Action $component
-     *
+     * @param  Field|BaseFilter|Column|Step|Action  $component
      * @return Field|BaseFilter|Column|Step|Action
      */
     public function execute($component)

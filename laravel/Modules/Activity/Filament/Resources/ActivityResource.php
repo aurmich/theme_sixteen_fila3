@@ -1,4 +1,5 @@
 <?php
+
 /**
  * --.
  */
@@ -8,11 +9,10 @@ declare(strict_types=1);
 namespace Modules\Activity\Filament\Resources;
 
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Modules\Activity\Models\Activity;
 use Filament\Resources\Pages\PageRegistration;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Activity\Filament\Resources\ActivityResource\Pages;
+use Modules\Activity\Models\Activity;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ActivityResource extends XotBaseResource
 {

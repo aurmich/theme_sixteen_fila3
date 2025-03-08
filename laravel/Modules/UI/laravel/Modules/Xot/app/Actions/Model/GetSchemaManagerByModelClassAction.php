@@ -11,7 +11,7 @@ use Webmozart\Assert\Assert;
 
 /**
  * Class GetSchemaManagerByModelClassAction
- * 
+ *
  * Ottiene lo schema manager per una classe modello.
  */
 class GetSchemaManagerByModelClassAction
@@ -19,8 +19,8 @@ class GetSchemaManagerByModelClassAction
     /**
      * Ottiene lo schema manager.
      *
-     * @param class-string<Model> $modelClass Nome della classe modello
-     * @return AbstractSchemaManager
+     * @param  class-string<Model>  $modelClass  Nome della classe modello
+     *
      * @throws \RuntimeException Se non è possibile ottenere lo schema manager
      */
     public function execute(string $modelClass): AbstractSchemaManager
@@ -29,12 +29,12 @@ class GetSchemaManagerByModelClassAction
         Assert::subclassOf($modelClass, Model::class);
 
         /** @var Model $model */
-        $model = new $modelClass();
+        $model = new $modelClass;
         $connection = DB::connection($model->getConnectionName());
-        
+
         $schemaManager = $connection->getDoctrineSchemaManager();
-        if (null === $schemaManager) {
-            throw new \RuntimeException('Impossibile ottenere lo schema manager per ' . $modelClass);
+        if ($schemaManager === null) {
+            throw new \RuntimeException('Impossibile ottenere lo schema manager per '.$modelClass);
         }
 
         return $schemaManager;

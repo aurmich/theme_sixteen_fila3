@@ -10,9 +10,6 @@ namespace Modules\Job\Filament\Resources\JobsWaitingResource\Pages;
 
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Enums\ActionsPosition;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Tables\Table;
 use Modules\Job\Filament\Resources\JobsWaitingResource;
 use Modules\Job\Filament\Resources\JobsWaitingResource\Widgets\JobsWaitingOverview;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
@@ -37,8 +34,6 @@ class ListJobsWaiting extends XotBaseListRecords
     {
         return __('jobs::translations.title');
     }
-
-
 
     public function getTableActions(): array
     {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ---.
  */
@@ -7,23 +8,23 @@ declare(strict_types=1);
 
 namespace Modules\Ticket\Filament\Resources;
 
+use Dotswan\MapPicker\Fields\Map;
+use Filament\Facades\Filament;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Filament\Forms\Form;
 use Filament\Pages\Page;
-use Illuminate\Support\Str;
-use Webmozart\Assert\Assert;
-use Filament\Facades\Filament;
-use Dotswan\MapPicker\Fields\Map;
-use Modules\Ticket\Models\Ticket;
-use Modules\Ticket\Enums\TicketTypeEnum;
 use Filament\Pages\SubNavigationPosition;
+use Illuminate\Support\Str;
 use Modules\Ticket\Enums\TicketPriorityEnum;
+use Modules\Ticket\Enums\TicketTypeEnum;
+use Modules\Ticket\Filament\Resources\TicketResource\Pages;
+use Modules\Ticket\Models\Ticket;
 use Modules\Ticket\Rules\FilterCoordinatesInRadius;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Modules\Ticket\Filament\Resources\TicketResource\Pages;
+use Webmozart\Assert\Assert;
 
 class TicketResource extends XotBaseResource
 {
@@ -41,7 +42,7 @@ class TicketResource extends XotBaseResource
                     // Ticket Name
                     Forms\Components\TextInput::make('name')
                         ->hiddenLabel()
-                        ->placeholder(__('fixcity::ticket.title.placeholder') . '*')
+                        ->placeholder(__('fixcity::ticket.title.placeholder').'*')
                         ->columnSpanFull() // Occupa tutta la larghezza disponibile
                         ->required()
                         ->maxLength(255)
@@ -52,7 +53,7 @@ class TicketResource extends XotBaseResource
                             $set('slug', Str::slug($state));
                         })
                         ->extraAttributes([
-                            'style' => ''
+                            'style' => '',
                         ]),
 
                     // Slug
@@ -65,7 +66,7 @@ class TicketResource extends XotBaseResource
                     // Ticket Type
                     Forms\Components\Select::make('type')
                         ->hiddenLabel()
-                        ->placeholder(__('fixcity::ticket.type.placeholder') . '*')
+                        ->placeholder(__('fixcity::ticket.type.placeholder').'*')
                         ->searchable()
                         ->options(TicketTypeEnum::class)
                         ->columnSpanFull(),
@@ -86,14 +87,12 @@ class TicketResource extends XotBaseResource
                     //     ->columnSpanFull()
                     //     ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;']), // Rimozione del padding e margini
 
-
                     Forms\Components\Textarea::make('content')
                         ->hiddenLabel()
-                        ->placeholder(__('fixcity::ticket.content.placeholder') . '**')
+                        ->placeholder(__('fixcity::ticket.content.placeholder').'**')
                         ->rows(2)
                         ->cols(10)
                         ->helperText(__('fixcity::ticket.content.helper_text')),
-
 
                     // Hidden Latitude and Longitude
                     Forms\Components\TextInput::make('latitude')
@@ -135,7 +134,7 @@ class TicketResource extends XotBaseResource
                         ->afterStateHydrated(function ($state, $record, Set $set): void {
                             $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
                         })
-                        ->rules([new FilterCoordinatesInRadius()])
+                        ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
                         ->showMarker(false) // https://github.com/dotswan/filament-map-picker/pull/51
                         ->markerColor('#22c55eff')
@@ -146,8 +145,8 @@ class TicketResource extends XotBaseResource
                         ->zoom(15)
                         ->detectRetina()
                         ->showMyLocationButton()
-                        // ->extraAttributes(['class' => 'max-w-full', 'style' => 'min-height: 300px; padding: 0; margin: 0;'])
-                        ,
+                    // ->extraAttributes(['class' => 'max-w-full', 'style' => 'min-height: 300px; padding: 0; margin: 0;'])
+                    ,
 
                     // Image Upload
                     // SpatieMediaLibraryFileUpload::make('images')
@@ -162,7 +161,6 @@ class TicketResource extends XotBaseResource
                     //     // ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;'])
                     //     ,
 
-
                     SpatieMediaLibraryFileUpload::make('images')
                         ->label(__('fixcity::ticket.insert-images'))
                         ->collection('ticket')
@@ -174,8 +172,7 @@ class TicketResource extends XotBaseResource
                         ->maxFiles(5) // Limita il numero di file caricabili
                         ->maxSize(10240) // Imposta un limite massimo di 10MB per file
                         ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/jpg']) // Accetta solo immagini
-                        ->columnSpanFull()
-                        ,
+                        ->columnSpanFull(),
 
                 ])
                 ->columns(1) // Imposta il layout su una colonna

@@ -146,7 +146,7 @@ class ListTickets extends XotBaseListRecords
         foreach (Ticket::where('status', null)->get() as $item) {
             // $status = $item->status()?->name;
             $status = $item->status;
-            if (null == $status) {
+            if ($status == null) {
                 $status = TicketStatusEnum::PENDING;
                 $item->setStatus($status->value);
             }

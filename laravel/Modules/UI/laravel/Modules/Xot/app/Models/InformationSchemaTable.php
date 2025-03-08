@@ -12,27 +12,27 @@ use Sushi\Sushi;
 /**
  * Modules\Xot\Models\InformationSchemaTable
  *
- * @property string      $TABLE_CATALOG   Nome del catalogo
- * @property string      $TABLE_SCHEMA    Nome dello schema
- * @property string      $TABLE_NAME      Nome della tabella
- * @property string      $TABLE_TYPE      Tipo di tabella
- * @property string|null $ENGINE          Engine del database
- * @property int|null    $VERSION         Versione
- * @property string|null $ROW_FORMAT      Formato delle righe
- * @property int|null    $TABLE_ROWS      Numero stimato di righe
- * @property int|null    $AVG_ROW_LENGTH  Lunghezza media delle righe
- * @property int|null    $DATA_LENGTH     Dimensione dei dati
- * @property int|null    $MAX_DATA_LENGTH Massima dimensione dei dati
- * @property int|null    $INDEX_LENGTH    Dimensione degli indici
- * @property int|null    $DATA_FREE       Spazio libero
- * @property int|null    $AUTO_INCREMENT  Valore auto increment
- * @property string|null $CREATE_TIME     Data di creazione
- * @property string|null $UPDATE_TIME     Data di aggiornamento
- * @property string|null $CHECK_TIME      Data ultimo check
+ * @property string $TABLE_CATALOG Nome del catalogo
+ * @property string $TABLE_SCHEMA Nome dello schema
+ * @property string $TABLE_NAME Nome della tabella
+ * @property string $TABLE_TYPE Tipo di tabella
+ * @property string|null $ENGINE Engine del database
+ * @property int|null $VERSION Versione
+ * @property string|null $ROW_FORMAT Formato delle righe
+ * @property int|null $TABLE_ROWS Numero stimato di righe
+ * @property int|null $AVG_ROW_LENGTH Lunghezza media delle righe
+ * @property int|null $DATA_LENGTH Dimensione dei dati
+ * @property int|null $MAX_DATA_LENGTH Massima dimensione dei dati
+ * @property int|null $INDEX_LENGTH Dimensione degli indici
+ * @property int|null $DATA_FREE Spazio libero
+ * @property int|null $AUTO_INCREMENT Valore auto increment
+ * @property string|null $CREATE_TIME Data di creazione
+ * @property string|null $UPDATE_TIME Data di aggiornamento
+ * @property string|null $CHECK_TIME Data ultimo check
  * @property string|null $TABLE_COLLATION Collation della tabella
- * @property int|null    $CHECKSUM        Checksum
- * @property string|null $CREATE_OPTIONS  Opzioni di creazione
- * @property string|null $TABLE_COMMENT   Commento della tabella
+ * @property int|null $CHECKSUM Checksum
+ * @property string|null $CREATE_OPTIONS Opzioni di creazione
+ * @property string|null $TABLE_COMMENT Commento della tabella
  */
 class InformationSchemaTable extends Model
 {
@@ -151,8 +151,8 @@ class InformationSchemaTable extends Model
     /**
      * Get table statistics.
      *
-     * @param string $schema Schema name
-     * @param string $table  Table name
+     * @param  string  $schema  Schema name
+     * @param  string  $table  Table name
      */
     public static function getTableStats(string $schema, string $table): ?self
     {
@@ -164,8 +164,8 @@ class InformationSchemaTable extends Model
     /**
      * Get accurate row count.
      *
-     * @param string $tableName The name of the table
-     * @param string $database  The database name
+     * @param  string  $tableName  The name of the table
+     * @param  string  $database  The database name
      */
     public static function getAccurateRowCount(string $tableName, string $database): int
     {
@@ -177,7 +177,7 @@ class InformationSchemaTable extends Model
 
         // For InnoDB tables with less than 1000 rows or when TABLE_ROWS is 0,
         // use COUNT(*) for better accuracy
-        if ('InnoDB' === $stats->ENGINE && ($stats->TABLE_ROWS < 1000 || 0 === $stats->TABLE_ROWS)) {
+        if ($stats->ENGINE === 'InnoDB' && ($stats->TABLE_ROWS < 1000 || $stats->TABLE_ROWS === 0)) {
             try {
                 return (int) DB::table($tableName)->count();
             } catch (\Exception $e) {
@@ -192,8 +192,8 @@ class InformationSchemaTable extends Model
     /**
      * Get table size in bytes.
      *
-     * @param string $tableName The name of the table
-     * @param string $database  The database name
+     * @param  string  $tableName  The name of the table
+     * @param  string  $database  The database name
      */
     public static function getTableSize(string $tableName, string $database): int
     {
@@ -209,8 +209,8 @@ class InformationSchemaTable extends Model
     /**
      * Refresh the Sushi cache for a specific table.
      *
-     * @param string $tableName The name of the table
-     * @param string $database  The database name
+     * @param  string  $tableName  The name of the table
+     * @param  string  $database  The database name
      */
     public static function refreshCache(string $tableName, string $database): void
     {

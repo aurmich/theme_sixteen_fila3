@@ -61,6 +61,6 @@ abstract class XotBaseListRecords extends FilamentListRecords
     protected function paginateTableQuery(Builder $query): Paginator
     {
         // @phpstan-ignore method.notFound,return.type
-        return $query->fastPaginate(('all' === $this->getTableRecordsPerPage()) ? $query->count() : $this->getTableRecordsPerPage());
+        return $query->fastPaginate(($this->getTableRecordsPerPage() === 'all') ? $query->count() : $this->getTableRecordsPerPage());
     }
 }

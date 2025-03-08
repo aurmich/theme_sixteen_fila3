@@ -93,14 +93,14 @@ class DatabaseSchemaExportCommand extends Command
                     $columnSchema = [
                         'name' => $column->Field,
                         'type' => $column->Type,
-                        'null' => 'YES' === $column->Null,
+                        'null' => $column->Null === 'YES',
                         'key' => $column->Key,
                         'default' => $column->Default,
                         'extra' => $column->Extra,
                         'comment' => $column->Comment,
                     ];
 
-                    if ('PRI' === $column->Key) {
+                    if ($column->Key === 'PRI') {
                         $tableSchema['primary_key'] = $column->Field;
                     }
 

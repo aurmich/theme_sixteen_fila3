@@ -36,6 +36,4 @@ class ImportResource extends XotBaseResource
             'edit' => Pages\EditImport::route('/{record}/edit'),
         ];
     }
-
-
 }

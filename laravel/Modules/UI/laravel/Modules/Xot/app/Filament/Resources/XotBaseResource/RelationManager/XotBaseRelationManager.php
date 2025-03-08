@@ -61,6 +61,7 @@ abstract class XotBaseRelationManager extends RelationManager
     public function getFormSchema(): array
     {
         $resourceClass = $this->getResource();
+
         return $resourceClass::getFormSchema();
     }
 
@@ -126,10 +127,11 @@ abstract class XotBaseRelationManager extends RelationManager
             Assert::classExists($resource_class = $ns.'\\'.$resource_name);
 
             static::$resourceClass = $resource_class;
+
             return $resource_class;
         } catch (\Throwable $e) {
             throw new \RuntimeException(
-                'Impossibile determinare la classe Resource per ' . static::class . 
+                'Impossibile determinare la classe Resource per '.static::class.
                 '. Definisci la proprietà statica $resourceClass o sovrascrivi il metodo getResource().',
                 0,
                 $e

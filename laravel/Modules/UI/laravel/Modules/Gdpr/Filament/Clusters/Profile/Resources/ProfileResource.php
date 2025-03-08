@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Gdpr\Filament\Clusters\Profile\Resources;
 
-use Filament\Tables;
 use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Modules\Gdpr\Models\Profile;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Gdpr\Filament\Clusters\Profile as ProfileCluster;
 use Modules\Gdpr\Filament\Clusters\Profile\Resources\ProfileResource\Pages;
+use Modules\Gdpr\Models\Profile;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ProfileResource extends XotBaseResource
 {
@@ -26,10 +24,6 @@ class ProfileResource extends XotBaseResource
             ->schema([
             ]);
     }
-
-
-
-
 
     public static function getPages(): array
     {

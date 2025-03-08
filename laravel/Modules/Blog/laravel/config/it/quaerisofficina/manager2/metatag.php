@@ -20,7 +20,7 @@ return [
     'logo_footer_img' => 'quaeris::img/Q.png',
     'logo_alt' => 'Logo',
     'logo_header_dark' => 'xot::img/logo.png',
-'logo_header' => 'quaeris::img/Q.png',
+    'logo_header' => 'quaeris::img/Q.png',
     'hide_megamenu' => false,
     'hero_type' => 'with_megamenu_bottom',
     'facebook_href' => 'aa',

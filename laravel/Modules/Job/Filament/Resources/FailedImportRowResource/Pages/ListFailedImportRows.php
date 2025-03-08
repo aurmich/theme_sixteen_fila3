@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Job\Filament\Resources\FailedImportRowResource\Pages;
 
-use Filament\Actions;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Modules\Job\Filament\Resources\FailedImportRowResource;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
 
@@ -46,6 +44,4 @@ class ListFailedImportRows extends XotBaseListRecords
             // ]),
         ];
     }
-
-
 }

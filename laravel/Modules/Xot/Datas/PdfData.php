@@ -23,16 +23,26 @@ use Webmozart\Assert\Assert;
 class PdfData extends Data
 {
     public string $filename = 'my_doc.pdf';
+
     public string $disk = 'cache';
+
     public string $out = 'download';
+
     // -- per costruttore
     public string $orientation = 'P';
+
     public string $format = 'A4';
+
     public string $lang = 'it';
+
     public bool $unicode = true;
+
     public string $encoding = 'UTF-8';
+
     public array $margins = [5, 5, 5, 8];
+
     public bool $pdfa = false;
+
     public string $dest = 'F';
     /*
         Dest can be :

@@ -1,24 +1,20 @@
-<?php return array (
-  'actions' => 
-  array (
-    'activeLocale' => 
-    array (
-      'label' => 'activeLocale',
-    ),
-    'cancel' => 
-    array (
-      'label' => 'cancel',
-    ),
-  ),
-  'fields' => 
-  array (
-    '_tpl' => 
-    array (
-      'label' => '_tpl',
-    ),
-    'text' => 
-    array (
-      'label' => 'text',
-    ),
-  ),
-);
+<?php
+
+return [
+    'actions' => [
+        'activeLocale' => [
+            'label' => 'activeLocale',
+        ],
+        'cancel' => [
+            'label' => 'cancel',
+        ],
+    ],
+    'fields' => [
+        '_tpl' => [
+            'label' => '_tpl',
+        ],
+        'text' => [
+            'label' => 'text',
+        ],
+    ],
+];

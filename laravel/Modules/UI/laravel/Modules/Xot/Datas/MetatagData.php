@@ -130,7 +130,7 @@ class MetatagData extends Data implements Wireable
 
     public function getLogoHeight(): string
     {
-        if (null == $this->logo_height) {
+        if ($this->logo_height == null) {
             $this->logo_height = '2em';
         }
 
@@ -170,10 +170,10 @@ class MetatagData extends Data implements Wireable
             function (array $item, int|string $key): array {
                 $k = $item['key'];
                 $v = $item['color'];
-                if ('custom' != $v) {
+                if ($v != 'custom') {
                     $v = Arr::get(Color::all(), $v);
                 }
-                if ('custom' == $v) {
+                if ($v == 'custom') {
                     $v = Color::hex($item['hex']);
                 }
 

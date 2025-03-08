@@ -3,11 +3,10 @@
 namespace Modules\Fixcity\Filament\Widgets;
 
 use Cheesegrits\FilamentGoogleMaps\Widgets\MapWidget;
-use Modules\Fixcity\Models\Ticket;
-use Modules\Fixcity\Enums\TicketStatusEnum;
 use Illuminate\Support\Facades\Log;
-use Filament\Support\RawJs;
 use Livewire\Attributes\Reactive;
+use Modules\Fixcity\Enums\TicketStatusEnum;
+use Modules\Fixcity\Models\Ticket;
 
 class TicketsMapWidget extends MapWidget
 {
@@ -50,7 +49,7 @@ class TicketsMapWidget extends MapWidget
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
-        if (!empty($this->categoryFilter)) {
+        if (! empty($this->categoryFilter)) {
             $query->whereIn('type', $this->categoryFilter);
         }
 
@@ -62,11 +61,11 @@ class TicketsMapWidget extends MapWidget
         });
 
         $locations = $query->latest()->get();
-        
+
         Log::error('Filtered locations', [
             'sql' => $query->toSql(),
             'bindings' => $query->getBindings(),
-            'count' => $locations->count()
+            'count' => $locations->count(),
         ]);
 
         $data = [];
@@ -115,4 +114,4 @@ class TicketsMapWidget extends MapWidget
         parent::mount();
         Log::error('Widget mounted with filters', ['categories' => $this->categoryFilter]);
     }
-} 
+}

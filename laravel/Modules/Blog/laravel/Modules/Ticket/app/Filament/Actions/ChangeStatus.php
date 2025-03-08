@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Ticket\Filament\Actions;
 
-use Webmozart\Assert\Assert;
-use Modules\Ticket\Models\Ticket;
-use Filament\Tables\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Modules\Ticket\Enums\TicketStatusEnum;
+use Filament\Tables\Actions\Action;
 use Modules\Ticket\Actions\ChangeStatus as ActionChangeStatus;
+use Modules\Ticket\Enums\TicketStatusEnum;
+use Modules\Ticket\Models\Ticket;
+use Webmozart\Assert\Assert;
 
 class ChangeStatus extends Action
 {
@@ -21,10 +21,10 @@ class ChangeStatus extends Action
         $this->translateLabel()
             ->action(
                 function (Ticket $record, array $data): void {
-                    
+
                     Assert::string($data['status']);
                     Assert::string($data['reason']);
-                    
+
                     app(ActionChangeStatus::class)->execute($record, $data['status'], $data['reason']);
                 }
             )

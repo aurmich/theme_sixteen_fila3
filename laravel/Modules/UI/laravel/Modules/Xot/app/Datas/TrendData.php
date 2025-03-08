@@ -8,9 +8,9 @@ use Spatie\LaravelData\Data;
 
 /**
  * Class TrendData
- * 
+ *
  * Rappresenta un trend con una data e un valore aggregato.
- * 
+ *
  * @property string $date La data del trend
  * @property int|float|string $aggregate Il valore aggregato del trend
  */

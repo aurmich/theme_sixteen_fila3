@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Modules\Job\Filament\Resources;
 
 use Filament\Forms\Form;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Modules\Job\Filament\Resources\ExportResource\Pages;
 use Modules\Job\Models\Export;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -24,10 +22,6 @@ class ExportResource extends XotBaseResource
             ]);
     }
 
-
-
-
-
     public static function getPages(): array
     {
         return [
@@ -36,6 +30,4 @@ class ExportResource extends XotBaseResource
             'edit' => Pages\EditExport::route('/{record}/edit'),
         ];
     }
-
-
 }

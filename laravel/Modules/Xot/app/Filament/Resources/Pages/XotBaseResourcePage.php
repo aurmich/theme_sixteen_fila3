@@ -9,6 +9,4 @@ use Filament\Resources\Pages\Page as FilamentResourcePage;
 /**
  * Undocumented class.
  */
-abstract class XotBaseResourcePage extends FilamentResourcePage
-{
-}
+abstract class XotBaseResourcePage extends FilamentResourcePage {}

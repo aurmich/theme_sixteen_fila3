@@ -6,8 +6,6 @@ namespace Modules\Gdpr\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Modules\Gdpr\Filament\Resources\ProfileResource\Pages;
 use Modules\Gdpr\Models\Profile;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -54,7 +52,6 @@ class ProfileResource extends XotBaseResource
                     ->required(),
             ]);
     }
-
 
     public static function getRelations(): array
     {

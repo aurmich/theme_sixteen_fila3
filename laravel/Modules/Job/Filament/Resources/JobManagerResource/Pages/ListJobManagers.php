@@ -9,24 +9,14 @@ declare(strict_types=1);
 namespace Modules\Job\Filament\Resources\JobManagerResource\Pages;
 
 use Filament\Actions;
-use Filament\Tables\Table;
-use Modules\UI\Enums\TableLayoutEnum;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Resources\Pages\ListRecords;
-use Filament\Tables\Enums\ActionsPosition;
-use Modules\Xot\Filament\Traits\TransTrait;
 use Filament\Tables\Actions\DeleteBulkAction;
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
+use Filament\Tables\Columns\TextColumn;
 use Modules\Job\Filament\Resources\JobManagerResource;
+use Modules\Xot\Filament\Pages\XotBaseListRecords;
 
 class ListJobManagers extends XotBaseListRecords
 {
     protected static string $resource = JobManagerResource::class;
-
-
-
-
 
     public function getListTableColumns(): array
     {

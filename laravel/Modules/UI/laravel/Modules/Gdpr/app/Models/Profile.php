@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Gdpr\Models;
 
-use Modules\User\Models\BaseProfile;
 use Illuminate\Database\Eloquent\Model;
+use Modules\User\Models\BaseProfile;
 use Modules\Xot\Traits\Updater;
 
 /**

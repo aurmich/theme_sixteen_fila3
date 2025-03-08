@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Safe\Exceptions\DatetimeException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\PcreException;
+
 use function Safe\date;
 use function Safe\json_decode;
 use function Safe\preg_match;
@@ -106,7 +107,8 @@ class GenerateModelsFromSchemaCommand extends Command
     /**
      * Generate a model class from table schema.
      *
-     * @param array<string, mixed> $table
+     * @param  array<string, mixed>  $table
+     *
      * @throws PcreException
      * @throws DatetimeException
      */
@@ -143,7 +145,7 @@ class GenerateModelsFromSchemaCommand extends Command
     /**
      * Get fillable fields from columns.
      *
-     * @param array<string, array<string, mixed>> $columns
+     * @param  array<string, array<string, mixed>>  $columns
      * @return array<int, string>
      */
     protected function getFillableFields(array $columns): array
@@ -161,7 +163,7 @@ class GenerateModelsFromSchemaCommand extends Command
     /**
      * Get casts from columns.
      *
-     * @param array<string, array<string, mixed>> $columns
+     * @param  array<string, array<string, mixed>>  $columns
      * @return array<string, string>
      */
     protected function getCasts(array $columns): array
@@ -179,7 +181,7 @@ class GenerateModelsFromSchemaCommand extends Command
                 default => null,
             };
 
-            if (null !== $cast) {
+            if ($cast !== null) {
                 $casts[$name] = $cast;
             }
         }
@@ -190,7 +192,7 @@ class GenerateModelsFromSchemaCommand extends Command
     /**
      * Get relations from foreign keys.
      *
-     * @param array<string, array<string, mixed>> $foreignKeys
+     * @param  array<string, array<string, mixed>>  $foreignKeys
      * @return array<string, array{type: string, model: string, key: string, foreignKey: string}>
      */
     protected function getRelations(array $foreignKeys): array
@@ -219,9 +221,10 @@ class GenerateModelsFromSchemaCommand extends Command
     /**
      * Get the model class template.
      *
-     * @param array<int, string> $fillable
-     * @param array<string, string> $casts
-     * @param array<string, array{type: string, model: string, key: string, foreignKey: string}> $relations
+     * @param  array<int, string>  $fillable
+     * @param  array<string, string>  $casts
+     * @param  array<string, array{type: string, model: string, key: string, foreignKey: string}>  $relations
+     *
      * @throws DatetimeException
      */
     protected function getModelTemplate(
@@ -284,7 +287,7 @@ PHP;
     /**
      * Get the relation method template.
      *
-     * @param array{type: string, model: string, key: string, foreignKey: string} $relation
+     * @param  array{type: string, model: string, key: string, foreignKey: string}  $relation
      */
     protected function getRelationMethod(string $methodName, array $relation): string
     {

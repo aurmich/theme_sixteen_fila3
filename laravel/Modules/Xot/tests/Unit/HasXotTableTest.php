@@ -23,7 +23,7 @@ class HasXotTableTest extends TestCase
     /**
      * Test the table method with all methods implemented.
      */
-    public function testTableMethodWithAllMethodsImplemented(): void
+    public function test_table_method_with_all_methods_implemented(): void
     {
         // Create mock object that uses HasXotTable trait
         $mock = \Mockery::mock(HasTableWithXot::class);
@@ -84,7 +84,7 @@ class HasXotTableTest extends TestCase
     /**
      * Test the table method without any of the optional methods implemented.
      */
-    public function testTableMethodWithNoOptionalMethodsImplemented(): void
+    public function test_table_method_with_no_optional_methods_implemented(): void
     {
         // Create mock object that uses HasXotTable trait but doesn't implement optional methods
         $mock = \Mockery::mock(HasTableWithoutOptionalMethods::class);

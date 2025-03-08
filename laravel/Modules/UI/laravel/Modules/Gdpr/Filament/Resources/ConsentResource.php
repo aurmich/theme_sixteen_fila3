@@ -7,7 +7,6 @@ namespace Modules\Gdpr\Filament\Resources;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Tables;
-use Filament\Tables\Table;
 use Modules\Gdpr\Filament\Resources\ConsentResource\Pages;
 use Modules\Gdpr\Models\Consent;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -33,26 +32,26 @@ class ConsentResource extends XotBaseResource
             );
     }
 
-    public function getListTableColumns():array{
+    public function getListTableColumns(): array
+    {
         return [
-                Tables\Columns\TextColumn::make('id')
+            Tables\Columns\TextColumn::make('id')
 
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('treatment.name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('subject_id')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                ->searchable(),
+            Tables\Columns\TextColumn::make('treatment.name')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('subject_id')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('created_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+            Tables\Columns\TextColumn::make('updated_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
         ];
     }
-
 
     public static function getPages(): array
     {

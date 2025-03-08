@@ -12,13 +12,14 @@ use Illuminate\Support\Facades\Schema as SchemaFacade;
 use Illuminate\Support\Str;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
+
 use function Safe\file_put_contents;
 use function Safe\json_encode;
 use function Safe\mkdir;
 
 /**
  * Class DatabaseSchemaExportCommand
- * 
+ *
  * Esporta lo schema del database in file JSON.
  */
 class DatabaseSchemaExportCommand extends Command
@@ -44,8 +45,9 @@ class DatabaseSchemaExportCommand extends Command
         $module = $this->option('module');
         $table = $this->argument('table');
 
-        if (null !== $table) {
+        if ($table !== null) {
             $this->exportTable($table, $module);
+
             return;
         }
 
@@ -58,17 +60,19 @@ class DatabaseSchemaExportCommand extends Command
     /**
      * Esporta lo schema di una tabella in JSON.
      *
-     * @param string $table Nome della tabella
-     * @param string|null $module Nome del modulo
+     * @param  string  $table  Nome della tabella
+     * @param  string|null  $module  Nome del modulo
+     *
      * @throws FilesystemException
      * @throws JsonException
      */
     protected function exportTable(string $table, ?string $module = null): void
     {
         $schema = SchemaFacade::getConnection()->getDoctrineSchemaManager();
-        
-        if (!$schema->tablesExist([$table])) {
+
+        if (! $schema->tablesExist([$table])) {
             $this->error("La tabella [{$table}] non esiste");
+
             return;
         }
 
@@ -93,7 +97,7 @@ class DatabaseSchemaExportCommand extends Command
     /**
      * Formatta le colonne per l'esportazione JSON.
      *
-     * @param Column[] $columns
+     * @param  Column[]  $columns
      * @return array<string, array<string, mixed>>
      */
     protected function formatColumns(array $columns): array
@@ -103,7 +107,7 @@ class DatabaseSchemaExportCommand extends Command
             $formatted[$column->getName()] = [
                 'type' => $column->getType()->getTypeName(),
                 'length' => $column->getLength(),
-                'nullable' => !$column->getNotnull(),
+                'nullable' => ! $column->getNotnull(),
                 'default' => $column->getDefault(),
                 'unsigned' => $column->getUnsigned(),
                 'autoincrement' => $column->getAutoincrement(),
@@ -117,7 +121,7 @@ class DatabaseSchemaExportCommand extends Command
     /**
      * Formatta gli indici per l'esportazione JSON.
      *
-     * @param Index[] $indexes
+     * @param  Index[]  $indexes
      * @return array<string, array<string, mixed>>
      */
     protected function formatIndexes(array $indexes): array
@@ -139,7 +143,7 @@ class DatabaseSchemaExportCommand extends Command
     /**
      * Formatta le chiavi esterne per l'esportazione JSON.
      *
-     * @param ForeignKeyConstraint[] $foreignKeys
+     * @param  ForeignKeyConstraint[]  $foreignKeys
      * @return array<string, array<string, mixed>>
      */
     protected function formatForeignKeys(array $foreignKeys): array
@@ -162,24 +166,25 @@ class DatabaseSchemaExportCommand extends Command
     /**
      * Ottiene il percorso di esportazione per lo schema di una tabella.
      *
-     * @param string $table Nome della tabella
-     * @param string|null $module Nome del modulo
+     * @param  string  $table  Nome della tabella
+     * @param  string|null  $module  Nome del modulo
      * @return string Percorso completo del file
+     *
      * @throws FilesystemException
      */
     protected function getExportPath(string $table, ?string $module = null): string
     {
-        $filename = Str::snake($table) . '.json';
+        $filename = Str::snake($table).'.json';
         $basePath = base_path('database/schema');
 
-        if (null !== $module) {
+        if ($module !== null) {
             $basePath = base_path("Modules/{$module}/database/schema");
         }
 
-        if (!is_dir($basePath)) {
+        if (! is_dir($basePath)) {
             mkdir($basePath, 0755, true);
         }
 
-        return $basePath . '/' . $filename;
+        return $basePath.'/'.$filename;
     }
 }

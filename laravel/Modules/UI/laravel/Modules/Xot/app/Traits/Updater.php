@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\XotData;
-use Webmozart\Assert\Assert;
 
 /**
  * Trait Updater.

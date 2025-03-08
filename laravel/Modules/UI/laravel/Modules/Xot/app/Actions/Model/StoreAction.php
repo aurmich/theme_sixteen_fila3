@@ -6,14 +6,12 @@ namespace Modules\Xot\Actions\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
 /**
  * Class StoreAction
- * 
+ *
  * Gestisce il salvataggio di un modello e delle sue relazioni.
  */
 class StoreAction
@@ -23,10 +21,11 @@ class StoreAction
     /**
      * Salva un modello e le sue relazioni.
      *
-     * @param Model $model Il modello da salvare
-     * @param array<string, mixed> $data I dati da salvare
-     * @param array<string, mixed> $rules Le regole di validazione
+     * @param  Model  $model  Il modello da salvare
+     * @param  array<string, mixed>  $data  I dati da salvare
+     * @param  array<string, mixed>  $rules  Le regole di validazione
      * @return Model Il modello salvato
+     *
      * @throws \RuntimeException Se una action di relazione non è valida
      */
     public function execute(Model $model, array $data, array $rules): Model
@@ -59,8 +58,9 @@ class StoreAction
     /**
      * Gestisce una singola relazione.
      *
-     * @param Model $model Il modello principale
-     * @param object $relation La relazione da gestire
+     * @param  Model  $model  Il modello principale
+     * @param  object  $relation  La relazione da gestire
+     *
      * @throws \RuntimeException Se l'action non è valida
      */
     private function handleRelation(Model $model, object $relation): void
@@ -71,14 +71,14 @@ class StoreAction
             $relation->relationship_type
         );
 
-        if (!class_exists($actionClass)) {
+        if (! class_exists($actionClass)) {
             throw new \RuntimeException(
                 sprintf('Action class [%s] not found', $actionClass)
             );
         }
 
         $action = app($actionClass);
-        if (!method_exists($action, 'execute')) {
+        if (! method_exists($action, 'execute')) {
             throw new \RuntimeException(
                 sprintf('Method [execute] not found in [%s]', $actionClass)
             );
@@ -89,8 +89,6 @@ class StoreAction
 
     /**
      * Ottiene l'ID dell'utente corrente.
-     *
-     * @return int|null
      */
     private function getCurrentUserId(): ?int
     {

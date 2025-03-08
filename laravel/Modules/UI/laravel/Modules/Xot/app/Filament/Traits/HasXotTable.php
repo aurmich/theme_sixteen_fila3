@@ -195,6 +195,7 @@ trait HasXotTable
      *
      * Soluzione: Verifica condizionale dell'esistenza dei metodi prima di chiamarli,
      * mantenendo la retrocompatibilità e prevenendo errori.
+     *
      * @deprecated Questo metodo non deve più essere usato. Usa `getListTableColumns()` al suo posto.
      *
      * metterla final
@@ -352,6 +353,7 @@ trait HasXotTable
      * Get the model class.
      *
      * @return class-string<\Illuminate\Database\Eloquent\Model>
+     *
      * @throws \Exception
      */
     public function getModelClass(): string
@@ -370,6 +372,7 @@ trait HasXotTable
         $model = $this->getModel();
         if (is_string($model)) {
             Assert::classExists($model);
+
             /** @var class-string<\Illuminate\Database\Eloquent\Model> */
             return $model;
         }

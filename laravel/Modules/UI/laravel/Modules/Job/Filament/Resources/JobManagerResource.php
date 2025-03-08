@@ -13,9 +13,6 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Modules\Job\Filament\Resources\JobManagerResource\Pages;
 use Modules\Job\Filament\Resources\JobManagerResource\Widgets;
 use Modules\Job\Models\JobManager;
@@ -51,8 +48,6 @@ class JobManagerResource extends XotBaseResource
             );
     }
 
-
-
     public static function getRelations(): array
     {
         return [
@@ -74,6 +69,4 @@ class JobManagerResource extends XotBaseResource
             Widgets\JobStatsOverview::class,
         ];
     }
-
-
 }

@@ -7,6 +7,7 @@ namespace Modules\Xot\Helpers;
 use Illuminate\Support\Str;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\PcreException;
+
 use function Safe\file_get_contents;
 use function Safe\file_put_contents;
 use function Safe\glob;
@@ -18,10 +19,11 @@ class ResourceFormSchemaGenerator
     /**
      * Genera uno schema form per una classe Resource.
      *
-     * @param string $resourceClass Il nome completo della classe Resource
+     * @param  string  $resourceClass  Il nome completo della classe Resource
+     * @return bool True se lo schema è stato generato, False se già esistente
+     *
      * @throws FilesystemException Se ci sono problemi di lettura/scrittura file
      * @throws PcreException Se ci sono problemi con le regex
-     * @return bool True se lo schema è stato generato, False se già esistente
      */
     public static function generateFormSchema(string $resourceClass): bool
     {
@@ -33,7 +35,7 @@ class ResourceFormSchemaGenerator
             $fileContents = file_get_contents($filename);
 
             // Verifica se getFormSchema esiste già
-            if (false !== strpos($fileContents, 'public function getFormSchema')) {
+            if (strpos($fileContents, 'public function getFormSchema') !== false) {
                 return false;
             }
 
@@ -56,7 +58,7 @@ class ResourceFormSchemaGenerator
             $formSchemaMethod .= "        ];\n    }\n";
 
             // Rileva se la classe è in una directory Clusters
-            $isInClustersDir = false !== strpos($filename, 'Clusters');
+            $isInClustersDir = strpos($filename, 'Clusters') !== false;
 
             // Inserisci il metodo prima dell'ultima parentesi graffa
             $modifiedContents = preg_replace(
@@ -77,8 +79,9 @@ class ResourceFormSchemaGenerator
     /**
      * Genera schemi form per tutte le Resource.
      *
-     * @throws FilesystemException Se ci sono problemi di accesso ai file
      * @return array{updated: array<string>, skipped: array<string>}
+     *
+     * @throws FilesystemException Se ci sono problemi di accesso ai file
      */
     public static function generateForAllResources(): array
     {
@@ -96,6 +99,7 @@ class ResourceFormSchemaGenerator
 
                 if (! isset($namespaceMatch[1]) || ! isset($classMatch[1])) {
                     $skippedResources[] = $file;
+
                     continue;
                 }
 

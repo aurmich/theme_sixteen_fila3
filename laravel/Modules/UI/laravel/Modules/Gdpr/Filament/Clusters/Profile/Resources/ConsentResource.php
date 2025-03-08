@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Gdpr\Filament\Clusters\Profile\Resources;
 
 use Filament\Forms\Form;
-use Modules\Gdpr\Models\Consent;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Gdpr\Filament\Clusters\Profile as ProfileCluster;
 use Modules\Gdpr\Filament\Clusters\Profile\Resources\ConsentResource\Pages;
+use Modules\Gdpr\Models\Consent;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ConsentResource extends XotBaseResource
 {

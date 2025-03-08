@@ -9,7 +9,7 @@ use Webmozart\Assert\Assert;
 
 /**
  * Class CountAction
- * 
+ *
  * Conta i record di un modello.
  */
 class CountAction
@@ -17,8 +17,9 @@ class CountAction
     /**
      * Conta i record di un modello.
      *
-     * @param class-string<Model> $modelClass Nome della classe modello
+     * @param  class-string<Model>  $modelClass  Nome della classe modello
      * @return int Numero di record
+     *
      * @throws \InvalidArgumentException Se la classe modello non è valida
      */
     public static function execute(string $modelClass): int
@@ -27,8 +28,8 @@ class CountAction
         Assert::subclassOf($modelClass, Model::class);
 
         /** @var Model $model */
-        $model = new $modelClass();
-        
+        $model = new $modelClass;
+
         return $model->query()->count();
     }
 }

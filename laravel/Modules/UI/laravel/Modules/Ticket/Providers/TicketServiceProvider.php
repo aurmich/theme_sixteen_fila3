@@ -11,4 +11,4 @@ class TicketServiceProvider extends ServiceProvider
         // Rimuoviamo la registrazione manuale del componente
         // Il componente verrà autoregistrato da XotBaseServiceProvider
     }
-} 
+}

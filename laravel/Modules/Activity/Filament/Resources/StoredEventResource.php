@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Modules\Activity\Filament\Resources;
 
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use Modules\Activity\Filament\Resources\StoredEventResource\Pages;
 use Modules\Activity\Models\StoredEvent;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\Activity\Filament\Resources\StoredEventResource\Pages;
 
 class StoredEventResource extends XotBaseResource
 {

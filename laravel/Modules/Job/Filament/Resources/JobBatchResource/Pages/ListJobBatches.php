@@ -12,9 +12,6 @@ use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Enums\ActionsPosition;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Tables\Table;
 use Illuminate\Support\Facades\Artisan;
 use Modules\Job\Filament\Resources\JobBatchResource;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
@@ -24,9 +21,7 @@ class ListJobBatches extends XotBaseListRecords
 {
     protected static string $resource = JobBatchResource::class;
 
-
-
-       public function getListTableColumns(): array
+    public function getListTableColumns(): array
     {
         Assert::string($date_format = config('app.date_format'), '['.__LINE__.']['.class_basename(__CLASS__).']');
 

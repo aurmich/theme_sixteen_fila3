@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Xot\Filament\Resources;
 
 use Filament\Forms;
-use Filament\Forms\Components\KeyValue;
 use Modules\Xot\Filament\Resources\ExtraResource\Pages;
 use Modules\Xot\Models\Extra;
 

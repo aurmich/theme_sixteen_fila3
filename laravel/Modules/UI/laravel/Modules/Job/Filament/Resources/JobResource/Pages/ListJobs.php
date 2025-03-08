@@ -9,7 +9,6 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ViewColumn;
-use Filament\Tables\Table;
 use Modules\Job\Filament\Resources\JobResource;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
 
@@ -56,7 +55,6 @@ class ListJobs extends XotBaseListRecords
             DeleteBulkAction::make(),
         ];
     }
-
 
     protected function getHeaderActions(): array
     {

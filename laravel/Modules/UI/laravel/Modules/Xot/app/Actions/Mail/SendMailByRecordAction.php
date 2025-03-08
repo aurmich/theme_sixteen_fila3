@@ -10,7 +10,7 @@ use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Class SendMailByRecordAction
- * 
+ *
  * Invia una mail utilizzando un record come dati.
  */
 class SendMailByRecordAction
@@ -20,9 +20,8 @@ class SendMailByRecordAction
     /**
      * Invia la mail.
      *
-     * @param array<string, mixed> $data I dati del record
-     * @param string $to Indirizzo email del destinatario
-     * @return void
+     * @param  array<string, mixed>  $data  I dati del record
+     * @param  string  $to  Indirizzo email del destinatario
      */
     public function execute(array $data, string $to): void
     {

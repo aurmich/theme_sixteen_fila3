@@ -23,12 +23,15 @@ use Modules\Xot\Filament\Traits\TransTrait;
  */
 final class UsersRelationManager extends XotBaseRelationManager
 {
-    use TransTrait;
     use HasXotTable;
+    use TransTrait;
 
     protected static string $relationship = 'users';
+
     protected static ?string $inverseRelationship = 'roles';
+
     protected static ?string $recordTitleAttribute = 'name';
+
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
     /**
@@ -49,8 +52,7 @@ final class UsersRelationManager extends XotBaseRelationManager
         return [
             Forms\Components\TextInput::make('name')
                 ->required()
-                ->maxLength(255)
-                ,
+                ->maxLength(255),
             // Additional fields can be added here as necessary
         ];
     }

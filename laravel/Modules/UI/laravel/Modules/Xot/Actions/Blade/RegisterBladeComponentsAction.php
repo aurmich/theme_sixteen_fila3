@@ -19,7 +19,7 @@ class RegisterBladeComponentsAction
         $comps = app(GetComponentsAction::class)
             ->execute($path, $namespace.'\View\Components', $prefix);
 
-        if (0 == $comps->count()) {
+        if ($comps->count() == 0) {
             return;
         }
         foreach ($comps->items() as $comp) {
@@ -30,11 +30,11 @@ class RegisterBladeComponentsAction
                 Blade::component($comp->name, $comp->ns);
             } catch (\Error $e) {
                 Notification::make()
-                ->title('Error')
-                ->body($e->getMessage())
-                ->persistent()
-                ->danger()
-                ->send();
+                    ->title('Error')
+                    ->body($e->getMessage())
+                    ->persistent()
+                    ->danger()
+                    ->send();
             }
         }
     }

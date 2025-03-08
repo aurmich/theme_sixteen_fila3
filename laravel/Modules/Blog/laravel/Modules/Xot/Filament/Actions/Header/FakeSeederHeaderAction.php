@@ -34,13 +34,13 @@ class FakeSeederHeaderAction extends Action
                 $modelClass = $resource::getModel();
                 $qty = (int) $data['qty'];
                 app(FakeSeederAction::class)
-                        ->onQueue()
-                        ->execute($modelClass, $qty);
+                    ->onQueue()
+                    ->execute($modelClass, $qty);
                 $title = 'On Queue '.$qty.' '.$modelClass;
                 Notification::make()
-                        ->title($title)
-                        ->success()
-                        ->send();
+                    ->title($title)
+                    ->success()
+                    ->send();
             });
     }
 
