@@ -3,6 +3,16 @@
     "description": "",
     "homepage": "https://github.com/laraxot/module_gdpr_fila3.git",
     "license": "MIT",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
+=======
+>>>>>>> origin/master
     "authors": [
         {
             "name": "Marco Sottana",
@@ -10,6 +20,10 @@
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     "extra": {
         "laravel": {
             "providers": [
@@ -21,7 +35,15 @@
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Gdpr\\": "app/",
+=======
+<<<<<<< HEAD
+            "Modules\\Gdpr\\": "",
+=======
+            "Modules\\Gdpr\\": "app/",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
             "Modules\\Gdpr\\Database\\Factories\\": "database/factories/",
             "Modules\\Gdpr\\Database\\Seeders\\": "database/seeders/"
         }
@@ -29,7 +51,17 @@
     "require": {
         "statikbe/laravel-cookie-consent": "*"
     },
+<<<<<<< HEAD
     "require-dev": {},
+=======
+<<<<<<< HEAD
+    "require-dev": {
+
+    },
+=======
+    "require-dev": {},
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     "repositories": [
         {
             "type": "path",
@@ -42,6 +74,13 @@
         {
             "type": "path",
             "url": "../UI"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         }
     ],
     "scripts": {
@@ -66,4 +105,12 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master

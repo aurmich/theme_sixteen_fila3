@@ -11,6 +11,17 @@ use Modules\Xot\Actions\Class\GetFilenameByClassnameAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+/**
+ * Class GenerateModelByModelClass
+ * 
+ * Genera un modello a partire da una classe modello.
+ */
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 class GenerateModelByModelClass
 {
     use QueueableAction;
@@ -18,6 +29,25 @@ class GenerateModelByModelClass
     public array $replaces = [];
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+     * Esegue la generazione del modello.
+     *
+     * @param string $modelClass Nome della classe modello
+     * @return string Il percorso del modello generato
+     */
+    public function execute(string $modelClass): string
+    {
+        Assert::classExists($modelClass);
+
+        $namespace = str_replace('\\', '/', $modelClass);
+        Assert::string($namespace, 'Namespace must be a string');
+
+        $this->generate($modelClass);
+        $filename = app(GetFilenameByClassnameAction::class)->execute($modelClass);
+=======
+>>>>>>> origin/master
      * Execute the function with the given model class.
      *
      * @param string $model_class the class name of the model
@@ -33,6 +63,10 @@ class GenerateModelByModelClass
 
         $this->generate($model_class);
         $filename = app(GetFilenameByClassnameAction::class)->execute($model_class);
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
         $content_old = File::get($filename);
         $content = $content_old;

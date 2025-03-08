@@ -15,10 +15,25 @@ use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\ActionsPosition;
 use Filament\Tables\Enums\FiltersLayout;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Filament\Tables\Filters\BaseFilter;
+use Filament\Tables\Filters\TernaryFilter;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Webmozart\Assert\Assert;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
 /**
  * Trait HasXotTable.
@@ -32,6 +47,15 @@ trait HasXotTable
     use TransTrait;
 
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    protected static bool $canReplicate = false;
+    protected static bool $canView = true;
+    protected static bool $canEdit = true;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
     /**
      * @return array<Action|BulkAction|ActionGroup>
@@ -88,6 +112,27 @@ trait HasXotTable
         return method_exists($this, 'getRelationship') && $this->getRelationship()->exists();
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    protected function shouldShowReplicateAction(): bool
+    {
+        return static::$canReplicate;
+    }
+
+    protected function shouldShowViewAction(): bool
+    {
+        return static::$canView;
+    }
+
+    protected function shouldShowEditAction(): bool
+    {
+        return static::$canEdit;
+    }
+
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     /**
      * Get global header actions, optimized with tooltips instead of labels.
      *
@@ -98,16 +143,37 @@ trait HasXotTable
         return [
             Actions\CreateAction::make()
                 ->label('')
+<<<<<<< HEAD
                 // ->tooltip(__('user::actions.create_user'))
                 ->tooltip(static::trans('actions.create.tooltip'))
                 ->icon('heroicon-o-plus'),
+=======
+<<<<<<< HEAD
+                ->tooltip(static::trans('actions.create.tooltip'))
+                ->icon('heroicon-o-plus')
+                // ->iconButton()
+                ->button(),
+=======
+                // ->tooltip(__('user::actions.create_user'))
+                ->tooltip(static::trans('actions.create.tooltip'))
+                ->icon('heroicon-o-plus'),
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         ];
     }
 
     /**
      * Get table columns for grid layout.
      *
+<<<<<<< HEAD
      * @return array<Tables\Columns\Column|Stack>
+=======
+<<<<<<< HEAD
+     * @return array<Tables\Columns\Column|Stack|Tables\Columns\Layout\Split>
+=======
+     * @return array<Tables\Columns\Column|Stack>
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
      */
     public function getGridTableColumns(): array
     {
@@ -128,7 +194,20 @@ trait HasXotTable
 
     public function getTableFiltersFormColumns(): int
     {
+<<<<<<< HEAD
         return 1;
+=======
+<<<<<<< HEAD
+        $c = count($this->getTableFilters()) + 1;
+        if ($c > 6) {
+            return 6;
+        }
+
+        return $c;
+=======
+        return 1;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     }
 
     public function getTableRecordTitleAttribute(): string
@@ -136,6 +215,17 @@ trait HasXotTable
         return 'name';
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    public function getTableEmptyStateActions(): array
+    {
+        return [];
+    }
+
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     /**
      * Define the main table structure.
      */
@@ -159,6 +249,13 @@ trait HasXotTable
             ->actions($this->getTableActions())
             ->bulkActions($this->getTableBulkActions())
             ->actionsPosition(ActionsPosition::BeforeColumns)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            ->emptyStateActions($this->getTableEmptyStateActions())
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
             ->striped();
         /*
         ->defaultSort(
@@ -171,7 +268,15 @@ trait HasXotTable
     /**
      * Define table filters.
      *
+<<<<<<< HEAD
      * @return array<Tables\Filters\Filter|Tables\Filters\TernaryFilter>
+=======
+<<<<<<< HEAD
+     * @return array<Tables\Filters\Filter|TernaryFilter|BaseFilter>
+=======
+     * @return array<Tables\Filters\Filter|Tables\Filters\TernaryFilter>
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
      */
     protected function getTableFilters(): array
     {
@@ -181,6 +286,39 @@ trait HasXotTable
     /**
      * Define row-level actions with translations.
      *
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+     * @return array<Action|ActionGroup>
+     */
+    protected function getTableActions(): array
+    {
+        $actions = [];
+        if ($this->shouldShowViewAction()) {
+            $actions['view'] = Tables\Actions\ViewAction::make()
+                ->iconButton()
+                ->tooltip(__('user::actions.view'));
+        }
+
+        if ($this->shouldShowEditAction()) {
+            $actions['edit'] = Tables\Actions\EditAction::make()
+                ->iconButton()
+                ->tooltip(__('user::actions.edit'));
+        }
+
+        if ($this->shouldShowReplicateAction()) {
+            $actions['replicate'] = Tables\Actions\ReplicateAction::make()
+                ->label('')
+                ->tooltip(__('user::actions.replicate'))
+                ->iconButton();
+        }
+        if (! $this->shouldShowDetachAction()) {
+            $actions['delete'] = Tables\Actions\DeleteAction::make()
+                ->tooltip(__('user::actions.delete'))
+                ->iconButton()
+            ;
+=======
+>>>>>>> origin/master
      * @return array<Action>
      */
     protected function getTableActions(): array
@@ -202,6 +340,10 @@ trait HasXotTable
             $actions['delete'] = Tables\Actions\DeleteAction::make()
                 ->label('')
                 ->tooltip(__('user::actions.delete'));
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         }
 
         if ($this->shouldShowDetachAction()) {
@@ -242,11 +384,30 @@ trait HasXotTable
     {
         // @phpstan-ignore function.alreadyNarrowedType, function.alreadyNarrowedType, function.alreadyNarrowedType, function.alreadyNarrowedType
         if (method_exists($this, 'getRelationship')) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            // @phpstan-ignore classConstant.nonObject
+            Assert::string($res = $this->getRelationship()->getModel()::class);
+
+            return $res;
+        }
+        // @phpstan-ignore function.impossibleType, function.impossibleType
+        if (method_exists($this, 'getModel')) {
+            Assert::string($res = $this->getModel());
+
+            return $res;
+=======
+>>>>>>> origin/master
             return $this->getRelationship()->getModel()::class;
         }
         // @phpstan-ignore function.impossibleType, function.impossibleType
         if (method_exists($this, 'getModel')) {
             return $this->getModel();
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         }
         // if (method_exists($this, 'getMountedTableActionRecord')) {
         //    dddx($this->getMountedTableActionRecord());
@@ -266,6 +427,13 @@ trait HasXotTable
     {
         $model = $this->getModelClass();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        // @phpstan-ignore return.type
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         return app($model)->getConnection()->getSchemaBuilder()->hasTable(app($model)->getTable());
     }
 
@@ -293,7 +461,15 @@ trait HasXotTable
             ->modifyQueryUsing(fn (Builder $query) => $query->whereNull('id'))
             ->columns([
                 TextColumn::make('message')
+<<<<<<< HEAD
                     ->label(__('user::fields.message.label'))
+=======
+<<<<<<< HEAD
+
+=======
+                    ->label(__('user::fields.message.label'))
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                     ->default(__('user::fields.message.default'))
                     ->html(),
             ])

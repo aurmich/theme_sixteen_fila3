@@ -4,16 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Media\Filament\Resources;
 
+<<<<<<< HEAD
 use Filament\Forms\Components\BaseFileUpload;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+=======
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\TextInput;
+>>>>>>> origin/master
 use Filament\Resources\Pages\PageRegistration;
 use Modules\Media\Filament\Resources\MediaResource\Pages;
 use Modules\Media\Models\Media;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+<<<<<<< HEAD
 use Webmozart\Assert\Assert;
+=======
+>>>>>>> origin/master
 
 class MediaResource extends XotBaseResource
 {
@@ -21,6 +30,7 @@ class MediaResource extends XotBaseResource
 
     protected static ?string $navigationIcon = 'fas-photo-film';
 
+<<<<<<< HEAD
     public static function form(Form $form, bool $asset = true): Form
     {
         return $form
@@ -41,10 +51,15 @@ class MediaResource extends XotBaseResource
         Assert::isArray($file_types = $asset ? config('xra.asset.attachments.allowed_file_types') : config('xra.operation.attachments.allowed_file_types'));
         Assert::integer($max_size = config('media-library.max_file_size'));
         */
+=======
+    public static function getFormSchema(): array
+    {
+>>>>>>> origin/master
         return [
             FileUpload::make('file')
                 ->hint(static::trans('fields.file_hint'))
                 ->storeFileNamesIn('original_file_name')
+<<<<<<< HEAD
                 /*
                 ->disk($disk)
                 ->acceptedFileTypes($file_types)
@@ -66,6 +81,11 @@ class MediaResource extends XotBaseResource
                 ->required()
                 ->columnSpanFull(),
             */
+=======
+                ->visibility('private')
+                ->required()
+                ->columnSpanFull(),
+>>>>>>> origin/master
             Radio::make('attachment_type'),
             TextInput::make('name')
                 ->translateLabel()

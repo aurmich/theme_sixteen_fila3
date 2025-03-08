@@ -31,7 +31,10 @@ parameters:
         - "#^Unsafe usage of new static#"
         - identifier: missingType.generics
         - identifier: missingType.iterableValue
+<<<<<<< HEAD
         - identifier: larastan.noEnvCallsOutsideOfConfig
+=======
+>>>>>>> origin/master
 
 
     excludePaths:
@@ -42,8 +45,11 @@ parameters:
         - ./*/phpinsights.php
         - ./*/rector.php
         - ./Modules/Comment/packages/spatie/*
+<<<<<<< HEAD
         - ./Modules/Blog/*
         - ./Modules/AI/*
+=======
+>>>>>>> origin/master
 
 
 
@@ -56,10 +62,19 @@ parameters:
 
     editorUrl: 'vscode://file/%%file%%:%%line%%'
 
+<<<<<<< HEAD
     tmpDir: /tmp/phpstan
 
     checkUnusedViews: false
     checkModelProperties: false
+=======
+    tmpDir: ./build/phpstan
+
+    checkUnusedViews: false
+    checkModelProperties: false
+    # checkMissingIterableValueType: false
+    # checkGenericClassInNonGenericObjectType: false
+>>>>>>> origin/master
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
     checkOctaneCompatibility: false

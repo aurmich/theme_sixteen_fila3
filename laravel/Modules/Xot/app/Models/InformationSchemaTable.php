@@ -10,8 +10,39 @@ use Illuminate\Support\Facades\Schema;
 use Sushi\Sushi;
 
 /**
+<<<<<<< HEAD
  * Represents a table in the INFORMATION_SCHEMA.TABLES.
  * Provides metadata and statistics about database tables.
+=======
+<<<<<<< HEAD
+ * Modules\Xot\Models\InformationSchemaTable
+ *
+ * @property string      $TABLE_CATALOG   Nome del catalogo
+ * @property string      $TABLE_SCHEMA    Nome dello schema
+ * @property string      $TABLE_NAME      Nome della tabella
+ * @property string      $TABLE_TYPE      Tipo di tabella
+ * @property string|null $ENGINE          Engine del database
+ * @property int|null    $VERSION         Versione
+ * @property string|null $ROW_FORMAT      Formato delle righe
+ * @property int|null    $TABLE_ROWS      Numero stimato di righe
+ * @property int|null    $AVG_ROW_LENGTH  Lunghezza media delle righe
+ * @property int|null    $DATA_LENGTH     Dimensione dei dati
+ * @property int|null    $MAX_DATA_LENGTH Massima dimensione dei dati
+ * @property int|null    $INDEX_LENGTH    Dimensione degli indici
+ * @property int|null    $DATA_FREE       Spazio libero
+ * @property int|null    $AUTO_INCREMENT  Valore auto increment
+ * @property string|null $CREATE_TIME     Data di creazione
+ * @property string|null $UPDATE_TIME     Data di aggiornamento
+ * @property string|null $CHECK_TIME      Data ultimo check
+ * @property string|null $TABLE_COLLATION Collation della tabella
+ * @property int|null    $CHECKSUM        Checksum
+ * @property string|null $CREATE_OPTIONS  Opzioni di creazione
+ * @property string|null $TABLE_COMMENT   Commento della tabella
+=======
+ * Represents a table in the INFORMATION_SCHEMA.TABLES.
+ * Provides metadata and statistics about database tables.
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
  */
 class InformationSchemaTable extends Model
 {
@@ -25,7 +56,15 @@ class InformationSchemaTable extends Model
     /**
      * The table associated with the model.
      */
+<<<<<<< HEAD
     protected $table = 'information_schema_tables';
+=======
+<<<<<<< HEAD
+    protected $table = 'information_schema.TABLES';
+=======
+    protected $table = 'information_schema_tables';
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
     /**
      * Indicates if the model should be timestamped.
@@ -111,14 +150,54 @@ class InformationSchemaTable extends Model
         'VERSION' => 'integer',
     ];
 
+<<<<<<< HEAD
     /**
      * Get the rows array for the Sushi model.
      * This method is required by Sushi to provide the data.
+=======
+<<<<<<< HEAD
+    public $incrementing = false;
+
+    protected $primaryKey = ['TABLE_SCHEMA', 'TABLE_NAME'];
+
+    /**
+     * Get the rows for Sushi.
+=======
+    /**
+     * Get the rows array for the Sushi model.
+     * This method is required by Sushi to provide the data.
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
      *
      * @return array<int, array<string, mixed>>
      */
     public function getRows(): array
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        $query = 'SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()';
+
+        return DB::select($query);
+    }
+
+    /**
+     * Get table statistics.
+     *
+     * @param string $schema Schema name
+     * @param string $table  Table name
+     */
+    public static function getTableStats(string $schema, string $table): ?self
+    {
+        return static::where('TABLE_SCHEMA', $schema)
+            ->where('TABLE_NAME', $table)
+            ->first();
+    }
+
+    /**
+     * Get accurate row count.
+=======
+>>>>>>> origin/master
         $query = 'SELECT 
             TABLE_CATALOG,
             TABLE_SCHEMA,
@@ -247,6 +326,10 @@ class InformationSchemaTable extends Model
 
     /**
      * Get accurate row count for a table.
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
      *
      * @param string $tableName The name of the table
      * @param string $database  The database name

@@ -1,10 +1,19 @@
 <?php
 
+<<<<<<< HEAD
+=======
+declare(strict_types=1);
+
+use Modules\Tenant\Services\TenantService;
+>>>>>>> origin/master
 use Nwidart\Modules\Activators\FileActivator;
 use Nwidart\Modules\Providers\ConsoleServiceProvider;
 
 return [
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     /*
     |--------------------------------------------------------------------------
     | Module Namespace
@@ -197,7 +206,10 @@ return [
         |
         */
         'translations' => false,
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     ],
 
     /*
@@ -256,7 +268,11 @@ return [
     */
     'register' => [
         'translations' => true,
+<<<<<<< HEAD
         /**
+=======
+        /*
+>>>>>>> origin/master
          * load files on boot or register method
          */
         'files' => 'register',
@@ -274,7 +290,12 @@ return [
     'activators' => [
         'file' => [
             'class' => FileActivator::class,
+<<<<<<< HEAD
             'statuses-file' => base_path('modules_statuses.json'),
+=======
+            // 'statuses-file' => base_path('modules_statuses.json'),
+            'statuses-file' => TenantService::filePath('modules_statuses.json'),
+>>>>>>> origin/master
         ],
     ],
 

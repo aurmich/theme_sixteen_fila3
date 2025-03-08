@@ -12,7 +12,14 @@ Power your Laravel application with **Module Xot Fila3**, a comprehensive multi-
 - **Integrated Permissions**: Fine-grained control over user access to specific modules.
 - **Automatic Module Discovery**: Add new modules without touching any config files.
 - **Dynamic Routing**: Seamlessly manage routing for different modules with ease.
+<<<<<<< HEAD
 - **Filament 3 Compatible**: Fully compatible with Filament 3 admin panel interface.
+=======
+<<<<<<< HEAD
+=======
+- **Filament 3 Compatible**: Fully compatible with Filament 3 admin panel interface.
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
 ---
 
@@ -65,6 +72,11 @@ Customize the behavior of your modules via the `module_xot_fila3.php` config fil
 
 ---
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
 ### Filament 3 Compatibility ✅
 
 Il modulo Xot è ora completamente compatibile con Filament 3. Abbiamo risolto i problemi noti come:
@@ -103,6 +115,10 @@ Per aggiungere nuovi test:
 
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 ### FAQ ❓
 
 - **Q: Can I add modules dynamically?**
@@ -111,9 +127,18 @@ Per aggiungere nuovi test:
 - **Q: How do I manage routes for each module?**
   A: Route management is integrated. Just focus on building your modules and let the system handle the rest!
 
+<<<<<<< HEAD
 - **Q: Is this compatible with Filament 3?**
   A: Yes! Version 10.0.x and above are fully compatible with Filament 3, with all known issues resolved.
 
+=======
+<<<<<<< HEAD
+=======
+- **Q: Is this compatible with Filament 3?**
+  A: Yes! Version 10.0.x and above are fully compatible with Filament 3, with all known issues resolved.
+
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 ---
 
 ### Author 👨‍💻

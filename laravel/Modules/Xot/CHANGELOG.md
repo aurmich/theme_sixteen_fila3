@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# Changelog
+
+All notable changes to `:package_name` will be documented in this file.
+
+## 1.0.0 - 202X-XX-XX
+
+- initial release
+=======
+>>>>>>> origin/master
 # Changelog del Modulo Xot
 
 ## Versione Attuale (10/2023)
@@ -18,3 +30,7 @@
 ---
 
 *Ultimo aggiornamento: 10/2023*
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master

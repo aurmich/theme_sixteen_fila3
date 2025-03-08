@@ -24,8 +24,18 @@ abstract class XotBaseRelationManager extends RelationManager
 
     protected static string $relationship = '';
 
+<<<<<<< HEAD
     /** @var class-string<XotBaseResource> */
     protected static string $resource;
+=======
+<<<<<<< HEAD
+    /** @var class-string<XotBaseResource>|null */
+    protected static ?string $resourceClass = null;
+=======
+    /** @var class-string<XotBaseResource> */
+    protected static string $resource;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
     public static function getModuleName(): string
     {
@@ -47,7 +57,15 @@ abstract class XotBaseRelationManager extends RelationManager
         return static::transFunc(__FUNCTION__);
     }
 
+<<<<<<< HEAD
     public function form(Form $form): Form
+=======
+<<<<<<< HEAD
+    final public function form(Form $form): Form
+=======
+    public function form(Form $form): Form
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     {
         return $form
             ->schema($this->getFormSchema());
@@ -60,12 +78,30 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     public function getFormSchema(): array
     {
+<<<<<<< HEAD
         return $this->getResource()::getFormSchema();
+=======
+<<<<<<< HEAD
+        $resourceClass = $this->getResource();
+        return $resourceClass::getFormSchema();
+=======
+        return $this->getResource()::getFormSchema();
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     }
 
     public function getListTableColumns(): array
     {
+<<<<<<< HEAD
         $index = Arr::get($this->getResource()::getPages(), 'index');
+=======
+<<<<<<< HEAD
+        $resourceClass = $this->getResource();
+        $index = Arr::get($resourceClass::getPages(), 'index');
+=======
+        $index = Arr::get($this->getResource()::getPages(), 'index');
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         $index_page = $index->getPage();
         $columns = app($index_page)->getListTableColumns();
 
@@ -106,10 +142,24 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     protected function getResource(): string
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        if (static::$resourceClass !== null) {
+            return static::$resourceClass;
+        }
+
+        try {
+=======
+>>>>>>> origin/master
         try {
             /* @var class-string<XotBaseResource> */
             return static::$resource;
         } catch (\Exception $e) {
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
             $class = $this::class;
             $resource_name = Str::of(class_basename($this))
                 ->beforeLast('RelationManager')
@@ -122,7 +172,23 @@ abstract class XotBaseRelationManager extends RelationManager
                 ->toString();
             Assert::classExists($resource_class = $ns.'\\'.$resource_name);
 
+<<<<<<< HEAD
             return $resource_class;
+=======
+<<<<<<< HEAD
+            static::$resourceClass = $resource_class;
+            return $resource_class;
+        } catch (\Throwable $e) {
+            throw new \RuntimeException(
+                'Impossibile determinare la classe Resource per ' . static::class . 
+                '. Definisci la proprietà statica $resourceClass o sovrascrivi il metodo getResource().',
+                0,
+                $e
+            );
+=======
+            return $resource_class;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         }
     }
 }

@@ -28,7 +28,11 @@ class SmsService
     public static function getInstance(): self
     {
         if (! self::$instance instanceof self) {
+<<<<<<< HEAD
             self::$instance = new self;
+=======
+            self::$instance = new self();
+>>>>>>> origin/master
         }
 
         return self::$instance;

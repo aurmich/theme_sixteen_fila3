@@ -3,6 +3,16 @@
     "description": "",
     "homepage": "https://github.com/laraxot/module_geo_fila3.git",
     "license": "MIT",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
+=======
+>>>>>>> origin/master
     "authors": [
         {
             "name": "Marco Sottana",
@@ -10,21 +20,49 @@
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     "extra": {
         "laravel": {
             "providers": [
                 "Livewire\\LivewireServiceProvider",
                 "Modules\\Geo\\Providers\\GeoServiceProvider",
                 "Modules\\Geo\\Providers\\Filament\\AdminPanelProvider"
+<<<<<<< HEAD
             ],
             "aliases": {}
+=======
+<<<<<<< HEAD
+
+
+            ],
+            "aliases": {
+
+            }
+=======
+            ],
+            "aliases": {}
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Geo\\": "app/",
             "Modules\\Geo\\Database\\Factories\\": "database/factories/",
             "Modules\\Geo\\Database\\Seeders\\": "database/seeders/"
+=======
+<<<<<<< HEAD
+            "Modules\\Geo\\": ""
+=======
+            "Modules\\Geo\\": "app/",
+            "Modules\\Geo\\Database\\Factories\\": "database/factories/",
+            "Modules\\Geo\\Database\\Seeders\\": "database/seeders/"
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         }
     },
     "require": {
@@ -32,6 +70,13 @@
         "dotswan/filament-map-picker": "^1.2",
         "webbingbrasil/filament-maps": "^3.0@beta"
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     "repositories": [
         {
             "type": "path",
@@ -68,4 +113,13 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+
+}
+=======
+}
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master

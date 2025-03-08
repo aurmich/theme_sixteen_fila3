@@ -15,6 +15,55 @@ return [
         'icon' => 'xot-session',
     ],
     'fields' => [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        'id' => [
+            'label' => 'ID',
+            'placeholder' => 'Inserisci ID',
+            'help' => 'Identificativo univoco della sessione',
+        ],
+        'user_id' => [
+            'label' => 'ID Utente',
+            'placeholder' => 'ID dell\'utente',
+            'help' => 'ID dell\'utente associato alla sessione',
+        ],
+        'ip_address' => [
+            'label' => 'Indirizzo IP',
+            'placeholder' => 'Indirizzo IP',
+            'help' => 'Indirizzo IP dell\'utente',
+        ],
+        'user_agent' => [
+            'label' => 'User Agent',
+            'placeholder' => 'User Agent del browser',
+            'help' => 'Informazioni sul browser dell\'utente',
+        ],
+        'payload' => [
+            'label' => 'Payload',
+            'help' => 'Dati della sessione in formato chiave-valore',
+        ],
+        'last_activity' => [
+            'label' => 'Ultima Attività',
+            'placeholder' => 'Timestamp ultima attività',
+            'help' => 'Timestamp dell\'ultima attività dell\'utente',
+        ],
+        'location' => [
+            'label' => 'Posizione',
+            'help' => 'Localizzazione geografica approssimativa',
+        ],
+        'size' => [
+            'label' => 'Dimensione',
+            'help' => 'Dimensione dei dati in memoria',
+        ],
+        'created_at' => [
+            'label' => 'Data Creazione',
+            'help' => 'Momento di inizio della sessione',
+        ],
+        'expires_at' => [
+            'label' => 'Scadenza',
+            'help' => 'Momento di scadenza previsto',
+=======
+>>>>>>> origin/master
         'identification' => [
             'id' => [
                 'label' => 'ID Sessione',
@@ -63,6 +112,10 @@ return [
                 'label' => 'Scadenza',
                 'help' => 'Momento di scadenza previsto',
             ],
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         ],
     ],
     'actions' => [

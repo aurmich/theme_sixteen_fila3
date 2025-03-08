@@ -5,6 +5,36 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\ModelClass;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Webmozart\Assert\Assert;
+
+/**
+ * Class CountAction
+ * 
+ * Conta i record di un modello.
+ */
+class CountAction
+{
+    /**
+     * Conta i record di un modello.
+     *
+     * @param class-string<Model> $modelClass Nome della classe modello
+     * @return int Numero di record
+     * @throws \InvalidArgumentException Se la classe modello non è valida
+     */
+    public static function execute(string $modelClass): int
+    {
+        Assert::classExists($modelClass);
+        Assert::subclassOf($modelClass, Model::class);
+
+        /** @var Model $model */
+        $model = new $modelClass();
+        
+        return $model->query()->count();
+=======
+>>>>>>> origin/master
 use Modules\Xot\Models\InformationSchemaTable;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -27,5 +57,9 @@ class CountAction
     public function execute(string $modelClass): int
     {
         return InformationSchemaTable::getModelCount($modelClass);
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     }
 }

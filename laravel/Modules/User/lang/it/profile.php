@@ -106,5 +106,23 @@ return [
         ],
         'notify' => 'Profilo aggiornato correttamente!',
     ],
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+    'navigation' => [
+        'name' => 'Profilo',
+        'plural' => 'Profili',
+        'group' => [
+            'name' => 'Gestione Utenti',
+            'description' => 'Gestione dei profili',
+        ],
+        'label' => 'profili',
+        'sort' => 71,
+        'icon' => 'user-profile',
+    ],
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 ];

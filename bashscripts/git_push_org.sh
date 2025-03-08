@@ -1,5 +1,12 @@
 #!/bin/bash
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 # Funzione per la gestione dei colori e migliorare l'esperienza utente
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -131,4 +138,70 @@ for branch in cs0.1.01 cs0.2.00 cs0.2.01 cs0.2.02 cs0.2.03 cs0.2.04 cs0.2.05 cs0
     git push origin --delete $branch
 done
 
+<<<<<<< HEAD
 log_info "========= SYNC COMPLETATA CON SUCCESSO [$WHERE ($BRANCH)] ========="
+=======
+<<<<<<< HEAD
+log_info "========= SYNC COMPLETATA CON SUCCESSO [$WHERE ($BRANCH)] ========="
+=======
+# Check if organization name is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <new-organization-name>"
+    exit 1
+fi
+
+NEW_ORG="$1"
+
+# Check if .gitmodules exists
+if [ ! -f .gitmodules ]; then
+    echo "Error: .gitmodules file not found!"
+    exit 1
+fi
+
+# Read .gitmodules file and process each submodule
+while IFS= read -r line; do
+    # Remove carriage return and leading/trailing whitespace
+    line=$(echo "$line" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    if [[ $line =~ path\ =\ (.+)$ ]]; then
+        # Get submodule path and clean it
+        SUBMODULE_PATH=$(echo "${BASH_REMATCH[1]}" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+        
+        echo "Processing submodule: $SUBMODULE_PATH"
+        
+        # Check if directory exists
+        if [ ! -d "$SUBMODULE_PATH" ]; then
+            echo "Warning: Directory $SUBMODULE_PATH does not exist, skipping..."
+            continue
+        fi
+        
+        # Enter submodule directory
+        (
+            cd "$SUBMODULE_PATH" || {
+                echo "Error: Could not enter directory $SUBMODULE_PATH"
+                exit 1
+            }
+            
+            # Get repository name from current remote URL
+            REPO_NAME=$(basename "$(git config --get remote.origin.url)" .git)
+            
+            # Create new remote URL
+            NEW_REMOTE="https://github.com/$NEW_ORG/$REPO_NAME.git"
+            
+            echo "Pushng to: $NEW_REMOTE"
+            
+            # Fetch from new remote and merge
+            #git fetch "$NEW_REMOTE"
+            #git merge "$NEW_REMOTE/$(git rev-parse --abbrev-ref HEAD)" || echo "Failed to merge changes for $SUBMODULE_PATH"
+            git push -u "$NEW_REMOTE"
+            echo "----------------------------------------"
+        )
+    fi
+done < .gitmodules
+
+echo "All submodules have been pushed!"
+>>>>>>> ae40fae10 (.)
+=======
+log_info "========= SYNC COMPLETATA CON SUCCESSO [$WHERE ($BRANCH)] ========="
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master

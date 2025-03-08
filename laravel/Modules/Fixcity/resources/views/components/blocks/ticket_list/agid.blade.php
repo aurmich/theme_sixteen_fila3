@@ -8,6 +8,13 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Modules\Fixcity\Enums\TicketStatusEnum;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
 new class extends Component
 {
@@ -33,10 +40,39 @@ new class extends Component
     public function mount()
     {
         $this->resolvedTicketsCount = Ticket::query()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            ->where(function ($q) {
+                $q->whereIn('status', TicketStatusEnum::canViewByAll())
+                    ->orWhere('created_by', authId())
+                    ->orWhere('updated_by', authId());
+            })
+            ->where('created_at', '>=', Carbon::now()->subMonths(12))
+            ->count();
+        $this->dispatch('get-user-location');
+    }
+
+    public function setUserLocation($latitude, $longitude)
+    {
+        $this->userLatitude = $latitude;
+        $this->userLongitude = $longitude;
+
+        $this->dispatch('updateMapCenter', $latitude, $longitude)
+            ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
+    }
+
+
+=======
+>>>>>>> origin/master
             ->where('created_at', '>=', Carbon::now()->subMonths(12))
             ->count();
     }
 
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     public function loadMore()
     {
         $this->perPage += 3;
@@ -97,6 +133,17 @@ new class extends Component
     {
         $categories = collect(TicketTypeEnum::cases())->map(function ($type) {
             $count = Ticket::where('type', $type->value)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                ->where(function ($q) {
+                    $q->whereIn('status', TicketStatusEnum::canViewByAll())
+                        ->orWhere('created_by', authId())
+                        ->orWhere('updated_by', authId());
+                })
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                 ->where('created_at', '>=', Carbon::now()->subMonths(12))
                 ->count();
 
@@ -108,7 +155,15 @@ new class extends Component
         });
 
         $query = Ticket::query()
+<<<<<<< HEAD
             ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
+=======
+<<<<<<< HEAD
+            ->select('id', 'name', 'slug', 'type', 'content', 'created_at', 'latitude', 'longitude')
+=======
+            ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
             ->with('media')
             ->latest();
 
@@ -208,10 +263,25 @@ new class extends Component
                         @foreach($tickets as $ticket)
                         <x-filament::section>
                             <div class="space-y-4">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                                <a target="_blank" href="{{ route('ticket.view', ['slug' => $ticket->slug]) }}">
+                                    <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
+                                </a>
+                                <div class="space-y-2">
+                                    <p>Tipologia di segnalazione</p>
+                                    <p><strong>{{ $ticket->type?->getLabel() }}</strong></p>
+=======
+>>>>>>> origin/master
                                 <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
                                 <div class="space-y-2">
                                     <p>Tipologia di segnalazione</p>
                                     <p><strong>{{ $ticket->type?->getLabel() ?? 'Non specificato' }}</strong></p>
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                                 </div>
                                 @if(in_array($ticket->id, $expandedTickets))
                                 <div class="space-y-4">
@@ -322,4 +392,32 @@ new class extends Component
         </section>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('get-user-location', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    window.dispatchEvent(new CustomEvent('set-user-location', {
+                        detail: {
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude
+                        }
+                    }));
+                });
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        });
+
+        window.addEventListener('set-user-location', function(event) {
+            @this.call('setUserLocation', event.detail.latitude, event.detail.longitude);
+        });
+    });
+</script>
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 @endvolt

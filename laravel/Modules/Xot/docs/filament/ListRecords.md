@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 # List Records in Filament
 
 ## Estensione Corretta
@@ -124,6 +130,10 @@ Quando si estende `XotBaseListRecords`, è necessario implementare i seguenti me
 2. La configurazione della tabella deve essere sempre nella classe List, non nel Resource
 
 3. Mantenere la coerenza in tutto il progetto usando sempre XotBaseListRecords
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
 ```php
 declare(strict_types=1);
@@ -150,7 +160,15 @@ use Modules\UI\Enums\TableLayoutEnum;
 use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
 use Modules\Xot\Filament\Traits\TransTrait;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+=======
+<<<<<<< HEAD
+use Modules\Xot\Filament\Pages\XotBaseListRecords;
+=======
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
 
 class ListXXX extends XotBaseListRecords
@@ -158,7 +176,20 @@ class ListXXX extends XotBaseListRecords
     
     protected static string $resource = XXXResource::class;
 
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\CreateAction::make(),
+        ];
+    }
+=======
+    
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
     
 

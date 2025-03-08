@@ -96,3 +96,7 @@ docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
+=======
+.php-cs-fixer.cache
+>>>>>>> origin/master

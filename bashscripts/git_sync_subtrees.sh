@@ -39,4 +39,8 @@ while IFS= read -r line; do
     fi
 done < "$CONFIG_FILE"
 
+<<<<<<< HEAD
 echo "✅ Tutti i git subtree sono stati aggiornati e sincronizzati con successo!"
+=======
+echo "✅ Tutti i git subtree sono stati aggiornati e sincronizzati con successo!"
+>>>>>>> origin/master

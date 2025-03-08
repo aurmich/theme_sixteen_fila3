@@ -118,6 +118,35 @@ class XotData extends Data implements Wireable
         return $class;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    /**
+     * Ottiene un utente tramite email.
+     *
+     * @param string $email L'indirizzo email dell'utente
+     * @return UserContract L'utente trovato o creato
+     * @throws \InvalidArgumentException Se la classe utente non è configurata correttamente
+     */
+    public function getUserByEmail(string $email): UserContract
+    {
+        $userClass = $this->getUserClass();
+        
+        /** @var Model&UserContract $userInstance */
+        $userInstance = new $userClass();
+        
+        if (! in_array('email', $userInstance->getFillable(), true)) {
+            throw new \InvalidArgumentException(
+                sprintf('Attributo email non trovato nei fillable del modello %s', get_class($userInstance))
+            );
+        }
+
+        /** @var Model&UserContract $user */
+        $user = $userClass::firstOrCreate(['email' => $email]);
+        Assert::notNull($user, sprintf('Impossibile trovare o creare utente con email %s', $email));
+        Assert::implementsInterface($user, UserContract::class);
+=======
+>>>>>>> origin/master
     public function getUserByEmail(string $email): UserContract
     {
         $user_class = $this->getUserClass();
@@ -132,6 +161,10 @@ class XotData extends Data implements Wireable
         }
             */
         Assert::implementsInterface($user, UserContract::class, '['.__LINE__.']['.class_basename($this).']');
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
         return $user;
     }
@@ -234,22 +267,71 @@ class XotData extends Data implements Wireable
         return $res;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    /**
+     * Ottiene un profilo tramite email.
+     *
+     * @param string $email L'indirizzo email dell'utente
+     * @return ProfileContract Il profilo associato all'utente
+     * @throws \InvalidArgumentException Se l'utente non viene trovato
+     */
+    public function getProfileByEmail(string $email): ProfileContract
+    {
+        /** @var UserContract $user */
+        $user = $this->getUserByEmail($email);
+        Assert::notNull($user->getKey(), 'User ID non può essere null');
+        
+        /** @var ProfileContract $profile */
+        $profile = $this->getProfileModelByUserId((string)$user->getKey());
+        Assert::implementsInterface($profile, ProfileContract::class);
+=======
+>>>>>>> origin/master
     public function getProfileByEmail(string $email): ProfileContract
     {
         $user = $this->getUserByEmail($email);
         $profile = $this->getProfileModelByUserId($user->id);
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
         return $profile;
     }
 
+<<<<<<< HEAD
     public function iAmSuperAdmin(): bool
     {
         $user = auth()->user();
+=======
+<<<<<<< HEAD
+    /**
+     * Verifica se l'utente corrente è un super admin.
+     */
+    public function iAmSuperAdmin(): bool
+    {
+        /** @var UserContract|null */
+        $user = \Illuminate\Support\Facades\Auth::user();
+=======
+    public function iAmSuperAdmin(): bool
+    {
+        $user = auth()->user();
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         if (null === $user) {
             return false;
         }
 
+<<<<<<< HEAD
         return $user->hasRole('super-admin');
+=======
+<<<<<<< HEAD
+        return $user instanceof UserContract && $user->hasRole('super-admin');
+=======
+        return $user->hasRole('super-admin');
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     }
 
     public function getProfileModel(): ProfileContract

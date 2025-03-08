@@ -20,6 +20,13 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget as BaseWidget;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Modules\Xot\Filament\Widgets\XotBaseWidget;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 use Modules\Fixcity\Events\TicketCreatedEvent;
 use Modules\Fixcity\Filament\Resources\TicketResource;
 use Modules\Fixcity\Models\Ticket;
@@ -35,8 +42,18 @@ use Illuminate\Support\Facades\Blade;
 class CreateTicketWidget extends BaseWidget implements HasForms
 {
     use InteractsWithForms;
+<<<<<<< HEAD
 
     protected static string $view = 'fixcity::filament.widgets.create-ticket';
+=======
+<<<<<<< HEAD
+    
+    protected static string $view = 'fixcity::filament.widgets.create-ticket';
+=======
+
+    protected static string $view = 'ticket::filament.widgets.create-ticket';
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
     protected int|string|array $columnSpan = 'full';
 
@@ -52,16 +69,41 @@ class CreateTicketWidget extends BaseWidget implements HasForms
         return [
             Wizard::make([
                 Step::make('step-1')
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                    ->label(__('fixcity::ticket.steps.auth.label'))
+                    ->icon('heroicon-o-shield-check')
+                    ->description(__('fixcity::ticket.steps.auth.description'))
+                    ->schema([
+                        RichEditor::make('privacy_notice')
+                            ->label('')
+                            ->default(__('fixcity::ticket.fields.privacy_notice.content'))
+=======
+>>>>>>> origin/master
                     ->label('Autorizzazioni e condizioni')
                     ->schema([
                         RichEditor::make('privacy_notice')
                             ->label('')
                             ->default("Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell'articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).<br><br>Per i dettagli sul trattamento dei dati personali consulta l'<a href='/privacy' target='_blank' style='color: #007a52'>informativa sulla privacy</a>.")
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                             ->disabled()
                             ->extraAttributes(['class' => 'border-0 shadow-none !p-0 !bg-transparent']),
 
                         Checkbox::make('accept_terms')
+<<<<<<< HEAD
                             ->label("Ho letto e compreso l'informativa sulla privacy")
+=======
+<<<<<<< HEAD
+                            ->label(__('fixcity::ticket.fields.accept_terms.label'))
+                            ->helperText(__('fixcity::ticket.fields.accept_terms.helper'))
+=======
+                            ->label("Ho letto e compreso l'informativa sulla privacy")
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                             ->required()
                             ->default(false)
                             ->extraAttributes(['class' => 'text-green-500 text-lg checked:bg-green-500 checked:hover:bg-green-500 focus:ring-green-500'])
@@ -69,22 +111,57 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                     ])
                     ->afterValidation(function($state) {
                         if (!$state['accept_terms']) {
+<<<<<<< HEAD
                             $this->addError('data.accept_terms', "Devi accettare l'informativa sulla privacy per continuare.");
                             $this->halt();
+=======
+<<<<<<< HEAD
+                            $this->addError('data.accept_terms', __('fixcity::ticket.validation.accept_terms'));
+                            $this->stop();
+=======
+                            $this->addError('data.accept_terms', "Devi accettare l'informativa sulla privacy per continuare.");
+                            $this->halt();
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                         }
                     }),
 
                 Step::make('step-2')
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                    ->label(__('fixcity::ticket.steps.data.label'))
+                    ->icon('heroicon-o-document-text')
+                    ->description(__('fixcity::ticket.steps.data.description'))
+                    ->schema([
+                        Placeholder::make('')
+                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">' . __('fixcity::ticket.fields.issue.label') . '</h1>')),
+=======
+>>>>>>> origin/master
                     ->label('Dati di segnalazione')
                     ->schema([
                         Placeholder::make('')
                             ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">Disservizio*</h1>')),
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                         ...TicketResource::getFormSchema(),
                     ]),
             ])
                 ->nextAction(
                     fn (Action $action) => $action
+<<<<<<< HEAD
                         ->label('Avanti')
+=======
+<<<<<<< HEAD
+                        ->label(__('fixcity::ticket.actions.next.label'))
+                        ->icon('heroicon-m-arrow-right')
+                        ->color('primary')
+=======
+                        ->label('Avanti')
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                         ->size('xl')
                         ->extraAttributes(['class' => 'px-8 py-4 text-lg font-bold w-96 -ml-6'])
                 )
@@ -93,7 +170,15 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                         type="submit"
                         class="fi-btn relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2 rounded-lg fi-btn-size-md gap-1.5 px-8 py-4 text-md font-bold w-64 bg-white text-green-600 border-2 border-green-600 hover:bg-green-50"
                     >
+<<<<<<< HEAD
                         Salva richiesta
+=======
+<<<<<<< HEAD
+                        {{ __('fixcity::ticket.actions.save.label') }}
+=======
+                        Salva richiesta
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                     </button>
                 BLADE)))
                 ->columnSpanFull()
@@ -129,4 +214,12 @@ class CreateTicketWidget extends BaseWidget implements HasForms
         redirect('/');
     }
     
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master

@@ -10,4 +10,21 @@ use Modules\Setting\Filament\Resources\DatabaseConnectionResource;
 class CreateDatabaseConnection extends CreateRecord
 {
     protected static string $resource = DatabaseConnectionResource::class;
+<<<<<<< HEAD
+=======
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function afterCreate(): void
+    {
+        $connection = $this->record;
+
+        if ('active' === $connection->status) {
+            $connection->testConnection();
+        }
+    }
+>>>>>>> origin/master
 }

@@ -9,6 +9,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+<<<<<<< HEAD
 use Filament\Forms\Form;
 use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -16,6 +17,8 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+=======
+>>>>>>> origin/master
 use Modules\Notify\Filament\Resources\NotifyThemeResource\Pages\CreateNotifyTheme;
 use Modules\Notify\Filament\Resources\NotifyThemeResource\Pages\EditNotifyTheme;
 use Modules\Notify\Filament\Resources\NotifyThemeResource\Pages\ListNotifyThemes;
@@ -24,8 +27,11 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class NotifyThemeResource extends XotBaseResource
 {
+<<<<<<< HEAD
     // //
 
+=======
+>>>>>>> origin/master
     protected static ?string $model = NotifyTheme::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-bell';
@@ -33,6 +39,7 @@ class NotifyThemeResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
+<<<<<<< HEAD
             Select::make('lang')->options(self::fieldOptions('lang')),
             Select::make('type')->options(self::fieldOptions('type')),
             Select::make('post_type')->options(self::fieldOptions('post_type')),
@@ -41,12 +48,26 @@ class NotifyThemeResource extends XotBaseResource
             TextInput::make('from'),
             TextInput::make('from_email'),
             SpatieMediaLibraryFileUpload::make('logo_src')
+=======
+            'lang' => Select::make('lang')
+                ->options(self::fieldOptions('lang')),
+            'type' => Select::make('type')
+                ->options(self::fieldOptions('type')),
+            'post_type' => Select::make('post_type')
+                ->options(self::fieldOptions('post_type')),
+            'post_id' => TextInput::make('post_id'),
+            'subject' => TextInput::make('subject'),
+            'from' => TextInput::make('from'),
+            'from_email' => TextInput::make('from_email'),
+            'logo' => SpatieMediaLibraryFileUpload::make('logo_src')
+>>>>>>> origin/master
                 ->enableOpen()
                 ->enableDownload()
                 ->columnSpanFull()
                 ->disk('uploads')
                 ->directory('photos')
                 ->preserveFilenames(),
+<<<<<<< HEAD
             TextInput::make('logo_width'),
             TextInput::make('logo_height'),
             Select::make('theme')->options([
@@ -153,6 +174,23 @@ class NotifyThemeResource extends XotBaseResource
     {
         return [
             // RelationManagers\LinkableRelationManager::class,
+=======
+            'logo_width' => TextInput::make('logo_width'),
+            'logo_height' => TextInput::make('logo_height'),
+            'theme' => Select::make('theme')
+                ->options([
+                    'empty' => 'empty',
+                    'ark' => 'ark',
+                    'minty' => 'minty',
+                    'sunny' => 'sunny',
+                    'widgets' => 'widgets',
+                ])
+                ->default('empty'),
+            'body' => Textarea::make('body')
+                ->columnSpanFull(),
+            'body_html' => RichEditor::make('body_html')
+                ->columnSpanFull(),
+>>>>>>> origin/master
         ];
     }
 
@@ -164,4 +202,28 @@ class NotifyThemeResource extends XotBaseResource
             'edit' => EditNotifyTheme::route('/{record}/edit'),
         ];
     }
+<<<<<<< HEAD
+=======
+
+    public static function fieldOptions(string $field): array
+    {
+        return match ($field) {
+            'lang' => [
+                'it' => 'Italiano',
+                'en' => 'English',
+            ],
+            'type' => [
+                'email' => 'Email',
+                'sms' => 'SMS',
+                'push' => 'Push Notification',
+            ],
+            'post_type' => [
+                'page' => 'Page',
+                'post' => 'Post',
+                'product' => 'Product',
+            ],
+            default => [],
+        };
+    }
+>>>>>>> origin/master
 }

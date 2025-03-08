@@ -79,6 +79,10 @@ composer format        # Formatta il codice
 6. Implementare validazione input
 7. Gestire correttamente le password
 8. Proteggere i dati sensibili
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 9. Utilizzare le classi base del modulo Xot per l'ereditarietà
 10. Mantenere un ordine coerente nelle importazioni
 
@@ -97,6 +101,11 @@ composer format        # Formatta il codice
    - Verificare la compatibilità con le classi base
    - Mantenere la coerenza tra i file correlati
    - Testare dopo ogni risoluzione
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
 ## Troubleshooting
 ### Problemi Comuni

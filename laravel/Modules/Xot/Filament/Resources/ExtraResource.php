@@ -23,6 +23,11 @@ class ExtraResource extends XotBaseResource
             ]);
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
     public static function table(Table $table): Table
     {
         return $table
@@ -39,6 +44,10 @@ class ExtraResource extends XotBaseResource
                 ]),
             ]);
     }
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 
     public static function getRelations(): array
     {

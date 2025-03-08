@@ -7,7 +7,11 @@ namespace Modules\Xot\Actions\File;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
+<<<<<<< HEAD
  * moved from fileservice..
+=======
+ * moved from fileservice.
+>>>>>>> origin/master
  */
 class FixPathAction
 {

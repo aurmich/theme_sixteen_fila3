@@ -10,7 +10,15 @@ use Filament\Resources\Pages\EditRecord as FilamentEditRecord;
 /**
  * Undocumented class.
  */
+<<<<<<< HEAD
 abstract class XotBaseEditRecord extends FilamentEditRecord
+=======
+<<<<<<< HEAD
+abstract class XotBaseEditRecord extends FilamentEditRecord
+=======
+abstract class XotBaseEditRecord extends FilamenEditRecord
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 {
     // ...
 

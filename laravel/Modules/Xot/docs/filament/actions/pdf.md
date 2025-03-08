@@ -9,7 +9,15 @@ section: content
 
 # Metodo 1
 
+<<<<<<< HEAD
  file: app/Filament/resources/OrderResource.php
+=======
+<<<<<<< HEAD
+ file: app/Filament/Resources/OrderResource.php
+=======
+ file: app/Filament/resources/OrderResource.php
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 ```php
 
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -79,7 +87,15 @@ class PdfController extends Controller
 }
  ```
 
+<<<<<<< HEAD
  file: app/Filament/resources/OrderResource.php
+=======
+<<<<<<< HEAD
+ file: app/Filament/Resources/OrderResource.php
+=======
+ file: app/Filament/resources/OrderResource.php
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
  ```php
  class OrderResource extends \Modules\Xot\Filament\Resources\XotBaseResource
 {

@@ -3,6 +3,10 @@
 return [
 
     'models' => [
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         /*
          * When using the "HasPermissions" trait from this package, we need to know which
          * Eloquent model should be used to retrieve your permissions. Of course, it
@@ -12,7 +16,11 @@ return [
          * `Spatie\Permission\Contracts\Permission` contract.
          */
 
+<<<<<<< HEAD
         'permission' => Modules\User\Models\Permission::class,
+=======
+        'permission' => Spatie\Permission\Models\Permission::class,
+>>>>>>> origin/master
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -23,7 +31,12 @@ return [
          * `Spatie\Permission\Contracts\Role` contract.
          */
 
+<<<<<<< HEAD
         'role' => Modules\User\Models\Role::class,
+=======
+        'role' => Spatie\Permission\Models\Role::class,
+
+>>>>>>> origin/master
     ],
 
     'table_names' => [

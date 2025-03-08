@@ -7,7 +7,16 @@ use Modules\User\Models\OauthClient;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
 
+<<<<<<< HEAD
 return new class extends XotBaseMigration {
+=======
+<<<<<<< HEAD
+return new class extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     public function up(): void
     {
         $xot = XotData::make();

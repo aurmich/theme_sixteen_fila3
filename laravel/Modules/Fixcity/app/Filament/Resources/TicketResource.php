@@ -36,7 +36,11 @@ class TicketResource extends Resource
                     // Ticket Name
                     Forms\Components\TextInput::make('name')
                         ->hiddenLabel()
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.title.placeholder') . '*')
+=======
+                        ->placeholder(__('ticket::ticket.title.placeholder') . '*')
+>>>>>>> origin/master
                         ->columnSpanFull() // Occupa tutta la larghezza disponibile
                         ->required()
                         ->maxLength(255)
@@ -60,7 +64,11 @@ class TicketResource extends Resource
                     // Ticket Type
                     Forms\Components\Select::make('type')
                         ->hiddenLabel()
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.type.placeholder') . '*')
+=======
+                        ->placeholder(__('ticket::ticket.type.placeholder') . '*')
+>>>>>>> origin/master
                         ->searchable()
                         ->options(TicketTypeEnum::class)
                         ->columnSpanFull(),
@@ -68,7 +76,11 @@ class TicketResource extends Resource
                     // Ticket Priority
                     Forms\Components\Select::make('priority')
                         ->hiddenLabel()
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.priorities.label'))
+=======
+                        ->placeholder(__('ticket::ticket.priorities.label'))
+>>>>>>> origin/master
                         ->searchable()
                         ->options(TicketPriorityEnum::class)
                         ->default(TicketPriorityEnum::default())
@@ -76,7 +88,11 @@ class TicketResource extends Resource
 
                     // Ticket Content (RichEditor)
                     // Forms\Components\RichEditor::make('content')
+<<<<<<< HEAD
                     //     ->label(__('fixcity::ticket.content.label'))
+=======
+                    //     ->label(__('ticket::ticket.content.label'))
+>>>>>>> origin/master
                     //     ->required()
                     //     ->columnSpanFull()
                     //     ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;']), // Rimozione del padding e margini
@@ -84,10 +100,17 @@ class TicketResource extends Resource
 
                     Forms\Components\Textarea::make('content')
                         ->hiddenLabel()
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.content.placeholder') . '**')
                         ->rows(2)
                         ->cols(10)
                         ->helperText(__('fixcity::ticket.content.helper_text')),
+=======
+                        ->placeholder(__('ticket::ticket.content.placeholder') . '**')
+                        ->rows(2)
+                        ->cols(10)
+                        ->helperText(__('ticket::ticket.content.helper_text')),
+>>>>>>> origin/master
 
 
                     // Hidden Latitude and Longitude
@@ -115,7 +138,11 @@ class TicketResource extends Resource
                     // Map Section
                     // NOTA BENE, ASSICURATI DI ABILITARE LA LOCALIZZAZIONE NEL BROWSER
                     Map::make('location')
+<<<<<<< HEAD
                         ->label(__('fixcity::ticket.your-location'))
+=======
+                        ->label(__('ticket::ticket.your-location'))
+>>>>>>> origin/master
                         ->columnSpanFull() // Occupare l'intera larghezza disponibile
                         ->default([
                             'lat' => 40.4168,
@@ -146,7 +173,11 @@ class TicketResource extends Resource
 
                     // Image Upload
                     // SpatieMediaLibraryFileUpload::make('images')
+<<<<<<< HEAD
                     //     ->label(__('fixcity::ticket.insert-images'))
+=======
+                    //     ->label(__('ticket::ticket.insert-images'))
+>>>>>>> origin/master
                     //     ->collection('ticket')
                     //     ->directory('ticket')
                     //     ->disk('uploads')
@@ -159,7 +190,11 @@ class TicketResource extends Resource
 
 
                     SpatieMediaLibraryFileUpload::make('images')
+<<<<<<< HEAD
                         ->label(__('fixcity::ticket.insert-images'))
+=======
+                        ->label(__('ticket::ticket.insert-images'))
+>>>>>>> origin/master
                         ->collection('ticket')
                         ->directory('ticket')
                         ->disk('uploads')

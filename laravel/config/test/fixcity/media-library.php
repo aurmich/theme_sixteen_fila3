@@ -16,7 +16,11 @@ return [
 
     /*
      * This queue connection will be used to generate derived and responsive images.
+<<<<<<< HEAD
      * Leave empt pπy to use the default queue connection.
+=======
+     * Leave empty to use the default queue connection.
+>>>>>>> origin/master
      */
     'queue_connection_name' => env('QUEUE_CONNECTION', 'sync'),
 

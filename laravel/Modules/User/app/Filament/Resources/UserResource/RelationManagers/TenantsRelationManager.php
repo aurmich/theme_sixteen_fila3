@@ -32,14 +32,35 @@ class TenantsRelationManager extends XotBaseRelationManager
      *
      * @return Form configured form instance
      */
+<<<<<<< HEAD
     public function getFormSchema():array
     {
         return [
+=======
+<<<<<<< HEAD
+    public function getFormSchema():array
+    {
+        return [
+=======
+    public function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                 Forms\Components\TextInput::make('name')
 
                     ->required()
                     ->maxLength(255),
+<<<<<<< HEAD
             ];
+=======
+<<<<<<< HEAD
+            ];
+=======
+            ]);
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     }
 
     /**

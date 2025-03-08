@@ -4,7 +4,16 @@ declare(strict_types=1);
 
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
+<<<<<<< HEAD
 return new class extends XotBaseMigration {
+=======
+<<<<<<< HEAD
+return new class extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     /**
      * Run the migrations.
      */
@@ -43,7 +52,15 @@ return new class extends XotBaseMigration {
 
         try {
             app('cache')
+<<<<<<< HEAD
                 ->store('default' !== $cache_store ? $cache_store : null)
+=======
+<<<<<<< HEAD
+                ->store('default' !== $cache_store ? $cache_store : null)
+=======
+                ->store($cache_store !== 'default' ? $cache_store : null)
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
                 ->forget($cache_key);
         } catch (Exception $e) {
             echo $e->getMessage();

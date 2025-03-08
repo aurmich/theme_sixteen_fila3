@@ -31,6 +31,7 @@ while IFS= read -r line; do
         echo "➕ Aggiunta del subtree..."
         git subtree add --prefix="$current_path" "$current_url" "$branch" --squash
 
+<<<<<<< HEAD
         #echo "🔄 Sincronizzazione con il repository remoto..."
         #if ! git subtree pull --prefix="$current_path" "$current_url" "$branch" --squash; then
         #    echo "⚠️  Errore in git subtree pull, tentando con fetch + merge..."
@@ -40,9 +41,24 @@ while IFS= read -r line; do
 
         #echo "⬆️  Pushing delle modifiche locali nel subtree remoto..."
         #git subtree push --prefix="$current_path" "$current_url" "$branch"
+=======
+        echo "🔄 Sincronizzazione con il repository remoto..."
+        if ! git subtree pull --prefix="$current_path" "$current_url" "$branch" --squash; then
+            echo "⚠️  Errore in git subtree pull, tentando con fetch + merge..."
+            git fetch "$current_url" "$branch"
+            git merge -s subtree -Xsubtree="$current_path" FETCH_HEAD --allow-unrelated-histories
+        fi
+
+        echo "⬆️  Pushing delle modifiche locali nel subtree remoto..."
+        git subtree push --prefix="$current_path" "$current_url" "$branch"
+>>>>>>> origin/master
 
     fi
 done < "$CONFIG_FILE"
 
 
+<<<<<<< HEAD
 echo "✅ Tutti i git subtree sono stati inizializzati con successo!!!"
+=======
+echo "✅ Tutti i git subtree sono stati inizializzati con successo!!!"
+>>>>>>> origin/master

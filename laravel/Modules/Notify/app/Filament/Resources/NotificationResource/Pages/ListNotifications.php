@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources\NotificationResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Actions\CreateAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
+=======
+use Filament\Tables;
+>>>>>>> origin/master
 use Filament\Tables\Columns\TextColumn;
 use Modules\Notify\Filament\Resources\NotificationResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -41,6 +45,7 @@ class ListNotifications extends XotBaseListRecords
         ];
     }
 
+<<<<<<< HEAD
     /**
      * Undocumented function
      *
@@ -65,6 +70,25 @@ class ListNotifications extends XotBaseListRecords
     {
         return [
             CreateAction::make(),
+=======
+    public function getTableFilters(): array
+    {
+        return [
+            'read' => Tables\Filters\Filter::make('is_read')
+                ->query(fn ($query) => $query->where('read_at', '!=', null))
+                ->label('Read'),
+            'unread' => Tables\Filters\Filter::make('is_unread')
+                ->query(fn ($query) => $query->whereNull('read_at'))
+                ->label('Unread'),
+            'type' => Tables\Filters\SelectFilter::make('type')
+                ->options([
+                    'info' => 'Info',
+                    'success' => 'Success',
+                    'warning' => 'Warning',
+                    'error' => 'Error',
+                ])
+                ->multiple(),
+>>>>>>> origin/master
         ];
     }
 }

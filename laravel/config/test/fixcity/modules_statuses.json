@@ -13,7 +13,11 @@
     "AI": true,
     "Limesurvey": true,
     "Activity": true,
+<<<<<<< HEAD
     "Geo": true,
+=======
+    "Geo":true,
+>>>>>>> origin/master
     "User": true,
     "Setting": true,
     "BarberShop": true,
@@ -27,7 +31,11 @@
     "Predict": true,
     "Shop": true,
     "Ticket": true,
+<<<<<<< HEAD
     "Rating": true,
     "Fixcity": true,
     "Comment": true
+=======
+    "Fixcity": true
+>>>>>>> origin/master
 }

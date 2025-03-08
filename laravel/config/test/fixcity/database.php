@@ -3,7 +3,10 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Arr;
+<<<<<<< HEAD
 use Modules\Tenant\Services\TenantService;
+=======
+>>>>>>> origin/master
 
 $res = [
     'connections' => [
@@ -88,7 +91,11 @@ $res = [
             'port' => env('DB_PORT', '3306'),
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
+<<<<<<< HEAD
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1d'),
+=======
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
+>>>>>>> origin/master
             'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -103,7 +110,11 @@ $res = [
             'port' => env('DB_PORT', '3306'),
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
+<<<<<<< HEAD
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1f'),
+=======
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
+>>>>>>> origin/master
             'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -111,6 +122,7 @@ $res = [
             'strict' => false,
             'engine' => null,
         ],
+<<<<<<< HEAD
         // 'orbit' => [
         //     'driver' => 'sqlite',
         //     // "database" => Orbit::getDatabasePath(),
@@ -130,6 +142,14 @@ $res = [
 ];
 
 $database_default = config('database.default');
+=======
+    ],
+];
+
+// $database_default = config('database.default');
+$database_default = env('DB_CONNECTION', 'mysql');
+
+>>>>>>> origin/master
 Arr::set($res, 'connections.user', Arr::get($res, 'connections.user_'.$database_default));
 
 return $res;

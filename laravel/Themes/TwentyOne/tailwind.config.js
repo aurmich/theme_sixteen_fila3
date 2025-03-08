@@ -4,9 +4,21 @@ export default {
 		"./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
 		"./storage/framework/views/*.php",
 		"./resources/views/**/*.blade.php",
+<<<<<<< HEAD
 		"./resources/views/**/*.blade.php",
 		"../../Modules/**/Filament/**/*.php",
 		"../../Modules/resources/views/**/*.blade.php",
+=======
+<<<<<<< HEAD
+		"./Resources/views/**/*.blade.php",
+		"../../Modules/**/Filament/**/*.php",
+		"../../Modules/Resources/views/**/*.blade.php",
+=======
+		"./resources/views/**/*.blade.php",
+		"../../Modules/**/Filament/**/*.php",
+		"../../Modules/resources/views/**/*.blade.php",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 		"../../resources/views/filament/**/*.blade.php",
 		"../../vendor/filament/**/*.blade.php",
 		"../../resources/views/**/*.blade.php",

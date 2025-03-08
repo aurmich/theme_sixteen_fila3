@@ -5,6 +5,44 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Model;
 
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Webmozart\Assert\Assert;
+
+/**
+ * Class GetSchemaManagerByModelClassAction
+ * 
+ * Ottiene lo schema manager per una classe modello.
+ */
+class GetSchemaManagerByModelClassAction
+{
+    /**
+     * Ottiene lo schema manager.
+     *
+     * @param class-string<Model> $modelClass Nome della classe modello
+     * @return AbstractSchemaManager
+     * @throws \RuntimeException Se non è possibile ottenere lo schema manager
+     */
+    public function execute(string $modelClass): AbstractSchemaManager
+    {
+        Assert::classExists($modelClass);
+        Assert::subclassOf($modelClass, Model::class);
+
+        /** @var Model $model */
+        $model = new $modelClass();
+        $connection = DB::connection($model->getConnectionName());
+        
+        $schemaManager = $connection->getDoctrineSchemaManager();
+        if (null === $schemaManager) {
+            throw new \RuntimeException('Impossibile ottenere lo schema manager per ' . $modelClass);
+        }
+
+        return $schemaManager;
+=======
+>>>>>>> origin/master
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
@@ -19,5 +57,9 @@ class GetSchemaManagerByModelClassAction
         $connection = $model->getConnection();
 
         return $connection->getDoctrineSchemaManager();
+<<<<<<< HEAD
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     }
 }

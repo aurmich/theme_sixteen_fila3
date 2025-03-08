@@ -27,6 +27,15 @@ class EnvWidget extends Widget implements HasForms
 
     public array $only = [];
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    /**
+     * @var view-string
+     */
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     protected static string $view = 'xot::filament.widgets.env';
 
     public function mount(): void
@@ -93,4 +102,15 @@ class EnvWidget extends Widget implements HasForms
 
         return $fields;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+    public static function canView(): bool
+    {
+        return true;
+    }
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
 }

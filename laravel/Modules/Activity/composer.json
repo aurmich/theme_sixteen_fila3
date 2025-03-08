@@ -20,7 +20,15 @@
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Activity\\": "app/",
+=======
+<<<<<<< HEAD
+            "Modules\\Activity\\": "",
+=======
+            "Modules\\Activity\\": "app/",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
             "Modules\\Activity\\Database\\Factories\\": "database/factories/",
             "Modules\\Activity\\Database\\Seeders\\": "database/seeders/"
         }
@@ -28,8 +36,21 @@
     "require": {
         "spatie/laravel-activitylog": "*",
         "spatie/laravel-event-sourcing": "*"
+<<<<<<< HEAD
     },
     "require-dev": {},
+=======
+<<<<<<< HEAD
+
+    },
+    "require-dev": {
+        
+    },
+=======
+    },
+    "require-dev": {},
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
     "repositories": [
         {
             "type": "path",
@@ -45,7 +66,17 @@
         }
     ],
     "scripts": {
+<<<<<<< HEAD
         "post-autoload-dump": [],
+=======
+<<<<<<< HEAD
+        "post-autoload-dump": [
+            
+        ],
+=======
+        "post-autoload-dump": [],
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
@@ -84,4 +115,12 @@
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     }
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master

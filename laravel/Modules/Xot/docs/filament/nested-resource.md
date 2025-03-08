@@ -177,4 +177,12 @@ Se non desideri questo comportamento, puoi impostare **shouldRegisterNavigationW
 
 Assicurati semplicemente di impostare uno slug personalizzato per le risorse in modo che generi percorsi univoci.
 
+<<<<<<< HEAD
 https://filamentphp.com/docs/2.x/admin/resources/getting-started#customizing-the-url-slug
+=======
+<<<<<<< HEAD
+https://filamentphp.com/docs/2.x/admin/resources/getting-started#customizing-the-url-slug
+=======
+https://filamentphp.com/docs/2.x/admin/resources/getting-started#customizing-the-url-slug
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
+>>>>>>> origin/master
