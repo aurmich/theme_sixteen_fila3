@@ -41,8 +41,12 @@ class FakeSeederHeaderAction extends Action
                         ->title($title)
                         ->success()
                         ->send();
+<<<<<<< HEAD
             })
             ->visible(false);
+=======
+            });
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     }
 
     public static function getDefaultName(): ?string

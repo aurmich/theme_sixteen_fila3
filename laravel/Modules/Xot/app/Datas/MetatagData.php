@@ -17,21 +17,35 @@ use Spatie\LaravelData\Data;
 class MetatagData extends Data implements Wireable
 {
     use WireableData;
+<<<<<<< HEAD
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     public string $title;
 
     public string $sitename;
 
     public string $subtitle;
 
+<<<<<<< HEAD
+=======
+    // ' => 'Find restaurants, specials, and coupons for free',
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     public ?string $generator = 'xot';
 
     public string $charset = 'UTF-8';
 
     public ?string $author = 'xot';
 
+<<<<<<< HEAD
     public ?string $description;
 
+=======
+    // ' => '',
+    public ?string $description;
+
+    // ' => '',
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     public ?string $keywords;
 
     public string $nome_regione;
@@ -48,7 +62,11 @@ class MetatagData extends Data implements Wireable
 
     public string $logo_header_dark;
 
+<<<<<<< HEAD
     public string $logo_height = '2em';
+=======
+    public ?string $logo_height = '2em';
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
     public string $logo_footer;
 
@@ -104,6 +122,13 @@ class MetatagData extends Data implements Wireable
 
     public function getLogoHeight(): string
     {
+<<<<<<< HEAD
+=======
+        if (null == $this->logo_height) {
+            $this->logo_height = '2em';
+        }
+
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         return $this->logo_height;
     }
 
@@ -112,9 +137,12 @@ class MetatagData extends Data implements Wireable
         return app(\Modules\Xot\Actions\File\AssetAction::class)->execute($this->favicon);
     }
 
+<<<<<<< HEAD
     /**
      * @return array<array<string>|string>
      */
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     public function getFilamentColors(): array
     {
         return [
@@ -127,6 +155,48 @@ class MetatagData extends Data implements Wireable
         ];
     }
 
+<<<<<<< HEAD
+=======
+    public function getAllColors(): array
+    {
+        $colors = array_keys(Color::all());
+        $colors = array_combine($colors, $colors);
+
+        return $colors;
+    }
+
+    public function getColors(): array
+    {
+        $mapped = Arr::mapWithKeys(
+            $this->colors,
+            function (array $item, int|string $key): array {
+                $k = $item['key'];
+                $v = $item['color'];
+                if ('custom' != $v) {
+                    $v = Arr::get(Color::all(), $v);
+                }
+                if ('custom' == $v) {
+                    $v = Color::hex($item['hex']);
+                }
+
+                return [$k => $v];
+            }
+        );
+
+        return $mapped;
+        /*
+        return [
+            'danger' => 'danger',
+            'gray' => 'gray',
+            'info' => 'info',
+            'primary' => 'primary',
+            'success' => 'success',
+            'warning' => 'warning',
+        ];
+        */
+    }
+
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     /**
      * @return array<array<string>|string>
      */
@@ -166,4 +236,21 @@ class MetatagData extends Data implements Wireable
 
         return $mapped;
     }
+<<<<<<< HEAD
+=======
+
+    public static function fromMeta(array $meta): self
+    {
+        return new self(
+            title: $meta['title'] ?? null,
+            description: $meta['description'] ?? null,
+            image: $meta['image'] ?? null,
+            url: $meta['url'] ?? null,
+            type: $meta['type'] ?? 'website',
+            site_name: $meta['site_name'] ?? null,
+            locale: $meta['locale'] ?? null,
+            custom: $meta['custom'] ?? [],
+        );
+    }
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 }

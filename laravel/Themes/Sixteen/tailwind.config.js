@@ -1,14 +1,37 @@
+<<<<<<< HEAD
 const defaultTheme = require('tailwindcss/defaultTheme');
 import preset from './vendor/filament/support/tailwind.config.preset';
 
 module.exports = {
     presets: [preset],
+=======
+import defaultTheme from 'tailwindcss/defaultTheme';
+// import preset from './../../vendor/filament/support/tailwind.config.preset';
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
+import daisyui from 'daisyui'
+import colors from 'tailwindcss/colors';
+
+
+module.exports = {
+    // presets: [preset],
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
+<<<<<<< HEAD
+=======
+            colors: {
+                primary: colors.blue,
+                secondary: colors.gray,
+                success: colors.green,
+                warning: colors.yellow,
+                danger: colors.red,
+            },
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         },
     },
     variants: {
@@ -23,12 +46,21 @@ module.exports = {
         '../../resources/views/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
         "../../Modules/**/Filament/**/*.php",
+<<<<<<< HEAD
         "../../Modules/**/Resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./node_modules/flowbite/**/*.js",
         "./Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../Themes/**/Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+=======
+        "../../Modules/**/resources/views/**/*.blade.php",
+        "../../storage/framework/views/*.php",
+        "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+        "./node_modules/flowbite/**/*.js",
+        "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+        "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         "../../../public_html/vendor/**/*.blade.php",
     ],
     colors: {
@@ -125,7 +157,17 @@ module.exports = {
         },
     },
     plugins: [
+<<<<<<< HEAD
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
     ],
+=======
+        forms,
+        typography,
+        daisyui
+    ],
+    daisyui: {
+        themes: ['light', 'dark'],
+    },
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 }

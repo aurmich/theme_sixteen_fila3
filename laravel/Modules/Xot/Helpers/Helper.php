@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Arr;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +24,10 @@ use Nwidart\Modules\Facades\Module;
 use function Safe\define;
 use function Safe\glob;
 use function Safe\json_decode;
+<<<<<<< HEAD
 use function Safe\parse_url;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 use function Safe\preg_match;
 use function Safe\realpath;
 
@@ -28,6 +35,7 @@ use Webmozart\Assert\Assert;
 
 // ------------------------------------------------
 
+<<<<<<< HEAD
 /* --- MAH
 if (! function_exists('get_current_theme_name')) {
     function current_theme_name(): string {
@@ -41,6 +49,8 @@ if (! function_exists('get_current_theme_name')) {
     }
 }
 */
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 if (! function_exists('isRunningTestBench')) {
     function isRunningTestBench(): bool
     {
@@ -67,6 +77,10 @@ if (! function_exists('isRunningTestBench')) {
         $res = Str::endsWith($base, $path);
 
         return $res;
+<<<<<<< HEAD
+=======
+        // return false;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     }
 }
 
@@ -440,6 +454,7 @@ if (! function_exists('getModelByName')) {
         //    throw new Exception('['.__LINE__.']['.__FILE__.']');
         // }
 
+<<<<<<< HEAD
         $path = collect($files)->first(
             static function (string $file) use ($name): bool {
                 $info = pathinfo((string) $file);
@@ -447,15 +462,33 @@ if (! function_exists('getModelByName')) {
                 $filename = $info['filename'];
 
                 // ?? '';
+=======
+        $path = Arr::first(
+            $files,
+            function ($file) use ($name): bool {
+                Assert::string($file);
+                $info = pathinfo($file);
+
+                // Accedi direttamente a 'filename', che esiste sempre in pathinfo
+                $filename = $info['filename'] ?? '';
+
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                 return Str::snake($filename) === $name;
             }
         );
 
+<<<<<<< HEAD
         // dddx($registered);
 
         if (null === $path) {
             throw new Exception('['.$name.'] not in morph_map ['.__LINE__.']['.__FILE__.']');
         }
+=======
+        if (null === $path) {
+            throw new Exception('['.$name.'] not in morph_map ['.__LINE__.']['.__FILE__.']');
+        }
+        Assert::string($path);
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
         $path = app(Modules\Xot\Actions\File\FixPathAction::class)->execute($path);
         $info = pathinfo($path);
@@ -497,6 +530,11 @@ if (! function_exists('getModuleFromModel')) {
         // $mod = \Nwidart\Modules\Module::get($module_name);
         // 480    Call to an undefined method Nwidart\Modules\Facades\Module::get()
         // $mod = app('module')->get($module_name);
+<<<<<<< HEAD
+=======
+
+        // @phpstan-ignore method.nonObject
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         Assert::isInstanceOf($res = app('module')->find($module_name), Nwidart\Modules\Module::class);
 
         return $res;
@@ -520,7 +558,11 @@ if (! function_exists('getModuleNameFromModelName')) {
             throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
 
+<<<<<<< HEAD
         $model = app($model_class);
+=======
+        Assert::isInstanceOf($model = app($model_class), Model::class);
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
         return getModuleNameFromModel($model);
     }
@@ -550,17 +592,54 @@ if (! function_exists('getAllModules')) {
 
 if (! function_exists('getAllModulesModels')) {
     /**
+<<<<<<< HEAD
      * @throws ReflectionException
+=======
+     * Get all models from all enabled modules.
+     *
+     * @throws ReflectionException
+     *
+     * @return array<string, string>
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
      */
     function getAllModulesModels(): array
     {
         $res = [];
+<<<<<<< HEAD
         $modules = Module::all();
         foreach ($modules as $module) {
             $tmp = getModuleModels($module->getName());
             $res = array_merge($res, $tmp);
         }
 
+=======
+
+        /** @var Nwidart\Modules\Laravel\Module[] $modules */
+        $modules = Module::all();
+
+        foreach ($modules as $module) {
+            if (! $module instanceof Nwidart\Modules\Laravel\Module) {
+                continue;
+            }
+
+            $moduleName = $module->get('name');
+            if (! is_string($moduleName)) {
+                continue;
+            }
+
+            try {
+                /** @var array<string, string> $moduleModels */
+                $moduleModels = getModuleModels($moduleName);
+                $res = array_merge($res, $moduleModels);
+            } catch (Exception $e) {
+                Log::error('[Module:'.$moduleName.'] Error getting models: '.$e->getMessage());
+
+                continue;
+            }
+        }
+
+        /* @var array<string, string> */
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         return $res;
     }
 }
@@ -657,6 +736,7 @@ if (! function_exists('array_merge_recursive_distinct')) {
     }
 }
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Laravel 5 - URL Query String Helper
@@ -739,6 +819,8 @@ if (! function_exists('build_url')) {
     }
 }
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 if (! function_exists('getRelationships')) {
     /**
      * @throws ReflectionException
@@ -1050,6 +1132,7 @@ if (! function_exists('rowsToSql')) {
         return Str::replaceArray('?', $bindings, $sql);
     }
 }
+<<<<<<< HEAD
 
 if (! function_exists('getServerName')) {
     function getServerName(): string
@@ -1059,6 +1142,16 @@ if (! function_exists('getServerName')) {
             $default = 'localhost';
         }
 
+=======
+/*
+if (! function_exists('getServerName')) {
+    function getServerName(): string
+    {
+        $default = config('app.url', 'localhost');
+        if (! is_string($default)) {
+            $default = 'localhost';
+        }
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         $default = Str::after($default, '//');
 
         $server_name = $default;
@@ -1073,7 +1166,11 @@ if (! function_exists('getServerName')) {
         return $server_name;
     }
 }
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 /*
 if (! function_exists('getLang')) {
     function getLang(): string {

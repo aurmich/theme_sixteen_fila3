@@ -15,6 +15,7 @@ return [
         'icon' => 'xot-session',
     ],
     'fields' => [
+<<<<<<< HEAD
         'id' => [
             'label' => 'ID',
             'placeholder' => 'Inserisci ID',
@@ -59,6 +60,56 @@ return [
         'expires_at' => [
             'label' => 'Scadenza',
             'help' => 'Momento di scadenza previsto',
+=======
+        'identification' => [
+            'id' => [
+                'label' => 'ID Sessione',
+                'help' => 'Identificativo univoco della sessione',
+            ],
+            'user_id' => [
+                'label' => 'Utente',
+                'placeholder' => 'Seleziona l\'utente',
+                'help' => 'Utente proprietario della sessione',
+            ],
+        ],
+        'connection' => [
+            'ip_address' => [
+                'label' => 'Indirizzo IP',
+                'help' => 'IP di origine della connessione',
+            ],
+            'user_agent' => [
+                'label' => 'User Agent',
+                'help' => 'Browser e sistema operativo utilizzati',
+            ],
+            'location' => [
+                'label' => 'Posizione',
+                'help' => 'Localizzazione geografica approssimativa',
+            ],
+        ],
+        'data' => [
+            'payload' => [
+                'label' => 'Dati Sessione',
+                'help' => 'Contenuto della sessione (criptato)',
+            ],
+            'size' => [
+                'label' => 'Dimensione',
+                'help' => 'Dimensione dei dati in memoria',
+            ],
+        ],
+        'timing' => [
+            'created_at' => [
+                'label' => 'Data Creazione',
+                'help' => 'Momento di inizio della sessione',
+            ],
+            'last_activity' => [
+                'label' => 'Ultima Attività',
+                'help' => 'Ultimo accesso alla sessione',
+            ],
+            'expires_at' => [
+                'label' => 'Scadenza',
+                'help' => 'Momento di scadenza previsto',
+            ],
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         ],
     ],
     'actions' => [

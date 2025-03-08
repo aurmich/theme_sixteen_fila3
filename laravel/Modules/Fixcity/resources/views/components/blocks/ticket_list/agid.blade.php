@@ -8,7 +8,10 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+<<<<<<< HEAD
 use Modules\Fixcity\Enums\TicketStatusEnum;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
 new class extends Component
 {
@@ -34,6 +37,7 @@ new class extends Component
     public function mount()
     {
         $this->resolvedTicketsCount = Ticket::query()
+<<<<<<< HEAD
             ->where(function ($q) {
                 $q->whereIn('status', TicketStatusEnum::canViewByAll())
                     ->orWhere('created_by', authId())
@@ -54,6 +58,12 @@ new class extends Component
     }
 
 
+=======
+            ->where('created_at', '>=', Carbon::now()->subMonths(12))
+            ->count();
+    }
+
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     public function loadMore()
     {
         $this->perPage += 3;
@@ -114,11 +124,14 @@ new class extends Component
     {
         $categories = collect(TicketTypeEnum::cases())->map(function ($type) {
             $count = Ticket::where('type', $type->value)
+<<<<<<< HEAD
                 ->where(function ($q) {
                     $q->whereIn('status', TicketStatusEnum::canViewByAll())
                         ->orWhere('created_by', authId())
                         ->orWhere('updated_by', authId());
                 })
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                 ->where('created_at', '>=', Carbon::now()->subMonths(12))
                 ->count();
 
@@ -130,7 +143,11 @@ new class extends Component
         });
 
         $query = Ticket::query()
+<<<<<<< HEAD
             ->select('id', 'name', 'slug', 'type', 'content', 'created_at', 'latitude', 'longitude')
+=======
+            ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             ->with('media')
             ->latest();
 
@@ -230,12 +247,19 @@ new class extends Component
                         @foreach($tickets as $ticket)
                         <x-filament::section>
                             <div class="space-y-4">
+<<<<<<< HEAD
                                 <a target="_blank" href="{{ route('ticket.view', ['slug' => $ticket->slug]) }}">
                                     <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
                                 </a>
                                 <div class="space-y-2">
                                     <p>Tipologia di segnalazione</p>
                                     <p><strong>{{ $ticket->type?->getLabel() }}</strong></p>
+=======
+                                <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
+                                <div class="space-y-2">
+                                    <p>Tipologia di segnalazione</p>
+                                    <p><strong>{{ $ticket->type?->getLabel() ?? 'Non specificato' }}</strong></p>
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                                 </div>
                                 @if(in_array($ticket->id, $expandedTickets))
                                 <div class="space-y-4">
@@ -346,6 +370,7 @@ new class extends Component
         </section>
     </div>
 </div>
+<<<<<<< HEAD
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('get-user-location', function() {
@@ -368,4 +393,6 @@ new class extends Component
         });
     });
 </script>
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 @endvolt

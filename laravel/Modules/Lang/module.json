@@ -1,11 +1,19 @@
 {
     "name": "Lang",
     "alias": "Lang",
+<<<<<<< HEAD
     "description": "",
     "keywords": [],
     "active": 1,
     "priority": 4,
     "order": 4,
+=======
+    "description": "label language",
+    "keywords": [],
+    "active": 1,
+    "priority": 4,
+    "order": 5,
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     "providers": [
         "Modules\\Lang\\Providers\\LangServiceProvider",
         "Modules\\Lang\\Providers\\Filament\\AdminPanelProvider"

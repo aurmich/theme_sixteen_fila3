@@ -53,6 +53,7 @@ Homestead.json
 *.tmp
 *.swp
 *.swo
+<<<<<<< HEAD
 /docs/cache/
 docs/cache/
 /docs/cache
@@ -60,3 +61,6 @@ docs/cache/
 *.log
 node_modules
 docs/cache
+=======
+.php-cs-fixer.cache
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')

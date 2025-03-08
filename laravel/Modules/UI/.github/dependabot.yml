@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: 2
 updates:
   - package-ecosystem: "composer"
@@ -11,3 +12,17 @@ updates:
       interval: "weekly"
     labels:
       - "dependencies"
+=======
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for more information:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# https://containers.dev/guide/dependabot
+
+version: 2
+updates:
+ - package-ecosystem: "devcontainers"
+   directory: "/"
+   schedule:
+     interval: weekly
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')

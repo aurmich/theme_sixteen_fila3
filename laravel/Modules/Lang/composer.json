@@ -13,9 +13,13 @@
         "mcamara/laravel-localization": "^2.2",
         "spatie/laravel-sluggable": "*"
     },
+<<<<<<< HEAD
     "require-dev": {
         
     },
+=======
+    "require-dev": {},
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     "repositories": [
         {
             "type": "path",
@@ -32,18 +36,27 @@
     ],
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Lang\\": "",
+=======
+            "Modules\\Lang\\": "app/",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             "Modules\\Lang\\Database\\Factories\\": "database/factories/",
             "Modules\\Lang\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "scripts": {
+<<<<<<< HEAD
         "post-autoload-dump": [
 
         ],
         "post-update-cmd": [
 
         ],
+=======
+        "post-autoload-dump": [],
+        "post-update-cmd": [],
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         "analyse": "vendor/bin/phpstan analyse",
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",
@@ -67,4 +80,8 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')

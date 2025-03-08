@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Webmozart\Assert\Assert;
 
+<<<<<<< HEAD
 /**
  * Class FilterRelationsAction
  * 
@@ -36,10 +37,31 @@ class FilterRelationsAction
             if ($relation !== null) {
                 $filtered[$name] = $relation;
             }
+=======
+class FilterRelationsAction
+{
+    /**
+     * @param array<string, mixed> $relations
+     *
+     * @return array<string, Relation>
+     */
+    public function execute(Model $model, array $relations): array
+    {
+        $filtered = [];
+
+        foreach ($relations as $name => $relation) {
+            Assert::isInstanceOf($relation, Relation::class);
+            $related = $relation->getRelated();
+            Assert::isInstanceOf($related, Model::class);
+
+            $className = class_basename($related);
+            $filtered[$className] = $relation;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         }
 
         return $filtered;
     }
+<<<<<<< HEAD
 
     /**
      * Valida una singola relazione.
@@ -70,4 +92,6 @@ class FilterRelationsAction
 
         return $relationData;
     }
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 }

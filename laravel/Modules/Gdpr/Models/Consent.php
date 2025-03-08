@@ -4,13 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Gdpr\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Xot\Contracts\ProfileContract;
+=======
+use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
 /**
  * Modules\Gdpr\Models\Consent.
  *
+<<<<<<< HEAD
  * @property string                          $id
  * @property string                          $treatment_id
  * @property string                          $subject_id
@@ -65,6 +73,24 @@ use Modules\Xot\Contracts\ProfileContract;
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+=======
+ * @property string                              $id
+ * @property string                              $treatment_id
+ * @property string                              $subject_id
+ * @property Carbon|null                         $created_at
+ * @property Carbon|null                         $updated_at
+ * @property \Modules\Gdpr\Models\Treatment|null $treatment
+ *
+ * @method static \Modules\Gdpr\Database\Factories\ConsentFactory factory($count = null, $state = [])
+ * @method static Builder|Consent                                 newModelQuery()
+ * @method static Builder|Consent                                 newQuery()
+ * @method static Builder|Consent                                 query()
+ * @method static Builder|Consent                                 whereCreatedAt($value)
+ * @method static Builder|Consent                                 whereId($value)
+ * @method static Builder|Consent                                 whereSubjectId($value)
+ * @method static Builder|Consent                                 whereTreatmentId($value)
+ * @method static Builder|Consent                                 whereUpdatedAt($value)
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  *
  * @mixin \Eloquent
  */

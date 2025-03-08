@@ -1,23 +1,35 @@
 <?php
 
+<<<<<<< HEAD
 /**
  * @see https://github.com/foothing/laravel-gdpr-consent
  */
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 declare(strict_types=1);
 
 namespace Modules\Gdpr\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Crypt;
 use Modules\Xot\Contracts\ProfileContract;
+=======
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Crypt;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
 use function Safe\json_encode;
 
 /**
  * Modules\Gdpr\Models\Event.
  *
+<<<<<<< HEAD
  * @property string                          $id
  * @property string|null                     $treatment_id
  * @property string|null                     $consent_id
@@ -88,6 +100,32 @@ use function Safe\json_encode;
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+=======
+ * @property string                            $id
+ * @property string|null                       $treatment_id
+ * @property string|null                       $consent_id
+ * @property string                            $subject_id
+ * @property string                            $ip
+ * @property string                            $action
+ * @property string                            $payload
+ * @property Carbon|null                       $created_at
+ * @property Carbon|null                       $updated_at
+ * @property \Modules\Gdpr\Models\Consent|null $consent
+ *
+ * @method static \Modules\Gdpr\Database\Factories\EventFactory factory($count = null, $state = [])
+ * @method static Builder|Event                                 newModelQuery()
+ * @method static Builder|Event                                 newQuery()
+ * @method static Builder|Event                                 query()
+ * @method static Builder|Event                                 whereAction($value)
+ * @method static Builder|Event                                 whereConsentId($value)
+ * @method static Builder|Event                                 whereCreatedAt($value)
+ * @method static Builder|Event                                 whereId($value)
+ * @method static Builder|Event                                 whereIp($value)
+ * @method static Builder|Event                                 wherePayload($value)
+ * @method static Builder|Event                                 whereSubjectId($value)
+ * @method static Builder|Event                                 whereTreatmentId($value)
+ * @method static Builder|Event                                 whereUpdatedAt($value)
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  *
  * @mixin \Eloquent
  */

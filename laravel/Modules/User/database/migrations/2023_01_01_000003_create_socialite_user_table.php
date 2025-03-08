@@ -6,7 +6,12 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
 
+<<<<<<< HEAD
 return new class extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     /**
      * Run the migrations.
      */
@@ -41,7 +46,11 @@ return new class extends XotBaseMigration {
                 // if (! $this->hasColumn('email')) {
                 //    $table->string('email')->nullable();
                 // }
+<<<<<<< HEAD
                 if ('varchar' == $this->getColumnType('token')) {
+=======
+                if ($this->getColumnType('token') == 'varchar') {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                     $table->text('token')->nullable()->change();
                 }
                 $this->updateTimestamps($table);

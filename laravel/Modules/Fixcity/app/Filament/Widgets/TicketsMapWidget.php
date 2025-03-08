@@ -8,6 +8,7 @@ use Modules\Fixcity\Enums\TicketStatusEnum;
 use Illuminate\Support\Facades\Log;
 use Filament\Support\RawJs;
 use Livewire\Attributes\Reactive;
+<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Infolists\Components\Card;
 use Filament\Infolists\Components\ImageEntry;
@@ -63,6 +64,11 @@ class TicketsMapWidget extends MapWidget
         return 15;
     }
 
+=======
+
+class TicketsMapWidget extends MapWidget
+{
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     #[Reactive]
     public array $categoryFilter = [];
 
@@ -72,7 +78,11 @@ class TicketsMapWidget extends MapWidget
 
     protected static ?bool $clustering = true;
 
+<<<<<<< HEAD
     protected static ?bool $fitToBounds = false;
+=======
+    protected static ?bool $fitToBounds = true;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
     protected static ?string $mapId = 'incidents';
 
@@ -82,12 +92,19 @@ class TicketsMapWidget extends MapWidget
     {
         $config = json_decode(parent::getMapConfig(), true);
 
+<<<<<<< HEAD
         if ($this->userLatitude && $this->userLongitude) {
             $config['center'] = [
                 'lat' => $this->userLatitude,
                 'lng' => $this->userLongitude,
             ];
         }
+=======
+        $config['center'] = [
+            'lat' => 34.730369,
+            'lng' => -86.586104,
+        ];
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
         return json_encode($config);
     }
@@ -99,6 +116,11 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
+<<<<<<< HEAD
+=======
+        Log::error('Getting map data with filters', ['categories' => $this->categoryFilter]);
+
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
@@ -114,6 +136,15 @@ class TicketsMapWidget extends MapWidget
         });
 
         $locations = $query->latest()->get();
+<<<<<<< HEAD
+=======
+        
+        Log::error('Filtered locations', [
+            'sql' => $query->toSql(),
+            'bindings' => $query->getBindings(),
+            'count' => $locations->count()
+        ]);
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
         $data = [];
 
@@ -134,12 +165,15 @@ class TicketsMapWidget extends MapWidget
         return $data;
     }
 
+<<<<<<< HEAD
     public function openTicketModal($ticketId)
     {
         $this->dispatchBrowserEvent('open-ticket-modal', ['ticketId' => $ticketId]); // Dispatch the event to open the modal
     }
 
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     protected function getMapOptions(): array
     {
         return [
@@ -159,6 +193,7 @@ class TicketsMapWidget extends MapWidget
     {
         return array_merge(parent::getListeners(), [
             'categoryFilterUpdated' => 'rerender',
+<<<<<<< HEAD
             'updateMapCenter' => 'updateMapCenter',
         ]);
     }
@@ -175,3 +210,14 @@ class TicketsMapWidget extends MapWidget
         parent::mount();
     }
 }
+=======
+        ]);
+    }
+
+    public function mount()
+    {
+        parent::mount();
+        Log::error('Widget mounted with filters', ['categories' => $this->categoryFilter]);
+    }
+} 
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')

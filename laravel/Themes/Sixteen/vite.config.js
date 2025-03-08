@@ -11,7 +11,11 @@ import laravel, { refreshPaths } from 'laravel-vite-plugin'
 export default defineConfig({
     build: {
         //outDir: '../../../public_html/build/ewall',
+<<<<<<< HEAD
         outDir: './Resources/dist',
+=======
+        outDir: './resources/dist',
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         emptyOutDir: false,
         manifest: 'manifest.json',
         //rollupOptions: {
@@ -30,11 +34,20 @@ export default defineConfig({
             publicDirectory: '../../../public_html/',
             // buildDirectory: 'assets/',
             input: [
+<<<<<<< HEAD
                 //__dirname + '/Resources/sass/app.scss',
                 //__dirname + '/Resources/scss/app-mix.scss',
                 __dirname + '/Resources/css/app.css',
                 __dirname + '/Resources/js/app.js',
                 //__dirname + '/Resources/css/filament/theme.css'
+=======
+                //__dirname + '/resources/sass/app.scss',
+                //__dirname + '/resources/scss/app-mix.scss',
+                __dirname + '/resources/css/app.css',
+                __dirname + '/resources/js/app.js',
+                // Aggiungiamo i CSS di Filament
+                //__dirname + '/vendor/filament/**/*.css',
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             ],
             refresh: [
                 ...refreshPaths,
@@ -42,6 +55,14 @@ export default defineConfig({
             ],
         }),
     ],
+<<<<<<< HEAD
+=======
+    resolve: {
+        alias: {
+            '@': '/resources',
+        },
+    },
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 });
 
 
@@ -69,7 +90,11 @@ export default getConfig();
 */
 
 /*
+<<<<<<< HEAD
 var $from = './Resources/dist';
+=======
+var $from = './resources/dist';
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 var $to = '../../../public_html/themes/Five/dist';
 console.log('from :' + $from);
 console.log('to :' + $to);

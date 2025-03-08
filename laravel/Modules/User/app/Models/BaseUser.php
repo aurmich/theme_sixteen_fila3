@@ -32,6 +32,7 @@ use Spatie\Permission\Traits\HasRoles;
 /**
  * Modules\User\Models\User.
  *
+<<<<<<< HEAD
  * @property Collection<int, OauthClient>                      $clients
  * @property int|null                                          $clients_count
  * @property Team|null                                         $currentTeam
@@ -74,6 +75,50 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string|null                     $deleted_at
  * @property string|null                     $lang
  * @property bool                            $is_active
+=======
+ * @property Collection<int, OauthClient> $clients
+ * @property int|null $clients_count
+ * @property Team|null $currentTeam
+ * @property Collection<int, Device> $devices
+ * @property int|null $devices_count
+ * @property string|null $full_name
+ * @property DatabaseNotificationCollection<int, Notification> $notifications
+ * @property int|null $notifications_count
+ * @property Collection<int, Team> $ownedTeams
+ * @property int|null $owned_teams_count
+ * @property Collection<int, Permission> $permissions
+ * @property int|null $permissions_count
+ * @property \Modules\Xot\Contracts\ProfileContract|null $profile
+ * @property Collection<int, Role> $roles
+ * @property int|null $roles_count
+ * @property Collection<int, Team> $teams
+ * @property int|null $teams_count
+ * @property Collection<int, OauthAccessToken> $tokens
+ * @property int|null $tokens_count
+ *
+ * @method static \Modules\User\Database\Factories\UserFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|User permission($permissions)
+ * @method static \Illuminate\Database\Eloquent\Builder|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder|User role($roles, $guard = null)
+ *
+ * @property string $id
+ * @property string $name
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $email
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property int|null $current_team_id
+ * @property string|null $profile_photo_path
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property string|null $lang
+ * @property bool $is_active
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  *
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCurrentTeamId($value)
@@ -94,7 +139,11 @@ use Spatie\Permission\Traits\HasRoles;
  * @mixin Eloquent
  *
  * @property Collection<int, Tenant> $tenants
+<<<<<<< HEAD
  * @property int|null                $tenants_count
+=======
+ * @property int|null $tenants_count
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  *
  * @method static \Illuminate\Database\Eloquent\Builder|User withoutPermission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder|User withoutRole($roles, $guard = null)
@@ -114,6 +163,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string|null $facebook_id
  *
  * @method static \Illuminate\Database\Eloquent\Builder|User whereFacebookId($value)
+<<<<<<< HEAD
  * @method        bool                                       canAccessSocialite()
  *
  * @property TenantUser                         $pivot
@@ -121,6 +171,15 @@ use Spatie\Permission\Traits\HasRoles;
  * @property Collection<int, AuthenticationLog> $authentications
  * @property int|null                           $authentications_count
  * @property AuthenticationLog|null             $latestAuthentication
+=======
+ * @method bool canAccessSocialite()
+ *
+ * @property TenantUser $pivot
+ * @property Membership $membership
+ * @property Collection<int, AuthenticationLog> $authentications
+ * @property int|null $authentications_count
+ * @property AuthenticationLog|null $latestAuthentication
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  *
  * @mixin \Eloquent
  */
@@ -217,7 +276,11 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     public function canAccessPanel(Panel $panel): bool
     {
         // $panel->default('admin');
+<<<<<<< HEAD
         if ('admin' !== $panel->getId()) {
+=======
+        if ($panel->getId() !== 'admin') {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             $role = $panel->getId();
             /*
             $xot = XotData::make();
@@ -291,7 +354,11 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     public function getProviderField(string $provider, string $field): string
     {
         $socialiteUser = $this->socialiteUsers()->firstWhere(['provider' => $provider]);
+<<<<<<< HEAD
         if (null == $socialiteUser) {
+=======
+        if ($socialiteUser == null) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             throw new \Exception('SocialiteUser not found');
         }
 
@@ -306,9 +373,15 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     /**
      * Get all of the user's notifications.
      *
+<<<<<<< HEAD
      * @return MorphMany<Notification, static|$this>
      */
     public function notifications()
+=======
+     * @return MorphMany<Notification, static>
+     */
+    public function notifications(): MorphMany
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     {
         // @phpstan-ignore return.type
         return $this->morphMany(Notification::class, 'notifiable');
@@ -333,14 +406,23 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
 
     public function getNameAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
         if (null !== $value || null === $this->getKey()) {
+=======
+        if ($value !== null || $this->getKey() === null) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             return $value;
         }
         $name = Str::of($this->email)->before('@')->toString();
         $i = 1;
         $value = $name.'-'.$i;
+<<<<<<< HEAD
         while (null !== self::firstWhere(['name' => $value])) {
             ++$i;
+=======
+        while (self::firstWhere(['name' => $value]) !== null) {
+            $i++;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             $value = $name.'-'.$i;
         }
         $this->update(['name' => $value]);

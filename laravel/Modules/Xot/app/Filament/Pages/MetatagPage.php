@@ -22,7 +22,10 @@ use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 use Webmozart\Assert\Assert;
 
 /**
+<<<<<<< HEAD
  * MetatagPage
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  * @property ComponentContainer $form
  */
 class MetatagPage extends Page implements HasForms

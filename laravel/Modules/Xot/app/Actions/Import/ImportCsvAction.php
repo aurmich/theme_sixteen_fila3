@@ -133,16 +133,28 @@ class ImportCsvAction
     }
 
     /**
+<<<<<<< HEAD
      * @param array<string> $columns
+=======
+     * @param array<mixed> $columns
+     *
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
      * @return array<ColumnData>
      */
     public function execute1(array $columns): array
     {
+<<<<<<< HEAD
         return array_map(function (string $column): ColumnData {
             return new ColumnData(
                 name: $column,
                 type: 'string' // Tipo di default per le colonne
             );
+=======
+        return array_map(function ($column): ColumnData {
+            Assert::string($column, 'Column must be a string');
+
+            return new ColumnData($column);
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         }, $columns);
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Widgets;
 
+<<<<<<< HEAD
 use Filament\Forms\Form;
 use Illuminate\Support\Arr;
 use Filament\Actions\Action;
@@ -26,6 +27,29 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Pages\Concerns\InteractsWithFormActions;
 use Modules\User\Http\Response\PasswordResetResponse;
 use Illuminate\Validation\Rules\Password as PasswordRule;
+=======
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
+use Filament\Forms\ComponentContainer;
+use Filament\Forms\Components\Component;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
+use Filament\Forms\Form;
+use Filament\Notifications\Notification;
+use Filament\Pages\Concerns\InteractsWithFormActions;
+use Filament\Widgets\Widget;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Password as PasswordRule;
+use Modules\User\Datas\PasswordData;
+use Modules\User\Events\NewPasswordSet;
+use Modules\User\Http\Response\PasswordResetResponse;
+use Modules\User\Rules\CheckOtpExpiredRule;
+use Modules\Xot\Filament\Traits\TransTrait;
+use Webmozart\Assert\Assert;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
 /**
  * @property ComponentContainer $form
@@ -92,12 +116,20 @@ class PasswordExpiredWidget extends Widget implements HasForms
         Assert::string($current_password = Arr::get($data, 'current_password'));
         Assert::string($password = Arr::get($data, 'password'));
         $user = Auth::user();
+<<<<<<< HEAD
         if (null === $user) {
+=======
+        if ($user === null) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             return null;
         }
 
         // check if current password is correct
+<<<<<<< HEAD
         if (null === $user->password || ! Hash::check($current_password, $user->password)) {
+=======
+        if ($user->password === null || ! Hash::check($current_password, $user->password)) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             Notification::make()
                 ->title(__('user::otp.notifications.wrong_password.title'))
                 ->body(__('user::otp.notifications.wrong_password.body'))
@@ -108,7 +140,11 @@ class PasswordExpiredWidget extends Widget implements HasForms
         }
 
         // check if new password is different from the current password
+<<<<<<< HEAD
         if (null !== $user->password && Hash::check($password, $user->password)) {
+=======
+        if ($user->password !== null && Hash::check($password, $user->password)) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             Notification::make()
                 ->title(__('user::otp.notifications.same_password.title'))
                 ->body(__('user::otp.notifications.same_password.body'))

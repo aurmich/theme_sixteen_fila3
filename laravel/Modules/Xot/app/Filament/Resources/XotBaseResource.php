@@ -63,10 +63,14 @@ abstract class XotBaseResource extends FilamentResource
      */
     abstract public static function getFormSchema(): array;
 
+<<<<<<< HEAD
     /**
      * @deprecated Questo metodo non deve più essere usato. Usa `getFormSchema()` al suo posto.
      */
     final public static function form(Form $form): Form
+=======
+    public static function form(Form $form): Form
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     {
         return $form
             ->schema(static::getFormSchema());

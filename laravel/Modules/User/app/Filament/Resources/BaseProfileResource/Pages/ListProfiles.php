@@ -35,8 +35,13 @@ class ListProfiles extends XotBaseListRecords
                     function ($record) {
                         $user = $record->user;
                         $user_class = XotData::make()->getUserClass();
+<<<<<<< HEAD
                         if (null === $user) {
                             if (null == $record->email) {
+=======
+                        if ($user === null) {
+                            if ($record->email == null) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                                 $record->update(['email' => fake()->email()]);
                             }
                             try {
@@ -46,7 +51,11 @@ class ListProfiles extends XotBaseListRecords
                                 return '--';
                             }
                         }
+<<<<<<< HEAD
                         if (null === $user) {
+=======
+                        if ($user === null) {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                             $data = $record->toArray();
                             $user_data = Arr::except($data, ['id']);
                             /** @var \Modules\Xot\Contracts\UserContract */

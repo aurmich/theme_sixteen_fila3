@@ -4,16 +4,33 @@
     "keywords": [
         "laraxot",
         "laravel",
+<<<<<<< HEAD
         "module_xot",
+=======
+        "nwidart",
+        "modules",
+        "module_xot",
+        "XOT",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         "filament"
     ],
     "homepage": "https://github.com/laraxot/module_xot_fila3",
     "license": "MIT",
+<<<<<<< HEAD
     "authors": [{
         "name": "marco sottana",
         "email": "marco.sottana@gmail.com",
         "role": "Developer"
     }],
+=======
+    "authors": [
+        {
+            "name": "marco sottana",
+            "email": "marco.sottana@gmail.com",
+            "role": "Developer"
+        }
+    ],
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     "require": {
         "php": "^8.2",
         "calebporzio/sushi": "^2.5",
@@ -23,6 +40,7 @@
         "filament/filament": "^3.2",
         "filament/spatie-laravel-media-library-plugin": "^3.2",
         "filament/spatie-laravel-translatable-plugin": "^3.2",
+<<<<<<< HEAD
         "hammerstone/fast-paginate": "^1.1",
         "guzzlehttp/guzzle": "*",
         "laravel/folio": "^1.1",
@@ -33,6 +51,17 @@
         "livewire/volt": "^1.6",
         "maatwebsite/excel": "^3.1",
         "nwidart/laravel-modules": "^11.0",
+=======
+        "aaronfrancis/fast-paginate": "*",
+        "guzzlehttp/guzzle": "*",
+        "laravel/folio": "^1.1",
+        "laravel/framework": "*",
+        "laravel/pennant": "^1.11",
+        "laravel/pulse": "^1.2",
+        "livewire/livewire": "*",
+        "maatwebsite/excel": "^3.1",
+        "nwidart/laravel-modules": "*",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         "predis/predis": "^2.2",
         "spatie/cpu-load-health-check": "^1.0",
         "spatie/laravel-data": "^4.7",
@@ -41,16 +70,32 @@
         "spatie/laravel-model-status": "*",
         "spatie/laravel-package-tools": "*",
         "spatie/laravel-permission": "*",
+<<<<<<< HEAD
         "spatie/laravel-queueable-action": "*",
         "spatie/laravel-schemaless-attributes": "^2.5",
         "spatie/laravel-sluggable": "^3.6",
         "spatie/laravel-responsecache": "^7.6",
         "spatie/laravel-tags": "*",
+=======
+        "spatie/laravel-schemaless-attributes": "^2.5",
+        "spatie/laravel-sluggable": "^3.6",
+        "spatie/laravel-responsecache": "^7.6",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         "spipu/html2pdf": "^5.2",
         "staudenmeir/laravel-adjacency-list": "^1.22",
         "symfony/dom-crawler": "*",
         "thecodingmachine/safe": "^2.5",
+<<<<<<< HEAD
         "tightenco/parental": "^1.4"
+=======
+        "spatie/laravel-tags": "*",
+        "livewire/volt": "*",
+        "tightenco/parental": "*",
+        "spatie/laravel-queueable-action": "*"
+        
+    },
+    "require-comment": {
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",
@@ -59,11 +104,23 @@
         "larastan/larastan": "*",
         "laravel/pint": "^1.18",
         "laravel/sail": "^1.39",
+<<<<<<< HEAD
         "nunomaduro/collision": "^8.5",
         "orchestra/testbench": "^9.6",
         "pestphp/pest": "^3.5",
         "spatie/laravel-error-solutions": "^1.0",
         "thecodingmachine/phpstan-safe-rule": "*"
+=======
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.5",
+        "pestphp/pest": "^3.5",
+        "thecodingmachine/phpstan-safe-rule": "*",
+        "spatie/laravel-error-solutions": "*",
+        "orchestra/testbench": "*"
+    },
+    "require-dev-comment": {
+        
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
     },
     "repositories": [
         {
@@ -81,9 +138,16 @@
     ],
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Xot\\": "",
             "Modules\\Xot\\Database\\Factories\\": "database/factories/",
             "Modules\\Xot\\Database\\Seeders\\": "database/seeders/",
+=======
+            "Modules\\Xot\\": "app/",
+            "Modules\\Xot\\Database\\Factories\\": "database/factories/",
+            "Modules\\Xot\\Database\\Seeders\\": "database/seeders/",
+            "Modules\\Xot\\Database\\Migrations\\": "database/migrations/",
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             "Coolsam\\FilamentModules\\": "packages/coolsam/panel-modules/src/"
         },
         "files": [
@@ -91,7 +155,10 @@
         ]
     },
     "scripts": {
+<<<<<<< HEAD
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
@@ -112,13 +179,19 @@
                 "Modules\\Xot\\Providers\\XotServiceProvider",
                 "Modules\\Xot\\Providers\\Filament\\ModulesServiceProvider",
                 "Modules\\Xot\\Providers\\Filament\\AdminPanelProvider"
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
             ],
             "aliases": {}
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 }

@@ -21,7 +21,11 @@ mix.options({
 //mix.setPublicPath('../../public').mergeManifest();
 
  var src=__dirname + '/Resources';
+<<<<<<< HEAD
  var dest= 'Resources/dist'
+=======
+ var dest= 'resources/dist'
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
  mix.js(src+'/js/app.js', dest+'/js/geo.js')
     .sass(src + '/sass/app.scss', dest+'/css/geo.css')

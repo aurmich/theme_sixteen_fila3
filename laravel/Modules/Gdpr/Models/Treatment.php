@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Gdpr\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Modules\Xot\Contracts\ProfileContract;
+=======
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Support\Carbon;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 
 /**
  * Modules\Gdpr\Models\Treatment.
@@ -18,6 +24,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property string|null                     $documentVersion
  * @property string|null                     $documentUrl
  * @property int                             $weight
+<<<<<<< HEAD
  *                                                            =======
  * @property string                          $id
  * @property int                             $active
@@ -120,6 +127,25 @@ use Modules\Xot\Contracts\ProfileContract;
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+=======
+ * @property Carbon|null                     $created_at
+ * @property Carbon|null                     $updated_at
+ *
+ * @method static \Modules\Gdpr\Database\Factories\TreatmentFactory factory($count = null, $state = [])
+ * @method static Builder|Treatment                                 newModelQuery()
+ * @method static Builder|Treatment                                 newQuery()
+ * @method static Builder|Treatment                                 query()
+ * @method static Builder|Treatment                                 whereActive($value)
+ * @method static Builder|Treatment                                 whereCreatedAt($value)
+ * @method static Builder|Treatment                                 whereDescription($value)
+ * @method static Builder|Treatment                                 whereDocumentUrl($value)
+ * @method static Builder|Treatment                                 whereDocumentVersion($value)
+ * @method static Builder|Treatment                                 whereId($value)
+ * @method static Builder|Treatment                                 whereName($value)
+ * @method static Builder|Treatment                                 whereRequired($value)
+ * @method static Builder|Treatment                                 whereUpdatedAt($value)
+ * @method static Builder|Treatment                                 whereWeight($value)
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
  *
  * @mixin \Eloquent
  */
@@ -127,8 +153,23 @@ class Treatment extends BaseModel
 {
     use HasUuids;
 
+<<<<<<< HEAD
     // protected $table = 'treatment';
     public $incrementing = false;
 
     protected $fillable = [''];
+=======
+    protected $fillable = [
+        'active',
+        'required',
+        'name',
+        'description',
+        'documentVersion',
+        'documentUrl',
+        'weight'
+    ];
+
+    // protected $table = 'treatment';
+    public $incrementing = false;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 }

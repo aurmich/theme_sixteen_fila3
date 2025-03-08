@@ -195,9 +195,14 @@ trait HasXotTable
      *
      * Soluzione: Verifica condizionale dell'esistenza dei metodi prima di chiamarli,
      * mantenendo la retrocompatibilità e prevenendo errori.
+<<<<<<< HEAD
      * @deprecated Questo metodo non deve più essere usato. Usa `getListTableColumns()` al suo posto.
      *
      * metterla final
+=======
+     *
+     * Ultimo aggiornamento: 10/2023
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
      */
     public function table(Table $table): Table
     {
@@ -349,6 +354,7 @@ trait HasXotTable
     }
 
     /**
+<<<<<<< HEAD
      * Get the model class.
      *
      * @return class-string<\Illuminate\Database\Eloquent\Model>
@@ -376,6 +382,36 @@ trait HasXotTable
         if ($model instanceof Model) {
             /** @var class-string<\Illuminate\Database\Eloquent\Model> */
             return get_class($model);
+=======
+     * Get model class.
+     *
+     * @throws \Exception Se non viene trovata una classe modello valida
+     *
+     * @return class-string<Model>
+     */
+    public function getModelClass(): string
+    {
+        if (method_exists($this, 'getRelationship')) {
+            $relationship = $this->getRelationship();
+            if ($relationship instanceof Relation) {
+                /* @var class-string<Model> */
+                return get_class($relationship->getModel());
+            }
+        }
+
+        if (method_exists($this, 'getModel')) {
+            $model = $this->getModel();
+            if (is_string($model)) {
+                Assert::classExists($model);
+
+                /* @var class-string<Model> */
+                return $model;
+            }
+            if ($model instanceof Model) {
+                /* @var class-string<Model> */
+                return get_class($model);
+            }
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         }
 
         throw new \Exception('No model found in '.class_basename(__CLASS__).'::'.__FUNCTION__);

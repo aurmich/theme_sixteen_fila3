@@ -19,7 +19,10 @@ class GetTransKeyAction
      */
     public function execute(string $class = ''): string
     {
+<<<<<<< HEAD
         $class0 = $class;
+=======
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         // If no class is provided, try to get it from the backtrace
         if ('' === $class) {
             $backtrace = debug_backtrace();
@@ -68,6 +71,7 @@ class GetTransKeyAction
         // If the class name ends with the type, remove the suffix
         if (Str::endsWith($class, $type)) {
             $class = Str::beforeLast($class, $type);
+<<<<<<< HEAD
             if (in_array($type, ['RelationManager'])) {
                 $class = Str::of($class)->singular()->toString();
             }
@@ -92,6 +96,16 @@ class GetTransKeyAction
         if (in_array($first, ['list'])) {
             $class_snake = Str::of($class_snake)
                 // ->after('list_')
+=======
+        }
+
+        $class_snake = Str::of($class)->snake()->toString();
+
+        // Handle cases where the class starts with "list_"
+        if (Str::startsWith($class_snake, 'list_')) {
+            $class_snake = Str::of($class_snake)
+                ->after('list_')
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
                 ->singular()
                 ->toString();
         }

@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources;
 
+<<<<<<< HEAD
 use Filament\Forms;
 use Filament\Forms\Components\KeyValue;
+=======
+use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\TextInput;
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 use Modules\Xot\Filament\Resources\ExtraResource\Pages;
 use Modules\Xot\Models\Extra;
 
@@ -13,6 +18,7 @@ class ExtraResource extends XotBaseResource
 {
     protected static ?string $model = Extra::class;
 
+<<<<<<< HEAD
     /**
      * Get the form schema for the resource.
      *
@@ -32,6 +38,28 @@ class ExtraResource extends XotBaseResource
             'key' => Forms\Components\TextInput::make('key')
                 ->required()
                 ->maxLength(255),
+=======
+    public static function getFormSchema(): array
+    {
+        return [
+            TextInput::make('id')
+                ->required()
+                ->maxLength(36),
+
+            TextInput::make('post_type')
+                ->required()
+                ->maxLength(255),
+
+            TextInput::make('post_id')
+                ->required()
+                ->numeric(),
+
+            KeyValue::make('value')
+                ->keyLabel('Chiave')
+                ->valueLabel('Valore')
+                ->reorderable()
+                ->columnSpanFull(),
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         ];
     }
 

@@ -7,6 +7,7 @@ namespace Modules\Xot\Datas;
 use Spatie\LaravelData\Attributes\Validation\ArrayType;
 use Spatie\LaravelData\Data;
 
+<<<<<<< HEAD
 /**
  * Class HasManyUpdateData
  * 
@@ -24,6 +25,16 @@ class HasManyUpdateData extends Data
     public function __construct(
         public string $foreignKey,
         public int|string $parentKey,
+=======
+class HasManyUpdateData extends Data
+{
+    /**
+     * @param array<int|string> $ids
+     */
+    public function __construct(
+        public string $foreignKey,
+        public mixed $parentKey,
+>>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
         #[ArrayType]
         public array $ids = [],
     ) {
