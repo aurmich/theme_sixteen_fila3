@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "Xot",
     "alias": "xot",
     "description": "",
@@ -36,10 +37,15 @@
     "name": "User",
     "alias": "user",
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+    "name": "Media",
+    "alias": "media",
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     "description": "",
     "keywords": [],
     "priority": 0,
     "providers": [
+<<<<<<< HEAD
 <<<<<<< HEAD
         "Modules\\Setting\\Providers\\SettingServiceProvider",
         "Modules\\Setting\\Providers\\Filament\\AdminPanelProvider"
@@ -62,3 +68,12 @@
     "files": []
 }
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+        "Modules\\Media\\Providers\\MediaServiceProvider",
+        "Modules\\Media\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "aliases": [],
+    "files": [],
+    "requires": []
+}
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)

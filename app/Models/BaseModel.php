@@ -4,14 +4,20 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
 // ---------- traits
+=======
+namespace Modules\Media\Models;
+
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
+<<<<<<< HEAD
 =======
 namespace Modules\Setting\Models;
 
@@ -28,6 +34,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -37,12 +45,16 @@ abstract class BaseModel extends Model
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     use HasFactory;
 
     // use Searchable;
     // //use Cachable;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     // use Searchable;
@@ -51,6 +63,8 @@ abstract class BaseModel extends Model
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     use Updater;
 
     /**
@@ -62,6 +76,7 @@ abstract class BaseModel extends Model
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public $incrementing = true;
@@ -80,6 +95,8 @@ abstract class BaseModel extends Model
 =======
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     /** @var bool */
     public $incrementing = true;
 
@@ -90,6 +107,7 @@ abstract class BaseModel extends Model
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected $connection = 'setting';
 
@@ -104,15 +122,26 @@ abstract class BaseModel extends Model
     /** @var list<string> */
     protected $fillable = ['id'];
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+    protected $connection = 'media';
+
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+    ];
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 
     /** @var string */
     protected $primaryKey = 'id';
 
     /** @var string */
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -120,6 +149,7 @@ abstract class BaseModel extends Model
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     /**
      * Create a new factory instance for the model.
@@ -150,16 +180,25 @@ abstract class BaseModel extends Model
         parent::__construct($attributes);
     }
 
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     /**
      * ----
      * Create a new factory instance for the model.
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
+<<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
      */
     protected static function newFactory()
     {
         return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
+=======
+     */
+    protected static function newFactory()
+    {
+        return app(GetFactoryAction::class)->execute(static::class);
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     }
 
     /** @return array<string, string> */
@@ -170,12 +209,15 @@ abstract class BaseModel extends Model
             'uuid' => 'string',
             'published_at' => 'datetime',
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             'verified_at' => 'datetime',
 
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

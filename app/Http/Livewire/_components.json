@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 []
 =======
 [{"name":"broad","class":"Broad","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Broad"},{"name":"job.status","class":"Job\\Status","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Job\\Status"},{"name":"schedule.crud","class":"Schedule\\Crud","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Schedule\\Crud"},{"name":"schedule.status","class":"Schedule\\Status","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Schedule\\Status"}]
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+[{"name":"card.video.clip","class":"Card\\Video\\Clip","module":null,"path":null,"ns":"Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"}]
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)

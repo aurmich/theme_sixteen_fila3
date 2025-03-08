@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
@@ -27,6 +28,9 @@ class Dashboard extends Page
     }
 =======
 namespace Modules\Job\Filament\Pages;
+=======
+namespace Modules\Media\Filament\Pages;
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 
 use Filament\Pages\Page;
 
@@ -34,6 +38,7 @@ class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+<<<<<<< HEAD
     protected static string $view = 'job::filament.pages.dashboard';
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
@@ -43,4 +48,7 @@ class Dashboard extends Page
     //         redirect('/admin');
     //     }
     // }
+=======
+    protected static string $view = 'media::filament.pages.dashboard';
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 }

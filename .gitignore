@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -165,6 +166,9 @@ package-lock.json
 *.lock
 *.lock
 package-lock.json
+=======
+vendor
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 /vendor/
 node_modules/
 npm-debug.log
@@ -188,6 +192,7 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+<<<<<<< HEAD
 =======
 *.lock
 package-lock.json
@@ -197,6 +202,8 @@ package-lock.json
 /vendor
 *.cache
 .git-blame-ignore-revs
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 .git-rewrite
 .git-blame-ignore-revs
 /vendor
@@ -204,6 +211,7 @@ package-lock.json
 composer.lock
 package-lock.json
 .php-cs-fixer.cache
+<<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 *.cache
 .git-blame-ignore-revs
@@ -267,10 +275,76 @@ build/
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+*.cache
+build/
+/build
+*.cache
+docs/vendor
+/docs/vendor
+node_modules
+.git-blame-ignore-revs
+vendor
+build
+node_modules
+vendor
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+.git-rewrite
+.git-blame-ignore-revs
+/vendor
+*.lock
+composer.lock
+package-lock.json
+.php-cs-fixer.cache
+*.cache
+build/
+/build
+*.cache
+docs/vendor
+/docs/vendor
+node_modules
+.git-blame-ignore-revs
+.git-blame-ignore-revs
+vendor
+build
+vendor/
+/vendor
+vendor/
+vendor/*
+.php-cs-fixer.cache
+.git-blame-ignore-revs
+build/
+vendor/
+build/
+node_modules
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -289,3 +363,6 @@ build
 *.exe
 *:Zone.Identifier
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+.php-cs-fixer.cache
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)

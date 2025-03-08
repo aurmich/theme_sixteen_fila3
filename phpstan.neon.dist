@@ -2,12 +2,15 @@ includes:
     - phpstan-baseline.neon
     - ./vendor/larastan/larastan/extension.neon
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 parameters:
 
     level: max
 
 =======
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     - ./vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
     #- ./vendor/symplify/phpstan-rules/config/code-complexity-rules.neon
     #- ./vendor/symplify/phpstan-rules/config/collector-rules.neon
@@ -18,7 +21,10 @@ parameters:
 
 parameters:
     level: max
+<<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     paths:
         - .
 
@@ -26,9 +32,13 @@ parameters:
     #    - '#Unsafe usage of new static#'
         - '#PHPDoc tag @mixin contains unknown class #'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         - '#Static call to instance method Nwidart#'
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+        - '#Static call to instance method Nwidart#'
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 
     excludePaths:
         - ./build/*
@@ -40,12 +50,17 @@ parameters:
 
     bootstrapFiles:
 <<<<<<< HEAD
+<<<<<<< HEAD
     #    - ./Services/vendor/autoload.php
     #    - ./phpstan_constants.php
 =======
         #- ./Services/vendor/autoload.php
         - ./phpstan_constants.php
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+        #- ./Services/vendor/autoload.php
+        - ./phpstan_constants.php
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 
     scanFiles:
     #    - ./Helpers/Helper.php
@@ -54,10 +69,14 @@ parameters:
     editorUrl: 'vscode://file/%%file%%:%%line%%'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     tmpDir: ./build/phpstan
 =======
     tmpDir: build/phpstan
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+    tmpDir: build/phpstan
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
     checkUnusedViews: false
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
@@ -66,6 +85,9 @@ parameters:
     checkOctaneCompatibility: false
     checkModelProperties: false
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)

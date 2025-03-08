@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -27,21 +28,32 @@ namespace Modules\Setting\Providers;
 =======
 namespace Modules\Job\Providers;
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+namespace Modules\Media\Providers;
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected string $moduleNamespace = 'Modules\Setting\Http\Controllers';
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
     protected string $moduleNamespace = 'Modules\Job\Http\Controllers';
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     */
+    protected string $moduleNamespace = 'Modules\Media\Http\Controllers';
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -141,4 +153,8 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
     public string $name = 'Job';
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+
+    public string $name = 'Media';
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 }

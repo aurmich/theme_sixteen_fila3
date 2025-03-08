@@ -1,6 +1,7 @@
 <x-filament::page>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <button wire:click="upgrade">Filament upgrade</button>
 =======
     {{--
@@ -12,4 +13,9 @@
 =======
 
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+    {{--
+   
+    --}}
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 </x-filament::page>

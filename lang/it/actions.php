@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+<<<<<<< HEAD
     'export_xls' => 'Esporta Dati',
 =======
     'attach_user' => 'Collega Utente',
@@ -22,4 +23,12 @@ return [
     'success_detached' => 'Utente scollegato con successo',
     'success_deleted' => 'Utenti eliminati con successo',
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+    'add_attachment' => [
+        'title' => 'Allegati',
+        'label' => 'Carica allegato',
+        'fields' => [
+        ],
+    ],
+>>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 ];
