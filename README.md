@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ~~~bash
 git clone --recurse-submodules https://github.com/aurmich/base_fixcity_fila3.git 
 cd base_fixcity_fila3
@@ -231,3 +232,28 @@ This package is open-sourced under the [MIT license](LICENSE).
 
 **Boost your Laravel app with powerful modular capabilities using Module Xot Fila3!** 💥
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
+=======
+# Module Setting
+Modulo dedicato alla gestione di alcune configurazioni
+
+## Aggiungere Modulo nella base del progetto
+Dentro la cartella laravel/Modules
+
+```bash
+git submodule add https://github.com/laraxot/module_setting_fila3.git Setting
+```
+
+## Verificare che il modulo sia attivo
+```bash
+php artisan module:list
+```
+in caso abilitarlo
+```bash
+php artisan module:enable Setting
+```
+
+## Eseguire le migrazioni
+```bash
+php artisan module:migrate Setting
+```
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)

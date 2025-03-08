@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -154,12 +155,62 @@ package-lock.json
 *.phar
 .git-rewrite/
 
+=======
+/vendor
+*.lock
+/build
+*.lock
+*.lock
+*.lock
+package-lock.json
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+*.cache
+.git-blame-ignore-revs
+.git-rewrite
+
+.git-blame-ignore-revs
+*.phar
+.php-cs-fixer.cache
+*.phar
+*.cache
+.git-blame-ignore-revs
+package-lock.json
+.php-cs-fixer.cache
+package-lock.json
+.git-rewrite/
+.php-cs-fixer.cache
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 node_modules
 .git-blame-ignore-revs
 .git-blame-ignore-revs
 node_modules
 vendor
+<<<<<<< HEAD
 .git-blame-ignore-revs
+=======
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 build/
 vendor/
 build/
@@ -168,5 +219,10 @@ docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 *.exe
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
+=======
+node_modules/
+*:Zone.Identifier
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)

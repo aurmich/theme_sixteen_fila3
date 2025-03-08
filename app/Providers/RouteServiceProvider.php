@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -20,10 +21,20 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     public string $name = 'Xot';
 
     protected string $moduleNamespace = 'Modules\Xot\Http\Controllers';
+=======
+namespace Modules\Setting\Providers;
+
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
+
+class RouteServiceProvider extends XotBaseRouteServiceProvider
+{
+    protected string $moduleNamespace = 'Modules\Setting\Http\Controllers';
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
+<<<<<<< HEAD
 
     public function boot(): void
     {
@@ -114,4 +125,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     }
 
     // end registerRoutePattern
+=======
+    public string $name = 'Setting';
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 }

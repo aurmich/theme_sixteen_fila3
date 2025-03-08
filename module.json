@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "Xot",
     "alias": "xot",
     "description": "",
@@ -13,4 +14,16 @@
     "aliases": [],
     "files": [],
     "requires": []
+=======
+    "name": "Setting",
+    "alias": "setting",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Setting\\Providers\\SettingServiceProvider",
+        "Modules\\Setting\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 }

@@ -15,7 +15,11 @@
         <ignoreFiles>
             <directory name="build" />
             <directory name="vendor" />
+<<<<<<< HEAD
             <directory name="Services/vendor" />
+=======
+            
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
             <directory name="docs" />
         </ignoreFiles>
     </projectFiles>

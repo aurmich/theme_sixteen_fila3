@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -10,6 +11,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
+=======
+namespace Modules\Setting\Models;
+
+// ---------- traits
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+// //use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -17,10 +27,16 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModel extends Model
 {
+<<<<<<< HEAD
     use HasFactory;
 
     // use Searchable;
     // //use Cachable;
+=======
+    // use Searchable;
+    // use Cachable;
+    use HasFactory;
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
     use Updater;
 
     /**
@@ -32,6 +48,7 @@ abstract class BaseModel extends Model
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
     public $incrementing = true;
 
     public $timestamps = true;
@@ -45,6 +62,27 @@ abstract class BaseModel extends Model
 
     protected $primaryKey = 'id';
 
+=======
+    /** @var bool */
+    public $incrementing = true;
+
+    /** @var bool */
+    public $timestamps = true;
+
+    /** @var int */
+    protected $perPage = 30;
+
+    /** @var string */
+    protected $connection = 'setting';
+
+    /** @var list<string> */
+    protected $appends = [];
+
+    /** @var string */
+    protected $primaryKey = 'id';
+
+    /** @var string */
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -55,6 +93,7 @@ abstract class BaseModel extends Model
     /**
      * Create a new factory instance for the model.
      *
+<<<<<<< HEAD
      * @return Factory<static>
      */
     protected static function newFactory(): Factory
@@ -68,6 +107,25 @@ abstract class BaseModel extends Model
     {
         return [
             'published_at' => 'datetime',
+=======
+     * @return Factory
+     */
+    protected static function newFactory()
+    {
+        return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
+    }
+
+    /** @return array<string, string> */
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string',
+            'published_at' => 'datetime',
+
+            'verified_at' => 'datetime',
+
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

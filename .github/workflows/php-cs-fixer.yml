@@ -4,7 +4,10 @@ on: [push]
 
 jobs:
   php-cs-fixer:
+<<<<<<< HEAD
     name: PHP-CS-Fixer
+=======
+>>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
     runs-on: ubuntu-latest
 
     steps:
