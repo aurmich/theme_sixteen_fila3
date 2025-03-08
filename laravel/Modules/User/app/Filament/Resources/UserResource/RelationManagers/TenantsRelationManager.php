@@ -32,15 +32,14 @@ class TenantsRelationManager extends XotBaseRelationManager
      *
      * @return Form configured form instance
      */
-    public function form(Form $form): Form
+    public function getFormSchema():array
     {
-        return $form
-            ->schema([
+        return [
                 Forms\Components\TextInput::make('name')
 
                     ->required()
                     ->maxLength(255),
-            ]);
+            ];
     }
 
     /**

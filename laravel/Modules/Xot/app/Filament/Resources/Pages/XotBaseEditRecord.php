@@ -10,7 +10,7 @@ use Filament\Resources\Pages\EditRecord as FilamentEditRecord;
 /**
  * Undocumented class.
  */
-abstract class XotBaseEditRecord extends FilamenEditRecord
+abstract class XotBaseEditRecord extends FilamentEditRecord
 {
     // ...
 

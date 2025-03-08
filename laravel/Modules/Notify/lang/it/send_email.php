@@ -2,38 +2,48 @@
 
 return [
     'resource' => [
-        'name' => 'Invio Email',
+        'name' => 'send_email',
     ],
     'navigation' => [
-        'name' => 'Invio Email',
-        'plural' => 'Invio Email',
+        'name' => 'send_email',
+        'plural' => 'send_email',
         'group' => [
-            'name' => 'Sistema',
-            'description' => 'Funzionalità per l\'invio di email attraverso il sistema di notifiche',
+            'name' => 'Invia',
         ],
-        'label' => 'Invio Email',
-        'icon' => 'notify-email-animated',
-        'sort' => 49,
     ],
     'fields' => [
+        'name' => 'Nome Area',
+        'parent' => 'Settore di appartenenza',
+        'parent.name' => 'Settore di appartenenza',
+        'parent_name' => 'Settore di appartenenza',
+        'assets' => 'Quantità di asset',
         'to' => [
-            'label' => 'Destinatario',
+            'label' => 'to',
         ],
         'subject' => [
-            'label' => 'Oggetto',
+            'label' => 'subject',
         ],
         'body_html' => [
-            'label' => 'Contenuto HTML',
+            'label' => 'body_html',
         ],
     ],
     'actions' => [
-        'send' => [
-            'label' => 'Invia Email',
-            'success' => 'Email inviata con successo',
-            'error' => 'Errore durante l\'invio dell\'email',
+        'import' => [
+            'name' => 'Importa da file',
+            'fields' => [
+                'import_file' => 'Seleziona un file XLS o CSV da caricare',
+            ],
         ],
-        'preview' => [
-            'label' => 'Anteprima',
+        'export' => [
+            'name' => 'Esporta dati',
+            'filename_prefix' => 'Aree al',
+            'columns' => [
+                'name' => 'Nome area',
+                'parent_name' => 'Nome area livello superiore',
+            ],
+        ],
+        'emailFormActions' => [
+            'label' => 'emailFormActions',
         ],
     ],
 ];

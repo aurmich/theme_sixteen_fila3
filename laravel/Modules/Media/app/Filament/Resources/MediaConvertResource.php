@@ -6,6 +6,7 @@ namespace Modules\Media\Filament\Resources;
 
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Modules\Media\Filament\Resources\MediaConvertResource\Pages;
 use Modules\Media\Models\MediaConvert;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -54,6 +55,12 @@ class MediaConvertResource extends XotBaseResource
             TextInput::make('threads'),
             TextInput::make('speed'),
         ];
+    }
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema(static::getFormSchema());
     }
 
     public static function getRelations(): array

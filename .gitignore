@@ -66,6 +66,8 @@ docker
 
 
 *.lock
+bashscripts
+*.lock
 
 .git-rewrite
 uploads
@@ -88,3 +90,6 @@ public_html/js/
 public_html/themes/
 cache/
 laravel/.phive/
+tmp
+laravel/app/View/Components/vendor/
+public_html/themes/

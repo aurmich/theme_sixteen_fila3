@@ -4,18 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\RoleResource\Pages;
 
-use Filament\Actions\DeleteAction;
-use Filament\Pages\Actions\ViewAction;
-use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\User\Filament\Resources\RoleResource;
 use Modules\User\Models\Role;
 use Modules\User\Support\Utils;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use Webmozart\Assert\Assert;
 
-class EditRole extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
+class EditRole extends XotBaseEditRecord
 {
     // //
     public Collection $permissions;
@@ -44,14 +42,6 @@ class EditRole extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
         );
         Assert::isInstanceOf($this->record, Role::class, '['.__LINE__.']['.class_basename($this).']');
         $this->record->syncPermissions($permissionModels);
-    }
-
-    protected function getHeaderActions(): array
-    {
-        return [
-            ViewAction::make(),
-            DeleteAction::make(),
-        ];
     }
 
     protected function mutateFormDataBeforeSave(array $data): array

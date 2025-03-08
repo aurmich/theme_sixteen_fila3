@@ -1,54 +1,30 @@
 {
     "id": "1",
-    "slug": "home",
     "title": {
-        "it": "sss",
-        "en": "en"
+        "it": "home"
     },
+    "slug": "home",
+    "content": null,
     "content_blocks": {
-        "0": {
-            "type": "ticket_list",
-            "data": {
-                "title": "aaa",
-                "sub_title": "aaa",
-                "method": "aaa",
-                "limit": null,
-                "_tpl": "map"
-            }
-        },
-        "it": {
-            "ecf18100-f814-4501-9036-bd215f8a3d31": {
-                "type": "ticket_list",
-                "data": {
-                    "title": "aaa",
-                    "sub_title": "aa",
-                    "method": "aaa",
-                    "limit": null,
-                    "_tpl": "map"
-                }
-            }
-        },
-        "en": [
+        "it": [
             {
                 "type": "ticket_list",
                 "data": {
-                    "title": "aaa111",
-                    "sub_title": "sss",
-                    "method": "ttt",
+                    "title": "aaa",
+                    "sub_title": null,
+                    "method": "aaaa",
                     "limit": null,
-                    "_tpl": "map"
+                    "view": "ticket::components.blocks.ticket_list.agid"
                 }
             }
         ]
     },
     "sidebar_blocks": {
-        "it": [],
-        "en": []
+        "it": []
     },
-    "footer_blocks": {
-        "it": ""
-    },
-    "updated_by": "9c695c52-f141-4985-bdcf-3495c3dd0cf1",
-    "created_at": "2024-08-20T13:57:46.000000Z",
-    "updated_at": "2024-08-21T09:50:58.000000Z"
+    "footer_blocks": null,
+    "created_at": "2024-12-09T16:46:21.000000Z",
+    "updated_at": "2024-12-09T17:08:25.000000Z",
+    "created_by": "9c63325e-ce65-4632-bc54-1ef576839de5",
+    "updated_by": "9c63325e-ce65-4632-bc54-1ef576839de5"
 }

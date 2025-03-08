@@ -1,6 +1,4 @@
-<?php
-
- return array (
+<?php return array (
   'appearance' => 
   array (
     'background' => NULL,
@@ -15,7 +13,11 @@
   ),
   'footer' => 
   array (
-    'view' => 'cms::components.footer.social_media_icons',
+    '_tpl' => NULL,
+    'background' => NULL,
+    'background_color' => NULL,
+    'overlay_color' => NULL,
+    'view' => 'cms::components.blocks.footer.social_media_icons',
   ),
   'headernav' => 
   array (
@@ -26,6 +28,6 @@
     'overlay_color' => NULL,
     'overlay_opacity' => NULL,
     'style' => NULL,
-    'view' => 'cms::components.headernav.simple',
+    'view' => 'ticket::components.blocks.headernav.agid',
   ),
 );
