@@ -33,6 +33,6 @@ class TicketList extends Component
 
     public function render()
     {
-        return view('ticket::components.blocks.ticket_list.agid');
+        return view('fixcity::components.blocks.ticket_list.agid');
     }
 } 

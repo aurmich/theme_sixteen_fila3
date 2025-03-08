@@ -101,7 +101,7 @@ class TicketsMapTableWidget extends MapTableWidget
             return [
                 LoginAction::make('Nuovo')
                     ->modalHeading('Devi loggarti per poter creare un ticket')
-                    ->modalContent(view('ticket::filament.widgets.login'))
+                    ->modalContent(view('fixcity::filament.widgets.login'))
                     ->extraAttributes(['class' => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'])
                     ->modalWidth(MaxWidth::Medium)
                     ->modalSubmitAction(false),

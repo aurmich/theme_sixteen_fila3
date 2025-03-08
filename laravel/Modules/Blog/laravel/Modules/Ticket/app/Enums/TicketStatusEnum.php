@@ -56,7 +56,7 @@ enum TicketStatusEnum: string implements HasColor, HasIcon, HasLabel
 
     public function getLabel(): string
     {
-        // return __('ticket::enums.'.$this->name.'.label');
+        // return __('fixcity::enums.'.$this->name.'.label');
 
         return match ($this) {
             // self::NEW => 'New',

@@ -41,7 +41,7 @@ class TicketResource extends XotBaseResource
                     // Ticket Name
                     Forms\Components\TextInput::make('name')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.title.placeholder') . '*')
+                        ->placeholder(__('fixcity::ticket.title.placeholder') . '*')
                         ->columnSpanFull() // Occupa tutta la larghezza disponibile
                         ->required()
                         ->maxLength(255)
@@ -65,7 +65,7 @@ class TicketResource extends XotBaseResource
                     // Ticket Type
                     Forms\Components\Select::make('type')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.type.placeholder') . '*')
+                        ->placeholder(__('fixcity::ticket.type.placeholder') . '*')
                         ->searchable()
                         ->options(TicketTypeEnum::class)
                         ->columnSpanFull(),
@@ -73,7 +73,7 @@ class TicketResource extends XotBaseResource
                     // Ticket Priority
                     Forms\Components\Select::make('priority')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.priorities.label'))
+                        ->placeholder(__('fixcity::ticket.priorities.label'))
                         ->searchable()
                         ->options(TicketPriorityEnum::class)
                         ->default(TicketPriorityEnum::default())
@@ -81,7 +81,7 @@ class TicketResource extends XotBaseResource
 
                     // Ticket Content (RichEditor)
                     // Forms\Components\RichEditor::make('content')
-                    //     ->label(__('ticket::ticket.content.label'))
+                    //     ->label(__('fixcity::ticket.content.label'))
                     //     ->required()
                     //     ->columnSpanFull()
                     //     ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;']), // Rimozione del padding e margini
@@ -89,10 +89,10 @@ class TicketResource extends XotBaseResource
 
                     Forms\Components\Textarea::make('content')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.content.placeholder') . '**')
+                        ->placeholder(__('fixcity::ticket.content.placeholder') . '**')
                         ->rows(2)
                         ->cols(10)
-                        ->helperText(__('ticket::ticket.content.helper_text')),
+                        ->helperText(__('fixcity::ticket.content.helper_text')),
 
 
                     // Hidden Latitude and Longitude
@@ -120,7 +120,7 @@ class TicketResource extends XotBaseResource
                     // Map Section
                     // NOTA BENE, ASSICURATI DI ABILITARE LA LOCALIZZAZIONE NEL BROWSER
                     Map::make('location')
-                        ->label(__('ticket::ticket.your-location'))
+                        ->label(__('fixcity::ticket.your-location'))
                         ->columnSpanFull() // Occupare l'intera larghezza disponibile
                         ->default([
                             'lat' => 40.4168,
@@ -151,7 +151,7 @@ class TicketResource extends XotBaseResource
 
                     // Image Upload
                     // SpatieMediaLibraryFileUpload::make('images')
-                    //     ->label(__('ticket::ticket.insert-images'))
+                    //     ->label(__('fixcity::ticket.insert-images'))
                     //     ->collection('ticket')
                     //     ->directory('ticket')
                     //     ->disk('uploads')
@@ -164,7 +164,7 @@ class TicketResource extends XotBaseResource
 
 
                     SpatieMediaLibraryFileUpload::make('images')
-                        ->label(__('ticket::ticket.insert-images'))
+                        ->label(__('fixcity::ticket.insert-images'))
                         ->collection('ticket')
                         ->directory('ticket')
                         ->disk('uploads')

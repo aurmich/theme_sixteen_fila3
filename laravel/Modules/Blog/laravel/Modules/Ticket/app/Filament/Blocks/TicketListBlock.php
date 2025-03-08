@@ -16,7 +16,7 @@ class TicketListBlock
         string $name = 'ticket_list',
         string $context = 'form',
     ): Block {
-        // $view = 'ticket::components.blocks.ticket_list.card';
+        // $view = 'fixcity::components.blocks.ticket_list.card';
         // $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
 
         $options = app(GetViewBlocksOptionsByTypeAction::class)
