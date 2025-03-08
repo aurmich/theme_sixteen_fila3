@@ -11,12 +11,9 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\Layout\Stack;
-<<<<<<< HEAD
-=======
 use Filament\Tables\Enums\ActionsPosition;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Table;
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\Xot\Filament\Pages\XotBaseListRecords;
 use Modules\Xot\Filament\Resources\ModuleResource;
@@ -25,12 +22,8 @@ use Nwidart\Modules\Facades\Module;
 <<<<<<< HEAD
 class ListModules extends XotBaseListRecords
 =======
-<<<<<<< HEAD
-class ListModules extends XotBaseListRecords
-=======
 class ListModules extends \Modules\Xot\Filament\Pages\XotBaseListRecords
 >>>>>>> 5a9a90183 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 {
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
@@ -91,11 +84,8 @@ class ListModules extends \Modules\Xot\Filament\Pages\XotBaseListRecords
         ];
     }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     protected function getHeaderActions(): array
     {
         return [

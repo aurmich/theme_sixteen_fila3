@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources\CacheLockResource\Pages;
 
-<<<<<<< HEAD
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
-use Modules\Xot\Filament\Resources\CacheLockResource;
-
-class ListCacheLocks extends XotBaseListRecords
-{
-    protected static string $resource = CacheLockResource::class;
-=======
 use Filament\Actions;
 <<<<<<< HEAD
 =======
@@ -36,5 +28,4 @@ class ListCacheLocks extends XotBaseListRecords
             Actions\CreateAction::make(),
         ];
     }
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 }

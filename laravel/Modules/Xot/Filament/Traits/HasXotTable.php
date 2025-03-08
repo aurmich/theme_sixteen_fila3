@@ -120,21 +120,15 @@ trait HasXotTable
             Actions\CreateAction::make()
                 ->label('')
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
                 ->tooltip(static::trans('actions.create.tooltip'))
                 ->icon('heroicon-o-plus')
                 // ->iconButton()
                 ->button(),
-<<<<<<< HEAD
-=======
 =======
                 //->tooltip(__('user::actions.create_user'))
                 ->tooltip(static::trans('actions.create.tooltip'))
                 ->icon('heroicon-o-plus'),
 >>>>>>> 5a9a90183 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
         ];
     }
 

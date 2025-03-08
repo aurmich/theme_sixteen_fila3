@@ -16,12 +16,8 @@ use Modules\Xot\Filament\Widgets\Clock;
 <<<<<<< HEAD
 class ListCaches extends XotBaseListRecords
 =======
-<<<<<<< HEAD
-class ListCaches extends XotBaseListRecords
-=======
 class ListCaches extends \Modules\Xot\Filament\Pages\XotBaseListRecords
 >>>>>>> 5a9a90183 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 {
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 

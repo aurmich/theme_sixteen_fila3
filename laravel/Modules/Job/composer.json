@@ -23,12 +23,6 @@
     }],
     "require": {
 <<<<<<< HEAD
-
-    },
-    "require-dev": {
-
-=======
-<<<<<<< HEAD
         
     },
     "require-dev": {
@@ -36,7 +30,6 @@
 =======
 
 >>>>>>> 91f436d49 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     },
     "repositories": [
         {

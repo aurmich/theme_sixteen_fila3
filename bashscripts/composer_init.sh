@@ -5,13 +5,6 @@ php -r "unlink('composer-setup.php');"
 php -r "unlink('composer.lock');"
 rm composer.lock
 rm package-lock.json
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 #mv composer.json composer_$(date +"%Y-%m-%d").json
 #php composer.phar init
 
@@ -92,51 +85,3 @@ php -d memory_limit=-1 composer.phar require -W --dev --ignore-platform-reqs pes
 ### REMOVE
 php -d memory_limit=-1 composer.phar remove laravel/sanctum
 rm config/sanctum.php 
-=======
-=======
->>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
-=======
->>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
-=======
->>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
-=======
->>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
-=======
->>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
-=======
->>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
-
-##############  ####################
-php -d memory_limit=-1 composer.phar require -W illuminate/contracts
-
-############################ DEV ###############################
-php -d memory_limit=-1 composer.phar require -W --dev laravel/pint
-php -d memory_limit=-1 composer.phar require -W --dev nunomaduro/collision
-php -d memory_limit=-1 composer.phar require -W --dev larastan/larastan
-php -d memory_limit=-1 composer.phar require -W --dev orchestra/testbench
-php -d memory_limit=-1 composer.phar require -W --dev pestphp/pest
-php -d memory_limit=-1 composer.phar require -W --dev pestphp/pest-plugin-arch
-php -d memory_limit=-1 composer.phar require -W --dev pestphp/pest-plugin-laravel
-php -d memory_limit=-1 composer.phar require -W --dev phpstan/extension-installer
-php -d memory_limit=-1 composer.phar require -W --dev phpstan/phpstan-deprecation-rules
-php -d memory_limit=-1 composer.phar require -W --dev phpstan/phpstan-phpunit
-php -d memory_limit=-1 composer.phar require -W --dev spatie/laravel-ray
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
-=======
->>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
-=======
->>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
-=======
->>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
-=======
->>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
-=======
->>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
-=======
->>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)

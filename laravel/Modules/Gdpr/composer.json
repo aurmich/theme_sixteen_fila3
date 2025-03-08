@@ -29,16 +29,10 @@
     },
 <<<<<<< HEAD
     "require-dev": {
-
-    },
-=======
-<<<<<<< HEAD
-    "require-dev": {
         
     },
 =======
 >>>>>>> 45f99fd86 (.)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     "repositories": [
         {
             "type": "path",
@@ -59,15 +53,10 @@
         "post-autoload-dump1": [
             "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'"
 =======
-<<<<<<< HEAD
-        "post-autoload-dump1": [
-            "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'"
-=======
         "post-autoload-dump": [
             "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'",
             "@php vendor/bin/testbench package:discover --ansi"
 >>>>>>> 45f99fd86 (.)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"

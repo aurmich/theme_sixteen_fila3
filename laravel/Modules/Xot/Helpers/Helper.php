@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-=======
 use Filament\Facades\Filament;
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -28,10 +25,6 @@ use function Safe\preg_match;
 use function Safe\realpath;
 
 use Webmozart\Assert\Assert;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Log;
-=======
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
 // ------------------------------------------------
 
@@ -57,10 +50,6 @@ if (! function_exists('isRunningTestBench')) {
         } catch (Exception $e) {
             return false;
         }
-<<<<<<< HEAD
-            
-=======
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
         $res = Str::startsWith(base_path(), $testbench);
         if (false == $res) {
             dd([
@@ -1018,21 +1007,6 @@ if (! function_exists('debugStack')) {
             throw new RuntimeException('XDebug must be installed to use this function');
         }
 
-<<<<<<< HEAD
-        if (function_exists('xdebug_set_filter') 
-            && defined('XDEBUG_FILTER_TRACING') 
-            && defined('XDEBUG_PATH_EXCLUDE')) {
-            xdebug_set_filter(
-                XDEBUG_FILTER_TRACING,
-                XDEBUG_PATH_EXCLUDE,
-                [__DIR__.'/../../vendor/']
-            );
-        }
-
-        if (function_exists('xdebug_print_function_stack')) {
-            xdebug_print_function_stack();
-        }
-=======
         xdebug_set_filter(
             XDEBUG_FILTER_TRACING,
             XDEBUG_PATH_EXCLUDE,
@@ -1041,7 +1015,6 @@ if (! function_exists('debugStack')) {
         );
 
         xdebug_print_function_stack();
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     }
 }
 
@@ -1195,32 +1168,16 @@ if (! function_exists('authId')) {
     function authId(): ?string
     {
         try {
-<<<<<<< HEAD
-            // Try standard Laravel auth first
-            $id = auth()->id();
-            
-            // If no ID from standard auth, try Filament auth if available
-            if (null === $id && class_exists(\Filament\Facades\Filament::class)) {
-                $user = \Filament\Facades\Filament::auth()->user();
-                $id = $user ? $user->getAuthIdentifier() : null;
-            }
-=======
             $id = Filament::auth()->id() ?? auth()->id();
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
         } catch (Exception $e) {
             return null;
         } catch (Error $e) {
             return null;
         }
-<<<<<<< HEAD
-        
-        return $id ? (string) $id : null;
-=======
         if (null === $id) {
             return null;
         }
 
         return (string) $id;
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     }
 }

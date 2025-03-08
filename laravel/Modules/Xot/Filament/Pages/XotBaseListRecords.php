@@ -24,13 +24,9 @@ abstract class XotBaseListRecords extends FilamentListRecords
 <<<<<<< HEAD
     // use TransTrait; //gia' dentro HasXotTable
 =======
-<<<<<<< HEAD
-    // use TransTrait; //gia' dentro HasXotTable
-=======
     //use TransTrait; //gia' dentro HasXotTable
 
 >>>>>>> 5a9a90183 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     use HasXotTable;
 
     /**

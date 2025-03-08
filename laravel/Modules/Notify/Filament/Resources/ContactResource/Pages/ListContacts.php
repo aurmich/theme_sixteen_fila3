@@ -4,18 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources\ContactResource\Pages;
 
-<<<<<<< HEAD
-use Filament\Actions\CreateAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
-use Modules\Notify\Filament\Resources\ContactResource;
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
-
-class ListContacts extends XotBaseListRecords
-{
-    protected static string $resource = ContactResource::class;
-
-=======
 use Filament\Tables\Table;
 use Filament\Actions\CreateAction;
 use Modules\UI\Enums\TableLayoutEnum;
@@ -47,7 +35,6 @@ class ListContacts extends XotBaseListRecords
 
 
 
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     public function getListTableColumns(): array
     {
         return [
@@ -69,11 +56,8 @@ class ListContacts extends XotBaseListRecords
         ];
     }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     protected function getHeaderActions(): array
     {
         return [

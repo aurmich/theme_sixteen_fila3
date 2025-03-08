@@ -65,8 +65,4 @@ move_config "Database"
 move_config "Resources"
 move_config "Routes"
 move_config "Tests"
-<<<<<<< HEAD
->>>>>>> origin/dev
-=======
 >>>>>>> cd271d1f6122f4f4f86b311351dc5e6ecb08edd6
->>>>>>> 395ee474a99a556124361102a8719b3ef92236ed

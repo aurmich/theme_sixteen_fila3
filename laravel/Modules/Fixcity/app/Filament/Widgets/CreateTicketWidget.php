@@ -9,31 +9,17 @@ declare(strict_types=1);
 namespace Modules\Fixcity\Filament\Widgets;
 
 use Filament\Forms\ComponentContainer;
-<<<<<<< HEAD
-use Filament\Forms\Components\Actions\Action;
-use Filament\Forms\Components\Checkbox;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\RichEditor;
-=======
 use Filament\Forms\Components\Actions;
 use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 use Filament\Forms\Components\Wizard;
 use Filament\Forms\Components\Wizard\Step;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget as BaseWidget;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\HtmlString;
-use Modules\Fixcity\Events\TicketCreatedEvent;
-use Modules\Fixcity\Filament\Resources\TicketResource;
-use Modules\Fixcity\Models\Ticket;
-=======
 use Modules\Fixcity\Events\TicketCreatedEvent;
 use Modules\Fixcity\Filament\Resources\TicketResource;
 use Modules\Fixcity\Models\Ticket;
@@ -42,7 +28,6 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Checkbox;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Blade;
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
 /**
  * @property ComponentContainer $form
@@ -51,11 +36,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
 {
     use InteractsWithForms;
 
-<<<<<<< HEAD
-    protected static string $view = 'fixcity::filament.widgets.create-ticket';
-=======
     protected static string $view = 'ticket::filament.widgets.create-ticket';
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
     protected int|string|array $columnSpan = 'full';
 
@@ -86,13 +67,8 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                             ->extraAttributes(['class' => 'text-green-500 text-lg checked:bg-green-500 checked:hover:bg-green-500 focus:ring-green-500'])
                             ->rules(['accepted']),
                     ])
-<<<<<<< HEAD
-                    ->afterValidation(function ($state) {
-                        if (! $state['accept_terms']) {
-=======
                     ->afterValidation(function($state) {
                         if (!$state['accept_terms']) {
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
                             $this->addError('data.accept_terms', "Devi accettare l'informativa sulla privacy per continuare.");
                             $this->halt();
                         }
@@ -123,11 +99,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                 ->columnSpanFull()
                 ->extraAttributes([
                     'class' => 'w-full max-w-full mx-auto',
-<<<<<<< HEAD
-                    'navigationContainerAttributes' => 'class="justify-start"',
-=======
                     'navigationContainerAttributes' => 'class="justify-start"'
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
                 ]),
         ];
     }
@@ -143,21 +115,6 @@ class CreateTicketWidget extends BaseWidget implements HasForms
     {
         // Ottieni i dati dal form
         $data = $this->form->getState();
-<<<<<<< HEAD
-
-        // Crea il ticket senza le immagini
-        $ticket = Ticket::create($data);
-
-        // Salva le immagini usando saveRelationships()
-        $this->form->model($ticket)->saveRelationships();
-
-        // Dispatch dell'evento
-        TicketCreatedEvent::dispatch($ticket);
-
-        // Redirect alla pagina principale
-        redirect('/');
-    }
-=======
     
         // Crea il ticket senza le immagini
         $ticket = Ticket::create($data);
@@ -172,5 +129,4 @@ class CreateTicketWidget extends BaseWidget implements HasForms
         redirect('/');
     }
     
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 }

@@ -45,9 +45,6 @@ Homestead.json
 .git-blame-ignore-revs
 .git-rewrite/
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 
 # Documentation
 /docs/
@@ -57,14 +54,6 @@ Homestead.json
 *.tmp
 *.swp
 *.swo
-<<<<<<< HEAD
-/docs/cache/
-docs/cache/
-.git-rewrite/
-*.log
-node_modules
-docs/cache
-=======
 =======
 <<<<<<< HEAD
 /docs/cache/
@@ -83,4 +72,3 @@ docs/cache/
 node_modules
 docs/cache
 >>>>>>> 66af4f06c (.)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)

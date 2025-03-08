@@ -25,14 +25,10 @@ class RetrieveSocialiteUserAction
 <<<<<<< HEAD
         $res = SocialiteUser::query()
 =======
-<<<<<<< HEAD
-        $res = SocialiteUser::query()
-=======
         dddx($user);
 
         return SocialiteUser::query()
 >>>>>>> 38b878581 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
             ->with(['user'])
             ->where('provider', $provider)
             ->where('provider_id', $user->getId())

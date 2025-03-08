@@ -7,15 +7,6 @@ namespace Modules\Xot\Filament\Resources\SessionResource\Pages;
 <<<<<<< HEAD
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
-use Modules\Xot\Filament\Resources\SessionResource;
-
-class ListSessions extends XotBaseListRecords
-{
-=======
-<<<<<<< HEAD
-use Filament\Tables\Columns\Layout\Stack;
-use Filament\Tables\Columns\TextColumn;
 =======
 use Filament\Actions;
 use Filament\Tables\Table;
@@ -40,7 +31,6 @@ class ListSessions extends XotBaseListRecords
 =======
     
 >>>>>>> 5a9a90183 (up)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     protected static string $resource = SessionResource::class;
 
     public function getGridTableColumns(): array

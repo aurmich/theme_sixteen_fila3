@@ -25,9 +25,6 @@ class GdprServiceProvider extends XotBaseServiceProvider
 
         $this->loadTranslationsFrom($lang_path, 'cookie-consent');
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
         $router = app('router');
 
         // $this->app['router']->pushMiddlewareToGroup('web', \Statikbe\CookieConsent\CookieConsentMiddleware::class);
@@ -37,13 +34,10 @@ class GdprServiceProvider extends XotBaseServiceProvider
     public function registerMyMiddleware(Router $router): void
     {
         $router->pushMiddlewareToGroup('web', \Statikbe\CookieConsent\CookieConsentMiddleware::class);
-<<<<<<< HEAD
-=======
 =======
 
         $this->app['router']->pushMiddlewareToGroup('web', \Statikbe\CookieConsent\CookieConsentMiddleware::class);
 >>>>>>> 45f99fd86 (.)
->>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
     }
 
     public function register(): void
