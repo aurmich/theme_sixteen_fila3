@@ -1,3 +1,7 @@
 #[submodule "docs"]
 #	path = docs
+<<<<<<< HEAD
 #	url = git@github.com:laraxot/doc_setting.git
+=======
+#	url = git@github.com:laraxot/doc_job.git
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)

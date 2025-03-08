@@ -2,12 +2,17 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Setting\Providers;
+=======
+namespace Modules\Job\Providers;
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
 use Modules\Xot\Providers\XotBaseContextServiceProvider;
 
 class FilamentServiceProvider extends XotBaseContextServiceProvider
 {
+<<<<<<< HEAD
     public static string $name = 'setting-filament';
     
     public static string $module = 'Setting';
@@ -34,4 +39,9 @@ class FilamentServiceProvider extends XotBaseContextServiceProvider
         app(FilamentModules::class)->prepareDefaultNavigation(static::$module, static::$name);
     }
     */
+=======
+    public static string $name = 'job-filament';
+    
+    public static string $module = 'Job';
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 }

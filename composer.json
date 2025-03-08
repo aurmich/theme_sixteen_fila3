@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -33,10 +34,33 @@
     "authors": [
         {
             "name": "marco sottana",
+=======
+    "name": "laraxot/module_job_fila3",
+    "description": "job module enables efficient background task execution. It lets you offload resource-heavy processes, like sending emails or data processing, improving app performance. Through simple job definition and dispatching, you can enhance user experience while tasks run seamlessly in the background.",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_job",
+        "Laravel",
+        "Job module",
+        "background tasks",
+        "app performance",
+        "email sending",
+        "data processing",
+        "user experience"
+    ],
+    "homepage": "https://github.com/laraxot/module_job_fila3.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
     "require": {
         "php": "^8.2",
         "calebporzio/sushi": "^2.5",
@@ -96,21 +120,35 @@
         
     },
     "repositories": [
+=======
+    "require": {},
+    "require-dev": {},
+    "repositories_comment": [
+        {
+            "type": "path",
+            "url": "../User"
+        },
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
             "url": "./packages/coolsam/panel-modules"
         },
         {
             "type": "composer",
             "url": "https://packagist.org"
+=======
+            "url": "../Xot"
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
         }
     ],
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Xot\\": "app/",
             "Modules\\Xot\\Database\\Factories\\": "database/factories/",
             "Modules\\Xot\\Database\\Seeders\\": "database/seeders/",
@@ -122,6 +160,15 @@
         ]
     },
     "scripts": {
+=======
+            "Modules\\Job\\": "app/",
+            "Modules\\Job\\Database\\Factories\\": "database/factories/",
+            "Modules\\Job\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump1": "@php ./vendor/bin/testbench package:discover --ansi",
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
@@ -139,6 +186,7 @@
     "extra": {
         "laravel": {
             "providers": [
+<<<<<<< HEAD
                 "Modules\\Xot\\Providers\\XotServiceProvider",
                 "Modules\\Xot\\Providers\\Filament\\ModulesServiceProvider",
                 "Modules\\Xot\\Providers\\Filament\\AdminPanelProvider"
@@ -165,10 +213,15 @@
                 "Modules\\Setting\\Providers\\SettingServiceProvider",
                 "Modules\\Setting\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+                "Modules\\Job\\Providers\\JobServiceProvider",
+                "Modules\\Job\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
             ],
             "aliases": {}
         }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "minimum-stability": "dev",
     "prefer-stable": true
@@ -220,3 +273,8 @@
     "prefer-stable": true
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 }
+=======
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)

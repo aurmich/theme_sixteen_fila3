@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -186,6 +187,23 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+=======
+*.lock
+package-lock.json
+.git-rewrite
+/docs/cache
+/build
+/vendor
+*.cache
+.git-blame-ignore-revs
+.git-rewrite
+.git-blame-ignore-revs
+/vendor
+*.lock
+composer.lock
+package-lock.json
+.php-cs-fixer.cache
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 *.cache
 .git-blame-ignore-revs
 .git-rewrite
@@ -193,13 +211,17 @@ Homestead.json
 .git-blame-ignore-revs
 *.phar
 .php-cs-fixer.cache
+<<<<<<< HEAD
 *.phar
 *.cache
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 .git-blame-ignore-revs
 package-lock.json
 .php-cs-fixer.cache
 package-lock.json
 .git-rewrite/
+<<<<<<< HEAD
 .php-cs-fixer.cache
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 node_modules
@@ -215,10 +237,19 @@ build/
 vendor/
 build/
 node_modules
+=======
+node_modules
+vendor
+.php-cs-fixer.cache
+.git-blame-ignore-revs
+vendor/
+build/
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 *.exe
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
@@ -226,3 +257,7 @@ cache/
 node_modules/
 *:Zone.Identifier
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+*:Zone.Identifier
+.php-cs-fixer.cache
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)

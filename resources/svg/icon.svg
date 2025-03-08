@@ -6,6 +6,7 @@
      stroke-width="1.5"
      aria-hidden="true" 
      role="img">
+<<<<<<< HEAD
     <!-- Cubo base -->
     <path stroke-linecap="round" 
           stroke-linejoin="round" 
@@ -23,4 +24,21 @@
     <path stroke-linecap="round" 
           stroke-linejoin="round" 
           d="M12 15v4M9 17l3-2M15 17l-3-2" />
+=======
+    <!-- Lista principale -->
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+    
+    <!-- Indicatore di processo -->
+    <circle cx="7" cy="6" r="1" fill="currentColor" />
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M9 6h8" />
+          
+    <!-- Indicatore di completamento -->
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M6.5 14.5l1 1 2-2" />
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 </svg> 

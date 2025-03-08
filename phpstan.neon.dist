@@ -1,17 +1,34 @@
 includes:
     - phpstan-baseline.neon
     - ./vendor/larastan/larastan/extension.neon
+<<<<<<< HEAD
 
 parameters:
 
     level: max
 
+=======
+    - ./vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+    #- ./vendor/symplify/phpstan-rules/config/code-complexity-rules.neon
+    #- ./vendor/symplify/phpstan-rules/config/collector-rules.neon
+    #- ./vendor/symplify/phpstan-rules/config/naming-rules.neon
+    #- ./vendor/symplify/phpstan-rules/config/regex-rules.neon
+    #- ./vendor/symplify/phpstan-rules/config/static-rules.neon
+
+
+parameters:
+    level: max
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
     paths:
         - .
 
     ignoreErrors:
     #    - '#Unsafe usage of new static#'
         - '#PHPDoc tag @mixin contains unknown class #'
+<<<<<<< HEAD
+=======
+        - '#Static call to instance method Nwidart#'
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
     excludePaths:
         - ./build/*
@@ -22,8 +39,13 @@ parameters:
         - ./_ide_helper.php
 
     bootstrapFiles:
+<<<<<<< HEAD
     #    - ./Services/vendor/autoload.php
     #    - ./phpstan_constants.php
+=======
+        #- ./Services/vendor/autoload.php
+        - ./phpstan_constants.php
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
     scanFiles:
     #    - ./Helpers/Helper.php
@@ -31,7 +53,11 @@ parameters:
 
     editorUrl: 'vscode://file/%%file%%:%%line%%'
 
+<<<<<<< HEAD
     tmpDir: ./build/phpstan
+=======
+    tmpDir: build/phpstan
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
     checkUnusedViews: false
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
@@ -39,4 +65,7 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     checkOctaneCompatibility: false
     checkModelProperties: false
+<<<<<<< HEAD
 
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)

@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   "private": true,
   "scripts": {
@@ -30,6 +31,8 @@
     "vite": "^5.0.12"
   }
 =======
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
     "private": true,
     "scripts": {
         "development": "mix",
@@ -43,7 +46,11 @@
         "@tailwindcss/typography": "^0.5.13",
         "autoprefixer": "^10.4.19",
         "axios": "^1.6.7",
+<<<<<<< HEAD
         "cross-env": "^5.1.4",
+=======
+        "cross-env": "^7.0",
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
         "laravel-mix": "^6.0.49",
         "laravel-mix-merge-manifest": "^0.1.2",
         "laravel-vite-plugin": "^1.0.1",
@@ -54,9 +61,12 @@
         "tippy.js": "^6.3.7",
         "vite": "^5.4.1"
     }
+<<<<<<< HEAD
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
 =======
     "vite": "^5.4.1"
   }
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 }

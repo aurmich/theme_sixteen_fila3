@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
@@ -24,6 +25,17 @@ class Dashboard extends Page
     {
         return ['a' => 'b'];
     }
+=======
+namespace Modules\Job\Filament\Pages;
+
+use Filament\Pages\Page;
+
+class Dashboard extends Page
+{
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static string $view = 'job::filament.pages.dashboard';
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
     // public function mount(): void {
     //     $user = auth()->user();

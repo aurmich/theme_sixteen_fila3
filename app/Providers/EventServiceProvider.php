@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Xot\Providers;
@@ -17,6 +18,11 @@ declare(strict_types=1);
 
 namespace Modules\Setting\Providers;
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+declare(strict_types=1);
+
+namespace Modules\Job\Providers;
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
 
@@ -29,9 +35,13 @@ class EventServiceProvider extends BaseEventServiceProvider
      */
     protected $listen = [];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
     /**
      * Indicates if events should be discovered.
      *
@@ -42,6 +52,7 @@ class EventServiceProvider extends BaseEventServiceProvider
     /**
      * Configure the proper event listeners for email verification.
      */
+<<<<<<< HEAD
     protected function configureEmailVerification(): void
     {
 <<<<<<< HEAD
@@ -49,4 +60,7 @@ class EventServiceProvider extends BaseEventServiceProvider
         // ...
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
     }
+=======
+    protected function configureEmailVerification(): void {}
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 }

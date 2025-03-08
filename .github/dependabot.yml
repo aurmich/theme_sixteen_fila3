@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # To get started with Dependabot version updates, you'll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for more information:
@@ -15,6 +16,8 @@ updates:
 =======
 =======
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 version: 2
 updates:
   - package-ecosystem: "composer"
@@ -22,6 +25,9 @@ updates:
     schedule:
       interval: "daily"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -37,6 +43,9 @@ updates:
     labels:
       - "npm"
       - "dependencies"
+<<<<<<< HEAD
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
 =======
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)

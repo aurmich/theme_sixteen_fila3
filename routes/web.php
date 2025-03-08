@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 // @include 'web_working.php';
@@ -23,3 +24,5 @@ declare(strict_types=1);
 //    Route::get('/', 'SettingController@index');
 // });
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
+=======
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)

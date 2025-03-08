@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
+=======
+namespace Modules\Job\Models;
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Modules\Xot\Traits\Updater;
@@ -26,11 +30,21 @@ abstract class BaseMorphPivot extends MorphPivot
     /** @var bool */
     public $incrementing = true;
 
+<<<<<<< HEAD
+=======
+    /** @var bool */
+    public $timestamps = true;
+
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
     /** @var int */
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
     protected $connection = 'xot';
+=======
+    protected $connection = 'job';
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
     /** @var list<string> */
     protected $appends = [];
@@ -50,6 +64,7 @@ abstract class BaseMorphPivot extends MorphPivot
         'note',
     ];
 
+<<<<<<< HEAD
     /** @return array<string, string> */
     protected function casts(): array
     {
@@ -57,6 +72,13 @@ abstract class BaseMorphPivot extends MorphPivot
             'id' => 'string', // must be string else primary key of related model will be typed as int
             'uuid' => 'string',
 
+=======
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string',
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

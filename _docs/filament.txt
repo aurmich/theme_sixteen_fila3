@@ -1,2 +1,13 @@
+<<<<<<< HEAD
 https://github.com/shuvroroy/filament-spatie-laravel-backup
+=======
+
+https://gitlab.com/amvisor/filament-failed-jobs/-/blob/master/src/FilamentFailedJobsServiceProvider.php
+
+https://github.com/croustibat/filament-jobs-monitor
+
+https://medium.com/@laravelprotips/laravel-filament-top-12-plugins-simplified-with-demonstrations-a87aa3b63a6d
+
+
+>>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 
