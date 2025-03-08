@@ -1,9 +1,9 @@
-<?php return array (
-  'actions' => 
-  array (
-    'edit' => 
-    array (
-      'label' => 'edit',
-    ),
-  ),
-);
+<?php
+
+return [
+    'actions' => [
+        'edit' => [
+            'label' => 'edit',
+        ],
+    ],
+];

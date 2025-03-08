@@ -13,7 +13,9 @@ use Modules\Xot\Filament\Traits\HasXotTable;
 class UsersRelationManager extends XotBaseRelationManager
 {
     use HasXotTable;
+
     protected static string $relationship = 'users';
+
     protected static ?string $recordTitleAttribute = 'name';
 
     public function form(Form $form): Form
@@ -43,7 +45,7 @@ class UsersRelationManager extends XotBaseRelationManager
             Forms\Components\TextInput::make('password')
 
                 ->password()
-                ->required(fn ($context) => 'create' === $context)
+                ->required(fn ($context) => $context === 'create')
                 ->minLength(8)
                 ->same('password_confirmation')
                 ->dehydrated(fn ($state) => filled($state))
@@ -52,7 +54,7 @@ class UsersRelationManager extends XotBaseRelationManager
             Forms\Components\TextInput::make('password_confirmation')
 
                 ->password()
-                ->required(fn ($context) => 'create' === $context)
+                ->required(fn ($context) => $context === 'create')
                 ->minLength(8),
         ];
     }

@@ -88,7 +88,7 @@ class PasswordExpiredWidget extends Widget implements HasForms
         Assert::string($current_password = Arr::get($data, 'current_password'));
         Assert::string($password = Arr::get($data, 'password'));
         $user = auth()->user();
-        if (null === $user) {
+        if ($user === null) {
             return null;
         }
 
@@ -161,7 +161,7 @@ class PasswordExpiredWidget extends Widget implements HasForms
             ->success()
             ->send();
 
-        return new PasswordResetResponse();
+        return new PasswordResetResponse;
     }
 
     protected function getCurrentPasswordFormComponent(): Component
@@ -173,7 +173,7 @@ class PasswordExpiredWidget extends Widget implements HasForms
             ->revealable()
             ->required()
             // ->rule(PasswordRule::default())
-            ->rule(new CheckOtpExpiredRule())
+            ->rule(new CheckOtpExpiredRule)
             ->validationAttribute(static::trans('fields.current_password.validation_attribute'));
     }
 
