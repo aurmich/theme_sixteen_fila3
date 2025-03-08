@@ -4,36 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources\ContactResource\Pages;
 
-use Filament\Tables\Table;
 use Filament\Actions\CreateAction;
-use Modules\UI\Enums\TableLayoutEnum;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Resources\Pages\ListRecords;
-use Filament\Tables\Enums\ActionsPosition;
-use Modules\Xot\Filament\Traits\HasXotTable;
 use Filament\Tables\Actions\DeleteBulkAction;
-<<<<<<< HEAD
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
-=======
->>>>>>> 72c474773 (.)
+use Filament\Tables\Actions\EditAction;
 use Modules\Notify\Filament\Resources\ContactResource;
-use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
+use Modules\Xot\Filament\Pages\XotBaseListRecords;
 
 class ListContacts extends XotBaseListRecords
 {
-<<<<<<< HEAD
-
-=======
-    use HasXotTable;
-    public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
->>>>>>> 72c474773 (.)
-
     protected static string $resource = ContactResource::class;
-
-
-
-
 
     public function getListTableColumns(): array
     {
@@ -55,8 +34,6 @@ class ListContacts extends XotBaseListRecords
             DeleteBulkAction::make(),
         ];
     }
-
-
 
     protected function getHeaderActions(): array
     {

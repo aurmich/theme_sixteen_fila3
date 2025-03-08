@@ -75,7 +75,6 @@ abstract class BaseModelLang extends Model
     protected static function newFactory()
     {
         return app(GetFactoryAction::class)->execute(static::class);
-<<<<<<< HEAD
     }
 
     /**
@@ -85,7 +84,5 @@ abstract class BaseModelLang extends Model
         return [
             'id' => 'string',
             'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
-=======
->>>>>>> 8b32dd218 (Check & fix styling)
     }
 }

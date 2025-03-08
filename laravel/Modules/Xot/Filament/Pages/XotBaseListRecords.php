@@ -21,12 +21,7 @@ use Webmozart\Assert\Assert;
  */
 abstract class XotBaseListRecords extends FilamentListRecords
 {
-<<<<<<< HEAD
     // use TransTrait; //gia' dentro HasXotTable
-=======
-    //use TransTrait; //gia' dentro HasXotTable
-
->>>>>>> 5a9a90183 (up)
     use HasXotTable;
 
     /**
