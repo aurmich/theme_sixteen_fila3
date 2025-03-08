@@ -7,7 +7,7 @@ includes:
 
 parameters:
 
-    level: 9
+    level: max
 
     #cache:
     #    nodesByStringCountMax: 0
@@ -21,6 +21,7 @@ parameters:
 
     paths:
         - ./Modules
+        - ./Themes
 
     ignoreErrors:
     #    - '#Unsafe usage of new static#'
@@ -30,7 +31,6 @@ parameters:
         - "#^Unsafe usage of new static#"
         - identifier: missingType.generics
         - identifier: missingType.iterableValue
-        - identifier: larastan.noEnvCallsOutsideOfConfig
 
 
     excludePaths:
@@ -41,11 +41,6 @@ parameters:
         - ./*/phpinsights.php
         - ./*/rector.php
         - ./Modules/Comment/packages/spatie/*
-        - ./Modules/*/packages/*
-        - ./*/*.blade.php
-        #- ./Modules/Blog/*
-        #- ./Modules/AI/*
-        - ./Modules/Xot/app/Filament/Traits/HasXotTable.php
 
 
 
@@ -58,10 +53,12 @@ parameters:
 
     editorUrl: 'vscode://file/%%file%%:%%line%%'
 
-    tmpDir: /tmp/phpstan
+    tmpDir: ./build/phpstan
 
     checkUnusedViews: false
     checkModelProperties: false
+    # checkMissingIterableValueType: false
+    # checkGenericClassInNonGenericObjectType: false
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
     checkOctaneCompatibility: false

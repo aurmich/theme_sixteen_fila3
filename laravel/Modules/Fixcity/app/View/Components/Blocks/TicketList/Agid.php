@@ -8,9 +8,8 @@ use Modules\Fixcity\View\Components\Blocks\TicketList\Agid as BaseAgid;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Modules\Fixcity\Enums\ReportStatusEnum;
-use Illuminate\View\Component;
 
-class Agid extends Component
+class Agid extends BaseAgid
 {
     public function getReports(): Collection
     {

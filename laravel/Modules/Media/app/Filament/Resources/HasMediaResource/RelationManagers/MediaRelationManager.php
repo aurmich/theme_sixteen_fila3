@@ -29,7 +29,13 @@ class MediaRelationManager extends XotBaseRelationManager
         return trans('media::actions.add_attachment.title');
     }
 
-   
+    public function form(Form $form): Form
+    {
+        $form = MediaResource::form($form);
+
+        return $form;
+    }
+
     /**
      * @return array<Action|ActionGroup>
      */

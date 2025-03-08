@@ -3,28 +3,28 @@
     "description": "",
     "homepage": "https://github.com/laraxot/module_geo_fila3.git",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
     "extra": {
         "laravel": {
             "providers": [
                 "Livewire\\LivewireServiceProvider",
                 "Modules\\Geo\\Providers\\GeoServiceProvider",
                 "Modules\\Geo\\Providers\\Filament\\AdminPanelProvider"
+
+
             ],
-            "aliases": {}
+            "aliases": {
+
+            }
         }
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Geo\\": "app/",
-            "Modules\\Geo\\Database\\Factories\\": "database/factories/",
-            "Modules\\Geo\\Database\\Seeders\\": "database/seeders/"
+            "Modules\\Geo\\": ""
         }
     },
     "require": {
@@ -32,6 +32,7 @@
         "dotswan/filament-map-picker": "^1.2",
         "webbingbrasil/filament-maps": "^3.0@beta"
     },
+
     "repositories": [
         {
             "type": "path",
@@ -68,4 +69,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+
 }

@@ -3,9 +3,9 @@ import laravel, { refreshPaths } from "laravel-vite-plugin";
 
 export default defineConfig({
 	build: {
-		outDir: "./resources/dist",
+		outDir: "./Resources/dist",
 		emptyOutDir: false,
-        manifest: 'manifest.json',
+		manifest: true,
 		rollupOptions: {
 			output: {
 				entryFileNames: `assets/[name].js`,
@@ -20,7 +20,7 @@ export default defineConfig({
 	plugins: [
 		laravel({
 			publicDirectory: "../../../public_html/",
-			input: [__dirname + "/resources/css/app.css", __dirname + "/resources/js/app.js", __dirname + "/resources/css/filament/admin/theme.css"],
+			input: [__dirname + "/Resources/css/app.css", __dirname + "/Resources/js/app.js", __dirname + "/Resources/css/filament/admin/theme.css"],
 			refresh: [...refreshPaths, "app/Livewire/**"],
 		}),
 	],

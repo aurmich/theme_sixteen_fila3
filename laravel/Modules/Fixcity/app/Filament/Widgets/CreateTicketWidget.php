@@ -19,7 +19,7 @@ use Filament\Forms\Components\Wizard\Step;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
-use Modules\Xot\Filament\Widgets\XotBaseWidget;
+use Filament\Widgets\Widget as BaseWidget;
 use Modules\Fixcity\Events\TicketCreatedEvent;
 use Modules\Fixcity\Filament\Resources\TicketResource;
 use Modules\Fixcity\Models\Ticket;
@@ -32,10 +32,11 @@ use Illuminate\Support\Facades\Blade;
 /**
  * @property ComponentContainer $form
  */
-class CreateTicketWidget extends XotBaseWidget 
+class CreateTicketWidget extends BaseWidget implements HasForms
 {
-    
-    protected static string $view = 'fixcity::filament.widgets.create-ticket';
+    use InteractsWithForms;
+
+    protected static string $view = 'ticket::filament.widgets.create-ticket';
 
     protected int|string|array $columnSpan = 'full';
 
@@ -51,19 +52,16 @@ class CreateTicketWidget extends XotBaseWidget
         return [
             Wizard::make([
                 Step::make('step-1')
-                    ->label(__('fixcity::ticket.steps.auth.label'))
-                    ->icon('heroicon-o-shield-check')
-                    ->description(__('fixcity::ticket.steps.auth.description'))
+                    ->label('Autorizzazioni e condizioni')
                     ->schema([
                         RichEditor::make('privacy_notice')
                             ->label('')
-                            ->default(__('fixcity::ticket.fields.privacy_notice.content'))
+                            ->default("Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell'articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).<br><br>Per i dettagli sul trattamento dei dati personali consulta l'<a href='/privacy' target='_blank' style='color: #007a52'>informativa sulla privacy</a>.")
                             ->disabled()
                             ->extraAttributes(['class' => 'border-0 shadow-none !p-0 !bg-transparent']),
 
                         Checkbox::make('accept_terms')
-                            ->label(__('fixcity::ticket.fields.accept_terms.label'))
-                            ->helperText(__('fixcity::ticket.fields.accept_terms.helper'))
+                            ->label("Ho letto e compreso l'informativa sulla privacy")
                             ->required()
                             ->default(false)
                             ->extraAttributes(['class' => 'text-green-500 text-lg checked:bg-green-500 checked:hover:bg-green-500 focus:ring-green-500'])
@@ -71,26 +69,22 @@ class CreateTicketWidget extends XotBaseWidget
                     ])
                     ->afterValidation(function($state) {
                         if (!$state['accept_terms']) {
-                            $this->addError('data.accept_terms', __('fixcity::ticket.validation.accept_terms'));
-                            $this->stop();
+                            $this->addError('data.accept_terms', "Devi accettare l'informativa sulla privacy per continuare.");
+                            $this->halt();
                         }
                     }),
 
                 Step::make('step-2')
-                    ->label(__('fixcity::ticket.steps.data.label'))
-                    ->icon('heroicon-o-document-text')
-                    ->description(__('fixcity::ticket.steps.data.description'))
+                    ->label('Dati di segnalazione')
                     ->schema([
                         Placeholder::make('')
-                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">' . __('fixcity::ticket.fields.issue.label') . '</h1>')),
+                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">Disservizio*</h1>')),
                         ...TicketResource::getFormSchema(),
                     ]),
             ])
                 ->nextAction(
                     fn (Action $action) => $action
-                        ->label(__('fixcity::ticket.actions.next.label'))
-                        ->icon('heroicon-m-arrow-right')
-                        ->color('primary')
+                        ->label('Avanti')
                         ->size('xl')
                         ->extraAttributes(['class' => 'px-8 py-4 text-lg font-bold w-96 -ml-6'])
                 )
@@ -99,7 +93,7 @@ class CreateTicketWidget extends XotBaseWidget
                         type="submit"
                         class="fi-btn relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2 rounded-lg fi-btn-size-md gap-1.5 px-8 py-4 text-md font-bold w-64 bg-white text-green-600 border-2 border-green-600 hover:bg-green-50"
                     >
-                        {{ __('fixcity::ticket.actions.save.label') }}
+                        Salva richiesta
                     </button>
                 BLADE)))
                 ->columnSpanFull()

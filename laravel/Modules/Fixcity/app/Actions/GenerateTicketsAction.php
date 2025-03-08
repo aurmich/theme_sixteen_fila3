@@ -7,18 +7,10 @@ use Filament\Actions\Action;
 use Illuminate\Support\Facades\Bus;
 use Modules\Fixcity\Models\Ticket;
 use Spatie\QueueableAction\QueueableAction;
-use Faker\Factory;
 
 class GenerateTicketsAction
 {
     use QueueableAction;
-
-    protected $faker;
-
-    public function __construct()
-    {
-        $this->faker = Factory::create();
-    }
 
     public function execute(int $count): void
     {
@@ -38,4 +30,4 @@ class GenerateTicketsAction
                 })
         )->dispatch();
     }
-}
+} 

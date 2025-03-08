@@ -16,16 +16,22 @@
     ],
     "homepage": "https://github.com/laraxot/module_job_fila3.git",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {},
-    "require-dev": {},
-    "repositories_comment": [
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
+    "require": {
+<<<<<<< HEAD
+        
+    },
+    "require-dev": {
+        
+=======
+
+>>>>>>> 91f436d49 (up)
+    },
+    "repositories": [
         {
             "type": "path",
             "url": "../User"
@@ -41,7 +47,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Modules\\Job\\": "app/",
+            "Modules\\Job\\": "",
             "Modules\\Job\\Database\\Factories\\": "database/factories/",
             "Modules\\Job\\Database\\Seeders\\": "database/seeders/"
         }
@@ -68,7 +74,9 @@
                 "Modules\\Job\\Providers\\JobServiceProvider",
                 "Modules\\Job\\Providers\\Filament\\AdminPanelProvider"
             ],
-            "aliases": {}
+            "aliases": {
+
+            }
         }
     },
     "minimum-stability": "dev",

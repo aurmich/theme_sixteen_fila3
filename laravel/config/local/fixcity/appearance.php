@@ -15,11 +15,7 @@
   ),
   'footer' => 
   array (
-    '_tpl' => NULL,
-    'background' => NULL,
-    'background_color' => NULL,
-    'overlay_color' => NULL,
-    'view' => 'cms::components.blocks.footer.social_media_icons',
+    'view' => 'cms::components.footer.social_media_icons',
   ),
   'headernav' => 
   array (
@@ -28,8 +24,8 @@
     'background_color' => '#43bd39',
     'class' => NULL,
     'overlay_color' => NULL,
-    
+    'overlay_opacity' => NULL,
     'style' => NULL,
-    'view' => 'fixcity::components.blocks.headernav.agid',
+    'view' => 'cms::components.headernav.simple',
   ),
 );

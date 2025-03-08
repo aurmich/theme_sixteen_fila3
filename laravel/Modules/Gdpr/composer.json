@@ -3,13 +3,11 @@
     "description": "",
     "homepage": "https://github.com/laraxot/module_gdpr_fila3.git",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
     "extra": {
         "laravel": {
             "providers": [
@@ -21,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Gdpr\\": "app/",
+            "Modules\\Gdpr\\": "",
             "Modules\\Gdpr\\Database\\Factories\\": "database/factories/",
             "Modules\\Gdpr\\Database\\Seeders\\": "database/seeders/"
         }
@@ -29,7 +27,12 @@
     "require": {
         "statikbe/laravel-cookie-consent": "*"
     },
-    "require-dev": {},
+<<<<<<< HEAD
+    "require-dev": {
+        
+    },
+=======
+>>>>>>> 45f99fd86 (.)
     "repositories": [
         {
             "type": "path",
@@ -42,11 +45,18 @@
         {
             "type": "path",
             "url": "../UI"
+
         }
     ],
     "scripts": {
+<<<<<<< HEAD
         "post-autoload-dump1": [
             "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'"
+=======
+        "post-autoload-dump": [
+            "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'",
+            "@php vendor/bin/testbench package:discover --ansi"
+>>>>>>> 45f99fd86 (.)
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"

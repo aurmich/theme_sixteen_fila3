@@ -1,7 +1,5 @@
 {
     "recommendations": [
-        "junstyle.php-cs-fixer",
-        "bmewburn.vscode-intelephense-client",
-        "mehedidracula.php-namespace-resolver"
+        "junstyle.php-cs-fixer"
     ]
 }

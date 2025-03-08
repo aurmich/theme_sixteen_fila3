@@ -25,5 +25,3 @@ cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
 build
-*.exe
-*:Zone.Identifier
