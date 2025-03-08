@@ -6,8 +6,6 @@ namespace Modules\Cms\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Support\HtmlString;
 use Modules\Cms\Filament\Resources\MenuResource\Pages;
 use Modules\Cms\Models\Menu;
@@ -95,22 +93,6 @@ class MenuResource extends \Modules\Xot\Filament\Resources\XotBaseResource
                 ->columnSpanFull(),
         ];
     }
-
-    // public static function table(Table $table): Table
-    // {
-    //     return $table
-    //         ->columns([
-    //             Tables\Columns\TextColumn::make('title'),
-    //         ])
-    //         ->actions([
-    //             Tables\Actions\ActionGroup::make([
-    //                 Tables\Actions\EditAction::make(),
-    //                 Tables\Actions\DeleteAction::make(),
-    //             ]),
-    //         ])
-    //         ->filters([])
-    //         ->bulkActions([]);
-    // }
 
     public static function getRelations(): array
     {
