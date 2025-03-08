@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{--
     link: https://flowrift.com/c/blog/cYo4a?view=code
 --}}
@@ -141,3 +142,8 @@
       </div>
     </div>
   </div>
+=======
+<div>
+    non dovrei essere qua
+</div>
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)

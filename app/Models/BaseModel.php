@@ -12,6 +12,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -111,10 +112,20 @@ use Modules\Xot\Traits\Updater;
 =======
 use Modules\Xot\Traits\Updater;
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+namespace Modules\Geo\Models;
+
+// use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+// //use Laravel\Scout\Searchable;
+
+use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Traits\Updater;
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 
 /**
  * Class BaseModel.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,11 +204,16 @@ abstract class BaseModel extends Model
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 =======
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+abstract class BaseModel extends Model
+{
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
     use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,11 +231,15 @@ abstract class BaseModel extends Model
 =======
      * @see  https://laravel-news.com/6-eloquent-secrets
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+     * @see  https://laravel-news.com/6-eloquent-secrets
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
      *
      * @var bool
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -262,6 +282,8 @@ abstract class BaseModel extends Model
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
 =======
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
     /** @var bool */
     public $incrementing = true;
 
@@ -271,6 +293,7 @@ abstract class BaseModel extends Model
     /** @var int */
     protected $perPage = 30;
 
+<<<<<<< HEAD
     /** @var string */
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -334,10 +357,21 @@ abstract class BaseModel extends Model
     /** @var list<string> */
     protected $fillable = ['id'];
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+    // use Searchable;
+    // use Cachable;
+
+    /** @var list<string> */
+    protected $fillable = ['id'];
+
+    /** @var array<string, string> */
+    protected $casts = ['published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 
     /** @var string */
     protected $primaryKey = 'id';
 
+<<<<<<< HEAD
     /** @var string */
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -378,11 +412,14 @@ abstract class BaseModel extends Model
     protected $keyType = 'string';
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
+=======
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
     /** @var list<string> */
     protected $hidden = [
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -579,4 +616,7 @@ abstract class BaseModel extends Model
             'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     }
+=======
+    protected $connection = 'geo';
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 }

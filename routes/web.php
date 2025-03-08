@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 <<<<<<< HEAD
 
@@ -160,3 +161,15 @@ Route::get('/', fn () =>
 =======
 declare(strict_types=1);
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+declare(strict_types=1);
+
+/*
+//$this->routes();
+Route::prefix('it')->group(function() {
+    Route::prefix('geo')->group(function() {
+        Route::get('/', 'GeoController@index');
+    });
+});
+*/
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)

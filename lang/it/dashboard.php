@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
@@ -80,5 +81,31 @@ return [
         'this_month' => 'Questo mese',
         'last_month' => 'Mese scorso',
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+declare(strict_types=1);
+
+return [
+    'navigation' => [
+        'name' => 'Dashboard Geo',
+        'plural' => 'Dashboard Geo',
+        'group' => [
+            'name' => 'Geo',
+            'description' => 'Panoramica delle informazioni geografiche',
+        ],
+        'label' => 'Dashboard',
+        'sort' => 30,
+        'icon' => 'dashboard', // Aggiornamento dell'icona della dashboard usando la nuova icona dashboard
+    ],
+    'widgets' => [
+        'total_locations' => 'Totale Località',
+        'total_places' => 'Totale Luoghi',
+        'recent_activity' => 'Attività Recente',
+        'popular_places' => 'Luoghi Popolari',
+    ],
+    'charts' => [
+        'locations_by_type' => 'Località per Tipo',
+        'places_by_category' => 'Luoghi per Categoria',
+        'activity_timeline' => 'Timeline Attività',
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
     ],
 ];

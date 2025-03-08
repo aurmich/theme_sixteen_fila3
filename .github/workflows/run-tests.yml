@@ -30,6 +30,7 @@ jobs:
       - name: Setup PHP
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: shivammathur/setup-php@latest
 =======
         uses: shivammathur/setup-php@v2
@@ -37,6 +38,9 @@ jobs:
 =======
         uses: shivammathur/setup-php@v2
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+        uses: shivammathur/setup-php@v2
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
@@ -57,7 +61,11 @@ jobs:
 
       - name: Execute tests
 <<<<<<< HEAD
+<<<<<<< HEAD
         run: vendor/bin/pest
 =======
         run: vendor/bin/pest
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+        run: vendor/bin/pest
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)

@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -140,11 +141,24 @@ use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 // public function boot(\Illuminate\Routing\Router $router)
 
+=======
+declare(strict_types=1);
+
+namespace Modules\Geo\Providers;
+
+// --- bases ---
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
+
+/**
+ * Class RouteServiceProvider.
+ */
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     /**
      * The module namespace to assume when generating URLs to actions.
      */
+<<<<<<< HEAD
     protected string $moduleNamespace = 'Modules\Cms\Http\Controllers';
 
     /**
@@ -390,4 +404,13 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         }
     }
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+    protected string $moduleNamespace = 'Modules\Geo\Http\Controllers';
+
+    protected string $module_dir = __DIR__;
+
+    protected string $module_ns = __NAMESPACE__;
+
+    public string $name = 'Geo';
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 }

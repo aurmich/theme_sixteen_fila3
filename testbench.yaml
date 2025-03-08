@@ -9,6 +9,7 @@ providers:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Modules\Xot\Providers\XotServiceProvider
   - Modules\Xot\Providers\Filament\AdminPanelProvider
   - Nwidart\Modules\LaravelModulesServiceProvider
@@ -51,3 +52,6 @@ providers:
 =======
   - Modules\Lang\Providers\LangServiceProvider
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+  - Modules\Geo\Providers\GeoServiceProvider
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)

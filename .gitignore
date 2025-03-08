@@ -11,6 +11,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
@@ -142,6 +143,8 @@ cache/
 =======
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 *.jar
 *.log
 *.lock
@@ -160,6 +163,7 @@ error_log
 .phpintel
 /.idea
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 *.lock
 package-lock.json
@@ -266,11 +270,22 @@ package-lock.json
 .php-cs-fixer.cache
 *.lock
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+v8-compile-cache-0
+/resources/views/maps/farmshops/data
+package-lock.json
+
+*.stackdump
+
+*.cache
+/fonts
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 .git-blame-ignore-revs
 package-lock.json
 .php-cs-fixer.cache
 package-lock.json
 .git-rewrite/
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .php-cs-fixer.cache
@@ -641,3 +656,13 @@ cache/
 *:Zone.Identifier
 .php-cs-fixer.cache
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+.php-cs-fixer.cache
+node_modules
+.git-blame-ignore-revs
+*.old
+node_modules
+vendor
+vendor/
+build/
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)

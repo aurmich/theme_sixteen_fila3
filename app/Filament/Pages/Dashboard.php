@@ -9,6 +9,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
@@ -63,6 +64,17 @@ class Dashboard extends Page
 =======
     protected static string $view = 'blog::filament.pages.dashboard';
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+namespace Modules\Geo\Filament\Pages;
+
+use Modules\Xot\Filament\Pages\XotBasePage;
+
+class Dashboard extends XotBasePage
+{
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static string $view = 'geo::filament.pages.dashboard';
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 
     // public function mount(): void {
     //     $user = auth()->user();
@@ -70,6 +82,7 @@ class Dashboard extends Page
     //         redirect('/admin');
     //     }
     // }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     protected static string $view = 'media::filament.pages.dashboard';
@@ -196,4 +209,6 @@ class Dashboard extends Page
 =======
     protected static string $view = 'lang::filament.pages.dashboard';
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 }

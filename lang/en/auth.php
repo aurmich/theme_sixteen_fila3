@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+<<<<<<< HEAD
     'failed' => 'These credentials do not match our records!',
     'general_error' => 'You do not have access to do that.',
     'socialite' => [
@@ -23,4 +24,8 @@ return [
     'login-in' => 'Sign in',
     'sign-up' => 'Sign up',
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+    'failed' => 'These credentials do not match our records.',
+    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 ];

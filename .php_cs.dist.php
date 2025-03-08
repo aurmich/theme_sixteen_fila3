@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 $finder = Symfony\Component\Finder\Finder::create()
@@ -8,11 +9,16 @@ $finder = Symfony\Component\Finder\Finder::create()
         __DIR__.'/src',
         __DIR__.'/tests',
 =======
+=======
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 $finder = Symfony\Component\Finder\Finder::create()
     ->in([
         __DIR__ . '/src',
         __DIR__ . '/tests',
+<<<<<<< HEAD
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
     ])
     ->name('*.php')
     ->notName('*.blade.php')

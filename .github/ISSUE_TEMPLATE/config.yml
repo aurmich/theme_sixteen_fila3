@@ -5,6 +5,7 @@ contact_links:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
     - name: Ask a question
@@ -57,3 +58,14 @@ contact_links:
       url: https://github.com/laraxot/module_lang/issues/new
       about: Report a reproducable bug
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
+=======
+    - name: Ask a question
+      url: https://github.com/laraxot/module_geo/discussions/new?category=q-a
+      about: Ask the community for help
+    - name: Request a feature
+      url: https://github.com/laraxot/module_geo/discussions/new?category=ideas
+      about: Share ideas for new features
+    - name: Report a bug
+      url: https://github.com/laraxot/module_geo/issues/new
+      about: Report a reproducable bug
+>>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
