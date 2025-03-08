@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 # To get started with Dependabot version updates, you'll need to specify which
@@ -43,12 +44,15 @@ updates:
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 version: 2
 updates:
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
       interval: "daily"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +76,8 @@ updates:
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -80,10 +86,13 @@ updates:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
       interval: "daily"
     labels:
       - "dependencies"
@@ -95,6 +104,7 @@ updates:
     labels:
       - "npm"
       - "dependencies"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -127,3 +137,5 @@ updates:
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

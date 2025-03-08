@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -59,10 +60,17 @@ declare(strict_types=1);
 namespace Modules\Rating\Providers;
 
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+declare(strict_types=1);
+
+namespace Modules\Lang\Providers;
+
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -98,10 +106,17 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 =======
     protected string $moduleNamespace = 'Modules\Rating\Http\Controllers';
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     */
+    protected string $moduleNamespace = 'Modules\Lang\Http\Controllers';
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,10 +158,15 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     protected string $module_ns = __NAMESPACE__;
     public string $name = 'Cms';
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+
+    public string $name = 'Lang';
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
     public function boot(): void
     {
         parent::boot();
+<<<<<<< HEAD
         // 36     Cannot access offset 'router' on Illuminate\Contracts\Foundation\Application
         // $router = $this->app['router'];
 <<<<<<< HEAD
@@ -314,11 +334,15 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         // $this->registerLang();
         // $this->registerRoutePattern($router);
         // $this->registerMyMiddleware($router);
+=======
+        $this->registerLang();
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     }
 
     public function register(): void
     {
         parent::register();
+<<<<<<< HEAD
         // dddx('b');
     }
 
@@ -335,4 +359,35 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
     public string $name = 'Rating';
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+        // $this->registerLang();
+    }
+
+    public function registerLang(): void
+    {
+        $locales = config('laravellocalization.supportedLocales');
+        if (! \is_array($locales)) {
+            $locales = ['it' => 'it', 'en' => 'en'];
+        }
+        $langs = array_keys($locales);
+
+        /*
+        if (! \is_array($langs)) {
+            throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
+        }
+        \getRouteParameters();
+        */
+        $n = 1;
+        if (inAdmin()) {
+            $n = 3;
+        }
+
+        if (\in_array(request()->segment($n), $langs, false)) {
+            $lang = request()->segment($n);
+            if (null !== $lang) {
+                app()->setLocale($lang);
+            }
+        }
+    }
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 }

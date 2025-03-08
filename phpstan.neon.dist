@@ -9,6 +9,7 @@ includes:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 parameters:
 
@@ -93,6 +94,13 @@ parameters:
 
 <<<<<<< HEAD
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+
+parameters:
+    level: max
+    paths:
+        - .
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     excludePaths:
         - ./build/*
         - ./vendor/*
@@ -100,6 +108,7 @@ parameters:
         - ./docs/*
         - ./Tests/*
         - ./_ide_helper.php
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,6 +208,18 @@ parameters:
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 =======
+=======
+        - ./Services/Trend.php
+
+    bootstrapFiles:
+        # - ./Services/vendor/autoload.php
+        # - ./phpstan_constants.php
+
+
+    scanFiles:
+        # - ./Helpers/Helper.php
+        # - ./vendor/laraxot/module_xot/Helpers/Helper.php
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
     tmpDir: build/phpstan
     reportUnmatchedIgnoredErrors: false
@@ -206,6 +227,7 @@ parameters:
     checkModelProperties: false
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
+<<<<<<< HEAD
 
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
@@ -217,3 +239,7 @@ parameters:
     checkMissingIterableValueType: false
 
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+    checkImplicitMixed: false
+
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

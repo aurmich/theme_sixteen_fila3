@@ -2,6 +2,7 @@
 <psalm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     errorLevel="1"
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,6 +21,9 @@
 =======
     errorLevel="4"
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+    errorLevel="4"
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -28,6 +32,7 @@
     findUnusedCode="true"
 >
     <projectFiles>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +99,8 @@
 =======
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
         <file name="Actions/DB/DownloadAction.php"/>
         <file name="Config/config.php"/>
         <file name="Config/setting-filament.php"/>
@@ -109,10 +116,14 @@
         <file name="Providers/RouteServiceProvider.php"/>
         <file name="Providers/SettingServiceProvider.php"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <file name="Resources/views/index.blade.php"/>
 =======
         <file name="resources/views/index.blade.php"/>
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+        <file name="resources/views/index.blade.php"/>
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
         <file name="Routes/api.php"/>
         <file name="Routes/web.php"/>
         <file name="Settings/GeneralSettings.php"/>
@@ -133,6 +144,9 @@
     </projectFiles>
 <plugins><pluginClass class="Psalm\LaravelPlugin\Plugin"/></plugins></psalm>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

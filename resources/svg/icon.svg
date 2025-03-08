@@ -12,6 +12,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- Cubo base -->
     <path stroke-linecap="round" 
           stroke-linejoin="round" 
@@ -161,4 +162,24 @@
           stroke-linejoin="round" 
           d="M12 8.5c-.5-.5-2-.5-2 .5s2 1 2 2c0 .5-.5 1-1 1" />
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+    <!-- Globo -->
+    <circle cx="12" cy="12" r="8" />
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M4 12h16M12 4v16" />
+    
+    <!-- Linee curve per rappresentare i meridiani -->
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M7 6.5C9 8.5 15 8.5 17 6.5" />
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M7 17.5C9 15.5 15 15.5 17 17.5" />
+          
+    <!-- Simbolo di traduzione -->
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M16 8l1.5 1.5L16 11" />
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 </svg> 

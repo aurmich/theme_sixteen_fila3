@@ -13,6 +13,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -59,12 +60,21 @@ return [
         'enabled' => true,
         'sort' => 80,
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    'name' => 'Lang',
+    'description' => 'Modulo per la gestione delle traduzioni e localizzazioni',
+    'icon' => 'heroicon-o-language',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 50,
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -361,4 +371,8 @@ return [
     'icon' => 'heroicon-o-star', // icon on dashboard
     'navigation_sort' => 1,
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+        'Modules\\Lang\\Providers\\LangServiceProvider',
+    ],
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 ];

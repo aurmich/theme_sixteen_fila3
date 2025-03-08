@@ -8,15 +8,22 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\Process as LaravelProcess;
+=======
+namespace Modules\Lang\Filament\Pages;
+
+use Filament\Pages\Page;
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
 class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
+<<<<<<< HEAD
     protected static string $view = 'setting::filament.pages.dashboard';
 
     public function upgrade(): void
@@ -186,4 +193,7 @@ class Dashboard extends Page
         return static::$title ?? __('filament-panels::pages/dashboard.title');
     }
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+    protected static string $view = 'lang::filament.pages.dashboard';
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 }

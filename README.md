@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 ~~~bash
@@ -526,11 +527,16 @@ Modulo dedicato alla gestione dei temi applicabili al progetto
 # Module Rating
 Modulo dedicato alla gestione delle valutazioni
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+# Module Lang
+Modulo dedicato alla gestione delle traduzioni
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
 ## Aggiungere Modulo nella base del progetto
 Dentro la cartella laravel/Modules
 
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -557,11 +563,18 @@ git submodule add https://github.com/laraxot/module_rating_fila3.git Rating
 
 ## Verificare che il modulo sia attivo
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+git submodule add https://github.com/laraxot/module_lang_fila3.git Lang
+```
+
+## Verificare che il modulo sia attivo
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 ```bash
 php artisan module:list
 ```
 in caso abilitarlo
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -576,10 +589,14 @@ php artisan module:enable Cms
 =======
 php artisan module:enable Rating
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+php artisan module:enable Lang
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 ```
 
 ## Eseguire le migrazioni
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -901,3 +918,7 @@ php artisan module:migrate Cms
 php artisan module:migrate Rating
 ```
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+php artisan module:migrate Lang
+```
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

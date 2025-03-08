@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #	url = git@github.com:laraxot/doc_setting.git
 =======
 #	url = git@github.com:laraxot/doc_job.git
@@ -36,3 +37,6 @@
 =======
 #	url = https://github.com/laraxot/doc_rating.git
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+#	url = https://github.com/laraxot/doc_lang.git
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

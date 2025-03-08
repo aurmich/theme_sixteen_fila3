@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://github.com/shuvroroy/filament-spatie-laravel-backup
 =======
 
@@ -30,3 +31,11 @@ https://github.com/andrewdwallo/filament-companies
 https://github.com/lartisan/filament-rating-tool
 
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+https://github.com/statikbe/laravel-filament-chained-translation-manager
+
+https://filamentphp.com/plugins/34ml-translatable-field
+
+
+
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

@@ -10,6 +10,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Rector\Config\RectorConfig;
 <<<<<<< HEAD
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
@@ -46,10 +47,14 @@ use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 =======
 use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
@@ -316,11 +321,14 @@ use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRect
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector;
 =======
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
 use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
+<<<<<<< HEAD
 <<<<<<< HEAD
         __DIR__,
     ]);
@@ -329,6 +337,8 @@ return static function (RectorConfig $rectorConfig): void {
         '*/docs',
         '*/vendor',
 =======
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
         __DIR__.'/Modules',
         __DIR__.'/app',
         __DIR__.'/bootstrap',
@@ -338,11 +348,15 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__.'/resources',
         __DIR__.'/routes',
         __DIR__.'/tests',
+<<<<<<< HEAD
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     ]);
 
     // register a single rule
     // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
     // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
     $rectorConfig->rules([
@@ -352,10 +366,14 @@ return static function (RectorConfig $rectorConfig): void {
 =======
     $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+    $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 
     // define sets of rules
     $rectorConfig->sets([
         PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
+<<<<<<< HEAD
 <<<<<<< HEAD
         // SetList::DEAD_CODE,
         // SetList::CODE_QUALITY,
@@ -369,6 +387,8 @@ return static function (RectorConfig $rectorConfig): void {
         // SetList::EARLY_RETURN,
         // SetList::INSTANCEOF,
 =======
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
         SetList::DEAD_CODE,
         SetList::CODE_QUALITY,
         LevelSetList::UP_TO_PHP_81,
@@ -386,12 +406,18 @@ return static function (RectorConfig $rectorConfig): void {
         // testdummy files
         '*/docs',
         '*/vendor',
+<<<<<<< HEAD
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
     ]);
 
     $rectorConfig->importNames();
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 =======
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)

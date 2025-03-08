@@ -23,6 +23,7 @@ jobs:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: actions/setup-node@latest
 =======
         uses: actions/setup-node@v3
@@ -33,6 +34,9 @@ jobs:
 =======
         uses: actions/setup-node@v3
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
+=======
+        uses: actions/setup-node@v3
+>>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
         with:
           node-version: 19.x
 
