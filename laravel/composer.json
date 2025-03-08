@@ -7,10 +7,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-<<<<<<< HEAD
         "laravel/framework": "*",
-=======
->>>>>>> origin/master
         "nwidart/laravel-modules": "^11.1"
     },
     "autoload": {
