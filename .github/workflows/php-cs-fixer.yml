@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: Check & fix styling
+=======
+name: lint
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 on: [push]
 
@@ -6,16 +10,23 @@ jobs:
   php-cs-fixer:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: PHP-CS-Fixer
 =======
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
+<<<<<<< HEAD
         uses: actions/checkout@v3
+=======
+        uses: actions/checkout@master
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         with:
           ref: ${{ github.head_ref }}
 
@@ -27,4 +38,8 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@latest
         with:
+<<<<<<< HEAD
           commit_message: Check & fix styling
+=======
+          commit_message: Lint
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "Xot",
     "alias": "xot",
 =======
@@ -57,10 +58,15 @@
     "name": "Notify",
     "alias": "notify",
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    "name": "Gdpr",
+    "alias": "gdpr",
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     "description": "",
     "keywords": [],
     "priority": 0,
     "providers": [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -105,3 +111,10 @@
 =======
 }
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+        "Modules\\Gdpr\\Providers\\GdprServiceProvider",
+        "Modules\\Gdpr\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

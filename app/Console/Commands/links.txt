@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 https://dev.to/ramyh/create-your-own-laravel-make-commands-422l
 
+=======
+----
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

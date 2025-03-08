@@ -20,7 +20,11 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Set Node.js 19.x
+<<<<<<< HEAD
         uses: actions/setup-node@latest
+=======
+        uses: actions/setup-node@v3
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         with:
           node-version: 19.x
 

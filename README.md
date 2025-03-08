@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 ~~~bash
@@ -139,11 +140,48 @@ Manage users, roles, and permissions with lightning speed ⚡ through this Larav
 - **Complete Team Management**: Manage teams with simple commands like `php artisan team:create` and `php artisan team:assign-user`. 👥
 - **Permissions that Fit**: Set flexible roles and permissions to fit your app’s unique needs! 🔑
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+# GDPR Module Fila3 🔒 Your All-in-One GDPR Compliance Solution for Laravel 🚀
+
+[![Latest Release](https://img.shields.io/github/v/release/laraxot/module_gdpr_fila3)](https://github.com/laraxot/module_gdpr_fila3/releases)
+[![Build Status](https://img.shields.io/travis/laraxot/module_gdpr_fila3/master)](https://travis-ci.org/laraxot/module_gdpr_fila3)
+[![Code Coverage](https://img.shields.io/codecov/c/github/laraxot/module_gdpr_fila3)](https://codecov.io/gh/laraxot/module_gdpr_fila3)
+[![License](https://img.shields.io/github/license/laraxot/module_gdpr_fila3)](LICENSE)
+# Module Gdpr
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laraxot/module_gdpr_fila3.svg?style=flat-square)](https://packagist.org/packages/laraxot/module_gdpr_fila3)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/laraxot/module_gdpr_fila3/run-tests?label=tests)](https://github.com/laraxot/module_gdpr_fila3/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/laraxot/module_gdpr_fila3/Check%20&%20fix%20styling?label=code%20style)](https://github.com/laraxot/module_gdpr_fila3/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/laraxot/module_gdpr_fila3.svg?style=flat-square)](https://packagist.org/packages/laraxot/module_gdpr_fila3)
+
+The **GDPR Fila3** module is designed to help developers and businesses comply with GDPR regulations. It provides tools and features to manage users' personal data, ensuring that it is processed securely and transparently.
+
+## Prerequisites
+- php v8+
+- laravel
+- **[Xot Module](https://github.com/laraxot/module_xot_fila3.git)** (Required)
+- **[Tenant Module](https://github.com/laraxot/module_tenant_fila3.git)** (Required)
+- **[UI Module](https://github.com/laraxot/module_ui_fila3.git)** (Required)
+
+## Add Module to the Project Base
+Inside the `laravel/Modules` folder:
+
+**Module GDPR Fila3** is the ultimate solution for integrating GDPR compliance into your Laravel project. With powerful features to manage user data, consent requests, and access requests, this module helps you ensure your project is fully compliant with GDPR regulations, saving you time and effort. 🛡️
+
+---
+
+### Key Features 🌟
+- **User Data Management**: Collect, store, and process user data in compliance with GDPR.
+- **Consent Requests**: Manage and record user consent for data processing seamlessly.
+- **Data Access & Deletion**: Handle user data requests (access, modification, deletion) with ease.
+- **Compliance Reporting**: Generate GDPR compliance reports to stay on top of regulations.
+- **Automatic Logging**: Log all data access and processing activities for compliance.
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 ---
 
 ### Installation Guide 💻
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 1. **Install via Composer:**
     ```bash
@@ -153,10 +191,16 @@ Manage users, roles, and permissions with lightning speed ⚡ through this Larav
     ```bash
     composer require laraxot/module_user_fila3
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+1. **Install the module:**
+    ```bash
+    git submodule add https://github.com/laraxot/module_gdpr_fila3.git Gdpr
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     ```
 
 2. **Run Migrations:**
     ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
     php artisan module:migrate Xot
     ```
@@ -177,10 +221,24 @@ Manage users, roles, and permissions with lightning speed ⚡ through this Larav
     ```bash
     php artisan make:filament-user
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+    php artisan module:migrate Gdpr
+    ```
+
+3. **Enable the module:**
+    ```bash
+    php artisan module:enable Gdpr
+    ```
+
+4. **Check Active Modules:**
+    ```bash
+    php artisan module:list
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     ```
 
 ---
 
+<<<<<<< HEAD
 ### Supercharged Console Commands 🚀
 
 <<<<<<< HEAD
@@ -234,11 +292,35 @@ Leverage powerful artisan commands to boost your app’s user management capabil
     ```
     _See all available modules and activate/deactivate them at will._
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+### Console Commands 🚀
+
+Manage GDPR features directly from the terminal:
+
+- **List GDPR Requests:**
+    ```bash
+    php artisan gdpr:list
+    ```
+    _View all active GDPR requests from users._
+
+- **Generate Compliance Report:**
+    ```bash
+    php artisan gdpr:report
+    ```
+    _Generate a report for your GDPR compliance efforts._
+
+- **Log Data Processing Activities:**
+    ```bash
+    php artisan gdpr:log <activity>
+    ```
+    _Automatically log data processing activities to ensure transparency._
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 ---
 
 ### Configuration 🔧
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Customize the behavior of your modules via the `module_xot_fila3.php` config file. Take control of routes, permissions, and much more!
 
@@ -279,11 +361,15 @@ Per aggiungere nuovi test:
 1. Creare il file di test in `Modules/Xot/tests/Unit` o `Modules/Xot/tests/Feature`
 2. Seguire le convenzioni di denominazione: `NomeComponenteTest.php`
 3. Assicurarsi di testare sia i casi di successo che i casi limite
+=======
+Customize the module to fit your app's GDPR needs. Update configurations via `module_gdpr_fila3.php` to adapt logging, consent handling, and more.
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 ---
 
 ### FAQ ❓
 
+<<<<<<< HEAD
 - **Q: Can I add modules dynamically?**
   A: Absolutely! Modules are automatically discovered and configured without the need for manual updates to your config files.
 
@@ -307,6 +393,13 @@ Easily configure the module in the `module_user_fila3.php` config file to suit y
 
 We 💖 open source! Want to improve this package? Fork the repo and submit a pull request.
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+- **Q: How do I manage consent requests?**
+  A: Consent requests can be created and tracked within the module. You can set custom policies for consent renewal and updates.
+
+- **Q: Is logging data access automatic?**
+  A: Yes! All user data access and processing are automatically logged and can be reviewed at any time.
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 ---
 
@@ -323,6 +416,7 @@ This package is open-sourced under the [MIT license](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 **Boost your Laravel app with powerful modular capabilities using Module Xot Fila3!** 💥
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
@@ -358,11 +452,16 @@ git submodule add https://github.com/laraxot/module_user_fila3.git User
 ```
 
 ## Verificare che il modulo sia attivo
+=======
+Stay compliant and secure user trust with **Module GDPR Fila3**! 💥
+## Verify the Module is Active
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 ```bash
 php artisan module:list
 ```
 in caso abilitarlo
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 php artisan module:enable Setting
 =======
@@ -671,3 +770,12 @@ Discover more of my work at marco76tv!
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+php artisan module:enable Gdpr
+```
+
+## Run the Migrations
+```bash
+php artisan module:migrate Gdpr
+```
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

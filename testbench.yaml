@@ -4,6 +4,7 @@ providers:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Modules\Xot\Providers\XotServiceProvider
   - Modules\Xot\Providers\Filament\AdminPanelProvider
   - Nwidart\Modules\LaravelModulesServiceProvider
@@ -26,3 +27,9 @@ providers:
   - Nwidart\Modules\LaravelModulesServiceProvider
 
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+  - Modules\Gdpr\Providers\GdprServiceProvider
+  - Nwidart\Modules\LaravelModulesServiceProvider
+  
+
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

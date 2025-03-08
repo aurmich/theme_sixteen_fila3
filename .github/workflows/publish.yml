@@ -5,7 +5,11 @@ on:
     branches:
       - master
 
+<<<<<<< HEAD
 permissions:
+=======
+permissions: 
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
   contents: write
 
 jobs:
@@ -25,6 +29,7 @@ jobs:
 
     - name: Node
       run: cd docs && npm install
+<<<<<<< HEAD
 
     - name: Production
       run: cd docs && npm run prod
@@ -52,6 +57,15 @@ jobs:
       run: cd docs && echo "laraxot.github.io/module_tenant" > ./build_production/CNAME
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 
+=======
+      
+    - name: Production
+      run: cd docs && npm run prod
+      
+    - name: CNAME
+      run: cd docs && echo "laraxot.github.io/module_activity" > ./build_production/CNAME
+    
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@latest
       with:

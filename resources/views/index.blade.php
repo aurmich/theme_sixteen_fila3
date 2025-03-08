@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('setting::layouts.master')
 =======
 @extends('job::layouts.master')
@@ -19,10 +20,14 @@
 =======
 @extends('tenant::layouts.master')
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+@extends('gdpr::layouts.master')
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 @section('content')
     <h1>Hello World</h1>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,4 +55,9 @@
         This view is loaded from module: {!! config('tenant.name') !!}
     </p>
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    <p>
+        This view is loaded from module: {!! config('gdpr.name') !!}
+    </p>
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 @endsection

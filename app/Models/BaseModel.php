@@ -7,6 +7,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -24,10 +25,15 @@ use Modules\Xot\Actions\Factory\GetFactoryAction;
 namespace Modules\Setting\Models;
 
 // ---------- traits
+=======
+namespace Modules\Gdpr\Models;
+
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // //use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 namespace Modules\Job\Models;
@@ -55,10 +61,14 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 =======
 use Modules\Xot\Traits\Updater;
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+use Modules\Xot\Traits\Updater;
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 /**
  * Class BaseModel.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 abstract class BaseModel extends Model
@@ -97,6 +107,13 @@ abstract class BaseModel extends Model
 {
     use HasFactory;
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+abstract class BaseModel extends Model
+{
+    // use Searchable;
+    // //use Cachable;
+    use HasFactory;
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     use Updater;
 
     /**
@@ -108,6 +125,7 @@ abstract class BaseModel extends Model
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -135,6 +153,8 @@ abstract class BaseModel extends Model
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     /** @var bool */
     public $incrementing = true;
 
@@ -145,6 +165,7 @@ abstract class BaseModel extends Model
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -181,11 +202,18 @@ abstract class BaseModel extends Model
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    protected $connection = 'user';
+
+    /** @var list<string> */
+    protected $appends = [];
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
     /** @var string */
     protected $primaryKey = 'id';
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,6 +227,8 @@ abstract class BaseModel extends Model
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -206,6 +236,7 @@ abstract class BaseModel extends Model
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -255,15 +286,21 @@ abstract class BaseModel extends Model
      * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     /**
      * Create a new factory instance for the model.
      *
      * @return Factory
+<<<<<<< HEAD
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
      */
     protected static function newFactory()
     {
         return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -279,19 +316,25 @@ abstract class BaseModel extends Model
 =======
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     }
 
     /** @return array<string, string> */
     public function casts(): array
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
             'published_at' => 'datetime',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -313,6 +356,10 @@ abstract class BaseModel extends Model
             'verified_at' => 'datetime',
 
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+
+            'verified_at' => 'datetime',
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

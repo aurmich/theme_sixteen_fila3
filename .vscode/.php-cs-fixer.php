@@ -2,12 +2,15 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 declare(strict_types=1);
 
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 $finder = PhpCsFixer\Finder::create()
     ->notPath('bootstrap/cache')
     ->notPath('storage')
@@ -31,6 +34,7 @@ $config
         'combine_consecutive_unsets' => true,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         //'binary_operator_spaces' => ['align_double_arrow' => false],
 =======
         // 'binary_operator_spaces' => ['align_double_arrow' => false],
@@ -38,6 +42,9 @@ $config
 =======
         //'binary_operator_spaces' => ['align_double_arrow' => false],
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+        //'binary_operator_spaces' => ['align_double_arrow' => false],
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         'array_syntax' => ['syntax' => 'short'],
         'linebreak_after_opening_tag' => true,
         'not_operator_with_successor_space' => true,
@@ -57,6 +64,7 @@ $config
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 return $config;
 =======
 return $config;
@@ -64,3 +72,6 @@ return $config;
 =======
 return $config;
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+return $config;
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

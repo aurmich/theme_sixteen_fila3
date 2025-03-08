@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 https://github.com/mooxphp/jobs/tree/main
 
+=======
+https://github.com/aymanalhattami/filament-page-with-sidebar
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

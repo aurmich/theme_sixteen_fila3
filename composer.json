@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -106,10 +107,16 @@
     ],
     "homepage": "https://github.com/laraxot/module_notify_fila3.git",
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    "name": "laraxot/module_gdpr_fila3",
+    "description": "",
+    "homepage": "https://github.com/laraxot/module_gdpr_fila3.git",
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     "license": "MIT",
     "authors": [
         {
             "name": "Marco Sottana",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -129,10 +136,13 @@
         {
             "name": "Marco Xot",
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -238,12 +248,20 @@
                 "Modules\\Notify\\Providers\\NotifyServiceProvider",
                 "Modules\\Notify\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Gdpr\\Providers\\GdprServiceProvider",
+                "Modules\\Gdpr\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             ],
             "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
 <<<<<<< HEAD
             "Modules\\User\\": "app/",
             "Modules\\User\\Database\\Factories\\": "database/factories/",
@@ -275,6 +293,15 @@
         "symfony/http-client": "*",
         "symfony/postmark-mailer": "*"
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+            "Modules\\Gdpr\\": "app/",
+            "Modules\\Gdpr\\Database\\Factories\\": "database/factories/",
+            "Modules\\Gdpr\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+        "statikbe/laravel-cookie-consent": "*"
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     },
     "require-dev": {},
     "repositories": [
@@ -283,17 +310,21 @@
             "url": "../Xot"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
 =======
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -476,10 +507,19 @@
     "scripts": {
         "post-autoload-dump1": [
             "@php vendor/bin/testbench package:discover --ansi"
+=======
+            "url": "../UI"
+        }
+    ],
+    "scripts": {
+        "post-autoload-dump1": [
+            "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'"
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
@@ -487,6 +527,8 @@
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         "analyse": "vendor/bin/phpstan analyse",
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",
@@ -498,6 +540,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "phpstan/extension-installer": true,
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
@@ -506,6 +549,8 @@
 =======
             "phpstan/extension-installer": true,
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             "pestphp/pest-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "wikimedia/composer-merge-plugin": true
@@ -513,6 +558,7 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -543,3 +589,6 @@
 =======
 }
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+}
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

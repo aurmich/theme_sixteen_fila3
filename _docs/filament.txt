@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://github.com/shuvroroy/filament-spatie-laravel-backup
 =======
 
@@ -20,3 +21,7 @@ https://github.com/andrewdwallo/filament-companies
 
 
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+https://github.com/andrewdwallo/filament-companies
+
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

@@ -6,14 +6,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
@@ -30,10 +34,13 @@
     "production": "mix --production"
   },
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,19 +49,25 @@
 =======
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     "axios": "^1.6.8",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "laravel-vite-plugin": "^0.6.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
 =======
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     "lodash": "^4.17.21",
     "postcss": "^8.4.38",
     "postcss-nesting": "^12.1.4",
     "tailwindcss": "^3.4.3",
     "tippy.js": "^6.3.7",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "vite": "^5.0.12"
@@ -150,4 +163,8 @@
         "vite": "^5.4.3"
     }
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    "vite": "^3.2.8"
+  }
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 }

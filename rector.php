@@ -7,6 +7,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Rector\Config\RectorConfig;
 <<<<<<< HEAD
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
@@ -35,11 +36,14 @@ use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,11 +61,14 @@ use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnEx
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths(
         [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -87,11 +94,15 @@ return static function (RectorConfig $rectorConfig): void {
 =======
             __DIR__,
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+            __DIR__,
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         ]
     );
 
     $rectorConfig->skip(
         [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -123,11 +134,17 @@ return static function (RectorConfig $rectorConfig): void {
             '*/vendor',
             './vendor/',
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+            './vendor/',
+            '*/docs',
+            '*/vendor',
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         ]
     );
 
     // register a single rule
     // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -159,11 +176,15 @@ return static function (RectorConfig $rectorConfig): void {
 =======
     $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
     // define sets of rules
     $rectorConfig->sets(
         [
             PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -187,10 +208,15 @@ return static function (RectorConfig $rectorConfig): void {
             // SetList::DEAD_CODE,
             // SetList::CODE_QUALITY,
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+            // SetList::DEAD_CODE,
+            // SetList::CODE_QUALITY,
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             LevelSetList::UP_TO_PHP_81,
             LaravelSetList::LARAVEL_100,
 
             // SetList::NAMING, //problemi con injuction
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -225,11 +251,17 @@ return static function (RectorConfig $rectorConfig): void {
             // SetList::CODING_STYLE,
             // SetList::PRIVATIZATION,//problemi con final
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+            SetList::TYPE_DECLARATION,
+            // SetList::CODING_STYLE,
+            // SetList::PRIVATIZATION,//problemi con final
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             // SetList::EARLY_RETURN,
             // SetList::INSTANCEOF,
         ]
     );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -265,3 +297,7 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->importNames();
 };
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    $rectorConfig->importNames();
+};
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

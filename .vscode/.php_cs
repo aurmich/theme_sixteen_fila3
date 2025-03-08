@@ -1,12 +1,15 @@
 <?php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 declare(strict_types=1);
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 $finder = PhpCsFixer\Finder::create()
     ->notPath('bootstrap/cache')
     ->notPath('storage')
@@ -21,6 +24,7 @@ $finder = PhpCsFixer\Finder::create()
 return PhpCsFixer\Config::create()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ->setRules(array(
 =======
     ->setRules([
@@ -28,6 +32,9 @@ return PhpCsFixer\Config::create()
 =======
     ->setRules(array(
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+    ->setRules(array(
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         '@Symfony' => true,
         'array_indentation' => true,
         'function_typehint_space' => true,
@@ -42,6 +49,7 @@ return PhpCsFixer\Config::create()
         'php_unit_construct' => false,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'braces'=>[
             'position_after_functions_and_oop_constructs'=>'same',
 =======
@@ -52,11 +60,16 @@ return PhpCsFixer\Config::create()
         'braces'=>[
             'position_after_functions_and_oop_constructs'=>'same',
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+        'braces'=>[
+            'position_after_functions_and_oop_constructs'=>'same',
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
         ],
         'function_declaration' => true,
         'blank_line_after_namespace' => true,
         'class_definition' => true,
         'elseif' => true,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     ))
@@ -66,5 +79,8 @@ return PhpCsFixer\Config::create()
 =======
     ))
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
+=======
+    ))
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     ->setFinder($finder)
 ;

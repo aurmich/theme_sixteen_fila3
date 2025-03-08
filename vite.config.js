@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const dotenvExpand = require('dotenv-expand');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -18,12 +19,18 @@ const dotenvExpand = require('dotenv-expand');
 dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
 
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+const dotenvExpand = require('dotenv-expand');
+dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
+
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig(
     {
         build: {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -41,10 +48,14 @@ export default defineConfig(
 =======
             outDir: '../../public/build-user',
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+            outDir: '../../public/build-gdpr',
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
             emptyOutDir: true,
             manifest: true,
         },
         plugins: [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -79,6 +90,12 @@ export default defineConfig(
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+            laravel(
+                {
+                    publicDirectory: '../../public',
+                    buildDirectory: 'build-gdpr',
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
                     input: [
                         __dirname + '/resources/assets/sass/app.scss',
                         __dirname + '/resources/assets/js/app.js'
@@ -87,6 +104,7 @@ export default defineConfig(
                 }
             ),
         ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,3 +126,7 @@ export default defineConfig(
     }
 );
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    }
+);
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

@@ -5,6 +5,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
@@ -69,4 +70,15 @@ class Dashboard extends Page
         */
     }
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+namespace Modules\Gdpr\Filament\Pages;
+
+use Filament\Pages\Dashboard as BaseDashboard;
+
+class Dashboard extends BaseDashboard
+{
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    // protected static string $view = 'gdpr::filament.pages.dashboard';
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 }

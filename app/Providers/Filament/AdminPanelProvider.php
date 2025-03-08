@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -40,10 +41,21 @@ use Filament\Support\Facades\FilamentView;
 use Illuminate\Support\Facades\Blade;
 use Modules\Xot\Datas\XotData;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+declare(strict_types=1);
+
+namespace Modules\Gdpr\Providers\Filament;
+
+use Filament\Panel;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,10 +66,14 @@ class AdminPanelProvider extends XotBasePanelProvider
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
     protected string $module = 'Media';
+=======
+    protected string $module = 'Gdpr';
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
     public function panel(Panel $panel): Panel
     {
         $panel = parent::panel($panel);
+<<<<<<< HEAD
 
         return $panel;
     }
@@ -80,4 +96,13 @@ class AdminPanelProvider extends XotBasePanelProvider
         return parent::panel($panel);
     }
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+        FilamentAsset::register([
+            Css::make('gdpr-styles', asset('/vendor/cookie-consent/css/cookie-consent.css')),
+            // Js::make('gdpr-scripts', __DIR__.'/../../resources/dist/assets/app2.js'),
+        ], 'gdpr');
+
+        return $panel;
+    }
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 }

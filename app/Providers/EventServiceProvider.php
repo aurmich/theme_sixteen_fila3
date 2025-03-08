@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Xot\Providers;
@@ -35,6 +36,11 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Providers;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+declare(strict_types=1);
+
+namespace Modules\Gdpr\Providers;
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
 
@@ -46,6 +52,7 @@ class EventServiceProvider extends BaseEventServiceProvider
      * @var array<string, array<int, string>>
      */
     protected $listen = [];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,6 +69,9 @@ class EventServiceProvider extends BaseEventServiceProvider
 =======
 
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
     /**
      * Indicates if events should be discovered.
      *
@@ -72,6 +82,7 @@ class EventServiceProvider extends BaseEventServiceProvider
     /**
      * Configure the proper event listeners for email verification.
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,4 +104,9 @@ class EventServiceProvider extends BaseEventServiceProvider
     {
     }
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    protected function configureEmailVerification(): void
+    {
+    }
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 }

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://blog.moonguard.dev/setting-page-with-filament
 
 https://github.com/reworck/filament-settings
@@ -101,3 +102,10 @@ https://blog.devgenius.io/laravel-multi-tenant-systems-with-ecotone-e3e5a4751a55
 ------------------
 
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+https://github.com/maize-tech/laravel-legal-consent
+
+
+https://github.com/foothing/laravel-gdpr-consent
+
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)

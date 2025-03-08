@@ -6,6 +6,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -35,11 +36,15 @@ namespace Modules\Media\Providers;
 =======
 namespace Modules\Notify\Providers;
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+namespace Modules\Gdpr\Providers;
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,10 +65,14 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
      */
     protected string $moduleNamespace = 'Modules\Notify\Http\Controllers';
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+    protected string $moduleNamespace = 'Modules\Gdpr\Http\Controllers';
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -173,4 +182,8 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
     public string $name = 'Notify';
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
+=======
+
+    public string $name = 'Gdpr';
+>>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 }
