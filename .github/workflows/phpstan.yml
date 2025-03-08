@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
@@ -18,6 +19,8 @@
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 name: PHPStan
 
 on:
@@ -25,6 +28,7 @@ on:
     paths:
       - '**.php'
       - 'phpstan.neon.dist'
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -70,12 +74,15 @@ on: [push]
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 
 jobs:
   phpstan:
     name: phpstan
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v3
 
       - name: Setup PHP
@@ -106,11 +113,18 @@ jobs:
 =======
         uses: shivammathur/setup-php@v2
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
         with:
           php-version: '8.1'
           coverage: none
 
       - name: Install composer dependencies
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -155,10 +169,13 @@ jobs:
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
         uses: ramsey/composer-install@v2
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,3 +189,5 @@ jobs:
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

@@ -6,6 +6,7 @@ contact_links:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
     - name: Ask a question
@@ -21,6 +22,8 @@ contact_links:
 =======
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
   - name: Ask a question
     url: https://github.com/:vendor_name/:package_name/discussions/new?category=q-a
     about: Ask the community for help
@@ -30,6 +33,7 @@ contact_links:
   - name: Report a security issue
     url: https://github.com/:vendor_name/:package_name/security/policy
     about: Learn how to notify us for sensitive bugs
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
@@ -69,3 +73,5 @@ contact_links:
       url: https://github.com/laraxot/module_geo/issues/new
       about: Report a reproducable bug
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

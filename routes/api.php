@@ -10,6 +10,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,3 +176,5 @@ Route::middleware('auth:api')->get('/geo', function (Request $request) {
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 =======
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

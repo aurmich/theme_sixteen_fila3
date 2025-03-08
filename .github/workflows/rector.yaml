@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 name: rector
 on: [push]
 
@@ -23,6 +24,8 @@ jobs:
 =======
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 # Inspiration https://github.com/symplify/symplify/blob/main/.github/workflows/rector.yaml
 name: Rector
  
@@ -39,6 +42,7 @@ jobs:
           token: "${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}"
  
 <<<<<<< HEAD
+<<<<<<< HEAD
       - uses: shivammathur/setup-php@latest
         with:
           php-version: 8.1
@@ -49,6 +53,8 @@ jobs:
  
       - uses: EndBug/add-and-commit@latest
 =======
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
       - uses: shivammathur/setup-php@v2
         with:
           php-version: 8.1
@@ -57,8 +63,12 @@ jobs:
  
       - run: vendor/bin/rector --ansi
  
+<<<<<<< HEAD
       - uses: EndBug/add-and-commit@v5.1.0
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+      - uses: EndBug/add-and-commit@v9.1.3
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
         with:
           add: .
           message: "[ci-review] Rector Rectify"
@@ -66,8 +76,12 @@ jobs:
           author_email: "action@github.com"
         env:
 <<<<<<< HEAD
+<<<<<<< HEAD
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

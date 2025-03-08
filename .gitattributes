@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
@@ -17,11 +18,14 @@
 >>>>>>> fe8f33e433 (Squashed 'laravel/Modules/Lang/' content from commit 962fba1cc2)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -70,3 +74,6 @@ CHANGELOG.md export-ignore
 =======
 *.psd filter=lfs diff=lfs merge=lfs -text
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+*.psd filter=lfs diff=lfs merge=lfs -text
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

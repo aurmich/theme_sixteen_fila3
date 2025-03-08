@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Tracker gathers a lot of information from your requests to identify and store:
 - Sessions
@@ -38,3 +39,34 @@ https://github.com/guillaumebriday/laravel-blog
 
 
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+//---------------------------
+https://arter.dev/introducing-dream-an-ai-ml-toolbox-for-laravel
+https://github.com/christopherarter/dream
+https://github.com/peterfox/openai-laravel-demo
+https://github.com/CodeWithKyrian/transformers-php // !
+https://packagist.org/packages/kambo/huggingface-php
+https://github.com/jackvial/duckbilledplatypusgo
+https://github.com/taishi-i/awesome-ChatGPT-repositories   // !
+
+//----------------
+https://github.com/RubixML/ML
+
+
+//---------------
+
+https://packagist.org/packages/kambo/huggingface-php
+https://github.com/jackvial/duckbilledplatypusgo
+https://github.com/taishi-i/awesome-ChatGPT-repositories   // !
+https://github.com/RubixML/ML
+
+
+//---------------
+
+https://packagist.org/packages/kambo/huggingface-php
+https://github.com/jackvial/duckbilledplatypusgo
+https://github.com/taishi-i/awesome-ChatGPT-repositories   // !
+https://github.com/RubixML/ML
+
+
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

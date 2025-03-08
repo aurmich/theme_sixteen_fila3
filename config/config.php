@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
@@ -452,4 +453,15 @@ return [
     'icon' => 'fixcity-fixcity', // icon on dashboard
     'navigation_sort' => 1,
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+declare(strict_types=1);
+
+return [
+    'name' => 'AI',
+    // 'icon' => 'heroicon-o-cog', // icon on dashboard
+    // 'icon' => 'fas-air-freshener',
+    'icon' => 'ui-brain',
+    'navigation_sort' => 1,
+    'fine_tuning_url' => env('FINE_TUNING_API_URL', 'http://localhost:8000/api/fine-tuning'),
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 ];

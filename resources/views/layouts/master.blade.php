@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 =======
@@ -19,11 +20,14 @@
 >>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 =======
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,11 +88,18 @@
        {{-- Laravel Mix - CSS File --}}
        {{-- <link rel="stylesheet" href="{{ mix('css/geo.css') }}"> --}}
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+        <title>Module AI</title>
+
+       {{-- Laravel Vite - CSS File --}}
+       {{-- {{ module_vite('build-ai', 'resources/assets/sass/app.scss') }} --}}
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 
     </head>
     <body>
         @yield('content')
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -194,3 +205,9 @@
     {{-- {{ module_vite('build-fixcity', 'resources/assets/js/app.js') }} --}}
 </body>
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+        {{-- Laravel Vite - JS File --}}
+        {{-- {{ module_vite('build-ai', 'resources/assets/js/app.js') }} --}}
+    </body>
+</html>
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

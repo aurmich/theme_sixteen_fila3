@@ -11,6 +11,7 @@ on:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 permissions:
 =======
 permissions: 
@@ -30,6 +31,9 @@ permissions:
 =======
 permissions:
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+permissions: 
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
   contents: write
 
 jobs:
@@ -49,6 +53,7 @@ jobs:
 
     - name: Node
       run: cd docs && npm install
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,11 +98,14 @@ jobs:
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 =======
 >>>>>>> d14059a494 (Squashed 'laravel/Modules/Rating/' content from commit d80b37240f)
+=======
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
       
     - name: Production
       run: cd docs && npm run prod
       
     - name: CNAME
+<<<<<<< HEAD
 <<<<<<< HEAD
       run: cd docs && echo "laraxot.github.io/module_activity" > ./build_production/CNAME
     
@@ -138,6 +146,12 @@ jobs:
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@v4.4.2
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+      run: cd docs && echo "laraxot.github.io/module_activity" > ./build_production/CNAME
+    
+    - name: gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
       with:
         branch: gh-pages
         folder: ./docs/build_production

@@ -13,6 +13,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
@@ -359,6 +360,11 @@ node_modules
 vendor
 /vendor/
 node_modules/
+=======
+/vendor/
+node_modules/
+venv/
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 npm-debug.log
 yarn-error.log
 
@@ -380,6 +386,7 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+<<<<<<< HEAD
 .git-rewrite
 .git-blame-ignore-revs
 /vendor
@@ -568,10 +575,17 @@ build
 /docs/package-lock.json
 .git-blame-ignore-revs
 
+=======
+
+*.lock
+
+/vendor
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 *.phar
 *.cache
 *.log
 *.lock
+<<<<<<< HEAD
 .git-blame-ignore-revs
 package-lock.json
 .php-cs-fixer.cache
@@ -670,8 +684,22 @@ build/
 =======
 node_modules
 vendor
+=======
+.php-cs-fixer.cache
+package-lock.json
+.git-rewrite/
+.php-cs-fixer.cache
+*.git-blame-ignore-revs
+.git-blame-ignore-revs
+node_modules
+node_modules
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 vendor/
 build/
 docs/cache/
 cache/
+<<<<<<< HEAD
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+bin/venv/
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)

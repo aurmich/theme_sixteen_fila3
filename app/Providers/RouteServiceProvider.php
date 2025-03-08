@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -162,10 +163,16 @@ use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 declare(strict_types=1);
 
 namespace Modules\Geo\Providers;
+=======
+declare(strict_types=1);
+
+namespace Modules\AI\Providers;
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 
 // --- bases ---
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
+<<<<<<< HEAD
 /**
  * Class RouteServiceProvider.
  */
@@ -447,4 +454,12 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
 =======
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+class RouteServiceProvider extends XotBaseRouteServiceProvider
+{
+    protected string $moduleNamespace = 'Modules\AI\Http\Controllers';
+    protected string $module_dir = __DIR__;
+    protected string $module_ns = __NAMESPACE__;
+    public string $name = 'AI';
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 }

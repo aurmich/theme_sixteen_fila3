@@ -11,6 +11,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Xot\Providers;
@@ -67,10 +68,16 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Providers;
 >>>>>>> ba90976186 (Squashed 'laravel/Modules/Geo/' content from commit e43082ddab)
+=======
+declare(strict_types=1);
+
+namespace Modules\AI\Providers;
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
 
 class EventServiceProvider extends BaseEventServiceProvider
+<<<<<<< HEAD
 =======
 namespace Modules\Fixcity\Providers;
 
@@ -126,6 +133,10 @@ class EventServiceProvider extends ServiceProvider
 
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
     /**
+=======
+{
+    /**
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
      * Indicates if events should be discovered.
      *
      * @var bool
@@ -133,6 +144,7 @@ class EventServiceProvider extends ServiceProvider
     protected static $shouldDiscoverEvents = true;
 
     /**
+<<<<<<< HEAD
      * Configure the proper event listeners for email verification.
      */
 <<<<<<< HEAD
@@ -226,4 +238,16 @@ class EventServiceProvider extends ServiceProvider
 =======
     protected function configureEmailVerification(): void {}
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+     * The event handler mappings for the application.
+     *
+     * @var array<string, array<int, string>>
+     */
+    protected $listen = [];
+
+    /**
+     * Configure the proper event listeners for email verification.
+     */
+    protected function configureEmailVerification(): void {}
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 }

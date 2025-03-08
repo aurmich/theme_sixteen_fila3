@@ -11,6 +11,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Setting\Filament\Pages;
 
 use Filament\Pages\Page;
@@ -73,11 +74,15 @@ class Dashboard extends Page
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
 =======
 namespace Modules\Geo\Filament\Pages;
+=======
+namespace Modules\AI\Filament\Pages;
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 class Dashboard extends XotBasePage
 {
+<<<<<<< HEAD
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
     protected static string $view = 'geo::filament.pages.dashboard';
@@ -221,4 +226,9 @@ class Dashboard extends Page
 =======
     protected static string $view = 'fixcity::filament.pages.dashboard';
 >>>>>>> 50bf5e8f5f (Squashed 'laravel/Modules/Fixcity/' content from commit 11c5f6a3e0)
+=======
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+
+    protected static string $view = 'ai::filament.pages.dashboard';
+>>>>>>> dbd8492a9c (Squashed 'laravel/Modules/AI/' content from commit e3f9fcc723)
 }
