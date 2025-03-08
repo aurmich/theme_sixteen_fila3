@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "Xot",
     "alias": "xot",
 =======
@@ -38,10 +39,24 @@
         "Modules\\Tenant\\Providers\\TenantServiceProvider",
         "Modules\\Tenant\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
+=======
+    "name": "Cms",
+    "alias": "cms",
+    "description": "",
+    "keywords": [],
+    "priority": 3,
+    "active": 1,
+    "order": 3,
+    "providers": [
+        "Modules\\Cms\\Providers\\CmsServiceProvider",
+        "Modules\\Cms\\Providers\\Filament\\AdminPanelProvider",
+        "Modules\\Cms\\Providers\\Filament\\FrontPanelProvider"
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     ],
     "aliases": [],
     "files": [],
     "requires": []
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -132,3 +147,6 @@
     "files": []
 }
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+}
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

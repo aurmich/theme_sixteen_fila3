@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 <<<<<<< HEAD
 
@@ -138,3 +139,20 @@ declare(strict_types=1);
 //     Route::get('/', 'BlogController@index');
 // });
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+declare(strict_types=1);
+use Illuminate\Support\Facades\Route;
+use Modules\Cms\Filament\Front\Pages\Home;
+use Modules\Cms\Filament\Front\Pages\Welcome;
+
+// use Modules\Cms\Http\Controllers\PageController;
+/*
+Route::get('/{lang?}/{container0?}/{item0?}/{container1?}/{item1?}/{container2?}/{item2?}', '\\'.Welcome::class)->name('test');
+Route::get('/', '\\'.Home::class)->name('home');
+*/
+// Route::get('/{container0}/{item0?}/{container1?}/{item1?}/{container2?}/{item2?}', PageController::class);
+
+Route::get('/', fn () =>
+    // return view('welcome');
+    redirect('/'.app()->getLocale()));
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

@@ -29,10 +29,14 @@ jobs:
 
       - name: Setup PHP
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: shivammathur/setup-php@latest
 =======
         uses: shivammathur/setup-php@v2
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+        uses: shivammathur/setup-php@v2
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
@@ -52,4 +56,8 @@ jobs:
         run: composer show -D
 
       - name: Execute tests
+<<<<<<< HEAD
         run: vendor/bin/pest
+=======
+        run: vendor/bin/pest
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

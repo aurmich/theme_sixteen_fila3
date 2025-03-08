@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 declare(strict_types=1);
@@ -13,6 +14,8 @@ declare(strict_types=1);
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 $finder = PhpCsFixer\Finder::create()
     ->notPath('bootstrap/cache')
     ->notPath('storage')
@@ -25,6 +28,7 @@ $finder = PhpCsFixer\Finder::create()
 ;
 
 return PhpCsFixer\Config::create()
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,6 +46,9 @@ return PhpCsFixer\Config::create()
 =======
     ->setRules(array(
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+    ->setRules(array(
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         '@Symfony' => true,
         'array_indentation' => true,
         'function_typehint_space' => true,
@@ -54,6 +61,7 @@ return PhpCsFixer\Config::create()
         'ordered_imports' => true,
         'phpdoc_order' => true,
         'php_unit_construct' => false,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -76,11 +84,16 @@ return PhpCsFixer\Config::create()
         'braces'=>[
             'position_after_functions_and_oop_constructs'=>'same',
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+        'braces'=>[
+            'position_after_functions_and_oop_constructs'=>'same',
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         ],
         'function_declaration' => true,
         'blank_line_after_namespace' => true,
         'class_definition' => true,
         'elseif' => true,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -98,5 +111,8 @@ return PhpCsFixer\Config::create()
 =======
     ))
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+    ))
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     ->setFinder($finder)
 ;

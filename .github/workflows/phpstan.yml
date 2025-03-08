@@ -2,10 +2,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 name: PHPStan
 
 on:
@@ -15,11 +18,15 @@ on:
       - 'phpstan.neon.dist'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
   pull_request:
     paths:
       - '**.php'
       - 'phpstan.neon.dist'
 
+<<<<<<< HEAD
 =======
 name: Static Analysis
 
@@ -34,6 +41,8 @@ on: [push]
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
 jobs:
   phpstan:
@@ -47,6 +56,7 @@ jobs:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: shivammathur/setup-php@v2
 =======
         uses: shivammathur/setup-php@latest
@@ -54,11 +64,15 @@ jobs:
 =======
         uses: shivammathur/setup-php@v2
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+        uses: shivammathur/setup-php@v2
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         with:
           php-version: '8.1'
           coverage: none
 
       - name: Install composer dependencies
+<<<<<<< HEAD
 <<<<<<< HEAD
         uses: ramsey/composer-install@latest
 
@@ -91,8 +105,13 @@ jobs:
         run: ./vendor/bin/phpstan --error-format=github
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         uses: ramsey/composer-install@v2
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
+<<<<<<< HEAD
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

@@ -11,6 +11,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -349,4 +350,9 @@ return [
     'icon' => 'fas-blog', // icon on dashboard
     'navigation_sort' => 1,
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+    'name' => 'Cms',
+    'icon' => 'heroicon-o-cog', // icon on dashboard
+    'navigation_sort' => 1,
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 ];

@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 ~~~bash
@@ -516,11 +517,16 @@ Gestione degli utenti, ruoli, permessi tramite l'utilizzo di filament.
 ![roles list](docs/img/roles_list.JPG)
 
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+# Module Cms
+Modulo dedicato alla gestione dei temi applicabili al progetto
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
 ## Aggiungere Modulo nella base del progetto
 Dentro la cartella laravel/Modules
 
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 git submodule add https://github.com/laraxot/module_setting_fila3.git Setting
 =======
@@ -533,6 +539,12 @@ git submodule add https://github.com/laraxot/module_user_fila3.git User
 Stay compliant and secure user trust with **Module GDPR Fila3**! 💥
 ## Verify the Module is Active
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+git submodule add https://github.com/laraxot/module_cms_fila3.git Cms
+```
+
+## Verificare che il modulo sia attivo
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 ```bash
 php artisan module:list
 ```
@@ -540,14 +552,19 @@ in caso abilitarlo
 ```bash
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 php artisan module:enable Setting
 =======
 php artisan module:enable User
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+php artisan module:enable Cms
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 ```
 
 ## Eseguire le migrazioni
 ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
 php artisan module:migrate Setting
 ```
@@ -859,3 +876,7 @@ php artisan module:migrate Gdpr
 =======
 Take your content creation to the next level with **Module Blog Fila3**! 💥
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+php artisan module:migrate Cms
+```
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

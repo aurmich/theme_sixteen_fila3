@@ -9,6 +9,7 @@ on:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 permissions:
   contents: write
@@ -34,12 +35,18 @@ permissions:
   contents: write
 
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+permissions:
+  contents: write
+
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,6 +64,9 @@ jobs:
 =======
         uses: actions/checkout@v3
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+        uses: actions/checkout@v3
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         with:
           ref: main
 
@@ -68,6 +78,7 @@ jobs:
 
       - name: Commit updated CHANGELOG
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: stefanzweifel/git-auto-commit-action@latest
 =======
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -76,3 +87,10 @@ jobs:
           branch: main
           commit_message: Update CHANGELOG
           file_pattern: CHANGELOG.md
+=======
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: main
+          commit_message: Update CHANGELOG
+          file_pattern: CHANGELOG.md
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

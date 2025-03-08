@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 []
 =======
 [{"name":"article.card","class":"Article\\Card","module":null,"path":null,"ns":"Modules\\Blog\\View\\Components\\Article\\Card"},{"name":"article.footer","class":"Article\\Footer","module":null,"path":null,"ns":"Modules\\Blog\\View\\Components\\Article\\Footer"},{"name":"article.meta","class":"Article\\Meta","module":null,"path":null,"ns":"Modules\\Blog\\View\\Components\\Article\\Meta"},{"name":"menu","class":"Menu","module":null,"path":null,"ns":"Modules\\Blog\\View\\Components\\Menu"}]
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+[{"name":"app-layout","class":"AppLayout","module":null,"path":null,"ns":"Modules\\Cms\\View\\Components\\AppLayout"},{"name":"guest-layout","class":"GuestLayout","module":null,"path":null,"ns":"Modules\\Cms\\View\\Components\\GuestLayout"}]
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

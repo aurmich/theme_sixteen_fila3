@@ -8,6 +8,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -95,12 +96,44 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 =======
     public string $name = 'Blog';
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+namespace Modules\Cms\Providers;
+
+use Exception;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
+use Modules\Tenant\Services\TenantService;
+use Modules\Xot\Http\Middleware\SetDefaultLocaleForUrlsMiddleware;
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
+
+// public function boot(\Illuminate\Routing\Router $router)
+
+class RouteServiceProvider extends XotBaseRouteServiceProvider
+{
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     */
+    protected string $moduleNamespace = 'Modules\Cms\Http\Controllers';
+
+    /**
+     * The module directory.
+     */
+    protected string $module_dir = __DIR__;
+
+    /**
+     * The module namespace.
+     */
+    protected string $module_ns = __NAMESPACE__;
+    public string $name = 'Cms';
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
     public function boot(): void
     {
         parent::boot();
         // 36     Cannot access offset 'router' on Illuminate\Contracts\Foundation\Application
         // $router = $this->app['router'];
+<<<<<<< HEAD
 <<<<<<< HEAD
         $router = app('router');
         // dddx([$router, $router1]);
@@ -113,10 +146,19 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         // $lang = request()->user()?->locale ?? app()->getLocale();
         // URL::defaults(['locale' => $request->user()?->locale]);
         // URL::defaults(['lang' => $lang]);
+=======
+        $router = app('router');
+        // dddx([$router, $router1]);
+
+        // $this->registerLang();
+        $this->registerRoutePattern($router);
+        $this->registerMyMiddleware($router);
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     }
 
     public function registerMyMiddleware(Router $router): void
     {
+<<<<<<< HEAD
         // $router->prependMiddlewareToGroup('web', SetDefaultLocaleForUrls::class);
         // $router->prependMiddlewareToGroup('api', SetDefaultLocaleForUrls::class);
         // $router->pushMiddlewareToGroup('web', \Spatie\ResponseCache\Middlewares\CacheResponse::class);
@@ -154,6 +196,35 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
             'lang' => $lang,
         ]);
     }
+=======
+        // $router->pushMiddlewareToGroup('web', SetDefaultLocaleForUrlsMiddleware::class);
+        // $router->prependMiddlewareToGroup('web', SetDefaultLocaleForUrlsMiddleware::class);
+        // $router->prependMiddlewareToGroup('api', SetDefaultLocaleForUrlsMiddleware::class);
+    }
+
+    /*
+    public function registerLang(): void
+    {
+
+        $locales = config('laravellocalization.supportedLocales');
+        if (! \is_array($locales)) {
+            // throw new \Exception('[.__LINE__.]['.class_basename(__CLASS__).']');
+            $locales = ['it' => 'it', 'en' => 'en'];
+        }
+        $langs = array_keys($locales);
+
+        if (! \is_array($langs)) {
+            throw new \Exception('[.__LINE__.]['.class_basename(__CLASS__).']');
+        }
+        if (\in_array(\Request::segment(1),  $langs, false)) {
+            $lang = \Request::segment(1);
+            if (null !== $lang) {
+                App::setLocale($lang);
+            }
+        }
+    }
+    */
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
     public function registerRoutePattern(Router $router): void
     {
@@ -169,7 +240,10 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
         $router->pattern('lang', $lang_pattern);
         // -------------------------------------------------------------
+<<<<<<< HEAD
 
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         $models = config('morph_map');
         if (! \is_array($models)) {
             // throw new Exception('[' . print_r($models, true) . '][' . __LINE__ . '][' . class_basename(__CLASS__) . ']');
@@ -181,11 +255,23 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         $models_collect->map(
             static fn ($item) => Str::plural((string) $item)
         )->implode('|');
+<<<<<<< HEAD
 
+=======
+        /*--pattern vuoto
+        dddx([
+            'lang_pattern' => $lang_pattern,
+            'container0_pattern' => $container0_pattern,
+            'config_path' => TenantService::getConfigPath('morph_map'),
+        ]);
+        */
+        // da erore livewire ?
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         // $router->pattern('container0', $container0_pattern);
     }
 
     // end registerRoutePattern
+<<<<<<< HEAD
 =======
     public string $name = 'Setting';
 >>>>>>> 998733306b (Squashed 'laravel/Modules/Setting/' content from commit 952570add)
@@ -227,4 +313,6 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     // $router->appendMiddlewareToGroup('api', SwitchLanguageLocale::class);
     // }
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 }

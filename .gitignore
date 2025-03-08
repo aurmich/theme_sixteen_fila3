@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9e0c38567c (Squashed 'laravel/Modules/UI/' content from commit 2a434597e)
 .DS_Store
@@ -181,6 +182,8 @@ vendor
 node_modules/
 npm-debug.log
 =======
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 /vendor/
 node_modules/
 npm-debug.log
@@ -188,7 +191,10 @@ npm-debug.log
 *.phar
 *.lock
 package-lock.json
+<<<<<<< HEAD
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 yarn-error.log
 
 # Laravel 4 specific
@@ -209,6 +215,7 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -539,3 +546,38 @@ vendor/
 build/docs/cache/
 cache/
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+*.cache
+
+.git-rewrite
+/.git-rewrite
+
+vendor/
+vendor
+*.lock
+package-lock.json
+composer.lock
+*.log
+package-lock.json
+
+build/
+/build
+/.git-rewrite
+*.phar
+*.lock
+.git-blame-ignore-revs
+package-lock.json
+.php-cs-fixer.cache
+package-lock.json
+.git-rewrite/
+/docs/cache
+node_modules
+
+
+
+
+
+
+docs/cache/
+cache/
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

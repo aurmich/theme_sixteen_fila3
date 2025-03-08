@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -110,24 +111,42 @@ class AdminPanelProvider extends XotBasePanelProvider
 declare(strict_types=1);
 
 namespace Modules\Blog\Providers\Filament;
+=======
+declare(strict_types=1);
+
+namespace Modules\Cms\Providers\Filament;
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
 use Filament\Panel;
 use Filament\SpatieLaravelTranslatablePlugin;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
+<<<<<<< HEAD
 use Pboivin\FilamentPeek\FilamentPeekPlugin;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Blog';
+=======
+
+class AdminPanelProvider extends XotBasePanelProvider
+{
+    protected string $module = 'Cms';
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
     public function panel(Panel $panel): Panel
     {
         $panel->plugins([
+<<<<<<< HEAD
             // FilamentPeekPlugin::make(),
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
             SpatieLaravelTranslatablePlugin::make(),
         ]);
 
         return parent::panel($panel);
     }
+<<<<<<< HEAD
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 }

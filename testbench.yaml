@@ -6,6 +6,7 @@ providers:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Modules\Xot\Providers\XotServiceProvider
   - Modules\Xot\Providers\Filament\AdminPanelProvider
   - Nwidart\Modules\LaravelModulesServiceProvider
@@ -39,3 +40,6 @@ providers:
   - Nwidart\Modules\LaravelModulesServiceProvider
 
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+  - Modules\Cms\Providers\CmsServiceProvider
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

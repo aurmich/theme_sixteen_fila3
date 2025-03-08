@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -273,15 +274,36 @@
             "providers": [
                 "Modules\\Blog\\Providers\\BlogServiceProvider",
                 "Modules\\Blog\\Providers\\Filament\\AdminPanelProvider"
+=======
+    "name": "laraxot/module_cms_fila3",
+    "description": "",
+    "homepage": "https://laraxot.github.io/module_cms",
+    "license": "MIT",
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Cms\\Providers\\CmsServiceProvider",
+                "Modules\\Cms\\Providers\\Filament\\AdminPanelProvider",
+                "Modules\\Cms\\Providers\\Filament\\FrontPanelProvider"
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
             ],
             "aliases": {
 
             }
+<<<<<<< HEAD
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -333,11 +355,45 @@
         }
     },
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+            "Modules\\Cms\\": "app/",
+            "Modules\\Cms\\Database\\Factories\\": "database/factories/",
+            "Modules\\Cms\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+
+    },
+    "require_comment": {
+        "ryangjchandler/orbit": "*",
+        "illuminate/contracts": "^10.0|^11.0",
+        "laraxot/module_lang_fila3": "*",
+        "laraxot/module_user_fila3": "*",
+        "laraxot/module_tenant_fila3": "*",
+        "laraxot/module_ui": "*",
+        "laraxot/module_xot_fila3": "*",
+        "spatie/laravel-package-tools": "^1.11.3"
+    },
+    "require-dev_comment": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "larastan/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     "repositories": [
         {
             "type": "path",
             "url": "../Xot"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -350,12 +406,15 @@
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -548,10 +607,19 @@
         "post-autoload-dump1": [
             "@php artisan vendor:publish --provider='Statikbe\\CookieConsent\\CookieConsentServiceProvider' --tag='cookie-public'"
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+            "url": "../UI"
+        }
+    ],
+    "scripts": {
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -562,6 +630,8 @@
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
 =======
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         "analyse": "vendor/bin/phpstan analyse",
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",
@@ -570,6 +640,7 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -587,10 +658,15 @@
             "pestphp/pest-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "wikimedia/composer-merge-plugin": true
+=======
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -660,3 +736,7 @@
 
 }
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+
+}
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)

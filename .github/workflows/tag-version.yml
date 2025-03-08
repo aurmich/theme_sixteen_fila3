@@ -22,6 +22,7 @@ jobs:
       - name: Set Node.js 19.x
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: actions/setup-node@latest
 =======
         uses: actions/setup-node@v3
@@ -29,6 +30,9 @@ jobs:
 =======
         uses: actions/setup-node@v3
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+        uses: actions/setup-node@v3
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         with:
           node-version: 19.x
 

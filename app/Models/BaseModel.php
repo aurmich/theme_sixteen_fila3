@@ -9,6 +9,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -67,10 +68,14 @@ use Modules\Xot\Traits\Updater;
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 namespace Modules\Blog\Models;
+=======
+namespace Modules\Cms\Models;
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Factories\Factory;
 // ---------- traits
+<<<<<<< HEAD
 // //use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -80,10 +85,18 @@ use Modules\Xot\Traits\Updater;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+// //use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Actions\Factory\GetFactoryAction;
+use Modules\Xot\Traits\Updater;
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
 /**
  * Class BaseModel.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,28 +147,40 @@ abstract class BaseModel extends Model
 =======
 abstract class BaseModel extends Model implements HasMedia
 {
+=======
+abstract class BaseModel extends Model
+{
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     use HasFactory;
 
     // use Searchable;
     // use Cachable;
+<<<<<<< HEAD
     use InteractsWithMedia;
     use SoftDeletes;
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @see https://laravel-news.com/6-eloquent-secrets
 =======
      * @see  https://laravel-news.com/6-eloquent-secrets
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+     * @see  https://laravel-news.com/6-eloquent-secrets
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
      *
      * @var bool
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +214,8 @@ abstract class BaseModel extends Model implements HasMedia
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     /** @var bool */
     public $incrementing = true;
 
@@ -199,6 +226,7 @@ abstract class BaseModel extends Model implements HasMedia
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -273,12 +301,21 @@ abstract class BaseModel extends Model implements HasMedia
     protected $keyType = 'string';
     /** @var string */
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+    protected $connection = 'cms';
+
+    /** @var string */
+    protected $primaryKey = 'id';
+    /** @var string */
+    protected $keyType = 'string';
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
     /** @var list<string> */
     protected $hidden = [
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -334,10 +371,13 @@ abstract class BaseModel extends Model implements HasMedia
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     /**
      * Create a new factory instance for the model.
      *
      * @return Factory
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 88a1f0b933 (Squashed 'laravel/Modules/Tenant/' content from commit ecc88e194)
@@ -353,18 +393,24 @@ abstract class BaseModel extends Model implements HasMedia
 =======
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
      */
     protected static function newFactory()
     {
         return app(GetFactoryAction::class)->execute(static::class);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     }
 
     /** @return array<string, string> */
     protected function casts(): array
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -384,10 +430,13 @@ abstract class BaseModel extends Model implements HasMedia
 >>>>>>> ea9b3fa68f (Squashed 'laravel/Modules/Gdpr/' content from commit fbf6cfe9f3)
 =======
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
+<<<<<<< HEAD
             'published_at' => 'datetime',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -427,6 +476,9 @@ abstract class BaseModel extends Model implements HasMedia
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+            'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime',
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
         ];
     }
 }

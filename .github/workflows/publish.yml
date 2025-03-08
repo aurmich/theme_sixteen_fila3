@@ -7,6 +7,7 @@ on:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 permissions:
 =======
 permissions: 
@@ -14,6 +15,9 @@ permissions:
 =======
 permissions: 
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+permissions: 
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
   contents: write
 
 jobs:
@@ -33,6 +37,7 @@ jobs:
 
     - name: Node
       run: cd docs && npm install
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -80,6 +85,17 @@ jobs:
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@v4
 >>>>>>> e61f4ca484 (Squashed 'laravel/Modules/Blog/' content from commit d4b44b78aa)
+=======
+      
+    - name: Production
+      run: cd docs && npm run prod
+      
+    - name: CNAME
+      run: cd docs && echo "laraxot.github.io/module_chart" > ./build_production/CNAME
+
+    - name: gh-pages
+      uses: JamesIves/github-pages-deploy-action@latest
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
       with:
         branch: gh-pages
         folder: ./docs/build_production

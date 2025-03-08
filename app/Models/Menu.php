@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Blog\Models;
 
 use Modules\Blog\Actions\ParentChilds\GetTreeOptions;
@@ -10,6 +11,15 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * Modules\Blog\Models\Menu.
+=======
+namespace Modules\Cms\Models;
+
+use Modules\Tenant\Models\Traits\SushiToJsons;
+use Modules\Xot\Actions\Tree\GetTreeOptionsByModelClassAction;
+
+/**
+ * Modules\Cms\Models\Menu.
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
  *
  * @property int                             $id
  * @property string                          $name
@@ -21,6 +31,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
  *
+<<<<<<< HEAD
  * @method static \Modules\Blog\Database\Factories\MenuFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Menu   newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Menu   newQuery()
@@ -37,6 +48,23 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Illuminate\Database\Eloquent\Builder|Menu   whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Menu   withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Menu   withoutTrashed()
+=======
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereItems($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Menu withoutTrashed()
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
  *
  * @property string                                                                                                     $title
  * @property int|null                                                                                                   $parent_id
@@ -82,9 +110,27 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu            whereTitle($value)
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu            withGlobalScopes(array $scopes)
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu            withRelationshipExpression($direction, callable $constraint, $initialDepth, $from = null, $maxDepth = null)
+<<<<<<< HEAD
  *
  * @property Profile|null $creator
  * @property Profile|null $updater
+=======
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ *
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
  *
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
@@ -92,6 +138,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+<<<<<<< HEAD
  *
  * @mixin \Eloquent
  */
@@ -99,6 +146,37 @@ class Menu extends BaseModel implements HasMedia
 {
     use InteractsWithMedia;
     use \Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
+=======
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Collection<int, static> get($columns = ['*'])
+ * @method static \Modules\Cms\Database\Factories\MenuFactory                        factory($count = null, $state = [])
+ *
+ * @mixin \Eloquent
+ */
+class Menu extends BaseTreeModel
+{
+    use SushiToJsons;
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 
     /** @var list<string> */
     protected $fillable = [
@@ -107,6 +185,7 @@ class Menu extends BaseModel implements HasMedia
         'parent_id',
     ];
 
+<<<<<<< HEAD
     public static function getTreeMenuOptions(): array
     {
         $instance = new self();
@@ -129,6 +208,27 @@ class Menu extends BaseModel implements HasMedia
         // }
 
         // return $results;
+=======
+    protected array $schema = [
+        'id' => 'integer',
+        'title' => 'string',
+        'parent_id' => 'integer',
+
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'created_by' => 'string',
+        'updated_by' => 'string',
+    ];
+
+    public static function getTreeMenuOptions(): array
+    {
+        return app(GetTreeOptionsByModelClassAction::class)->execute(Menu::class);
+    }
+
+    public function getRows(): array
+    {
+        return $this->getSushiRows();
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
     }
 
     /** @return array<string, string> */
@@ -140,4 +240,12 @@ class Menu extends BaseModel implements HasMedia
             'items' => 'array',
         ];
     }
+<<<<<<< HEAD
+=======
+
+    public function getLabel(): string
+    {
+        return $this->title;
+    }
+>>>>>>> c0f6f7d0d3 (Squashed 'laravel/Modules/Cms/' content from commit 8c1c023bf9)
 }
