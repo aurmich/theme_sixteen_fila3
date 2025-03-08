@@ -9,7 +9,7 @@ function checkFormSchemaMethod($file)
 
     // Check if the class extends XotBaseResource
     if (! preg_match('/class\s+(\w+)\s+extends\s+XotBaseResource/', $content, $matches)) {
-        return null;
+        return;
     }
 
     $className = $matches[1];
@@ -38,7 +38,7 @@ function findXotBaseResourceClasses($directory)
     foreach ($phpFiles as $file) {
         $fileContent = file_get_contents($file->getPathname());
 
-        if (false !== strpos($fileContent, 'extends XotBaseResource')) {
+        if (strpos($fileContent, 'extends XotBaseResource') !== false) {
             $check = checkFormSchemaMethod($file->getPathname());
             if ($check) {
                 $results[] = $check;
