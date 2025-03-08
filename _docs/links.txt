@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://blog.moonguard.dev/setting-page-with-filament
 
 https://github.com/reworck/filament-settings
@@ -73,3 +74,21 @@ https://codebrisk.com/blog/easily-add-face-authentication-to-your-laravel-applic
 ----- molti pacchetti interessanti --
 https://codebrisk.com/blog/categories/laravel-packages
 >>>>>>> 8c6e1cc41e (Squashed 'laravel/Modules/User/' content from commit 193294f1c)
+=======
+
+----------------------------------------------------------------------------------
+Laravel Mailator for Configuring Email Scheduler & Templates
+--- molto simile a quello che facciamo noi con themenotification
+https://codebrisk.com/blog/laravel-mailator-for-configuring-email-scheduler-templates
+composer require binarcode/laravel-mailator
+-----------------------------------------------------------------------------------
+Check if you can Send Email via Given Mail Server in Laravel
+https://codebrisk.com/blog/check-if-you-can-send-email-via-given-mail-server-in-laravel
+composer require dietercoopman/mailspfchecker
+-------------------------------------------------------------------------------------
+Catch All Sent Email & Show them on Laravel Application View
+https://codebrisk.com/blog/catch-all-sent-email-show-them-on-laravel-application-view
+composer require creagia/laravel-web-mailer
+--------------------------------------------------------------------------------------
+
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)

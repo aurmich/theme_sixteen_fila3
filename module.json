@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "Xot",
     "alias": "xot",
     "description": "",
@@ -41,10 +42,15 @@
     "name": "Media",
     "alias": "media",
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+    "name": "Notify",
+    "alias": "notify",
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
     "description": "",
     "keywords": [],
     "priority": 0,
     "providers": [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         "Modules\\Setting\\Providers\\SettingServiceProvider",
@@ -71,9 +77,17 @@
 =======
         "Modules\\Media\\Providers\\MediaServiceProvider",
         "Modules\\Media\\Providers\\Filament\\AdminPanelProvider"
+=======
+        "Modules\\Notify\\Providers\\NotifyServiceProvider",
+        "Modules\\Notify\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
     ],
     "aliases": [],
     "files": [],
     "requires": []
+<<<<<<< HEAD
 }
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+}
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)

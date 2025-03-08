@@ -3,6 +3,7 @@ includes:
     - ./vendor/larastan/larastan/extension.neon
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 parameters:
 
@@ -11,6 +12,8 @@ parameters:
 =======
 =======
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
     - ./vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
     #- ./vendor/symplify/phpstan-rules/config/code-complexity-rules.neon
     #- ./vendor/symplify/phpstan-rules/config/collector-rules.neon
@@ -22,9 +25,12 @@ parameters:
 parameters:
     level: max
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
     paths:
         - .
 
@@ -33,12 +39,16 @@ parameters:
         - '#PHPDoc tag @mixin contains unknown class #'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         - '#Static call to instance method Nwidart#'
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
         - '#Static call to instance method Nwidart#'
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+        - '#Static call to instance method Nwidart#'
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 
     excludePaths:
         - ./build/*
@@ -51,6 +61,7 @@ parameters:
     bootstrapFiles:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     #    - ./Services/vendor/autoload.php
     #    - ./phpstan_constants.php
 =======
@@ -61,6 +72,10 @@ parameters:
         #- ./Services/vendor/autoload.php
         - ./phpstan_constants.php
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+        #- ./Services/vendor/autoload.php
+        - ./phpstan_constants.php
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 
     scanFiles:
     #    - ./Helpers/Helper.php
@@ -70,6 +85,7 @@ parameters:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tmpDir: ./build/phpstan
 =======
     tmpDir: build/phpstan
@@ -77,6 +93,9 @@ parameters:
 =======
     tmpDir: build/phpstan
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+    tmpDir: build/phpstan
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
     checkUnusedViews: false
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
@@ -86,8 +105,11 @@ parameters:
     checkModelProperties: false
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
 =======
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)

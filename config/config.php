@@ -7,6 +7,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -37,12 +38,21 @@ return [
         'enabled' => true,
         'sort' => 60,
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+    'name' => 'Notify',
+    'description' => 'Modulo per la gestione delle notifiche e comunicazioni',
+    'icon' => 'heroicon-o-bell',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 70,
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,4 +75,8 @@ return [
         'Modules\\Media\\Providers\\MediaServiceProvider',
     ],
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+        'Modules\\Notify\\Providers\\NotifyServiceProvider',
+    ],
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 ];

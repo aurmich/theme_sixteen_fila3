@@ -7,6 +7,7 @@ rm composer.lock
 rm package-lock.json
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #mv composer.json composer_$(date +"%Y-%m-%d").json
 #php composer.phar init
 
@@ -90,6 +91,8 @@ rm config/sanctum.php
 =======
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 
 ##############  ####################
 php -d memory_limit=-1 composer.phar require -W illuminate/contracts
@@ -107,6 +110,9 @@ php -d memory_limit=-1 composer.phar require -W --dev phpstan/phpstan-deprecatio
 php -d memory_limit=-1 composer.phar require -W --dev phpstan/phpstan-phpunit
 php -d memory_limit=-1 composer.phar require -W --dev spatie/laravel-ray
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f755e5bcec (Squashed 'laravel/Modules/Xot/' content from commit 5d7fb5a1)
 =======
 >>>>>>> 648bc7d47c (Squashed 'laravel/Modules/Job/' content from commit df60037ec)
+=======
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)

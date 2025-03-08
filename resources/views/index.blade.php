@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('setting::layouts.master')
 =======
 @extends('job::layouts.master')
@@ -11,10 +12,14 @@
 =======
 @extends('media::layouts.master')
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+@extends('notify::layouts.master')
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 
 @section('content')
     <h1>Hello World</h1>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <p>
 <<<<<<< HEAD
@@ -30,4 +35,9 @@
 =======
     <p>Module: {!! config('media.name') !!}</p>
 >>>>>>> 7695ceaeea (Squashed 'laravel/Modules/Media/' content from commit 16aedf8e8)
+=======
+    <p>
+        This view is loaded from module: {!! config('notify.name') !!}
+    </p>
+>>>>>>> b7387cfd6b (Squashed 'laravel/Modules/Notify/' content from commit eb4e12f9e)
 @endsection
