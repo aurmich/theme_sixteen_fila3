@@ -39,15 +39,7 @@ class TranslatorHelper
         // Se è un oggetto Translator, gestiscilo in modo specifico
         if ($value instanceof Translator) {
             try {
-<<<<<<< HEAD
-                return (string) $value;
-=======
-<<<<<<< HEAD
                 return 'Translator[' . $value->getLocale() . ']';
-=======
-                return (string) $value;
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
             } catch (\Throwable) {
                 return 'Translator Object';
             }

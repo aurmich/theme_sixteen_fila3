@@ -1,19 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-declare(strict_types=1);
-
-namespace Modules\Notify\Filament\Resources;
-
-// use Modules\Notify\Filament\Resources\NotificationResource\RelationManagers;
-// use Filament\Forms;
-use Modules\Notify\Models\Notification;
-use Modules\Xot\Filament\Resources\XotBaseResource;
-
-// use Illuminate\Database\Eloquent\Builder;
-// use Illuminate\Database\Eloquent\SoftDeletingScope;
-
-=======
 namespace Modules\Notify\Filament\Resources;
 
 use Filament\Forms\Components\DateTimePicker;
@@ -23,7 +9,6 @@ use Modules\Notify\Filament\Resources\NotificationResource\Pages;
 use Modules\Notify\Models\Notification;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
->>>>>>> origin/master
 class NotificationResource extends XotBaseResource
 {
     protected static ?string $model = Notification::class;
@@ -33,10 +18,6 @@ class NotificationResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
-<<<<<<< HEAD
-        ]
-        ;
-=======
             'type' => TextInput::make('type')
                 ->required()
                 ->label('Notification Type'),
@@ -81,6 +62,5 @@ class NotificationResource extends XotBaseResource
             'index' => Pages\ListNotifications::route('/'),
             'view' => Pages\ViewNotification::route('/{record}'),
         ];
->>>>>>> origin/master
     }
 }

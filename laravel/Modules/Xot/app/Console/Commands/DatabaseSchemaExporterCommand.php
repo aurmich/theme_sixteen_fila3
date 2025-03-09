@@ -7,13 +7,7 @@ namespace Modules\Xot\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 use function Safe\json_encode;
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 
 class DatabaseSchemaExporterCommand extends Command
 {

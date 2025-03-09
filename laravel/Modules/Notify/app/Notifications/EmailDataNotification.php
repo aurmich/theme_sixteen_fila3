@@ -35,11 +35,7 @@ class EmailDataNotification extends Notification
      */
     public function toMail(mixed $notifiable): MailMessage
     {
-<<<<<<< HEAD
-        $mailMessage = (new MailMessage)
-=======
         $mailMessage = (new MailMessage())
->>>>>>> origin/master
             ->subject($this->emailData->subject)
             ->line($this->emailData->body);
 

@@ -4,13 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources\ContactResource\Pages;
 
-<<<<<<< HEAD
-use Filament\Actions\CreateAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
-=======
 use Filament\Tables;
->>>>>>> origin/master
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Notify\Filament\Resources\ContactResource;
@@ -49,32 +43,6 @@ class ListContacts extends XotBaseListRecords
         ];
     }
 
-<<<<<<< HEAD
-    /**
-     * Undocumented function
-     *
-     * @return array<\Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
-     */
-    public function getTableActions(): array
-    {
-        return [
-            EditAction::make()
-                ->label(''),
-        ];
-    }
-
-    public function getTableBulkActions(): array
-    {
-        return [
-            DeleteBulkAction::make(),
-        ];
-    }
-
-    protected function getHeaderActions(): array
-    {
-        return [
-            CreateAction::make(),
-=======
     public function getTableFilters(): array
     {
         return [
@@ -82,7 +50,6 @@ class ListContacts extends XotBaseListRecords
                 ->query(fn ($query) => $query->where('active', true)),
             'inactive' => Tables\Filters\Filter::make('inactive')
                 ->query(fn ($query) => $query->where('active', false)),
->>>>>>> origin/master
         ];
     }
 }

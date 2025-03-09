@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\UI\Providers;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
+use Modules\Xot\Providers\XotBaseEventServiceProvider;
 
-class EventServiceProvider extends BaseEventServiceProvider
+class EventServiceProvider extends XotBaseEventServiceProvider
 {
+    public string $name = 'UI';
+
     /**
      * The event handler mappings for the application.
      *
@@ -25,5 +27,7 @@ class EventServiceProvider extends BaseEventServiceProvider
     /**
      * Configure the proper event listeners for email verification.
      */
-    protected function configureEmailVerification(): void {}
+    protected function configureEmailVerification(): void
+    {
+    }
 }

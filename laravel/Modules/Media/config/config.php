@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 return [
     'name' => 'Media',
-<<<<<<< HEAD
-    'icon' => 'fas-photo-video',
-    'navigation_sort' => 1,
-=======
     'description' => 'Modulo per la gestione dei file multimediali e documenti',
     'icon' => 'heroicon-o-photo',
     'navigation' => [
@@ -21,5 +17,4 @@ return [
     'providers' => [
         'Modules\\Media\\Providers\\MediaServiceProvider',
     ],
->>>>>>> origin/master
 ];

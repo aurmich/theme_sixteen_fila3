@@ -2,11 +2,7 @@
     "name": "laraxot/module_user_fila3",
     "description": "user module for user management",
     "keywords": [
-<<<<<<< HEAD
         "LaraXot",
-=======
-        "laraxot",
->>>>>>> origin/master
         "laravel",
         "filament",
         "module_user",
@@ -18,7 +14,6 @@
     ],
     "homepage": "https://github.com/laraxot/module_user_fila3",
     "license": "MIT",
-<<<<<<< HEAD
     "authors": [
         {
             "name": "Marco Sottana",
@@ -26,21 +21,6 @@
             "role": "Developer"
         }
     ],
-=======
-<<<<<<< HEAD
-    "authors": [{
-        "name": "Marco Sottana",
-        "email": "marco.sottana@gmail.com"
-    }],
-=======
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com"
-        }
-    ],
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     "extra": {
         "laravel": {
             "providers": [
@@ -48,30 +28,12 @@
                 "Modules\\User\\Providers\\UserServiceProvider",
                 "Modules\\User\\Providers\\Filament\\AdminPanelProvider"
             ],
-<<<<<<< HEAD
             "aliases": {}
-=======
-<<<<<<< HEAD
-            "aliases": {
-
-            }
-=======
-            "aliases": {}
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
         }
     },
     "autoload": {
         "psr-4": {
-<<<<<<< HEAD
             "Modules\\User\\": "app/",
-=======
-<<<<<<< HEAD
-            "Modules\\User\\": "",
-=======
-            "Modules\\User\\": "app/",
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
             "Modules\\User\\Database\\Factories\\": "database/factories/",
             "Modules\\User\\Database\\Seeders\\": "database/seeders/"
         }
@@ -83,17 +45,7 @@
         "socialiteproviders/auth0": "*",
         "spatie/laravel-personal-data-export": "*"
     },
-<<<<<<< HEAD
     "require-dev": {},
-=======
-<<<<<<< HEAD
-    "require-dev": {
-        
-    },
-=======
-    "require-dev": {},
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     "repositories": [
         {
             "type": "path",
@@ -130,12 +82,4 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master

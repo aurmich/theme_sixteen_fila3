@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\UserResource\RelationManagers;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\User\Filament\Resources\DeviceResource;
@@ -22,13 +23,14 @@ class DevicesRelationManager extends XotBaseRelationManager
         ];
     }
 
-    public function getFormSchema(): array
+    public function getFormSchema():array
     {
         return [
-            TextInput::make('device')
-                ->required()
-                ->maxLength(255),
-        ];
+                    TextInput::make('device')
+                        ->required()
+                        ->maxLength(255),
+                ]
+            ;
     }
 
     public function table(Table $table): Table

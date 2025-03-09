@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Model;
 
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Webmozart\Assert\Assert;
@@ -41,25 +38,5 @@ class GetSchemaManagerByModelClassAction
         }
 
         return $schemaManager;
-=======
->>>>>>> origin/master
-use Illuminate\Database\Eloquent\Model as EloquentModel;
-use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
-
-class GetSchemaManagerByModelClassAction
-{
-    use QueueableAction;
-
-    public function execute(string $modelClass): AbstractSchemaManager
-    {
-        Assert::isInstanceOf($model = app($modelClass), EloquentModel::class);
-        $connection = $model->getConnection();
-
-        return $connection->getDoctrineSchemaManager();
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     }
 }

@@ -1,30 +1,18 @@
 <?php
 
-<<<<<<< HEAD
-declare(strict_types=1);
-
 return [
-    // 'resources' => 'Risorse',
-=======
-return [
->>>>>>> origin/master
     'pages' => 'Pagine',
     'widgets' => 'Widgets',
     'navigation' => [
         'name' => 'Media',
         'plural' => 'Media',
         'group' => [
-<<<<<<< HEAD
-            'name' => '',
-        ],
-=======
             'name' => 'Sistema',
             'description' => 'Gestione dei file multimediali',
         ],
         'label' => 'media',
         'sort' => 20,
         'icon' => 'media-main-animated',
->>>>>>> origin/master
     ],
     'fields' => [
         'name' => 'Nome',

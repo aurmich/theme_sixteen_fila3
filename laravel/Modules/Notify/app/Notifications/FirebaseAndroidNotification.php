@@ -26,13 +26,9 @@ class FirebaseAndroidNotification extends Notification implements MobilePushNoti
     /**
      * Create a new notification instance.
      */
-<<<<<<< HEAD
-    public function __construct(public FirebaseNotificationData $data) {}
-=======
     public function __construct(public FirebaseNotificationData $data)
     {
     }
->>>>>>> origin/master
 
     /**
      * Get the notification's delivery channels.

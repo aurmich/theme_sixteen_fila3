@@ -1,9 +1,9 @@
-<?php
-
-return [
-    'fields' => [
-        '_tpl' => [
-            'label' => '_tpl',
-        ],
-    ],
-];
+<?php return array (
+  'fields' => 
+  array (
+    '_tpl' => 
+    array (
+      'label' => '_tpl',
+    ),
+  ),
+);

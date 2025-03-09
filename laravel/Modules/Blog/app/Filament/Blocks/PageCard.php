@@ -24,6 +24,6 @@ class PageCard
                 TextInput::make('text'),
             ])
 
-            ->columns($context === 'form' ? 2 : 1);
+            ->columns('form' === $context ? 2 : 1);
     }
 }

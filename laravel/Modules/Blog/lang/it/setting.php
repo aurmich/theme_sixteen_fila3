@@ -1,9 +1,9 @@
-<?php
-
-return [
-    'fields' => [
-        'version' => [
-            'label' => 'version',
-        ],
-    ],
-];
+<?php return array (
+  'fields' => 
+  array (
+    'version' => 
+    array (
+      'label' => 'version',
+    ),
+  ),
+);

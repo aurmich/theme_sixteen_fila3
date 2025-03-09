@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\UserResource\RelationManagers;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Actions\DeleteAction;
@@ -18,13 +19,14 @@ class TokensRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'tokens';
 
-    public function getFormSchema(): array
+    public function getFormSchema():array
     {
         return [
-            TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-        ];
+                    TextInput::make('name')
+                        ->required()
+                        ->maxLength(255),
+                ]
+            ;
     }
 
     public function table(Table $table): Table

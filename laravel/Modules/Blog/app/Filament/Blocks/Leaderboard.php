@@ -53,6 +53,6 @@ class Leaderboard
                 // ->required(),
             ])
 
-            ->columns($context === 'form' ? 3 : 1);
+            ->columns('form' === $context ? 3 : 1);
     }
 }

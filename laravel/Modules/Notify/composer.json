@@ -15,16 +15,6 @@
     ],
     "homepage": "https://github.com/laraxot/module_notify_fila3.git",
     "license": "MIT",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    "authors": [{
-        "name": "Marco Sottana",
-        "email": "marco.sottana@gmail.com",
-        "role": "Developer"
-    }],
-=======
->>>>>>> origin/master
     "authors": [
         {
             "name": "Marco Sottana",
@@ -32,40 +22,18 @@
             "role": "Developer"
         }
     ],
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     "extra": {
         "laravel": {
             "providers": [
                 "Modules\\Notify\\Providers\\NotifyServiceProvider",
                 "Modules\\Notify\\Providers\\Filament\\AdminPanelProvider"
             ],
-<<<<<<< HEAD
             "aliases": {}
-=======
-<<<<<<< HEAD
-            "aliases": {
-
-            }
-=======
-            "aliases": {}
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
         }
     },
     "autoload": {
         "psr-4": {
-<<<<<<< HEAD
             "Modules\\Notify\\": "app/",
-=======
-<<<<<<< HEAD
-            "Modules\\Notify\\": "",
-=======
-            "Modules\\Notify\\": "app/",
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
             "Modules\\Notify\\Database\\Factories\\": "database/factories/",
             "Modules\\Notify\\Database\\Seeders\\": "database/seeders/"
         }
@@ -78,30 +46,12 @@
         "irazasyed/telegram-bot-sdk": "*",
         "kreait/laravel-firebase": "*",
         "laravel-notification-channels/fcm": "*",
-<<<<<<< HEAD
-        "laravel-notification-channels/telegram": "^5.0",
-=======
-<<<<<<< HEAD
-        "laravel-notification-channels/telegram": "^5.0",
-=======
         "laravel-notification-channels/telegram": "*",
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
         "phpdocumentor/type-resolver": "*",
         "symfony/http-client": "*",
         "symfony/postmark-mailer": "*"
     },
-<<<<<<< HEAD
     "require-dev": {},
-=======
-<<<<<<< HEAD
-    "require-dev": {
-        
-    },
-=======
-    "require-dev": {},
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     "repositories": [
         {
             "type": "path",
@@ -138,12 +88,4 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master

@@ -16,14 +16,10 @@ class FooterData extends Data implements Wireable
     use WireableData;
 
     public ?string $background_color;
-
     public ?string $background;
-
     public ?string $overlay_color;
-
     /** @var view-string */
     public string $view;
-
     public ?string $_tpl;
 
     private static ?self $instance = null;

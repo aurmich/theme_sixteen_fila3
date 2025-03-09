@@ -97,10 +97,7 @@ class MenuResource extends \Modules\Xot\Filament\Resources\XotBaseResource
         ];
     }
 
-    public static function form(Form $form): Form
-    {
-        return $form->schema(static::getFormSchema());
-    }
+   
 
     // public static function table(Table $table): Table
     // {

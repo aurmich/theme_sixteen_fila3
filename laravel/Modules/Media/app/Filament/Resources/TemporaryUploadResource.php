@@ -20,14 +20,6 @@ class TemporaryUploadResource extends XotBaseResource
 {
     protected static ?string $model = TemporaryUpload::class;
 
-<<<<<<< HEAD
-    public static function getFormSchema(): array
-    {
-        return
-                [
-                ]
-        ;
-=======
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function getFormSchema(): array
@@ -53,7 +45,6 @@ class TemporaryUploadResource extends XotBaseResource
     {
         return [
         ];
->>>>>>> origin/master
     }
 
     /**

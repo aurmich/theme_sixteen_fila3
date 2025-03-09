@@ -66,9 +66,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         $this->registerBladeIcons();
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     /**
      * Translate a label using the module's translation system.
      */
@@ -77,9 +74,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         return __($this->nameLower.'::'.$label);
     }
 
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     public function registerBladeIcons(): void
     {
         if ('' === $this->name) {

@@ -7,14 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder;
-<<<<<<< HEAD
 use Illuminate\Support\Arr;
-=======
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Arr;
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,13 +21,6 @@ use Nwidart\Modules\Facades\Module;
 use function Safe\define;
 use function Safe\glob;
 use function Safe\json_decode;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-use function Safe\parse_url;
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 use function Safe\preg_match;
 use function Safe\realpath;
 
@@ -42,25 +28,6 @@ use Webmozart\Assert\Assert;
 
 // ------------------------------------------------
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-/* --- MAH
-if (! function_exists('get_current_theme_name')) {
-    function current_theme_name(): string {
-        $theme_name = config('xra.pub_theme');
-
-        if (inAdmin()) {
-            $theme_name = config('xra.adm_theme');
-        }
-
-        return '_'.Str::lower($theme_name);
-    }
-}
-*/
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 if (! function_exists('isRunningTestBench')) {
     function isRunningTestBench(): bool
     {
@@ -87,14 +54,7 @@ if (! function_exists('isRunningTestBench')) {
         $res = Str::endsWith($base, $path);
 
         return $res;
-<<<<<<< HEAD
         // return false;
-=======
-<<<<<<< HEAD
-=======
-        // return false;
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
     }
 }
 
@@ -468,18 +428,6 @@ if (! function_exists('getModelByName')) {
         //    throw new Exception('['.__LINE__.']['.__FILE__.']');
         // }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        $path = collect($files)->first(
-            static function (string $file) use ($name): bool {
-                $info = pathinfo((string) $file);
-                // Offset 'filename' on array{dirname?: string, basename: string, extension?: string, filename: string} on left side of ?? always exists and is not nullable.
-                $filename = $info['filename'];
-
-                // ?? '';
-=======
->>>>>>> origin/master
         $path = Arr::first(
             $files,
             function ($file) use ($name): bool {
@@ -489,32 +437,14 @@ if (! function_exists('getModelByName')) {
                 // Accedi direttamente a 'filename', che esiste sempre in pathinfo
                 $filename = $info['filename'] ?? '';
 
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
                 return Str::snake($filename) === $name;
             }
         );
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        // dddx($registered);
-
-        if (null === $path) {
-            throw new Exception('['.$name.'] not in morph_map ['.__LINE__.']['.__FILE__.']');
-        }
-=======
->>>>>>> origin/master
         if (null === $path) {
             throw new Exception('['.$name.'] not in morph_map ['.__LINE__.']['.__FILE__.']');
         }
         Assert::string($path);
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 
         $path = app(Modules\Xot\Actions\File\FixPathAction::class)->execute($path);
         $info = pathinfo($path);
@@ -556,16 +486,8 @@ if (! function_exists('getModuleFromModel')) {
         // $mod = \Nwidart\Modules\Module::get($module_name);
         // 480    Call to an undefined method Nwidart\Modules\Facades\Module::get()
         // $mod = app('module')->get($module_name);
-<<<<<<< HEAD
 
         // @phpstan-ignore method.nonObject
-=======
-<<<<<<< HEAD
-=======
-
-        // @phpstan-ignore method.nonObject
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
         Assert::isInstanceOf($res = app('module')->find($module_name), Nwidart\Modules\Module::class);
 
         return $res;
@@ -589,15 +511,7 @@ if (! function_exists('getModuleNameFromModelName')) {
             throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
 
-<<<<<<< HEAD
         Assert::isInstanceOf($model = app($model_class), Model::class);
-=======
-<<<<<<< HEAD
-        $model = app($model_class);
-=======
-        Assert::isInstanceOf($model = app($model_class), Model::class);
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 
         return getModuleNameFromModel($model);
     }
@@ -627,36 +541,15 @@ if (! function_exists('getAllModules')) {
 
 if (! function_exists('getAllModulesModels')) {
     /**
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-     * @throws ReflectionException
-=======
->>>>>>> origin/master
      * Get all models from all enabled modules.
      *
      * @throws ReflectionException
      *
      * @return array<string, string>
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
      */
     function getAllModulesModels(): array
     {
         $res = [];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        $modules = Module::all();
-        foreach ($modules as $module) {
-            $tmp = getModuleModels($module->getName());
-            $res = array_merge($res, $tmp);
-        }
-
-=======
->>>>>>> origin/master
 
         /** @var Nwidart\Modules\Laravel\Module[] $modules */
         $modules = Module::all();
@@ -683,10 +576,6 @@ if (! function_exists('getAllModulesModels')) {
         }
 
         /* @var array<string, string> */
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
         return $res;
     }
 }
@@ -783,94 +672,6 @@ if (! function_exists('array_merge_recursive_distinct')) {
     }
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-/*
-|--------------------------------------------------------------------------
-| Laravel 5 - URL Query String Helper
-|--------------------------------------------------------------------------
-|
-| A helper function to take a URL string then quickly and easily add query
-| string parameters to it, or change existing ones.
-|
-| url_queries(['order' => 'desc', 'page' => 2],
-|             'https://app.dev/users/?sort=username&order=asc');
-| // https://app.dev/users/?sort=username&order=desc&page=2
-|
-https://gist.github.com/ImLiam/49c420ddb2db881afd59d77635d039f8
-*/
-if (! function_exists('url_queries')) {
-    /**
-     * Modifies the query strings in a given (or the current) URL.
-     *
-     * @param array       $queries Indexed array of query parameters
-     * @param string|null $url     URL to use parse. If none is supplied, the current URL of the page load will be used
-     *
-     * @return string The updated query string
-     */
-    function url_queries(array $queries, ?string $url = null): string
-    {
-        // If a URL isn't supplied, use the current one
-        if (! $url) {
-            $url = Request::fullUrl();
-        }
-
-        // Split the URL down into an array with all the parts separated out
-        $url_parsed = parse_url($url);
-
-        if (false === $url_parsed) {
-            throw new Exception('error parsing url ['.$url.']');
-        }
-
-        // Turn the query string into an array
-        $url_params = [];
-        // Cannot access offset 'query' on array(?'scheme' => string, ?'host' => string, ?'port' => int, ?'user' => string, ?'pass' => string, ?'path' => string, ?'query' => string, ?'fragment' => string)|false.
-        if (isset($url_parsed['query']) && is_string($url_parsed['query'])) {
-            // if (in_array('query', array_keys($url_parsed))) {
-            parse_str((string) $url_parsed['query'], $url_params);
-        }
-
-        // Merge the existing URL's query parameters with our new ones
-        $url_params = array_merge($url_params, $queries);
-
-        // Build a new query string from our updated array
-        $string_query = http_build_query($url_params);
-        // Add the new query string back into our URL
-        Assert::isArray($url_parsed, 'wip');
-        $url_parsed['query'] = $string_query;
-
-        // Build the array back into a complete URL string
-        return build_url($url_parsed);
-    }
-}
-
-if (! function_exists('build_url')) {
-    /**
-     * Rebuilds the URL parameters into a string from the native parse_url() function.
-     *
-     * @param array $parts The parts of a URL
-     *
-     * @return string The constructed URL
-     */
-    function build_url(array $parts): string
-    {
-        return (isset($parts['scheme']) ? sprintf('%s:', $parts['scheme']) : '').
-            (isset($parts['user']) || isset($parts['host']) ? '//' : '').
-            ($parts['user'] ?? '').
-            (isset($parts['pass']) ? sprintf(':%s', $parts['pass']) : '').
-            (isset($parts['user']) ? '@' : '').
-            ($parts['host'] ?? '').
-            (isset($parts['port']) ? sprintf(':%s', $parts['port']) : '').
-            ($parts['path'] ?? '').
-            (isset($parts['query']) ? sprintf('?%s', $parts['query']) : '').
-            (isset($parts['fragment']) ? sprintf('#%s', $parts['fragment']) : '');
-    }
-}
-
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 if (! function_exists('getRelationships')) {
     /**
      * @throws ReflectionException
@@ -1182,20 +983,6 @@ if (! function_exists('rowsToSql')) {
         return Str::replaceArray('?', $bindings, $sql);
     }
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-if (! function_exists('getServerName')) {
-    function getServerName(): string
-    {
-        $default = env('APP_URL');
-        if (! is_string($default)) {
-            $default = 'localhost';
-        }
-
-=======
->>>>>>> origin/master
 /*
 if (! function_exists('getServerName')) {
     function getServerName(): string
@@ -1204,10 +991,6 @@ if (! function_exists('getServerName')) {
         if (! is_string($default)) {
             $default = 'localhost';
         }
-<<<<<<< HEAD
-=======
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
         $default = Str::after($default, '//');
 
         $server_name = $default;
@@ -1222,15 +1005,7 @@ if (! function_exists('getServerName')) {
         return $server_name;
     }
 }
-<<<<<<< HEAD
 */
-=======
-<<<<<<< HEAD
-
-=======
-*/
->>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
->>>>>>> origin/master
 /*
 if (! function_exists('getLang')) {
     function getLang(): string {

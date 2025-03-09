@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Blocks;
 
-use Filament\Forms\Components\Builder\Block;
+use Modules\Blog\Models\Article;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Modules\Blog\Models\Article;
+use Filament\Forms\Components\Builder\Block;
 use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 class ArticleCard // extends XotBaseBlock
 {
+
+    
     // public static function getBlockSchema(): array
     // {
     //     return [
@@ -37,6 +39,6 @@ class ArticleCard // extends XotBaseBlock
                 TextInput::make('text'),
             ])
 
-            ->columns($context === 'form' ? 2 : 1);
+            ->columns('form' === $context ? 2 : 1);
     }
 }

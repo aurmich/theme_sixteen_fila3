@@ -1,12 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-declare(strict_types=1);
-
-/*
- * .config('services.telegram-bot-api.webhook'
- */
-=======
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +12,3 @@ declare(strict_types=1);
 */
 
 // Filament will handle all routes for this module
->>>>>>> origin/master

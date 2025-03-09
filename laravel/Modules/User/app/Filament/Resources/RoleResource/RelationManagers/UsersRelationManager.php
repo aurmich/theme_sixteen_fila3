@@ -34,6 +34,8 @@ final class UsersRelationManager extends XotBaseRelationManager
 
     public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
+    
+
     /**
      * Returns the form schema structure, defining the input fields for user data.
      *

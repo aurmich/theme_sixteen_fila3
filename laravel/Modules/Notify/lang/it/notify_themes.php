@@ -3,12 +3,6 @@
 declare(strict_types=1);
 
 return [
-<<<<<<< HEAD
-    'tab' => [
-        'index' => 'Lista',
-        'create' => 'Aggiungi',
-        'edit' => 'Modifica',
-=======
     'navigation' => [
         'group' => 'Sistema',
         'label' => 'Temi Notifiche',
@@ -225,6 +219,5 @@ return [
             'label' => 'Tipo',
             'tooltip' => 'Filtra per tipo di tema',
         ],
->>>>>>> origin/master
     ],
 ];

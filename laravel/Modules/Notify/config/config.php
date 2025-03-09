@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 return [
     'name' => 'Notify',
-<<<<<<< HEAD
-    'icon' => 'heroicon-o-envelope', // icona nella dashboard
-    'navigation_sort' => 1,
-=======
     'description' => 'Modulo per la gestione delle notifiche e comunicazioni',
     'icon' => 'heroicon-o-bell',
     'navigation' => [
@@ -21,5 +17,4 @@ return [
     'providers' => [
         'Modules\\Notify\\Providers\\NotifyServiceProvider',
     ],
->>>>>>> origin/master
 ];

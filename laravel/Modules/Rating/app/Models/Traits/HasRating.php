@@ -92,7 +92,7 @@ trait HasRating
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
-            if ($b === 0) {
+            if (0 === $b) {
                 $b = 1;
             }
 
