@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+ return array (
   'appearance' => 
   array (
     'background' => NULL,
@@ -28,6 +30,6 @@
     'overlay_color' => NULL,
     'overlay_opacity' => NULL,
     'style' => NULL,
-    'view' => 'ticket::components.blocks.headernav.agid',
+    'view' => 'fixcity::components.blocks.headernav.agid',
   ),
 );
