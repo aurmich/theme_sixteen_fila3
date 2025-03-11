@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 =======
 namespace Modules\Job\Models;
@@ -18,6 +19,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+namespace Modules\Notify\Models;
+
+use Illuminate\Database\Eloquent\Relations\MorphPivot;
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -25,6 +31,7 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseMorphPivot extends MorphPivot
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     use Updater;
 
@@ -41,6 +48,10 @@ abstract class BaseMorphPivot extends MorphPivot
     public $timestamps = true;
 
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    use Updater;
+
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
@@ -51,6 +62,7 @@ abstract class BaseMorphPivot extends MorphPivot
     public static $snakeAttributes = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /** @var bool */
     public $incrementing = true;
 
@@ -60,10 +72,19 @@ abstract class BaseMorphPivot extends MorphPivot
     public $timestamps = true;
 
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+    /** @var bool */
+    public $incrementing = true;
+
+    /** @var bool */
+    public $timestamps = true;
+
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     /** @var int */
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected $connection = 'xot';
 =======
@@ -80,6 +101,9 @@ abstract class BaseMorphPivot extends MorphPivot
     /** @var string */
     protected $connection = 'user';
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    protected $connection = 'notify';
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 
     /** @var list<string> */
     protected $appends = [];
@@ -99,6 +123,7 @@ abstract class BaseMorphPivot extends MorphPivot
         'note',
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -124,13 +149,19 @@ abstract class BaseMorphPivot extends MorphPivot
 
 =======
     protected function casts(): array
+=======
+    public function casts(): array
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

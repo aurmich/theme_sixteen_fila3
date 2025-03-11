@@ -7,6 +7,7 @@
             "anonymous_class": false,
             "named_class": false
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
 =======
         },
@@ -60,5 +61,8 @@
         "strict_comparison": true,
         "visibility_required": true
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+        }
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     }
 }

@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -45,10 +46,15 @@
     "name": "laraxot/module_media_fila3",
     "description": "media module dedicated to image and video management",
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+    "name": "laraxot/module_notify_fila3",
+    "description": "notify module dedicated to managing notifications",
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     "keywords": [
         "laraxot",
         "laravel",
         "filament",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         "module_job",
@@ -81,19 +87,34 @@
     ],
     "homepage": "https://github.com/laraxot/module_media_fila3.git",
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+        "module_notify",
+        "Laravel",
+        "Notify module",
+        "Notify",
+        "Emails",
+        "Smss",
+        "Whatsapp"
+    ],
+    "homepage": "https://github.com/laraxot/module_notify_fila3.git",
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     "license": "MIT",
     "authors": [
         {
             "name": "Marco Sottana",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "require": {
@@ -185,12 +206,20 @@
                 "Livewire\\LivewireServiceProvider",
                 "Modules\\User\\Providers\\UserServiceProvider",
                 "Modules\\User\\Providers\\Filament\\AdminPanelProvider"
+=======
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Notify\\Providers\\NotifyServiceProvider",
+                "Modules\\Notify\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
             ],
             "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\User\\": "app/",
             "Modules\\User\\Database\\Factories\\": "database/factories/",
             "Modules\\User\\Database\\Seeders\\": "database/seeders/"
@@ -202,6 +231,25 @@
         "laravel/passport": "*",
         "socialiteproviders/auth0": "*",
         "spatie/laravel-personal-data-export": "*"
+=======
+            "Modules\\Notify\\": "app/",
+            "Modules\\Notify\\Database\\Factories\\": "database/factories/",
+            "Modules\\Notify\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+        "aws/aws-sdk-php": "*",
+        "filament/filament": "*",
+        "illuminate/contracts": "*",
+        "illuminate/support": "*",
+        "irazasyed/telegram-bot-sdk": "*",
+        "kreait/laravel-firebase": "*",
+        "laravel-notification-channels/fcm": "*",
+        "laravel-notification-channels/telegram": "*",
+        "phpdocumentor/type-resolver": "*",
+        "symfony/http-client": "*",
+        "symfony/postmark-mailer": "*"
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     },
     "require-dev": {},
     "repositories": [
@@ -209,15 +257,19 @@
             "type": "path",
             "url": "../Xot"
         },
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 =======
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -259,6 +311,8 @@
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
 =======
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
             "url": "../UI"
         }
     ],
@@ -273,20 +327,27 @@
         "test": "./vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage-html coverage",
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
             "phpstan/extension-installer": true,
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "wikimedia/composer-merge-plugin": true
         }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "extra": {
         "laravel": {
@@ -361,3 +422,8 @@
     }
 }
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)

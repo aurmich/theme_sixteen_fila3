@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -303,17 +304,79 @@ vendor/
 /vendor
 vendor/
 vendor/*
+=======
+/vendor/
+vendor/
+node_modules/
+npm-debug.log
+*.cache
+*.phar
+*.lock
+package-lock.json
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+
+
+*.stackdump
+*.cache
+*.lock
+package-lock.json
+*.log
+
+*.lock
+package-lock.json
+
+/docs/package-lock.json
+.git-rewrite
+.git-blame-ignore-revs
+.git-rewrite
+.git-blame-ignore-revs
+/vendor
+*.lock
+.php-cs-fixer.cache
+*.cache
+/build
+*.phar
+.git-rewrite/
+
+
+
+node_modules
+vendor
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 .php-cs-fixer.cache
 .git-blame-ignore-revs
 build/
 vendor/
 build/
 node_modules
+<<<<<<< HEAD
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -341,3 +404,9 @@ build
 =======
 .php-cs-fixer.cache
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+.git-blame-ignore-revs
+*.exe
+.php-cs-fixer.cache
+*:Zone.Identifier
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)

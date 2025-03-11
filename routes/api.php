@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,3 +105,16 @@ Route::middleware('auth:api')
 */
 =======
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+/*--work in progress
+use Modules\Notify\Http\Controllers\TelegramNotificationController;
+
+Route::middleware('guest')->group(function () {
+    Route::post('/telegram/webhook/',
+        [TelegramNotificationController::class, 'store'])->middleware('api');
+
+    Route::get('/telegram/webhook/',
+        [TelegramNotificationController::class, 'view'])->middleware('api');
+});
+*/
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)

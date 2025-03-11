@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Job\Filament\Pages;
@@ -10,6 +11,11 @@ declare(strict_types=1);
 
 namespace Modules\Media\Filament\Pages;
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+declare(strict_types=1);
+
+namespace Modules\Notify\Filament\Pages;
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 
 use Filament\Pages\Page;
 
@@ -17,6 +23,7 @@ class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected static string $view = 'job::filament.pages.dashboard';
 
@@ -91,4 +98,17 @@ class Dashboard extends BaseBashboard
 =======
     protected static string $view = 'media::filament.pages.dashboard';
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+    protected static string $view = 'notify::filament.pages.dashboard';
+
+    public function mount(): void
+    {
+        /*
+        $user = auth()->user();
+        if (! $user?->hasRole('super-admin')) {
+            redirect('/admin');
+        }
+        */
+    }
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 }

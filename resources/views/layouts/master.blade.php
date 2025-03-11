@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <title>Module Xot</title>
@@ -23,11 +27,18 @@
        {{-- Laravel Vite - CSS File --}}
        {{-- {{ module_vite('build-user', 'resources/assets/sass/app.scss') }} --}}
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+        <title>Module Notify</title>
+
+       {{-- Laravel Mix - CSS File --}}
+       {{-- <link rel="stylesheet" href="{{ mix('css/notify.css') }}"> --}}
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 
     </head>
     <body>
         @yield('content')
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         {{-- Laravel Mix - JS File --}}
 <<<<<<< HEAD
@@ -71,3 +82,9 @@
     {{-- {{ module_vite('build-media', 'resources/assets/js/app.js') }} --}}
 </body>
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+        {{-- Laravel Mix - JS File --}}
+        {{-- <script src="{{ mix('js/notify.js') }}"></script> --}}
+    </body>
+</html>
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)

@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 <<<<<<< HEAD
 
@@ -21,6 +22,8 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use Modules\Xot\Datas\XotData;
 
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +34,7 @@ use Modules\Xot\Datas\XotData;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 /*
 Route::prefix('user')->group(function() {
     Route::get('/', 'UserController@index');
@@ -87,3 +91,7 @@ Route::get('/upgrade', 'UpgradeController');
 =======
 declare(strict_types=1);
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+
+// Filament will handle all routes for this module
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)

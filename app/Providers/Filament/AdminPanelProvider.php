@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -14,12 +15,15 @@ class AdminPanelProvider extends XotBasePanelProvider
 namespace Modules\Job\Providers\Filament;
 
 =======
+=======
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 /**
  * ---.
  */
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\User\Providers\Filament;
 
 use Filament\Navigation\MenuItem;
@@ -36,10 +40,20 @@ namespace Modules\Media\Providers\Filament;
 
 use Filament\Panel;
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+namespace Modules\Notify\Providers\Filament;
+
+use Filament\Notifications\Livewire\DatabaseNotifications;
+use Filament\Panel;
+use Filament\Support\Facades\FilamentView;
+use Illuminate\Support\Facades\Blade;
+use Modules\Xot\Datas\XotData;
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     protected string $module = 'Job';
@@ -115,4 +129,22 @@ class AdminPanelProvider extends XotBasePanelProvider
         return $panel;
     }
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+    protected string $module = 'Notify';
+
+    public function panel(Panel $panel): Panel
+    {
+        if (! XotData::make()->disable_database_notifications) {
+            DatabaseNotifications::trigger('notify::livewire.database-notifications-trigger');
+            // DatabaseNotifications::databaseNotificationsPollingInterval('30s');
+            DatabaseNotifications::pollingInterval('60s');
+            FilamentView::registerRenderHook(
+                'panels::user-menu.before',
+                static fn (): string => Blade::render('@livewire(\'database-notifications\')'),
+            );
+        }
+
+        return parent::panel($panel);
+    }
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 }

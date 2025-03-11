@@ -3,15 +3,20 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Job\Providers;
 =======
 namespace Modules\User\Providers;
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+namespace Modules\Notify\Providers;
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 
 use Modules\Xot\Providers\XotBaseContextServiceProvider;
 
 class FilamentServiceProvider extends XotBaseContextServiceProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     public static string $name = 'job-filament';
     
@@ -21,4 +26,8 @@ class FilamentServiceProvider extends XotBaseContextServiceProvider
     
     public static string $module = 'User';
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    public static string $name = 'notify-filament';
+    public static string $module = 'Notify';
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 }

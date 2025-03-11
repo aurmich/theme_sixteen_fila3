@@ -16,7 +16,11 @@ jobs:
       contents: write
 
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v3
+=======
+      - uses: actions/checkout@v4
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
         with:
           ref: ${{ github.head_ref }}
 

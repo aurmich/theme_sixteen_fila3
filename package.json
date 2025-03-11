@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   "private": true,
   "scripts": {
@@ -10,10 +11,23 @@
     "build": "vite build"
   },
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "axios": "^1.6.7",
     "laravel-vite-plugin": "^1.0.1",
@@ -88,4 +102,16 @@
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 =======
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "dotenv-expand": "^10.0.0",
+    "laravel-mix": "^6.0.49",
+    "laravel-mix-merge-manifest": "^2.0.0",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.38",
+    "postcss-nesting": "^12.1.4",
+    "tailwindcss": "^3.4.3"
+  }
+>>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 }
