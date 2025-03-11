@@ -247,3 +247,63 @@ Best Practices:
 - Mantenere la coerenza nella struttura dei form tra i vari RelationManager
 - Validare i dati utilizzando le regole di validazione di Laravel
 - Documentare le personalizzazioni nel codice 
+
+## Problema: File Helper.php mancante
+
+### Descrizione
+Durante l'esecuzione di phpstan è stato rilevato che il file `Helper.php` viene cercato in `Modules/Xot/Helpers/Helper.php`, ma attualmente si trova nella directory principale in `/var/www/html/_bases/base_fixcity_fila3_mono/Helpers/Helper.php`.
+
+### Analisi
+Il problema è causato dalla configurazione dell'autoload in composer, che cerca il file nel percorso `Modules/Xot/Helpers/Helper.php`, mentre il file effettivamente esiste in un'altra posizione.
+
+### Soluzione
+1. Creare la cartella `Helpers` nel modulo Xot (se non esiste già)
+2. Copiare il file `Helper.php` dalla directory principale alla directory `Modules/Xot/Helpers/`
+3. Assicurarsi che il namespace sia corretto
+
+Questo permette a phpstan di trovare correttamente il file durante l'analisi statica del codice. 
+
+## Problema: Modulo Tenant mancante
+
+### Descrizione
+Durante l'esecuzione di phpstan è stato rilevato che il file `TenantService.php` viene cercato in `Modules/Tenant/app/Services/TenantService.php`, ma attualmente si trova nella directory principale in `/var/www/html/_bases/base_fixcity_fila3_mono/app/Services/TenantService.php`. Il namespace del file è correttamente impostato come `Modules\Tenant\Services`, ma il modulo Tenant non esiste nella cartella Modules.
+
+### Analisi
+Il problema è causato da un conflitto tra la posizione fisica del file e il namespace dichiarato. Phpstan si aspetta che il file si trovi nel percorso che corrisponde al suo namespace, ma attualmente è posizionato in una cartella differente.
+
+### Soluzione
+1. Creare la cartella del modulo Tenant in `laravel/Modules/Tenant`
+2. Creare la struttura delle sottocartelle necessarie (`app/Services`)
+3. Copiare il file `TenantService.php` dalla directory principale nella nuova posizione
+
+Questo permette a phpstan di trovare correttamente il file durante l'analisi statica del codice. 
+
+## Problema: File FixPathAction.php mancante
+
+### Descrizione
+Durante l'esecuzione di phpstan è stato rilevato che il file `FixPathAction.php` viene cercato in `Modules/Xot/app/Actions/File/FixPathAction.php`, ma attualmente si trova nella directory principale in `/var/www/html/_bases/base_fixcity_fila3_mono/app/Actions/File/FixPathAction.php`. 
+
+### Analisi
+Questo è un altro caso in cui il namespace della classe sembra essere impostato per i moduli, ma il file è fisicamente posizionato in una cartella diversa. Phpstan si aspetta che tutti i file siano nel percorso corrispondente al loro namespace.
+
+### Soluzione
+1. Creare la struttura delle cartelle necessarie in `laravel/Modules/Xot/app/Actions/File/`
+2. Copiare il file `FixPathAction.php` dalla directory principale alla nuova posizione
+3. Verificare che il namespace sia corretto
+
+Questo permette a phpstan di trovare correttamente il file durante l'analisi statica del codice. 
+
+## Problema: File GetTenantNameAction.php mancante
+
+### Descrizione
+Durante l'esecuzione di phpstan è stato rilevato che il file `GetTenantNameAction.php` viene cercato in `Modules/Tenant/app/Actions/GetTenantNameAction.php`, ma questo file non esiste nel progetto.
+
+### Analisi
+Il file `TenantService.php` fa riferimento alla classe `Modules\Tenant\Actions\GetTenantNameAction`, ma questa classe non è stata implementata. È necessario creare questo file per permettere a phpstan di completare l'analisi.
+
+### Soluzione
+1. Creare la struttura delle cartelle necessarie in `laravel/Modules/Tenant/app/Actions/`
+2. Creare il file `GetTenantNameAction.php` con l'implementazione appropriata
+3. Assicurarsi che il namespace sia corretto (`Modules\Tenant\Actions`)
+
+Questo permette a phpstan di trovare correttamente il file durante l'analisi statica del codice. 
