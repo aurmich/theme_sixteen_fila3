@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -190,6 +191,32 @@ package-lock.json
 /vendor
 *.cache
 .git-blame-ignore-revs
+=======
+vendor
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 .git-rewrite
 .git-blame-ignore-revs
 /vendor
@@ -198,6 +225,7 @@ composer.lock
 package-lock.json
 .php-cs-fixer.cache
 *.cache
+<<<<<<< HEAD
 .git-blame-ignore-revs
 .git-rewrite
 
@@ -218,10 +246,75 @@ build/
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+build/
+/build
+*.cache
+docs/vendor
+/docs/vendor
+node_modules
+.git-blame-ignore-revs
+vendor
+build
+node_modules
+vendor
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+.git-rewrite
+.git-blame-ignore-revs
+/vendor
+*.lock
+composer.lock
+package-lock.json
+.php-cs-fixer.cache
+*.cache
+build/
+/build
+*.cache
+docs/vendor
+/docs/vendor
+node_modules
+.git-blame-ignore-revs
+.git-blame-ignore-revs
+vendor
+build
+vendor/
+/vendor
+vendor/
+vendor/*
+.php-cs-fixer.cache
+.git-blame-ignore-revs
+build/
+vendor/
+build/
+node_modules
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 *.exe
@@ -245,3 +338,6 @@ build
 *.exe
 *:Zone.Identifier
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+.php-cs-fixer.cache
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)

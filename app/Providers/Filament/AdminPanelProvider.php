@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -28,20 +29,32 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Modules\User\Filament\Pages\MyProfilePage;
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+declare(strict_types=1);
+
+namespace Modules\Media\Providers\Filament;
+
+use Filament\Panel;
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected string $module = 'Job';
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
     protected string $module = 'User';
+=======
+    protected string $module = 'Media';
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 
     public function panel(Panel $panel): Panel
     {
         $panel = parent::panel($panel);
 
+<<<<<<< HEAD
         FilamentView::registerRenderHook(
             'panels::auth.login.form.after',
             static fn (): string => Blade::render("@livewire('socialite.buttons')"),
@@ -98,4 +111,8 @@ class AdminPanelProvider extends XotBasePanelProvider
         return $panel;
     }
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+        return $panel;
+    }
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 }

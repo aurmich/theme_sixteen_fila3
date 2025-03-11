@@ -5,6 +5,7 @@ declare(strict_types=1);
 return [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -27,12 +28,21 @@ return [
         'enabled' => true,
         'sort' => 100,
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    'name' => 'Media',
+    'description' => 'Modulo per la gestione dei file multimediali e documenti',
+    'icon' => 'heroicon-o-photo',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 60,
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         'Modules\\Xot\\Providers\\XotServiceProvider',
@@ -42,5 +52,8 @@ return [
 =======
         'Modules\\User\\Providers\\UserServiceProvider',
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+        'Modules\\Media\\Providers\\MediaServiceProvider',
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     ],
 ];

@@ -4,14 +4,20 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
 // ---------- traits
+=======
+namespace Modules\Media\Models;
+
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
+<<<<<<< HEAD
 =======
 namespace Modules\Job\Models;
 =======
@@ -26,6 +32,8 @@ use Illuminate\Database\Eloquent\Model;
 =======
 use Modules\Xot\Models\Traits\RelationX;
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -35,12 +43,18 @@ abstract class BaseModel extends Model
 {
     use HasFactory;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // use Searchable;
     // //use Cachable;
 =======
     use RelationX;
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+
+    // use Searchable;
+    // //use Cachable;
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     use Updater;
 
     /**
@@ -54,6 +68,7 @@ abstract class BaseModel extends Model
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public $incrementing = true;
 
     public $timestamps = true;
@@ -64,6 +79,8 @@ abstract class BaseModel extends Model
 =======
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     /** @var bool */
     public $incrementing = true;
 
@@ -74,6 +91,7 @@ abstract class BaseModel extends Model
     protected $perPage = 30;
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected $connection = 'job';
 
@@ -95,14 +113,26 @@ abstract class BaseModel extends Model
     protected $appends = [];
 
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    protected $connection = 'media';
+
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+    ];
+
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     /** @var string */
     protected $primaryKey = 'id';
 
     /** @var string */
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -110,6 +140,7 @@ abstract class BaseModel extends Model
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     /**
@@ -142,17 +173,25 @@ abstract class BaseModel extends Model
         parent::__construct($attributes);
     }
 
+=======
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     /**
      * ----
      * Create a new factory instance for the model.
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
      */
+<<<<<<< HEAD
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
     protected static function newFactory()
     {
         return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
+=======
+    protected static function newFactory()
+    {
+        return app(GetFactoryAction::class)->execute(static::class);
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     }
 
     /** @return array<string, string> */
@@ -162,6 +201,7 @@ abstract class BaseModel extends Model
             'id' => 'string',
             'uuid' => 'string',
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
             'published_at' => 'datetime',
 =======
@@ -170,6 +210,9 @@ abstract class BaseModel extends Model
             'verified_at' => 'datetime',
 
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+            'published_at' => 'datetime',
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',

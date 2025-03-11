@@ -1,9 +1,15 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Job\Filament\Pages;
+=======
+declare(strict_types=1);
+
+namespace Modules\Media\Filament\Pages;
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 
 use Filament\Pages\Page;
 
@@ -11,6 +17,7 @@ class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+<<<<<<< HEAD
     protected static string $view = 'job::filament.pages.dashboard';
 
     // public function mount(): void {
@@ -81,4 +88,7 @@ class Dashboard extends BaseBashboard
             ]);
     }
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    protected static string $view = 'media::filament.pages.dashboard';
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 }

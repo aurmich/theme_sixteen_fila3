@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -40,10 +41,15 @@
     "name": "laraxot/module_user_fila3",
     "description": "user module for user management",
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    "name": "laraxot/module_media_fila3",
+    "description": "media module dedicated to image and video management",
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     "keywords": [
         "laraxot",
         "laravel",
         "filament",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "module_job",
         "Laravel",
@@ -65,16 +71,30 @@
     ],
     "homepage": "https://github.com/laraxot/module_user_fila3",
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+        "module_media",
+        "Laravel",
+        "Media module",
+        "Media",
+        "Images",
+        "Videos"
+    ],
+    "homepage": "https://github.com/laraxot/module_media_fila3.git",
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
     "license": "MIT",
     "authors": [
         {
             "name": "Marco Sottana",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
 <<<<<<< HEAD
     "require": {
         "php": "^8.2",
@@ -140,10 +160,20 @@
     "require": {},
     "require-dev": {},
     "repositories_comment": [
+=======
+    "require": {
+        "php": "^8.2",
+        "pbmedia/laravel-ffmpeg": "^8.5",
+        "intervention/image": "*"
+    },
+    "require-dev": {},
+    "repositories": [
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
         {
             "type": "path",
             "url": "../User"
         },
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
             "email": "marco.sottana@gmail.com"
@@ -180,12 +210,15 @@
             "url": "../Xot"
         },
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "url": "./packages/coolsam/panel-modules"
@@ -266,10 +299,25 @@
                 "Modules\\Job\\Providers\\JobServiceProvider",
                 "Modules\\Job\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+            "url": "../UI"
+        },
+        {
+            "type": "path",
+            "url": "../Xot"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Media\\Providers\\MediaServiceProvider",
+                "Modules\\Media\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
             ],
             "aliases": {}
         }
     },
+<<<<<<< HEAD
     "minimum-stability": "dev",
     "prefer-stable": true
 <<<<<<< HEAD
@@ -283,3 +331,33 @@
     "prefer-stable": true
 }
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    "autoload": {
+        "psr-4": {
+            "Modules\\Media\\": "app/",
+            "Modules\\Media\\Database\\Factories\\": "database/factories/",
+            "Modules\\Media\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Media\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump1": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}
+>>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
