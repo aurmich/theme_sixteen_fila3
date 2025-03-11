@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 /**
  * ---.
  */
@@ -82,7 +85,11 @@ enum TicketPriorityEnum: string implements HasColor, HasIcon, HasLabel
 
     public function getColorClass(): string
     {
+<<<<<<< HEAD
         return match ($this) {
+=======
+        return match($this) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             self::LOW => 'badge-info',
             self::MEDIUM => 'badge-warning',
             self::HIGH => 'badge-danger',
@@ -93,7 +100,11 @@ enum TicketPriorityEnum: string implements HasColor, HasIcon, HasLabel
 
     public function label(): string
     {
+<<<<<<< HEAD
         return match ($this) {
+=======
+        return match($this) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             self::LOW => trans('fixcity::ticket.fields.priority.options.low'),
             self::MEDIUM => trans('fixcity::ticket.fields.priority.options.medium'),
             self::HIGH => trans('fixcity::ticket.fields.priority.options.high'),

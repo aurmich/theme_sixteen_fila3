@@ -37,10 +37,14 @@ class TicketResource extends Resource
                     Forms\Components\TextInput::make('name')
                         ->hiddenLabel()
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.title.placeholder') . '*')
 =======
                         ->placeholder(__('ticket::ticket.title.placeholder') . '*')
 >>>>>>> origin/master
+=======
+                        ->placeholder(__('ticket::ticket.title.placeholder') . '*')
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->columnSpanFull() // Occupa tutta la larghezza disponibile
                         ->required()
                         ->maxLength(255)
@@ -65,10 +69,14 @@ class TicketResource extends Resource
                     Forms\Components\Select::make('type')
                         ->hiddenLabel()
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.type.placeholder') . '*')
 =======
                         ->placeholder(__('ticket::ticket.type.placeholder') . '*')
 >>>>>>> origin/master
+=======
+                        ->placeholder(__('ticket::ticket.type.placeholder') . '*')
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->searchable()
                         ->options(TicketTypeEnum::class)
                         ->columnSpanFull(),
@@ -77,10 +85,14 @@ class TicketResource extends Resource
                     Forms\Components\Select::make('priority')
                         ->hiddenLabel()
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.priorities.label'))
 =======
                         ->placeholder(__('ticket::ticket.priorities.label'))
 >>>>>>> origin/master
+=======
+                        ->placeholder(__('ticket::ticket.priorities.label'))
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->searchable()
                         ->options(TicketPriorityEnum::class)
                         ->default(TicketPriorityEnum::default())
@@ -89,10 +101,14 @@ class TicketResource extends Resource
                     // Ticket Content (RichEditor)
                     // Forms\Components\RichEditor::make('content')
 <<<<<<< HEAD
+<<<<<<< HEAD
                     //     ->label(__('fixcity::ticket.content.label'))
 =======
                     //     ->label(__('ticket::ticket.content.label'))
 >>>>>>> origin/master
+=======
+                    //     ->label(__('ticket::ticket.content.label'))
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     //     ->required()
                     //     ->columnSpanFull()
                     //     ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;']), // Rimozione del padding e margini
@@ -101,16 +117,22 @@ class TicketResource extends Resource
                     Forms\Components\Textarea::make('content')
                         ->hiddenLabel()
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->placeholder(__('fixcity::ticket.content.placeholder') . '**')
                         ->rows(2)
                         ->cols(10)
                         ->helperText(__('fixcity::ticket.content.helper_text')),
 =======
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->placeholder(__('ticket::ticket.content.placeholder') . '**')
                         ->rows(2)
                         ->cols(10)
                         ->helperText(__('ticket::ticket.content.helper_text')),
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 
                     // Hidden Latitude and Longitude
@@ -139,10 +161,14 @@ class TicketResource extends Resource
                     // NOTA BENE, ASSICURATI DI ABILITARE LA LOCALIZZAZIONE NEL BROWSER
                     Map::make('location')
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->label(__('fixcity::ticket.your-location'))
 =======
                         ->label(__('ticket::ticket.your-location'))
 >>>>>>> origin/master
+=======
+                        ->label(__('ticket::ticket.your-location'))
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->columnSpanFull() // Occupare l'intera larghezza disponibile
                         ->default([
                             'lat' => 40.4168,
@@ -174,10 +200,14 @@ class TicketResource extends Resource
                     // Image Upload
                     // SpatieMediaLibraryFileUpload::make('images')
 <<<<<<< HEAD
+<<<<<<< HEAD
                     //     ->label(__('fixcity::ticket.insert-images'))
 =======
                     //     ->label(__('ticket::ticket.insert-images'))
 >>>>>>> origin/master
+=======
+                    //     ->label(__('ticket::ticket.insert-images'))
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     //     ->collection('ticket')
                     //     ->directory('ticket')
                     //     ->disk('uploads')
@@ -191,10 +221,14 @@ class TicketResource extends Resource
 
                     SpatieMediaLibraryFileUpload::make('images')
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->label(__('fixcity::ticket.insert-images'))
 =======
                         ->label(__('ticket::ticket.insert-images'))
 >>>>>>> origin/master
+=======
+                        ->label(__('ticket::ticket.insert-images'))
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->collection('ticket')
                         ->directory('ticket')
                         ->disk('uploads')

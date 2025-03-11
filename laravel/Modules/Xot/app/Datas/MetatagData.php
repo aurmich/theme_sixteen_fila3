@@ -20,16 +20,30 @@ class MetatagData extends Data implements Wireable
 
     public string $title;
 
+<<<<<<< HEAD
     public string $sitename;
 
     public string $subtitle;
 
     public ?string $generator = 'xot';
 
+=======
+    // ' => 'EWall',
+    public string $sitename;
+
+    // ' => 'the best place',
+    public string $subtitle;
+
+    // ' => 'Find restaurants, specials, and coupons for free',
+    public ?string $generator = 'xot';
+
+    // ' => '',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public string $charset = 'UTF-8';
 
     public ?string $author = 'xot';
 
+<<<<<<< HEAD
     public ?string $description;
 
     public ?string $keywords;
@@ -44,10 +58,35 @@ class MetatagData extends Data implements Wireable
 
     public string $logo_square;
 
+=======
+    // ' => '',
+    public ?string $description;
+
+    // ' => '',
+    public ?string $keywords;
+
+    // ' => '',
+    public string $nome_regione;
+
+    // ' => '',
+    public string $nome_comune;
+
+    // ' => '',
+    public string $site_title;
+
+    // ' => '',
+    public string $logo;
+
+    // ' => 'ewall::img/logo.png',
+    public string $logo_square;
+
+    // ' => 'ewall::img/logo.png',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public string $logo_header;
 
     public string $logo_header_dark;
 
+<<<<<<< HEAD
     public string $logo_height = '2em';
 
     public string $logo_footer;
@@ -76,6 +115,50 @@ class MetatagData extends Data implements Wireable
 
     public string $color_banner;
 
+=======
+    public ?string $logo_height = '2em';
+
+    // = 'xot::img/logo.png';
+    public string $logo_footer;
+
+    // ' => 'ewall::img/logo.png',
+    public string $logo_alt;
+
+    // ' => 'Logo',
+    public string $hide_megamenu;
+
+    // ' => false,
+    public string $hero_type;
+
+    // ' => 'with_megamenu_bottom',
+    public string $facebook_href;
+
+    // ' => 'aa',
+    public string $twitter_href;
+
+    // ' => '',
+    public string $youtube_href;
+
+    // ' => '',
+    public string $fastlink;
+
+    // ' => false,
+    public string $color_primary;
+
+    // ' => '#0071b0',
+    public string $color_title;
+
+    // ' => 'white',
+    public string $color_megamenu;
+
+    // ' => '#d60021',
+    public string $color_hamburger;
+
+    // ' => '#000',
+    public string $color_banner;
+
+    // ' => '#000',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public string $favicon = '/favicon.ico';
 
     public array $colors = [];
@@ -104,6 +187,13 @@ class MetatagData extends Data implements Wireable
 
     public function getLogoHeight(): string
     {
+<<<<<<< HEAD
+=======
+        if (null == $this->logo_height) {
+            $this->logo_height = '2em';
+        }
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         return $this->logo_height;
     }
 
@@ -112,9 +202,12 @@ class MetatagData extends Data implements Wireable
         return app(\Modules\Xot\Actions\File\AssetAction::class)->execute($this->favicon);
     }
 
+<<<<<<< HEAD
     /**
      * @return array<array<string>|string>
      */
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public function getFilamentColors(): array
     {
         return [
@@ -127,9 +220,12 @@ class MetatagData extends Data implements Wireable
         ];
     }
 
+<<<<<<< HEAD
     /**
      * @return array<array<string>|string>
      */
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public function getAllColors(): array
     {
         $colors = array_keys(Color::all());
@@ -138,6 +234,7 @@ class MetatagData extends Data implements Wireable
         return $colors;
     }
 
+<<<<<<< HEAD
     /**
      * @return array<string, array<string>|string>
      */
@@ -161,9 +258,35 @@ class MetatagData extends Data implements Wireable
                 };
 
                 return [$keyStr => $value];
+=======
+    public function getColors(): array
+    {
+        $mapped = Arr::mapWithKeys(
+            $this->colors,
+            function (array $item, int|string $key): array {
+                $k = $item['key'];
+                $v = $item['color'];
+                if ('custom' != $v) {
+                    $v = Arr::get(Color::all(), $v);
+                }
+                if ('custom' == $v) {
+                    $v = Color::hex($item['hex']);
+                }
+
+                return [$k => $v];
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             }
         );
 
         return $mapped;
+<<<<<<< HEAD
+=======
+        /*
+        return [
+            // 'primary' => Color::Amber,
+            'primary' => Color::Blue,
+        ];
+        */
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     }
 }

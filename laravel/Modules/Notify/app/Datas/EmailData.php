@@ -73,7 +73,11 @@ class EmailData extends Data
             $this->body = strip_tags($this->body_html);
         }
 
+<<<<<<< HEAD
         $email = (new MimeEmail())
+=======
+        $email = (new MimeEmail)
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             ->from($this->getFrom())
             ->to($this->to)
             ->subject(strip_tags($this->subject))

@@ -4,6 +4,7 @@ import laravel, { refreshPaths } from "laravel-vite-plugin";
 export default defineConfig({
 	build: {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		outDir: "./resources/dist",
 		emptyOutDir: false,
         manifest: 'manifest.json',
@@ -18,6 +19,11 @@ export default defineConfig({
         manifest: 'manifest.json',
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+		outDir: "./resources/dist",
+		emptyOutDir: false,
+        manifest: 'manifest.json',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 		rollupOptions: {
 			output: {
 				entryFileNames: `assets/[name].js`,
@@ -33,6 +39,7 @@ export default defineConfig({
 		laravel({
 			publicDirectory: "../../../public_html/",
 <<<<<<< HEAD
+<<<<<<< HEAD
 			input: [__dirname + "/resources/css/app.css", __dirname + "/resources/js/app.js", __dirname + "/resources/css/filament/admin/theme.css"],
 =======
 <<<<<<< HEAD
@@ -41,6 +48,9 @@ export default defineConfig({
 			input: [__dirname + "/resources/css/app.css", __dirname + "/resources/js/app.js", __dirname + "/resources/css/filament/admin/theme.css"],
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+			input: [__dirname + "/resources/css/app.css", __dirname + "/resources/js/app.js", __dirname + "/resources/css/filament/admin/theme.css"],
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 			refresh: [...refreshPaths, "app/Livewire/**"],
 		}),
 	],

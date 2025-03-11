@@ -7,7 +7,10 @@ namespace Modules\Xot\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+<<<<<<< HEAD
 use function Safe\json_encode;
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 class DatabaseSchemaExporterCommand extends Command
 {

@@ -3,9 +3,15 @@
 namespace Modules\Fixcity\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+<<<<<<< HEAD
 use Modules\Category\Models\Category;
 use Modules\Fixcity\Models\Ticket;
 use Modules\User\Models\User;
+=======
+use Modules\Fixcity\Models\Ticket;
+use Modules\User\Models\User;
+use Modules\Category\Models\Category;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 class TicketFactory extends Factory
 {
@@ -57,4 +63,8 @@ class TicketFactory extends Factory
             'status' => 'resolved',
         ]);
     }
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
     'navigation' => [
         'group' => 'Sistema',
         'label' => 'Temi Notifiche',
@@ -219,5 +220,11 @@ return [
             'label' => 'Tipo',
             'tooltip' => 'Filtra per tipo di tema',
         ],
+=======
+    'tab' => [
+        'index' => 'Lista',
+        'create' => 'Aggiungi',
+        'edit' => 'Modifica',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     ],
 ];

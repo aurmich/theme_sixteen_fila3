@@ -1,10 +1,17 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 use Illuminate\Support\Str;
 
 return [
+=======
+use Illuminate\Support\Str;
+
+return [
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -31,6 +38,10 @@ return [
     */
 
     'connections' => [
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
@@ -111,6 +122,10 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     ],
 
     /*
@@ -141,6 +156,10 @@ return [
     */
 
     'redis' => [
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
         'options' => [
@@ -165,5 +184,11 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
+<<<<<<< HEAD
     ],
+=======
+
+    ],
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 ];

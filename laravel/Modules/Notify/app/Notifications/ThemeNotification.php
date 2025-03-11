@@ -23,9 +23,13 @@ class ThemeNotification extends Notification implements ShouldQueue
      *
      * @return void
      */
+<<<<<<< HEAD
     public function __construct(public string $name, public array $view_params)
     {
     }
+=======
+    public function __construct(public string $name, public array $view_params) {}
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     /**
      * Get the notification's delivery channels.

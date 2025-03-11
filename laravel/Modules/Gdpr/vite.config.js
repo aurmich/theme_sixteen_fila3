@@ -1,5 +1,6 @@
 const dotenvExpand = require('dotenv-expand');
 <<<<<<< HEAD
+<<<<<<< HEAD
 dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
 =======
 <<<<<<< HEAD
@@ -8,6 +9,9 @@ dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/}));
 dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
@@ -20,6 +24,7 @@ export default defineConfig(
             manifest: true,
         },
         plugins: [
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -37,6 +42,8 @@ export default defineConfig(
     ],
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             laravel(
                 {
                     publicDirectory: '../../public',
@@ -50,8 +57,11 @@ export default defineConfig(
             ),
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     }
 );

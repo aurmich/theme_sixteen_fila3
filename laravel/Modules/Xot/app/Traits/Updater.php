@@ -13,14 +13,21 @@ use Webmozart\Assert\Assert;
 /**
  * Trait Updater.
  * https://dev.to/hasanmn/automatically-update-createdby-and-updatedby-in-laravel-using-bootable-traits-28g9.
+<<<<<<< HEAD
  *
  * @property int|null $created_by ID dell'utente che ha creato il record
  * @property int|null $updated_by ID dell'utente che ha modificato il record
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  */
 trait Updater
 {
     /**
+<<<<<<< HEAD
      * Get the user who created the model.
+=======
+     * Summary of creator.
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      *
      * @return BelongsTo<ProfileContract&Model, static>
      */
@@ -62,17 +69,25 @@ trait Updater
     {
         static::creating(
             static function (Model $model): void {
+<<<<<<< HEAD
                 if ($model->isFillable('created_by')) {
                     $model->setAttribute('created_by', authId());
                 }
                 if ($model->isFillable('updated_by')) {
                     $model->setAttribute('updated_by', authId());
                 }
+=======
+                // @phpstan-ignore property.notFound
+                $model->created_by = authId();
+                // @phpstan-ignore property.notFound
+                $model->updated_by = authId();
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             }
         );
 
         static::updating(
             static function (Model $model): void {
+<<<<<<< HEAD
                 if ($model->isFillable('updated_by')) {
                     $model->setAttribute('updated_by', authId());
                 }
@@ -82,6 +97,21 @@ trait Updater
         static::deleting(
             static function (Model $model): void {
                 if ($model->isFillable('deleted_by')) {
+=======
+                // @phpstan-ignore property.notFound
+                $model->updated_by = authId();
+            }
+        );
+        /*
+         * Deleting a model is slightly different than creating or deleting.
+         * For deletes we need to save the model first with the deleted_by field
+         */
+        static::deleting(
+            static function (Model $model): void {
+                Assert::isArray($attributes = $model->attributes);
+
+                if (\in_array('deleted_by', array_keys($attributes), false)) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     $model->update(['deleted_by' => authId()]);
                 }
             }

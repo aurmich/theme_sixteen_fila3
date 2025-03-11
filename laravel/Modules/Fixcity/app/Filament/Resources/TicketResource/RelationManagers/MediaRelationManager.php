@@ -3,8 +3,13 @@
 namespace Modules\Fixcity\Filament\Resources\TicketResource\RelationManagers;
 
 use Filament\Forms;
+<<<<<<< HEAD
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+=======
+use Filament\Tables;
+use Filament\Resources\RelationManagers\RelationManager;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 class MediaRelationManager extends RelationManager
 {
@@ -19,7 +24,11 @@ class MediaRelationManager extends RelationManager
                     ->directory('tickets/attachments')
                     ->preserveFilenames()
                     ->acceptedFileTypes(['application/pdf', 'image/*']),
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 Forms\Components\TextInput::make('description')
                     ->maxLength(255),
             ]);
@@ -31,10 +40,17 @@ class MediaRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('filename')
                     ->label('File'),
+<<<<<<< HEAD
 
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
 
+=======
+                    
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable(),
+                    
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
             ])
@@ -55,4 +71,8 @@ class MediaRelationManager extends RelationManager
                 ]),
             ]);
     }
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

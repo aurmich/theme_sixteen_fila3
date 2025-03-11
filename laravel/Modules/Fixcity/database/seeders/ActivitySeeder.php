@@ -4,9 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\Database\Seeders;
 
+<<<<<<< HEAD
 use Illuminate\Database\Seeder;
 use Modules\Fixcity\Models\Activity;
 use Webmozart\Assert\Assert;
+=======
+use Webmozart\Assert\Assert;
+use Illuminate\Database\Seeder;
+use Modules\Fixcity\Models\Activity;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 class ActivitySeeder extends Seeder
 {

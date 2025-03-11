@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 declare(strict_types=1);
 
 return [
@@ -29,6 +32,7 @@ return [
     'survey_pdf' => 'Modules\Quaeris\Models\SurveyPdf',
     'user' => 'Modules\Fixcity\Models\User',
 ];
+<<<<<<< HEAD
 =======
  return array (
   'article' => 'Modules\Blog\Models\Article',
@@ -45,3 +49,5 @@ return [
   'user' => 'Modules\User\Models\User',
 );
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

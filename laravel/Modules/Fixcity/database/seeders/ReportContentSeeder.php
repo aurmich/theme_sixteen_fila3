@@ -18,7 +18,11 @@ class ReportContentSeeder extends Seeder
             'address' => 'Via Solferino 24, Milano',
             'location' => ['lat' => 45.4781, 'lng' => 9.1875],
             'status' => ReportStatusEnum::PENDING->value,
+<<<<<<< HEAD
             'priority' => 'alta',
+=======
+            'priority' => 'alta'
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ],
         [
             'title' => 'Panchina danneggiata al parco',
@@ -27,7 +31,11 @@ class ReportContentSeeder extends Seeder
             'address' => 'Parco Sempione, Milano',
             'location' => ['lat' => 45.4725, 'lng' => 9.1779],
             'status' => 'verified',
+<<<<<<< HEAD
             'priority' => 'media',
+=======
+            'priority' => 'media'
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ],
         [
             'title' => 'Lampione non funzionante',
@@ -36,7 +44,11 @@ class ReportContentSeeder extends Seeder
             'address' => 'Via Dante 15, Milano',
             'location' => ['lat' => 45.4647, 'lng' => 9.1866],
             'status' => 'in_progress',
+<<<<<<< HEAD
             'priority' => 'media',
+=======
+            'priority' => 'media'
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ],
         [
             'title' => 'Cestino rifiuti stracolmo',
@@ -45,7 +57,11 @@ class ReportContentSeeder extends Seeder
             'address' => 'Corso Buenos Aires 45, Milano',
             'location' => ['lat' => 45.4781, 'lng' => 9.2107],
             'status' => 'pending',
+<<<<<<< HEAD
             'priority' => 'bassa',
+=======
+            'priority' => 'bassa'
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ],
         [
             'title' => 'Albero pericolante',
@@ -54,8 +70,13 @@ class ReportContentSeeder extends Seeder
             'address' => 'Viale Monza 12, Milano',
             'location' => ['lat' => 45.4897, 'lng' => 9.2175],
             'status' => 'verified',
+<<<<<<< HEAD
             'priority' => 'alta',
         ],
+=======
+            'priority' => 'alta'
+        ]
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     ];
 
     public function run(): void
@@ -70,6 +91,7 @@ class ReportContentSeeder extends Seeder
                 'status' => $report['status'],
                 'metadata' => json_encode([
                     'priority' => $report['priority'],
+<<<<<<< HEAD
                     'created_at' => now()->subDays(rand(1, 30))->format('Y-m-d H:i:s'),
                 ]),
                 'created_at' => now(),
@@ -78,3 +100,13 @@ class ReportContentSeeder extends Seeder
         }
     }
 }
+=======
+                    'created_at' => now()->subDays(rand(1, 30))->format('Y-m-d H:i:s')
+                ]),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
+    }
+} 
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

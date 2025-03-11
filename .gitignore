@@ -91,8 +91,14 @@ public_html/themes/
 cache/
 laravel/.phive/
 <<<<<<< HEAD
+<<<<<<< HEAD
 tmp
 laravel/app/View/Components/vendor/
 public_html/themes/
 =======
 >>>>>>> origin/master
+=======
+tmp
+laravel/app/View/Components/vendor/
+public_html/themes/
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

@@ -21,12 +21,15 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget as BaseWidget;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Modules\Fixcity\Events\TicketCreatedEvent;
 use Modules\Fixcity\Filament\Resources\TicketResource;
 use Modules\Fixcity\Models\Ticket;
@@ -43,6 +46,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
 {
     use InteractsWithForms;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     protected static string $view = 'fixcity::filament.widgets.create-ticket';
 =======
@@ -54,6 +58,10 @@ class CreateTicketWidget extends BaseWidget implements HasForms
     protected static string $view = 'ticket::filament.widgets.create-ticket';
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+
+    protected static string $view = 'fixcity::filament.widgets.create-ticket';
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     protected int|string|array $columnSpan = 'full';
 
@@ -70,6 +78,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
             Wizard::make([
                 Step::make('step-1')
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
                     ->label(__('fixcity::ticket.steps.auth.label'))
@@ -81,19 +90,25 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                             ->default(__('fixcity::ticket.fields.privacy_notice.content'))
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     ->label('Autorizzazioni e condizioni')
                     ->schema([
                         RichEditor::make('privacy_notice')
                             ->label('')
                             ->default("Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell'articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).<br><br>Per i dettagli sul trattamento dei dati personali consulta l'<a href='/privacy' target='_blank' style='color: #007a52'>informativa sulla privacy</a>.")
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                             ->disabled()
                             ->extraAttributes(['class' => 'border-0 shadow-none !p-0 !bg-transparent']),
 
                         Checkbox::make('accept_terms')
+<<<<<<< HEAD
 <<<<<<< HEAD
                             ->label("Ho letto e compreso l'informativa sulla privacy")
 =======
@@ -104,6 +119,9 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                             ->label("Ho letto e compreso l'informativa sulla privacy")
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+                            ->label("Ho letto e compreso l'informativa sulla privacy")
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                             ->required()
                             ->default(false)
                             ->extraAttributes(['class' => 'text-green-500 text-lg checked:bg-green-500 checked:hover:bg-green-500 focus:ring-green-500'])
@@ -111,6 +129,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                     ])
                     ->afterValidation(function($state) {
                         if (!$state['accept_terms']) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                             $this->addError('data.accept_terms', "Devi accettare l'informativa sulla privacy per continuare.");
                             $this->halt();
@@ -123,10 +142,15 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                             $this->halt();
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+                            $this->addError('data.accept_terms', "Devi accettare l'informativa sulla privacy per continuare.");
+                            $this->halt();
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         }
                     }),
 
                 Step::make('step-2')
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -138,19 +162,25 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                             ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">' . __('fixcity::ticket.fields.issue.label') . '</h1>')),
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     ->label('Dati di segnalazione')
                     ->schema([
                         Placeholder::make('')
                             ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">Disservizio*</h1>')),
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ...TicketResource::getFormSchema(),
                     ]),
             ])
                 ->nextAction(
                     fn (Action $action) => $action
+<<<<<<< HEAD
 <<<<<<< HEAD
                         ->label('Avanti')
 =======
@@ -162,6 +192,9 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                         ->label('Avanti')
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+                        ->label('Avanti')
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                         ->size('xl')
                         ->extraAttributes(['class' => 'px-8 py-4 text-lg font-bold w-96 -ml-6'])
                 )
@@ -171,6 +204,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                         class="fi-btn relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2 rounded-lg fi-btn-size-md gap-1.5 px-8 py-4 text-md font-bold w-64 bg-white text-green-600 border-2 border-green-600 hover:bg-green-50"
                     >
 <<<<<<< HEAD
+<<<<<<< HEAD
                         Salva richiesta
 =======
 <<<<<<< HEAD
@@ -179,6 +213,9 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                         Salva richiesta
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+                        Salva richiesta
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     </button>
                 BLADE)))
                 ->columnSpanFull()
@@ -215,6 +252,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 <<<<<<< HEAD
@@ -223,3 +261,6 @@ class CreateTicketWidget extends BaseWidget implements HasForms
 }
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+}
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

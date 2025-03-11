@@ -34,7 +34,11 @@ class BuildMailMessageAction
         $fromAddress = $theme->view_params['from_email'] ?? $theme->from_email;
         $fromName = $theme->view_params['from'] ?? $theme->from;
         $subject = $view_params['subject'] ?? $theme->subject;
+<<<<<<< HEAD
         $email = (new MailMessage())
+=======
+        $email = (new MailMessage)
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             ->from($fromAddress, $fromName)
             ->subject($subject)
             ->view($view_html, $theme->view_params);

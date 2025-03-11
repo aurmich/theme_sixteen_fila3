@@ -11,11 +11,14 @@ use Modules\Xot\Actions\Class\GetFilenameByClassnameAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
+<<<<<<< HEAD
 /**
  * Class GenerateModelByModelClass
  * 
  * Genera un modello a partire da una classe modello.
  */
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 class GenerateModelByModelClass
 {
     use QueueableAction;
@@ -23,6 +26,7 @@ class GenerateModelByModelClass
     public array $replaces = [];
 
     /**
+<<<<<<< HEAD
      * Esegue la generazione del modello.
      *
      * @param string $modelClass Nome della classe modello
@@ -37,6 +41,23 @@ class GenerateModelByModelClass
 
         $this->generate($modelClass);
         $filename = app(GetFilenameByClassnameAction::class)->execute($modelClass);
+=======
+     * Execute the function with the given model class.
+     *
+     * @param string $model_class the class name of the model
+     *
+     * @return void
+     */
+    public function execute(string $model_class): string
+    {
+        Assert::classExists($model_class);
+
+        $namespace = str_replace('\\', '/', $model_class);
+        Assert::string($namespace, 'Namespace must be a string');
+
+        $this->generate($model_class);
+        $filename = app(GetFilenameByClassnameAction::class)->execute($model_class);
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
         $content_old = File::get($filename);
         $content = $content_old;

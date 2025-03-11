@@ -1,6 +1,9 @@
 {
     "id": "1",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     "title": {
         "it": "home"
     },
@@ -16,6 +19,7 @@
                     "method": "aaaa",
                     "limit": null,
                     "view": "fixcity::components.blocks.ticket_list.agid"
+<<<<<<< HEAD
 =======
     "slug": "home",
     "title": {
@@ -55,12 +59,17 @@
                     "limit": null,
                     "_tpl": "map"
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 }
             }
         ]
     },
     "sidebar_blocks": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         "it": []
     },
     "footer_blocks": null,
@@ -68,6 +77,7 @@
     "updated_at": "2024-12-09T17:08:25.000000Z",
     "created_by": "9c63325e-ce65-4632-bc54-1ef576839de5",
     "updated_by": "9c63325e-ce65-4632-bc54-1ef576839de5"
+<<<<<<< HEAD
 }
 =======
         "it": [],
@@ -81,3 +91,6 @@
     "updated_at": "2024-08-21T09:50:58.000000Z"
 }
 >>>>>>> origin/master
+=======
+}
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

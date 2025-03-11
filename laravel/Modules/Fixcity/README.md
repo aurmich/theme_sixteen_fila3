@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 # Modulo FixCity
 
 ## Descrizione
@@ -87,6 +90,7 @@ php artisan test --filter=Fixcity
 
 ## Licenza
 MIT License
+<<<<<<< HEAD
 =======
 >>>>>>> origin/master
 # Modulo FixCity
@@ -179,3 +183,5 @@ MIT License
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

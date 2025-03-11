@@ -6,6 +6,10 @@ namespace Modules\Media\Filament\Resources;
 
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
+<<<<<<< HEAD
+=======
+use Filament\Forms\Form;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Modules\Media\Filament\Resources\MediaConvertResource\Pages;
 use Modules\Media\Models\MediaConvert;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -56,6 +60,15 @@ class MediaConvertResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
+=======
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema(static::getFormSchema());
+    }
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public static function getRelations(): array
     {
         return [

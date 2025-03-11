@@ -6,6 +6,7 @@ use Illuminate\View\View;
 use Modules\Fixcity\Enums\TicketStatusEnum;
 use Modules\Fixcity\Enums\TicketPriorityEnum;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Illuminate\Support\Facades\Http;
@@ -16,19 +17,25 @@ name('ticket.view');
 middleware(['auth']);
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use function Laravel\Folio\{withTrashed,middleware, name,render};
 
 withTrashed();
 name('ticket.view');
 //middleware(['auth', 'verified']);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 render(function (View $view, string $slug) {
     $ticket = Ticket::firstWhere(['slug' => $slug]);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -64,6 +71,8 @@ render(function (View $view, string $slug) {
         'status' => $status
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     if($ticket == null){
       return view('pub_theme::404');
     }
@@ -103,9 +112,12 @@ render(function (View $view, string $slug) {
         //'priorities' => $priorities,
         //'priority_ticket' => $ticket->priority
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     ]);
 });
 
@@ -113,6 +125,7 @@ render(function (View $view, string $slug) {
 ?>
 <x-layouts.marketing>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <x-comments::styles />
 =======
 <<<<<<< HEAD
@@ -120,6 +133,9 @@ render(function (View $view, string $slug) {
     <x-comments::styles />
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+    <x-comments::styles />
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     <x-ui.marketing.breadcrumbs :crumbs="[
         [
             'href' => '/tickets',
@@ -130,6 +146,7 @@ render(function (View $view, string $slug) {
         ]
     ]" />
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -224,6 +241,8 @@ render(function (View $view, string $slug) {
 </html>
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     <article class="container max-w-6xl p-4 mx-auto space-y-8">
 
         <section>
@@ -287,10 +306,14 @@ render(function (View $view, string $slug) {
                                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ $status->created_at->isoFormat('LLL') }}</time>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('fixcity::enums.'.$status->name.'.label') }}</h3>
 =======
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('ticket::enums.'.$status->name.'.label') }}</h3>
 >>>>>>> origin/master
+=======
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('ticket::enums.'.$status->name.'.label') }}</h3>
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                                 <p class="text-base font-normal text-gray-500 dark:text-gray-400">{{ $status->reason }}</p>
                             </li>
                         @endforeach
@@ -318,6 +341,9 @@ render(function (View $view, string $slug) {
     </article>
 </x-layouts.marketing>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

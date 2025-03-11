@@ -12,9 +12,12 @@ class Clock extends Widget
 {
     public string $start = '';
 
+<<<<<<< HEAD
     /**
      * @var view-string
      */
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     protected static string $view = 'xot::filament.widgets.clock';
 
     public function begin(): void
@@ -40,9 +43,12 @@ class Clock extends Widget
             }
         }
     }
+<<<<<<< HEAD
 
     public static function canView(): bool
     {
         return true;
     }
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

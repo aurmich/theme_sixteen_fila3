@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 use Illuminate\Support\Arr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Tenant\Services\TenantService;
 =======
 >>>>>>> origin/master
+=======
+use Modules\Tenant\Services\TenantService;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 $res = [
     'connections' => [
@@ -92,10 +96,14 @@ $res = [
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
 <<<<<<< HEAD
+<<<<<<< HEAD
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1d'),
 =======
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
 >>>>>>> origin/master
+=======
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1d'),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -111,10 +119,14 @@ $res = [
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
 <<<<<<< HEAD
+<<<<<<< HEAD
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1f'),
 =======
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
 >>>>>>> origin/master
+=======
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1f'),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -123,6 +135,9 @@ $res = [
             'engine' => null,
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         // 'orbit' => [
         //     'driver' => 'sqlite',
         //     // "database" => Orbit::getDatabasePath(),
@@ -142,6 +157,7 @@ $res = [
 ];
 
 $database_default = config('database.default');
+<<<<<<< HEAD
 =======
     ],
 ];
@@ -150,6 +166,8 @@ $database_default = config('database.default');
 $database_default = env('DB_CONNECTION', 'mysql');
 
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 Arr::set($res, 'connections.user', Arr::get($res, 'connections.user_'.$database_default));
 
 return $res;

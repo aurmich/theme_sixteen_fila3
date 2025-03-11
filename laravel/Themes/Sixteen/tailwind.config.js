@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 const defaultTheme = require('tailwindcss/defaultTheme');
@@ -8,6 +9,8 @@ module.exports = {
     presets: [preset],
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 import defaultTheme from 'tailwindcss/defaultTheme';
 // import preset from './../../vendor/filament/support/tailwind.config.preset';
 import forms from '@tailwindcss/forms'
@@ -19,9 +22,12 @@ import colors from 'tailwindcss/colors';
 module.exports = {
     // presets: [preset],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     darkMode: 'class',
     theme: {
         extend: {
@@ -29,10 +35,13 @@ module.exports = {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             colors: {
                 primary: colors.blue,
                 secondary: colors.gray,
@@ -41,9 +50,12 @@ module.exports = {
                 danger: colors.red,
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         },
     },
     variants: {
@@ -59,6 +71,7 @@ module.exports = {
         '../../vendor/filament/**/*.blade.php',
         "../../Modules/**/Filament/**/*.php",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
         "../../Modules/**/Resources/views/**/*.blade.php",
@@ -69,6 +82,8 @@ module.exports = {
         "../../Themes/**/Resources/views/**/*.blade.php",  //----------- e' un tema !!!!
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         "../../Modules/**/resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
@@ -76,9 +91,12 @@ module.exports = {
         "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         "../../../public_html/vendor/**/*.blade.php",
     ],
     colors: {
@@ -176,6 +194,7 @@ module.exports = {
     },
     plugins: [
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
         require('@tailwindcss/forms'),
@@ -183,6 +202,8 @@ module.exports = {
     ],
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         forms,
         typography,
         daisyui
@@ -191,7 +212,10 @@ module.exports = {
         themes: ['light', 'dark'],
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

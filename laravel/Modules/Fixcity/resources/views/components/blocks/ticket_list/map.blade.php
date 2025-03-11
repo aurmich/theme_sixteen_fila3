@@ -10,10 +10,14 @@
             tag="a"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
             {{ __('fixcity::txt.click-here-to-submit-a-new-ticket') }}
 =======
             {{ __('ticket::txt.click-here-to-submit-a-new-ticket') }}
 >>>>>>> origin/master
+=======
+            {{ __('ticket::txt.click-here-to-submit-a-new-ticket') }}
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         </x-filament::button>
     </div>
 

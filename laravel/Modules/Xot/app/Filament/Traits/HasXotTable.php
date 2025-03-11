@@ -195,9 +195,14 @@ trait HasXotTable
      *
      * Soluzione: Verifica condizionale dell'esistenza dei metodi prima di chiamarli,
      * mantenendo la retrocompatibilità e prevenendo errori.
+<<<<<<< HEAD
      * @deprecated Questo metodo non deve più essere usato. Usa `getListTableColumns()` al suo posto.
      *
      * metterla final
+=======
+     *
+     * Ultimo aggiornamento: 10/2023
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      */
     public function table(Table $table): Table
     {
@@ -349,6 +354,7 @@ trait HasXotTable
     }
 
     /**
+<<<<<<< HEAD
      * Get the model class.
      *
      * @return class-string<\Illuminate\Database\Eloquent\Model>
@@ -376,6 +382,36 @@ trait HasXotTable
         if ($model instanceof Model) {
             /** @var class-string<\Illuminate\Database\Eloquent\Model> */
             return get_class($model);
+=======
+     * Get model class.
+     *
+     * @throws \Exception Se non viene trovata una classe modello valida
+     *
+     * @return class-string<Model>
+     */
+    public function getModelClass(): string
+    {
+        if (method_exists($this, 'getRelationship')) {
+            $relationship = $this->getRelationship();
+            if ($relationship instanceof Relation) {
+                /* @var class-string<Model> */
+                return get_class($relationship->getModel());
+            }
+        }
+
+        if (method_exists($this, 'getModel')) {
+            $model = $this->getModel();
+            if (is_string($model)) {
+                Assert::classExists($model);
+
+                /* @var class-string<Model> */
+                return $model;
+            }
+            if ($model instanceof Model) {
+                /* @var class-string<Model> */
+                return get_class($model);
+            }
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         }
 
         throw new \Exception('No model found in '.class_basename(__CLASS__).'::'.__FUNCTION__);

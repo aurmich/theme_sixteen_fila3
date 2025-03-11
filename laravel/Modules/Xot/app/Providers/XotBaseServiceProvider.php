@@ -66,6 +66,7 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         $this->registerBladeIcons();
     }
 
+<<<<<<< HEAD
     /**
      * Translate a label using the module's translation system.
      */
@@ -74,6 +75,8 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         return __($this->nameLower.'::'.$label);
     }
 
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public function registerBladeIcons(): void
     {
         if ('' === $this->name) {

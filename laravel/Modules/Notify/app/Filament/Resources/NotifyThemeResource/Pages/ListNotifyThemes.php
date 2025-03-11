@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources\NotifyThemeResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Tables\Columns;
 use Filament\Tables\Filters;
+=======
+use Filament\Tables\Actions\CreateAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Modules\Notify\Filament\Resources\NotifyThemeResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -13,6 +19,7 @@ class ListNotifyThemes extends XotBaseListRecords
 {
     protected static string $resource = NotifyThemeResource::class;
 
+<<<<<<< HEAD
     public function getListTableColumns(): array
     {
         return [
@@ -51,4 +58,41 @@ class ListNotifyThemes extends XotBaseListRecords
         ];
     }
    
+=======
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         CreateAction::make(),
+    //     ];
+    // }
+
+    public function table(Table $table): Table
+    {
+        return $table
+            ->columns($this->getTableColumns())
+            ->filters($this->getTableFilters())
+            ->actions($this->getTableActions())
+            ->bulkActions($this->getTableBulkActions())
+            ->headerActions($this->getTableHeaderActions());
+        // ->defaultSort('pos', 'asc')
+        // ->reorderable('pos')
+    }
+
+    public function getTableColumns(): array
+    {
+        return [
+            TextColumn::make('id')->sortable(),
+            TextColumn::make('lang')->sortable(),
+            TextColumn::make('type')->sortable(),
+            // TextColumn::make('post_id')->sortable(),
+            // TextColumn::make('post_type')->sortable(),
+            TextColumn::make('logo_src')->sortable(),
+        ];
+    }
+
+    public function getListTableColumns(): array
+    {
+        return $this->getTableColumns();
+    }
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

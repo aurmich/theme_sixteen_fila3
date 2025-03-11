@@ -18,8 +18,12 @@ final class PushNotificationDebugData extends Data implements Arrayable
         private readonly CanReceivePushNotifications $notifiable,
         private readonly MobilePushNotification $notification,
         private readonly MulticastSendReport $sendReport,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     public static function make(
         CanReceivePushNotifications $notifiable,

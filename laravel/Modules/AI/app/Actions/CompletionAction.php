@@ -14,6 +14,12 @@ class CompletionAction
 
     /**
      * Execute the completion action.
+<<<<<<< HEAD
+=======
+     *
+     * @param string $prompt
+     * @return CreateResponse
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      */
     public function execute(string $prompt): CreateResponse
     {

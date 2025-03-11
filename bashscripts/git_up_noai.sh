@@ -15,6 +15,7 @@ find . -type f -name "*:Zone.Identifier" -exec rm -f {} \;
 #old branches
 #git push origin --delete cs0.2.03
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #git push origin --delete cs0.2.04
 #git push origin --delete cs0.2.05
@@ -24,6 +25,8 @@ find . -type f -name "*:Zone.Identifier" -exec rm -f {} \;
 #git push origin --delete cs0.2.09
 #git push origin --delete cs0.2.10
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 git config core.fileMode false
 git config advice.submoduleMergeConflict false

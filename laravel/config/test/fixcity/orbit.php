@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Modules\Tenant\Services\TenantService;
 
 return [
@@ -19,6 +22,7 @@ return [
         'cache' => TenantService::filePath(''),
     ],
 
+<<<<<<< HEAD
 =======
 declare(strict_types=1);
 
@@ -38,4 +42,6 @@ return [
         'cache' => TenantService::filePath(''),
     ],
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 ];

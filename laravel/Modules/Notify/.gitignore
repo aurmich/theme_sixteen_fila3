@@ -66,5 +66,8 @@ cache/
 .php-cs-fixer.cache
 .git-blame-ignore-revs
 *.exe
+<<<<<<< HEAD
 .php-cs-fixer.cache
 *:Zone.Identifier
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

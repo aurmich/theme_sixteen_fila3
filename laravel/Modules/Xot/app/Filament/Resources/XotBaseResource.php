@@ -63,10 +63,14 @@ abstract class XotBaseResource extends FilamentResource
      */
     abstract public static function getFormSchema(): array;
 
+<<<<<<< HEAD
     /**
      * @deprecated Questo metodo non deve più essere usato. Usa `getFormSchema()` al suo posto.
      */
     final public static function form(Form $form): Form
+=======
+    public static function form(Form $form): Form
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     {
         return $form
             ->schema(static::getFormSchema());

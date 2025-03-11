@@ -1,12 +1,15 @@
 #!/bin/bash
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 # Funzione per la gestione dei colori e migliorare l'esperienza utente
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -139,6 +142,7 @@ for branch in cs0.1.01 cs0.2.00 cs0.2.01 cs0.2.02 cs0.2.03 cs0.2.04 cs0.2.05 cs0
 done
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 log_info "========= SYNC COMPLETATA CON SUCCESSO [$WHERE ($BRANCH)] ========="
 =======
 <<<<<<< HEAD
@@ -205,3 +209,6 @@ echo "All submodules have been pushed!"
 log_info "========= SYNC COMPLETATA CON SUCCESSO [$WHERE ($BRANCH)] ========="
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+log_info "========= SYNC COMPLETATA CON SUCCESSO [$WHERE ($BRANCH)] ========="
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

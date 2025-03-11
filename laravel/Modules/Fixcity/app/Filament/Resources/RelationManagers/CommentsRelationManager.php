@@ -3,8 +3,13 @@
 namespace Modules\Fixcity\Filament\Resources\RelationManagers;
 
 use Filament\Forms;
+<<<<<<< HEAD
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+=======
+use Filament\Tables;
+use Filament\Resources\RelationManagers\RelationManager;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 class CommentsRelationManager extends RelationManager
 {
@@ -46,4 +51,8 @@ class CommentsRelationManager extends RelationManager
                 ]),
             ]);
     }
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

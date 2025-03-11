@@ -3,13 +3,23 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+<<<<<<< HEAD
+=======
+use Modules\Blog\Models\Profile;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
  * Class CreateProfilesTable.
  */
+<<<<<<< HEAD
 return new class extends XotBaseMigration
 {
+=======
+return new class extends XotBaseMigration {
+    
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     /**
      * db up.
      */

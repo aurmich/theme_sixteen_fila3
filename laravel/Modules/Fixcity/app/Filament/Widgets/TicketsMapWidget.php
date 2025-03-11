@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Filament\Support\RawJs;
 use Livewire\Attributes\Reactive;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 class TicketsMapWidget extends MapWidget
 {
@@ -75,6 +76,11 @@ class TicketsMapWidget extends MapWidget
 {
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+
+class TicketsMapWidget extends MapWidget
+{
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     #[Reactive]
     public array $categoryFilter = [];
 
@@ -85,6 +91,7 @@ class TicketsMapWidget extends MapWidget
     protected static ?bool $clustering = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected static ?bool $fitToBounds = true;
 =======
 <<<<<<< HEAD
@@ -93,6 +100,9 @@ class TicketsMapWidget extends MapWidget
     protected static ?bool $fitToBounds = true;
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+    protected static ?bool $fitToBounds = true;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     protected static ?string $mapId = 'incidents';
 
@@ -102,6 +112,7 @@ class TicketsMapWidget extends MapWidget
     {
         $config = json_decode(parent::getMapConfig(), true);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -113,14 +124,19 @@ class TicketsMapWidget extends MapWidget
         }
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         $config['center'] = [
             'lat' => 34.730369,
             'lng' => -86.586104,
         ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
         return json_encode($config);
     }
@@ -133,6 +149,7 @@ class TicketsMapWidget extends MapWidget
     protected function getData(): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         Log::error('Getting map data with filters', ['categories' => $this->categoryFilter]);
 
 =======
@@ -142,6 +159,10 @@ class TicketsMapWidget extends MapWidget
 
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+        Log::error('Getting map data with filters', ['categories' => $this->categoryFilter]);
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
@@ -158,10 +179,13 @@ class TicketsMapWidget extends MapWidget
 
         $locations = $query->latest()->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         
         Log::error('Filtered locations', [
             'sql' => $query->toSql(),
@@ -169,9 +193,12 @@ class TicketsMapWidget extends MapWidget
             'count' => $locations->count()
         ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
         $data = [];
 
@@ -193,6 +220,7 @@ class TicketsMapWidget extends MapWidget
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     public function openTicketModal($ticketId)
@@ -204,6 +232,8 @@ class TicketsMapWidget extends MapWidget
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     protected function getMapOptions(): array
     {
         return [
@@ -223,6 +253,7 @@ class TicketsMapWidget extends MapWidget
     {
         return array_merge(parent::getListeners(), [
             'categoryFilterUpdated' => 'rerender',
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -244,6 +275,8 @@ class TicketsMapWidget extends MapWidget
 }
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ]);
     }
 
@@ -253,8 +286,12 @@ class TicketsMapWidget extends MapWidget
         Log::error('Widget mounted with filters', ['categories' => $this->categoryFilter]);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 } 
 =======
 } 
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+} 
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

@@ -89,10 +89,14 @@ $res = [
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
 <<<<<<< HEAD
+<<<<<<< HEAD
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1b'),
 =======
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
 >>>>>>> origin/master
+=======
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1b'),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -108,10 +112,14 @@ $res = [
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
 <<<<<<< HEAD
+<<<<<<< HEAD
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1c'),
 =======
             'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
 >>>>>>> origin/master
+=======
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1c'),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

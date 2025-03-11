@@ -39,7 +39,11 @@ class TranslatorHelper
         // Se è un oggetto Translator, gestiscilo in modo specifico
         if ($value instanceof Translator) {
             try {
+<<<<<<< HEAD
                 return 'Translator[' . $value->getLocale() . ']';
+=======
+                return (string) $value;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             } catch (\Throwable) {
                 return 'Translator Object';
             }

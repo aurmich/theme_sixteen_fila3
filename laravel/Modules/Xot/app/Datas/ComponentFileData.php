@@ -10,6 +10,7 @@ use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
 /**
+<<<<<<< HEAD
  * Class ComponentFileData
  * 
  * Rappresenta i dati di un file componente.
@@ -35,6 +36,22 @@ class ComponentFileData extends Data
      *
      * @param EloquentCollection|Collection|array<int|string,mixed> $data
      */
+=======
+ * Undocumented class.
+ */
+class ComponentFileData extends Data
+{
+    public string $name;
+
+    public string $class;
+
+    public ?string $module = null;
+
+    public ?string $path = null;
+
+    public ?string $ns = null;
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public static function collection(EloquentCollection|Collection|array $data): DataCollection
     {
         return self::collect($data, DataCollection::class);

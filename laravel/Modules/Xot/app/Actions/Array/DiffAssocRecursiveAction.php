@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Array;
 
 use Spatie\QueueableAction\QueueableAction;
+<<<<<<< HEAD
 use InvalidArgumentException;
 use function Safe\json_encode;
 
@@ -12,17 +13,26 @@ use function Safe\json_encode;
  * Class DiffAssocRecursiveAction
  * 
  * Calcola la differenza ricorsiva tra due array associativi.
+=======
+
+/**
+ * ---.
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  */
 class DiffAssocRecursiveAction
 {
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * Corregge i tipi dei valori nell'array.
      * 
      * @param array<int|string,array<string,mixed>> $data
      * @return array<int|string,array<string,mixed>>
      * @throws InvalidArgumentException Se un elemento non è un array
+=======
+     * Undocumented function.
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      */
     public static function fixType(array $data): array
     {
@@ -30,7 +40,11 @@ class DiffAssocRecursiveAction
             ->map(
                 static function ($item) {
                     if (! is_array($item)) {
+<<<<<<< HEAD
                         throw new InvalidArgumentException('Ogni elemento deve essere un array');
+=======
+                        throw new \Exception('['.__LINE__.']['.__CLASS__.']');
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                     }
 
                     return collect($item)
@@ -50,12 +64,16 @@ class DiffAssocRecursiveAction
     }
 
     /**
+<<<<<<< HEAD
      * Calcola la differenza tra due array.
      * 
      * @param array<int|string,array<string,mixed>> $arr_1 Primo array
      * @param array<int|string,array<string,mixed>> $arr_2 Secondo array
      * @return array<int|string,array<string,mixed>> Array contenente gli elementi presenti in $arr_1 ma non in $arr_2
      * @throws InvalidArgumentException Se c'è un errore durante il confronto
+=======
+     * ---.
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      */
     public function execute(array $arr_1, array $arr_2): array
     {
@@ -67,6 +85,7 @@ class DiffAssocRecursiveAction
                 try {
                     return ! \in_array($value, $arr_2, false);
                 } catch (\Exception $exception) {
+<<<<<<< HEAD
                     throw new InvalidArgumentException(
                         sprintf(
                             'Errore durante il confronto degli array: %s [value: %s, key: %s]',
@@ -75,6 +94,9 @@ class DiffAssocRecursiveAction
                             $key
                         )
                     );
+=======
+                    dddx(['err' => $exception->getMessage(), 'value' => $value, 'key' => $key, 'arr_2' => $arr_2]);
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 }
             }
         );

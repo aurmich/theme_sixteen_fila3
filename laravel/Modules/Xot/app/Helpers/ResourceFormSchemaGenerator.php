@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Helpers;
 
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\PcreException;
 use function Safe\file_get_contents;
@@ -24,19 +25,33 @@ class ResourceFormSchemaGenerator
      * @return bool True se lo schema è stato generato, False se già esistente
      */
     public static function generateFormSchema(string $resourceClass): bool
+=======
+
+class ResourceFormSchemaGenerator
+{
+    public static function generateFormSchema(string $resourceClass)
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     {
         try {
             $reflection = new \ReflectionClass($resourceClass);
             $filename = $reflection->getFileName();
 
+<<<<<<< HEAD
             // Leggi il contenuto del file
             $fileContents = file_get_contents($filename);
 
             // Verifica se getFormSchema esiste già
+=======
+            // Read the file contents
+            $fileContents = file_get_contents($filename);
+
+            // Check if getFormSchema method already exists
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             if (false !== strpos($fileContents, 'public function getFormSchema')) {
                 return false;
             }
 
+<<<<<<< HEAD
             // Genera uno schema form base sul nome della classe
             $modelName = str_replace('Resource', '', $reflection->getShortName());
             $modelVariable = Str::camel($modelName);
@@ -59,12 +74,32 @@ class ResourceFormSchemaGenerator
             $isInClustersDir = false !== strpos($filename, 'Clusters');
 
             // Inserisci il metodo prima dell'ultima parentesi graffa
+=======
+            // Generate a basic form schema based on the class name
+            $modelName = str_replace('Resource', '', $reflection->getShortName());
+            $modelVariable = Str::camel($modelName);
+
+            $formSchemaMethod = "\n    public function getFormSchema(): array\n    {\n        return [\n";
+
+            // Try to generate some basic form fields
+            $formSchemaMethod .= "            Forms\\Components\\TextInput::make('{$modelVariable}_name')\n";
+            $formSchemaMethod .= "                ->label('".Str::headline($modelName)." Name')\n";
+            $formSchemaMethod .= "                ->required(),\n";
+
+            $formSchemaMethod .= "        ];\n    }\n";
+
+            // Detect if the class is in a Clusters directory
+            $isInClustersDir = false !== strpos($filename, 'Clusters');
+
+            // Insert the method before the last closing brace
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             $modifiedContents = preg_replace(
                 '/}(\s*)$/',
                 $formSchemaMethod.($isInClustersDir ? '' : '}$1'),
                 $fileContents
             );
 
+<<<<<<< HEAD
             // Scrivi nel file
             file_put_contents($filename, $modifiedContents);
 
@@ -81,6 +116,21 @@ class ResourceFormSchemaGenerator
      * @return array{updated: array<string>, skipped: array<string>}
      */
     public static function generateForAllResources(): array
+=======
+            // Write back to the file
+            file_put_contents($filename, $modifiedContents);
+
+            return true;
+        } catch (\Exception $e) {
+            // Log the error or handle it appropriately
+            error_log("Error generating form schema for {$resourceClass}: ".$e->getMessage());
+
+            return false;
+        }
+    }
+
+    public static function generateForAllResources()
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     {
         $resourceFiles = glob('/var/www/html/base_techplanner_fila3/laravel/Modules/*/app/Filament/Resources/*Resource.php');
 
@@ -88,6 +138,7 @@ class ResourceFormSchemaGenerator
         $skippedResources = [];
 
         foreach ($resourceFiles as $file) {
+<<<<<<< HEAD
             try {
                 // Ottieni il nome completo della classe
                 $content = file_get_contents($file);
@@ -101,11 +152,31 @@ class ResourceFormSchemaGenerator
 
                 $fullClassName = $namespaceMatch[1].'\\'.$classMatch[1];
 
+=======
+            // Get the full class name
+            $content = file_get_contents($file);
+            preg_match('/namespace\s+([\w\\\\]+);/', $content, $namespaceMatch);
+            preg_match('/class\s+(\w+)\s+extends\s+XotBaseResource/', $content, $classMatch);
+
+            if (! isset($namespaceMatch[1]) || ! isset($classMatch[1])) {
+                $skippedResources[] = $file;
+
+                continue;
+            }
+
+            $fullClassName = $namespaceMatch[1].'\\'.$classMatch[1];
+
+            try {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 if (self::generateFormSchema($fullClassName)) {
                     $updatedResources[] = $fullClassName;
                 }
             } catch (\Exception $e) {
+<<<<<<< HEAD
                 $skippedResources[] = $file.': '.$e->getMessage();
+=======
+                $skippedResources[] = $fullClassName.': '.$e->getMessage();
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             }
         }
 

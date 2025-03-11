@@ -73,7 +73,15 @@ class CategoryResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
   
+=======
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema(static::getFormFields());
+    }
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     public static function getPages(): array
     {

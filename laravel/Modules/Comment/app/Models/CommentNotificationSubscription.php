@@ -7,6 +7,11 @@ namespace Modules\Comment\Models;
 use Spatie\Comments\Models\CommentNotificationSubscription as BaseCommentNotificationSubscription;
 
 /**
+<<<<<<< HEAD
+=======
+ * 
+ *
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  * @property int $id
  * @property string $commentable_type
  * @property int $commentable_id
@@ -21,7 +26,10 @@ use Spatie\Comments\Models\CommentNotificationSubscription as BaseCommentNotific
  * @property string|null $deleted_by
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  * @method static \Modules\Comment\Database\Factories\CommentNotificationSubscriptionFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|CommentNotificationSubscription newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CommentNotificationSubscription newQuery()
@@ -38,10 +46,15 @@ use Spatie\Comments\Models\CommentNotificationSubscription as BaseCommentNotific
  * @method static \Illuminate\Database\Eloquent\Builder|CommentNotificationSubscription whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CommentNotificationSubscription whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CommentNotificationSubscription whereUpdatedBy($value)
+<<<<<<< HEAD
  *
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $commentable
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $subscriber
  *
+=======
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $commentable
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $subscriber
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  * @mixin \Eloquent
  */
 class CommentNotificationSubscription extends BaseCommentNotificationSubscription

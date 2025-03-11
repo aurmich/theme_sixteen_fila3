@@ -133,16 +133,28 @@ class ImportCsvAction
     }
 
     /**
+<<<<<<< HEAD
      * @param array<string> $columns
+=======
+     * @param array<mixed> $columns
+     *
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      * @return array<ColumnData>
      */
     public function execute1(array $columns): array
     {
+<<<<<<< HEAD
         return array_map(function (string $column): ColumnData {
             return new ColumnData(
                 name: $column,
                 type: 'string' // Tipo di default per le colonne
             );
+=======
+        return array_map(function ($column): ColumnData {
+            Assert::string($column, 'Column must be a string');
+
+            return new ColumnData($column);
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         }, $columns);
     }
 }

@@ -24,8 +24,13 @@ abstract class XotBaseRelationManager extends RelationManager
 
     protected static string $relationship = '';
 
+<<<<<<< HEAD
     /** @var class-string<XotBaseResource>|null */
     protected static ?string $resourceClass = null;
+=======
+    /** @var class-string<XotBaseResource> */
+    protected static string $resource;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     public static function getModuleName(): string
     {
@@ -47,7 +52,11 @@ abstract class XotBaseRelationManager extends RelationManager
         return static::transFunc(__FUNCTION__);
     }
 
+<<<<<<< HEAD
     final public function form(Form $form): Form
+=======
+    public function form(Form $form): Form
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     {
         return $form
             ->schema($this->getFormSchema());
@@ -60,14 +69,22 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     public function getFormSchema(): array
     {
+<<<<<<< HEAD
         $resourceClass = $this->getResource();
         return $resourceClass::getFormSchema();
+=======
+        return $this->getResource()::getFormSchema();
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     }
 
     public function getListTableColumns(): array
     {
+<<<<<<< HEAD
         $resourceClass = $this->getResource();
         $index = Arr::get($resourceClass::getPages(), 'index');
+=======
+        $index = Arr::get($this->getResource()::getPages(), 'index');
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         $index_page = $index->getPage();
         $columns = app($index_page)->getListTableColumns();
 
@@ -108,11 +125,18 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     protected function getResource(): string
     {
+<<<<<<< HEAD
         if (static::$resourceClass !== null) {
             return static::$resourceClass;
         }
 
         try {
+=======
+        try {
+            /* @var class-string<XotBaseResource> */
+            return static::$resource;
+        } catch (\Exception $e) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             $class = $this::class;
             $resource_name = Str::of(class_basename($this))
                 ->beforeLast('RelationManager')
@@ -125,6 +149,7 @@ abstract class XotBaseRelationManager extends RelationManager
                 ->toString();
             Assert::classExists($resource_class = $ns.'\\'.$resource_name);
 
+<<<<<<< HEAD
             static::$resourceClass = $resource_class;
             return $resource_class;
         } catch (\Throwable $e) {
@@ -134,6 +159,9 @@ abstract class XotBaseRelationManager extends RelationManager
                 0,
                 $e
             );
+=======
+            return $resource_class;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         }
     }
 }

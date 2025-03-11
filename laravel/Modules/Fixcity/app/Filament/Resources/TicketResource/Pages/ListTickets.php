@@ -4,10 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\Filament\Resources\TicketResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Tables;
 use Modules\Fixcity\Filament\Resources\TicketResource;
+=======
+use Modules\Fixcity\Filament\Resources\TicketResource;
+use Filament\Resources\Pages\ListRecords;
+use Filament\Actions;
+use Filament\Tables;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 class ListTickets extends ListRecords
 {

@@ -12,6 +12,7 @@ export default defineConfig({
     build: {
         //outDir: '../../../public_html/build/ewall',
 <<<<<<< HEAD
+<<<<<<< HEAD
         outDir: './resources/dist',
 =======
 <<<<<<< HEAD
@@ -20,6 +21,9 @@ export default defineConfig({
         outDir: './resources/dist',
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+        outDir: './resources/dist',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         emptyOutDir: false,
         manifest: 'manifest.json',
         //rollupOptions: {
@@ -39,6 +43,7 @@ export default defineConfig({
             // buildDirectory: 'assets/',
             input: [
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
                 //__dirname + '/Resources/sass/app.scss',
@@ -48,6 +53,8 @@ export default defineConfig({
                 //__dirname + '/Resources/css/filament/theme.css'
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 //__dirname + '/resources/sass/app.scss',
                 //__dirname + '/resources/scss/app-mix.scss',
                 __dirname + '/resources/css/app.css',
@@ -55,9 +62,12 @@ export default defineConfig({
                 // Aggiungiamo i CSS di Filament
                 //__dirname + '/vendor/filament/**/*.css',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             ],
             refresh: [
                 ...refreshPaths,
@@ -66,19 +76,25 @@ export default defineConfig({
         }),
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     resolve: {
         alias: {
             '@': '/resources',
         },
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 });
 
 
@@ -107,6 +123,7 @@ export default getConfig();
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
 var $from = './resources/dist';
 =======
 <<<<<<< HEAD
@@ -115,6 +132,9 @@ var $from = './Resources/dist';
 var $from = './resources/dist';
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+var $from = './resources/dist';
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 var $to = '../../../public_html/themes/Five/dist';
 console.log('from :' + $from);
 console.log('to :' + $to);

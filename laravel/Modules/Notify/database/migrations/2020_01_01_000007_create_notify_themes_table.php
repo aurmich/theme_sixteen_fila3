@@ -9,7 +9,12 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class CreateThemesTable.
  */
+<<<<<<< HEAD
 return new class () extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     // use XotBaseMigrationTrait;
     /**
      * Run the migrations.

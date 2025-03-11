@@ -58,11 +58,16 @@ class ListPages extends XotBaseListRecords
     }
 
     /**
+<<<<<<< HEAD
      * @return array<string, Tables\Columns\Column>
+=======
+     * @return array<string, \Filament\Tables\Columns\Column>
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      */
     public function getListTableColumns(): array
     {
         return [
+<<<<<<< HEAD
             'id' => TextColumn::make('id'),
             'title' => TextColumn::make('title')
                 ->searchable()
@@ -71,6 +76,16 @@ class ListPages extends XotBaseListRecords
                 ->searchable()
                 ->sortable(),
             'updated_at' => TextColumn::make('updated_at')
+=======
+            'id' => Tables\Columns\TextColumn::make('id'),
+            'title' => Tables\Columns\TextColumn::make('title')
+                ->searchable()
+                ->sortable(),
+            'lang' => Tables\Columns\TextColumn::make('lang')
+                ->searchable()
+                ->sortable(),
+            'updated_at' => Tables\Columns\TextColumn::make('updated_at')
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 ->sortable()
                 ->dateTime(),
         ];

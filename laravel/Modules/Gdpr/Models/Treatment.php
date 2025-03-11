@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Gdpr\Models;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Support\Carbon;
@@ -18,6 +19,11 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Support\Carbon;
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Support\Carbon;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 /**
  * Modules\Gdpr\Models\Treatment.
@@ -30,6 +36,7 @@ use Illuminate\Support\Carbon;
  * @property string|null                     $documentVersion
  * @property string|null                     $documentUrl
  * @property int                             $weight
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -137,6 +144,8 @@ use Illuminate\Support\Carbon;
  * @property ProfileContract|null $updater
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  * @property Carbon|null                     $created_at
  * @property Carbon|null                     $updated_at
  *
@@ -155,9 +164,12 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Treatment                                 whereUpdatedAt($value)
  * @method static Builder|Treatment                                 whereWeight($value)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  *
  * @mixin \Eloquent
  */
@@ -165,6 +177,7 @@ class Treatment extends BaseModel
 {
     use HasUuids;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -174,6 +187,8 @@ class Treatment extends BaseModel
     protected $fillable = [''];
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     protected $fillable = [
         'active',
         'required',
@@ -187,7 +202,10 @@ class Treatment extends BaseModel
     // protected $table = 'treatment';
     public $incrementing = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

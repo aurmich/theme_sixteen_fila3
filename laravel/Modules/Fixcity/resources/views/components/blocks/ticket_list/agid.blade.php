@@ -9,12 +9,15 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Modules\Fixcity\Enums\TicketStatusEnum;
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 new class extends Component
 {
@@ -41,6 +44,7 @@ new class extends Component
     {
         $this->resolvedTicketsCount = Ticket::query()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
             ->where(function ($q) {
@@ -65,14 +69,19 @@ new class extends Component
 
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             ->where('created_at', '>=', Carbon::now()->subMonths(12))
             ->count();
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     public function loadMore()
     {
         $this->perPage += 3;
@@ -134,6 +143,7 @@ new class extends Component
         $categories = collect(TicketTypeEnum::cases())->map(function ($type) {
             $count = Ticket::where('type', $type->value)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
                 ->where(function ($q) {
@@ -144,6 +154,8 @@ new class extends Component
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 ->where('created_at', '>=', Carbon::now()->subMonths(12))
                 ->count();
 
@@ -156,6 +168,7 @@ new class extends Component
 
         $query = Ticket::query()
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
 =======
 <<<<<<< HEAD
@@ -164,6 +177,9 @@ new class extends Component
             ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+            ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             ->with('media')
             ->latest();
 
@@ -264,6 +280,7 @@ new class extends Component
                         <x-filament::section>
                             <div class="space-y-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
                                 <a target="_blank" href="{{ route('ticket.view', ['slug' => $ticket->slug]) }}">
@@ -274,14 +291,19 @@ new class extends Component
                                     <p><strong>{{ $ticket->type?->getLabel() }}</strong></p>
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                                 <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
                                 <div class="space-y-2">
                                     <p>Tipologia di segnalazione</p>
                                     <p><strong>{{ $ticket->type?->getLabel() ?? 'Non specificato' }}</strong></p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                                 </div>
                                 @if(in_array($ticket->id, $expandedTickets))
                                 <div class="space-y-4">
@@ -393,6 +415,7 @@ new class extends Component
     </div>
 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <script>
@@ -420,4 +443,6 @@ new class extends Component
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 @endvolt

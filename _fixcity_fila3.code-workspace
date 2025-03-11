@@ -9,6 +9,7 @@
 		"editor.formatOnSave": true,
 		"editor.parameterHints.enabled": false,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		"better-phpunit.phpunitBinary": "phpunit",
 		"editor.formatOnSave": true,
@@ -17,6 +18,8 @@
 		"editor.formatOnSave": true,
 		"editor.parameterHints.enabled": false,
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 		"php-cs-fixer.onsave": true,
 		"php-cs-fixer.formatHtml": true,
 		"php-cs-fixer.config": ".php-cs-fixer.php",
@@ -32,10 +35,14 @@
 		"phpformatter.composer": true,
 		"editor.defaultFormatter": "junstyle.php-cs-fixer",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 		"editor.semanticTokenColorCustomizations": true,
 		"[php]": {
 			"editor.defaultFormatter": "junstyle.php-cs-fixer"
 		},
+<<<<<<< HEAD
 =======
 		"[php]": {
 			"editor.defaultFormatter": "junstyle.php-cs-fixer"
@@ -44,6 +51,8 @@
 			"semanticHighlighting": true
 		},
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 		"vscode-php-cs-fixer.useCache": true,
 		"editor.wordWrapColumn": 120,
 		"files.eol": "\n",

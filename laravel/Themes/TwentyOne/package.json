@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     "copy": "cp -r ./Resources/dist/* ../../../public_html/themes/TwentyOne/dist"
@@ -21,6 +22,8 @@
     "flowbite": "^2.3.0",
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     "copy": "cp -r ./resources/dist/* ../../../public_html/themes/TwentyOne/dist"
   },
   "devDependencies": {
@@ -30,9 +33,12 @@
     "axios": "^1.6.8",
     "flowbite": "^2.5.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     "i": "^0.3.7",
     "laravel-vite-plugin": "^1.0.1",
     "npm": "^10.5.2",
@@ -40,6 +46,7 @@
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^12.1.1",
     "swiper": "^11.1.1",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "tailwindcss": "^3.4.16",
     "vanilla-cookieconsent": "^3.0.1",
@@ -55,6 +62,11 @@
     "vite": "^5.4.2"
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+    "tailwindcss": "^3.4.16",
+    "vanilla-cookieconsent": "^3.0.1",
+    "vite": "^5.4.2"
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
   },
   "dependencies": {
     "@alpinejs/focus": "^3.13.8",

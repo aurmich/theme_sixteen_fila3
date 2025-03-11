@@ -40,7 +40,11 @@ while IFS= read -r line; do
 done < "$CONFIG_FILE"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo "✅ Tutti i git subtree sono stati aggiornati e sincronizzati con successo!"
 =======
 echo "✅ Tutti i git subtree sono stati aggiornati e sincronizzati con successo!"
 >>>>>>> origin/master
+=======
+echo "✅ Tutti i git subtree sono stati aggiornati e sincronizzati con successo!"
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

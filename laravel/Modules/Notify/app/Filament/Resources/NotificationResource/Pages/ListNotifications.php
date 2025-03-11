@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources\NotificationResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Tables;
+=======
+use Filament\Actions\CreateAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Filament\Tables\Columns\TextColumn;
 use Modules\Notify\Filament\Resources\NotificationResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -39,6 +45,7 @@ class ListNotifications extends XotBaseListRecords
         ];
     }
 
+<<<<<<< HEAD
     public function getTableFilters(): array
     {
         return [
@@ -56,6 +63,32 @@ class ListNotifications extends XotBaseListRecords
                     'error' => 'Error',
                 ])
                 ->multiple(),
+=======
+    /**
+     * Undocumented function
+     *
+     * @return array<\Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
+     */
+    public function getTableActions(): array
+    {
+        return [
+            EditAction::make()
+                ->label(''),
+        ];
+    }
+
+    public function getTableBulkActions(): array
+    {
+        return [
+            DeleteBulkAction::make(),
+        ];
+    }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ];
     }
 }

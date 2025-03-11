@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources;
 
+<<<<<<< HEAD
 use Filament\Forms;
+=======
+use Filament\Forms\Components\TextInput;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Modules\Xot\Filament\Resources\CacheLockResource\Pages;
 use Modules\Xot\Models\CacheLock;
 
@@ -12,6 +16,7 @@ class CacheLockResource extends XotBaseResource
 {
     protected static ?string $model = CacheLock::class;
 
+<<<<<<< HEAD
     /**
      * Get the form schema for the resource.
      *
@@ -28,6 +33,22 @@ class CacheLockResource extends XotBaseResource
                 ->maxLength(255),
             'expiration' => Forms\Components\DateTimePicker::make('expiration')
                 ->required(),
+=======
+    public static function getFormSchema(): array
+    {
+        return [
+            TextInput::make('key')
+                ->required()
+                ->maxLength(255),
+
+            TextInput::make('owner')
+                ->required()
+                ->maxLength(255),
+
+            TextInput::make('expiration')
+                ->required()
+                ->numeric(),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ];
     }
 

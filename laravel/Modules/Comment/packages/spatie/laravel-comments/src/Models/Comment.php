@@ -3,6 +3,7 @@
 namespace Spatie\Comments\Models;
 
 use Carbon\Carbon;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,6 +21,25 @@ use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 use Spatie\Comments\Notifications\PendingCommentNotification;
 use Spatie\Comments\Support\CommentatorProperties;
 use Spatie\Comments\Support\Config;
+=======
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
+use Spatie\Comments\Support\Config;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Builder;
+use Spatie\Comments\Models\Concerns\HasComments;
+use Spatie\Comments\Support\CommentatorProperties;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
+use Spatie\Comments\Notifications\PendingCommentNotification;
+use Spatie\Comments\Exceptions\CannotSendPendingCommentNotification;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
 /**
  * @property int $id

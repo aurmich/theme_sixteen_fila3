@@ -28,7 +28,11 @@ class SmsService
     public static function getInstance(): self
     {
         if (! self::$instance instanceof self) {
+<<<<<<< HEAD
             self::$instance = new self();
+=======
+            self::$instance = new self;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         }
 
         return self::$instance;

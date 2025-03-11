@@ -14,6 +14,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+<<<<<<< HEAD
 use Webmozart\Assert\Assert;
 
 use function Safe\file_get_contents;
@@ -32,6 +33,22 @@ class FineTuning extends Page
 
     public string $dataset = 'dataset1';
 
+=======
+
+use function Safe\file_get_contents;
+
+use Webmozart\Assert\Assert;
+
+class FineTuning extends Page
+{
+    protected static ?string $navigationIcon = 'heroicon-o-cog';
+    protected static string $view = 'ai::filament.pages.fine-tuning';
+
+    public string $learning_rate = '0.001';
+    public int $batch_size = 32;
+    public int $epochs = 10;
+    public string $dataset = 'dataset1';
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     /** @var TemporaryUploadedFile */
     public $dataset_file;
 
@@ -117,7 +134,11 @@ class FineTuning extends Page
         Assert::string($content = file_get_contents($dataset_file));
 
         return Http::attach('dataset_file', $content, basename($dataset_file))
+<<<<<<< HEAD
             ->post($endpoint, $data);
+=======
+        ->post($endpoint, $data);
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     }
 
     /**

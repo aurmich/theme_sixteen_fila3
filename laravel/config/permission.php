@@ -1,8 +1,13 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
+=======
+return [
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     'models' => [
         /*
          * When using the "HasPermissions" trait from this package, we need to know which
@@ -28,6 +33,10 @@ return [
     ],
 
     'table_names' => [
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         /*
          * When using the "HasRoles" trait from this package, we need to know which
          * table should be used to retrieve your roles. We have chosen a basic
@@ -73,8 +82,13 @@ return [
         /*
          * Change this if you want to name the related pivots other than defaults
          */
+<<<<<<< HEAD
         'role_pivot_key' => null, // default 'role_id',
         'permission_pivot_key' => null, // default 'permission_id',
+=======
+        'role_pivot_key' => null, //default 'role_id',
+        'permission_pivot_key' => null, //default 'permission_id',
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
         /*
          * Change this if you want to name the related model primary key other than
@@ -159,12 +173,20 @@ return [
     /* Cache-specific settings */
 
     'cache' => [
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         /*
          * By default all permissions are cached for 24 hours to speed up performance.
          * When permissions or roles are updated the cache is flushed automatically.
          */
 
+<<<<<<< HEAD
         'expiration_time' => DateInterval::createFromDateString('24 hours'),
+=======
+        'expiration_time' => \DateInterval::createFromDateString('24 hours'),
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
         /*
          * The cache key used to store all permissions.

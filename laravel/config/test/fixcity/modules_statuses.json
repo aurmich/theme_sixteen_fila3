@@ -14,10 +14,14 @@
     "Limesurvey": true,
     "Activity": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
     "Geo": true,
 =======
     "Geo":true,
 >>>>>>> origin/master
+=======
+    "Geo": true,
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     "User": true,
     "Setting": true,
     "BarberShop": true,
@@ -32,10 +36,16 @@
     "Shop": true,
     "Ticket": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
     "Rating": true,
     "Fixcity": true,
     "Comment": true
 =======
     "Fixcity": true
 >>>>>>> origin/master
+=======
+    "Rating": true,
+    "Fixcity": true,
+    "Comment": true
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

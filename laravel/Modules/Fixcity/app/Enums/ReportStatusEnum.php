@@ -14,7 +14,11 @@ enum ReportStatusEnum: string
 
     public function label(): string
     {
+<<<<<<< HEAD
         return match ($this) {
+=======
+        return match($this) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             self::PENDING => 'In attesa',
             self::VERIFIED => 'Verificato',
             self::IN_PROGRESS => 'In lavorazione',
@@ -25,7 +29,11 @@ enum ReportStatusEnum: string
 
     public function color(): string
     {
+<<<<<<< HEAD
         return match ($this) {
+=======
+        return match($this) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             self::PENDING => 'warning',
             self::VERIFIED => 'info',
             self::IN_PROGRESS => 'primary',
@@ -33,4 +41,8 @@ enum ReportStatusEnum: string
             self::REJECTED => 'danger'
         };
     }
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)

@@ -20,6 +20,7 @@ class TemporaryUploadResource extends XotBaseResource
 {
     protected static ?string $model = TemporaryUpload::class;
 
+<<<<<<< HEAD
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function getFormSchema(): array
@@ -45,6 +46,14 @@ class TemporaryUploadResource extends XotBaseResource
     {
         return [
         ];
+=======
+    public static function getFormSchema(): array
+    {
+        return
+                [
+                ]
+        ;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     }
 
     /**

@@ -70,11 +70,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
 <<<<<<< HEAD
+<<<<<<< HEAD
             // 'model' => Modules\User\Models\User::class,
             'model' => Modules\Fixcity\Models\User::class,
 =======
             'model' => Modules\User\Models\User::class,
 >>>>>>> origin/master
+=======
+            // 'model' => Modules\User\Models\User::class,
+            'model' => Modules\Fixcity\Models\User::class,
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
         ],
 
         // 'users' => [

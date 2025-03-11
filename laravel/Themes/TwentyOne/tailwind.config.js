@@ -5,6 +5,7 @@ export default {
 		"./storage/framework/views/*.php",
 		"./resources/views/**/*.blade.php",
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"./resources/views/**/*.blade.php",
 		"../../Modules/**/Filament/**/*.php",
 		"../../Modules/resources/views/**/*.blade.php",
@@ -19,6 +20,11 @@ export default {
 		"../../Modules/resources/views/**/*.blade.php",
 >>>>>>> c544fb4580 (Merge commit '18b8a43387ec0e43ffbd378b65d7fcd266562aab' as 'laravel/Themes/Sixteen')
 >>>>>>> origin/master
+=======
+		"./resources/views/**/*.blade.php",
+		"../../Modules/**/Filament/**/*.php",
+		"../../Modules/resources/views/**/*.blade.php",
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 		"../../resources/views/filament/**/*.blade.php",
 		"../../vendor/filament/**/*.blade.php",
 		"../../resources/views/**/*.blade.php",

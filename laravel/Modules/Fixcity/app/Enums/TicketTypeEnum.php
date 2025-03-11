@@ -172,7 +172,11 @@ enum TicketTypeEnum: string implements HasColor, HasIcon, HasLabel
 
     public function label(): string
     {
+<<<<<<< HEAD
         return match ($this) {
+=======
+        return match($this) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             self::ROAD_MAINTENANCE => trans('fixcity::ticket.fields.type.options.road_maintenance'),
             self::PUBLIC_LIGHTING => trans('fixcity::ticket.fields.type.options.public_lighting'),
             self::WASTE_COLLECTION => trans('fixcity::ticket.fields.type.options.waste_collection'),

@@ -7,7 +7,10 @@ namespace Modules\AI\Actions;
 use Modules\AI\Contracts\SentimentAnalyzer;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use function Safe\error_log;
 
 class BasicSentimentAnalyzer implements SentimentAnalyzer
@@ -22,14 +25,24 @@ class BasicSentimentAnalyzer implements SentimentAnalyzer
         $negativeCount = 0;
 
         foreach ($positiveWords as $word) {
+<<<<<<< HEAD
             if (stripos($text, $word) !== false) {
                 $positiveCount++;
+=======
+            if (false !== stripos($text, $word)) {
+                ++$positiveCount;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             }
         }
 
         foreach ($negativeWords as $word) {
+<<<<<<< HEAD
             if (stripos($text, $word) !== false) {
                 $negativeCount++;
+=======
+            if (false !== stripos($text, $word)) {
+                ++$negativeCount;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             }
         }
 
@@ -68,8 +81,13 @@ class SentimentAction
     public function __construct()
     {
         $this->analyzer = class_exists('Codewithkyrian\Transformers\Transformers')
+<<<<<<< HEAD
             ? new TransformersSentimentAnalyzer
             : new BasicSentimentAnalyzer;
+=======
+            ? new TransformersSentimentAnalyzer()
+            : new BasicSentimentAnalyzer();
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     }
 
     public function execute(string $prompt): array
@@ -103,7 +121,11 @@ class TransformersSentimentAnalyzer implements SentimentAnalyzer
              * @var \Codewithkyrian\Transformers\Transformers|null $transformers
              */
             $transformersClass = 'Codewithkyrian\Transformers\Transformers';
+<<<<<<< HEAD
             if (! method_exists($transformersClass, 'setup')) {
+=======
+            if (!method_exists($transformersClass, 'setup')) {
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
                 throw new \Exception('Transformers setup method not found');
             }
 

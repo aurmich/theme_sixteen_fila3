@@ -97,7 +97,14 @@ class MenuResource extends \Modules\Xot\Filament\Resources\XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
    
+=======
+    public static function form(Form $form): Form
+    {
+        return $form->schema(static::getFormSchema());
+    }
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 
     // public static function table(Table $table): Table
     // {

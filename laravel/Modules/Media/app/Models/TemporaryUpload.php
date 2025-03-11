@@ -35,6 +35,7 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereSessionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereUpdatedAt($value)
  *
+<<<<<<< HEAD
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property string|null $deleted_at
@@ -45,6 +46,8 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereDeletedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereUpdatedBy($value)
  *
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
  * @mixin \Eloquent
  */
 class TemporaryUpload extends Model implements HasMedia

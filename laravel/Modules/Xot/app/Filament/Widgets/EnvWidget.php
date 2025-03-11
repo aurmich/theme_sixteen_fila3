@@ -27,9 +27,12 @@ class EnvWidget extends Widget implements HasForms
 
     public array $only = [];
 
+<<<<<<< HEAD
     /**
      * @var view-string
      */
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     protected static string $view = 'xot::filament.widgets.env';
 
     public function mount(): void
@@ -96,9 +99,12 @@ class EnvWidget extends Widget implements HasForms
 
         return $fields;
     }
+<<<<<<< HEAD
 
     public static function canView(): bool
     {
         return true;
     }
+=======
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

@@ -6,6 +6,10 @@ namespace Modules\Cms\Filament\Resources;
 
 use Filament\Forms;
 // use Modules\Cms\Filament\Resources\PageContentResource\RelationManagers;
+<<<<<<< HEAD
+=======
+use Filament\Forms\Form;
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 // use Filament\Forms;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Support\Str;

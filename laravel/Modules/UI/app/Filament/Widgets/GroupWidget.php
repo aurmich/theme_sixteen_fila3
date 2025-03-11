@@ -11,4 +11,8 @@ class GroupWidget extends XotBaseWidget
     public array $widgets = [];
 
     protected static ?string $pollingInterval = null;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 }

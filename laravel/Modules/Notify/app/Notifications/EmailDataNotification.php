@@ -35,7 +35,11 @@ class EmailDataNotification extends Notification
      */
     public function toMail(mixed $notifiable): MailMessage
     {
+<<<<<<< HEAD
         $mailMessage = (new MailMessage())
+=======
+        $mailMessage = (new MailMessage)
+>>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
             ->subject($this->emailData->subject)
             ->line($this->emailData->body);
 
