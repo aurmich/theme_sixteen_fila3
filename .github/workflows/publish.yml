@@ -30,7 +30,11 @@ jobs:
       run: cd docs && npm run prod
 
     - name: CNAME
+<<<<<<< HEAD
       run: cd docs && echo "laraxot.github.io/module_xot_fila3" > ./build_production/CNAME
+=======
+      run: cd docs && echo "laraxot.github.io/module_job" > ./build_production/CNAME
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@latest

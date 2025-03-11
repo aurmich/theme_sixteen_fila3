@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -31,10 +32,33 @@
     "authors": [
         {
             "name": "marco sottana",
+=======
+    "name": "laraxot/module_job_fila3",
+    "description": "job module enables efficient background task execution. It lets you offload resource-heavy processes, like sending emails or data processing, improving app performance. Through simple job definition and dispatching, you can enhance user experience while tasks run seamlessly in the background.",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_job",
+        "Laravel",
+        "Job module",
+        "background tasks",
+        "app performance",
+        "email sending",
+        "data processing",
+        "user experience"
+    ],
+    "homepage": "https://github.com/laraxot/module_job_fila3.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
             "email": "marco.sottana@gmail.com",
             "role": "Developer"
         }
     ],
+<<<<<<< HEAD
     "require": {
         "php": "^8.2",
         "calebporzio/sushi": "^2.5",
@@ -95,21 +119,35 @@
         
     },
     "repositories": [
+=======
+    "require": {},
+    "require-dev": {},
+    "repositories_comment": [
+        {
+            "type": "path",
+            "url": "../User"
+        },
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
             "url": "./packages/coolsam/panel-modules"
         },
         {
             "type": "composer",
             "url": "https://packagist.org"
+=======
+            "url": "../Xot"
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
         }
     ],
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "Modules\\Xot\\": "app/",
             "Modules\\Xot\\Database\\Factories\\": "database/factories/",
             "Modules\\Xot\\Database\\Seeders\\": "database/seeders/",
@@ -121,6 +159,15 @@
         ]
     },
     "scripts": {
+=======
+            "Modules\\Job\\": "app/",
+            "Modules\\Job\\Database\\Factories\\": "database/factories/",
+            "Modules\\Job\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump1": "@php ./vendor/bin/testbench package:discover --ansi",
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
@@ -138,14 +185,23 @@
     "extra": {
         "laravel": {
             "providers": [
+<<<<<<< HEAD
                 "Modules\\Xot\\Providers\\XotServiceProvider",
                 "Modules\\Xot\\Providers\\Filament\\ModulesServiceProvider",
                 "Modules\\Xot\\Providers\\Filament\\AdminPanelProvider"
+=======
+                "Modules\\Job\\Providers\\JobServiceProvider",
+                "Modules\\Job\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
             ],
             "aliases": {}
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+<<<<<<< HEAD
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
 }
+=======
+}
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)

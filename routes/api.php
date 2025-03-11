@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,7 +19,11 @@ declare(strict_types=1);
 |
 */
 /*
+<<<<<<< HEAD
 Route::middleware('auth:api')->get('/xot', function (Request $request) {
     return $request->user();
 });
+=======
+Route::middleware('auth:api')->get('/job', fn(Request $request) => $request->user());
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 */

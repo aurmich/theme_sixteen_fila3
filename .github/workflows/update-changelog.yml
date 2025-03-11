@@ -4,6 +4,12 @@ on:
   release:
     types: [released]
 
+<<<<<<< HEAD
+=======
+permissions:
+  contents: write
+
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 jobs:
   update:
     runs-on: ubuntu-latest

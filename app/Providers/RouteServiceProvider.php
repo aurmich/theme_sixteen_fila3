@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -20,11 +21,21 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     public string $name = 'Xot';
 
     protected string $moduleNamespace = 'Modules\Xot\Http\Controllers';
+=======
+namespace Modules\Job\Providers;
+
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
+
+class RouteServiceProvider extends XotBaseRouteServiceProvider
+{
+    protected string $moduleNamespace = 'Modules\Job\Http\Controllers';
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
+<<<<<<< HEAD
     public function boot(): void
     {
         parent::boot();
@@ -114,4 +125,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     }
 
     // end registerRoutePattern
+=======
+    public string $name = 'Job';
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 }

@@ -10,9 +10,12 @@ $finder = PhpCsFixer\Finder::create()
     ->ignoreDotFiles(true)
     ->ignoreVCS(true)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ;
 =======
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
+=======
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 
 $config = new PhpCsFixer\Config();
 
@@ -41,8 +44,11 @@ $config
     ])
     ->setFinder($finder)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ;
 =======
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
+=======
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 
 return $config;

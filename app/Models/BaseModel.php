@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -10,6 +11,13 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
+=======
+namespace Modules\Job\Models;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -32,6 +40,7 @@ abstract class BaseModel extends Model
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
     public $incrementing = true;
 
     public $timestamps = true;
@@ -39,12 +48,35 @@ abstract class BaseModel extends Model
     protected $perPage = 30;
 
     protected $connection = 'xot';
+=======
+    /** @var bool */
+    public $incrementing = true;
+
+    /** @var bool */
+    public $timestamps = true;
+
+    /** @var int */
+    protected $perPage = 30;
+
+    /** @var string */
+    protected $connection = 'job';
+
+    /** @var string|null */
+    protected $prefix;
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 
     /** @var list<string> */
     protected $fillable = ['id'];
 
+<<<<<<< HEAD
     protected $primaryKey = 'id';
 
+=======
+    /** @var string */
+    protected $primaryKey = 'id';
+
+    /** @var string */
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -52,6 +84,7 @@ abstract class BaseModel extends Model
         // 'password'
     ];
 
+<<<<<<< HEAD
     /**
      * Create a new factory instance for the model.
      *
@@ -67,6 +100,34 @@ abstract class BaseModel extends Model
     protected function casts(): array
     {
         return [
+=======
+    public function __construct(array $attributes = [])
+    {
+        if (isset($this->prefix)) {
+            $this->table = $this->prefix.$this->table;
+        }
+
+        parent::__construct($attributes);
+    }
+
+    /**
+     * ----
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
+     */
+    protected static function newFactory()
+    {
+        return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
+    }
+
+    /** @return array<string, string> */
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string',
+>>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
             'published_at' => 'datetime',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
