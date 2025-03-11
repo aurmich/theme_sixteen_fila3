@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Performance Bottlenecks Analysis
 
 ## Query Bottlenecks
@@ -263,10 +264,44 @@ public function handleChunkedUpload($file) {
         ->each(fn($chunk) => 
             $this->processChunk($chunk)
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+# GDPR Module Performance Bottlenecks
+
+## Data Management
+
+### 1. Personal Data Processing
+File: `app/Services/PersonalDataService.php`
+
+**Bottlenecks:**
+- Scansione dati sincrona
+- Query non ottimizzate per dati personali
+- Export dati bloccante
+
+**Soluzioni:**
+```php
+// 1. Scansione asincrona
+class ScanPersonalDataJob implements ShouldQueue {
+    public function handle() {
+        return $this->tables
+            ->chunk(10)
+            ->each(fn($chunk) => 
+                $this->scanTablesForPII($chunk)
+            );
+    }
+}
+
+// 2. Query ottimizzate
+protected function findPersonalData($user) {
+    return DB::tables($this->gdprTables)
+        ->lazyById(1000)
+        ->through(fn($record) => 
+            $this->extractPersonalData($record)
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
         );
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### 2. Job Processing
 File: `app/Services/JobProcessingService.php`
@@ -410,20 +445,78 @@ public function storeFile($file) {
                 $this->getPath($file),
                 $file,
                 $this->generateFileName($file)
+=======
+### 2. Data Anonymization
+File: `app/Services/AnonymizationService.php`
+
+**Bottlenecks:**
+- Anonymization sincrona
+- Processo non reversibile
+- Lock durante anonymization
+
+**Soluzioni:**
+```php
+// 1. Anonymization asincrona
+public function anonymizeData($user) {
+    return DB::transaction(function() use ($user) {
+        return $this->personalData($user)
+            ->chunk(100)
+            ->each(fn($chunk) => 
+                $this->queueAnonymization($chunk)
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
             );
     });
 }
 
+<<<<<<< HEAD
 // 2. Cache per file frequenti
 public function serveFile($path) {
     return Cache::remember(
         "file_serve_{$path}",
         now()->addMinutes(30),
         fn() => $this->getOptimizedFile($path)
+=======
+// 2. Processo ottimizzato
+protected function performAnonymization($data) {
+    return parallel()->map($data, function($item) {
+        return $this->anonymizeItem($item);
+    });
+}
+```
+
+## Consent Management
+
+### 1. Consent Tracking
+File: `app/Services/ConsentService.php`
+
+**Bottlenecks:**
+- Validazione consenso sincrona
+- Cache non utilizzato per preferenze
+- Query ripetitive
+
+**Soluzioni:**
+```php
+// 1. Consent caching
+public function getUserConsent($user) {
+    return Cache::tags(['consent'])
+        ->remember("consent_{$user->id}", 
+            now()->addHour(),
+            fn() => $this->fetchUserConsent($user)
+        );
+}
+
+// 2. Validazione ottimizzata
+protected function validateConsent($consent) {
+    return Cache::remember(
+        "validation_".md5(json_encode($consent)),
+        now()->addMinutes(5),
+        fn() => $this->performValidation($consent)
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     );
 }
 ```
 
+<<<<<<< HEAD
 ## Media Library Management
 
 ### 1. Media Collections
@@ -486,6 +579,36 @@ protected function handleConversion($media) {
         return $this->performConversion($media);
     }, 100);
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+## Data Export
+
+### 1. Export Processing
+File: `app/Services/DataExportService.php`
+
+**Bottlenecks:**
+- Export sincrono di dati grandi
+- Memoria insufficiente per export completi
+- Nessun feedback progresso
+
+**Soluzioni:**
+```php
+// 1. Export asincrono
+class QueuedDataExport implements ShouldQueue {
+    public function handle() {
+        return (new GdprExport($this->userId))
+            ->chunk(1000)
+            ->queue("exports/user_{$this->userId}.zip");
+    }
+}
+
+// 2. Export ottimizzato
+protected function exportUserData($user) {
+    return LazyCollection::make(function() use ($user) {
+        yield from $this->getUserData($user);
+    })->through(fn($data) => 
+        $this->formatForExport($data)
+    );
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 }
 ```
 
@@ -493,6 +616,7 @@ protected function handleConversion($media) {
 
 ### 1. Performance Metrics
 Monitorare:
+<<<<<<< HEAD
 <<<<<<< HEAD
 - Queue length
 - Processing time
@@ -516,10 +640,16 @@ Implementare:
 - Tempo di upload
 - Tempo di processing
 - Utilizzo storage
+=======
+- Tempo scansione dati
+- Export completion time
+- Anonymization speed
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 - Cache hit ratio
 
 ### 2. Alerting
 Alert per:
+<<<<<<< HEAD
 - Upload falliti
 - Conversioni fallite
 - Storage pieno
@@ -532,11 +662,25 @@ Implementare:
 - Performance profiling
 - Storage statistics
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+- Export failures
+- Consent issues
+- Data breaches
+- Processing errors
+
+### 3. Logging
+Implementare:
+- Compliance logging
+- Error tracking
+- Access logging
+- Processing audit
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 
 ## Immediate Actions
 
 1. **Implementare Caching:**
    ```php
+<<<<<<< HEAD
 <<<<<<< HEAD
    // Cache per job status
    public function getJobStatus($id) {
@@ -552,10 +696,19 @@ Implementare:
                now()->addHour(),
                fn() => $this->fetchMedia($id)
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+   // Cache per consensi
+   public function getConsentSettings($user) {
+       return Cache::tags(['gdpr_settings'])
+           ->remember("settings_{$user->id}", 
+               now()->addHour(),
+               fn() => $this->fetchSettings($user)
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
            );
    }
    ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 2. **Ottimizzare Code:**
    ```php
@@ -576,12 +729,23 @@ Implementare:
                $this->compressFiles($chunk)
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
            );
+=======
+2. **Ottimizzare Query:**
+   ```php
+   // Query ottimizzate
+   public function findUserData($user) {
+       return DB::table('personal_data')
+           ->where('user_id', $user->id)
+           ->select(['id', 'type', 'value'])
+           ->lazyById(1000);
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
    }
    ```
 
 3. **Gestione Memoria:**
    ```php
    // Gestione efficiente memoria
+<<<<<<< HEAD
 <<<<<<< HEAD
    public function processJobBatch() {
        return LazyCollection::make(function () {
@@ -592,12 +756,21 @@ Implementare:
            yield from $this->getMediaFiles();
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
        })->chunk(100)
+=======
+   public function processDataBatch() {
+       return LazyCollection::make(function () {
+           yield from $this->getDataIterator();
+       })->chunk(1000)
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
          ->each(fn($chunk) => 
              $this->processChunk($chunk)
          );
    }
    ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)

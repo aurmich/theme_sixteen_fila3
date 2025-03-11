@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -255,15 +256,34 @@ package-lock.json
 .git-blame-ignore-revs
 *.phar
 .php-cs-fixer.cache
+=======
+.git-blame-ignore-revs
+/vendor
+/build
+*.lock
+.git-rewrite
+.php-cs-fixer.cache
+*.phar
+.php-cs-fixer.cache
+*.lock
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 .git-blame-ignore-revs
 package-lock.json
 .php-cs-fixer.cache
 package-lock.json
 .git-rewrite/
+<<<<<<< HEAD
+=======
+.php-cs-fixer.cache
+node_modules
+/*.cache
+.git-blame-ignore-revs
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 node_modules
 vendor
 .php-cs-fixer.cache
 .git-blame-ignore-revs
+<<<<<<< HEAD
 vendor/
 build/
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
@@ -435,10 +455,13 @@ vendor
 =======
 .git-blame-ignore-revs
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 build/
 vendor/
 build/
 node_modules
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -535,3 +558,8 @@ Homestead.json
 *.swo
 .php-cs-fixer.cache
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+docs/cache/
+cache/
+.php-cs-fixer.cache
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)

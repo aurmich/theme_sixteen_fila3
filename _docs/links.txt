@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://betterprogramming.pub/laravel-fail-retry-or-delay-a-queued-job-from-itself-41e0bb14440c
 
 
@@ -78,3 +79,10 @@ https://codebrisk.com/blog/laravel-url-redirects-with-optional-protected-url-pas
 composer require yorcreative/laravel-urlshortener
 ---------------------------------------------------------------------------------------------------
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+https://github.com/maize-tech/laravel-legal-consent
+
+
+https://github.com/foothing/laravel-gdpr-consent
+
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)

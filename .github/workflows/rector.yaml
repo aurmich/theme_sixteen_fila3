@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 name: rector
 on: [push]
 
@@ -20,6 +21,8 @@ jobs:
               with:
                 commit_message: rector
 =======
+=======
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 # Inspiration https://github.com/symplify/symplify/blob/main/.github/workflows/rector.yaml
 name: Rector
  
@@ -50,5 +53,9 @@ jobs:
           author_name: "GitHub Action"
           author_email: "action@github.com"
         env:
+<<<<<<< HEAD
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)

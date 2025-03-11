@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -63,11 +64,17 @@ use Filament\Panel;
 declare(strict_types=1);
 
 namespace Modules\UI\Providers\Filament;
+=======
+declare(strict_types=1);
+
+namespace Modules\Gdpr\Providers\Filament;
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 
 use Filament\Panel;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
+<<<<<<< HEAD
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 =======
 declare(strict_types=1);
@@ -76,10 +83,13 @@ namespace Modules\Activity\Providers\Filament;
 
 use Filament\Panel;
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,10 +103,14 @@ class AdminPanelProvider extends XotBasePanelProvider
 =======
     protected string $module = 'Media';
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+    protected string $module = 'Gdpr';
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 
     public function panel(Panel $panel): Panel
     {
         $panel = parent::panel($panel);
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         FilamentView::registerRenderHook(
@@ -212,4 +226,13 @@ class AdminPanelProvider extends XotBasePanelProvider
         return $panel;
     }
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+        FilamentAsset::register([
+            Css::make('gdpr-styles', asset('/vendor/cookie-consent/css/cookie-consent.css')),
+            // Js::make('gdpr-scripts', __DIR__.'/../../resources/dist/assets/app2.js'),
+        ], 'gdpr');
+
+        return $panel;
+    }
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 }

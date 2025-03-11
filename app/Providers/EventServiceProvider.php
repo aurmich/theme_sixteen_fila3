@@ -9,6 +9,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 =======
 namespace Modules\Job\Providers;
@@ -34,6 +35,11 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventSer
 use Modules\Activity\Listeners\LoginListener;
 use Modules\Activity\Listeners\LogoutListener;
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+namespace Modules\Gdpr\Providers;
+
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 
 class EventServiceProvider extends BaseEventServiceProvider
 {
@@ -42,6 +48,7 @@ class EventServiceProvider extends BaseEventServiceProvider
      *
      * @var array<string, array<int, string>>
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected $listen = [];
 =======
@@ -54,6 +61,9 @@ class EventServiceProvider extends BaseEventServiceProvider
         ],
     ];
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+    protected $listen = [];
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 
     /**
      * Indicates if events should be discovered.
@@ -65,6 +75,7 @@ class EventServiceProvider extends BaseEventServiceProvider
     /**
      * Configure the proper event listeners for email verification.
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -136,4 +147,9 @@ class EventServiceProvider extends ServiceProvider
 =======
     protected function configureEmailVerification(): void {}
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+    protected function configureEmailVerification(): void
+    {
+    }
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 }

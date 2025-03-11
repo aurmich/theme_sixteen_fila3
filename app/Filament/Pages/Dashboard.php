@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Job\Filament\Pages;
@@ -195,4 +196,17 @@ class Dashboard extends BaseBashboard
     //     ActivityEvent::dispatch();
     // }
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+declare(strict_types=1);
+
+namespace Modules\Gdpr\Filament\Pages;
+
+use Filament\Pages\Dashboard as BaseDashboard;
+
+class Dashboard extends BaseDashboard
+{
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    // protected static string $view = 'gdpr::filament.pages.dashboard';
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 }

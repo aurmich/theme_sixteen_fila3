@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Soluzioni Tecniche - Modulo Xot
 
 ## Problemi Identificati e Soluzioni
@@ -91,10 +92,79 @@ trait HasXotTable {
     public function scopeOptimized($query) {
         return $query->with($this->getDefaultEagerLoads())
                     ->useIndex($this->getOptimalIndex());
+=======
+# Soluzioni Tecniche - Modulo GDPR
+
+## Problemi Identificati e Soluzioni
+
+### 1. Gestione Consensi (`Modules/Gdpr/Actions/ManageConsentAction.php`)
+```php
+// Problema: Gestione consensi non ottimizzata
+public function execute(User $user, array $consents) {
+    // Gestione sincrona dei consensi
+}
+
+// Soluzione proposta:
+public function execute(User $user, array $consents): void {
+    DB::transaction(function() use ($user, $consents) {
+        $this->processConsents($user, $consents);
+        $this->dispatchConsentEvents($user, $consents);
+    });
+}
+
+private function processConsents(User $user, array $consents): void {
+    collect($consents)
+        ->chunk(100)
+        ->each(function($chunk) use ($user) {
+            $this->updateUserConsents($user, $chunk);
+        });
+}
+
+private function dispatchConsentEvents(User $user, array $consents): void {
+    ConsentUpdated::dispatch($user, $consents);
+}
+```
+
+### 2. Anonimizzazione Dati (`Modules/Gdpr/Actions/AnonymizeUserDataAction.php`)
+```php
+// Problema: Processo di anonimizzazione non efficiente
+public function execute(User $user) {
+    // Anonimizzazione sincrona che può bloccare
+}
+
+// Soluzione proposta:
+class AnonymizeUserDataAction {
+    public function execute(User $user): string {
+        $job = new ProcessUserAnonymization($user);
+        $this->dispatch($job);
+        
+        return $job->getJobId();
+    }
+}
+
+class ProcessUserAnonymization implements ShouldQueue {
+    use InteractsWithQueue, Queueable;
+    
+    public function handle() {
+        return DB::transaction(function() {
+            $this->anonymizeUserData();
+            $this->anonymizeRelatedData();
+            $this->createAnonymizationLog();
+        });
+    }
+    
+    private function anonymizeUserData(): void {
+        $this->user->update([
+            'email' => $this->generateAnonymousEmail(),
+            'name' => 'Anonymous User',
+            // Altri campi da anonimizzare
+        ]);
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
+<<<<<<< HEAD
 ### 2. File Processing
 ```php
 // In: Modules/Xot/Jobs/ProcessFileUpload.php
@@ -291,22 +361,63 @@ class RetryManager {
             'attempt' => $job->attempts,
             'delay' => $delay
         ]);
+=======
+### 3. Log Accessi (`Modules/Gdpr/Services/AccessLogService.php`)
+```php
+// Problema: Logging accessi non ottimizzato
+public function logAccess($user, $data) {
+    // Log sincrono che può rallentare
+}
+
+// Soluzione proposta:
+class AccessLogService {
+    public function logAccess(User $user, array $data): void {
+        $logData = $this->prepareLogData($user, $data);
+        
+        Queue::push(new ProcessAccessLog($logData));
+    }
+    
+    private function prepareLogData(User $user, array $data): array {
+        return [
+            'user_id' => $user->id,
+            'ip_address' => request()->ip(),
+            'user_agent' => request()->userAgent(),
+            'accessed_data' => $data,
+            'timestamp' => now()
+        ];
+    }
+}
+
+class ProcessAccessLog implements ShouldQueue {
+    public function handle() {
+        AccessLog::create($this->logData);
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
 ## Ottimizzazioni Database
 
+<<<<<<< HEAD
 ### 1. Indici e Struttura
 ```sql
 -- In: database/migrations/optimize_job_tables.php
 CREATE INDEX jobs_status_type_idx ON jobs (status, type, created_at);
 CREATE INDEX job_logs_job_id_idx ON job_logs (job_id, created_at);
 CREATE INDEX failed_jobs_queue_idx ON failed_jobs (queue) WHERE queue = 'default';
+=======
+### 1. Indici Ottimizzati
+```sql
+-- In: database/migrations/optimize_gdpr_tables.php
+CREATE INDEX consent_logs_user_idx ON consent_logs (user_id, created_at);
+CREATE INDEX access_logs_user_idx ON access_logs (user_id, accessed_at);
+CREATE INDEX data_deletion_requests_status_idx ON data_deletion_requests (status, created_at);
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 ```
 
 ### 2. Query Optimization
 ```php
+<<<<<<< HEAD
 // In: Modules/Job/Models/Job.php
 class Job extends Model {
     public function scopeActive($query) {
@@ -320,6 +431,23 @@ class Job extends Model {
         return $query->where('status', 'failed')
                     ->with('failureLog')
                     ->orderBy('failed_at', 'desc');
+=======
+// In: Modules/Gdpr/Traits/HasGdprLogs.php
+trait HasGdprLogs {
+    public function scopeWithGdprData($query) {
+        return $query->with([
+            'consentLogs' => fn($q) => $q->latest()->limit(10),
+            'accessLogs' => fn($q) => $q->latest()->limit(10),
+            'deletionRequests' => fn($q) => $q->pending()
+        ]);
+    }
+    
+    public function scopePendingDeletions($query) {
+        return $query->whereHas('deletionRequests', function($q) {
+            $q->where('status', 'pending')
+              ->where('created_at', '<=', now()->subDays(30));
+        });
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
@@ -328,6 +456,7 @@ class Job extends Model {
 
 ### 1. Cache Configuration
 ```php
+<<<<<<< HEAD
 // In: Modules/Job/Config/cache.php
 return [
     'ttl' => [
@@ -339,12 +468,26 @@ return [
         'jobs',
         'stats',
         'config'
+=======
+// In: Modules/Gdpr/Config/cache.php
+return [
+    'ttl' => [
+        'user_consents' => 3600,    // 1 hour
+        'privacy_policy' => 86400,   // 24 hours
+        'access_logs' => 1800       // 30 minutes
+    ],
+    'tags' => [
+        'consents',
+        'policies',
+        'logs'
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     ]
 ];
 ```
 
 ### 2. Cache Implementation
 ```php
+<<<<<<< HEAD
 // In: Modules/Job/Services/JobCacheService.php
 class JobCacheService {
     public function getJobStatus(string $jobId): ?array {
@@ -386,12 +529,28 @@ class QueueRateLimitService {
     public function trackJobProcessing(string $queue): void {
         Redis::incr("queue:{$queue}:processed");
         Redis::expire("queue:{$queue}:processed", 3600);
+=======
+// In: Modules/Gdpr/Services/ConsentCacheService.php
+class ConsentCacheService {
+    public function getUserConsents(User $user): Collection {
+        return Cache::tags(['consents', "user_{$user->id}"])
+            ->remember(
+                "user_consents_{$user->id}",
+                config('gdpr.cache.ttl.user_consents'),
+                fn() => $this->fetchUserConsents($user)
+            );
+    }
+    
+    public function invalidateUserConsents(User $user): void {
+        Cache::tags(['consents', "user_{$user->id}"])->flush();
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
 ## Monitoring
 
+<<<<<<< HEAD
 ### 1. Queue Monitoring
 ```php
 // In: Modules/Job/Monitoring/QueueMonitor.php
@@ -412,10 +571,32 @@ class QueueMonitor {
                 ]);
             }
         });
+=======
+### 1. Compliance Monitor
+```php
+// In: Modules/Gdpr/Monitoring/ComplianceMonitor.php
+class ComplianceMonitor {
+    public function checkCompliance(): array {
+        return [
+            'consent_coverage' => $this->checkConsentCoverage(),
+            'data_retention' => $this->checkDataRetention(),
+            'access_logs' => $this->checkAccessLogs(),
+            'anonymization' => $this->checkAnonymization()
+        ];
+    }
+    
+    private function checkConsentCoverage(): array {
+        return User::whereDoesntHave('consents')
+            ->orWhereHas('consents', function($q) {
+                $q->where('updated_at', '<=', now()->subYear());
+            })
+            ->count();
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Best Practices Implementative
 
@@ -485,12 +666,26 @@ class JobHealthCheck extends Check {
         
         return Result::ok();
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+### 2. Audit Logging
+```php
+// In: Modules/Gdpr/Services/AuditService.php
+class AuditService {
+    public function logGdprEvent(string $event, array $data): void {
+        Log::channel('gdpr_audit')->info($event, [
+            'data' => $data,
+            'user_id' => auth()->id(),
+            'ip' => request()->ip(),
+            'timestamp' => now()
+        ]);
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
 ## Testing
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### 1. Unit Tests
 ```php
@@ -519,10 +714,31 @@ class ProcessJobTest extends TestCase {
         
         Queue::assertPushedOn('high', ProcessHighPriorityJob::class);
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+### 1. Compliance Tests
+```php
+// In: Modules/Gdpr/Tests/Compliance/ConsentComplianceTest.php
+class ConsentComplianceTest extends TestCase {
+    public function test_consent_requirements() {
+        $user = User::factory()->create();
+        
+        $this->assertFalse(
+            app(ComplianceChecker::class)->isCompliant($user),
+            'User should not be compliant without consents'
+        );
+        
+        $this->addRequiredConsents($user);
+        
+        $this->assertTrue(
+            app(ComplianceChecker::class)->isCompliant($user),
+            'User should be compliant after adding required consents'
+        );
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### 2. Performance Tests
 ```php
@@ -552,12 +768,30 @@ class RetryTest extends TestCase {
             'attempts' => 1
         ]);
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+### 2. Anonymization Tests
+```php
+// In: Modules/Gdpr/Tests/Feature/AnonymizationTest.php
+class AnonymizationTest extends TestCase {
+    public function test_user_anonymization() {
+        $user = User::factory()->create();
+        $originalData = $user->toArray();
+        
+        app(AnonymizeUserDataAction::class)->execute($user);
+        
+        $user->refresh();
+        
+        $this->assertNotEquals($originalData['email'], $user->email);
+        $this->assertEquals('Anonymous User', $user->name);
+        $this->assertNull($user->phone);
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     }
 }
 ```
 
 ## Note di Implementazione
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 1. Tutte le modifiche devono essere testate in ambiente di staging
 2. Implementare gradualmente partendo dalle priorità più alte
@@ -583,3 +817,22 @@ class RetryTest extends TestCase {
    - Review configurazioni
    - Aggiornamento strategie retry 
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+1. Priorità di Intervento:
+   - Ottimizzazione gestione consensi
+   - Miglioramento processo di anonimizzazione
+   - Implementazione logging efficiente
+   - Monitoraggio compliance
+
+2. Monitoraggio:
+   - Implementare audit trail completo
+   - Monitorare tempi di risposta
+   - Verificare compliance periodicamente
+   - Analizzare pattern di accesso
+
+3. Manutenzione:
+   - Pulizia log periodica
+   - Verifica consensi scaduti
+   - Aggiornamento policy
+   - Review sicurezza 
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)

@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <psalm
     errorLevel="1"
+<<<<<<< HEAD
      cacheDirectory="build/psalm"
     errorBaseline="psalm-baseline.xml"
+=======
+    cacheDirectory="build/psalm"
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -17,14 +21,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
         <directory name="."/>
         <ignoreFiles>
             <directory name="build" />
             <directory name="vendor" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             <directory name="Services/vendor" />
@@ -65,6 +73,9 @@
             <directory name="vendor"/>
             <directory name="docs"/>
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+            <directory name="docs" />
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
         </ignoreFiles>
     </projectFiles>
     <plugins>

@@ -13,6 +13,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- Cubo base -->
     <path stroke-linecap="round" 
           stroke-linejoin="round" 
@@ -163,4 +164,39 @@
           stroke-linejoin="round" 
           d="M17 12l2-2m-2 2l-2-2" />
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+    <style>
+        @keyframes shield-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        @keyframes lock-click {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-1px); }
+        }
+        .shield { animation: shield-pulse 2s ease-in-out infinite; }
+        .lock { animation: lock-click 1.5s ease-in-out infinite; }
+    </style>
+    
+    <!-- Scudo -->
+    <path class="shield"
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M12 3c-1.5 0-8 1.5-8 1.5v7c0 4.5 3 8.5 8 10.5 5-2 8-6 8-10.5v-7S13.5 3 12 3z" />
+    
+    <!-- Lucchetto -->
+    <g class="lock">
+        <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              d="M11 12a1 1 0 011-1h0a1 1 0 011 1v2a1 1 0 01-1 1h0a1 1 0 01-1-1v-2z" />
+        <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              d="M9 11v-1a3 3 0 116 0v1" />
+    </g>
+
+    <!-- Simbolo GDPR (paragrafo) -->
+    <path stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M12 8.5c-.5-.5-2-.5-2 .5s2 1 2 2c0 .5-.5 1-1 1" />
+>>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 </svg> 
