@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = {
 =======
 export default {
@@ -8,6 +9,9 @@ export default {
 =======
 module.exports = {
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+module.exports = {
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
   content: [],
   theme: {
     extend: {},

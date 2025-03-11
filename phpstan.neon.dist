@@ -26,6 +26,10 @@ parameters:
         - ./docs/*
         - ./Tests/*
         - ./_ide_helper.php
+<<<<<<< HEAD
+=======
+        - ./rector.php
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 
     bootstrapFiles:
         #- ./Services/vendor/autoload.php

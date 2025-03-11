@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Job\Filament\Pages;
@@ -16,6 +17,11 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Pages;
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+declare(strict_types=1);
+
+namespace Modules\Tenant\Filament\Pages;
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 
 use Filament\Pages\Page;
 
@@ -23,6 +29,7 @@ class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     protected static string $view = 'job::filament.pages.dashboard';
@@ -111,4 +118,7 @@ class Dashboard extends BaseBashboard
         */
     }
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+    protected static string $view = 'tenant::filament.pages.dashboard';
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 }

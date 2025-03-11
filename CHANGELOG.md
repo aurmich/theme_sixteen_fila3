@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Changelog del Modulo Xot
 
 ## Versione Attuale (10/2023)
@@ -18,3 +19,12 @@
 ---
 
 *Ultimo aggiornamento: 10/2023*
+=======
+# Changelog
+
+All notable changes to `:package_name` will be documented in this file.
+
+## 1.0.0 - 202X-XX-XX
+
+- initial release
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)

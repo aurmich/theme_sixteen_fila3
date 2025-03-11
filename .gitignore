@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -305,6 +306,8 @@ vendor/
 vendor/
 vendor/*
 =======
+=======
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 /vendor/
 vendor/
 node_modules/
@@ -334,6 +337,7 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
+<<<<<<< HEAD
 
 *.stackdump
 *.cache
@@ -364,18 +368,41 @@ vendor
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 .php-cs-fixer.cache
 .git-blame-ignore-revs
+=======
+*.stackdump
+*.log
+.git-rewrite
+/docs/package-lock.json
+/build
+.git-blame-ignore-revs
+.php-cs-fixer.cache
+.git-rewrite/
+.php-cs-fixer.cache
+node_modules
+.git-blame-ignore-revs
+.git-blame-ignore-revs
+node_modules
+vendor
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 build/
 vendor/
 build/
 node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 =======
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+./node_modules/
+node_modules/
+node_modules/*
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -410,3 +437,8 @@ build
 .php-cs-fixer.cache
 *:Zone.Identifier
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+*.exe
+*:Zone.Identifier
+*:Zone.Identifier
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)

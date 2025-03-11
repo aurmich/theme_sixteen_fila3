@@ -3,6 +3,7 @@
 declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 // use Modules\User\Http\Controllers\Api\UserController;
 
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /*
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Route::middleware('auth:api')->get('/xot', function (Request $request) {
@@ -118,3 +123,9 @@ Route::middleware('guest')->group(function () {
 });
 */
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+Route::middleware('auth:api')->get('/tenant', function (Request $request) {
+    return $request->user();
+});
+*/
+>>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
