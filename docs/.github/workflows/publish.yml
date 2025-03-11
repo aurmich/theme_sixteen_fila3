@@ -5,12 +5,19 @@ on:
     branches:
       - master
 
+<<<<<<< HEAD
 permissions:
+=======
+permissions: 
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
   contents: write
 
 jobs:
   build:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
     runs-on: ubuntu-latest
 
@@ -26,6 +33,7 @@ jobs:
 
     - name: Node
       run: npm install
+<<<<<<< HEAD
 
     - name: Production
       run: npm run prod
@@ -78,3 +86,17 @@ jobs:
           folder: build_production
           clean: true
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+      
+    - name: Production
+      run: npm run prod
+      
+    - name: CNAME
+      run: echo "privacyfed.github.io/doc_extrafield" > ./build_production/CNAME
+
+    - name: gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.2
+      with:
+        branch: gh-pages
+        folder: build_production
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

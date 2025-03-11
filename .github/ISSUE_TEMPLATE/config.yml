@@ -3,6 +3,7 @@ contact_links:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - name: Ask a question
       url: https://github.com/laraxot/module_xot/discussions/new?category=q-a
       about: Ask the community for help
@@ -33,3 +34,14 @@ contact_links:
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    - name: Ask a question
+      url: https://github.com/laraxot/module_lang/discussions/new?category=q-a
+      about: Ask the community for help
+    - name: Request a feature
+      url: https://github.com/laraxot/module_lang/discussions/new?category=ideas
+      about: Share ideas for new features
+    - name: Report a bug
+      url: https://github.com/laraxot/module_lang/issues/new
+      about: Report a reproducable bug
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

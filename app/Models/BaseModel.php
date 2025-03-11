@@ -9,6 +9,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Models;
 
 // use Laravel\Scout\Searchable;
@@ -17,10 +18,18 @@ namespace Modules\Xot\Models;
 namespace Modules\Media\Models;
 
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+namespace Modules\Lang\Models;
+
+// use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+// use Laravel\Scout\Searchable;
+// ---------- traits
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 namespace Modules\Job\Models;
@@ -75,10 +84,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Traits\Updater;
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+use Modules\Xot\Traits\Updater;
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
 /**
  * Class BaseModel.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -112,12 +125,15 @@ abstract class BaseModel extends Model
     use HasFactory;
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 abstract class BaseModel extends Model
 {
     use HasFactory;
 
     // use Searchable;
     // use Cachable;
+<<<<<<< HEAD
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 =======
 abstract class BaseModel extends Model
@@ -126,17 +142,24 @@ abstract class BaseModel extends Model
     // //use Cachable;
     use HasFactory;
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
+<<<<<<< HEAD
      * @see https://laravel-news.com/6-eloquent-secrets
+=======
+     * @see  https://laravel-news.com/6-eloquent-secrets
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
      *
      * @var bool
      */
     public static $snakeAttributes = true;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,6 +188,8 @@ abstract class BaseModel extends Model
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     /** @var bool */
     public $incrementing = true;
 
@@ -180,15 +205,20 @@ abstract class BaseModel extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected $connection = 'job';
 
     /** @var string|null */
     protected $prefix;
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+    protected $connection = 'lang';
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
     /** @var list<string> */
     protected $fillable = ['id'];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected $primaryKey = 'id';
 
@@ -227,10 +257,13 @@ abstract class BaseModel extends Model
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     /** @var string */
     protected $primaryKey = 'id';
 
     /** @var string */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -253,6 +286,8 @@ abstract class BaseModel extends Model
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     protected $keyType = 'string';
 
     /** @var list<string> */
@@ -260,6 +295,7 @@ abstract class BaseModel extends Model
         // 'password'
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -328,11 +364,14 @@ abstract class BaseModel extends Model
 =======
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     /**
      * Create a new factory instance for the model.
      *
      * @return Factory
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
@@ -429,4 +468,19 @@ abstract class BaseModel extends Model
         ];
     }
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    protected static function newFactory()
+    {
+        return app(GetFactoryAction::class)->execute(static::class);
+    }
+
+    /**
+     * @return array<string, string> */
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+    }
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 }

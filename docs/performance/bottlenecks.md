@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Performance Bottlenecks Analysis
 
 ## Query Bottlenecks
@@ -409,10 +410,152 @@ public function processImage($image) {
         "image_process_{$image->id}",
         now()->addHour(),
         fn() => $this->optimizeImage($image)
+=======
+# Lang Module Performance Bottlenecks
+
+## Translation Management
+
+### 1. AutoLabelAction
+File: `app/Actions/Filament/AutoLabelAction.php`
+
+**Bottlenecks:**
+- Generazione ripetitiva di chiavi di traduzione
+- Lookup inefficiente nei file di traduzione
+- Cache non utilizzato per chiavi frequenti
+
+**Soluzioni:**
+```php
+// 1. Cache per chiavi frequenti
+public function execute($object_class) {
+    $cacheKey = "translation_key_".md5($object_class);
+    return Cache::tags(['translations'])
+        ->remember($cacheKey, now()->addDay(), 
+            fn() => $this->generateTransKey($object_class)
+        );
+}
+
+// 2. Ottimizzare lookup
+protected function findTranslation($key) {
+    return LazyCollection::make(function() {
+        yield from $this->getTranslationFiles();
+    })->first(fn($file) => 
+        isset($file[$key])
+    );
+}
+```
+
+### 2. Translation Loading
+File: `app/Services/TranslationLoaderService.php`
+
+**Bottlenecks:**
+- Caricamento di tutte le traduzioni in memoria
+- File scanning inefficiente
+- Nessuna cache per file di traduzione
+
+**Soluzioni:**
+```php
+// 1. Lazy loading traduzioni
+public function loadTranslations($locale) {
+    return new LazyCollection(function() use ($locale) {
+        yield from $this->scanTranslationFiles($locale);
+    });
+}
+
+// 2. Cache file traduzioni
+protected function getTranslationFile($locale, $group) {
+    $cacheKey = "trans_{$locale}_{$group}";
+    return Cache::remember($cacheKey, now()->addHour(), 
+        fn() => $this->loadTranslationFile($locale, $group)
+    );
+}
+```
+
+## Filament Integration
+
+### 1. Label Generation
+File: `app/Services/FilamentLabelService.php`
+
+**Bottlenecks:**
+- Generazione label per ogni campo
+- Lookup ripetitivo nelle traduzioni
+- Nessuna cache per label comuni
+
+**Soluzioni:**
+```php
+// 1. Cache per label comuni
+public function generateLabel($field, $resource) {
+    $cacheKey = "label_{$resource}_{$field}";
+    return Cache::tags(['filament_labels'])
+        ->remember($cacheKey, now()->addHour(), 
+            fn() => $this->buildLabel($field, $resource)
+        );
+}
+
+// 2. Batch label generation
+public function generateLabels($fields, $resource) {
+    return collect($fields)
+        ->mapWithKeys(fn($field) => [
+            $field => $this->generateLabel($field, $resource)
+        ])
+        ->filter();
+}
+```
+
+## Translation File Management
+
+### 1. File Operations
+File: `app/Services/TranslationFileService.php`
+
+**Bottlenecks:**
+- I/O sincrono per operazioni file
+- Parsing inefficiente dei file
+- Nessun controllo concorrenza
+
+**Soluzioni:**
+```php
+// 1. Operazioni file ottimizzate
+public function writeTranslations($locale, $group, $translations) {
+    return DB::transaction(function() use ($locale, $group, $translations) {
+        $this->acquireLock("trans_{$locale}_{$group}");
+        $this->writeTranslationFile($locale, $group, $translations);
+        $this->releaseLock("trans_{$locale}_{$group}");
+    });
+}
+
+// 2. Parsing efficiente
+protected function parseTranslationFile($content) {
+    return Cache::remember(
+        "parse_".md5($content),
+        now()->addMinutes(30),
+        fn() => $this->doParseFile($content)
+    );
+}
+```
+
+## Memory Management
+
+### 1. Translation Registry
+File: `app/Services/TranslationRegistryService.php`
+
+**Bottlenecks:**
+- Memoria eccessiva per registry completo
+- Caricamento non necessario di traduzioni
+- Gestione inefficiente delle varianti
+
+**Soluzioni:**
+```php
+// 1. Registry ottimizzato
+public function registerTranslations() {
+    return LazyCollection::make(function() {
+        yield from $this->getTranslationPaths();
+    })->each(fn($path) => 
+        $this->registerPath($path)
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     );
 }
 
 // 2. Gestione memoria efficiente
+<<<<<<< HEAD
 protected function optimizeImage($image) {
     return Image::make($image->path)
         ->batch(function($image) {
@@ -610,12 +753,24 @@ protected function exportUserData($user) {
     );
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
 }
+=======
+protected function loadTranslations($path) {
+    return new LazyCollection(function() use ($path) {
+        $handle = fopen($path, 'r');
+        while (($line = fgets($handle)) !== false) {
+            yield $this->parseLine($line);
+        }
+        fclose($handle);
+    });
+}
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 ```
 
 ## Monitoring Recommendations
 
 ### 1. Performance Metrics
 Monitorare:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - Queue length
@@ -675,11 +830,32 @@ Implementare:
 - Access logging
 - Processing audit
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+- Tempo di generazione label
+- Cache hit ratio
+- Memoria utilizzata
+- I/O file
+
+### 2. Alerting
+Alert per:
+- Cache miss eccessivi
+- Memoria alta
+- File lock timeout
+- Errori parsing
+
+### 3. Logging
+Implementare:
+- Translation access logging
+- Performance profiling
+- Error tracking
+- Cache statistics
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
 ## Immediate Actions
 
 1. **Implementare Caching:**
    ```php
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    // Cache per job status
@@ -704,10 +880,19 @@ Implementare:
                now()->addHour(),
                fn() => $this->fetchSettings($user)
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+   // Cache strategico
+   public function getTranslation($key, $locale) {
+       return Cache::tags(['translations'])
+           ->remember("{$locale}.{$key}", 
+               now()->addDay(),
+               fn() => $this->lookupTranslation($key, $locale)
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
            );
    }
    ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 2. **Ottimizzare Code:**
@@ -739,12 +924,24 @@ Implementare:
            ->select(['id', 'type', 'value'])
            ->lazyById(1000);
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+2. **Ottimizzare File Operations:**
+   ```php
+   // File operations ottimizzate
+   public function updateTranslations($translations) {
+       return collect($translations)
+           ->chunk(100)
+           ->each(fn($chunk) => 
+               $this->writeTranslationChunk($chunk)
+           );
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
    }
    ```
 
 3. **Gestione Memoria:**
    ```php
    // Gestione efficiente memoria
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    public function processJobBatch() {
@@ -774,3 +971,12 @@ Implementare:
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+   public function processTranslations() {
+       return LazyCollection::make(function () {
+           yield from $this->getTranslationIterator();
+       })->remember()
+         ->chunk(1000);
+   }
+   ```
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

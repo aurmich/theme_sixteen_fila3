@@ -1,10 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 name: PHPStan
 
 on:
@@ -14,11 +17,15 @@ on:
       - 'phpstan.neon.dist'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
   pull_request:
     paths:
       - '**.php'
       - 'phpstan.neon.dist'
 
+<<<<<<< HEAD
 =======
 name: Static Analysis
 
@@ -28,6 +35,8 @@ on: [push]
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
 jobs:
   phpstan:
@@ -40,6 +49,7 @@ jobs:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: shivammathur/setup-php@v2
 =======
         uses: shivammathur/setup-php@latest
@@ -47,11 +57,15 @@ jobs:
 =======
         uses: shivammathur/setup-php@latest
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+        uses: shivammathur/setup-php@v2
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
         with:
           php-version: '8.1'
           coverage: none
 
       - name: Install composer dependencies
+<<<<<<< HEAD
         uses: ramsey/composer-install@latest
 
 <<<<<<< HEAD
@@ -82,3 +96,9 @@ jobs:
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+        uses: ramsey/composer-install@v2
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan --error-format=github
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

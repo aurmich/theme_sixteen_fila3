@@ -10,6 +10,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -51,11 +52,15 @@ namespace Modules\Activity\Providers;
 =======
 namespace Modules\Gdpr\Providers;
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+namespace Modules\Lang\Providers;
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -95,11 +100,18 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 =======
     protected string $moduleNamespace = 'Modules\Gdpr\Http\Controllers';
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     */
+    protected string $moduleNamespace = 'Modules\Lang\Http\Controllers';
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,10 +146,25 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         // $router->pushMiddlewareToGroup('api', \Spatie\ResponseCache\Middlewares\CacheResponse::class);
         $router->prependMiddlewareToGroup('web', SetDefaultTenantForUrlsMiddleware::class);
         $router->prependMiddlewareToGroup('api', SetDefaultTenantForUrlsMiddleware::class);
+=======
+    public string $name = 'Lang';
+
+    public function boot(): void
+    {
+        parent::boot();
+        $this->registerLang();
+    }
+
+    public function register(): void
+    {
+        parent::register();
+        // $this->registerLang();
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     }
 
     public function registerLang(): void
     {
+<<<<<<< HEAD
         $langs = ['it', 'en'];
         $user = request()->user();
         $lang = app()->getLocale();
@@ -155,10 +182,32 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
         if (\in_array(request()->segment(1), $langs, false)) {
             $lang = request()->segment(1);
+=======
+        $locales = config('laravellocalization.supportedLocales');
+        if (! \is_array($locales)) {
+            $locales = ['it' => 'it', 'en' => 'en'];
+        }
+        $langs = array_keys($locales);
+
+        /*
+        if (! \is_array($langs)) {
+            throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
+        }
+        \getRouteParameters();
+        */
+        $n = 1;
+        if (inAdmin()) {
+            $n = 3;
+        }
+
+        if (\in_array(request()->segment($n), $langs, false)) {
+            $lang = request()->segment($n);
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
             if (null !== $lang) {
                 app()->setLocale($lang);
             }
         }
+<<<<<<< HEAD
 
         URL::defaults([
             // 'tenant' => Filament::getTenant(),
@@ -221,4 +270,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 =======
     public string $name = 'Gdpr';
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    }
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 }

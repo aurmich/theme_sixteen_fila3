@@ -7,6 +7,7 @@ on:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 permissions:
 =======
 permissions: 
@@ -14,6 +15,9 @@ permissions:
 =======
 permissions: 
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+permissions:
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
   contents: write
 
 jobs:
@@ -35,11 +39,15 @@ jobs:
       run: cd docs && npm install
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
     - name: Production
       run: cd docs && npm run prod
 
     - name: CNAME
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,6 +82,12 @@ jobs:
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@latest
+=======
+      run: cd docs && echo "laraxot.github.io/module_lang" > ./build_production/CNAME
+
+    - name: gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4.5
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
       with:
         branch: gh-pages
         folder: ./docs/build_production

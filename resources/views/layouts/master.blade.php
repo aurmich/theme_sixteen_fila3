@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 =======
@@ -117,11 +118,25 @@
 
     {{-- Vite CSS --}}
     {{-- {{ module_vite('build-media', 'resources/assets/sass/app.scss') }} --}}
+=======
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Module Lang</title>
+
+    {{-- Laravel Mix - CSS File --}}
+    {{-- <link rel="stylesheet" href="{{ mix('css/lang.css') }}"> --}}
+
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 </head>
 
 <body>
     @yield('content')
 
+<<<<<<< HEAD
     {{-- Vite JS --}}
     {{-- {{ module_vite('build-media', 'resources/assets/js/app.js') }} --}}
 </body>
@@ -156,3 +171,10 @@
     </body>
 </html>
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    {{-- Laravel Mix - JS File --}}
+    {{-- <script src="{{ mix('js/lang.js') }}"></script> --}}
+</body>
+
+</html>
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

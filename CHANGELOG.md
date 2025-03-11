@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Changelog del Modulo Xot
 
 ## Versione Attuale (10/2023)
@@ -23,6 +24,8 @@
 =======
 =======
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.
@@ -31,6 +34,9 @@ All notable changes to `:package_name` will be documented in this file.
 
 - initial release
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

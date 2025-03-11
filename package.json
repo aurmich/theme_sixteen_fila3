@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
@@ -91,6 +92,8 @@
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     "private": true,
     "scripts": {
         "development": "mix",
@@ -98,6 +101,7 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "production": "mix --production"
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     "private": true,
@@ -124,10 +128,20 @@
 =======
         "cross-env": "^7.0",
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/typography": "^0.5.10",
+        "autoprefixer": "^10.4.17",
+        "axios": "^1.6.7",
+        "cross-env": "^7.0",
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
         "laravel-mix": "^6.0.49",
         "laravel-mix-merge-manifest": "^0.1.2",
         "laravel-vite-plugin": "^1.0.1",
         "lodash": "^4.17.21",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "postcss": "^8.4.38",
         "postcss-nesting": "^12.1.4",
@@ -185,4 +199,12 @@
     "vite": "^3.2.8"
   }
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+        "postcss": "^8.4.33",
+        "postcss-nesting": "^13.0.0",
+        "tailwindcss": "^3.4.1",
+        "tippy.js": "^6.3.7",
+        "vite": "^5.4.1"
+    }
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 }

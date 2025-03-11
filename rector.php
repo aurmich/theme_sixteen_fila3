@@ -9,6 +9,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Rector\Config\RectorConfig;
 <<<<<<< HEAD
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
@@ -37,11 +38,15 @@ use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -326,3 +331,48 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->importNames();
 };
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+use RectorLaravel\Set\LaravelSetList;
+
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->paths([
+        __DIR__.'/Modules',
+        __DIR__.'/app',
+        __DIR__.'/bootstrap',
+        __DIR__.'/config',
+        __DIR__.'/lang',
+        __DIR__.'/public',
+        __DIR__.'/resources',
+        __DIR__.'/routes',
+        __DIR__.'/tests',
+    ]);
+
+    // register a single rule
+    // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
+    $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
+
+    // define sets of rules
+    $rectorConfig->sets([
+        PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
+        SetList::DEAD_CODE,
+        SetList::CODE_QUALITY,
+        LevelSetList::UP_TO_PHP_81,
+        LaravelSetList::LARAVEL_100,
+        SetList::DEAD_CODE,
+        SetList::NAMING,
+        SetList::TYPE_DECLARATION,
+        SetList::CODING_STYLE,
+        SetList::PRIVATIZATION,
+        SetList::EARLY_RETURN,
+        SetList::INSTANCEOF,
+    ]);
+
+    $rectorConfig->skip([
+        // testdummy files
+        '*/docs',
+        '*/vendor',
+    ]);
+
+    $rectorConfig->importNames();
+};
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

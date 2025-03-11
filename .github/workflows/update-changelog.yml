@@ -9,6 +9,7 @@ on:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 permissions:
   contents: write
@@ -34,12 +35,15 @@ permissions:
   contents: write
 
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,6 +61,9 @@ jobs:
 =======
         uses: actions/checkout@v3
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+        uses: actions/checkout@v3
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
         with:
           ref: main
 
@@ -67,7 +74,11 @@ jobs:
           release-notes: ${{ github.event.release.body }}
 
       - name: Commit updated CHANGELOG
+<<<<<<< HEAD
         uses: stefanzweifel/git-auto-commit-action@latest
+=======
+        uses: stefanzweifel/git-auto-commit-action@v4
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
         with:
           branch: main
           commit_message: Update CHANGELOG

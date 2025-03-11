@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ~~~bash
 git clone --recurse-submodules https://github.com/aurmich/base_fixcity_fila3.git 
 cd base_fixcity_fila3
@@ -558,11 +559,16 @@ Gestione degli utenti, ruoli, permessi tramite l'utilizzo di filament.
 ## Gestione dei ruoli
 ![roles list](docs/img/roles_list.JPG)
 
+=======
+# Module Lang
+Modulo dedicato alla gestione delle traduzioni
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 
 ## Aggiungere Modulo nella base del progetto
 Dentro la cartella laravel/Modules
 
 ```bash
+<<<<<<< HEAD
 git submodule add https://github.com/laraxot/module_user_fila3.git User
 ```
 
@@ -571,17 +577,28 @@ git submodule add https://github.com/laraxot/module_user_fila3.git User
 Stay compliant and secure user trust with **Module GDPR Fila3**! 💥
 ## Verify the Module is Active
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+git submodule add https://github.com/laraxot/module_lang_fila3.git Lang
+```
+
+## Verificare che il modulo sia attivo
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 ```bash
 php artisan module:list
 ```
 in caso abilitarlo
 ```bash
 <<<<<<< HEAD
+<<<<<<< HEAD
 php artisan module:enable User
+=======
+php artisan module:enable Lang
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 ```
 
 ## Eseguire le migrazioni
 ```bash
+<<<<<<< HEAD
 php artisan module:migrate User
 ```
 
@@ -948,3 +965,7 @@ php artisan module:migrate Activity
 php artisan module:migrate Gdpr
 ```
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+php artisan module:migrate Lang
+```
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

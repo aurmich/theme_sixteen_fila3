@@ -11,6 +11,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -74,12 +75,21 @@ return [
         'enabled' => true,
         'sort' => 20,
 >>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
+=======
+    'name' => 'Lang',
+    'description' => 'Modulo per la gestione delle traduzioni e localizzazioni',
+    'icon' => 'heroicon-o-language',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 50,
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -356,5 +366,8 @@ return [
         'email' => env('GDPR_DPO_EMAIL', ''),
         'phone' => env('GDPR_DPO_PHONE', ''),
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+        'Modules\\Lang\\Providers\\LangServiceProvider',
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     ],
 ];

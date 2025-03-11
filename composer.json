@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -371,11 +372,27 @@
     "require": {
         "statikbe/laravel-cookie-consent": "*"
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    "name": "laraxot/module_lang_fila3",
+    "description": "",
+    "license": "MIT",
+    "homepage": "https://github.com/laraxot/module_lang_fila3.git",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        }
+    ],
+    "require": {
+        "mcamara/laravel-localization": "^2.2",
+        "spatie/laravel-sluggable": "*"
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     },
     "require-dev": {},
     "repositories": [
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -399,12 +416,17 @@
             "url": "../Xot"
         },
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+            "url": "../Xot"
+        },
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -420,10 +442,14 @@
 =======
             "url": "../Xot"
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+            "url": "../UI"
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
         }
     ],
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
 <<<<<<< HEAD
             "Modules\\Xot\\": "app/",
             "Modules\\Xot\\Database\\Factories\\": "database/factories/",
@@ -509,10 +535,25 @@
 =======
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+            "Modules\\Lang\\": "app/",
+            "Modules\\Lang\\Database\\Factories\\": "database/factories/",
+            "Modules\\Lang\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [],
+        "post-update-cmd": [],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "./vendor/bin/pest --no-coverage",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -590,10 +631,22 @@
                 "Modules\\Media\\Providers\\MediaServiceProvider",
                 "Modules\\Media\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
+=======
+            "phpstan/extension-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Lang\\Providers\\LangServiceProvider",
+                "Modules\\Lang\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
             ],
             "aliases": {}
         }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "minimum-stability": "dev",
     "prefer-stable": true
@@ -670,3 +723,8 @@
     "prefer-stable": true
 }
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

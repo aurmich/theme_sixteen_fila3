@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 https://gitlab.com/amvisor/filament-failed-jobs/-/blob/master/src/FilamentFailedJobsServiceProvider.php
 
@@ -40,3 +41,11 @@ https://laraveldaily.com/post/filament-activity-logs-three-packages-comparison-r
 https://github.com/andrewdwallo/filament-companies
 
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+https://github.com/statikbe/laravel-filament-chained-translation-manager
+
+https://filamentphp.com/plugins/34ml-translatable-field
+
+
+
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)

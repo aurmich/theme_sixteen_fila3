@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -349,6 +350,8 @@ vendor/*
 =======
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 /vendor/
 vendor/
 node_modules/
@@ -379,12 +382,16 @@ Homestead.json
 .phpunit.result.cache
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 *.stackdump
 *.cache
 *.lock
 package-lock.json
 *.log
+<<<<<<< HEAD
 
 *.lock
 package-lock.json
@@ -457,10 +464,34 @@ vendor
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 =======
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+package-lock.json
+
+
+
+/.git-rewrite
+/build
+.git-blame-ignore-revs
+package-lock.json
+.php-cs-fixer.cache
+package-lock.json
+.git-rewrite/
+.php-cs-fixer.cache
+node_modules
+.git-blame-ignore-revs
+vendor/
+node_modules
+vendor
+/vendor
+vendor/
+.php-cs-fixer.cache
+.git-blame-ignore-revs
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
 build/
 vendor/
 build/
 node_modules
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -563,3 +594,11 @@ docs/cache/
 cache/
 .php-cs-fixer.cache
 >>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+=======
+docs/cache/
+cache/
+*.exe
+
+*:Zone.Identifier
+.php-cs-fixer.cache
+>>>>>>> c1120baae0 (Squashed 'laravel/Modules/Lang/' content from commit 693742e073)
