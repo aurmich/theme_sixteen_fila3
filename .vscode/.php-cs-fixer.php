@@ -1,10 +1,13 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 declare(strict_types=1);
 
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 $finder = PhpCsFixer\Finder::create()
     ->notPath('bootstrap/cache')
     ->notPath('storage')
@@ -14,6 +17,7 @@ $finder = PhpCsFixer\Finder::create()
     ->notName('*.blade.php')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,6 +34,8 @@ $finder = PhpCsFixer\Finder::create()
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
 $config = new PhpCsFixer\Config();
 
@@ -42,10 +48,14 @@ $config
         'declare_strict_types' => true,
         'combine_consecutive_unsets' => true,
 <<<<<<< HEAD
+<<<<<<< HEAD
         //'binary_operator_spaces' => ['align_double_arrow' => false],
 =======
         // 'binary_operator_spaces' => ['align_double_arrow' => false],
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+        //'binary_operator_spaces' => ['align_double_arrow' => false],
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         'array_syntax' => ['syntax' => 'short'],
         'linebreak_after_opening_tag' => true,
         'not_operator_with_successor_space' => true,
@@ -66,6 +76,7 @@ $config
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ;
 =======
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
@@ -81,3 +92,7 @@ return $config;
 
 return $config;
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+
+return $config;
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

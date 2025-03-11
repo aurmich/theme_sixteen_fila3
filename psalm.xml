@@ -15,12 +15,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         <directory name="."/>
         <ignoreFiles>
             <directory name="build" />
             <directory name="vendor" />
+<<<<<<< HEAD
 <<<<<<< HEAD
             <directory name="Services/vendor" />
             <directory name="docs" />
@@ -49,6 +53,9 @@
 =======
             <directory name="docs" />
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+            <directory name="docs" />
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         </ignoreFiles>
     </projectFiles>
     <plugins>

@@ -7,6 +7,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace Modules\Xot\Providers;
 
 use Filament\Facades\Filament;
@@ -39,11 +40,15 @@ namespace Modules\Notify\Providers;
 =======
 namespace Modules\Tenant\Providers;
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+namespace Modules\UI\Providers;
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
 use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,11 +76,15 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
      */
     protected string $moduleNamespace = 'Modules\Tenant\Http\Controllers';
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    protected string $moduleNamespace = 'Modules\UI\Http\Controllers';
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -185,4 +194,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 =======
     public string $name = 'Tenant';
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    public string $name = 'UI';
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 }

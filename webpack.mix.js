@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 const dotenvExpand = require('dotenv-expand');
 dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
@@ -19,11 +20,14 @@ const dotenvExpand = require('dotenv-expand');
 dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/ }));
 
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 const mix = require('laravel-mix');
 require('laravel-mix-merge-manifest');
 
 mix.setPublicPath('../../public').mergeManifest();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -46,6 +50,10 @@ mix.js(__dirname + '/resources/assets/js/app.js', 'js/notify.js')
 mix.js(__dirname + '/resources/assets/js/app.js', 'js/tenant.js')
     .sass(__dirname + '/resources/assets/sass/app.scss', 'css/tenant.css');
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+mix.js(__dirname + '/resources/assets/js/app.js', 'js/blog.js')
+    .sass(__dirname + '/resources/assets/sass/app.scss', 'css/blog.css');
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
 if (mix.inProduction()) {
     mix.version();

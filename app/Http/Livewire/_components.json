@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 []
 =======
 [{"name":"broad","class":"Broad","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Broad"},{"name":"job.status","class":"Job\\Status","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Job\\Status"},{"name":"schedule.crud","class":"Schedule\\Crud","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Schedule\\Crud"},{"name":"schedule.status","class":"Schedule\\Status","module":null,"path":null,"ns":"Modules\\Job\\Http\\Livewire\\Schedule\\Status"}]
@@ -19,3 +20,6 @@
 =======
 []
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+[{"name":"toast","class":"Toast","module":null,"path":null,"ns":"Modules\\UI\\Http\\Livewire\\Toast"}]
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

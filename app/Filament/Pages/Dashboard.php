@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Job\Filament\Pages;
@@ -24,11 +25,20 @@ namespace Modules\Tenant\Filament\Pages;
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
 
 use Filament\Pages\Page;
+=======
+declare(strict_types=1);
+
+namespace Modules\UI\Filament\Pages;
+
+use Filament\Pages\Page;
+use Modules\UI\Filament\Widgets;
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
 class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -121,4 +131,47 @@ class Dashboard extends BaseBashboard
 =======
     protected static string $view = 'tenant::filament.pages.dashboard';
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    protected static string $view = 'ui::filament.pages.dashboard';
+
+    protected function getHeaderWidgets(): array
+    {
+        $widgets = [
+            [
+                'class' => Widgets\TestChartWidget::class,
+                'properties' => [
+                    'qid' => 5,
+                    'max_height' => '900px',
+                    'type' => 'pie',
+                ],
+            ],
+            [
+                'class' => Widgets\TestChartWidget::class,
+                'properties' => [
+                    'qid' => 7,
+                    'type' => 'bar',
+                ],
+            ],
+            [
+                'class' => Widgets\TestChartWidget::class,
+                'properties' => [
+                    'qid' => 9,
+                    'type' => 'bar',
+                ],
+            ],
+        ];
+
+        return [
+            // Widgets\TestChartWidget::make(['qid' => 5]),
+            // Widgets\TestChartWidget::make(['qid' => 6]),
+            // Widgets\StatsOverviewWidget::class,
+
+            Widgets\StatWithIconWidget::make(['label' => 'Unique views', 'value' => '192.1k']),
+            Widgets\TestWidget::make(['widgets' => $widgets]),
+            Widgets\TestWidget::make(['widgets' => $widgets]),
+            Widgets\TestWidget::make(['widgets' => $widgets]),
+            Widgets\TestWidget::make(['widgets' => $widgets]),
+        ];
+    }
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 }

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 name: PHPStan
 
 on:
@@ -6,6 +9,7 @@ on:
     paths:
       - '**.php'
       - 'phpstan.neon.dist'
+<<<<<<< HEAD
   pull_request:
     paths:
       - '**.php'
@@ -16,6 +20,8 @@ name: Static Analysis
 
 on: [push]
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
 jobs:
   phpstan:
@@ -26,7 +32,11 @@ jobs:
 
       - name: Setup PHP
 <<<<<<< HEAD
+<<<<<<< HEAD
         uses: shivammathur/setup-php@v2
+=======
+        uses: shivammathur/setup-php@latest
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         with:
           php-version: '8.1'
           coverage: none
@@ -34,6 +44,7 @@ jobs:
       - name: Install composer dependencies
         uses: ramsey/composer-install@latest
 
+<<<<<<< HEAD
       - name: Install Services composer dependencies
         run: cd Services && composer install --no-progress --no-suggest
 
@@ -52,3 +63,7 @@ jobs:
         run: ./vendor/bin/phpstan --error-format=github
 
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan --error-format=github
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

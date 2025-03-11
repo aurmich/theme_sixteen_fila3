@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = {
 =======
 export default {
@@ -12,6 +13,9 @@ module.exports = {
 =======
 module.exports = {
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+module.exports = {
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
   content: [],
   theme: {
     extend: {},

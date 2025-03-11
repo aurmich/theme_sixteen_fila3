@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 <<<<<<< HEAD
@@ -57,10 +58,21 @@ namespace Modules\Tenant\Providers\Filament;
 
 use Filament\Panel;
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+declare(strict_types=1);
+
+namespace Modules\UI\Providers\Filament;
+
+use Filament\Panel;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -164,4 +176,20 @@ class AdminPanelProvider extends XotBasePanelProvider
         return parent::panel($panel);
     }
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    protected string $module = 'UI';
+
+    public function panel(Panel $panel): Panel
+    {
+        // FilamentAsset::register(
+        //     [
+        //         Css::make('filament-navigation-styles', __DIR__.'/../../resources/dist/plugin.css'),
+        //         Js::make('filament-navigation-scripts', __DIR__.'/../../resources/dist/plugin.js'),
+        //     ],
+        //     'filament-navigation'
+        // );
+
+        return parent::panel($panel);
+    }
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 }

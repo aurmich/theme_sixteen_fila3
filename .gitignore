@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -378,16 +379,47 @@ vendor
 .php-cs-fixer.cache
 .git-rewrite/
 .php-cs-fixer.cache
+=======
+/vendor
+*.lock
+/build
+composer.lock
+composer.lock
+*.lock
+package-lock.json
+.php-cs-fixer.cache
+*.cache
+.git-blame-ignore-revs
+.git-rewrite
+.git-blame-ignore-revs
+*.phar
+.php-cs-fixer.cache
+*.cache
+.git-blame-ignore-revs
+package-lock.json
+.php-cs-fixer.cache
+package-lock.json
+.git-rewrite/
+*.phar
+.git-rewrite/
+.php-cs-fixer.cache
+
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 node_modules
 .git-blame-ignore-revs
 .git-blame-ignore-revs
 node_modules
 vendor
+<<<<<<< HEAD
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+.git-blame-ignore-revs
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 build/
 vendor/
 build/
 node_modules
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
@@ -398,10 +430,13 @@ node_modules
 node_modules/
 node_modules/*
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -442,3 +477,7 @@ build
 *:Zone.Identifier
 *:Zone.Identifier
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+*.exe
+*:Zone.Identifier
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

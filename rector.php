@@ -6,6 +6,7 @@ declare(strict_types=1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Rector\Config\RectorConfig;
 <<<<<<< HEAD
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
@@ -41,21 +42,27 @@ use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
 <<<<<<< HEAD
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
 =======
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector;
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 =======
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths(
         [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,11 +84,15 @@ return static function (RectorConfig $rectorConfig): void {
 =======
             __DIR__,
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+            __DIR__,
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         ]
     );
 
     $rectorConfig->skip(
         [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,11 +119,17 @@ return static function (RectorConfig $rectorConfig): void {
             '*/vendor',
             './vendor/',
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+            '*/docs',
+            '*/vendor',
+            './vendor/',
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         ]
     );
 
     // register a single rule
     // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -127,12 +144,16 @@ return static function (RectorConfig $rectorConfig): void {
     //    ReturnTypeFromStrictNativeCallRector::class,
     //    ReturnTypeFromStrictScalarReturnExprRector::class,
     // ]);
+=======
+    // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     $rectorConfig->rules(
         [
             ReturnTypeFromStrictNativeCallRector::class,
             ReturnTypeFromStrictScalarReturnExprRector::class,
         ]
     );
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 =======
     $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
@@ -140,6 +161,8 @@ return static function (RectorConfig $rectorConfig): void {
 =======
     $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
     // define sets of rules
     $rectorConfig->sets(
@@ -147,13 +170,17 @@ return static function (RectorConfig $rectorConfig): void {
             PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
             // SetList::DEAD_CODE,
             // SetList::CODE_QUALITY,
             LevelSetList::UP_TO_PHP_81,
             LaravelSetList::LARAVEL_100,
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -175,18 +202,24 @@ return static function (RectorConfig $rectorConfig): void {
             LevelSetList::UP_TO_PHP_81,
             LaravelSetList::LARAVEL_100,
 
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
             // SetList::NAMING, //problemi con injuction
             // SetList::TYPE_DECLARATION,
             // SetList::CODING_STYLE,
             // SetList::PRIVATIZATION,//problemi con final
+<<<<<<< HEAD
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
             // SetList::EARLY_RETURN,
             // SetList::INSTANCEOF,
         ]
     );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -219,3 +252,7 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->importNames();
 };
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    $rectorConfig->importNames();
+};
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

@@ -1,18 +1,29 @@
+<<<<<<< HEAD
 name: Check & fix styling
+=======
+name: lint
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 
 on: [push]
 
 jobs:
   php-cs-fixer:
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: PHP-CS-Fixer
 =======
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
+<<<<<<< HEAD
         uses: actions/checkout@v3
+=======
+        uses: actions/checkout@master
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         with:
           ref: ${{ github.head_ref }}
 
@@ -24,4 +35,8 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@latest
         with:
+<<<<<<< HEAD
           commit_message: Check & fix styling
+=======
+          commit_message: Lint
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

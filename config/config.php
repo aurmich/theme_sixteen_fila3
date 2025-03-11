@@ -8,6 +8,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -54,12 +55,21 @@ return [
         'enabled' => true,
         'sort' => 80,
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    'name' => 'UI',
+    'description' => 'Modulo per la gestione dell\'interfaccia utente e componenti',
+    'icon' => 'heroicon-o-squares-2x2',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 90,
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,5 +91,8 @@ return [
 =======
         'Modules\\Tenant\\Providers\\TenantServiceProvider',
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+        'Modules\\UI\\Providers\\UIServiceProvider',
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     ],
 ];

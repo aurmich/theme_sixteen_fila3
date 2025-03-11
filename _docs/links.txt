@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://betterprogramming.pub/laravel-fail-retry-or-delay-a-queued-job-from-itself-41e0bb14440c
 
 
@@ -70,3 +71,10 @@ https://blog.devgenius.io/laravel-multi-tenant-systems-with-ecotone-e3e5a4751a55
 ------------------
 
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+---------------------------------------------------------------------------------------------------
+Laravel URL Redirects with Optional Protected Url Passwords
+https://codebrisk.com/blog/laravel-url-redirects-with-optional-protected-url-passwords
+composer require yorcreative/laravel-urlshortener
+---------------------------------------------------------------------------------------------------
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

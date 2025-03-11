@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/bashscripts_fila3",
     "autoload": {
         "psr-4": {
@@ -104,10 +105,16 @@
     ],
     "homepage": "https://github.com/laraxot/module_notify_fila3.git",
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+    "name": "laraxot/module_ui_fila3",
+    "description": "",
+    "homepage": "https://github.com/laraxot/module_ui_fila3.git",
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     "license": "MIT",
     "authors": [
         {
             "name": "Marco Sottana",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -231,11 +238,15 @@
             "type": "path",
             "url": "../Xot"
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+            "email": "marco.sottana@gmail.com"
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         }
     ],
     "extra": {
         "laravel": {
             "providers": [
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "Livewire\\LivewireServiceProvider",
                 "Modules\\User\\Providers\\UserServiceProvider",
@@ -251,12 +262,17 @@
                 "Modules\\Tenant\\Providers\\TenantServiceProvider",
                 "Modules\\Tenant\\Providers\\Filament\\AdminPanelProvider"
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+                "Modules\\UI\\Providers\\UIServiceProvider",
+                "Modules\\UI\\Providers\\Filament\\AdminPanelProvider"
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
             ],
             "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "Modules\\User\\": "app/",
@@ -289,11 +305,21 @@
         "symfony/http-client": "*",
         "symfony/postmark-mailer": "*"
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+            "Modules\\UI\\": "app/",
+            "Modules\\UI\\Database\\Factories\\": "database/factories/",
+            "Modules\\UI\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+        "owenvoke/blade-fontawesome": "*"
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     },
     "require-dev": {},
     "repositories": [
         {
             "type": "path",
+<<<<<<< HEAD
             "url": "../Xot"
         },
 <<<<<<< HEAD
@@ -302,12 +328,17 @@
 >>>>>>> 38c1507055 (Squashed 'laravel/Modules/Media/' content from commit 4548be09a)
 =======
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+            "url": "../User"
+        },
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
         {
             "type": "path",
             "url": "../Tenant"
         },
         {
             "type": "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -362,6 +393,11 @@
         }
     },
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+            "url": "../Xot"
+        }
+    ],
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     "scripts": {
         "post-autoload-dump1": [
             "@php vendor/bin/testbench package:discover --ansi"
@@ -375,16 +411,20 @@
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 =======
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
 =======
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "pestphp/pest-plugin": true,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -397,10 +437,14 @@
             "phpstan/extension-installer": true,
             "pestphp/pest-plugin": true,
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+            "pestphp/pest-plugin": true,
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "wikimedia/composer-merge-plugin": true
         }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -487,3 +531,8 @@
     "prefer-stable": true
 }
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)

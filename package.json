@@ -5,12 +5,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 =======
   "private": true,
@@ -24,25 +28,34 @@
     "production": "mix --production"
   },
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "axios": "^1.6.7",
     "laravel-vite-plugin": "^1.0.1",
 =======
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     "axios": "^1.6.8",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "laravel-vite-plugin": "^0.6.1",
+<<<<<<< HEAD
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
     "lodash": "^4.17.21",
     "postcss": "^8.4.38",
     "postcss-nesting": "^12.1.4",
     "tailwindcss": "^3.4.3",
     "tippy.js": "^6.3.7",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "vite": "^5.0.12"
   }
@@ -133,4 +146,8 @@
         "vite": "^5.4.3"
     }
 >>>>>>> 1c8d7d06e0 (Squashed 'laravel/Modules/Tenant/' content from commit be731f696)
+=======
+    "vite": "^5.4.1"
+  }
+>>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
 }
