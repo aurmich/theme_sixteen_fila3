@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 /**
  * @see https://github.com/rappasoft/laravel-authentication-log/blob/main/src/Listeners/LogoutListener.php
  */
@@ -28,11 +29,20 @@ class LogoutListener
         $this->request = $request;
     }
 
+=======
+namespace Modules\Activity\Listeners;
+
+use Illuminate\Auth\Events\Logout;
+
+class LogoutListener
+{
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     /**
      * Handle the event.
      */
     public function handle(Logout $event): void
     {
+<<<<<<< HEAD
         // Session::flash('login-success', 'Hello ' . $event->user->name . ', welcome back!');
         $device = app(GetCurrentDeviceAction::class)->execute();
         $user = $event->user;
@@ -60,5 +70,9 @@ class LogoutListener
         $log->logout_at = now();
 
         $user->authentications()->save($log);
+=======
+        // ...
+        // dddx('aa');
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     }
 }

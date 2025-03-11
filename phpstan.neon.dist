@@ -25,6 +25,7 @@ parameters:
         - ./*/vendor/*
         - ./docs/*
 <<<<<<< HEAD
+<<<<<<< HEAD
         - ./Tests/*
         - ./_ide_helper.php
 <<<<<<< HEAD
@@ -35,6 +36,10 @@ parameters:
         # - ./Tests/*
         - ./_ide_helper.php
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+        - ./Tests/*
+        - ./_ide_helper.php
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 
     bootstrapFiles:
         #- ./Services/vendor/autoload.php

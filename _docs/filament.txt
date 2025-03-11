@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 https://gitlab.com/amvisor/filament-failed-jobs/-/blob/master/src/FilamentFailedJobsServiceProvider.php
 
@@ -30,3 +31,7 @@ https://filamentphp.com/plugins/codewithdennis-select-tree
 https://github.com/beholdr/filament-trilist
 
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+https://laraveldaily.com/post/filament-activity-logs-three-packages-comparison-review
+
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)

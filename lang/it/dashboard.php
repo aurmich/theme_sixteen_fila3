@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
@@ -40,11 +41,14 @@ return [
             ],
         ],
 =======
+=======
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 return [
     'navigation' => [
         'name' => 'Dashboard',
         'plural' => 'Dashboard',
         'group' => [
+<<<<<<< HEAD
             'name' => 'Notifiche',
             'description' => 'Panoramica delle notifiche',
         ],
@@ -73,12 +77,52 @@ return [
         'bounce_rate' => 'Tasso di Bounce',
     ],
     'periods' => [
+=======
+            'name' => 'Monitoraggio',
+            'description' => 'Panoramica delle attività',
+        ],
+        'label' => 'Dashboard',
+        'sort' => 59,
+        'icon' => 'activity-dashboard-animated',
+    ],
+    'widgets' => [
+        'recent_activities' => 'Attività Recenti',
+        'activity_summary' => 'Riepilogo Attività',
+        'top_users' => 'Utenti Più Attivi',
+        'activity_by_type' => 'Attività per Tipo',
+        'system_health' => 'Stato del Sistema',
+        'error_logs' => 'Log di Errore',
+    ],
+    'charts' => [
+        'activities_over_time' => 'Attività nel Tempo',
+        'activities_by_user' => 'Attività per Utente',
+        'activities_by_type' => 'Attività per Tipo',
+        'error_distribution' => 'Distribuzione Errori',
+    ],
+    'metrics' => [
+        'total_activities' => 'Totale Attività',
+        'unique_users' => 'Utenti Unici',
+        'average_actions' => 'Azioni Medie',
+        'error_rate' => 'Tasso di Errore',
+    ],
+    'periods' => [
+        'last_hour' => 'Ultima Ora',
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
         'today' => 'Oggi',
         'yesterday' => 'Ieri',
         'last_7_days' => 'Ultimi 7 giorni',
         'last_30_days' => 'Ultimi 30 giorni',
         'this_month' => 'Questo mese',
         'last_month' => 'Mese scorso',
+<<<<<<< HEAD
 >>>>>>> 946fdba366 (Squashed 'laravel/Modules/Notify/' content from commit 6aac1e028)
+=======
+        'custom' => 'Personalizzato',
+    ],
+    'status' => [
+        'healthy' => 'In Salute',
+        'warning' => 'Attenzione',
+        'critical' => 'Critico',
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     ],
 ];

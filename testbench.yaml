@@ -4,6 +4,7 @@ providers:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Modules\Xot\Providers\XotServiceProvider
   - Modules\Xot\Providers\Filament\AdminPanelProvider
   - Nwidart\Modules\LaravelModulesServiceProvider
@@ -28,3 +29,8 @@ providers:
   - Nwidart\Modules\LaravelModulesServiceProvider
 
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+  - Modules\Activity\Providers\ActivityServiceProvider
+  - Nwidart\Modules\LaravelModulesServiceProvider
+
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)

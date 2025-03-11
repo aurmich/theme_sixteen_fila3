@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ~~~bash
 git clone --recurse-submodules https://github.com/aurmich/base_fixcity_fila3.git 
 cd base_fixcity_fila3
@@ -135,11 +136,34 @@ Manage users, roles, and permissions with lightning speed ⚡ through this Larav
 - **Complete Team Management**: Manage teams with simple commands like `php artisan team:create` and `php artisan team:assign-user`. 👥
 - **Permissions that Fit**: Set flexible roles and permissions to fit your app’s unique needs! 🔑
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+# Module Activity Fila3 🔥 Ultimate Task Management & Productivity Tracker 🚀
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laraxot/module_activity_fila3.svg?style=flat-square)](https://packagist.org/packages/laraxot/module_activity_fila3)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/laraxot/module_activity_fila3/run-tests?label=tests)](https://github.com/laraxot/module_activity_fila3/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/laraxot/module_activity_fila3/Check%20&%20fix%20styling?label=code%20style)](https://github.com/laraxot/module_activity_fila3/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/laraxot/module_activity_fila3.svg?style=flat-square)](https://packagist.org/packages/laraxot/module_activity_fila3)
+[![Latest Release](https://img.shields.io/github/v/release/laraxot/module_activity_fila3)](https://github.com/laraxot/module_activity_fila3/releases)
+[![Build Status](https://img.shields.io/travis/laraxot/module_activity_fila3/master)](https://travis-ci.org/laraxot/module_activity_fila3)
+[![Total Downloads](https://img.shields.io/packagist/dt/laraxot/module_activity_fila3)](https://packagist.org/packages/laraxot/module_activity_fila3)
+[![License](https://img.shields.io/github/license/laraxot/module_activity_fila3)](LICENSE)
+
+
+Elevate your productivity to the next level! **Module Activity Fila3** is designed to help users manage tasks, track progress, and stay organized. Whether you're handling daily activities or long-term goals, this module has you covered! 📅
+
+---
+
+### Key Features 🌟
+- **Task Management**: Easily create, edit, and delete tasks.
+- **Progress Tracking**: Track your progress over daily, weekly, and monthly activities.
+- **Smart Notifications**: Never miss a task with reminders and overdue notifications.
+- **Performance Statistics**: Visualize your activity completion statistics and boost your productivity.
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 
 ---
 
 ### Installation Guide 💻
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 1. **Install via Composer:**
     ```bash
@@ -149,10 +173,16 @@ Manage users, roles, and permissions with lightning speed ⚡ through this Larav
     ```bash
     composer require laraxot/module_user_fila3
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+1. **Install via Git Submodule:**
+    ```bash
+    git submodule add https://github.com/laraxot/module_activity_fila3.git Activity
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     ```
 
 2. **Run Migrations:**
     ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
     php artisan module:migrate Xot
     ```
@@ -173,12 +203,25 @@ Manage users, roles, and permissions with lightning speed ⚡ through this Larav
     ```bash
     php artisan make:filament-user
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+    php artisan module:migrate Activity
+    ```
+
+3. **Verify the Module is Active:**
+    ```bash
+    php artisan module:list
+    ```
+    Enable it if necessary:
+    ```bash
+    php artisan module:enable Activity
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     ```
 
 ---
 
 ### Supercharged Console Commands 🚀
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Take full control with powerful artisan commands:
 
@@ -230,11 +273,31 @@ Leverage powerful artisan commands to boost your app’s user management capabil
     ```
     _See all available modules and activate/deactivate them at will._
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+- **View Activities:**
+    ```bash
+    php artisan activity:list
+    ```
+    _List all activities with their progress._
+
+- **Create New Task:**
+    ```bash
+    php artisan activity:create <task_name>
+    ```
+    _Easily create a new task._
+
+- **Track Progress:**
+    ```bash
+    php artisan activity:progress <task_id>
+    ```
+    _Track the progress of a specific task._
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 
 ---
 
 ### Configuration 🔧
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Customize the behavior of your modules via the `module_xot_fila3.php` config file. Take control of routes, permissions, and much more!
 
@@ -275,11 +338,15 @@ Per aggiungere nuovi test:
 1. Creare il file di test in `Modules/Xot/tests/Unit` o `Modules/Xot/tests/Feature`
 2. Seguire le convenzioni di denominazione: `NomeComponenteTest.php`
 3. Assicurarsi di testare sia i casi di successo che i casi limite
+=======
+Tweak the behavior of this module through its config file, ensuring it fits perfectly into your workflow.
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 
 ---
 
 ### FAQ ❓
 
+<<<<<<< HEAD
 - **Q: Can I add modules dynamically?**
   A: Absolutely! Modules are automatically discovered and configured without the need for manual updates to your config files.
 
@@ -303,6 +370,13 @@ Easily configure the module in the `module_user_fila3.php` config file to suit y
 
 We 💖 open source! Want to improve this package? Fork the repo and submit a pull request.
 >>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
+=======
+- **Q: How do I receive notifications for overdue tasks?**
+  A: Notifications are automatically generated based on the due date of each task.
+
+- **Q: Can I track long-term goals?**
+  A: Absolutely! The module allows for tracking over different time frames, including daily, weekly, and monthly views.
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 
 ---
 
@@ -319,6 +393,7 @@ This package is open-sourced under the [MIT license](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 **Boost your Laravel app with powerful modular capabilities using Module Xot Fila3!** 💥
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
@@ -725,3 +800,44 @@ Discover more of my work at marco76tv!
 =======
 Discover more of my work at marco76tv!
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+Get organized, track your tasks, and **boost your productivity** with **Module Activity Fila3**! 💥
+
+A dedicated module that allows users to efficiently monitor and manage their daily activities. The project's goal is to help users stay productive, track their progress, and better manage their time.
+
+## Main Features
+
+- **Task Management**: Create, edit, and delete tasks.
+- **Progress Tracking**: Track the progress of your daily, weekly, or monthly activities.
+- **Notifications**: Receive reminders for upcoming or overdue tasks.
+- **Statistics**: View statistics on your completed activities over time.
+
+## Prerequisites
+- php v8+
+- laravel
+- **[Xot Module](https://github.com/laraxot/module_xot_fila3.git)** (Required)
+- **[Tenant Module](https://github.com/laraxot/module_tenant_fila3.git)** (Required)
+- **[UI Module](https://github.com/laraxot/module_ui_fila3.git)** (Required)
+
+## Add Module to the Project Base
+Inside the `laravel/Modules` folder:
+
+```bash
+git submodule add https://github.com/laraxot/module_activity_fila3.git Activity
+```
+
+## Verify the Module is Active
+```bash
+php artisan module:list
+```
+If necessary, enable it:
+```bash
+php artisan module:enable Activity
+```
+
+## Run the Migrations
+```bash
+php artisan module:migrate Activity
+```
+
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)

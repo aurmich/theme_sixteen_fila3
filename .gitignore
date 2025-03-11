@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -201,6 +202,24 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+=======
+# Dependency directories
+/vendor/
+/node_modules/
+
+# Dependency logs and cache
+npm-debug.log
+*.log
+*.cache
+*.phar
+*.lock
+package-lock.json
+yarn-error.log
+
+# Build directories
+/build/
+
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
@@ -209,6 +228,7 @@ app/storage/
 public/storage
 public/hot
 
+<<<<<<< HEAD
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot
@@ -481,3 +501,37 @@ build
 *.exe
 *:Zone.Identifier
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+# Laravel with changed public path
+public_html/storage
+public_html/hot
+
+# Laravel specific keys and environment
+storage/*.key
+.env
+
+# Homestead specific files
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# PHPUnit specific files
+.phpunit.result.cache
+
+# PHP CS Fixer
+.php-cs-fixer.cache
+
+# Git specific
+.git-blame-ignore-revs
+.git-rewrite/
+
+# Documentation
+/docs/
+/docs/cache/
+
+# Ignored temporary files
+*.tmp
+*.swp
+*.swo
+.php-cs-fixer.cache
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\User\Listeners;
 
 use Illuminate\Auth\Events\Login;
@@ -23,11 +24,20 @@ class LoginListener
         $this->request = $request;
     }
 
+=======
+namespace Modules\Activity\Listeners;
+
+use Illuminate\Auth\Events\Login;
+
+class LoginListener
+{
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     /**
      * Handle the event.
      */
     public function handle(Login $event): void
     {
+<<<<<<< HEAD
         // Session::flash('login-success', 'Hello ' . $event->user->name . ', welcome back!');
         $device = app(GetCurrentDeviceAction::class)->execute();
         $user = $event->user;
@@ -48,5 +58,8 @@ class LoginListener
             'login_successful' => true,
             'location' => $location,
         ]);
+=======
+        // ...
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     }
 }

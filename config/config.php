@@ -9,6 +9,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'name' => 'Xot',
     'description' => 'Modulo base con funzionalità core e utilities',
     'icon' => 'heroicon-o-cube',
@@ -63,12 +64,22 @@ return [
         'enabled' => true,
         'sort' => 90,
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+    'name' => 'Activity',
+    'description' => 'Modulo per il tracciamento delle attività degli utenti',
+    // 'icon' => 'heroicon-o-clock',
+    'icon' => 'activity-icon',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 20,
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     ],
     'routes' => [
         'enabled' => true,
         'middleware' => ['web', 'auth'],
     ],
     'providers' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,5 +105,8 @@ return [
 =======
         'Modules\\UI\\Providers\\UIServiceProvider',
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+        'Modules\\Activity\\Providers\\ActivityServiceProvider',
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
     ],
 ];

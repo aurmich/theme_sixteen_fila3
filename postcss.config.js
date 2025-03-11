@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = {
 =======
 export default {
@@ -15,6 +16,9 @@ module.exports = {
 =======
 module.exports = {
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+module.exports = {
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
   plugins: {
     tailwindcss: {},
     autoprefixer: {},

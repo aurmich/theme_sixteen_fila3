@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Job\Filament\Pages;
@@ -33,11 +34,19 @@ namespace Modules\UI\Filament\Pages;
 use Filament\Pages\Page;
 use Modules\UI\Filament\Widgets;
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+declare(strict_types=1);
+
+namespace Modules\Activity\Filament\Pages;
+
+use Filament\Pages\Page;
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 
 class Dashboard extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,4 +183,16 @@ class Dashboard extends BaseBashboard
         ];
     }
 >>>>>>> 660b6fffd2 (Squashed 'laravel/Modules/UI/' content from commit b14fdc133)
+=======
+    protected static string $view = 'activity::filament.pages.dashboard';
+
+    // public function mount(): void
+    // {
+    //     // $user = auth()->user();
+    //     // if(!$user->hasRole('super-admin')){
+    //     //     redirect('/admin');
+    //     // }
+    //     ActivityEvent::dispatch();
+    // }
+>>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
 }
