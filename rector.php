@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Rector\Config\RectorConfig;
 <<<<<<< HEAD
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
@@ -31,11 +32,19 @@ use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+use Rector\Config\RectorConfig;
+use Rector\PHPUnit\Set\PHPUnitLevelSetList;
+use Rector\Set\ValueObject\LevelSetList;
+use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector;
+use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector;
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths(
         [
+<<<<<<< HEAD
 <<<<<<< HEAD
             __DIR__.'/Modules',
             __DIR__.'/app',
@@ -64,16 +73,33 @@ return static function (RectorConfig $rectorConfig): void {
             '*/docs',
             '*/vendor',
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+            __DIR__,
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
         ]
     );
 
     // register a single rule
     // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
 <<<<<<< HEAD
+<<<<<<< HEAD
     // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
 =======
     $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+    // $rectorConfig->rule(RedirectRouteToToRouteHelperRector::class);
+    // $rectorConfig->rules([
+    //    ReturnTypeFromStrictNativeCallRector::class,
+    //    ReturnTypeFromStrictScalarReturnExprRector::class,
+    // ]);
+    $rectorConfig->rules(
+        [
+            ReturnTypeFromStrictNativeCallRector::class,
+            ReturnTypeFromStrictScalarReturnExprRector::class,
+        ]
+    );
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 
     // define sets of rules
     $rectorConfig->sets(
@@ -84,18 +110,41 @@ return static function (RectorConfig $rectorConfig): void {
             LevelSetList::UP_TO_PHP_81,
             LaravelSetList::LARAVEL_100,
 
+<<<<<<< HEAD
             // SetList::NAMING, //problemi con injuction
             SetList::TYPE_DECLARATION,
             // SetList::CODING_STYLE,
             // SetList::PRIVATIZATION,//problemi con final
+=======
+            // SetList::NAMING, // error on injection
+            // SetList::TYPE_DECLARATION,  //------------------------ vedere cosa fa
+            // SetList::CODING_STYLE,
+            // SetList::PRIVATIZATION, //error "final class"
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
             // SetList::EARLY_RETURN,
             // SetList::INSTANCEOF,
         ]
     );
 
+<<<<<<< HEAD
     $rectorConfig->importNames();
 };
 <<<<<<< HEAD
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
 =======
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+    $rectorConfig->skip(
+        [
+            // testdummy files
+            '*/build',
+            '*/docs',
+            '*/vendor',
+            './vendor/',
+            __DIR__.'/vendor',
+        ]
+    );
+
+    $rectorConfig->importNames();
+};
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)

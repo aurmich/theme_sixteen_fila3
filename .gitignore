@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -141,27 +142,45 @@ package-lock.json
 *.stackdump
 *.cache
 /build
+=======
+/vendor
+*.lock
+/build
+*.cache
+*.phar
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 .git-blame-ignore-revs
 .git-rewrite
 .php-cs-fixer.cache
 *.phar
+<<<<<<< HEAD
 .git-rewrite/
 
 node_modules
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
+=======
+*.cache
+package-lock.json
+.git-rewrite/
+node_modules
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 .git-blame-ignore-revs
 .git-blame-ignore-revs
 node_modules
 vendor
 <<<<<<< HEAD
+<<<<<<< HEAD
 .php-cs-fixer.cache
 =======
 >>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
+=======
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 .git-blame-ignore-revs
 build/
 vendor/
 build/
 node_modules
+<<<<<<< HEAD
 =======
 *.lock
 package-lock.json
@@ -197,10 +216,13 @@ vendor
 vendor/
 build/
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
+<<<<<<< HEAD
 <<<<<<< HEAD
 *.exe
 <<<<<<< HEAD
@@ -218,3 +240,8 @@ cache/
 *:Zone.Identifier
 .php-cs-fixer.cache
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+build
+*.exe
+*:Zone.Identifier
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)

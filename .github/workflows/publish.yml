@@ -31,10 +31,14 @@ jobs:
 
     - name: CNAME
 <<<<<<< HEAD
+<<<<<<< HEAD
       run: cd docs && echo "laraxot.github.io/module_xot_fila3" > ./build_production/CNAME
 =======
       run: cd docs && echo "laraxot.github.io/module_job" > ./build_production/CNAME
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+      run: cd docs && echo "laraxot.github.io/module_user" > ./build_production/CNAME
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
 
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@latest

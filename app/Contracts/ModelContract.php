@@ -1,11 +1,16 @@
 <?php
 
 /**
+<<<<<<< HEAD
  * @see https://github.com/buyersclub/laravel-eloquent-model-interface/blob/master/src/EloquentModelInterface.php
+=======
+ * -- controllare.
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
  */
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Xot\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
@@ -46,6 +51,14 @@ use Illuminate\Support\Carbon;
  * @method array     toArray()
  * @method BelongsTo user()
  * @method mixed     getAttributeValue(string $key)
+=======
+namespace Modules\User\Contracts;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Modules\User\Contracts\ModelContract.
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
  *
  * @phpstan-require-extends Model
  *
@@ -73,6 +86,10 @@ interface ModelContract
      * @return bool
      */
     public function save(array $options = []);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
     /*
          * Save a new model and return the instance. Allow mass-assignment.
          *
@@ -91,7 +108,11 @@ interface ModelContract
     /**
      * Get the value of the model's primary key.
      *
+<<<<<<< HEAD
      * @return mixed|int|string
+=======
+     * @return string|int
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
      */
     public function getKey();
 

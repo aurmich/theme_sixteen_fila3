@@ -12,6 +12,7 @@
 >
     <projectFiles>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <directory name="."/>
         <ignoreFiles>
             <directory name="build" />
@@ -26,6 +27,13 @@
             <directory name="vendor"/>
             <directory name="docs"/>
 >>>>>>> 90bf7d5b85 (Squashed 'laravel/Modules/Job/' content from commit d3ea5c83e)
+=======
+        <directory name="." />
+        <ignoreFiles>
+            <directory name="vendor"/>
+            <directory name="build"/>
+            <directory name="docs"/>
+>>>>>>> 3f813922dc (Squashed 'laravel/Modules/User/' content from commit edfbd6fa7)
         </ignoreFiles>
     </projectFiles>
     <plugins>
