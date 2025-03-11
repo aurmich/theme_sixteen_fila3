@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 
 /vendor/
@@ -115,11 +116,46 @@ package-lock.json
 node_modules
 /node_modules
 vendor/
+=======
+*.jar
+*.log
+*.lock
+package-lock.json
+*.phar
+.git-rewrite
+.php-cs-fixer.cache
+package-lock.json
+vendor/
+node_modules/
+.env
+/.vagrant
+.phpunit.result.cache
+.DS_Store
+error_log
+.phpintel
+/.idea
+
+*.lock
+package-lock.json
+*.stackdump
+*.cache
+/build
+.git-blame-ignore-revs
+.git-rewrite
+.php-cs-fixer.cache
+*.phar
+.git-rewrite/
+
+node_modules
+>>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
 .git-blame-ignore-revs
 .git-blame-ignore-revs
 node_modules
 vendor
+<<<<<<< HEAD
 .php-cs-fixer.cache
+=======
+>>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
 .git-blame-ignore-revs
 build/
 vendor/
@@ -130,6 +166,7 @@ cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
 *.exe
+<<<<<<< HEAD
 **/*.Zone.Identifier
 *:Zone.Identifier
 *:Zone.Identifier
@@ -138,3 +175,5 @@ cache/
 .php-cs-fixer.cache
 **/*.Zone.Identifier
 >>>>>>> d85e626c79 (Squashed 'bashscripts/' content from commit e07a90b9)
+=======
+>>>>>>> 87dbba6623 (Squashed 'laravel/Modules/Xot/' content from commit 5fa619c8)
