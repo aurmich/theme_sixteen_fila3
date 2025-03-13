@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Pensa ad alta voce e parla a te stesso. prima di rispondere, analizza la richiesta, scomponi i concetti chiave, 
 formula un ragionamento passo passo,
 
@@ -35,6 +36,8 @@ Quando correggi qualsiasi cosa devi focalizzarti sullo scopo non solo sulla corr
 non voglio  ->label(   le label son gestite tramite langserviceprovider coi file di traduzioni
 
 =======
+=======
+>>>>>>> 16b52a71386f3f18de05038774dbb6fac55e08bb
 # GUIDA ESSENZIALE LARAXOT
 
 ## DOCUMENTAZIONE
@@ -80,4 +83,7 @@ non voglio  ->label(   le label son gestite tramite langserviceprovider coi file
 - Analizzare moduli esistenti
 - Focalizzarsi sullo scopo, non solo sulla correzione
 - Seguire convenzioni del framework
+<<<<<<< HEAD
 >>>>>>> adeb0b1e8 (.)
+=======
+>>>>>>> 16b52a71386f3f18de05038774dbb6fac55e08bb

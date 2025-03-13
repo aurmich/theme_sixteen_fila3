@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #!/bin/bash
 
 # Array di cartelle da spostare in app/
@@ -29,6 +30,8 @@ done
 
 echo "Operazione completata!"
 =======
+=======
+>>>>>>> 16b52a71386f3f18de05038774dbb6fac55e08bb
 #!/bin/sh
 
 # Funzione per copiare e rinominare le cartelle
@@ -65,4 +68,7 @@ move_config "Database"
 move_config "Resources"
 move_config "Routes"
 move_config "Tests"
+<<<<<<< HEAD
 >>>>>>> cd271d1f6122f4f4f86b311351dc5e6ecb08edd6
+=======
+>>>>>>> 16b52a71386f3f18de05038774dbb6fac55e08bb
