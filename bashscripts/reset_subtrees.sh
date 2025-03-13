@@ -51,7 +51,7 @@ while IFS= read -r line; do
 
         echo "⬆️  Pushing delle modifiche locali nel subtree remoto..."
         git subtree push --prefix="$current_path" "$current_url" "$branch"
->>>>>>> 16b52a71386f3f18de05038774dbb6fac55e08bb
+>>>>>>> 75811e53d7cad3fe11c3ed0e67cc8f2872a42b14
     fi
 done < "$CONFIG_FILE"
 
