@@ -1,0 +1,29 @@
+GUIDA ESSENZIALE LARAXOT
+
+Memoria = Cartella docs: aggiorna e studia continuamente, consulta sempre prima di agire.
+Traduzioni:
+Usa il formato 'field' => ['label' => 'Etichetta', 'tooltip' => 'Descrizione'].
+Mai usare ->label(): è gestito da LangServiceProvider.
+Classi:
+Mai estendere direttamente classi Filament. Estendi sempre classi con suffisso XotBase dal modulo Xot.
+Mai usare la classe User direttamente: usa sempre la classe del modulo specifico.
+Filament Resources:
+Estendi XotBaseResource, non Resource.
+Usa getFormSchema(), non form().
+Non definire $navigationIcon o $modelLabel (gestiti dalle traduzioni).
+Non definire table() (gestito da index).
+Liste:
+Usa getListTableColumns(), getTableFilters(), getTableActions().
+Usa array associativi con chiavi string per i componenti.
+Namespaces:
+Modelli: Modules\*\Models (non app\Models).
+Filament: Modules\*\Filament (non app\Filament).
+Percorso corretto: Modules\Xot\Filament\Resources\Pages\XotBaseListRecords.
+Validazione: Esegui PHPStan livello 7 prima di iniziare.
+Processo: 1) Aggiorna docs. 2) Studia. 3) Correggi.
+Service Provider: Estendi XotBaseServiceProvider, chiama sempre parent::boot().
+Migrazioni: Estendi XotBaseMigration, usa tableCreate() e tableUpdate().
+Metodologia:
+Analizza moduli esistenti.
+Focalizzati sullo scopo, non solo sulla correzione.
+Segui le convenzioni del framework.
