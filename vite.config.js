@@ -1,7 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/dev
 //const dotenvExpand = require('dotenv-expand');
 //dotenvExpand(
 //	require('dotenv').config({ path: '../../.env' /*, debug: true*/ }),
@@ -94,7 +91,6 @@ viteStaticCopy({
     ]
 })
 */
-<<<<<<< HEAD
 =======
 //const dotenvExpand = require('dotenv-expand');
 //dotenvExpand(
@@ -183,5 +179,3 @@ viteStaticCopy({
 })
 */
 >>>>>>> 6fc803003 (up)
-=======
->>>>>>> origin/dev

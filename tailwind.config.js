@@ -1,7 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/dev
 import defaultTheme from 'tailwindcss/defaultTheme';
 // import preset from './../../vendor/filament/support/tailwind.config.preset';
 import forms from '@tailwindcss/forms'
@@ -149,7 +146,6 @@ module.exports = {
         themes: ['light', 'dark'],
     },
 }
-<<<<<<< HEAD
 =======
 const defaultTheme = require('tailwindcss/defaultTheme');
 import preset from './vendor/filament/support/tailwind.config.preset';
@@ -283,5 +279,3 @@ module.exports = {
     ],
 }
 >>>>>>> 6fc803003 (up)
-=======
->>>>>>> origin/dev

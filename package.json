@@ -1,7 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/dev
 {
     "name": "sixteen",
     "private": true,
@@ -31,7 +28,6 @@
         "vite": "^6.0.11"
     }
 }
-<<<<<<< HEAD
 =======
 {
     "name": "sixteen",
@@ -60,5 +56,3 @@
     }
 }
 >>>>>>> 6fc803003 (up)
-=======
->>>>>>> origin/dev
