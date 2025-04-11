@@ -14,6 +14,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Actions\Action;
 use Modules\Xot\Actions\Export\ExportXlsByCollection;
 use Modules\Xot\Actions\GetTransKeyAction;
+use Webmozart\Assert\Assert;
 
 class ExportXlsTableAction extends Action
 {
@@ -21,7 +22,7 @@ class ExportXlsTableAction extends Action
     {
         parent::setUp();
         $this->translateLabel()
-            ->label('')
+            
             ->tooltip(__('xot::actions.export_xls'))
              // ->icon('fas-file-excel')
             ->icon('heroicon-o-arrow-down-tray')
@@ -33,9 +34,21 @@ class ExportXlsTableAction extends Action
                 $query = $livewire->getFilteredTableQuery();
                 // ->getQuery(); // Staudenmeir\LaravelCte\Query\Builder
                 $rows = $query->get();
-                $fields = null;
+                /** @var array<int, string> $fields */
+                $fields = [];
                 if (method_exists($livewire_class, 'getXlsFields')) {
-                    $fields = $livewire_class::getXlsFields($livewire->tableFilters);
+                    $rawFields = $livewire_class::getXlsFields($livewire->tableFilters);
+                    Assert::isArray($rawFields);
+                    
+                    // Ensure fields are properly formatted as array<int, string>
+                    $fields = [];
+                    foreach ($rawFields as $key => $field) {
+                        if (is_string($field)) {
+                            $fields[] = $field;
+                        } elseif (is_array($field) && isset($field['name']) && is_string($field['name'])) {
+                            $fields[] = $field['name'];
+                        }
+                    }
                 }
 
                 return app(ExportXlsByCollection::class)->execute($rows, $filename, $transKey, $fields);

@@ -16,36 +16,37 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
 /**
- * @property \Spatie\SchemalessAttributes\SchemalessAttributes                                                             $extra
- * @property string                                                                                                        $avatar
- * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser>                                                     $deviceUsers
- * @property int|null                                                                                                      $device_users_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Device>                                                         $devices
- * @property int|null                                                                                                      $devices_count
- * @property string|null                                                                                                   $first_name
- * @property string|null                                                                                                   $full_name
- * @property string|null                                                                                                   $last_name
- * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media>    $media
- * @property int|null                                                                                                      $media_count
- * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser>                                                     $mobileDeviceUsers
- * @property int|null                                                                                                      $mobile_device_users_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Device>                                                         $mobileDevices
- * @property int|null                                                                                                      $mobile_devices_count
+ * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra
+ * @property string $avatar
+ * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser> $deviceUsers
+ * @property int|null $device_users_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Device> $devices
+ * @property int|null $devices_count
+ * @property string|null $first_name
+ * @property string|null $full_name
+ * @property string|null $last_name
+ * @property string|null $lang
+ * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
+ * @property int|null $media_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser> $mobileDeviceUsers
+ * @property int|null $mobile_device_users_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Device> $mobileDevices
+ * @property int|null $mobile_devices_count
  * @property \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
- * @property int|null                                                                                                      $notifications_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Permission>                                                     $permissions
- * @property int|null                                                                                                      $permissions_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Role>                                                           $roles
- * @property int|null                                                                                                      $roles_count
- * @property \Modules\Xot\Contracts\UserContract|null                                                                      $user
- * @property string|null                                                                                                   $user_name
+ * @property int|null $notifications_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Permission> $permissions
+ * @property int|null $permissions_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Role> $roles
+ * @property int|null $roles_count
+ * @property \Modules\Xot\Contracts\UserContract|null $user
+ * @property string|null $user_name
  *
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract permission($permissions, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract query()
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract role($roles, $guard = null, $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile     withExtraAttributes()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseProfile withExtraAttributes()
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract withoutPermission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileContract withoutRole($roles, $guard = null)
  *
@@ -101,21 +102,25 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         return $this->extra->modelScope();
     }
 
+    /**
+     * Ottiene l'URL dell'avatar dell'utente.
+     * 
+     * @return string L'URL dell'avatar
+     */
     public function getAvatarUrl(): string
     {
-        // return filament()->getUserAvatarUrl($this);
-        $avatar = $this->getFirstMediaUrl();
-
-        if (mb_strlen($avatar) > 5) {
+        $avatar = $this->getFirstMediaUrl('avatar');
+        if ($avatar !== '') {
             return $avatar;
         }
 
+        // Corretto il controllo errato su $this
         $email = trim((string) $this->email);
         // 'MyEmailAddress@example.com'
         $email = mb_strtolower($email);
         // 'myemailaddress@example.com'
         $hash = hash('sha256', $email);
-        $avatar = 'https://gravatar.com/avatar/'.$hash.'?s=64';
+        $avatar = 'https://gravatar.com/avatar/' . $hash . '?s=64';
 
         return $avatar;
 
@@ -128,6 +133,29 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         // }
 
         // return $this->getFirstMediaUrl();
+    }
+
+    /**
+     * Ottiene la lingua dell'utente.
+     * 
+     * @return string Il codice della lingua
+     */
+    public function getUserLang(): string
+    {
+        $locale = config('app.locale');
+        $defaultLocale = 'it';
+
+        if ($locale === null || !is_string($locale)) {
+            $locale = $defaultLocale;
+        }
+
+        $userLang = $this->lang;
+
+        if ($userLang === null || !is_string($userLang)) {
+            return $locale;
+        }
+
+        return $userLang;
     }
 
     /** @return array<string, string> */

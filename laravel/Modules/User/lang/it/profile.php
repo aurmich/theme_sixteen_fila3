@@ -106,5 +106,4 @@ return [
         ],
         'notify' => 'Profilo aggiornato correttamente!',
     ],
-
 ];

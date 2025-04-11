@@ -27,9 +27,6 @@ class EnvWidget extends Widget implements HasForms
 
     public array $only = [];
 
-    /**
-     * @var view-string
-     */
     protected static string $view = 'xot::filament.widgets.env';
 
     public function mount(): void
@@ -95,10 +92,5 @@ class EnvWidget extends Widget implements HasForms
         $fields = Arr::only($all, $this->only);
 
         return $fields;
-    }
-
-    public static function canView(): bool
-    {
-        return true;
     }
 }

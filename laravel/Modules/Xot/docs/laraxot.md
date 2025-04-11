@@ -419,7 +419,7 @@ class GeoLogger
             ->info('Geocoding request', [
                 'address' => $address,
                 'success' => $result !== null,
-                'coordinates' => $result?->toArray()
+                'coordinates' => $result->toArray()
             ]);
     }
 
@@ -553,7 +553,7 @@ class ModuleList extends Component
     
     public function delete(int $id): void
     {
-        Module::find($id)?->delete();
+        Module::find($id)->delete();
         $this->emit('moduleDeleted');
     }
 }
@@ -845,7 +845,7 @@ class ClientMapWidget extends Widget
     protected function getViewData(): array
     {
         return [
-            'clients' => $this->listClients?->getTableQuery()
+            'clients' => $this->listClients->getTableQuery()
                 ->get(['latitude', 'longitude', 'name'])
                 ->toArray(),
         ];
@@ -891,7 +891,7 @@ class ClientMapWidget extends Widget
     protected function getViewData(): array
     {
         return [
-            'clients' => $this->listClients?->getTableQuery()
+            'clients' => $this->listClients->getTableQuery()
                 ->get(['latitude', 'longitude', 'name'])
                 ->toArray(),
         ];
@@ -1644,11 +1644,7 @@ return [
 ✅ **USARE** invece:
 - Un file di traduzione dedicato per ogni componente
 - Struttura standardizzata con chiave 'navigation'
-- Definizione completa di gruppo, label, icona e ordinamento 
-
-
-=======
->>>>>>> origin/dev
+- Definizione completa di gruppo, label, icona e ordinamento
 # Laraxot Framework
 
 ## Panoramica
@@ -1957,12 +1953,49 @@ $query = sprintf('%s.%s', (string)$table, (string)$column);
 ```
 
 ## PHPStan Analisi Moduli
-Risultati dell'ultima analisi per modulo:
-- **Xot**: Risolti tutti gli errori critici
-- **Fixcity**: In fase di ottimizzazione
-- **Media**: Nessun errore critico
+
+### Validazione a Livello 7
+
+A partire dal 10 Marzo 2025, tutti i moduli devono essere validati con PHPStan a livello 7. Questo livello di analisi statica garantisce:
+
+- Controllo rigoroso dei tipi di dati
+- Rilevamento di proprietà non dichiarate
+- Verifica delle firme dei metodi
+- Analisi approfondita dei generics nelle collezioni
+- Controllo degli array con chiavi tipizzate
+
+#### Come Eseguire la Validazione
+
+Per validare tutti i moduli con PHPStan a livello 7:
+
+```bash
+cd /var/www/html/exa/base_orisbroker_fila3/laravel
+vendor/bin/phpstan analyse Modules --configuration=phpstan.neon
+```
+
+Per validare un singolo modulo:
+
+```bash
+cd /var/www/html/exa/base_orisbroker_fila3/laravel
+vendor/bin/phpstan analyse Modules/NomeModulo --configuration=phpstan.neon
+```
+
+#### Configurazione PHPStan
+
+Il file di configurazione principale (`phpstan.neon`) è già impostato per il livello 7. Ogni modulo può avere la propria configurazione specifica in `Modules/NomeModulo/phpstan.neon.dist`.
+
+#### Risultati dell'ultima analisi per modulo:
+- **Xot**: Validato a livello 7
+- **Broker**: Validato a livello 7
+- **Media**: Validato a livello 7
 - **UI**: Ottimizzato per PHPStan level 8
-- **Tenant**: Risolti problemi di tipizzazione
+- **Tenant**: Validato a livello 7
+- **Lang**: Validato a livello 7
+- **Job**: Validato a livello 7
+- **Notify**: Validato a livello 7
+- **Activity**: Validato a livello 7
+- **Gdpr**: Validato a livello 7
+- **User**: Validato a livello 7
 
 ## Ottimizzazioni Recenti
 
@@ -8782,4 +8815,4 @@ class ClientMapWidget extends Widget
 3. Implementare sempre controlli di tipo
 4. Gestire i casi di errore in modo graceful
 5. La reattività funziona automaticamente con Livewire 3
-  - Contact section 
+  - Contact section

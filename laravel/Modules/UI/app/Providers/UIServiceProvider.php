@@ -11,15 +11,15 @@ use Modules\Xot\Providers\XotBaseServiceProvider;
 
 use function Safe\realpath;
 
-use Webmozart\Assert\Assert;
-
 /**
  * ---.
  */
 class UIServiceProvider extends XotBaseServiceProvider
 {
     public string $name = 'UI';
+
     protected string $module_dir = __DIR__;
+
     protected string $module_ns = __NAMESPACE__;
 
     /**
@@ -29,7 +29,7 @@ class UIServiceProvider extends XotBaseServiceProvider
     {
         parent::boot();
 
-        Assert::string($relativePath = config('modules.paths.generator.component-view.path'));
+        $relativePath = config('modules.paths.generator.component-view.path');
         $components_path = module_path($this->name, $relativePath);
 
         // $components_path = realpath(__DIR__.'/../resources/views/components');

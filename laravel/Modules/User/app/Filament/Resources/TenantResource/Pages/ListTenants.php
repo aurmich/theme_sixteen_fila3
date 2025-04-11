@@ -11,6 +11,7 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
 use Modules\User\Filament\Resources\TenantResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
 
 class ListTenants extends XotBaseListRecords
 {
@@ -31,6 +32,9 @@ class ListTenants extends XotBaseListRecords
 
             'slug' => TextColumn::make('slug')
                 ->default(function ($record) {
+                    if ($record === null) {
+                        return '';
+                    }
                     $record->generateSlug();
                     $slug = Str::slug($record->name);
                     $record->slug = $slug;

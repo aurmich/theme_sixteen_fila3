@@ -6,11 +6,10 @@ namespace Modules\User\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
-
-use function Laravel\Prompts\text;
-
 use Modules\Xot\Datas\XotData;
 use Webmozart\Assert\Assert;
+
+use function Laravel\Prompts\text;
 
 class CreateTenantCommand extends Command
 {
@@ -38,7 +37,7 @@ class CreateTenantCommand extends Command
         $name = text(
             label: 'What is name of tenant?',
             placeholder: 'E.g. Tabacchi belli',
-            // default: $user?->name,
+            // default: $user->name,
             // hint: 'This will be displayed on your profile.'
         );
 

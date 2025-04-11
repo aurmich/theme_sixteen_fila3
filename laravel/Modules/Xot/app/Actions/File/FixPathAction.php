@@ -1,14 +1,15 @@
 <?php
 
+/**
+ * moved from fileservice.
+ */
+
 declare(strict_types=1);
 
 namespace Modules\Xot\Actions\File;
 
 use Spatie\QueueableAction\QueueableAction;
 
-/**
- * moved from fileservice.
- */
 class FixPathAction
 {
     use QueueableAction;

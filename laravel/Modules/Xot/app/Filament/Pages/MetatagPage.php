@@ -20,9 +20,9 @@ use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 use Webmozart\Assert\Assert;
+use Filament\Support\Colors\Color;
 
 /**
- * MetatagPage
  * @property ComponentContainer $form
  */
 class MetatagPage extends Page implements HasForms
@@ -81,22 +81,23 @@ class MetatagPage extends Page implements HasForms
                         ->helperText('logo for dark css'),
                     TextInput::make('logo_height'),
                     Repeater::make('colors')
-                    ->schema([
-                        Select::make('key')
-                            // ->label('Color Key')
-                            ->required()
-                            ->options($metatag->getFilamentColors()),
-                        Select::make('color')
-                            // ->label('Color')
-                            ->required()
-                            ->reactive()
-                            ->options(array_merge(['custom' => '--- custom ---'], $metatag->getAllColors())),
-                        ColorPicker::make('hex')
-                            // ->label('custom Color')
-                            ->visible(fn (Get $get): bool => 'custom' == $get('color'))
-                            ->required(), // e.g., '#0071b0'
-                    ])
-                    // ->keyValueArray(true) // Store as key-value pairs in the 'colors' array
+                        ->schema([
+                            Select::make('key')
+                                ->label('Chiave')
+                                ->required()
+                                ->options($metatag->getFilamentColors()),
+                            Select::make('color')
+                                ->label('Colore')
+                                ->options(array_combine(
+                                    array_keys(Color::all()),
+                                    array_keys(Color::all())
+                                ))
+                                ->reactive(),
+                            ColorPicker::make('hex')
+                                ->label('Colore personalizzato')
+                                ->visible(fn (Get $get) => $get('color') === 'custom')
+                                ->required(),
+                        ])
                         ->columns(3),
                 ]
             )->columns(2)
@@ -118,7 +119,6 @@ class MetatagPage extends Page implements HasForms
     {
         return [
             Action::make('save')
-
                 ->submit('save'),
         ];
     }

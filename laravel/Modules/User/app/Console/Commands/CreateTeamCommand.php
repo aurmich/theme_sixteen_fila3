@@ -6,11 +6,10 @@ namespace Modules\User\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
-
-use function Laravel\Prompts\text;
-
 use Modules\Xot\Datas\XotData;
 use Webmozart\Assert\Assert;
+
+use function Laravel\Prompts\text;
 
 class CreateTeamCommand extends Command
 {
@@ -38,7 +37,7 @@ class CreateTeamCommand extends Command
         $name = text(
             label: 'What is name of team?',
             placeholder: 'E.g. Moderator, ',
-            // default: $user?->name,
+            // default: $user->name,
             // hint: 'This will be displayed on your profile.'
         );
 

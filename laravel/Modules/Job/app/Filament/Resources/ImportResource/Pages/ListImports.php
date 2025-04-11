@@ -73,7 +73,7 @@ class ListImports extends XotBaseListRecords
     {
         return [
             'edit' => EditAction::make()
-                ->label(''),
+                ,
         ];
     }
 

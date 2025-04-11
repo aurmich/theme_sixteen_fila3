@@ -6,10 +6,6 @@ namespace Modules\User\Filament\Resources\TenantResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
 use Modules\Xot\Filament\Traits\HasXotTable;
@@ -22,59 +18,74 @@ class UsersRelationManager extends XotBaseRelationManager
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    /**
+     * @return array<Forms\Components\Component>
+     */
     public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('name')
                 ->required()
                 ->maxLength(255),
+
             Forms\Components\TextInput::make('email')
                 ->email()
                 ->required()
+                ->unique(ignoreRecord: true)
                 ->maxLength(255),
+
+            Forms\Components\DateTimePicker::make('email_verified_at')
+                ->nullable(),
+
             Forms\Components\TextInput::make('password')
                 ->password()
-                ->required()
-                ->maxLength(255),
+                ->required(fn ($context) => $context === 'create')
+                ->minLength(8)
+                ->same('password_confirmation')
+                ->dehydrated(fn ($state) => filled($state))
+                ->dehydrateStateUsing(fn ($state) => bcrypt($state)),
+
+            Forms\Components\TextInput::make('password_confirmation')
+                ->password()
+                ->required(fn ($context) => $context === 'create')
+                ->minLength(8),
         ];
     }
 
-    public function getTableColumns(): array
+    /**
+     * @return array<string, \Filament\Tables\Columns\Column>
+     */
+    public function getListTableColumns(): array
     {
         return [
-            TextColumn::make('name')
+            'id' => TextColumn::make('id')
+                ->sortable()
+                ->toggleable(),
+
+            'name' => TextColumn::make('name')
                 ->searchable()
-                ->sortable(),
-            TextColumn::make('email')
+                ->sortable()
+                ->toggleable(),
+
+            'email' => TextColumn::make('email')
                 ->searchable()
-                ->sortable(),
-            TextColumn::make('created_at')
+                ->sortable()
+                ->toggleable(),
+
+            'email_verified_at' => TextColumn::make('email_verified_at')
                 ->dateTime()
-                ->sortable(),
-        ];
-    }
+                ->sortable()
+                ->toggleable(),
 
-    public function getTableActions(): array
-    {
-        return [
-            EditAction::make(),
-            DeleteAction::make(),
-        ];
-    }
+            'created_at' => TextColumn::make('created_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(),
 
-    public function getTableBulkActions(): array
-    {
-        return [
-            DeleteBulkAction::make(),
-        ];
-    }
-
-    public function getTableConfiguration(): array
-    {
-        return [
-            'defaultSort' => 'created_at',
-            'defaultSortDirection' => 'desc',
-            'recordsPerPage' => 10,
+            'updated_at' => TextColumn::make('updated_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(),
         ];
     }
 }

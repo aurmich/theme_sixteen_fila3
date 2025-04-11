@@ -19,6 +19,16 @@ class ExportXlsStreamByLazyCollection
 {
     use QueueableAction;
 
+    /**
+     * Esporta una LazyCollection in un file CSV streamed.
+     *
+     * @param LazyCollection $data I dati da esportare
+     * @param string $filename Nome del file CSV
+     * @param string|null $transKey Chiave di traduzione per le intestazioni
+     * @param array<string>|null $fields Campi da includere nell'export
+     * 
+     * @return StreamedResponse
+     */
     public function execute(
         LazyCollection $data,
         string $filename = 'test.csv',
@@ -26,29 +36,50 @@ class ExportXlsStreamByLazyCollection
         ?array $fields = null,
     ): StreamedResponse {
         $headers = [
-            'Content-Disposition' => 'attachment; filename='.$filename,
+            'Content-Disposition' => 'attachment; filename=' . $filename,
         ];
         $head = $this->headings($data, $transKey);
 
         return response()->stream(
             static function () use ($data, $head): void {
                 $file = fopen('php://output', 'w+');
-                fputcsv($file, $head);
+
+                // Assicuriamo che le intestazioni siano stringhe
+                $headStrings = array_map(function ($item) {
+                    //return is_string($item) ? $item : (string) $item;
+                    return strval($item);
+                }, $head);
+
+                fputcsv($file, $headStrings);
 
                 foreach ($data as $key => $value) {
-                    // if(!method_exists($value,'toArray')){
-                    //    throw new \Exception('WIP['.__LINE__.']['.class_basename($this).']');
-                    // }
-                    /** @phpstan-ignore method.nonObject */
-                    $data = $value->toArray();
+                    // Gestiamo sia oggetti che possono essere convertiti ad array che array diretti
+                    if (is_object($value) && method_exists($value, 'toArray')) {
+                        /** @var array<string|int|float|bool|null> $rowData */
+                        $rowData = $value->toArray();
+                    } elseif (is_array($value)) {
+                        /** @var array<string|int|float|bool|null> $rowData */
+                        $rowData = $value;
+                    } else {
+                        // Se non è né un oggetto con toArray né un array, saltiamo
+                        continue;
+                    }
 
-                    fputcsv($file, $data);
+                    // Convertiamo tutti i valori in stringhe o null
+                    $safeRowData = array_map(function ($item) {
+                        if ($item === null) {
+                            return null;
+                        }
+                        return is_string($item) ? $item : (string) $item;
+                    }, $rowData);
+
+                    fputcsv($file, $safeRowData);
                 }
+
+                // Aggiungiamo righe vuote alla fine
                 $blanks = ["\t", "\t", "\t", "\t"];
                 fputcsv($file, $blanks);
-                $blanks = ["\t", "\t", "\t", "\t"];
                 fputcsv($file, $blanks);
-                $blanks = ["\t", "\t", "\t", "\t"];
                 fputcsv($file, $blanks);
 
                 fclose($file);
@@ -58,24 +89,40 @@ class ExportXlsStreamByLazyCollection
         );
     }
 
+    /**
+     * Ottiene le intestazioni per l'export.
+     *
+     * @param LazyCollection $data I dati da cui estrarre le intestazioni
+     * @param string|null $transKey Chiave di traduzione per le intestazioni
+     * 
+     * @return array<string>
+     */
     public function headings(LazyCollection $data, ?string $transKey = null): array
     {
-        /**
-         * @var array
+        $first = $data->first();
+        if (!is_array($first) && (!is_object($first) || !method_exists($first, 'toArray'))) {
+            return []; // Ritorna intestazioni vuote se non c'è un primo elemento valido
+        }
+
+        $headArray = is_array($first) ? $first : $first->toArray();
+
+        /** 
+         * @var array<string, mixed> $headArray 
+         * @var \Illuminate\Support\Collection<int, string> $headings 
          */
-        $head = $data->first();
-        $headings = collect($head)->keys();
+        $headings = collect($headArray)->keys();
+
         if (null !== $transKey) {
             $headings = $headings->map(
                 static function (string $item) use ($transKey) {
-                    $key = $transKey.'.fields.'.$item;
+                    $key = $transKey . '.fields.' . $item;
                     $trans = trans($key);
                     if ($trans !== $key) {
                         return $trans;
                     }
 
-                    Assert::string($item1 = Str::replace('.', '_', $item), '['.__LINE__.']['.__CLASS__.']');
-                    $key = $transKey.'.fields.'.$item1;
+                    Assert::string($item1 = Str::replace('.', '_', $item), '[' . __LINE__ . '][' . __CLASS__ . ']');
+                    $key = $transKey . '.fields.' . $item1;
                     $trans = trans($key);
                     if ($trans !== $key) {
                         return $trans;
@@ -86,6 +133,7 @@ class ExportXlsStreamByLazyCollection
             );
         }
 
-        return $headings->toArray();
+        /** @var array<string> */
+        return $headings->map(fn($item) => strval($item))->toArray();
     }
 }

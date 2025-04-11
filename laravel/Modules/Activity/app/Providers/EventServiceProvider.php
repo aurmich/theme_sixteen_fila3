@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Providers;
 
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
 use Modules\Activity\Listeners\LoginListener;
 use Modules\Activity\Listeners\LogoutListener;
-use Modules\Xot\Providers\XotBaseEventServiceProvider;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
 
-class EventServiceProvider extends XotBaseEventServiceProvider
+class EventServiceProvider extends BaseEventServiceProvider
 {
     /**
      * The event handler mappings for the application.

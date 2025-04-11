@@ -14,13 +14,56 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
 
+
+
+
+
+
+
+
+
 class RoleRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'roles';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-   
+    /**
+     * @return array<string, \Filament\Forms\Components\Component>
+     */
+    public function getFormSchema(): array
+    {
+        return [
+            'name' => TextInput::make('name'),
+            'guard_name' => TextInput::make('guard_name'),
+        ];
+    }
 
-    
+    public function table(Table $table): Table
+    {
+        return $table
+            ->columns(
+                [
+                    TextColumn::make('name')
+                        ->searchable(),
+                    TextColumn::make('guard_name')
+                        ->searchable(),
+                ]
+            )
+            ->filters(
+                [
+                ]
+            );
+    }
+
+    protected static function getModelLabel(): ?string
+    {
+        // return __('filament-spatie-roles-permissions::filament-spatie.section.role');
+        return __('filament-spatie-roles-permissions::filament-spatie.section.role');
+    }
+
+    protected static function getPluralModelLabel(): string
+    {
+        return __('filament-spatie-roles-permissions::filament-spatie.section.roles');
+    }
 }

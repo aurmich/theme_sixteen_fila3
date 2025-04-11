@@ -15,12 +15,16 @@ use Webmozart\Assert\Assert;
  * https://dev.to/hasanmn/automatically-update-createdby-and-updatedby-in-laravel-using-bootable-traits-28g9.
  *
  * @property int|null $created_by ID dell'utente che ha creato il record
- * @property int|null $updated_by ID dell'utente che ha modificato il record
+ * @property int|null $updated_by ID dell'utente che ha aggiornato il record
+ * @property int|null $deleted_by ID dell'utente che ha eliminato il record
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $deleter
  */
 trait Updater
 {
     /**
-     * Get the user who created the model.
+     * Summary of creator.
      *
      * @return BelongsTo<ProfileContract&Model, static>
      */
@@ -62,10 +66,13 @@ trait Updater
     {
         static::creating(
             static function (Model $model): void {
-                if ($model->isFillable('created_by')) {
+                Assert::isArray($attributes = $model->getAttributes());
+
+                if (array_key_exists('created_by', $attributes)) {
                     $model->setAttribute('created_by', authId());
                 }
-                if ($model->isFillable('updated_by')) {
+
+                if (array_key_exists('updated_by', $attributes)) {
                     $model->setAttribute('updated_by', authId());
                 }
             }
@@ -73,16 +80,23 @@ trait Updater
 
         static::updating(
             static function (Model $model): void {
-                if ($model->isFillable('updated_by')) {
+                Assert::isArray($attributes = $model->getAttributes());
+
+                if (array_key_exists('updated_by', $attributes)) {
                     $model->setAttribute('updated_by', authId());
                 }
             }
         );
-
+        /*
+         * Deleting a model is slightly different than creating or deleting.
+         * For deletes we need to save the model first with the deleted_by field
+         */
         static::deleting(
             static function (Model $model): void {
-                if ($model->isFillable('deleted_by')) {
-                    $model->update(['deleted_by' => authId()]);
+                Assert::isArray($attributes = $model->attributes);
+
+                if (\in_array('deleted_by', array_keys($attributes), false)) {
+                    $model->setAttribute('deleted_by', authId());
                 }
             }
         );

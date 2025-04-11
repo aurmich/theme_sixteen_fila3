@@ -12,9 +12,6 @@ class Clock extends Widget
 {
     public string $start = '';
 
-    /**
-     * @var view-string
-     */
     protected static string $view = 'xot::filament.widgets.clock';
 
     public function begin(): void
@@ -39,10 +36,5 @@ class Clock extends Widget
                 $cond = false;
             }
         }
-    }
-
-    public static function canView(): bool
-    {
-        return true;
     }
 }

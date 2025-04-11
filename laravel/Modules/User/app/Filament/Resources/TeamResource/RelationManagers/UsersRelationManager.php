@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\TeamResource\RelationManagers;
 
-use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\User\Filament\Resources\UserResource;
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Filament\Tables;
 
 class UsersRelationManager extends XotBaseRelationManager
 {
@@ -22,71 +20,48 @@ class UsersRelationManager extends XotBaseRelationManager
     protected static ?string $recordTitleAttribute = 'name';
 
     /**
-     * Definisce lo schema del form per la relazione.
-     *
-     * @return array<string, Forms\Components\Component>
+     * @return array<string, \Filament\Tables\Columns\Column>
      */
-    public function getFormSchema(): array
-    {
-        return UserResource::getFormSchema();
-    }
-
-    /**
-     * Definisce le colonne della tabella per la relazione.
-     *
-     * @return array<Tables\Columns\Column>
-     */
-    protected function getTableColumns(): array
+    public function getTableColumns(): array
     {
         return [
-            Tables\Columns\TextColumn::make('name')
-                ->searchable()
-                ->sortable(),
-            Tables\Columns\TextColumn::make('email')
-                ->searchable()
-                ->sortable(),
-            Tables\Columns\TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable(),
+            'name' => TextColumn::make('name'),
+            'email' => TextColumn::make('email'),
+            'role' => TextColumn::make('role'),
         ];
     }
-
+    
     /**
-     * Definisce le azioni della tabella.
-     *
-     * @return array<string, Tables\Actions\Action>
+     * @return array<string, \Filament\Tables\Actions\Action>
      */
-    protected function getTableActions(): array
+    public function getTableHeaderActions(): array
     {
         return [
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
+            'attach' => Tables\Actions\AttachAction::make(),
         ];
     }
-
+    
     /**
-     * Definisce le azioni bulk della tabella.
-     *
-     * @return array<Tables\Actions\BulkAction>
+     * @return array<string, \Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
      */
-    protected function getTableBulkActions(): array
+    public function getTableActions(): array
     {
         return [
-            Tables\Actions\DeleteBulkAction::make(),
+            'view' => Tables\Actions\ViewAction::make(),
+            'edit' => Tables\Actions\EditAction::make(),
+            'detach' => Tables\Actions\DetachAction::make(),
+            'delete' => Tables\Actions\DeleteAction::make(),
         ];
     }
-
+    
     /**
-     * Definisce la configurazione della tabella.
-     *
-     * @return array<string, mixed>
+     * @return array<string, \Filament\Tables\Actions\BulkAction>
      */
-    protected function getTableConfiguration(): array
+    public function getTableBulkActions(): array
     {
         return [
-            'defaultSort' => 'created_at',
-            'defaultSortDirection' => 'desc',
-            'recordsPerPage' => 10,
+            'detach' => Tables\Actions\DetachBulkAction::make(),
+            'delete' => Tables\Actions\DeleteBulkAction::make(),
         ];
     }
 }

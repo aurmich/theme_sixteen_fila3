@@ -18,19 +18,20 @@ class RegisterTeam extends RegisterTenant
         return 'Register team';
     }
 
-    public function form(Form $form): Form
-    {
-        return $form
-            ->schema(
-                [
+    public function getFormSchema(): array
+{
+    
+        
+    return [
+              
                     TextInput::make('name'),
                     // ...
-                ]
-            );
-    }
+                
+      ];
+}
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     protected function handleRegistration(array $data): Model
     {

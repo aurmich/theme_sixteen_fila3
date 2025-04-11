@@ -24,9 +24,6 @@ use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Filament\Pages\MainDashboard;
 use Nwidart\Modules\Facades\Module;
 
-/**
- * XotBaseMainPanelProvider
- */
 abstract class XotBaseMainPanelProvider extends PanelProvider
 {
     protected bool $topNavigation = false;
@@ -36,58 +33,48 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
         $metatag = MetatagData::make();
 
         $panel
-            // ->default()
             ->id('admin')
             ->path('admin');
+
         if (! Module::has('Cms')) {
             $panel->login();
         }
+
         $panel = $panel
             ->passwordReset()
             ->sidebarFullyCollapsibleOnDesktop()
             ->spa()
             ->profile(null, true);
-        // ->profile(MyProfilePage::class, false)
-        // ->viteTheme('resources/css/filament/admin/theme.css')
 
         app(ApplyMetatagToPanelAction::class)->execute(panel: $panel);
-        // ---------------------
-        $panel
+
+        $panel = $panel
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->pages(
-                [
-                    MainDashboard::class,
-                    MyProfilePage::class,
-                ]
-            )
+            ->pages([
+                MainDashboard::class,
+                MyProfilePage::class,
+            ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets(
-                [
-                    // Widgets\AccountWidget::class,
-                    // Widgets\FilamentInfoWidget::class,
-                ]
-            )
-            ->middleware(
-                [
-                    EncryptCookies::class,
-                    AddQueuedCookiesToResponse::class,
-                    StartSession::class,
-                    AuthenticateSession::class,
-                    ShareErrorsFromSession::class,
-                    VerifyCsrfToken::class,
-                    SubstituteBindings::class,
-                    DisableBladeIconComponents::class,
-                    DispatchServingFilamentEvent::class,
-                ]
-            )
-            ->authMiddleware(
-                [
-                    Authenticate::class,
-                ]
-            );
-        $navs = app(GetModulesNavigationItems::class)->execute();
+            ->widgets([
+                // Widgets\AccountWidget::class,
+            ])
+            ->middleware([
+                EncryptCookies::class,
+                AddQueuedCookiesToResponse::class,
+                StartSession::class,
+                AuthenticateSession::class,
+                ShareErrorsFromSession::class,
+                VerifyCsrfToken::class,
+                SubstituteBindings::class,
+                DisableBladeIconComponents::class,
+                DispatchServingFilamentEvent::class,
+            ])
+            ->authMiddleware([
+                Authenticate::class,
+            ]);
 
+        $navs = app(GetModulesNavigationItems::class)->execute();
         $panel->navigationItems($navs);
 
         try {
@@ -97,9 +84,7 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
         }
 
         $panel->userMenuItems([
-            // 'account' => MenuItem::make()->url($profile_url),
             MenuItem::make()
-
                 ->url(fn (): string => $profile_url)
                 ->icon('heroicon-o-user'),
         ]);

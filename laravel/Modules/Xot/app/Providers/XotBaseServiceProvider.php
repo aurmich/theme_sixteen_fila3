@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Modules\Xot\Providers;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Webmozart\Assert\Assert;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
-use Modules\Xot\Actions\Blade\RegisterBladeComponentsAction;
-use Modules\Xot\Actions\Livewire\RegisterLivewireComponentsAction;
 use Modules\Xot\Datas\ComponentFileData;
 use Nwidart\Modules\Traits\PathNamespace;
+use Modules\Xot\Actions\Blade\RegisterBladeComponentsAction;
+use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
+use Modules\Xot\Actions\Livewire\RegisterLivewireComponentsAction;
 
 use function Safe\realpath;
-
-use Webmozart\Assert\Assert;
 
 /**
  * Class XotBaseServiceProvider.
@@ -41,15 +41,10 @@ abstract class XotBaseServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerTranslations();
-
         $this->registerConfig();
         $this->registerViews();
-        // $this->registerFactories();
         $this->loadMigrationsFrom($this->module_dir.'/../Database/Migrations');
-
-        // Illuminate\Contracts\Container\BindingResolutionException: Target class [livewire] does not exist.
         $this->registerLivewireComponents();
-        // Illuminate\Contracts\Container\BindingResolutionException: Target class [modules] does not exist.
         $this->registerBladeComponents();
         $this->registerCommands();
     }
@@ -61,17 +56,9 @@ abstract class XotBaseServiceProvider extends ServiceProvider
     {
         $this->nameLower = Str::lower($this->name);
         $this->module_ns = collect(explode('\\', $this->module_ns))->slice(0, -1)->implode('\\');
-        $this->app->register(''.$this->module_ns.'\Providers\RouteServiceProvider');
-        $this->app->register(''.$this->module_ns.'\Providers\EventServiceProvider');
+        $this->app->register($this->module_ns.'\Providers\RouteServiceProvider');
+        $this->app->register($this->module_ns.'\Providers\EventServiceProvider');
         $this->registerBladeIcons();
-    }
-
-    /**
-     * Translate a label using the module's translation system.
-     */
-    public function translateLabel(string $label): string
-    {
-        return __($this->nameLower.'::'.$label);
     }
 
     public function registerBladeIcons(): void
@@ -87,7 +74,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
             if (! is_string($svgPath)) {
                 throw new \Exception('Invalid SVG path');
             }
-            // $resolvedPath = realpath($svgPath);
             $resolvedPath = $svgPath;
             $svgPath = $resolvedPath;
         } catch (\Error $e) {
@@ -187,14 +173,13 @@ abstract class XotBaseServiceProvider extends ServiceProvider
 
     public function registerBladeComponents(): void
     {
-        Assert::string($relativePath = config('modules.paths.generator.component-class.path'));
-        $componentClassPath = module_path($this->name, $relativePath);
+        $componentClassPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-class');
+
         $namespace = $this->module_ns.'\View\Components';
         Blade::componentNamespace($namespace, $this->nameLower);
 
         app(RegisterBladeComponentsAction::class)
             ->execute(
-                // $this->module_dir.'/../View/Components',
                 $componentClassPath,
                 $this->module_ns
             );
@@ -227,11 +212,16 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         if (0 == $comps->count()) {
             return;
         }
-        $commands = Arr::map(
-            $comps->items(),
-            function (ComponentFileData $item) {
-                return $item->ns;
-            }
+        $commands = $comps->toArray();
+        /** @var array<int, array{ns: string}> $commands */
+        $commands = array_map(
+            static function (mixed $item): string {
+                Assert::isArray($item);
+                Assert::keyExists($item, 'ns');
+                Assert::string($item['ns']);
+                return $item['ns'];
+            },
+            $commands
         );
         $this->commands($commands);
     }

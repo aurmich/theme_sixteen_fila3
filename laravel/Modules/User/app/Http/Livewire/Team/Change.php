@@ -25,13 +25,22 @@ class Change extends Component
 
     public XotData $xot;
 
-    public UserContract $user;
+    /** @var \Modules\Xot\Contracts\UserContract */
+    public $user;
 
     public function mount(): void
     {
         $this->xot = XotData::make();
         Assert::notNull(Filament::auth()->user(), '['.__LINE__.']['.class_basename($this).']');
-        $this->user = Filament::auth()->user();
+        
+        $authUser = Filament::auth()->user();
+        
+        // Verifica che l'utente implementi l'interfaccia UserContract
+        if (!($authUser instanceof UserContract)) {
+            throw new \InvalidArgumentException('L\'utente deve implementare l\'interfaccia UserContract');
+        }
+        
+        $this->user = $authUser;
         $this->teams = $this->user->allTeams()->toArray();
     }
 
@@ -47,7 +56,7 @@ class Change extends Component
         if (! $this->user->switchTeam($team)) {
             abort(403);
         }
-        if (null !== $team) {
+        if ($team !== null) {
             // TeamSwitched::dispatch($team->fresh(), $this->user);
             TeamSwitched::dispatch($team, $this->user);
         }
@@ -69,7 +78,7 @@ class Change extends Component
         $view_params = [
             'view' => $view,
         ];
-        if ([] === $this->teams) {
+        if ($this->teams === []) {
             $view = 'ui::livewire.empty';
         }
 

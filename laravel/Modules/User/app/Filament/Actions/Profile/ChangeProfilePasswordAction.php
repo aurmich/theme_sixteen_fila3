@@ -27,19 +27,19 @@ class ChangeProfilePasswordAction extends Action
     {
         parent::setUp();
         $this->translateLabel()
-            ->label('')
+
             ->tooltip(__('user::user.actions.change_password'))
             ->icon('heroicon-o-key')
             ->action(static function (ProfileContract $record, array $data): void {
                 $user = $record->user;
                 $profile_data = Arr::except($record->toArray(), ['id']);
-                if (null === $user) {
+                if ($user === null) {
                     $user_class = XotData::make()->getUserClass();
                     /** @var \Modules\Xot\Contracts\UserContract */
                     $user = XotData::make()->getUserByEmail($record->email);
                 }
 
-                if (null === $user) {
+                if ($user === null) {
                     $user = $record->user()->create($profile_data);
                 }
                 // @phpstan-ignore argument.type, method.notFound
@@ -56,7 +56,7 @@ class ChangeProfilePasswordAction extends Action
                         ->required()
                         ->rule(Password::default()),
                     */
-                PasswordData::make()->getPasswordFormComponent(),
+                PasswordData::make()->getPasswordFormComponent('new_password'),
                 TextInput::make('new_password_confirmation')
                     ->password()
                     ->rule('required', static fn ($get): bool => (bool) $get('new_password'))

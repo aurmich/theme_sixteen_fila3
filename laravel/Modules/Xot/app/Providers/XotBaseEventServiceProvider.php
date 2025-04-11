@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Providers;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as LaravelEventServiceProvider;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseEventServiceProvider;
 
-abstract class XotBaseEventServiceProvider extends LaravelEventServiceProvider
+abstract class XotBaseEventServiceProvider extends BaseEventServiceProvider
 {
     /**
      * The event handler mappings for the application.

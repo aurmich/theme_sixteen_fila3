@@ -4,27 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Traits;
 
-use Filament\Actions;
-use Filament\Notifications\Notification;
 use Filament\Tables;
+use Filament\Actions;
+use Filament\Tables\Table;
+use Webmozart\Assert\Assert;
+use Modules\UI\Enums\TableLayoutEnum;
+use Filament\Tables\Actions\BulkAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\BaseFilter;
+use Illuminate\Database\Eloquent\Model;
+use Filament\Notifications\Notification;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\ActionGroup;
-use Filament\Tables\Actions\BulkAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\Layout\Stack;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Enums\ActionsPosition;
 use Filament\Tables\Enums\FiltersLayout;
-use Filament\Tables\Filters\BaseFilter;
-use Filament\Tables\Filters\TernaryFilter;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\Layout\Stack;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Filament\Tables\Enums\ActionsPosition;
+use Filament\Tables\Filters\TernaryFilter;
+use Filament\Tables\Actions\DeleteBulkAction;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Modules\UI\Enums\TableLayoutEnum;
-use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
 use Modules\Xot\Actions\Model\TableExistsByModelClassActions;
-use Webmozart\Assert\Assert;
+use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
 
 /**
  * Trait HasXotTable.
@@ -50,7 +50,7 @@ trait HasXotTable
      *
      * @return array<string, Action|ActionGroup>
      */
-    protected function getTableHeaderActions(): array
+    public function getTableHeaderActions(): array
     {
         $actions = [];
 
@@ -195,16 +195,14 @@ trait HasXotTable
      *
      * Soluzione: Verifica condizionale dell'esistenza dei metodi prima di chiamarli,
      * mantenendo la retrocompatibilità e prevenendo errori.
-     * @deprecated Questo metodo non deve più essere usato. Usa `getListTableColumns()` al suo posto.
      *
-     * metterla final
+     * Ultimo aggiornamento: 10/2023
      */
     public function table(Table $table): Table
     {
         $modelClass = $this->getModelClass();
         if (! app(TableExistsByModelClassActions::class)->execute($modelClass)) {
             $this->notifyTableMissing();
-
             return $this->configureEmptyTable($table);
         }
 
@@ -278,9 +276,9 @@ trait HasXotTable
     /**
      * Get table filters.
      *
-     * @return array<string, Tables\Filters\Filter|TernaryFilter|BaseFilter>
+     * @return array<string|int, Tables\Filters\Filter|TernaryFilter|BaseFilter>
      */
-    protected function getTableFilters(): array
+    public function getTableFilters(): array
     {
         return [];
     }
@@ -288,9 +286,9 @@ trait HasXotTable
     /**
      * Get table actions.
      *
-     * @return array<string, Action|ActionGroup>
+     * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
      */
-    protected function getTableActions(): array
+    public function getTableActions(): array
     {
         $actions = [];
 
@@ -306,26 +304,28 @@ trait HasXotTable
                 ->tooltip(__('user::actions.edit'));
         }
 
+        $actions['delete'] = Tables\Actions\DeleteAction::make()
+            ->iconButton()
+            ->tooltip(__('user::actions.delete'));
+
         if ($this->shouldShowReplicateAction()) {
             $actions['replicate'] = Tables\Actions\ReplicateAction::make()
-                ->label('')
-                ->tooltip(__('user::actions.replicate'))
-                ->iconButton();
+                ->iconButton()
+                ->tooltip(__('user::actions.replicate'));
         }
 
-        if (! $this->shouldShowDetachAction()) {
-            $actions['delete'] = Tables\Actions\DeleteAction::make()
-                ->tooltip(__('user::actions.delete'))
-                ->iconButton();
-        }
-
+        // Check if class has the getRelationship method
         if ($this->shouldShowDetachAction()) {
-            $actions['detach'] = Tables\Actions\DetachAction::make()
-                ->label('')
-                ->tooltip(__('user::actions.detach'))
-                ->icon('heroicon-o-link-slash')
-                ->color('danger')
-                ->requiresConfirmation();
+            if (method_exists($this, 'getRelationship')) {
+                if (method_exists($this->getRelationship(), 'getTable')) {
+                    $pivotClass = $this->getRelationship()->getPivotClass();
+                    if (method_exists($pivotClass, 'getKeyName')) {
+                        $actions['detach'] = Tables\Actions\DetachAction::make()
+                            ->iconButton()
+                            ->tooltip(__('user::actions.detach'));
+                    }
+                }
+            }
         }
 
         return $actions;
@@ -336,12 +336,11 @@ trait HasXotTable
      *
      * @return array<string, BulkAction>
      */
-    protected function getTableBulkActions(): array
+    public function getTableBulkActions(): array
     {
         return [
             'delete' => DeleteBulkAction::make()
                 ->label('')
-                ->tooltip(__('user::actions.delete_selected'))
                 ->icon('heroicon-o-trash')
                 ->color('danger')
                 ->requiresConfirmation(),
@@ -349,33 +348,34 @@ trait HasXotTable
     }
 
     /**
-     * Get the model class.
+     * Get model class.
      *
-     * @return class-string<\Illuminate\Database\Eloquent\Model>
-     * @throws \Exception
+     * @throws \Exception Se non viene trovata una classe modello valida
+     *
+     * @return class-string<Model>
      */
     public function getModelClass(): string
     {
-        if (property_exists($this, 'model')) {
-            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
-            return $this->model;
+        if (method_exists($this, 'getRelationship')) {
+            $relationship = $this->getRelationship();
+            if ($relationship instanceof Relation) {
+                /* @var class-string<Model> */
+                return get_class($relationship->getModel());
+            }
         }
 
-        $relationship = $this->getRelationship();
-        if ($relationship instanceof Relation) {
-            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
-            return get_class($relationship->getModel());
-        }
+        if (method_exists($this, 'getModel')) {
+            $model = $this->getModel();
+            if (is_string($model)) {
+                Assert::classExists($model);
 
-        $model = $this->getModel();
-        if (is_string($model)) {
-            Assert::classExists($model);
-            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
-            return $model;
-        }
-        if ($model instanceof Model) {
-            /** @var class-string<\Illuminate\Database\Eloquent\Model> */
-            return get_class($model);
+                /* @var class-string<Model> */
+                return $model;
+            }
+            if ($model instanceof Model) {
+                /* @var class-string<Model> */
+                return get_class($model);
+            }
         }
 
         throw new \Exception('No model found in '.class_basename(__CLASS__).'::'.__FUNCTION__);

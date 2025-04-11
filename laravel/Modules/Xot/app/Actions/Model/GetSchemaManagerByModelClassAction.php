@@ -5,38 +5,35 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Model;
 
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Connection;
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Support\Facades\DB;
+use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
-/**
- * Class GetSchemaManagerByModelClassAction
- * 
- * Ottiene lo schema manager per una classe modello.
- */
 class GetSchemaManagerByModelClassAction
 {
+    use QueueableAction;
+
     /**
-     * Ottiene lo schema manager.
+     * Ottiene lo schema manager Doctrine per una classe di modello Eloquent.
      *
-     * @param class-string<Model> $modelClass Nome della classe modello
-     * @return AbstractSchemaManager
-     * @throws \RuntimeException Se non è possibile ottenere lo schema manager
+     * @param string $modelClass La classe del modello
+     * @return AbstractSchemaManager Lo schema manager di Doctrine
      */
     public function execute(string $modelClass): AbstractSchemaManager
     {
-        Assert::classExists($modelClass);
-        Assert::subclassOf($modelClass, Model::class);
-
-        /** @var Model $model */
-        $model = new $modelClass();
-        $connection = DB::connection($model->getConnectionName());
+        Assert::isInstanceOf($model = app($modelClass), EloquentModel::class);
+        $connection = $model->getConnection();
         
-        $schemaManager = $connection->getDoctrineSchemaManager();
-        if (null === $schemaManager) {
-            throw new \RuntimeException('Impossibile ottenere lo schema manager per ' . $modelClass);
+        // In Laravel 9+ il metodo getDoctrineSchemaManager è stato deprecato
+        // ma getDoctrineConnection() non esiste, dobbiamo usare getDoctrineSchemaManager direttamente
+        if (method_exists($connection, 'getDoctrineSchemaManager')) {
+            /** @phpstan-ignore deprecated.method */
+            return $connection->getDoctrineSchemaManager();
         }
 
-        return $schemaManager;
+        // Se in futuro il metodo getDoctrineConnection diventa disponibile, possiamo usare questo
+        throw new \RuntimeException('Non è possibile ottenere lo schema manager Doctrine per questo modello.');
     }
 }

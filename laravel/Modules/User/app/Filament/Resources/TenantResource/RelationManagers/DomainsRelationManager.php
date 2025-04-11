@@ -11,96 +11,68 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+
+
+
+
+
+
+
+
 
 class DomainsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'domains';
 
     /**
-     * Definisce lo schema del form per la relazione.
-     *
-     * @return array<string, Forms\Components\Component>
+     * @return array<string, \Filament\Forms\Components\Component>
      */
     public function getFormSchema(): array
     {
         return [
-            Forms\Components\TextInput::make('name')
+            'domain' => Forms\Components\TextInput::make('domain')
                 ->required()
+                ->prefix('http(s)://')
+                ->suffix('.'.request()->getHost())
                 ->maxLength(255),
-            Forms\Components\TextInput::make('domain')
-                ->required()
-                ->url()
-                ->maxLength(255),
-            Forms\Components\Toggle::make('is_active')
-                ->required(),
-            Forms\Components\Toggle::make('is_primary')
-                ->required(),
         ];
     }
 
-    /**
-     * Definisce le colonne della tabella per la relazione.
-     *
-     * @return array<Tables\Columns\Column>
-     */
-    protected function getTableColumns(): array
+    public function table(Table $table): Table
     {
-        return [
-            Tables\Columns\TextColumn::make('name')
-                ->searchable()
-                ->sortable(),
-            Tables\Columns\TextColumn::make('domain')
-                ->searchable()
-                ->sortable(),
-            Tables\Columns\IconColumn::make('is_active')
-                ->boolean()
-                ->sortable(),
-            Tables\Columns\IconColumn::make('is_primary')
-                ->boolean()
-                ->sortable(),
-            Tables\Columns\TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable(),
-        ];
-    }
-
-    /**
-     * Definisce le azioni della tabella.
-     *
-     * @return array<string, Tables\Actions\Action>
-     */
-    protected function getTableActions(): array
-    {
-        return [
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
-        ];
-    }
-
-    /**
-     * Definisce le azioni bulk della tabella.
-     *
-     * @return array<Tables\Actions\BulkAction>
-     */
-    protected function getTableBulkActions(): array
-    {
-        return [
-            Tables\Actions\DeleteBulkAction::make(),
-        ];
-    }
-
-    /**
-     * Definisce la configurazione della tabella.
-     *
-     * @return array<string, mixed>
-     */
-    protected function getTableConfiguration(): array
-    {
-        return [
-            'defaultSort' => 'created_at',
-            'defaultSortDirection' => 'desc',
-            'recordsPerPage' => 10,
-        ];
+        return $table
+            ->recordTitleAttribute('domain')
+            ->columns(
+                [
+                    Tables\Columns\TextColumn::make('domain'),
+                    Tables\Columns\TextColumn::make('full-domain')->getStateUsing(static fn ($record) => Str::of($record->domain)->append('.')->append(request()->getHost())),
+                ]
+            )
+            ->filters(
+                [
+                ]
+            )
+            ->headerActions(
+                [
+                    Tables\Actions\CreateAction::make(),
+                ]
+            )
+            ->actions(
+                [
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ]
+            )
+            ->bulkActions(
+                [
+                    Tables\Actions\BulkActionGroup::make(
+                        [
+                            Tables\Actions\DeleteBulkAction::make(),
+                        ]
+                    ),
+                ]
+            );
     }
 }

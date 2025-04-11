@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-/**
- * @see  https://fajarwz.com/blog/laravel-database-transaction-for-data-consistency/
- */
-
 namespace Modules\Xot\Actions\Query;
 
 use Illuminate\Database\Events\QueryExecuted;

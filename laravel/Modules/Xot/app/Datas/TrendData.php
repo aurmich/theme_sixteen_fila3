@@ -7,17 +7,11 @@ namespace Modules\Xot\Datas;
 use Spatie\LaravelData\Data;
 
 /**
- * Class TrendData
- * 
- * Rappresenta un trend con una data e un valore aggregato.
- * 
- * @property string $date La data del trend
- * @property int|float|string $aggregate Il valore aggregato del trend
+ * Undocumented class.
  */
 class TrendData extends Data
 {
-    public function __construct(
-        public string $date,
-        public int|float|string $aggregate
-    ) {}
+    public string $date;
+
+    public mixed $aggregate;
 }

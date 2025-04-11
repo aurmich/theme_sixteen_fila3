@@ -5,113 +5,101 @@ declare(strict_types=1);
 namespace Modules\Xot\Helpers;
 
 use Illuminate\Support\Str;
-use Safe\Exceptions\FilesystemException;
-use Safe\Exceptions\PcreException;
-use function Safe\file_get_contents;
-use function Safe\file_put_contents;
+use Webmozart\Assert\Assert;
+
 use function Safe\glob;
+use function Safe\error_log;
 use function Safe\preg_match;
 use function Safe\preg_replace;
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
 
 class ResourceFormSchemaGenerator
 {
     /**
-     * Genera uno schema form per una classe Resource.
-     *
-     * @param string $resourceClass Il nome completo della classe Resource
-     * @throws FilesystemException Se ci sono problemi di lettura/scrittura file
-     * @throws PcreException Se ci sono problemi con le regex
-     * @return bool True se lo schema è stato generato, False se già esistente
+     * @param class-string $resourceClass
      */
     public static function generateFormSchema(string $resourceClass): bool
     {
         try {
+            if (!class_exists($resourceClass)) {
+                throw new \RuntimeException("Class {$resourceClass} does not exist");
+            }
+
             $reflection = new \ReflectionClass($resourceClass);
             $filename = $reflection->getFileName();
 
-            // Leggi il contenuto del file
+            if ($filename === false) {
+                throw new \RuntimeException("Failed to get filename for class: {$resourceClass}");
+            }
+
+            // Read the file contents
             $fileContents = file_get_contents($filename);
 
-            // Verifica se getFormSchema esiste già
-            if (false !== strpos($fileContents, 'public function getFormSchema')) {
+            // Check if getFormSchema method already exists
+            if (strpos($fileContents, 'public function getFormSchema') !== false) {
                 return false;
             }
 
-            // Genera uno schema form base sul nome della classe
+            // Generate form schema
             $modelName = str_replace('Resource', '', $reflection->getShortName());
             $modelVariable = Str::camel($modelName);
 
-            $formSchemaMethod = "\n    /**\n";
-            $formSchemaMethod .= "     * Get the form schema for the resource.\n";
-            $formSchemaMethod .= "     *\n";
-            $formSchemaMethod .= "     * @return array<string, Forms\Components\Component>\n";
-            $formSchemaMethod .= "     */\n";
-            $formSchemaMethod .= "    public static function getFormSchema(): array\n    {\n        return [\n";
-
-            // Genera campi form base
-            $formSchemaMethod .= "            '{$modelVariable}_name' => Forms\\Components\\TextInput::make('{$modelVariable}_name')\n";
-            $formSchemaMethod .= "                ->required()\n";
-            $formSchemaMethod .= "                ->maxLength(255),\n";
-
+            $formSchemaMethod = "\n    public function getFormSchema(): array\n    {\n        return [\n";
+            $formSchemaMethod .= "            Forms\\Components\\TextInput::make('{$modelVariable}_name')\n";
+            $formSchemaMethod .= "                ->required(),\n";
             $formSchemaMethod .= "        ];\n    }\n";
 
-            // Rileva se la classe è in una directory Clusters
-            $isInClustersDir = false !== strpos($filename, 'Clusters');
-
-            // Inserisci il metodo prima dell'ultima parentesi graffa
+            // Insert the method before the last closing brace
             $modifiedContents = preg_replace(
                 '/}(\s*)$/',
-                $formSchemaMethod.($isInClustersDir ? '' : '}$1'),
+                $formSchemaMethod.'}$1',
                 $fileContents
             );
 
-            // Scrivi nel file
+            // Write back to the file
             file_put_contents($filename, $modifiedContents);
 
             return true;
-        } catch (\ReflectionException $e) {
-            throw new \RuntimeException("Errore di riflessione per {$resourceClass}: ".$e->getMessage());
+        } catch (\Exception $e) {
+            error_log("Error generating form schema for {$resourceClass}: ".$e->getMessage());
+            return false;
         }
     }
 
     /**
-     * Genera schemi form per tutte le Resource.
-     *
-     * @throws FilesystemException Se ci sono problemi di accesso ai file
      * @return array{updated: array<string>, skipped: array<string>}
      */
     public static function generateForAllResources(): array
     {
-        $resourceFiles = glob('/var/www/html/base_techplanner_fila3/laravel/Modules/*/app/Filament/Resources/*Resource.php');
+        $resourceFiles = glob('/var/www/html/base_orisbroker_fila3/laravel/Modules/*/app/Filament/Resources/*Resource.php');
 
-        $updatedResources = [];
-        $skippedResources = [];
+        $results = ['updated' => [], 'skipped' => []];
 
         foreach ($resourceFiles as $file) {
             try {
-                // Ottieni il nome completo della classe
+                Assert::string($file);
                 $content = file_get_contents($file);
-                preg_match('/namespace\s+([\w\\\\]+);/', $content, $namespaceMatch);
-                preg_match('/class\s+(\w+)\s+extends\s+XotBaseResource/', $content, $classMatch);
+                $namespaceMatch = [];
+                $classMatch = [];
 
-                if (! isset($namespaceMatch[1]) || ! isset($classMatch[1])) {
-                    $skippedResources[] = $file;
-                    continue;
-                }
+                if (preg_match('/namespace\s+([\w\\\\\\\\]+);/', $content, $namespaceMatch) &&
+                    preg_match('/class\s+(\w+)\s+extends\s+XotBaseResource/', $content, $classMatch) &&
+                    !empty($namespaceMatch[1]) && !empty($classMatch[1])) {
+                    $fullClassName = $namespaceMatch[1].'\\'.$classMatch[1];
 
-                $fullClassName = $namespaceMatch[1].'\\'.$classMatch[1];
-
-                if (self::generateFormSchema($fullClassName)) {
-                    $updatedResources[] = $fullClassName;
+                    if (class_exists($fullClassName)) {
+                        /** @var class-string $fullClassName */
+                        if (self::generateFormSchema($fullClassName)) {
+                            $results['updated'][] = $fullClassName;
+                        }
+                    }
                 }
             } catch (\Exception $e) {
-                $skippedResources[] = $file.': '.$e->getMessage();
+                $results['skipped'][] = is_string($file) ? $file : (string) $file.': '.$e->getMessage();
             }
         }
 
-        return [
-            'updated' => $updatedResources,
-            'skipped' => $skippedResources,
-        ];
+        return $results;
     }
 }
