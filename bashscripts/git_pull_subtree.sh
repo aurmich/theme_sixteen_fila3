@@ -12,6 +12,15 @@ LOCAL_PATH_bak="$LOCAL_PATH"_bak
 REMOTE_REPO="$2"
 REMOTE_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "main")
 TEMP_BRANCH=$(basename "$LOCAL_PATH")-temp
+LOG_FILE="subtree_sync.log"
+
+
+echo "  📁 Path: $LOCAL_PATH"
+echo "  🌐 URL: $REMOTE_REPO"
+echo "  🌐 Branch: $REMOTE_BRANCH"
+echo "  🌐 Temporary branch: $TEMP_BRANCH"
+
+
 # Simple error handling function
 die() {
     echo "$1" >&2
@@ -71,6 +80,8 @@ pull_subtree() {
             mv "$LOCAL_PATH" "$LOCAL_PATH_bak" || die "Failed to rename $LOCAL_PATH to $LOCAL_PATH_bak"
             git add .
             git commit -am "Add $LOCAL_PATH_bak"
+            git push -u origin "$REMOTE_BRANCH"
+            
             git subtree add --prefix="$LOCAL_PATH" "$REMOTE_REPO" "$REMOTE_BRANCH" --squash
              # Sincronizza i file dalla cartella di backup
             rsync -avz "$LOCAL_PATH_bak/" "$LOCAL_PATH" || die "Failed to sync files"
@@ -80,6 +91,7 @@ pull_subtree() {
             # Commit delle modifiche
             git add . || die "Failed to add changes after submodule sync"
             git commit -am "Added submodule for $LOCAL_PATH" || die "Failed to commit submodule changes"
+            git push -u origin "$REMOTE_BRANCH"
 
         fi
     fi

@@ -10,11 +10,21 @@ parse_gitmodules gitmodules.ini
 
 me=$( readlink -f -- "$0")
 script_dir=$(dirname "$me")
+ORG="$1"
+
+if ! ./bashscripts/sync_to_disk.sh d ; then
+    log "⚠️ backup fallito"
+    exit 1
+fi
 
 total=${submodules_array["total"]}
 for ((i=0; i<total; i++)); do
     path=${submodules_array["path_${i}"]}
     url=${submodules_array["url_${i}"]}
+    # Applica riscrittura URL se ORG è passato
+    if [ -n "$ORG" ]; then
+        url=$(rewrite_url "$url" "$ORG")
+    fi
     echo "---------"
     echo "Submodule $i:"
     echo "  📁 Path: $path"
