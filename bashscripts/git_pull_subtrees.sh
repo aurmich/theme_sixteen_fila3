@@ -17,6 +17,9 @@ if ! ./bashscripts/sync_to_disk.sh d ; then
     exit 1
 fi
 
+git config core.ignorecase false
+git config core.fileMode false
+
 total=${submodules_array["total"]}
 for ((i=0; i<total; i++)); do
     path=${submodules_array["path_${i}"]}
