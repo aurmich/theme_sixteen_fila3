@@ -12,6 +12,7 @@ LOCAL_PATH_bak="$LOCAL_PATH"_bak
 REMOTE_REPO="$2"
 REMOTE_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "main")
 TEMP_BRANCH=$(basename "$LOCAL_PATH")-temp
+LOG_FILE="subtree_sync.log"
 
 
 echo "  📁 Path: $LOCAL_PATH"
