@@ -1,39 +1,56 @@
 {
-    "name": "fixcity/user-module",
-    "description": "Modulo User per FixCity",
-    "type": "laravel-module",
+    "name": "laraxot/theme_sixteen_fila3",
+    "description": "",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "theme_sixteen",
+        "Laravel",
+        "Ticket module"
+    ],
+    "homepage": "https://github.com/laraxot/theme_sixteen_fila3",
+    "license": "MIT",
+    "authors": [{
+        "name": "Marco Xot",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
     "require": {
-        "php": "^8.1",
-        "laravel/framework": "^10.0",
-        "spatie/laravel-permission": "^5.0",
-        "laravel/sanctum": "^3.0",
-        "thecodingmachine/safe": "^2.0"
-    },
-    "require-dev": {
-        "phpstan/phpstan": "^2.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "phpstan/phpstan-strict-rules": "^1.0",
-        "thecodingmachine/phpstan-safe-rule": "^1.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Modules\\User\\": "laravel/Modules/User/app/"
-        },
-        "files": [
-            "laravel/Modules/User/app/helpers.php"
-        ]
+        "filament/filament": "^3.2"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\User\\Providers\\UserServiceProvider"
-            ]
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Themes\\Sixteen\\": ""
+
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^9.4"
+    }
 }
