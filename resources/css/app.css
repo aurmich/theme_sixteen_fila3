@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Importa Filament CSS da node_modules */
 /*
 @import 'node_modules/@filamentphp/forms/dist/index.css';
@@ -5,10 +6,13 @@
 @import 'node_modules/@filamentphp/support/dist/index.css';
 */
 /* Tailwind */
+=======
+>>>>>>> 572f47b (.)
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 /* Custom Filament button styles */
 @layer components {
     .filament-button {
@@ -29,6 +33,8 @@
     }
 }
 
+=======
+>>>>>>> 572f47b (.)
 [x-cloak] {
     display: none;
 }
