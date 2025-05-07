@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 📆 2025-04-23 16:56:02 - 🔧 Configurazione git di base...
 📆 2025-04-23 16:56:02 - ✅ Configurazione git completata
 📆 2025-04-23 17:02:58 - 🔧 Configurazione git di base...
@@ -22,3 +23,19 @@
 [0;32m✅ [2025-05-06 18:43:12] Configurazione git completata con successo[0m
 [0;34mℹ️ [2025-05-06 21:21:16] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-06 21:21:16] Configurazione git completata con successo[0m
+=======
+[0;34mℹ️ [2025-04-22 11:38:46] Inizializzazione repository locale[0m
+[0;34mℹ️ [2025-04-22 11:38:46] Creazione branch main[0m
+[0;34mℹ️ [2025-04-22 11:38:46] Configurazione remote origin[0m
+[0;34mℹ️ [2025-04-22 11:38:46] Fetch da remote[0m
+[0;31m❌ [2025-04-22 11:38:47] Errore durante git fetch: Impossibile eseguire fetch[0m
+[1;33m⚠️ [2025-04-22 11:38:47] Tentativo di ripetere l'operazione (3 tentativi rimasti)[0m
+[0;34mℹ️ [2025-04-22 11:38:47] Commit dei file locali[0m
+[0;34mℹ️ [2025-04-22 11:38:48] Merge con remote[0m
+[0;34mℹ️ [2025-04-22 11:38:49] Commit finale e push[0m
+[0;31m❌ [2025-04-22 11:38:50] Errore durante git push: Impossibile eseguire push su origin/main[0m
+[1;33m⚠️ [2025-04-22 11:38:50] Tentativo di ripetere l'operazione (3 tentativi rimasti)[0m
+[0;34mℹ️ [2025-04-22 11:38:50] Pulizia repository locale[0m
+[0;34mℹ️ [2025-05-07 11:15:09] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-07 11:15:09] Configurazione git completata con successo[0m
+>>>>>>> acc0b3a (.)
