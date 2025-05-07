@@ -1,33 +1,4 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 721b79a (.)
-  "Resources/css/app.css": {
-    "file": "assets/app.css",
-    "src": "Resources/css/app.css",
-    "isEntry": true
-  },
-  "Resources/css/filament/theme.css": {
-    "file": "assets/theme.css",
-    "src": "Resources/css/filament/theme.css",
-    "isEntry": true
-  },
-  "Resources/js/app.js": {
-    "file": "assets/app2.js",
-    "name": "app",
-    "src": "Resources/js/app.js",
-    "isEntry": true
-<<<<<<< HEAD
-  }
-}
-=======
->>>>>>> 8c03ed1 (.)
-=======
-  },
->>>>>>> 721b79a (.)
   "resources/css/app.css": {
     "file": "assets/app.css",
     "src": "resources/css/app.css",
@@ -45,11 +16,3 @@
     "isEntry": true
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/dev
->>>>>>> 8c03ed1 (.)
-=======
-
->>>>>>> 721b79a (.)

@@ -1,28 +1,6 @@
 node_modules/
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8c03ed1 (.)
-node_modules
-vendor
+vendor/
 .git-blame-ignore-revs
 build/
-vendor/
-build/
-node_modules
-docs/cache/
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-vendor/
-.git-blame-ignore-revs
-node_modules
->>>>>>> origin/dev
->>>>>>> 8c03ed1 (.)
-=======
-vendor/
-.git-blame-ignore-revs
-node_modules
->>>>>>> 721b79a (.)
 cache/
+docs/cache/
