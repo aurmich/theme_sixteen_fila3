@@ -10,6 +10,7 @@ use Livewire\Volt\Component;
 use Modules\Tenant\Services\TenantService;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** @var array */
 =======
 // @var array
@@ -17,13 +18,16 @@ use Modules\Tenant\Services\TenantService;
 //$middleware=TenantService::config('middleware');
 //$base_middleware=Arr::get($middleware,'base',[]);
 $base_middleware=[];
+=======
+// @var array
+$base_middleware = [];
+>>>>>>> 721b79a (.)
 
 name('home');
 middleware($base_middleware);
 
 new class extends Component
 {
-
 };
 
 ?>
@@ -31,6 +35,7 @@ new class extends Component
 <x-layouts.marketing>
     @volt('home')
     <div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -43,6 +48,9 @@ new class extends Component
 
 =======
 >>>>>>> 8c03ed1 (.)
+=======
+        <x-page-content slug="home" />
+>>>>>>> 721b79a (.)
     </div>
     @endvolt
 </x-layouts.marketing>

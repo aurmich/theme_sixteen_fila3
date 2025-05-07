@@ -1,7 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 721b79a (.)
   "Resources/css/app.css": {
     "file": "assets/app.css",
     "src": "Resources/css/app.css",
@@ -17,10 +20,14 @@
     "name": "app",
     "src": "Resources/js/app.js",
     "isEntry": true
+<<<<<<< HEAD
   }
 }
 =======
 >>>>>>> 8c03ed1 (.)
+=======
+  },
+>>>>>>> 721b79a (.)
   "resources/css/app.css": {
     "file": "assets/app.css",
     "src": "resources/css/app.css",
@@ -39,6 +46,10 @@
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 >>>>>>> 8c03ed1 (.)
+=======
+
+>>>>>>> 721b79a (.)
