@@ -1,5 +1,6 @@
 node_modules/
 <<<<<<< HEAD
+<<<<<<< HEAD
 vendor/
 .git-blame-ignore-revs
 build/
@@ -8,11 +9,14 @@ docs/cache/
 =======
 node_modules
 vendor
+=======
+vendor/
+>>>>>>> e8676ed (.)
 .git-blame-ignore-revs
 build/
-vendor/
-build/
-node_modules
-docs/cache/
 cache/
+<<<<<<< HEAD
 >>>>>>> 7223ff2 (.)
+=======
+docs/cache/
+>>>>>>> e8676ed (.)
