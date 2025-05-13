@@ -1,6 +1,18 @@
 node_modules/
+<<<<<<< HEAD
 vendor/
 .git-blame-ignore-revs
 build/
 cache/
 docs/cache/
+=======
+node_modules
+vendor
+.git-blame-ignore-revs
+build/
+vendor/
+build/
+node_modules
+docs/cache/
+cache/
+>>>>>>> 7223ff2 (.)
