@@ -9,20 +9,11 @@ use Filament\Support\Enums\VerticalAlignment;
 use Livewire\Volt\Component;
 use Modules\Tenant\Services\TenantService;
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 /** @var array $base_middleware */
 // Per configurazioni avanzate:
 // $middleware = TenantService::config('middleware');
 // $base_middleware = Arr::get($middleware, 'base', []);
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
 // @var array
->>>>>>> 90e5aa2 (.)
 $base_middleware = [];
 
 name('home');
@@ -37,18 +28,9 @@ new class extends Component
 <x-layouts.marketing>
     @volt('home')
     <div>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
         {{-- Per mostrare il contenuto custom del tema:
         {!! $_theme->showPageContent('home') !!}
         --}}
-=======
->>>>>>> 90e5aa2 (.)
-=======
-        {{-- Per mostrare il contenuto custom del tema:
-        {!! $_theme->showPageContent('home') !!}
-        --}}
->>>>>>> Stashed changes
         <x-page-content slug="home" />
     </div>
     @endvolt
