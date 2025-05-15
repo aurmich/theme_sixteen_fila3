@@ -4,6 +4,7 @@ vendor/
 build/
 cache/
 docs/cache/
+<<<<<<< HEAD
 node_modules
 vendor
 vendor/
@@ -11,3 +12,5 @@ vendor/
 build/
 cache/
 docs/cache/
+=======
+>>>>>>> 90e5aa2 (.)
