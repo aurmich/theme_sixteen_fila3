@@ -4,7 +4,10 @@ vendor/
 build/
 cache/
 docs/cache/
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 node_modules
 vendor
 vendor/
@@ -12,5 +15,8 @@ vendor/
 build/
 cache/
 docs/cache/
+<<<<<<< Updated upstream
 =======
 >>>>>>> 90e5aa2 (.)
+=======
+>>>>>>> Stashed changes
