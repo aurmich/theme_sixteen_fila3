@@ -18,5 +18,5 @@ name('articles.index');
 ?>
 <x-layouts.app>
     wip
-    {{-- @include('blog::components.blocks.article_list.play_money_markets', ['method' => 'getAllArticles']) --}}
+    {{-- @include('predict::components.blocks.article_list.play_money_markets', ['method' => 'getAllArticles']) --}}
 </x-layouts.app>

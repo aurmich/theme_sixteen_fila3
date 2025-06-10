@@ -29,7 +29,7 @@ render(function (View $view, string $slug) {
     @include('pub_theme::categories.show.hot_topics')
   
   
-    @include('blog::components.blocks.article_list.play_money_markets') --}}
+    @include('predict::components.blocks.article_list.play_money_markets') --}}
   
   </section>
   

@@ -28,10 +28,7 @@ new class extends Component
 <x-layouts.marketing>
     @volt('home')
     <div>
-        {{-- Per mostrare il contenuto custom del tema:
-        {!! $_theme->showPageContent('home') !!}
-        --}}
-        <x-page-content slug="home" />
+        <x-page side="content" slug="home" />
     </div>
     @endvolt
 </x-layouts.marketing>
