@@ -17,7 +17,11 @@
         "role": "Developer"
     }],
     "require": {
+<<<<<<< HEAD
         "filament/filament": "^4.0"
+=======
+        "filament/filament": "^3.4"
+>>>>>>> 1193a5d (.)
     },
     "extra": {
         "laravel": {
