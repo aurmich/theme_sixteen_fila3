@@ -19,6 +19,7 @@
     "require": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "filament/filament": "^4.0"
 =======
         "filament/filament": "^3.4"
@@ -26,6 +27,9 @@
 =======
         "filament/filament": "^3.4"
 >>>>>>> 6d71cd7 (.)
+=======
+        "filament/filament": "^4.0"
+>>>>>>> 1c0a225 (.)
     },
     "extra": {
         "laravel": {
