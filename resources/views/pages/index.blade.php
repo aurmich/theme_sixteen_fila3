@@ -25,10 +25,10 @@ new class extends Component
 
 ?>
 
-<x-layouts.marketing>
+<x-layouts.app>
     @volt('home')
     <div>
         <x-page side="content" slug="home" />
     </div>
     @endvolt
-</x-layouts.marketing>
+</x-layouts.app>

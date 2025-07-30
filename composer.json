@@ -21,6 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Themes\\Sixteen\\Providers\\ThemeServiceProvider"
             ],
             "aliases": {
 
