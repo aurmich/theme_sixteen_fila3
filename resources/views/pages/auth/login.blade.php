@@ -9,7 +9,6 @@ name('login');
 
 ?>
 
-<<<<<<< HEAD
 <x-layouts.guest>
     <x-slot name="title">
         {{ __('auth.login.title') }}
@@ -35,10 +34,3 @@ name('login');
         </div>
     @endif
 </x-layouts.guest>
-=======
-<x-layouts.main>
-    <div>
-        <x-section slug="auth.login" />
-    </div>
-</x-layouts.main>
->>>>>>> f1cc684 (.)
