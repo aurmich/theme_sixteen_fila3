@@ -1,12 +1,8 @@
 @props([
     'title' => 'Accedi ai servizi',
     'subtitle' => 'Utilizza le tue credenziali per accedere all\'area riservata',
-<<<<<<< HEAD
-    'livewireComponent' => '\Modules\User\Http\Livewire\Auth\Login'
-=======
     // 'livewireComponent' => '\Modules\User\Http\Livewire\Auth\Login'
     'livewireComponent' => Modules\User\Http\Livewire\Auth\Login::class,
->>>>>>> 5842dc7 (.)
 ])
 
 <!-- Beautiful Login Card -->
