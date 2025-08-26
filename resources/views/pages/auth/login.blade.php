@@ -36,7 +36,11 @@ name('login');
                 <x-blocks.forms.login-card 
                     title="{{ __('Login') }}"
                     subtitle="{{ __('Inserisci le tue credenziali per continuare') }}"
+<<<<<<< HEAD
                     livewireComponent="\Modules\User\Http\Livewire\Auth\Login"
+=======
+                    :livewire-component="Modules\User\Http\Livewire\Auth\Login::class"
+>>>>>>> 5842dc7 (.)
                 />
 
                 <!-- Beautiful Registration CTA -->
