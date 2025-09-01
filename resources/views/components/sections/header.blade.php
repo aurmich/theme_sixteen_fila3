@@ -107,7 +107,6 @@
         <div class="flex justify-between w-full max-w-screen-xl mx-auto">
             <div class="flex-1">
                 <a href="" class="flex items-center py-2 space-x-4">
-<<<<<<< HEAD
                     {{--  
                     <x-heroicon-o-shield-check class="stroke-1 size-16" />
                     --}}
@@ -116,12 +115,6 @@
                     <div class="text-start">
                         <div class="text-2xl font-bold">{{ $_theme->metatag('title') }}</div>
                         <div class="text-sm">{{ $_theme->metatag('subtitle') }}</div>
-=======
-                    <x-heroicon-o-shield-check class="stroke-1 size-16" />
-                    <div class="text-start">
-                        <div class="text-2xl font-bold">Il mio Comune</div>
-                        <div class="text-sm">Un comune da vivere</div>
->>>>>>> 029971d (.)
                     </div>
                 </a>
             </div>
@@ -152,6 +145,7 @@
             <div class="flex-1 ">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 
                 @php
                 $nav1 = Arr::first($blocks,fn($item)=>$item->slug =='nav1');
@@ -164,9 +158,9 @@
 =======
 =======
 >>>>>>> b812033 (.)
-                {{--  dddx(get_defined_vars()) --}}
 =======
->>>>>>> 029971d (.)
+>>>>>>> 2426908 (.)
+                {{--  dddx(get_defined_vars()) --}}
                 <ul class="items-center px-1 menu menu-horizontal flex-nowrap">
 >>>>>>> d1c61d3 (.)
                     <li><a href="">Amministrazione</a></li>

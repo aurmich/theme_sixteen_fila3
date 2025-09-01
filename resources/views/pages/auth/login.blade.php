@@ -16,6 +16,7 @@ name('login');
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @livewire(Modules\User\Filament\Widgets\Auth\LoginWidget::class)
 =======
     @livewire(Modules\User\Widget\Auth\Login::class)
@@ -108,4 +109,7 @@ name('login');
     </section>
 >>>>>>> 029971d (.)
 >>>>>>> b812033 (.)
+=======
+    @livewire(Modules\User\Widget\Auth\Login::class)
+>>>>>>> 2426908 (.)
 </x-layouts.app>
