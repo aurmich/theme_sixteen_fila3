@@ -1,21 +1,11 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-// import preset from './../../vendor/filament/support/tailwind.config.preset';
-<<<<<<< HEAD
-=======
-import preset from "./vendor/filament/support/tailwind.config.preset";
->>>>>>> 1d4e669 (.)
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import colors from 'tailwindcss/colors';
 
-
 module.exports = {
-<<<<<<< HEAD
-    // presets: [preset],
-=======
-    presets: [preset],
->>>>>>> 1d4e669 (.)
+    // presets: [], // avoid theme-local Filament preset paths
     darkMode: 'class',
     theme: {
         extend: {
@@ -72,7 +62,7 @@ module.exports = {
                     800: '#B37F00',
                     900: '#996D00',
                 },
-                // Manteniamo compatibilità con i colori esistenti
+                // Compatibilità con i colori esistenti
                 primary: {
                     50: '#eff6ff',
                     100: '#dbeafe',
@@ -132,14 +122,15 @@ module.exports = {
     },
 
     content: [
-<<<<<<< HEAD
-
-=======
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
         "./assets/**/*.js",
         "./assets/**/*.css",
+        "./resources/views/**/*.blade.php",
+        "./resources/views/filament/**/*.blade.php",
+        "./app/Filament/**/*.php",
+
         "../../app/Filament/**/*.php",
         "../../resources/views/**/*.blade.php",
         "../../vendor/filament/**/*.blade.php",
@@ -147,24 +138,12 @@ module.exports = {
         "../../Modules/**/resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+        "../../Themes/**/resources/views/**/*.blade.php",
+
         "./node_modules/flowbite/**/*.js",
-        "../../../public_html/vendor/**/*.blade.php",
-        "./app/Filament/**/*.php",
-        "./resources/views/filament/**/*.blade.php",
-        "./vendor/filament/**/*.blade.php",
->>>>>>> 1d4e669 (.)
-        '../../app/Filament/**/*.php',
-        '../../resources/views/**/*.blade.php',
-        '../../vendor/filament/**/*.blade.php',
-        "../../Modules/**/Filament/**/*.php",
-        "../../Modules/**/resources/views/**/*.blade.php",
-        "../../storage/framework/views/*.php",
-        "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
-        "./node_modules/flowbite/**/*.js",
-        "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
-        "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../../public_html/vendor/**/*.blade.php",
     ],
+    // Filament preset palette (for compatibility with plugins expecting these keys)
     colors: {
         custom: {
             50: 'rgba(var(--c-50), <alpha-value>)',
@@ -261,12 +240,8 @@ module.exports = {
     plugins: [
         forms,
         typography,
-<<<<<<< HEAD
-        daisyui
-=======
         daisyui,
-        require("flowbite/plugin"),
->>>>>>> 1d4e669 (.)
+        require('flowbite/plugin'),
     ],
     daisyui: {
         themes: ['light', 'dark'],
