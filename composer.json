@@ -28,6 +28,14 @@
             }
         }
     },
+<<<<<<< HEAD
+=======
+    "require": {
+        "filament/filament": "^3.4",
+        "filament/tables": "^3.4",
+        "filament/forms": "^3.4"
+    },
+>>>>>>> 1d4e669 (.)
     "autoload": {
         "psr-4": {
             "Themes\\Sixteen\\": ""
