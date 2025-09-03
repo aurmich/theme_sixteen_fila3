@@ -77,7 +77,11 @@
 Usage Examples:
 
 1. Array-based accordion (recommended for multiple items):
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.accordion 
+=======
+<x-sixteen::bootstrap-italia.accordion 
+>>>>>>> 7e2fefb (.)
     :items="[
         [
             'id' => 'item1',
@@ -101,17 +105,29 @@ Usage Examples:
     accordion-id="collapseExample" />
 
 2. Flush accordion (no borders):
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.accordion 
+=======
+<x-sixteen::bootstrap-italia.accordion 
+>>>>>>> 7e2fefb (.)
     :flush="true"
     :items="$accordionData" />
 
 3. Custom heading level:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.accordion 
+=======
+<x-sixteen::bootstrap-italia.accordion 
+>>>>>>> 7e2fefb (.)
     :items="$items"
     heading-level="h3" />
 
 4. Slot-based accordion (for custom content):
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.accordion accordion-id="customAccordion">
+=======
+<x-sixteen::bootstrap-italia.accordion accordion-id="customAccordion">
+>>>>>>> 7e2fefb (.)
     <h2 class="accordion-header" id="headingCustom">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCustom">
             Custom Accordion Item
@@ -122,7 +138,11 @@ Usage Examples:
             <p>Custom accordion content with full control over markup.</p>
         </div>
     </div>
+<<<<<<< HEAD
 </x-pub_theme::bootstrap-italia.accordion>
+=======
+</x-sixteen::bootstrap-italia.accordion>
+>>>>>>> 7e2fefb (.)
 
 Bootstrap Italia Classes Reference:
 - .accordion: Base accordion container

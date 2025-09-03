@@ -210,7 +210,11 @@
 Usage Examples:
 
 1. Basic bottom navigation:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
+=======
+<x-sixteen::bootstrap-italia.bottom-nav 
+>>>>>>> 7e2fefb (.)
     :items="[
         ['label' => 'Home', 'url' => '/', 'icon' => 'it-home', 'active' => true],
         ['label' => 'Servizi', 'url' => '/servizi', 'icon' => 'it-settings'],
@@ -219,7 +223,11 @@ Usage Examples:
     ]" />
 
 2. Bottom nav with badges:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
+=======
+<x-sixteen::bootstrap-italia.bottom-nav 
+>>>>>>> 7e2fefb (.)
     :badges="true"
     :items="[
         ['label' => 'Home', 'url' => '/', 'icon' => 'it-home'],
@@ -229,7 +237,11 @@ Usage Examples:
     ]" />
 
 3. Dark theme bottom navigation:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
+=======
+<x-sixteen::bootstrap-italia.bottom-nav 
+>>>>>>> 7e2fefb (.)
     theme="dark"
     :items="[
         ['label' => 'Dashboard', 'url' => '/dashboard', 'icon' => 'it-chart-line'],
@@ -239,7 +251,11 @@ Usage Examples:
     ]" />
 
 4. Non-fixed bottom navigation (visible on desktop):
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
+=======
+<x-sixteen::bootstrap-italia.bottom-nav 
+>>>>>>> 7e2fefb (.)
     :fixed="false"
     :hidden-on-desktop="false"
     :items="[
@@ -250,7 +266,11 @@ Usage Examples:
     ]" />
 
 5. Bottom nav with mixed states:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
+=======
+<x-sixteen::bootstrap-italia.bottom-nav 
+>>>>>>> 7e2fefb (.)
     :items="[
         ['label' => 'Principale', 'url' => '/', 'icon' => 'it-home', 'active' => true],
         ['label' => 'Ricerca', 'url' => '/ricerca', 'icon' => 'it-search'],
@@ -259,7 +279,11 @@ Usage Examples:
     ]" />
 
 6. Custom content with slot:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav>
+=======
+<x-sixteen::bootstrap-italia.bottom-nav>
+>>>>>>> 7e2fefb (.)
     <a href="/" class="nav-link text-center d-flex flex-column align-items-center active">
         <svg class="icon icon-sm mb-1">
             <use href="#it-home"></use>
@@ -280,10 +304,17 @@ Usage Examples:
         </svg>
         <small>Azione</small>
     </button>
+<<<<<<< HEAD
 </x-pub_theme::bootstrap-italia.bottom-nav>
 
 7. Administrative area navigation:
 <x-pub_theme::bootstrap-italia.bottom-nav 
+=======
+</x-sixteen::bootstrap-italia.bottom-nav>
+
+7. Administrative area navigation:
+<x-sixteen::bootstrap-italia.bottom-nav 
+>>>>>>> 7e2fefb (.)
     :badges="true"
     :items="[
         ['label' => 'Dashboard', 'url' => '/admin', 'icon' => 'it-chart-bar', 'active' => true],

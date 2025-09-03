@@ -178,7 +178,11 @@
 Usage Examples:
 
 1. Basic megamenu with columns:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
+=======
+<x-sixteen::bootstrap-italia.megamenu 
+>>>>>>> 7e2fefb (.)
     title="Servizi"
     :columns="[
         [
@@ -211,7 +215,11 @@ Usage Examples:
     explore-url="/servizi" />
 
 2. Megamenu with call-to-action:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
+=======
+<x-sixteen::bootstrap-italia.megamenu 
+>>>>>>> 7e2fefb (.)
     title="Informazioni"
     :columns="$infoColumns"
     :cta="[
@@ -224,7 +232,11 @@ Usage Examples:
     ]" />
 
 3. Dark theme megamenu:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
+=======
+<x-sixteen::bootstrap-italia.megamenu 
+>>>>>>> 7e2fefb (.)
     title="Documenti"
     theme="dark-desktop"
     :full-width="true"
@@ -233,7 +245,11 @@ Usage Examples:
     explore-all-url="/documenti" />
 
 4. Megamenu with accessible links:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
+=======
+<x-sixteen::bootstrap-italia.megamenu 
+>>>>>>> 7e2fefb (.)
     title="Amministrazione"
     :columns="[
         [
@@ -253,7 +269,11 @@ Usage Examples:
     ]" />
 
 5. Custom content with slot:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu title="Custom Menu">
+=======
+<x-sixteen::bootstrap-italia.megamenu title="Custom Menu">
+>>>>>>> 7e2fefb (.)
     <div class="row">
         <div class="col-12">
             <h4>Contenuto personalizzato</h4>
@@ -261,15 +281,24 @@ Usage Examples:
             <a href="/custom" class="btn btn-primary">Vai alla pagina</a>
         </div>
     </div>
+<<<<<<< HEAD
 </x-pub_theme::bootstrap-italia.megamenu>
+=======
+</x-sixteen::bootstrap-italia.megamenu>
+>>>>>>> 7e2fefb (.)
 
 Navigation Integration:
 Place megamenu items within a navbar with .has-megamenu class:
 
 <nav class="navbar navbar-expand-lg has-megamenu {{ $themeClasses ? implode(' ', $themeClasses) : '' }}">
     <div class="navbar-nav">
+<<<<<<< HEAD
         <x-pub_theme::bootstrap-italia.megamenu ... />
         <x-pub_theme::bootstrap-italia.megamenu ... />
+=======
+        <x-sixteen::bootstrap-italia.megamenu ... />
+        <x-sixteen::bootstrap-italia.megamenu ... />
+>>>>>>> 7e2fefb (.)
     </div>
 </nav>
 

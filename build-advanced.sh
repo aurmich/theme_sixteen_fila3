@@ -148,3 +148,7 @@ echo "  • Per analisi bundle: npm run bundle-report"
 echo "  • Per watch mode: npm run copy:watch"
 
 log_success "Build avanzato completato!"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e2fefb (.)

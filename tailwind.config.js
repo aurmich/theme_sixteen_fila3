@@ -1,11 +1,20 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+<<<<<<< HEAD
+=======
+// import preset from './../../vendor/filament/support/tailwind.config.preset';
+import preset from "./vendor/filament/support/tailwind.config.preset";
+>>>>>>> 7e2fefb (.)
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import colors from 'tailwindcss/colors';
 
 module.exports = {
+<<<<<<< HEAD
     // presets: [], // avoid theme-local Filament preset paths
+=======
+    presets: [preset],
+>>>>>>> 7e2fefb (.)
     darkMode: 'class',
     theme: {
         extend: {
@@ -127,6 +136,7 @@ module.exports = {
         "./resources/**/*.vue",
         "./assets/**/*.js",
         "./assets/**/*.css",
+<<<<<<< HEAD
         "./resources/views/**/*.blade.php",
         "./resources/views/filament/**/*.blade.php",
         "./app/Filament/**/*.php",
@@ -134,6 +144,23 @@ module.exports = {
         "../../app/Filament/**/*.php",
         "../../resources/views/**/*.blade.php",
         "../../vendor/filament/**/*.blade.php",
+=======
+        "../../app/Filament/**/*.php",
+        "../../resources/views/**/*.blade.php",
+        "../../vendor/filament/**/*.blade.php",
+        "../../Modules/**/Filament/**/*.php",
+        "../../Modules/**/resources/views/**/*.blade.php",
+        "../../storage/framework/views/*.php",
+        "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+        "./node_modules/flowbite/**/*.js",
+        "../../../public_html/vendor/**/*.blade.php",
+        "./app/Filament/**/*.php",
+        "./resources/views/filament/**/*.blade.php",
+        "./vendor/filament/**/*.blade.php",
+        '../../app/Filament/**/*.php',
+        '../../resources/views/**/*.blade.php',
+        '../../vendor/filament/**/*.blade.php',
+>>>>>>> 7e2fefb (.)
         "../../Modules/**/Filament/**/*.php",
         "../../Modules/**/resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
@@ -241,7 +268,11 @@ module.exports = {
         forms,
         typography,
         daisyui,
+<<<<<<< HEAD
         require('flowbite/plugin'),
+=======
+        require("flowbite/plugin"),
+>>>>>>> 7e2fefb (.)
     ],
     daisyui: {
         themes: ['light', 'dark'],

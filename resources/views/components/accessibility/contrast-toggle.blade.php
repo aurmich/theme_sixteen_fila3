@@ -54,7 +54,11 @@
     class="inline-block"
     role="switch"
     :aria-checked="enabled"
+<<<<<<< HEAD
     :aria-label="enabled ? '{{ __('pub_theme::accessibility.disable_high_contrast') }}' : '{{ __('pub_theme::accessibility.enable_high_contrast') }}'"
+=======
+    :aria-label="enabled ? '{{ __('sixteen::accessibility.disable_high_contrast') }}' : '{{ __('sixteen::accessibility.enable_high_contrast') }}'"
+>>>>>>> 7e2fefb (.)
 >
     <button
         @click="toggle"
@@ -66,8 +70,13 @@
         :aria-pressed="enabled"
     >
         <span class="sr-only">
+<<<<<<< HEAD
             <span x-show="!enabled">{{ __('pub_theme::accessibility.enable_high_contrast') }}</span>
             <span x-show="enabled">{{ __('pub_theme::accessibility.disable_high_contrast') }}</span>
+=======
+            <span x-show="!enabled">{{ __('sixteen::accessibility.enable_high_contrast') }}</span>
+            <span x-show="enabled">{{ __('sixteen::accessibility.disable_high_contrast') }}</span>
+>>>>>>> 7e2fefb (.)
         </span>
         
         <span

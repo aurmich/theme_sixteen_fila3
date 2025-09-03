@@ -147,32 +147,52 @@
 Usage Examples:
 
 1. Basic toggle:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     id="toggle1"
     name="notifications"
     label="Abilita notifiche" />
 
 2. Checked toggle:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     id="toggle2"
     name="auto_save"
     label="Salvataggio automatico"
     :checked="true" />
 
 3. Disabled toggle:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     id="toggle3"
     name="premium_feature"
     label="Funzionalità premium"
     :disabled="true" />
 
 4. Inline toggles:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     id="toggle4"
     name="setting1"
     label="Impostazione 1"
     :inline="true" />
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     id="toggle5"
     name="setting2"
     label="Impostazione 2"
@@ -180,7 +200,11 @@ Usage Examples:
     :lever-right="true" />
 
 5. Grouped toggles with fieldset:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     legend="Gruppo di toggle"
     :inline="true"
     :toggles="[
@@ -202,27 +226,43 @@ Usage Examples:
     ]" />
 
 6. Simple grouped toggles:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     :toggles="[
         ['id' => 'email_notifications', 'label' => 'Notifiche email', 'name' => 'notifications[email]'],
         ['id' => 'sms_notifications', 'label' => 'Notifiche SMS', 'name' => 'notifications[sms]']
     ]" />
 
 7. Toggle with custom value:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     name="consent"
     label="Accetto i termini e condizioni"
     value="accepted"
     :required="true" />
 
 8. Toggle with slot content:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.toggle 
+=======
+<x-sixteen::bootstrap-italia.toggle 
+>>>>>>> 7e2fefb (.)
     name="custom_toggle"
     label="Toggle personalizzato">
     <small class="form-text text-muted">
         Informazioni aggiuntive sul toggle
     </small>
+<<<<<<< HEAD
 </x-pub_theme::bootstrap-italia.toggle>
+=======
+</x-sixteen::bootstrap-italia.toggle>
+>>>>>>> 7e2fefb (.)
 
 Bootstrap Italia Classes Reference:
 - .form-check: Container for form check elements

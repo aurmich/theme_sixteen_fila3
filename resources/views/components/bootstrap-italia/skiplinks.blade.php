@@ -61,10 +61,17 @@
 Usage Examples:
 
 1. Basic skiplinks (default):
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.skiplinks />
 
 2. Custom skiplinks:
 <x-pub_theme::bootstrap-italia.skiplinks 
+=======
+<x-sixteen::bootstrap-italia.skiplinks />
+
+2. Custom skiplinks:
+<x-sixteen::bootstrap-italia.skiplinks 
+>>>>>>> 7e2fefb (.)
     :links="[
         ['href' => '#nav', 'text' => 'Vai al menu'],
         ['href' => '#content', 'text' => 'Vai al contenuto'],
@@ -74,5 +81,9 @@ Usage Examples:
     aria-label="Scorciatoie di navigazione personalizzate" />
 
 3. Simple div version:
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.skiplinks :show-list="false" />
+=======
+<x-sixteen::bootstrap-italia.skiplinks :show-list="false" />
+>>>>>>> 7e2fefb (.)
 --}}
