@@ -190,16 +190,16 @@
 Usage Examples:
 
 1. Dichiarazione base:
-<x-sixteen::municipal.accessibility-statement />
+<x-pub_theme::municipal.accessibility-statement />
 
 2. Dichiarazione personalizzata:
-<x-sixteen::municipal.accessibility-statement 
+<x-pub_theme::municipal.accessibility-statement 
     comuneName="Comune di Roma"
     complianceLevel="Totalmente conforme"
     feedbackEmail="accessibilita@comune.roma.it"
     :nonAccessibleContent="['Documenti PDF legacy']" />
 
 3. Con URL AGID specifico:
-<x-sixteen::municipal.accessibility-statement 
+<x-pub_theme::municipal.accessibility-statement 
     agidFormUrl="https://form.agid.gov.it/view/12345678-1234-1234-1234-123456789012" />
 --}}

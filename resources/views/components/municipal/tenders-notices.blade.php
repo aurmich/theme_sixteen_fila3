@@ -397,11 +397,11 @@
 Usage Examples:
 
 1. Bandi base:
-<x-sixteen::municipal.tenders-notices 
+<x-pub_theme::municipal.tenders-notices 
     :items="$tenders" />
 
 2. Con dati personalizzati:
-<x-sixteen::municipal.tenders-notices 
+<x-pub_theme::municipal.tenders-notices 
     title="Opportunità e Bandi"
     :items="[
         {
@@ -421,7 +421,7 @@ Usage Examples:
     :statuses="['Tutti', 'Aperti', 'Scaduti', 'Aggiudicati']" />
 
 3. Senza filtri e contatori:
-<x-sixteen::municipal.tenders-notices 
+<x-pub_theme::municipal.tenders-notices 
     :show-filters="false"
     :show-counters="false"
     :items="$recentTenders" />

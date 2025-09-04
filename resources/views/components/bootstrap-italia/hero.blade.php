@@ -119,15 +119,7 @@
 Usage Examples:
 
 1. Basic text hero:
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.hero 
-=======
-<x-sixteen::bootstrap-italia.hero 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.hero 
->>>>>>> 9c84373 (.)
     title="Titolo della sezione"
     subtitle="Titolo occhiello"
     description="Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras."
@@ -135,30 +127,14 @@ Usage Examples:
     cta-url="/action" />
 
 2. Image-only hero:
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.hero 
-=======
-<x-sixteen::bootstrap-italia.hero 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.hero 
->>>>>>> 9c84373 (.)
     type="image"
     image="/path/to/hero-image.jpg"
     image-alt="Descrizione immagine"
     image-title="Titolo immagine" />
 
 3. Hero with background image and overlay:
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.hero 
-=======
-<x-sixteen::bootstrap-italia.hero 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.hero 
->>>>>>> 9c84373 (.)
     type="background"
     title="Titolo con sfondo"
     description="Testo sovrapposto all'immagine di sfondo"
@@ -167,66 +143,29 @@ Usage Examples:
     cta-text="Scopri di più" />
 
 4. Centered hero:
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.hero 
-=======
-<x-sixteen::bootstrap-italia.hero 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.hero 
->>>>>>> 9c84373 (.)
     title="Titolo Centrato"
     description="Contenuto centrato nella pagina"
     :centered="true"
     bg-class="bg-light" />
 
 5. Small hero:
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.hero 
-=======
-<x-sixteen::bootstrap-italia.hero 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.hero 
->>>>>>> 9c84373 (.)
     title="Hero Piccolo"
     :small="true"
     cta-text="Azione"
     cta-class="btn btn-primary" />
 
 6. Custom content with slot:
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.hero title="Titolo personalizzato">
-=======
-<x-sixteen::bootstrap-italia.hero title="Titolo personalizzato">
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.hero title="Titolo personalizzato">
->>>>>>> 9c84373 (.)
     <div class="custom-content">
         <p>Contenuto personalizzato nel slot</p>
         <button class="btn btn-success">Azione custom</button>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c84373 (.)
 </x-pub_theme::bootstrap-italia.hero>
 
 7. Different heading level:
 <x-pub_theme::bootstrap-italia.hero 
-<<<<<<< HEAD
-=======
-</x-sixteen::bootstrap-italia.hero>
-
-7. Different heading level:
-<x-sixteen::bootstrap-italia.hero 
->>>>>>> 7e2fefb (.)
-=======
->>>>>>> 9c84373 (.)
     title="Sottosezione"
     heading-level="h2"
     bg-class="bg-secondary" />

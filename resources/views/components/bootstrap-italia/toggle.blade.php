@@ -147,72 +147,47 @@
 Usage Examples:
 
 1. Basic toggle:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     id="toggle1"
     name="notifications"
     label="Abilita notifiche" />
 
 2. Checked toggle:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     id="toggle2"
     name="auto_save"
     label="Salvataggio automatico"
     :checked="true" />
 
 3. Disabled toggle:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     id="toggle3"
     name="premium_feature"
     label="Funzionalità premium"
     :disabled="true" />
 
 4. Inline toggles:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     id="toggle4"
     name="setting1"
     label="Impostazione 1"
     :inline="true" />
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     id="toggle5"
     name="setting2"
     label="Impostazione 2"
@@ -220,15 +195,10 @@ Usage Examples:
     :lever-right="true" />
 
 5. Grouped toggles with fieldset:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     legend="Gruppo di toggle"
     :inline="true"
     :toggles="[
@@ -250,59 +220,39 @@ Usage Examples:
     ]" />
 
 6. Simple grouped toggles:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     :toggles="[
         ['id' => 'email_notifications', 'label' => 'Notifiche email', 'name' => 'notifications[email]'],
         ['id' => 'sms_notifications', 'label' => 'Notifiche SMS', 'name' => 'notifications[sms]']
     ]" />
 
 7. Toggle with custom value:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     name="consent"
     label="Accetto i termini e condizioni"
     value="accepted"
     :required="true" />
 
 8. Toggle with slot content:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.toggle 
 <x-pub_theme::bootstrap-italia.toggle 
 =======
-<x-sixteen::bootstrap-italia.toggle 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.toggle 
->>>>>>> 9c84373 (.)
     name="custom_toggle"
     label="Toggle personalizzato">
     <small class="form-text text-muted">
         Informazioni aggiuntive sul toggle
     </small>
-<<<<<<< HEAD
-<<<<<<< HEAD
+</x-pub_theme::bootstrap-italia.toggle>
 </x-pub_theme::bootstrap-italia.toggle>
 =======
-</x-sixteen::bootstrap-italia.toggle>
->>>>>>> 7e2fefb (.)
-=======
 </x-pub_theme::bootstrap-italia.toggle>
->>>>>>> 9c84373 (.)
 
 Bootstrap Italia Classes Reference:
 - .form-check: Container for form check elements

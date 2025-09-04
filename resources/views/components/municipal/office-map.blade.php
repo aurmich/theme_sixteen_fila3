@@ -395,11 +395,11 @@
 Usage Examples:
 
 1. Mappa base:
-<x-sixteen::municipal.office-map 
+<x-pub_theme::municipal.office-map 
     :offices="$offices" />
 
 2. Con uffici personalizzati:
-<x-sixteen::municipal.office-map 
+<x-pub_theme::municipal.office-map 
     :offices="[
         {
             'id': 1,
@@ -416,7 +416,7 @@ Usage Examples:
     :map-options="['zoom' => 14, 'center' => [41.9028, 12.4964]]" />
 
 3. Vista predefinita lista:
-<x-sixteen::municipal.office-map 
+<x-pub_theme::municipal.office-map 
     default-view="list"
     :offices="$offices" />
 --}}

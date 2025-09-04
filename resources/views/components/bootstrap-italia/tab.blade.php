@@ -86,10 +86,6 @@
     <div class="row">
         @if($position === 'left')
             <div class="col-3">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c84373 (.)
                 @include.*pub_theme::bootstrap-italia.partials.tab-nav')
             </div>
             <div class="col-9">
@@ -101,46 +97,34 @@
             </div>
             <div class="col-3">
                 @include.*pub_theme::bootstrap-italia.partials.tab-nav')
-<<<<<<< HEAD
-=======
-                @include('sixteen::bootstrap-italia.partials.tab-nav')
+                @include('pub_theme::bootstrap-italia.partials.tab-nav')
             </div>
             <div class="col-9">
-                @include('sixteen::bootstrap-italia.partials.tab-content')
+                @include('pub_theme::bootstrap-italia.partials.tab-content')
             </div>
         @else
             <div class="col-9">
-                @include('sixteen::bootstrap-italia.partials.tab-content')
+                @include('pub_theme::bootstrap-italia.partials.tab-content')
             </div>
             <div class="col-3">
-                @include('sixteen::bootstrap-italia.partials.tab-nav')
->>>>>>> 7e2fefb (.)
+                @include('pub_theme::bootstrap-italia.partials.tab-nav')
 =======
->>>>>>> 9c84373 (.)
             </div>
         @endif
     </div>
 @else
     @if($position === 'bottom')
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c84373 (.)
         @include.*pub_theme::bootstrap-italia.partials.tab-content')
         @include.*pub_theme::bootstrap-italia.partials.tab-nav')
     @else
         @include.*pub_theme::bootstrap-italia.partials.tab-nav')
         @include.*pub_theme::bootstrap-italia.partials.tab-content')
-<<<<<<< HEAD
-=======
-        @include('sixteen::bootstrap-italia.partials.tab-content')
-        @include('sixteen::bootstrap-italia.partials.tab-nav')
+        @include('pub_theme::bootstrap-italia.partials.tab-content')
+        @include('pub_theme::bootstrap-italia.partials.tab-nav')
     @else
-        @include('sixteen::bootstrap-italia.partials.tab-nav')
-        @include('sixteen::bootstrap-italia.partials.tab-content')
->>>>>>> 7e2fefb (.)
+        @include('pub_theme::bootstrap-italia.partials.tab-nav')
+        @include('pub_theme::bootstrap-italia.partials.tab-content')
 =======
->>>>>>> 9c84373 (.)
     @endif
 @endif
 
@@ -273,15 +257,10 @@ $tabContentPartial = function() use ($contentClasses, $contentId, $tabs, $active
 Usage Examples:
 
 1. Basic horizontal tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :tabs="[
         'tab1' => [
             'label' => 'Tab 1',
@@ -302,15 +281,10 @@ Usage Examples:
     active-tab="tab1" />
 
 2. Full-width tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :full-width="true"
     :tabs="[
         'overview' => [
@@ -331,15 +305,10 @@ Usage Examples:
     ]" />
 
 3. Tabs with icons:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :tabs="[
         'home' => [
             'label' => 'Home',
@@ -363,15 +332,10 @@ Usage Examples:
     ]" />
 
 4. Icon-only tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :tabs="[
         'dashboard' => [
             'icon' => 'it-chart-bar',
@@ -394,15 +358,10 @@ Usage Examples:
     ]" />
 
 5. Tabs with disabled state:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :tabs="[
         'available' => [
             'label' => 'Disponibile',
@@ -424,15 +383,10 @@ Usage Examples:
     ]" />
 
 6. Vertical tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     orientation="vertical"
     position="left"
     :tabs="[
@@ -457,15 +411,10 @@ Usage Examples:
     ]" />
 
 7. Bottom positioned tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     position="bottom"
     :tabs="[
         'step1' => ['label' => 'Passo 1', 'content' => 'Primo passo del processo', 'padding' => true],
@@ -474,15 +423,10 @@ Usage Examples:
     ]" />
 
 8. Dark theme tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :dark="true"
     :tabs="[
         'dark1' => ['label' => 'Dark Tab 1', 'content' => 'Contenuto tema scuro 1', 'padding' => true],
@@ -490,15 +434,10 @@ Usage Examples:
     ]" />
 
 9. Card-style tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :card="true"
     :tabs="[
         'card1' => ['label' => 'Card 1', 'content' => 'Contenuto card-style 1', 'padding' => true],
@@ -506,15 +445,10 @@ Usage Examples:
     ]" />
 
 10. Complex content tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :full-width="true"
     :tabs="[
         'documents' => [
@@ -597,15 +531,10 @@ Usage Examples:
 </div>
 
 12. Responsive tabs with mobile considerations:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     :no-scrollbar="true"
     :full-width="true"
     :tabs="[
@@ -631,15 +560,10 @@ Usage Examples:
     class="d-block d-md-none" />
 
 13. Administrative interface tabs:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.tab 
 <x-pub_theme::bootstrap-italia.tab 
 =======
-<x-sixteen::bootstrap-italia.tab 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.tab 
->>>>>>> 9c84373 (.)
     orientation="vertical"
     position="left"
     :tabs="[

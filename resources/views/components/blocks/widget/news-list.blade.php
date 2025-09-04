@@ -11,7 +11,7 @@
 
 <div class="grid {{ $grid }} gap-6">
     @forelse($items as $item)
-        <x-sixteen::blocks.cards.news-card
+        <x-pub_theme::blocks.cards.news-card
             :title="$item['title'] ?? ''"
             :href="$item['href'] ?? '#'"
             :date="$item['date'] ?? null"
@@ -28,7 +28,3 @@
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9c84373 (.)

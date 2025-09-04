@@ -186,164 +186,106 @@ document.addEventListener('DOMContentLoaded', function() {
 Usage Examples:
 
 1. Basic spinner (default):
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c84373 (.)
 <x-pub_theme::bootstrap-italia.progress-indicators />
 
 2. Active spinner with different sizes:
 <x-pub_theme::bootstrap-italia.progress-indicators 
-<<<<<<< HEAD
-=======
-<x-sixteen::bootstrap-italia.progress-indicators />
+<x-pub_theme::bootstrap-italia.progress-indicators />
 
 2. Active spinner with different sizes:
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
+<x-pub_theme::bootstrap-italia.progress-indicators 
 =======
->>>>>>> 9c84373 (.)
     type="spinner" 
     size="sm" 
     :active="true" 
     label="Caricamento piccolo..." />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="spinner" 
     size="lg" 
     :active="true" />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="spinner" 
     size="xl" 
     :active="true" />
 
 3. Double spinner:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="spinner" 
     :double="true" 
     :active="true" />
 
 4. Donut progress indicator:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="donut" 
     :value="0.75" 
     label="Avanzamento operazione" />
 
 5. Basic progress bar:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :value="0.5" 
     :show-label="true" />
 
 6. Colored progress bars:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :value="0.25" 
     color="success" 
     :show-label="true" />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :value="0.75" 
     color="warning" 
     :show-label="true" />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :value="0.9" 
     color="danger" 
     :show-label="true" />
 
 7. Striped and animated progress bar:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :value="0.4" 
     :striped="true" 
     :active="true" />
 
 8. Indeterminate progress bar:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :indeterminate="true" 
     :striped="true" 
@@ -351,15 +293,10 @@ Usage Examples:
     label="Elaborazione in corso..." />
 
 9. Progress button:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="bar" 
     :value="0.65" 
     button-text="Caricamento" />
@@ -369,15 +306,10 @@ Usage Examples:
 <!-- File upload progress -->
 <div class="mb-3">
     <label class="form-label">Upload file</label>
-<<<<<<< HEAD
-<<<<<<< HEAD
+    <x-pub_theme::bootstrap-italia.progress-indicators 
     <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-    <x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
     <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
         type="bar" 
         :value="0.3" 
         color="primary" 
@@ -386,15 +318,10 @@ Usage Examples:
 </div>
 
 <!-- Form submission -->
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.progress-indicators 
 <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-<x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
     type="spinner" 
     size="sm" 
     :active="true" 
@@ -403,15 +330,10 @@ Usage Examples:
 
 <!-- Data processing -->
 <div class="text-center py-4">
-<<<<<<< HEAD
-<<<<<<< HEAD
+    <x-pub_theme::bootstrap-italia.progress-indicators 
     <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-    <x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
     <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
         type="donut" 
         :value="0.85" 
         label="Elaborazione dati" />
@@ -420,15 +342,10 @@ Usage Examples:
 
 11. Dynamic progress with Alpine.js:
 <div x-data="{ progress: 0.2 }">
-<<<<<<< HEAD
-<<<<<<< HEAD
+    <x-pub_theme::bootstrap-italia.progress-indicators 
     <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-    <x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
     <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
         type="bar" 
         x-bind:data-value="progress" 
         :show-label="true" />
@@ -447,15 +364,10 @@ Usage Examples:
 <div class="row">
     <div class="col-md-4">
         <h6>CPU Usage</h6>
-<<<<<<< HEAD
-<<<<<<< HEAD
+        <x-pub_theme::bootstrap-italia.progress-indicators 
         <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-        <x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
         <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
             type="bar" 
             :value="0.45" 
             color="success" 
@@ -463,15 +375,10 @@ Usage Examples:
     </div>
     <div class="col-md-4">
         <h6>Memory Usage</h6>
-<<<<<<< HEAD
-<<<<<<< HEAD
+        <x-pub_theme::bootstrap-italia.progress-indicators 
         <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-        <x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
         <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
             type="bar" 
             :value="0.72" 
             color="warning" 
@@ -479,15 +386,10 @@ Usage Examples:
     </div>
     <div class="col-md-4">
         <h6>Disk Usage</h6>
-<<<<<<< HEAD
-<<<<<<< HEAD
+        <x-pub_theme::bootstrap-italia.progress-indicators 
         <x-pub_theme::bootstrap-italia.progress-indicators 
 =======
-        <x-sixteen::bootstrap-italia.progress-indicators 
->>>>>>> 7e2fefb (.)
-=======
         <x-pub_theme::bootstrap-italia.progress-indicators 
->>>>>>> 9c84373 (.)
             type="bar" 
             :value="0.89" 
             color="danger" 

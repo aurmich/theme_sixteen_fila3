@@ -444,13 +444,13 @@
 Usage Examples:
 
 1. Form base:
-<x-sixteen::municipal.service-form 
+<x-pub_theme::municipal.service-form 
     title="Prenotazione Appuntamento"
     description="Prenota un appuntamento presso gli uffici comunali"
     submit-url="/api/services/appointment" />
 
 2. Con step personalizzati:
-<x-sixteen::municipal.service-form 
+<x-pub_theme::municipal.service-form 
     :steps="[
         ['id' => 'dati', 'title' => 'Dati personali'],
         ['id' => 'appuntamento', 'title' => 'Data e ora'],
@@ -459,7 +459,7 @@ Usage Examples:
     success-message="Appuntamento prenotato con successo!" />
 
 3. Senza barra di progresso:
-<x-sixteen::municipal.service-form 
+<x-pub_theme::municipal.service-form 
     :show-progress="false"
     title="Richiesta informazioni" />
 --}}

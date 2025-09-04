@@ -147,15 +147,10 @@
 Usage Examples:
 
 1. Basic radio group with fieldset:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="gruppo1"
     legend="Gruppo di radio"
     :options="[
@@ -165,15 +160,10 @@ Usage Examples:
     selected="option1" />
 
 2. Inline radio buttons:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="gruppo2"
     legend="Gruppo di radio"
     :inline="true"
@@ -184,15 +174,10 @@ Usage Examples:
     selected="opt1" />
 
 3. Radio buttons with with-gap styling:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="gruppo3"
     legend="Gruppo di radio"
     :with-gap="true"
@@ -202,15 +187,10 @@ Usage Examples:
     ]" />
 
 4. Disabled radio group:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="gruppo4"
     legend="Gruppo di radio"
     :disabled="true"
@@ -221,15 +201,10 @@ Usage Examples:
     selected="dis1" />
 
 5. Advanced options array format:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="gruppo5"
     legend="Opzioni avanzate"
     :options="[
@@ -239,15 +214,10 @@ Usage Examples:
     ]" />
 
 6. Required radio group with help text:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="required_group"
     legend="Campo obbligatorio"
     :required="true"
@@ -255,36 +225,23 @@ Usage Examples:
     :options="['req1' => 'Prima opzione', 'req2' => 'Seconda opzione']" />
 
 7. Simple radio group without fieldset:
-<<<<<<< HEAD
-<<<<<<< HEAD
+<x-pub_theme::bootstrap-italia.radio 
 <x-pub_theme::bootstrap-italia.radio 
 =======
-<x-sixteen::bootstrap-italia.radio 
->>>>>>> 7e2fefb (.)
-=======
 <x-pub_theme::bootstrap-italia.radio 
->>>>>>> 9c84373 (.)
     name="simple_group"
     :options="['simple1' => 'Opzione semplice 1', 'simple2' => 'Opzione semplice 2']" />
 
 8. Single radio button with slot (manual control):
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c84373 (.)
 <x-pub_theme::bootstrap-italia.radio>
     <input name="custom_radio" type="radio" id="custom1" class="form-check-input">
     <label for="custom1">Radio personalizzato</label>
 </x-pub_theme::bootstrap-italia.radio>
-<<<<<<< HEAD
-=======
-<x-sixteen::bootstrap-italia.radio>
+<x-pub_theme::bootstrap-italia.radio>
     <input name="custom_radio" type="radio" id="custom1" class="form-check-input">
     <label for="custom1">Radio personalizzato</label>
-</x-sixteen::bootstrap-italia.radio>
->>>>>>> 7e2fefb (.)
+</x-pub_theme::bootstrap-italia.radio>
 =======
->>>>>>> 9c84373 (.)
 
 Bootstrap Italia Classes Reference:
 - .form-check: Container for radio button

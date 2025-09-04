@@ -292,11 +292,11 @@
 Usage Examples:
 
 1. Albo base:
-<x-sixteen::municipal.albo-pretorio 
+<x-pub_theme::municipal.albo-pretorio 
     :publications="$publications" />
 
 2. Con dati personalizzati:
-<x-sixteen::municipal.albo-pretorio 
+<x-pub_theme::municipal.albo-pretorio 
     title="Albo Pretorio del Comune"
     :publications="[
         {
@@ -313,7 +313,7 @@ Usage Examples:
     :years="[2022, 2023, 2024]" />
 
 3. Senza filtri:
-<x-sixteen::municipal.albo-pretorio 
+<x-pub_theme::municipal.albo-pretorio 
     :show-filters="false"
     :show-pagination="false"
     :publications="$recentPublications" />

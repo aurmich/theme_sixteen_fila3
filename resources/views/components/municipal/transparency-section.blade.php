@@ -201,7 +201,7 @@ $currentVariant = $variants[$variant] ?? $variants['default'];
 Usage Examples:
 
 1. Sezione base:
-<x-sixteen::municipal.transparency-section 
+<x-pub_theme::municipal.transparency-section 
     title="Bilanci e Conti Consuntivi"
     description="Documenti contabili e finanziari del comune"
     :documents="[
@@ -210,14 +210,14 @@ Usage Examples:
     ]" />
 
 2. Sezione espandibile:
-<x-sixteen::municipal.transparency-section 
+<x-pub_theme::municipal.transparency-section 
     title="Organi Politici"
     :collapsible="true"
     :initiallyOpen="false"
     :documents="$politicalDocs" />
 
 3. Con variante e icona:
-<x-sixteen::municipal.transparency-section 
+<x-pub_theme::municipal.transparency-section 
     title="Bandi di Gara"
     variant="warning"
     icon='<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>'

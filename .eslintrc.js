@@ -28,11 +28,3 @@ module.exports = {
         Flowbite: 'readonly',
     },
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 7e2fefb (.)
-=======
-
->>>>>>> 9c84373 (.)

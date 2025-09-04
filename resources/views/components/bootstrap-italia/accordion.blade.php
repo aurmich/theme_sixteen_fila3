@@ -77,15 +77,7 @@
 Usage Examples:
 
 1. Array-based accordion (recommended for multiple items):
-<<<<<<< HEAD
-<<<<<<< HEAD
-<x-pub_theme::bootstrap-italia.accordion 
-=======
-<x-sixteen::bootstrap-italia.accordion 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.accordion 
->>>>>>> 9c84373 (.)
+<x-pub_theme::bootstrap-italia.accordion
     :items="[
         [
             'id' => 'item1',
@@ -109,41 +101,17 @@ Usage Examples:
     accordion-id="collapseExample" />
 
 2. Flush accordion (no borders):
-<<<<<<< HEAD
-<<<<<<< HEAD
-<x-pub_theme::bootstrap-italia.accordion 
-=======
-<x-sixteen::bootstrap-italia.accordion 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.accordion 
->>>>>>> 9c84373 (.)
+<x-pub_theme::bootstrap-italia.accordion
     :flush="true"
     :items="$accordionData" />
 
 3. Custom heading level:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<x-pub_theme::bootstrap-italia.accordion 
-=======
-<x-sixteen::bootstrap-italia.accordion 
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.accordion 
->>>>>>> 9c84373 (.)
+<x-pub_theme::bootstrap-italia.accordion
     :items="$items"
     heading-level="h3" />
 
 4. Slot-based accordion (for custom content):
-<<<<<<< HEAD
-<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.accordion accordion-id="customAccordion">
-=======
-<x-sixteen::bootstrap-italia.accordion accordion-id="customAccordion">
->>>>>>> 7e2fefb (.)
-=======
-<x-pub_theme::bootstrap-italia.accordion accordion-id="customAccordion">
->>>>>>> 9c84373 (.)
     <h2 class="accordion-header" id="headingCustom">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCustom">
             Custom Accordion Item
@@ -154,15 +122,7 @@ Usage Examples:
             <p>Custom accordion content with full control over markup.</p>
         </div>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
 </x-pub_theme::bootstrap-italia.accordion>
-=======
-</x-sixteen::bootstrap-italia.accordion>
->>>>>>> 7e2fefb (.)
-=======
-</x-pub_theme::bootstrap-italia.accordion>
->>>>>>> 9c84373 (.)
 
 Bootstrap Italia Classes Reference:
 - .accordion: Base accordion container
