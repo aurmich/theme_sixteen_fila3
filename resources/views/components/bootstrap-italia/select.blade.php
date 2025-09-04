@@ -117,10 +117,14 @@ Usage Examples:
 
 1. Basic select:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     id="defaultSelect"
     label="Etichetta"
     :options="[
@@ -133,30 +137,42 @@ Usage Examples:
 
 2. Select with custom placeholder:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     label="Seleziona categoria"
     placeholder="Seleziona una categoria"
     :options="['cat1' => 'Categoria 1', 'cat2' => 'Categoria 2']" />
 
 3. Disabled select:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     label="Etichetta"
     :disabled="true"
     :options="['Value 1' => 'Opzione 1']" />
 
 4. Select with optgroups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     id="defaultSelectGroup"
     label="Etichetta"
     :optgroups="[
@@ -172,10 +188,14 @@ Usage Examples:
 
 5. Required select with help text:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     label="Campo obbligatorio"
     :required="true"
     help-text="Seleziona una delle opzioni disponibili"
@@ -183,10 +203,14 @@ Usage Examples:
 
 6. Multiple select:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     label="Selezione multipla"
     :multiple="true"
     name="categories[]"
@@ -194,10 +218,14 @@ Usage Examples:
 
 7. Select with pre-selected value:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     label="Con valore selezionato"
     selected="Value 2"
     :options="[
@@ -208,10 +236,14 @@ Usage Examples:
 
 8. Advanced options array format:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.select 
 =======
 <x-sixteen::bootstrap-italia.select 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.select 
+>>>>>>> 9c84373 (.)
     label="Opzioni avanzate"
     :options="[
         ['value' => 'opt1', 'label' => 'Opzione 1', 'selected' => true],

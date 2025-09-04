@@ -179,10 +179,14 @@ Usage Examples:
 
 1. Basic megamenu with columns:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
 =======
 <x-sixteen::bootstrap-italia.megamenu 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.megamenu 
+>>>>>>> 9c84373 (.)
     title="Servizi"
     :columns="[
         [
@@ -216,10 +220,14 @@ Usage Examples:
 
 2. Megamenu with call-to-action:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
 =======
 <x-sixteen::bootstrap-italia.megamenu 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.megamenu 
+>>>>>>> 9c84373 (.)
     title="Informazioni"
     :columns="$infoColumns"
     :cta="[
@@ -233,10 +241,14 @@ Usage Examples:
 
 3. Dark theme megamenu:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
 =======
 <x-sixteen::bootstrap-italia.megamenu 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.megamenu 
+>>>>>>> 9c84373 (.)
     title="Documenti"
     theme="dark-desktop"
     :full-width="true"
@@ -246,10 +258,14 @@ Usage Examples:
 
 4. Megamenu with accessible links:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu 
 =======
 <x-sixteen::bootstrap-italia.megamenu 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.megamenu 
+>>>>>>> 9c84373 (.)
     title="Amministrazione"
     :columns="[
         [
@@ -270,10 +286,14 @@ Usage Examples:
 
 5. Custom content with slot:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.megamenu title="Custom Menu">
 =======
 <x-sixteen::bootstrap-italia.megamenu title="Custom Menu">
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.megamenu title="Custom Menu">
+>>>>>>> 9c84373 (.)
     <div class="row">
         <div class="col-12">
             <h4>Contenuto personalizzato</h4>
@@ -282,10 +302,14 @@ Usage Examples:
         </div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </x-pub_theme::bootstrap-italia.megamenu>
 =======
 </x-sixteen::bootstrap-italia.megamenu>
 >>>>>>> 7e2fefb (.)
+=======
+</x-pub_theme::bootstrap-italia.megamenu>
+>>>>>>> 9c84373 (.)
 
 Navigation Integration:
 Place megamenu items within a navbar with .has-megamenu class:
@@ -293,12 +317,17 @@ Place megamenu items within a navbar with .has-megamenu class:
 <nav class="navbar navbar-expand-lg has-megamenu {{ $themeClasses ? implode(' ', $themeClasses) : '' }}">
     <div class="navbar-nav">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <x-pub_theme::bootstrap-italia.megamenu ... />
         <x-pub_theme::bootstrap-italia.megamenu ... />
 =======
         <x-sixteen::bootstrap-italia.megamenu ... />
         <x-sixteen::bootstrap-italia.megamenu ... />
 >>>>>>> 7e2fefb (.)
+=======
+        <x-pub_theme::bootstrap-italia.megamenu ... />
+        <x-pub_theme::bootstrap-italia.megamenu ... />
+>>>>>>> 9c84373 (.)
     </div>
 </nav>
 

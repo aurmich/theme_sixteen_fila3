@@ -164,41 +164,59 @@ Usage Examples:
 
 1. Basic cookiebar (default):
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
 <x-pub_theme::bootstrap-italia.cookiebar />
 
 2. Custom message and preferences URL:
 <x-pub_theme::bootstrap-italia.cookiebar 
+<<<<<<< HEAD
 =======
 <x-sixteen::bootstrap-italia.cookiebar />
 
 2. Custom message and preferences URL:
 <x-sixteen::bootstrap-italia.cookiebar 
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
     message="Questo sito web utilizza cookies per migliorare l'esperienza utente.<br />Continuando la navigazione si acconsente all'uso dei cookies."
     preferences-url="/cookie-preferences" />
 
 3. Custom button text:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.cookiebar 
 =======
 <x-sixteen::bootstrap-italia.cookiebar 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.cookiebar 
+>>>>>>> 9c84373 (.)
     accept-text="Acconsento"
     preferences-text="Gestisci preferenze" />
 
 4. Conditionally show:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.cookiebar :show="!session('cookies_accepted')" />
 =======
 <x-sixteen::bootstrap-italia.cookiebar :show="!session('cookies_accepted')" />
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.cookiebar :show="!session('cookies_accepted')" />
+>>>>>>> 9c84373 (.)
 
 Integration with Layout:
 Place this component just after the opening <body> tag in your main layout:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @include('pub_theme::components.bootstrap-italia.cookiebar')
 =======
 @include('sixteen::components.bootstrap-italia.cookiebar')
 >>>>>>> 7e2fefb (.)
+=======
+@include('pub_theme::components.bootstrap-italia.cookiebar')
+>>>>>>> 9c84373 (.)
 --}}

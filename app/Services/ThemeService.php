@@ -84,8 +84,11 @@ class ThemeService
         return config('sixteen.' . $key, $default);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> 9c84373 (.)
 
     /**
      * Ottiene il Menu Builder per accesso diretto ai menu
@@ -139,4 +142,7 @@ class ThemeService
         ];
     }
 } 
+<<<<<<< HEAD
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)

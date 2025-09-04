@@ -32,11 +32,15 @@
             <div class="flex-1">
                 <h3 id="cookie-title" class="text-lg font-semibold mb-2">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
                     {{ __('pub_theme::cookies.title') }}
                 </h3>
                 
                 <p id="cookie-description" class="text-sm leading-relaxed">
                     {{ __('pub_theme::cookies.description') }}
+<<<<<<< HEAD
 =======
                     {{ __('sixteen::cookies.title') }}
                 </h3>
@@ -44,6 +48,8 @@
                 <p id="cookie-description" class="text-sm leading-relaxed">
                     {{ __('sixteen::cookies.description') }}
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
                     <a 
                         href="{{ route('pages.view', ['slug' => 'privacy']) }}" 
                         class="text-blue-400 hover:text-blue-300 underline ml-1"
@@ -51,10 +57,14 @@
                         rel="noopener noreferrer"
                     >
 <<<<<<< HEAD
+<<<<<<< HEAD
                         {{ __('pub_theme::cookies.learn_more') }}
 =======
                         {{ __('sixteen::cookies.learn_more') }}
 >>>>>>> 7e2fefb (.)
+=======
+                        {{ __('pub_theme::cookies.learn_more') }}
+>>>>>>> 9c84373 (.)
                     </a>
                 </p>
             </div>
@@ -64,6 +74,7 @@
                     @click="openPreferences"
                     class="px-4 py-2 border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     :aria-label="__('pub_theme::cookies.customize')"
                 >
                     {{ __('pub_theme::cookies.customize') }}
@@ -72,11 +83,17 @@
                 >
                     {{ __('sixteen::cookies.customize') }}
 >>>>>>> 7e2fefb (.)
+=======
+                    :aria-label="__('pub_theme::cookies.customize')"
+                >
+                    {{ __('pub_theme::cookies.customize') }}
+>>>>>>> 9c84373 (.)
                 </button>
                 
                 <button
                     @click="acceptAll"
                     class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+<<<<<<< HEAD
 <<<<<<< HEAD
                     :aria-label="__('pub_theme::cookies.accept_all')"
                 >
@@ -86,6 +103,11 @@
                 >
                     {{ __('sixteen::cookies.accept_all') }}
 >>>>>>> 7e2fefb (.)
+=======
+                    :aria-label="__('pub_theme::cookies.accept_all')"
+                >
+                    {{ __('pub_theme::cookies.accept_all') }}
+>>>>>>> 9c84373 (.)
                 </button>
             </div>
         </div>

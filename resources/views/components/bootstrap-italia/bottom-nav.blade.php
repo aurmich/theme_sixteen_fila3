@@ -211,10 +211,14 @@ Usage Examples:
 
 1. Basic bottom navigation:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
 =======
 <x-sixteen::bootstrap-italia.bottom-nav 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.bottom-nav 
+>>>>>>> 9c84373 (.)
     :items="[
         ['label' => 'Home', 'url' => '/', 'icon' => 'it-home', 'active' => true],
         ['label' => 'Servizi', 'url' => '/servizi', 'icon' => 'it-settings'],
@@ -224,10 +228,14 @@ Usage Examples:
 
 2. Bottom nav with badges:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
 =======
 <x-sixteen::bootstrap-italia.bottom-nav 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.bottom-nav 
+>>>>>>> 9c84373 (.)
     :badges="true"
     :items="[
         ['label' => 'Home', 'url' => '/', 'icon' => 'it-home'],
@@ -238,10 +246,14 @@ Usage Examples:
 
 3. Dark theme bottom navigation:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
 =======
 <x-sixteen::bootstrap-italia.bottom-nav 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.bottom-nav 
+>>>>>>> 9c84373 (.)
     theme="dark"
     :items="[
         ['label' => 'Dashboard', 'url' => '/dashboard', 'icon' => 'it-chart-line'],
@@ -252,10 +264,14 @@ Usage Examples:
 
 4. Non-fixed bottom navigation (visible on desktop):
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
 =======
 <x-sixteen::bootstrap-italia.bottom-nav 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.bottom-nav 
+>>>>>>> 9c84373 (.)
     :fixed="false"
     :hidden-on-desktop="false"
     :items="[
@@ -267,10 +283,14 @@ Usage Examples:
 
 5. Bottom nav with mixed states:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav 
 =======
 <x-sixteen::bootstrap-italia.bottom-nav 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.bottom-nav 
+>>>>>>> 9c84373 (.)
     :items="[
         ['label' => 'Principale', 'url' => '/', 'icon' => 'it-home', 'active' => true],
         ['label' => 'Ricerca', 'url' => '/ricerca', 'icon' => 'it-search'],
@@ -280,10 +300,14 @@ Usage Examples:
 
 6. Custom content with slot:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.bottom-nav>
 =======
 <x-sixteen::bootstrap-italia.bottom-nav>
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.bottom-nav>
+>>>>>>> 9c84373 (.)
     <a href="/" class="nav-link text-center d-flex flex-column align-items-center active">
         <svg class="icon icon-sm mb-1">
             <use href="#it-home"></use>
@@ -305,16 +329,22 @@ Usage Examples:
         <small>Azione</small>
     </button>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
 </x-pub_theme::bootstrap-italia.bottom-nav>
 
 7. Administrative area navigation:
 <x-pub_theme::bootstrap-italia.bottom-nav 
+<<<<<<< HEAD
 =======
 </x-sixteen::bootstrap-italia.bottom-nav>
 
 7. Administrative area navigation:
 <x-sixteen::bootstrap-italia.bottom-nav 
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
     :badges="true"
     :items="[
         ['label' => 'Dashboard', 'url' => '/admin', 'icon' => 'it-chart-bar', 'active' => true],

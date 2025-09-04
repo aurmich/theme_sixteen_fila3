@@ -96,10 +96,14 @@
                     @click="show = false"
                 >
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <span class="sr-only">{{ __('pub_theme::notifications.close') }}</span>
 =======
                     <span class="sr-only">{{ __('sixteen::notifications.close') }}</span>
 >>>>>>> 7e2fefb (.)
+=======
+                    <span class="sr-only">{{ __('pub_theme::notifications.close') }}</span>
+>>>>>>> 9c84373 (.)
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>

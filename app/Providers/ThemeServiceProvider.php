@@ -17,12 +17,18 @@ use Themes\Sixteen\Filters\{HrefMenuFilter, ActiveMenuFilter, GateMenuFilter};
  * Enhanced Service Provider per il tema Sixteen.
  * 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 9c84373 (.)
  * Questo provider gestisce la registrazione e configurazione
  * del tema Sixteen nell'applicazione Laravel, integrando il
  * nuovo Menu Builder System e le funzionalità avanzate.
  * 
+<<<<<<< HEAD
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
  * IMPORTANTE: Il tema Sixteen usa il namespace 'pub_theme' per le viste,
  * non 'sixteen', per essere compatibile con il sistema di temi.
  */
@@ -41,6 +47,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         parent::boot();
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Caricamento specifico per pub_theme namespace
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'pub_theme');
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'pub_theme');
@@ -48,13 +55,20 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         // Core theme loading
         $this->loadCoreThemeResources();
 >>>>>>> 7e2fefb (.)
+=======
+        // Core theme loading
+        $this->loadCoreThemeResources();
+>>>>>>> 9c84373 (.)
         
         // Menu system registration
         $this->registerMenuSystem();
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Registrazione Layout Shortcuts AGID
 =======
+=======
+>>>>>>> 9c84373 (.)
         // View composers
         $this->registerViewComposers();
         
@@ -68,7 +82,10 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         $this->registerAuthRoutes();
         
         // Layout shortcuts (legacy compatibility)
+<<<<<<< HEAD
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
         $this->registerLayoutShortcuts();
     }
 

@@ -286,10 +286,14 @@ Usage Examples:
 
 1. Basic upload:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.upload 
 =======
 <x-sixteen::bootstrap-italia.upload 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.upload 
+>>>>>>> 9c84373 (.)
     name="document"
     file-info="PDF (Max 5MB)"
     accept=".pdf"
@@ -297,10 +301,14 @@ Usage Examples:
 
 2. Multiple file upload:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.upload 
 =======
 <x-sixteen::bootstrap-italia.upload 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.upload 
+>>>>>>> 9c84373 (.)
     name="documents[]"
     :multiple="true"
     label="Upload documenti"
@@ -309,10 +317,14 @@ Usage Examples:
 
 3. Upload in loading state:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.upload 
 =======
 <x-sixteen::bootstrap-italia.upload 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.upload 
+>>>>>>> 9c84373 (.)
     state="loading"
     file-info="PDF (3.7MB)"
     label="documento.pdf"
@@ -320,10 +332,14 @@ Usage Examples:
 
 4. Upload in success state:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.upload 
 =======
 <x-sixteen::bootstrap-italia.upload 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.upload 
+>>>>>>> 9c84373 (.)
     state="success"
     file-info="PDF (3.7MB)"
     label="documento.pdf"
@@ -331,20 +347,28 @@ Usage Examples:
 
 5. Custom text and description:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.upload 
 =======
 <x-sixteen::bootstrap-italia.upload 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.upload 
+>>>>>>> 9c84373 (.)
     drag-text="Trascina qui i tuoi file"
     select-text="oppure seleziona dal computer"
     description="Formati supportati: PDF, DOC, DOCX. Dimensione massima: 10MB per file" />
 
 6. Image upload with custom icon:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.upload 
 =======
 <x-sixteen::bootstrap-italia.upload 
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.upload 
+>>>>>>> 9c84373 (.)
     name="avatar"
     accept="image/*"
     icon-path="/assets/image-upload-icon.svg"

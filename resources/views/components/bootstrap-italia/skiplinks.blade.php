@@ -62,16 +62,22 @@ Usage Examples:
 
 1. Basic skiplinks (default):
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
 <x-pub_theme::bootstrap-italia.skiplinks />
 
 2. Custom skiplinks:
 <x-pub_theme::bootstrap-italia.skiplinks 
+<<<<<<< HEAD
 =======
 <x-sixteen::bootstrap-italia.skiplinks />
 
 2. Custom skiplinks:
 <x-sixteen::bootstrap-italia.skiplinks 
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
     :links="[
         ['href' => '#nav', 'text' => 'Vai al menu'],
         ['href' => '#content', 'text' => 'Vai al contenuto'],
@@ -82,8 +88,12 @@ Usage Examples:
 
 3. Simple div version:
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-pub_theme::bootstrap-italia.skiplinks :show-list="false" />
 =======
 <x-sixteen::bootstrap-italia.skiplinks :show-list="false" />
 >>>>>>> 7e2fefb (.)
+=======
+<x-pub_theme::bootstrap-italia.skiplinks :show-list="false" />
+>>>>>>> 9c84373 (.)
 --}}

@@ -58,6 +58,9 @@ Usage Examples:
 
 1. Basic badge:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
 <x-pub_theme::bootstrap-italia.badge>New</x-pub_theme::bootstrap-italia.badge>
 
 2. Contextual variants:
@@ -77,6 +80,7 @@ Usage Examples:
 
 5. Badges in headings (auto-sizing):
 <h1>Example heading <x-pub_theme::bootstrap-italia.badge>New</x-pub_theme::bootstrap-italia.badge></h1>
+<<<<<<< HEAD
 =======
 <x-sixteen::bootstrap-italia.badge>New</x-sixteen::bootstrap-italia.badge>
 
@@ -98,11 +102,16 @@ Usage Examples:
 5. Badges in headings (auto-sizing):
 <h1>Example heading <x-sixteen::bootstrap-italia.badge>New</x-sixteen::bootstrap-italia.badge></h1>
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
 
 6. Badges in buttons with counter:
 <button type="button" class="btn btn-primary">
     Notifiche 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
     <x-pub_theme::bootstrap-italia.badge variant="light" class="text-secondary" sr-text="Messaggi non letti">
         4
     </x-pub_theme::bootstrap-italia.badge>
@@ -112,6 +121,7 @@ Usage Examples:
 <x-pub_theme::bootstrap-italia.badge variant="primary" sr-text="Messaggi non letti">
     9
 </x-pub_theme::bootstrap-italia.badge>
+<<<<<<< HEAD
 =======
     <x-sixteen::bootstrap-italia.badge variant="light" class="text-secondary" sr-text="Messaggi non letti">
         4
@@ -123,6 +133,8 @@ Usage Examples:
     9
 </x-sixteen::bootstrap-italia.badge>
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
 
 Bootstrap Italia Classes Reference:
 - .badge: Base badge class

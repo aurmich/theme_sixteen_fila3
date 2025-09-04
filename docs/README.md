@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Tema Sixteen - Documentazione
 =======
 # Tema Sixteen - Bootstrap Italia per Laravel/Tailwind
@@ -9,6 +10,14 @@
 <<<<<<< HEAD
 Tema moderno per Laravel conforme alle Linee Guida di Design PA, implementato con Tailwind CSS (niente Bootstrap Italia diretto). Accessibilità WCAG 2.1 AA, “tema come vestito”: la logica dei form è nei widget Filament, le view del tema sono wrapper grafici.
 =======
+=======
+# Tema Sixteen - Documentazione
+# Tema Sixteen - Bootstrap Italia per Laravel/Tailwind
+
+## 🎯 Panoramica del Progetto
+
+Tema moderno per Laravel conforme alle Linee Guida di Design PA, implementato con Tailwind CSS (niente Bootstrap Italia diretto). Accessibilità WCAG 2.1 AA, “tema come vestito”: la logica dei form è nei widget Filament, le view del tema sono wrapper grafici.
+>>>>>>> 9c84373 (.)
 Il tema Sixteen è un'implementazione completa delle **Linee Guida AGID per il Design della PA Italiana** utilizzando **Laravel**, **Filament** e **Tailwind CSS**. Il tema fornisce una migrazione moderna da Bootstrap Italia, mantenendo la piena conformità alle specifiche AGID con un'architettura più flessibile e performante.
 
 ## 📊 Stato Implementazione AGID
@@ -76,12 +85,18 @@ public function panel(Panel $panel): Panel
 ```
 
 ## 📁 Struttura del Progetto
+<<<<<<< HEAD
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
 
 ## Struttura
 ```
 Themes/Sixteen/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c84373 (.)
 ├── docs/
 ├── resources/
 │   ├── views/
@@ -113,7 +128,10 @@ npm run build
 
 ## Collegamenti
 - Vedi anche: docs/merge_conflict_resolution.md (root) per policy di risoluzione conflitti
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 9c84373 (.)
 ├── docs/                           # 📚 Documentazione completa
 │   ├── agid-bootstrap-italia-gap-analysis.md  # Gap analysis AGID
 │   ├── bootstrap-italia-compliance-analysis.md # Stato compliance
@@ -372,4 +390,7 @@ npm run lighthouse
 **Ultimo aggiornamento**: Settembre 1, 2025  
 **Mantenuto da**: Team Bootstrap Italia Migration  
 **Licenza**: MIT
+<<<<<<< HEAD
 >>>>>>> 7e2fefb (.)
+=======
+>>>>>>> 9c84373 (.)
