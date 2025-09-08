@@ -562,3 +562,4 @@ npm audit
 **Versione**: 1.0.0  
 **Compatibilità**: Vite 6.x, Laravel 10+, Node.js 18+
 
+
