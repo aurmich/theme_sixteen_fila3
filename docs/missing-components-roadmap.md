@@ -12,7 +12,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 3 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.megamenu 
+<x-megamenu 
     title="Servizi"
     :items="$services"
     columns="3"
@@ -24,7 +24,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.sidebar
+<x-sidebar
     position="left"
     :menu="$sidebarMenu"
     collapsible
@@ -36,7 +36,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.bottom-nav
+<x-bottom-nav
     :items="$bottomNavItems"
     active="home"
     icons-only
@@ -47,7 +47,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.navscroll
+<x-navscroll
     :sections="$pageSections"
     position="right"
     offset="100"
@@ -58,7 +58,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Bassa • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.thumbnav
+<x-thumbnav
     :items="$galleryItems"
     variant="dots"
     autoplay
@@ -69,7 +69,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.toolbar
+<x-toolbar
     position="top"
     :actions="$toolbarActions"
     sticky
@@ -80,7 +80,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Bassa • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.navigation-controls
+<x-navigation-controls
     previous-label="Torna indietro"
     next-label="Avanti"
     :previous-url="$prevUrl"
@@ -94,7 +94,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.avatar
+<x-avatar
     src="/avatar.jpg"
     size="lg"
     alt="Mario Rossi"
@@ -106,21 +106,21 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.callout
+<x-callout
     variant="info"
     title="Informazione Importante"
     icon="info-circle"
     dismissible
 >
     Contenuto informativo evidenziato
-</x-bootstrap-italia.callout>
+</x-callout>
 ```
 
 #### 10. Chips
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.chips
+<x-chips
     :items="['Categoria 1', 'Categoria 2']"
     variant="outline"
     removable
@@ -131,21 +131,21 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.collapse
+<x-collapse
     id="content-collapse"
     title="Contenuto Espandibile"
     expanded
     variant="border"
 >
     Contenuto nascosto
-</x-bootstrap-italia.collapse>
+</x-collapse>
 ```
 
 #### 12. Dimmer
 **Priorità**: Bassa • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.dimmer
+<x-dimmer
     :show="$loading"
     message="Caricamento in corso..."
     spinner
@@ -157,7 +157,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.dropdown
+<x-dropdown
     label="Menu Azioni"
     variant="primary"
     :items="$dropdownActions"
@@ -170,22 +170,22 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.overlay
+<x-overlay
     :show="$showOverlay"
     opacity="0.8"
     @close="$showOverlay = false"
 >
-    <x-bootstrap-italia.modal>
+    <x-modal>
         Contenuto overlay
-    </x-bootstrap-italia.modal>
-</x-bootstrap-italia.overlay>
+    </x-modal>
+</x-overlay>
 ```
 
 #### 15. Pagination
 **Priorità**: Alta • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.pagination
+<x-pagination
     :total-items="150"
     :per-page="10"
     :current-page="$currentPage"
@@ -198,21 +198,21 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.popover
+<x-popover
     title="Informazione Aggiuntiva"
     content="Questo è un popover informativo"
     placement="right"
     trigger="hover"
 >
     <button>Hover per info</button>
-</x-bootstrap-italia.popover>
+</x-popover>
 ```
 
 #### 17. Rating
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.rating
+<x-rating
     :value="4.5"
     max="5"
     size="lg"
@@ -225,20 +225,20 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Bassa • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.section
+<x-section
     variant="alternate"
     background="light"
     padding="lg"
 >
     Contenuto sezione
-</x-bootstrap-italia.section>
+</x-section>
 ```
 
 #### 19. Steppers
 **Priorità**: Alta • **Stima**: 3 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.stepper
+<x-stepper
     :steps="['Step 1', 'Step 2', 'Step 3']"
     :current-step="2"
     variant="dots"
@@ -250,20 +250,20 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.sticky
+<x-sticky
     position="top"
     offset="100"
     z-index="1000"
 >
     Contenuto sticky
-</x-bootstrap-italia.sticky>
+</x-sticky>
 ```
 
 #### 21. Timeline
 **Priorità**: Media • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.timeline
+<x-timeline
     :events="$timelineEvents"
     variant="alternate"
     show-connectors
@@ -275,20 +275,20 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.tooltip
+<x-tooltip
     content="Tooltip informativo"
     placement="top"
     delay="300"
 >
     <button>Hover per tooltip</button>
-</x-bootstrap-italia.tooltip>
+</x-tooltip>
 ```
 
 #### 23. Video Player
 **Priorità**: Bassa • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.video-player
+<x-video-player
     src="/video.mp4"
     poster="/poster.jpg"
     autoplay
@@ -303,7 +303,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.input-number
+<x-input-number
     name="quantity"
     label="Quantità"
     min="1"
@@ -318,7 +318,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.date-picker
+<x-date-picker
     name="birth_date"
     label="Data di Nascita"
     :min-date="today()->subYears(100)"
@@ -332,7 +332,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.time-picker
+<x-time-picker
     name="appointment_time"
     label="Orario Appuntamento"
     interval="30"
@@ -346,7 +346,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 3 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.autocomplete
+<x-autocomplete
     name="city"
     label="Città"
     :options="$cities"
@@ -361,7 +361,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.file-upload
+<x-file-upload
     name="documents"
     label="Carica Documenti"
     multiple
@@ -376,7 +376,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.radio-group
+<x-radio-group
     name="payment_method"
     label="Metodo di Pagamento"
     :options="[
@@ -393,7 +393,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Alta • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.select
+<x-select
     name="province"
     label="Provincia"
     :options="$provinces"
@@ -408,7 +408,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.toggle
+<x-toggle
     name="notifications"
     label="Attiva Notifiche"
     :value="true"
@@ -422,7 +422,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Bassa • **Stima**: 2 giorni
 ```blade
 {{-- Implementazione prevista --}}
-<x-bootstrap-italia.transfer
+<x-transfer
     name="selected_users"
     :available-items="$allUsers"
     :selected-items="$selectedUsers"
@@ -537,7 +537,7 @@ Themes/Sixteen/resources/views/components/bootstrap-italia/
 ### Convenzioni di Codice
 ```php
 // Tutti i componenti devono seguire:
-- Namespace: x-bootstrap-italia.*
+- Namespace: x-*
 - Props documentate con @props
 - Accessibilità integrata
 - Responsive design
