@@ -170,6 +170,7 @@ return [
 <<<<<<< HEAD
 <h1>{{ __('pub_theme::pages.dashboard.title') }}</h1>
 <p>{{ __('pub_theme::pages.dashboard.description') }}</p>
+<<<<<<< HEAD
 
 {{-- Con parametri --}}
 <p>{{ __('pub_theme::common.welcome_user', ['name' => $user->name]) }}</p>
@@ -177,15 +178,20 @@ return [
 {{-- Per pluralizzazione --}}
 <p>{{ trans_choice('pub_theme::common.items_count', $count, ['count' => $count]) }}</p>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 <h1>{{ __('sixteen::pages.dashboard.title') }}</h1>
 <p>{{ __('sixteen::pages.dashboard.description') }}</p>
 
 {{-- Con parametri --}}
-<p>{{ __('sixteen::common.welcome_user', ['name' => $user->name]) }}</p>
+<p>{{ __('pub_theme::common.welcome_user', ['name' => $user->name]) }}</p>
 
 {{-- Per pluralizzazione --}}
+<<<<<<< HEAD
+<p>{{ trans_choice('pub_theme::common.items_count', $count, ['count' => $count]) }}</p>
+=======
 <p>{{ trans_choice('sixteen::common.items_count', $count, ['count' => $count]) }}</p>
 =======
 <h1>{{ __('pub_theme::pages.dashboard.title') }}</h1>
@@ -193,7 +199,6 @@ return [
 =======
 <h1>{{ __('sixteen::pages.dashboard.title') }}</h1>
 <p>{{ __('sixteen::pages.dashboard.description') }}</p>
->>>>>>> 0321d33 (.)
 
 {{-- Con parametri --}}
 <p>{{ __('sixteen::common.welcome_user', ['name' => $user->name]) }}</p>
@@ -201,11 +206,13 @@ return [
 {{-- Per pluralizzazione --}}
 <<<<<<< HEAD
 <p>{{ trans_choice('pub_theme::common.items_count', $count, ['count' => $count]) }}</p>
->>>>>>> 109edea (.)
 =======
 <p>{{ trans_choice('sixteen::common.items_count', $count, ['count' => $count]) }}</p>
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Componenti Filament
@@ -226,13 +233,15 @@ TextInput::make('email')
     ->label(__('pub_theme::components.form.input.email.label'))
     ->placeholder(__('pub_theme::components.form.input.email.placeholder'))
     ->helperText(__('pub_theme::components.form.input.email.help'))
->>>>>>> 109edea (.)
 =======
     ->label(__('sixteen::components.form.input.email.label'))
     ->placeholder(__('sixteen::components.form.input.email.placeholder'))
     ->helperText(__('sixteen::components.form.input.email.help'))
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
     ->required()
     ->email()
     ->rules(['required', 'email']);
@@ -247,11 +256,13 @@ Tables\Columns\TextColumn::make('name')
     ->label(__('sixteen::components.table.columns.name.label'))
 =======
     ->label(__('pub_theme::components.table.columns.name.label'))
->>>>>>> 109edea (.)
 =======
     ->label(__('sixteen::components.table.columns.name.label'))
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
     ->searchable()
     ->sortable();
 ```
@@ -275,13 +286,15 @@ public function render()
     return view('pub_theme::livewire.user-form', [
         'title' => __('pub_theme::pages.users.create.title'),
         'description' => __('pub_theme::pages.users.create.description'),
->>>>>>> 109edea (.)
 =======
     return view('sixteen::livewire.user-form', [
         'title' => __('sixteen::pages.users.create.title'),
         'description' => __('sixteen::pages.users.create.description'),
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
     ]);
 }
 ```
@@ -334,11 +347,13 @@ public function render()
 {{ trans_choice('sixteen::common.items_count', $items->count(), ['count' => $items->count()]) }}
 =======
 {{ trans_choice('pub_theme::common.items_count', $items->count(), ['count' => $items->count()]) }}
->>>>>>> 109edea (.)
 =======
 {{ trans_choice('sixteen::common.items_count', $items->count(), ['count' => $items->count()]) }}
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 ```
 
 ## Validazione e Messaggi di Errore

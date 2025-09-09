@@ -35,8 +35,12 @@
         @vite(['resources/js/app.js'], 'themes/Sixteen')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+
+>>>>>>> 477a6d1 (.)
         
         {{-- Dark Mode Toggle Script --}}
         <script>

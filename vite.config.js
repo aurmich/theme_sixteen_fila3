@@ -12,6 +12,7 @@ export default defineConfig({
     build: {
         //outDir: '../../../public_html/build/ewall',
 <<<<<<< HEAD
+<<<<<<< HEAD
         outDir: './public',
 =======
 <<<<<<< HEAD
@@ -102,3 +103,5 @@ viteStaticCopy({
     ]
 })
 */
+=======
+>>>>>>> 477a6d1 (.)

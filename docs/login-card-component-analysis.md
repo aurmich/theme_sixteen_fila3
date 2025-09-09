@@ -345,11 +345,13 @@ Il componente esistente è buono ma può essere migliorato per seguire il sistem
 <x-sixteen::blocks.forms.login-card-agid />
 =======
 <x-pub_theme::blocks.forms.login-card-agid />
->>>>>>> 109edea (.)
 =======
 <x-sixteen::blocks.forms.login-card-agid />
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 ```
 
 ### 2. **Props Uniformi - SEMPRE MANTENERE**

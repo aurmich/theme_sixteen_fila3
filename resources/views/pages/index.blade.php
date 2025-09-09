@@ -28,6 +28,7 @@ new class extends Component
 <x-layouts.app>
     @volt('home')
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div>
         <x-page side="content" slug="home" />
 =======
@@ -50,6 +51,10 @@ new class extends Component
             </div>
         
 >>>>>>> 388f236 (.)
+=======
+    <div>
+        <x-page side="content" slug="home" />
+>>>>>>> 477a6d1 (.)
     </div>
     @endvolt
 </x-layouts.app>

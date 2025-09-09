@@ -6,9 +6,13 @@ return [
     'login' => [
         'title' => 'Service Access',
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 388f236 (.)
+=======
+
+>>>>>>> 477a6d1 (.)
         'description' => 'Enter your credentials to access :service',
         'no_account' => 'Don\'t have an account?',
         'create_account' => 'Register',
@@ -24,9 +28,13 @@ return [
         'forgot_password' => 'Forgot your password?',
         'submit' => 'Login',
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 388f236 (.)
+=======
+
+>>>>>>> 477a6d1 (.)
         'help' => 'Need help?',
     ],
     'register' => [

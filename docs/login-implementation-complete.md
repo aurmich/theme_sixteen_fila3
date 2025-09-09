@@ -16,11 +16,13 @@
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-sixteen::layouts.guest`
 =======
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-pub_theme::layouts.guest`
->>>>>>> 109edea (.)
 =======
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-sixteen::layouts.guest`
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 - ✅ Utilizzato layout conforme alle linee guida PA
 - ✅ Implementato design system AGID
 
@@ -58,11 +60,13 @@ name('login');
 <x-sixteen::layouts.guest>
 =======
 <x-pub_theme::layouts.guest>
->>>>>>> 109edea (.)
 =======
 <x-sixteen::layouts.guest>
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
     <x-slot name="title">
         {{ __('auth.login.title') }} - {{ config('app.name') }}
     </x-slot>
@@ -78,11 +82,13 @@ name('login');
             <x-sixteen::ui.logo class="h-16 w-auto text-blue-600" />
 =======
             <x-pub_theme::ui.logo class="h-16 w-auto text-blue-600" />
->>>>>>> 109edea (.)
 =======
             <x-sixteen::ui.logo class="h-16 w-auto text-blue-600" />
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
         </div>
         
         <h1 class="mt-6 text-3xl font-bold text-gray-900">
@@ -144,11 +150,13 @@ name('login');
 </x-sixteen::layouts.guest>
 =======
 </x-pub_theme::layouts.guest>
->>>>>>> 109edea (.)
 =======
 </x-sixteen::layouts.guest>
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 ```
 
 ## 🎨 Design System AGID Implementato

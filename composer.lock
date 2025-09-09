@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     "content-hash": "1cd3a208d434c40a15b12c62f67feedf",
@@ -14850,3 +14851,5 @@
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
+=======
+>>>>>>> 477a6d1 (.)

@@ -12,6 +12,7 @@ Layout principale per le applicazioni web della PA.
 ```blade
 <x-pub_theme::layout.app>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <x-slot name="header">
         <x-pub_theme::header.main>
             <x-slot name="logo">
@@ -30,26 +31,32 @@ Layout principale per le applicazioni web della PA.
     <x-slot name="footer">
         <x-pub_theme::footer.main />
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::layout.app>
     <x-slot name="header">
-        <x-sixteen::header.main>
+        <x-pub_theme::header.main>
             <x-slot name="logo">
-                <x-sixteen::logo />
+                <x-pub_theme::logo />
             </x-slot>
             <x-slot name="navigation">
-                <x-sixteen::navigation.main />
+                <x-pub_theme::navigation.main />
             </x-slot>
-        </x-sixteen::header.main>
+        </x-pub_theme::header.main>
     </x-slot>
     
     <x-slot name="sidebar">
-        <x-sixteen::sidebar.main />
+        <x-pub_theme::sidebar.main />
     </x-slot>
     
     <x-slot name="footer">
+<<<<<<< HEAD
         <x-sixteen::footer.main />
 >>>>>>> 388f236 (.)
+=======
+        <x-pub_theme::footer.main />
+>>>>>>> 477a6d1 (.)
     </x-slot>
     
     <!-- Main content -->
@@ -74,6 +81,8 @@ Container responsive per contenuti centrati.
 
 ```blade
 <x-pub_theme::layout.container size="lg">
+<<<<<<< HEAD
+=======
     <div class="prose prose-lg max-w-none">
         {{ $slot }}
     </div>
@@ -85,8 +94,12 @@ Container responsive per contenuti centrati.
     <div class="prose prose-lg max-w-none">
         {{ $slot }}
     </div>
+<<<<<<< HEAD
 </x-sixteen::layout.container>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::layout.container>
+>>>>>>> 477a6d1 (.)
 ```
 
 **Sizes disponibili:**
@@ -227,6 +240,8 @@ Pulsante per azioni principali.
     wire:loading.attr="disabled"
 >
     <x-pub_theme::icon.spinner wire:loading />
+<<<<<<< HEAD
+=======
     Conferma Operazione
 </x-pub_theme::button.primary>
 <<<<<<< HEAD
@@ -234,8 +249,12 @@ Pulsante per azioni principali.
 =======
     <x-sixteen::icon.spinner wire:loading />
     Conferma Operazione
+<<<<<<< HEAD
 </x-sixteen::button.primary>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::button.primary>
+>>>>>>> 477a6d1 (.)
 ```
 
 **Varianti:**
@@ -269,6 +288,7 @@ Gruppo di pulsanti correlati.
 <x-pub_theme::button.group>
     <x-pub_theme::button.secondary>
 <<<<<<< HEAD
+<<<<<<< HEAD
         Annulla
     </x-pub_theme::button.secondary>
     <x-pub_theme::button.primary>
@@ -276,16 +296,23 @@ Gruppo di pulsanti correlati.
     </x-pub_theme::button.primary>
 </x-pub_theme::button.group>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::button.group>
     <x-sixteen::button.secondary>
         Annulla
-    </x-sixteen::button.secondary>
-    <x-sixteen::button.primary>
+    </x-pub_theme::button.secondary>
+    <x-pub_theme::button.primary>
         Salva
+<<<<<<< HEAD
     </x-sixteen::button.primary>
 </x-sixteen::button.group>
 >>>>>>> 388f236 (.)
+=======
+    </x-pub_theme::button.primary>
+</x-pub_theme::button.group>
+>>>>>>> 477a6d1 (.)
 ```
 
 ## Alert Components
@@ -296,20 +323,27 @@ Alert per operazioni completate con successo.
 ```blade
 <x-pub_theme::alert.success>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <x-slot name="icon">
         <x-pub_theme::icon.check-circle />
     </x-slot>
     Operazione completata con successo
 </x-pub_theme::alert.success>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::alert.success>
     <x-slot name="icon">
-        <x-sixteen::icon.check-circle />
+        <x-pub_theme::icon.check-circle />
     </x-slot>
     Operazione completata con successo
+<<<<<<< HEAD
 </x-sixteen::alert.success>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::alert.success>
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Warning Alert
@@ -318,20 +352,27 @@ Alert per avvisi e informazioni importanti.
 ```blade
 <x-pub_theme::alert.warning>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <x-slot name="icon">
         <x-pub_theme::icon.exclamation-triangle />
     </x-slot>
     Attenzione: alcuni dati potrebbero essere incompleti
 </x-pub_theme::alert.warning>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::alert.warning>
     <x-slot name="icon">
-        <x-sixteen::icon.exclamation-triangle />
+        <x-pub_theme::icon.exclamation-triangle />
     </x-slot>
     Attenzione: alcuni dati potrebbero essere incompleti
+<<<<<<< HEAD
 </x-sixteen::alert.warning>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::alert.warning>
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Error Alert
@@ -340,20 +381,27 @@ Alert per errori e problemi.
 ```blade
 <x-pub_theme::alert.error>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <x-slot name="icon">
         <x-pub_theme::icon.x-circle />
     </x-slot>
     Si è verificato un errore durante l'operazione
 </x-pub_theme::alert.error>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::alert.error>
     <x-slot name="icon">
-        <x-sixteen::icon.x-circle />
+        <x-pub_theme::icon.x-circle />
     </x-slot>
     Si è verificato un errore durante l'operazione
+<<<<<<< HEAD
 </x-sixteen::alert.error>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::alert.error>
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Info Alert
@@ -362,20 +410,27 @@ Alert per informazioni generali.
 ```blade
 <x-pub_theme::alert.info>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <x-slot name="icon">
         <x-pub_theme::icon.information-circle />
     </x-slot>
     Informazione importante per l'utente
 </x-pub_theme::alert.info>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::alert.info>
     <x-slot name="icon">
-        <x-sixteen::icon.information-circle />
+        <x-pub_theme::icon.information-circle />
     </x-slot>
     Informazione importante per l'utente
+<<<<<<< HEAD
 </x-sixteen::alert.info>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::alert.info>
+>>>>>>> 477a6d1 (.)
 ```
 
 ## Card Components
@@ -410,14 +465,20 @@ Card semplice per contenuti.
             <x-pub_theme::button.secondary>Annulla</x-pub_theme::button.secondary>
             <x-pub_theme::button.primary>Salva</x-pub_theme::button.primary>
         </x-pub_theme::button.group>
+<<<<<<< HEAD
+=======
     </x-slot>
 </x-pub_theme::card>
 <<<<<<< HEAD
 =======
 =======
     </x-slot>
+<<<<<<< HEAD
 </x-sixteen::card>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::card>
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Interactive Card
@@ -425,6 +486,8 @@ Card con interazioni.
 
 ```blade
 <x-pub_theme::card.interactive>
+<<<<<<< HEAD
+=======
     <x-slot name="header">
         <h3 class="text-lg font-semibold">Card Interattiva</h3>
         <x-pub_theme::button.icon
@@ -434,8 +497,12 @@ Card con interazioni.
 <x-sixteen::card.interactive>
     <x-slot name="header">
         <h3 class="text-lg font-semibold">Card Interattiva</h3>
+<<<<<<< HEAD
         <x-sixteen::button.icon
 >>>>>>> 388f236 (.)
+=======
+        <x-pub_theme::button.icon
+>>>>>>> 477a6d1 (.)
             variant="ghost"
             icon="heroicon-o-ellipsis-vertical"
             size="sm"
@@ -471,6 +538,8 @@ Navigazione principale dell'applicazione.
     >
         Dashboard
     </x-pub_theme::navigation.item>
+<<<<<<< HEAD
+=======
     
     <x-pub_theme::navigation.item
 <<<<<<< HEAD
@@ -478,8 +547,12 @@ Navigazione principale dell'applicazione.
 =======
     </x-sixteen::navigation.item>
     
+<<<<<<< HEAD
     <x-sixteen::navigation.item
 >>>>>>> 388f236 (.)
+=======
+    <x-pub_theme::navigation.item
+>>>>>>> 477a6d1 (.)
         href="/users"
         icon="heroicon-o-users"
         :active="request()->is('users*')"
@@ -502,6 +575,7 @@ Navigazione a breadcrumb.
 <x-pub_theme::navigation.breadcrumb>
     <x-pub_theme::navigation.breadcrumb-item href="/">
 <<<<<<< HEAD
+<<<<<<< HEAD
         Home
     </x-pub_theme::navigation.breadcrumb-item>
     <x-pub_theme::navigation.breadcrumb-item href="/users">
@@ -512,19 +586,26 @@ Navigazione a breadcrumb.
     </x-pub_theme::navigation.breadcrumb-item>
 </x-pub_theme::navigation.breadcrumb>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::navigation.breadcrumb>
     <x-sixteen::navigation.breadcrumb-item href="/">
         Home
-    </x-sixteen::navigation.breadcrumb-item>
-    <x-sixteen::navigation.breadcrumb-item href="/users">
+    </x-pub_theme::navigation.breadcrumb-item>
+    <x-pub_theme::navigation.breadcrumb-item href="/users">
         Utenti
-    </x-sixteen::navigation.breadcrumb-item>
-    <x-sixteen::navigation.breadcrumb-item>
+    </x-pub_theme::navigation.breadcrumb-item>
+    <x-pub_theme::navigation.breadcrumb-item>
         Dettagli Utente
+<<<<<<< HEAD
     </x-sixteen::navigation.breadcrumb-item>
 </x-sixteen::navigation.breadcrumb>
 >>>>>>> 388f236 (.)
+=======
+    </x-pub_theme::navigation.breadcrumb-item>
+</x-pub_theme::navigation.breadcrumb>
+>>>>>>> 477a6d1 (.)
 ```
 
 ## Table Components
@@ -534,6 +615,7 @@ Tabella dati con ordinamento e paginazione.
 
 ```blade
 <x-pub_theme::table.data>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <x-slot name="header">
         <x-pub_theme::table.header-cell sortable="name">
@@ -564,43 +646,53 @@ Tabella dati con ordinamento e paginazione.
             <x-pub_theme::table.cell>
                 <x-pub_theme::button.icon
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
 <x-sixteen::table.data>
     <x-slot name="header">
-        <x-sixteen::table.header-cell sortable="name">
+        <x-pub_theme::table.header-cell sortable="name">
             Nome
-        </x-sixteen::table.header-cell>
-        <x-sixteen::table.header-cell sortable="email">
+        </x-pub_theme::table.header-cell>
+        <x-pub_theme::table.header-cell sortable="email">
             Email
-        </x-sixteen::table.header-cell>
-        <x-sixteen::table.header-cell sortable="created_at">
+        </x-pub_theme::table.header-cell>
+        <x-pub_theme::table.header-cell sortable="created_at">
             Data Creazione
-        </x-sixteen::table.header-cell>
-        <x-sixteen::table.header-cell>
+        </x-pub_theme::table.header-cell>
+        <x-pub_theme::table.header-cell>
             Azioni
-        </x-sixteen::table.header-cell>
+        </x-pub_theme::table.header-cell>
     </x-slot>
     
     @foreach($users as $user)
-        <x-sixteen::table.row>
-            <x-sixteen::table.cell>
+        <x-pub_theme::table.row>
+            <x-pub_theme::table.cell>
                 {{ $user->name }}
-            </x-sixteen::table.cell>
-            <x-sixteen::table.cell>
+            </x-pub_theme::table.cell>
+            <x-pub_theme::table.cell>
                 {{ $user->email }}
-            </x-sixteen::table.cell>
-            <x-sixteen::table.cell>
+            </x-pub_theme::table.cell>
+            <x-pub_theme::table.cell>
                 {{ $user->created_at->format('d/m/Y') }}
+<<<<<<< HEAD
             </x-sixteen::table.cell>
             <x-sixteen::table.cell>
                 <x-sixteen::button.icon
 >>>>>>> 388f236 (.)
+=======
+            </x-pub_theme::table.cell>
+            <x-pub_theme::table.cell>
+                <x-pub_theme::button.icon
+>>>>>>> 477a6d1 (.)
                     variant="ghost"
                     icon="heroicon-o-pencil"
                     size="sm"
                 />
             </x-pub_theme::table.cell>
         </x-pub_theme::table.row>
+<<<<<<< HEAD
+=======
     @endforeach
 </x-pub_theme::table.data>
 <<<<<<< HEAD
@@ -609,8 +701,12 @@ Tabella dati con ordinamento e paginazione.
             </x-sixteen::table.cell>
         </x-sixteen::table.row>
     @endforeach
+<<<<<<< HEAD
 </x-sixteen::table.data>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::table.data>
+>>>>>>> 477a6d1 (.)
 ```
 
 ## Modal Components
@@ -633,6 +729,7 @@ Modal semplice per contenuti.
         <x-pub_theme::button.group>
             <x-pub_theme::button.secondary wire:click="closeModal">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Annulla
             </x-pub_theme::button.secondary>
             <x-pub_theme::button.danger wire:click="delete">
@@ -642,18 +739,24 @@ Modal semplice per contenuti.
     </x-slot>
 </x-pub_theme::modal>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
         <x-sixteen::button.group>
             <x-sixteen::button.secondary wire:click="closeModal">
                 Annulla
-            </x-sixteen::button.secondary>
-            <x-sixteen::button.danger wire:click="delete">
+            </x-pub_theme::button.secondary>
+            <x-pub_theme::button.danger wire:click="delete">
                 Elimina
-            </x-sixteen::button.danger>
-        </x-sixteen::button.group>
+            </x-pub_theme::button.danger>
+        </x-pub_theme::button.group>
     </x-slot>
+<<<<<<< HEAD
 </x-sixteen::modal>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::modal>
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Form Modal
@@ -697,6 +800,7 @@ Modal con form integrato.
         <x-pub_theme::button.group>
             <x-pub_theme::button.secondary wire:click="closeModal">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Annulla
             </x-pub_theme::button.secondary>
             <x-pub_theme::button.primary type="submit">
@@ -706,18 +810,24 @@ Modal con form integrato.
     </x-slot>
 </x-pub_theme::modal.form>
 =======
+>>>>>>> 477a6d1 (.)
+=======
 =======
         <x-sixteen::button.group>
             <x-sixteen::button.secondary wire:click="closeModal">
                 Annulla
-            </x-sixteen::button.secondary>
-            <x-sixteen::button.primary type="submit">
+            </x-pub_theme::button.secondary>
+            <x-pub_theme::button.primary type="submit">
                 Salva
-            </x-sixteen::button.primary>
-        </x-sixteen::button.group>
+            </x-pub_theme::button.primary>
+        </x-pub_theme::button.group>
     </x-slot>
+<<<<<<< HEAD
 </x-sixteen::modal.form>
 >>>>>>> 388f236 (.)
+=======
+</x-pub_theme::modal.form>
+>>>>>>> 477a6d1 (.)
 ```
 
 ## Icon Components
@@ -785,6 +895,8 @@ Stato vuoto per liste o contenuti.
     description="Non ci sono documenti da visualizzare al momento."
 >
     <x-pub_theme::button.primary>
+<<<<<<< HEAD
+=======
         Crea Primo Documento
     </x-pub_theme::button.primary>
 </x-pub_theme::empty-state>
@@ -793,9 +905,14 @@ Stato vuoto per liste o contenuti.
 =======
     <x-sixteen::button.primary>
         Crea Primo Documento
+<<<<<<< HEAD
     </x-sixteen::button.primary>
 </x-sixteen::empty-state>
 >>>>>>> 388f236 (.)
+=======
+    </x-pub_theme::button.primary>
+</x-pub_theme::empty-state>
+>>>>>>> 477a6d1 (.)
 ```
 
 ### Badge
@@ -814,6 +931,10 @@ Badge per etichette e stati.
 <x-pub_theme::badge.error>Errore</x-pub_theme::badge.error>
 <x-pub_theme::badge.info>Info</x-pub_theme::badge.info>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 477a6d1 (.)
 =======
 =======
 >>>>>>> 388f236 (.)

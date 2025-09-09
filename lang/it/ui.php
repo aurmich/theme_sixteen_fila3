@@ -47,7 +47,6 @@ return [
     'Informazione' => 'Informazione',
 =======
 
->>>>>>> 109edea (.)
 =======
     'dark_mode_toggle' => 'Cambia modalità scura',
     'light_mode' => 'Modalità chiara',
@@ -57,6 +56,9 @@ return [
     'menu' => 'Menu',
     'close' => 'Chiudi',
     'open' => 'Apri',
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 ];

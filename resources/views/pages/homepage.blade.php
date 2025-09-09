@@ -132,8 +132,12 @@
 =======
                 <x-bootstrap-italia.button variant="outline-primary" href="/servizi">
                     Tutti i servizi
+<<<<<<< HEAD
                 </x-bootstrap-italia.button>
 >>>>>>> 388f236 (.)
+=======
+                </x-button>
+>>>>>>> 477a6d1 (.)
             </div>
         </div>
     </section>
@@ -158,8 +162,12 @@
 =======
                 <x-bootstrap-italia.button variant="outline-primary" href="/notizie">
                     Tutte le notizie
+<<<<<<< HEAD
                 </x-bootstrap-italia.button>
 >>>>>>> 388f236 (.)
+=======
+                </x-button>
+>>>>>>> 477a6d1 (.)
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

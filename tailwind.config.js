@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 // import preset from './../../vendor/filament/support/tailwind.config.preset';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import preset from "./vendor/filament/support/tailwind.config.preset";
 =======
 <<<<<<< HEAD
@@ -347,3 +348,5 @@ module.exports = {
         themes: ['light', 'dark'],
     },
 }
+=======
+>>>>>>> 477a6d1 (.)

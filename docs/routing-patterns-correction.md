@@ -72,11 +72,13 @@ route('pages.view', ['slug' => 'legal-notes'])
                     {{ __('sixteen::footer.privacy') }}
 =======
                     {{ __('pub_theme::footer.privacy') }}
->>>>>>> 109edea (.)
 =======
                     {{ __('sixteen::footer.privacy') }}
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
                 </a>
             </li>
             <li>
@@ -89,11 +91,13 @@ route('pages.view', ['slug' => 'legal-notes'])
                     {{ __('sixteen::footer.accessibility') }}
 =======
                     {{ __('pub_theme::footer.accessibility') }}
->>>>>>> 109edea (.)
 =======
                     {{ __('sixteen::footer.accessibility') }}
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
                 </a>
             </li>
             <li>
@@ -106,11 +110,13 @@ route('pages.view', ['slug' => 'legal-notes'])
                     {{ __('sixteen::footer.help') }}
 =======
                     {{ __('pub_theme::footer.help') }}
->>>>>>> 109edea (.)
 =======
                     {{ __('sixteen::footer.help') }}
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
                 </a>
             </li>
         </ul>

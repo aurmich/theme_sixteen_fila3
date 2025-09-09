@@ -190,11 +190,13 @@ name('login');
 - [Documentazione Root](../../../docs/agid-compliance.md)
 =======
 - [Documentazione Root](../../../../project_docs/agid-compliance.md)
->>>>>>> 109edea (.)
 =======
 - [Documentazione Root](../../../docs/agid-compliance.md)
+<<<<<<< HEAD
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
 
 ---
 

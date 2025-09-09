@@ -192,4 +192,7 @@ class ThemeService
         // Setup delle configurazioni specifiche
     }
 }
+<<<<<<< HEAD
 >>>>>>> 388f236 (.)
+=======
+>>>>>>> 477a6d1 (.)
