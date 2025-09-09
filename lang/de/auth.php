@@ -24,13 +24,19 @@ return [
     // Anmeldung
     'login' => [
         'title' => 'Anmelden',
+<<<<<<< HEAD
 
+=======
+>>>>>>> 388f236 (.)
         'email' => 'E-Mail',
         'password' => 'Passwort',
         'remember_me' => 'Angemeldet bleiben',
         'forgot_password' => 'Passwort vergessen?',
         'submit' => 'Anmelden',
+<<<<<<< HEAD
 
+=======
+>>>>>>> 388f236 (.)
         'or' => 'oder',
         'create_account' => 'ein neues Konto erstellen',
         'link' => 'Anmelden',

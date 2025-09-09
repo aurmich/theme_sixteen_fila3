@@ -5,14 +5,20 @@ declare(strict_types=1);
 return [
     'login' => [
         'title' => 'Accesso ai servizi',
+<<<<<<< HEAD
 
+=======
+>>>>>>> 388f236 (.)
         'description' => 'Inserisci le tue credenziali per accedere a :service',
         'no_account' => 'Non hai un account?',
         'create_account' => 'Registrati',
         'remember' => 'Ricordami',
         'forgot_password' => 'Password dimenticata?',
         'submit' => 'Accedi',
+<<<<<<< HEAD
 
+=======
+>>>>>>> 388f236 (.)
         'help' => 'Hai bisogno di aiuto?',
         'email' => 'Indirizzo email',
         'password' => 'Password',

@@ -32,15 +32,29 @@ class ThemeService
     }
 
     /**
+<<<<<<< HEAD
      * Ottiene il nome del tema.
      */
     public function getName(): string
+=======
+     * Restituisce il nome del tema.
+     *
+     * @return string
+     */
+    public function getThemeName(): string
+>>>>>>> 388f236 (.)
     {
         return $this->themeName;
     }
 
     /**
+<<<<<<< HEAD
      * Ottiene la versione del tema.
+=======
+     * Restituisce la versione del tema.
+     *
+     * @return string
+>>>>>>> 388f236 (.)
      */
     public function getVersion(): string
     {
@@ -48,23 +62,43 @@ class ThemeService
     }
 
     /**
+<<<<<<< HEAD
      * Ottiene le informazioni del tema.
      */
     public function getInfo(): array
+=======
+     * Restituisce la configurazione del tema.
+     *
+     * @return array<string, mixed>
+     */
+    public function getConfig(): array
+>>>>>>> 388f236 (.)
     {
         return [
             'name' => $this->themeName,
             'version' => $this->version,
+<<<<<<< HEAD
             'description' => 'Tema Sixteen per SaluteOra - AGID Bootstrap Italia compliant',
             'author' => 'SaluteOra Team',
             'agid_compliant' => true,
             'bootstrap_italia' => true,
             'tailwind_css' => true,
             'accessibility' => 'WCAG 2.1 AA',
+=======
+            'author' => 'Laraxot Team',
+            'description' => 'Modern responsive theme for Laraxot applications',
+            'features' => [
+                'responsive_design',
+                'dark_mode_support',
+                'component_library',
+                'accessibility_compliant',
+            ],
+>>>>>>> 388f236 (.)
         ];
     }
 
     /**
+<<<<<<< HEAD
      * Verifica se il tema è attivo.
      */
     public function isActive(): bool
@@ -136,3 +170,26 @@ class ThemeService
         ];
     }
 } 
+=======
+     * Costruisce il menu usando il MenuBuilder.
+     *
+     * @return array<string, mixed>
+     */
+    public function buildMenu(): array
+    {
+        return $this->menuBuilder->build();
+    }
+
+    /**
+     * Inizializza le risorse del tema.
+     *
+     * @return void
+     */
+    public function initialize(): void
+    {
+        // Caricamento delle risorse CSS e JS
+        // Configurazione dei componenti del tema
+        // Setup delle configurazioni specifiche
+    }
+}
+>>>>>>> 388f236 (.)
