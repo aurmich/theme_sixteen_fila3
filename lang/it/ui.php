@@ -3,9 +3,6 @@
 declare(strict_types=1);
 
 return [
-<<<<<<< HEAD
-
-=======
     // Login page
     'Login' => 'Accedi',
     'Accedi ai servizi' => 'Accedi ai servizi',
@@ -56,9 +53,4 @@ return [
     'menu' => 'Menu',
     'close' => 'Chiudi',
     'open' => 'Apri',
-<<<<<<< HEAD
->>>>>>> 0321d33 (.)
->>>>>>> 388f236 (.)
-=======
->>>>>>> 477a6d1 (.)
 ];

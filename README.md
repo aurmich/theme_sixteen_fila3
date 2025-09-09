@@ -1,10 +1,5 @@
 # Tema Sixteen - Bootstrap Italia per Laravel
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 388f236 (.)
 =======
 >>>>>>> 477a6d1 (.)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laraxot/theme_sixteen_fila3.svg?style=flat-square)](https://packagist.org/packages/laraxot/theme_sixteen_fila3)
@@ -277,10 +272,5 @@ Questo progetto è rilasciato sotto licenza [MIT](LICENSE).
 **Ultimo aggiornamento**: Gennaio 2025  
 **Stato**: Production Ready - OBIETTIVO SUPERATO! 🎉  
 **Componenti**: 55/54 (102%)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 388f236 (.)
 =======
 >>>>>>> 477a6d1 (.)

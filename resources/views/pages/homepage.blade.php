@@ -17,33 +17,24 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <x-button 
-<<<<<<< HEAD
-=======
 =======
                         <x-bootstrap-italia.button 
->>>>>>> 388f236 (.)
                             variant="outline-primary" 
                             href="/servizi" 
                             class="bg-white text-primary-600 hover:bg-primary-50">
                             Esplora i servizi
                         </x-button>
                         <x-button 
-<<<<<<< HEAD
-=======
 =======
                         </x-bootstrap-italia.button>
                         <x-bootstrap-italia.button 
->>>>>>> 388f236 (.)
                             variant="secondary" 
                             href="/contatti"
                             class="bg-primary-700 hover:bg-primary-800 border-primary-700">
                             Contatta l'ufficio
                         </x-button>
-<<<<<<< HEAD
-=======
 =======
                         </x-bootstrap-italia.button>
->>>>>>> 388f236 (.)
                     </div>
                 </div>
                 <div class="hidden lg:block">
@@ -127,17 +118,10 @@
                 <x-button variant="outline-primary" href="/servizi">
                     Tutti i servizi
                 </x-button>
-<<<<<<< HEAD
-=======
 =======
                 <x-bootstrap-italia.button variant="outline-primary" href="/servizi">
                     Tutti i servizi
-<<<<<<< HEAD
-                </x-bootstrap-italia.button>
->>>>>>> 388f236 (.)
-=======
                 </x-button>
->>>>>>> 477a6d1 (.)
             </div>
         </div>
     </section>
@@ -157,17 +141,10 @@
                 <x-button variant="outline-primary" href="/notizie">
                     Tutte le notizie
                 </x-button>
-<<<<<<< HEAD
-=======
 =======
                 <x-bootstrap-italia.button variant="outline-primary" href="/notizie">
                     Tutte le notizie
-<<<<<<< HEAD
-                </x-bootstrap-italia.button>
->>>>>>> 388f236 (.)
-=======
                 </x-button>
->>>>>>> 477a6d1 (.)
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -228,33 +205,24 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <x-button 
-<<<<<<< HEAD
-=======
 =======
                     <x-bootstrap-italia.button 
->>>>>>> 388f236 (.)
                         variant="outline-primary" 
                         href="/contatti"
                         class="bg-white text-primary-600 hover:bg-primary-50">
                         Contatta gli uffici
                     </x-button>
                     <x-button 
-<<<<<<< HEAD
-=======
 =======
                     </x-bootstrap-italia.button>
                     <x-bootstrap-italia.button 
->>>>>>> 388f236 (.)
                         variant="secondary" 
                         href="tel:+390612345678"
                         class="bg-primary-700 hover:bg-primary-800 border-primary-700">
                         Chiama: 06 1234567
                     </x-button>
-<<<<<<< HEAD
-=======
 =======
                     </x-bootstrap-italia.button>
->>>>>>> 388f236 (.)
                 </div>
             </div>
         </div>

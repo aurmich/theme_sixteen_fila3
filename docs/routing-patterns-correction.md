@@ -64,59 +64,23 @@ route('pages.view', ['slug' => 'legal-notes'])
         <ul>
             <li>
                 <a href="{{ route('pages.view', ['slug' => 'privacy']) }}">
-<<<<<<< HEAD
-                    {{ __('pub_theme::footer.privacy') }}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    {{ __('sixteen::footer.privacy') }}
-=======
                     {{ __('pub_theme::footer.privacy') }}
 =======
                     {{ __('sixteen::footer.privacy') }}
-<<<<<<< HEAD
->>>>>>> 0321d33 (.)
->>>>>>> 388f236 (.)
-=======
->>>>>>> 477a6d1 (.)
                 </a>
             </li>
             <li>
                 <a href="{{ route('pages.view', ['slug' => 'accessibility']) }}">
-<<<<<<< HEAD
-                    {{ __('pub_theme::footer.accessibility') }}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    {{ __('sixteen::footer.accessibility') }}
-=======
                     {{ __('pub_theme::footer.accessibility') }}
 =======
                     {{ __('sixteen::footer.accessibility') }}
-<<<<<<< HEAD
->>>>>>> 0321d33 (.)
->>>>>>> 388f236 (.)
-=======
->>>>>>> 477a6d1 (.)
                 </a>
             </li>
             <li>
                 <a href="{{ route('pages.view', ['slug' => 'help']) }}">
-<<<<<<< HEAD
-                    {{ __('pub_theme::footer.help') }}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    {{ __('sixteen::footer.help') }}
-=======
                     {{ __('pub_theme::footer.help') }}
 =======
                     {{ __('sixteen::footer.help') }}
-<<<<<<< HEAD
->>>>>>> 0321d33 (.)
->>>>>>> 388f236 (.)
-=======
->>>>>>> 477a6d1 (.)
                 </a>
             </li>
         </ul>

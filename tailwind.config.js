@@ -1,14 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 // import preset from './../../vendor/filament/support/tailwind.config.preset';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import preset from "./vendor/filament/support/tailwind.config.preset";
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import preset from "./vendor/filament/support/tailwind.config.preset";
->>>>>>> 109edea (.)
 =======
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
@@ -17,19 +8,6 @@ import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import colors from 'tailwindcss/colors';
 
-<<<<<<< HEAD
-module.exports = {
-    presets: [preset],
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-module.exports = {
-    // presets: [preset],
-=======
-module.exports = {
-    presets: [preset],
->>>>>>> 109edea (.)
 =======
 
 module.exports = {
@@ -92,15 +70,6 @@ module.exports = {
                     800: '#B37F00',
                     900: '#996D00',
                 },
-<<<<<<< HEAD
-                // Compatibilità con i colori esistenti
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-                // Manteniamo compatibilità con i colori esistenti
-=======
-                // Compatibilità con i colori esistenti
->>>>>>> 109edea (.)
 =======
                 // Manteniamo compatibilità con i colori esistenti
 >>>>>>> 0321d33 (.)
@@ -164,19 +133,10 @@ module.exports = {
     },
 
     content: [
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0321d33 (.)
 
         '../../app/Filament/**/*.php',
         '../../resources/views/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
-<<<<<<< HEAD
-=======
->>>>>>> 388f236 (.)
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
@@ -190,9 +150,6 @@ module.exports = {
         "../../app/Filament/**/*.php",
         "../../resources/views/**/*.blade.php",
         "../../vendor/filament/**/*.blade.php",
-<<<<<<< HEAD
-=======
->>>>>>> 109edea (.)
 =======
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
@@ -200,35 +157,11 @@ module.exports = {
         "../../Modules/**/resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
-<<<<<<< HEAD
-        "../../Themes/**/resources/views/**/*.blade.php",
-        
-        "./node_modules/flowbite/**/*.js",
-        "../../../public_html/vendor/**/*.blade.php",
-        "../../../public_html/vendor/**/*.blade.php",
-    ],
-    // Filament preset palette (for compatibility with plugins expecting these keys)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
         "./node_modules/flowbite/**/*.js",
         "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../../public_html/vendor/**/*.blade.php",
     ],
-=======
-        "../../Themes/**/resources/views/**/*.blade.php",
-        
-=======
->>>>>>> 0321d33 (.)
-        "./node_modules/flowbite/**/*.js",
-        "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
-        "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
-        "../../../public_html/vendor/**/*.blade.php",
-    ],
-<<<<<<< HEAD
-    // Filament preset palette (for compatibility with plugins expecting these keys)
->>>>>>> 109edea (.)
 =======
 >>>>>>> 0321d33 (.)
 >>>>>>> 388f236 (.)
@@ -328,17 +261,6 @@ module.exports = {
     plugins: [
         forms,
         typography,
-<<<<<<< HEAD
-        daisyui,
-        require("flowbite/plugin"),
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        daisyui
-=======
-        daisyui,
-        require("flowbite/plugin"),
->>>>>>> 109edea (.)
 =======
         daisyui
 >>>>>>> 0321d33 (.)

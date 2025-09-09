@@ -1,12 +1,6 @@
 {
     "name": "laraxot/theme_sixteen_fila3",
     "description": "Sixteen theme for Laraxot projects (AGID-compliant, Tailwind-based)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 477a6d1 (.)
     "description": "",
 >>>>>>> 388f236 (.)
     "keywords": [
@@ -19,16 +13,6 @@
     ],
     "homepage": "https://github.com/laraxot/theme_sixteen_fila3",
     "license": "MIT",
-<<<<<<< HEAD
-=======
-    "authors": [{
-        "name": "Marco Xot",
-        "email": "marco.sottana@gmail.com",
-        "role": "Developer"
-    }],
-    "require": {
-    },
->>>>>>> 388f236 (.)
     "authors": [
         {
             "name": "Marco Xot",
@@ -37,11 +21,6 @@
         }
     ],
     "require": {},
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 388f236 (.)
 =======
 >>>>>>> 477a6d1 (.)
     "extra": {
@@ -50,26 +29,6 @@
                 "Themes\\Sixteen\\Providers\\ThemeServiceProvider"
             ],
             "aliases": {}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-    },
-    "require": {
-        "filament/filament": "^3.4",
-        "filament/tables": "^3.4",
-        "filament/forms": "^3.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Themes\\Sixteen\\": ""
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {}
-=======
-=======
-=======
->>>>>>> 477a6d1 (.)
             "aliases": {
 
             }
@@ -86,11 +45,6 @@
         }
     },
     "autoload-dev": {
-<<<<<<< HEAD
-        "psr-4": {
-
-        }
->>>>>>> 388f236 (.)
 =======
         "psr-4": {}
 >>>>>>> 477a6d1 (.)

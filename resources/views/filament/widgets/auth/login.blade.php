@@ -6,16 +6,12 @@
     {{-- Header del form --}}
     <div class="text-center">
         <h2 class="text-2xl font-extrabold leading-9 text-gray-800 dark:text-gray-200">
-<<<<<<< HEAD
-
-=======
             {{ __('auth.login.title') }}
         </h2>
         <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
             {{ __('auth.login.subtitle') }}
 
 =======
->>>>>>> 388f236 (.)
         </p>
     </div>
 
@@ -31,11 +27,8 @@
                     class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
                 >
 
-<<<<<<< HEAD
-=======
 =======
                     {{ __('auth.login.forgot_password') }}
->>>>>>> 388f236 (.)
                 </a>
             </div>
         </div>
@@ -59,12 +52,9 @@
                 </svg>
                 
 
-<<<<<<< HEAD
-=======
 =======
                 <span wire:loading.remove>{{ __('auth.login.submit') }}</span>
                 <span wire:loading>{{ __('auth.login.submitting') }}</span>
->>>>>>> 388f236 (.)
             </button>
         </div>
     </form>
@@ -73,21 +63,15 @@
     <div class="mt-6 text-center">
         <div class="text-sm leading-5 text-gray-600 dark:text-gray-400 space-x-0.5">
 
-<<<<<<< HEAD
-=======
 =======
             <span>{{ __('auth.login.or') }}</span>
->>>>>>> 388f236 (.)
             <a 
                 href="{{ url('/' . app()->getLocale() . '/auth/register') }}" 
                 class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
             >
 
-<<<<<<< HEAD
-=======
 =======
                 {{ __('auth.login.create_account') }}
->>>>>>> 388f236 (.)
             </a>
         </div>
     </div>

@@ -51,20 +51,6 @@ login.blade.php (Layout AGID + Branding PA)
 - `x-pub_theme::layouts.guest` - Layout base per utenti non autenticati
 - `x-pub_theme::blocks.layout.container` - Container responsive
 - `x-pub_theme::blocks.layout.grid` - Sistema griglia
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-#### Form Components
-- `x-pub_theme::blocks.forms.input` - Input email e password
-- `x-pub_theme::blocks.forms.checkbox` - Checkbox "Ricordami"
-- `x-pub_theme::blocks.buttons.button` - Pulsante submit
-
-#### UI Components
-- `x-pub_theme::blocks.cards.card` - Card contenitore form
-- `x-pub_theme::blocks.alerts.alert` - Messaggi di errore
-- `x-pub_theme::blocks.utilities.badge` - Badge social login
-=======
->>>>>>> 477a6d1 (.)
 =======
 =======
 - `x-sixteen::layouts.guest` - Layout base per utenti non autenticati
@@ -77,40 +63,24 @@ login.blade.php (Layout AGID + Branding PA)
 - `x-pub_theme::blocks.buttons.button` - Pulsante submit
 
 #### UI Components
-<<<<<<< HEAD
-- `x-sixteen::blocks.cards.card` - Card contenitore form
-- `x-sixteen::blocks.alerts.alert` - Messaggi di errore
-- `x-sixteen::blocks.utilities.badge` - Badge social login
->>>>>>> 388f236 (.)
-=======
 - `x-pub_theme::blocks.cards.card` - Card contenitore form
 - `x-pub_theme::blocks.alerts.alert` - Messaggi di errore
 - `x-pub_theme::blocks.utilities.badge` - Badge social login
->>>>>>> 477a6d1 (.)
 
 ### 3. Struttura HTML Proposta
 
 ```blade
 <x-pub_theme::layouts.guest>
     <x-pub_theme::blocks.layout.container>
-<<<<<<< HEAD
-=======
         <!-- Header PA -->
         <div class="text-center mb-8">
             <x-pub_theme::ui.logo class="mx-auto h-16 w-auto" />
-<<<<<<< HEAD
-=======
 =======
 <x-sixteen::layouts.guest>
     <x-sixteen::blocks.layout.container>
         <!-- Header PA -->
         <div class="text-center mb-8">
-<<<<<<< HEAD
-            <x-sixteen::ui.logo class="mx-auto h-16 w-auto" />
->>>>>>> 388f236 (.)
-=======
             <x-pub_theme::ui.logo class="mx-auto h-16 w-auto" />
->>>>>>> 477a6d1 (.)
             <h1 class="mt-6 text-3xl font-bold text-gray-900">
                 Accesso al Servizio
             </h1>
@@ -121,21 +91,12 @@ login.blade.php (Layout AGID + Branding PA)
 
         <!-- Form Card -->
         <x-pub_theme::blocks.cards.card class="max-w-md mx-auto">
-<<<<<<< HEAD
-=======
             @livewire(\Modules\User\Http\Livewire\Auth\Login::class)
         </x-pub_theme::blocks.cards.card>
-<<<<<<< HEAD
-=======
 =======
         <x-sixteen::blocks.cards.card class="max-w-md mx-auto">
             @livewire(\Modules\User\Http\Livewire\Auth\Login::class)
-<<<<<<< HEAD
-        </x-sixteen::blocks.cards.card>
->>>>>>> 388f236 (.)
-=======
         </x-pub_theme::blocks.cards.card>
->>>>>>> 477a6d1 (.)
 
         <!-- Footer PA -->
         <div class="mt-8 text-center text-sm text-gray-500">
@@ -148,12 +109,9 @@ login.blade.php (Layout AGID + Branding PA)
         </div>
     </x-pub_theme::blocks.layout.container>
 </x-pub_theme::layouts.guest>
-<<<<<<< HEAD
-=======
 =======
     </x-sixteen::blocks.layout.container>
 </x-sixteen::layouts.guest>
->>>>>>> 388f236 (.)
 ```
 
 ## 🎨 Design System AGID
@@ -254,11 +212,8 @@ login.blade.php (Layout AGID + Branding PA)
 
 **Modifiche**:
 1. ✅ Sostituire layout con `x-pub_theme::layouts.guest`
-<<<<<<< HEAD
-=======
 =======
 1. ✅ Sostituire layout con `x-sixteen::layouts.guest`
->>>>>>> 388f236 (.)
 2. ✅ Aggiungere header con branding PA
 3. ✅ Implementare struttura con componenti Sixteen
 4. ✅ Mantenere integrazione Livewire obbligatoria

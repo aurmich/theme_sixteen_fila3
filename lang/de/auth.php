@@ -24,27 +24,15 @@ return [
     // Anmeldung
     'login' => [
         'title' => 'Anmelden',
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 388f236 (.)
 =======
 
->>>>>>> 477a6d1 (.)
         'email' => 'E-Mail',
         'password' => 'Passwort',
         'remember_me' => 'Angemeldet bleiben',
         'forgot_password' => 'Passwort vergessen?',
         'submit' => 'Anmelden',
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 388f236 (.)
 =======
 
->>>>>>> 477a6d1 (.)
         'or' => 'oder',
         'create_account' => 'ein neues Konto erstellen',
         'link' => 'Anmelden',
