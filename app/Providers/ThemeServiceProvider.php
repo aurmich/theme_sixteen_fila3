@@ -6,6 +6,7 @@ namespace Themes\Sixteen\Providers;
 
 use Modules\Xot\Providers\XotBaseThemeServiceProvider;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**
  * Service Provider per il tema Sixteen.
@@ -20,14 +21,20 @@ use Themes\Sixteen\Console\Commands\SixteenInstallCommand;
 use Themes\Sixteen\Console\Commands\SixteenPublishCommand;
 use Themes\Sixteen\Contracts\MenuFilterInterface;
 use Themes\Sixteen\Filters\{HrefMenuFilter, ActiveMenuFilter, GateMenuFilter};
+=======
+>>>>>>> 0321d33 (.)
 
 /**
- * Enhanced Service Provider per il tema Sixteen.
+ * Service Provider per il tema Sixteen.
  * 
  * Questo provider gestisce la registrazione e configurazione
+<<<<<<< HEAD
  * del tema Sixteen nell'applicazione Laravel, integrando il
  * nuovo Menu Builder System e le funzionalità avanzate.
 >>>>>>> 109edea (.)
+=======
+ * del tema Sixteen nell'applicazione Laravel.
+>>>>>>> 0321d33 (.)
  * 
  * IMPORTANTE: Il tema Sixteen usa il namespace 'pub_theme' per le viste,
  * non 'sixteen', per essere compatibile con il sistema di temi.
@@ -47,10 +54,14 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         parent::boot();
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0321d33 (.)
         // Caricamento specifico per pub_theme namespace
         // IMPORTANTE: pub_theme è il namespace standard per i temi
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'pub_theme');
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'pub_theme');
+<<<<<<< HEAD
         
         // Caricamento delle configurazioni del tema
         $this->loadConfigFrom(__DIR__ . '/../../config', 'sixteen');
@@ -69,16 +80,23 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
 =======
         // Core theme loading
         $this->loadCoreThemeResources();
+=======
+>>>>>>> 0321d33 (.)
         
-        // Menu system registration
-        $this->registerMenuSystem();
+        // Caricamento delle configurazioni del tema
+        $this->loadConfigFrom(__DIR__ . '/../../config', 'sixteen');
         
-        // View composers
-        $this->registerViewComposers();
+        // Pubblicazione degli assets del tema
+        $this->publishes([
+            __DIR__ . '/../../resources/assets' => public_path('themes/sixteen/assets'),
+        ], 'sixteen-assets');
         
-        // Artisan commands
-        $this->registerCommands();
+        // Pubblicazione delle configurazioni del tema
+        $this->publishes([
+            __DIR__ . '/../../config' => config_path('themes/sixteen'),
+        ], 'sixteen-config');
         
+<<<<<<< HEAD
         // Publishing configurations
         $this->registerPublishing();
         
@@ -87,6 +105,9 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         
         // Layout shortcuts (legacy compatibility)
 >>>>>>> 109edea (.)
+=======
+        // Registrazione Layout Shortcuts AGID
+>>>>>>> 0321d33 (.)
         $this->registerLayoutShortcuts();
     }
 
@@ -97,6 +118,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     {
         parent::register();
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         // Registrazione dei servizi del tema
         $this->app->singleton('sixteen.theme', function ($app) {
@@ -151,15 +173,16 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     protected function registerCoreServices(): void
     {
         // Theme Service con dependency injection del MenuBuilder
+=======
+        // Registrazione dei servizi del tema
+>>>>>>> 0321d33 (.)
         $this->app->singleton('sixteen.theme', function ($app) {
-            return new ThemeService($app[MenuBuilder::class]);
+            return new \Themes\Sixteen\Services\ThemeService();
         });
-        
-        // Alias per il ThemeService
-        $this->app->alias('sixteen.theme', ThemeService::class);
     }
 
     /**
+<<<<<<< HEAD
      * Register menu filters
      */
     protected function registerMenuFilters(): void
@@ -263,12 +286,16 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     /**
      * Registra i layout shortcuts AGID per il tema (legacy compatibility).
 >>>>>>> 109edea (.)
+=======
+     * Registra i layout shortcuts AGID per il tema.
+>>>>>>> 0321d33 (.)
      */
     protected function registerLayoutShortcuts(): void
     {
         // Registrazione dei layout shortcuts per facilitare l'uso
         $this->app['view']->addNamespace('layouts', __DIR__ . '/../../resources/views/layouts');
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         // Alias per layout AGID-compliant
         $this->app['view']->composer('layouts.guest-agid', function ($view) {
@@ -278,16 +305,20 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
                 'accessibility_level' => 'WCAG 2.1 AA'
 =======
         // Enhanced composer per layout AGID-compliant
+=======
+        // Alias per layout AGID-compliant
+>>>>>>> 0321d33 (.)
         $this->app['view']->composer('layouts.guest-agid', function ($view) {
-            $themeService = app('sixteen.theme');
-            
             $view->with([
                 'theme_name' => 'Sixteen',
-                'theme_info' => $themeService->getInfo(),
                 'agid_compliant' => true,
+<<<<<<< HEAD
                 'accessibility_level' => 'WCAG 2.1 AA',
                 'compliance_check' => $themeService->checkAgidCompliance(),
 >>>>>>> 109edea (.)
+=======
+                'accessibility_level' => 'WCAG 2.1 AA'
+>>>>>>> 0321d33 (.)
             ]);
         });
     }
@@ -305,7 +336,11 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 } 
 =======
 }
 >>>>>>> 109edea (.)
+=======
+} 
+>>>>>>> 0321d33 (.)

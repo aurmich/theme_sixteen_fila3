@@ -9,10 +9,14 @@
 
 #### 1. Layout AGID Compliant ✅
 <<<<<<< HEAD
+<<<<<<< HEAD
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-sixteen::layouts.guest`
 =======
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-pub_theme::layouts.guest`
 >>>>>>> 109edea (.)
+=======
+- ✅ Sostituito `x-pub_theme::layouts.main` con `x-sixteen::layouts.guest`
+>>>>>>> 0321d33 (.)
 - ✅ Utilizzato layout conforme alle linee guida PA
 - ✅ Implementato design system AGID
 
@@ -43,10 +47,14 @@ name('login');
 ?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <x-sixteen::layouts.guest>
 =======
 <x-pub_theme::layouts.guest>
 >>>>>>> 109edea (.)
+=======
+<x-sixteen::layouts.guest>
+>>>>>>> 0321d33 (.)
     <x-slot name="title">
         {{ __('auth.login.title') }} - {{ config('app.name') }}
     </x-slot>
@@ -55,10 +63,14 @@ name('login');
     <div class="text-center mb-8">
         <div class="flex justify-center">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <x-sixteen::ui.logo class="h-16 w-auto text-blue-600" />
 =======
             <x-pub_theme::ui.logo class="h-16 w-auto text-blue-600" />
 >>>>>>> 109edea (.)
+=======
+            <x-sixteen::ui.logo class="h-16 w-auto text-blue-600" />
+>>>>>>> 0321d33 (.)
         </div>
         
         <h1 class="mt-6 text-3xl font-bold text-gray-900">
@@ -113,10 +125,14 @@ name('login');
         </div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </x-sixteen::layouts.guest>
 =======
 </x-pub_theme::layouts.guest>
 >>>>>>> 109edea (.)
+=======
+</x-sixteen::layouts.guest>
+>>>>>>> 0321d33 (.)
 ```
 
 ## 🎨 Design System AGID Implementato

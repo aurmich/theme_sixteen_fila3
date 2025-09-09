@@ -17,30 +17,43 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <x-bootstrap-italia.button 
 =======
                         <x-button 
 >>>>>>> 109edea (.)
+=======
+                        <x-bootstrap-italia.button 
+>>>>>>> 0321d33 (.)
                             variant="outline-primary" 
                             href="/servizi" 
                             class="bg-white text-primary-600 hover:bg-primary-50">
                             Esplora i servizi
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </x-bootstrap-italia.button>
                         <x-bootstrap-italia.button 
 =======
                         </x-button>
                         <x-button 
 >>>>>>> 109edea (.)
+=======
+                        </x-bootstrap-italia.button>
+                        <x-bootstrap-italia.button 
+>>>>>>> 0321d33 (.)
                             variant="secondary" 
                             href="/contatti"
                             class="bg-primary-700 hover:bg-primary-800 border-primary-700">
                             Contatta l'ufficio
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </x-bootstrap-italia.button>
 =======
                         </x-button>
 >>>>>>> 109edea (.)
+=======
+                        </x-bootstrap-italia.button>
+>>>>>>> 0321d33 (.)
                     </div>
                 </div>
                 <div class="hidden lg:block">
@@ -122,6 +135,7 @@
             
             <div class="text-center mt-10">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <x-bootstrap-italia.button variant="outline-primary" href="/servizi">
                     Tutti i servizi
                 </x-bootstrap-italia.button>
@@ -130,6 +144,11 @@
                     Tutti i servizi
                 </x-button>
 >>>>>>> 109edea (.)
+=======
+                <x-bootstrap-italia.button variant="outline-primary" href="/servizi">
+                    Tutti i servizi
+                </x-bootstrap-italia.button>
+>>>>>>> 0321d33 (.)
             </div>
         </div>
     </section>
@@ -147,6 +166,7 @@
                     </p>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <x-bootstrap-italia.button variant="outline-primary" href="/notizie">
                     Tutte le notizie
                 </x-bootstrap-italia.button>
@@ -155,6 +175,11 @@
                     Tutte le notizie
                 </x-button>
 >>>>>>> 109edea (.)
+=======
+                <x-bootstrap-italia.button variant="outline-primary" href="/notizie">
+                    Tutte le notizie
+                </x-bootstrap-italia.button>
+>>>>>>> 0321d33 (.)
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -215,30 +240,43 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <x-bootstrap-italia.button 
 =======
                     <x-button 
 >>>>>>> 109edea (.)
+=======
+                    <x-bootstrap-italia.button 
+>>>>>>> 0321d33 (.)
                         variant="outline-primary" 
                         href="/contatti"
                         class="bg-white text-primary-600 hover:bg-primary-50">
                         Contatta gli uffici
 <<<<<<< HEAD
+<<<<<<< HEAD
                     </x-bootstrap-italia.button>
                     <x-bootstrap-italia.button 
 =======
                     </x-button>
                     <x-button 
 >>>>>>> 109edea (.)
+=======
+                    </x-bootstrap-italia.button>
+                    <x-bootstrap-italia.button 
+>>>>>>> 0321d33 (.)
                         variant="secondary" 
                         href="tel:+390612345678"
                         class="bg-primary-700 hover:bg-primary-800 border-primary-700">
                         Chiama: 06 1234567
 <<<<<<< HEAD
+<<<<<<< HEAD
                     </x-bootstrap-italia.button>
 =======
                     </x-button>
 >>>>>>> 109edea (.)
+=======
+                    </x-bootstrap-italia.button>
+>>>>>>> 0321d33 (.)
                 </div>
             </div>
         </div>

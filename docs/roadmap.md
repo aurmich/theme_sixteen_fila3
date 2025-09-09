@@ -2,12 +2,17 @@
 
 ## 🔄 Collegamenti
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Roadmap Principale](../../../../docs/roadmap.md)
 - [Analisi Tema Sixteen](../../../../docs/roadmap/themes/sixteen/analysis.md)
 =======
 - [Roadmap Principale](../../../../project_docs/roadmap.md)
 - [Analisi Tema Sixteen](../../../../project_docs/roadmap/themes/sixteen/analysis.md)
 >>>>>>> 109edea (.)
+=======
+- [Roadmap Principale](../../../../docs/roadmap.md)
+- [Analisi Tema Sixteen](../../../../docs/roadmap/themes/sixteen/analysis.md)
+>>>>>>> 0321d33 (.)
 
 ## ⚠️ Priorità Critiche
 | Priorità | Task | Stato | Scadenza | Dettagli |
@@ -78,11 +83,15 @@
 
 ## 🔗 Dipendenze
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0321d33 (.)
 - [UI Module](../../../../docs/roadmap/modules/ui/roadmap.md)
 - [User Module](../../../../docs/roadmap/modules/user/roadmap.md)
 - [Rating Module](../../../../docs/roadmap/modules/rating/roadmap.md)
 - [Seo Module](../../../../docs/roadmap/modules/seo/roadmap.md)
 - [Tenant Module](../../../../docs/roadmap/modules/tenant/roadmap.md)
+<<<<<<< HEAD
 =======
 - [UI Module](../../../Modules/UI/docs/roadmap.md)
 - [User Module](../../../Modules/User/docs/roadmap.md)
@@ -90,14 +99,20 @@
 - [Seo Module](../../../Modules/Seo/docs/roadmap.md)
 - [Tenant Module](../../../Modules/Tenant/docs/roadmap.md)
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
 
 ---
 
 ## Collegamenti
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [⬅️ Torna alla Roadmap Principale](/docs/roadmap.md)
 =======
 [⬅️ Torna alla Roadmap Principale](../../../../project_docs/roadmap.md)
 >>>>>>> 109edea (.)
+=======
+[⬅️ Torna alla Roadmap Principale](/docs/roadmap.md)
+>>>>>>> 0321d33 (.)
 

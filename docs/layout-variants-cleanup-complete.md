@@ -183,10 +183,14 @@ name('login');
 - [Sistema Blocchi](./blocks-system.md)
 - [Componenti Tema](./components.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione Root](../../../docs/agid-compliance.md)
 =======
 - [Documentazione Root](../../../../project_docs/agid-compliance.md)
 >>>>>>> 109edea (.)
+=======
+- [Documentazione Root](../../../docs/agid-compliance.md)
+>>>>>>> 0321d33 (.)
 
 ---
 

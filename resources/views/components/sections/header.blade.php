@@ -3,6 +3,7 @@
         <div class="flex justify-between w-full max-w-screen-xl mx-auto">
             <div class="flex-1 py-1">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <a class="text-sm" href="#">Nome della Regione</a>
             </div>
             <div class="flex-none">
@@ -21,6 +22,20 @@
 =======
 
 >>>>>>> 109edea (.)
+=======
+                <a class="text-sm" href="#">{{-- regione --}}</a>
+            </div>
+            <div class="flex-none">
+                <ul class="px-1 menu menu-horizontal">
+                    {{--  
+                    <li>
+                        @livewire("Modules\UI\Filament\Widgets\DarkModeSwitcherWidget")
+                    </li>
+                    <li>
+                        @livewire("Modules\Lang\Filament\Widgets\LanguageSwitcherWidget")
+                    </li>
+                    --}}
+>>>>>>> 0321d33 (.)
                     @guest
                         <li class="ml-4">
                             <a class="flex items-center space-x-1" href="{{ route('login') }}">
@@ -147,28 +162,36 @@
             <div class="flex-1 ">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {{--  dddx(get_defined_vars()) --}}
 =======
 >>>>>>> 029971d (.)
 =======
+=======
+                
+>>>>>>> 0321d33 (.)
                 @php
                 $nav1 = Arr::first($blocks,fn($item)=>$item->slug =='nav1');
                 @endphp
-                @if($nav1!=null)
                 <ul class="items-center px-1 menu menu-horizontal flex-nowrap">
                     @foreach($nav1->data['items'] as $item)
                     <li><a href="">{{ $item['label'] }}</a></li>
                     @endforeach
+<<<<<<< HEAD
                 </ul>
                 @endif
 
                 {{--  dddx(get_defined_vars()) 
 >>>>>>> 109edea (.)
                 <ul class="items-center px-1 menu menu-horizontal flex-nowrap">
+=======
+                    {{--  
+>>>>>>> 0321d33 (.)
                     <li><a href="">Amministrazione</a></li>
                     <li><a href="">Novità</a></li>
                     <li><a href="">Servizi</a></li>
                     <li><a href="">Vivere il Comune</a></li>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 </ul>
 =======
@@ -176,6 +199,10 @@
                 </ul>
                 --}}
 >>>>>>> 109edea (.)
+=======
+                    --}}
+                </ul>
+>>>>>>> 0321d33 (.)
             </div>
             <div class="flex-none">
                 <ul class="items-center px-1 menu menu-horizontal flex-nowrap">

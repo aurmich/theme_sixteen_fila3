@@ -168,6 +168,7 @@ return [
 ```blade
 {{-- Utilizzo diretto --}}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <h1>{{ __('sixteen::pages.dashboard.title') }}</h1>
 <p>{{ __('sixteen::pages.dashboard.description') }}</p>
 
@@ -179,19 +180,28 @@ return [
 =======
 <h1>{{ __('pub_theme::pages.dashboard.title') }}</h1>
 <p>{{ __('pub_theme::pages.dashboard.description') }}</p>
+=======
+<h1>{{ __('sixteen::pages.dashboard.title') }}</h1>
+<p>{{ __('sixteen::pages.dashboard.description') }}</p>
+>>>>>>> 0321d33 (.)
 
 {{-- Con parametri --}}
-<p>{{ __('pub_theme::common.welcome_user', ['name' => $user->name]) }}</p>
+<p>{{ __('sixteen::common.welcome_user', ['name' => $user->name]) }}</p>
 
 {{-- Per pluralizzazione --}}
+<<<<<<< HEAD
 <p>{{ trans_choice('pub_theme::common.items_count', $count, ['count' => $count]) }}</p>
 >>>>>>> 109edea (.)
+=======
+<p>{{ trans_choice('sixteen::common.items_count', $count, ['count' => $count]) }}</p>
+>>>>>>> 0321d33 (.)
 ```
 
 ### Componenti Filament
 ```php
 // In Filament Forms
 TextInput::make('email')
+<<<<<<< HEAD
 <<<<<<< HEAD
     ->label(__('sixteen::components.form.input.email.label'))
     ->placeholder(__('sixteen::components.form.input.email.placeholder'))
@@ -201,6 +211,11 @@ TextInput::make('email')
     ->placeholder(__('pub_theme::components.form.input.email.placeholder'))
     ->helperText(__('pub_theme::components.form.input.email.help'))
 >>>>>>> 109edea (.)
+=======
+    ->label(__('sixteen::components.form.input.email.label'))
+    ->placeholder(__('sixteen::components.form.input.email.placeholder'))
+    ->helperText(__('sixteen::components.form.input.email.help'))
+>>>>>>> 0321d33 (.)
     ->required()
     ->email()
     ->rules(['required', 'email']);
@@ -208,10 +223,14 @@ TextInput::make('email')
 // In Filament Tables
 Tables\Columns\TextColumn::make('name')
 <<<<<<< HEAD
+<<<<<<< HEAD
     ->label(__('sixteen::components.table.columns.name.label'))
 =======
     ->label(__('pub_theme::components.table.columns.name.label'))
 >>>>>>> 109edea (.)
+=======
+    ->label(__('sixteen::components.table.columns.name.label'))
+>>>>>>> 0321d33 (.)
     ->searchable()
     ->sortable();
 ```
@@ -222,6 +241,7 @@ Tables\Columns\TextColumn::make('name')
 public function render()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return view('sixteen::livewire.user-form', [
         'title' => __('sixteen::pages.users.create.title'),
         'description' => __('sixteen::pages.users.create.description'),
@@ -230,6 +250,11 @@ public function render()
         'title' => __('pub_theme::pages.users.create.title'),
         'description' => __('pub_theme::pages.users.create.description'),
 >>>>>>> 109edea (.)
+=======
+    return view('sixteen::livewire.user-form', [
+        'title' => __('sixteen::pages.users.create.title'),
+        'description' => __('sixteen::pages.users.create.description'),
+>>>>>>> 0321d33 (.)
     ]);
 }
 ```
@@ -275,10 +300,14 @@ public function render()
 ### Utilizzo
 ```blade
 <<<<<<< HEAD
+<<<<<<< HEAD
 {{ trans_choice('sixteen::common.items_count', $items->count(), ['count' => $items->count()]) }}
 =======
 {{ trans_choice('pub_theme::common.items_count', $items->count(), ['count' => $items->count()]) }}
 >>>>>>> 109edea (.)
+=======
+{{ trans_choice('sixteen::common.items_count', $items->count(), ['count' => $items->count()]) }}
+>>>>>>> 0321d33 (.)
 ```
 
 ## Validazione e Messaggi di Errore

@@ -2,6 +2,7 @@ module.exports = {
     plugins: {
         'tailwindcss/nesting': 'postcss-nesting',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         'postcss-import': {
             resolve(id) {
@@ -9,6 +10,8 @@ module.exports = {
             },
         },
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
         tailwindcss: {},
         autoprefixer: {},
     },

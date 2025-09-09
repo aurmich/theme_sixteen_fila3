@@ -5,20 +5,26 @@ declare(strict_types=1);
 namespace Themes\Sixteen\Services;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Themes\Sixteen\Services\MenuBuilder;
 
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
 /**
  * Servizio per la gestione del tema Sixteen.
  * 
  * Questo servizio fornisce metodi per la gestione
  * delle configurazioni e funzionalità del tema.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * 
  * Enhanced version integrating with the new Menu Builder System
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
  */
 class ThemeService
 {
@@ -33,6 +39,7 @@ class ThemeService
     protected string $version = '1.0.0';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     public function __construct(
         protected MenuBuilder $menuBuilder
@@ -40,6 +47,8 @@ class ThemeService
     }
 
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
     /**
      * Ottiene il nome del tema.
      */
@@ -65,6 +74,7 @@ class ThemeService
             'name' => $this->themeName,
             'version' => $this->version,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'description' => 'Tema Sixteen per SaluteOra',
             'author' => 'SaluteOra Team',
 =======
@@ -75,6 +85,10 @@ class ThemeService
             'tailwind_css' => true,
             'accessibility' => 'WCAG 2.1 AA',
 >>>>>>> 109edea (.)
+=======
+            'description' => 'Tema Sixteen per SaluteOra',
+            'author' => 'SaluteOra Team',
+>>>>>>> 0321d33 (.)
         ];
     }
 
@@ -97,6 +111,7 @@ class ThemeService
 
         return config('sixteen.' . $key, $default);
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -152,4 +167,6 @@ class ThemeService
         ];
     }
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
 } 

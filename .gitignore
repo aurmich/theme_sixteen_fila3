@@ -41,6 +41,7 @@ docs/cache/
 # Git-specific
 .git-blame-ignore-revs
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Standard ignores (auto)
@@ -49,3 +50,5 @@ docs/cache/
 *.bakcup
 *.backup.*
 >>>>>>> 109edea (.)
+=======
+>>>>>>> 0321d33 (.)
