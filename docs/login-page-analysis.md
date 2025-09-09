@@ -92,36 +92,17 @@ login.blade.php (Layout PA + Branding)
 ```
 
 ### 2. Componenti Sixteen da Utilizzare
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0321d33 (.)
 - **Layout**: `x-sixteen::blocks.layout.container`
 - **Form**: `x-sixteen::blocks.forms.input`
 - **Button**: `x-sixteen::blocks.buttons.button`
 - **Alert**: `x-sixteen::blocks.alerts.alert`
 - **Card**: `x-sixteen::blocks.cards.card`
-<<<<<<< HEAD
-
-### 3. Struttura Proposta
-```blade
-<x-sixteen::layouts.main>
-    <x-sixteen::blocks.layout.container>
-        <!-- Header con Logo PA -->
-        <x-sixteen::blocks.cards.card>
-            <!-- Form Login con componenti Sixteen -->
-            @livewire(\Modules\User\Http\Livewire\Auth\Login::class)
-        </x-sixteen::blocks.cards.card>
-    </x-sixteen::blocks.layout.container>
-</x-sixteen::layouts.main>
-=======
 - **Layout**: `x-pub_theme::blocks.layout.container`
 - **Form**: `x-pub_theme::blocks.forms.input`
 - **Button**: `x-pub_theme::blocks.buttons.button`
 - **Alert**: `x-pub_theme::blocks.alerts.alert`
 - **Card**: `x-pub_theme::blocks.cards.card`
 =======
->>>>>>> 0321d33 (.)
 
 ### 3. Struttura Proposta
 ```blade
@@ -131,16 +112,9 @@ login.blade.php (Layout PA + Branding)
         <x-sixteen::blocks.cards.card>
             <!-- Form Login con componenti Sixteen -->
             @livewire(\Modules\User\Http\Livewire\Auth\Login::class)
-<<<<<<< HEAD
-        </x-pub_theme::blocks.cards.card>
-    </x-pub_theme::blocks.layout.container>
-</x-pub_theme::layouts.main>
->>>>>>> 109edea (.)
-=======
         </x-sixteen::blocks.cards.card>
     </x-sixteen::blocks.layout.container>
 </x-sixteen::layouts.main>
->>>>>>> 0321d33 (.)
 ```
 
 ## 🔧 Modifiche Necessarie

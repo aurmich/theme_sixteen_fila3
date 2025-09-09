@@ -139,15 +139,9 @@ php artisan cache:clear
 
 # Test di rendering
 php artisan tinker
-<<<<<<< HEAD
-<<<<<<< HEAD
->>> view('sixteen::blocks.alerts.alert', ['variant' => 'info', 'dismissible' => true])->render()
-=======
 >>> view('pub_theme::blocks.alerts.alert', ['variant' => 'info', 'dismissible' => true])->render()
->>>>>>> 109edea (.)
 =======
 >>> view('sixteen::blocks.alerts.alert', ['variant' => 'info', 'dismissible' => true])->render()
->>>>>>> 0321d33 (.)
 ```
 
 ### 2. Verifica Dipendenze
@@ -192,26 +186,9 @@ Ho aggiornato la documentazione con esempi corretti:
 
 ```blade
 {{-- Esempio corretto per Alert --}}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<x-sixteen::blocks.alerts.alert variant="info" dismissible="true">
-    Messaggio informativo
-</x-sixteen::blocks.alerts.alert>
-
-{{-- Esempio corretto per Toast --}}
-<x-sixteen::blocks.alerts.toast variant="success" position="top-right">
-    Operazione completata con successo
-</x-sixteen::blocks.alerts.toast>
-
-{{-- Esempio corretto per Badge --}}
-<x-sixteen::blocks.utilities.badge variant="primary" dismissible="true">
-    Badge con pulsante di chiusura
-</x-sixteen::blocks.utilities.badge>
-=======
 <x-pub_theme::blocks.alerts.alert variant="info" dismissible="true">
 =======
 <x-sixteen::blocks.alerts.alert variant="info" dismissible="true">
->>>>>>> 0321d33 (.)
     Messaggio informativo
 </x-sixteen::blocks.alerts.alert>
 
@@ -223,12 +200,7 @@ Ho aggiornato la documentazione con esempi corretti:
 {{-- Esempio corretto per Badge --}}
 <x-sixteen::blocks.utilities.badge variant="primary" dismissible="true">
     Badge con pulsante di chiusura
-<<<<<<< HEAD
-</x-pub_theme::blocks.utilities.badge>
->>>>>>> 109edea (.)
-=======
 </x-sixteen::blocks.utilities.badge>
->>>>>>> 0321d33 (.)
 ```
 
 ## 🚨 Errori Comuni da Evitare

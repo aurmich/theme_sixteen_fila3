@@ -33,11 +33,7 @@
         @livewire('notifications')
 		@filamentScripts
         @vite(['resources/js/app.js'], 'themes/Sixteen')
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 109edea (.)
 =======
         
         {{-- Dark Mode Toggle Script --}}
@@ -61,7 +57,6 @@
                 }
             });
         </script>
->>>>>>> 0321d33 (.)
         <link rel="stylesheet" type="text/css" href="{{asset("vendor/cookie-consent/css/cookie-consent.css")}}">
     </body>
 </html>

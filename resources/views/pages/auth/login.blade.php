@@ -14,11 +14,6 @@ name('login');
         {{ __('Login') }}
     </x-slot>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    @livewire(Modules\User\Widget\Auth\Login::class)
-=======
     <!-- Beautiful Login Page Section -->
     <section class="login-page-bg flex items-center justify-center p-4">
         <div class="fade-in-up w-full max-w-md">
@@ -102,11 +97,8 @@ name('login');
                 </div>
             </div>
     </section>
->>>>>>> 029971d (.)
 =======
     @livewire(\Modules\User\Filament\Widgets\Auth\LoginWidget::class)
->>>>>>> 109edea (.)
 =======
     @livewire(Modules\User\Widget\Auth\Login::class)
->>>>>>> 0321d33 (.)
 </x-layouts.app>

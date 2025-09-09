@@ -24,25 +24,11 @@ return [
     // Anmeldung
     'login' => [
         'title' => 'Anmelden',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 109edea (.)
-=======
->>>>>>> 0321d33 (.)
         'email' => 'E-Mail',
         'password' => 'Passwort',
         'remember_me' => 'Angemeldet bleiben',
         'forgot_password' => 'Passwort vergessen?',
         'submit' => 'Anmelden',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 109edea (.)
-=======
->>>>>>> 0321d33 (.)
         'or' => 'oder',
         'create_account' => 'ein neues Konto erstellen',
         'link' => 'Anmelden',
