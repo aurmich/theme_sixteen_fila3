@@ -337,7 +337,11 @@ Il componente esistente è buono ma può essere migliorato per seguire il sistem
 
 <!-- ❌ ERRATO -->
 <x-pub_theme::blocks.forms.login-card-agid />
+<<<<<<< HEAD
 <x-sixteen::blocks.forms.login-card-agid />
+=======
+<x-pub_theme::blocks.forms.login-card-agid />
+>>>>>>> 109edea (.)
 ```
 
 ### 2. **Props Uniformi - SEMPRE MANTENERE**

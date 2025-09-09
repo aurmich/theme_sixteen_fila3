@@ -167,6 +167,7 @@ return [
 ### Blade Templates
 ```blade
 {{-- Utilizzo diretto --}}
+<<<<<<< HEAD
 <h1>{{ __('sixteen::pages.dashboard.title') }}</h1>
 <p>{{ __('sixteen::pages.dashboard.description') }}</p>
 
@@ -175,22 +176,42 @@ return [
 
 {{-- Per pluralizzazione --}}
 <p>{{ trans_choice('sixteen::common.items_count', $count, ['count' => $count]) }}</p>
+=======
+<h1>{{ __('pub_theme::pages.dashboard.title') }}</h1>
+<p>{{ __('pub_theme::pages.dashboard.description') }}</p>
+
+{{-- Con parametri --}}
+<p>{{ __('pub_theme::common.welcome_user', ['name' => $user->name]) }}</p>
+
+{{-- Per pluralizzazione --}}
+<p>{{ trans_choice('pub_theme::common.items_count', $count, ['count' => $count]) }}</p>
+>>>>>>> 109edea (.)
 ```
 
 ### Componenti Filament
 ```php
 // In Filament Forms
 TextInput::make('email')
+<<<<<<< HEAD
     ->label(__('sixteen::components.form.input.email.label'))
     ->placeholder(__('sixteen::components.form.input.email.placeholder'))
     ->helperText(__('sixteen::components.form.input.email.help'))
+=======
+    ->label(__('pub_theme::components.form.input.email.label'))
+    ->placeholder(__('pub_theme::components.form.input.email.placeholder'))
+    ->helperText(__('pub_theme::components.form.input.email.help'))
+>>>>>>> 109edea (.)
     ->required()
     ->email()
     ->rules(['required', 'email']);
 
 // In Filament Tables
 Tables\Columns\TextColumn::make('name')
+<<<<<<< HEAD
     ->label(__('sixteen::components.table.columns.name.label'))
+=======
+    ->label(__('pub_theme::components.table.columns.name.label'))
+>>>>>>> 109edea (.)
     ->searchable()
     ->sortable();
 ```
@@ -200,9 +221,15 @@ Tables\Columns\TextColumn::make('name')
 // In componenti Livewire
 public function render()
 {
+<<<<<<< HEAD
     return view('sixteen::livewire.user-form', [
         'title' => __('sixteen::pages.users.create.title'),
         'description' => __('sixteen::pages.users.create.description'),
+=======
+    return view('pub_theme::livewire.user-form', [
+        'title' => __('pub_theme::pages.users.create.title'),
+        'description' => __('pub_theme::pages.users.create.description'),
+>>>>>>> 109edea (.)
     ]);
 }
 ```
@@ -247,7 +274,11 @@ public function render()
 
 ### Utilizzo
 ```blade
+<<<<<<< HEAD
 {{ trans_choice('sixteen::common.items_count', $items->count(), ['count' => $items->count()]) }}
+=======
+{{ trans_choice('pub_theme::common.items_count', $items->count(), ['count' => $items->count()]) }}
+>>>>>>> 109edea (.)
 ```
 
 ## Validazione e Messaggi di Errore
