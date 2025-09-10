@@ -61,6 +61,7 @@ class ThemeService
         return [
             'name' => $this->themeName,
             'version' => $this->version,
+<<<<<<< HEAD
             'author' => 'Laraxot Team',
             'description' => 'Modern responsive theme for Laraxot applications',
             'features' => [
@@ -69,6 +70,10 @@ class ThemeService
                 'component_library',
                 'accessibility_compliant',
             ],
+=======
+            'description' => 'Tema Sixteen ',
+            'author' => 'Team',
+>>>>>>> 20018e3 (.)
         ];
     }
 
