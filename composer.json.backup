@@ -1,6 +1,7 @@
 {
     "name": "laraxot/theme_sixteen_fila3",
     "description": "Sixteen theme for Laraxot projects (AGID-compliant, Tailwind-based)",
+=======
     "description": "",
     "keywords": [
         "laraxot",
@@ -27,12 +28,14 @@
         }
     ],
     "require": {},
+=======
     "extra": {
         "laravel": {
             "providers": [
                 "Themes\\Sixteen\\Providers\\ThemeServiceProvider"
             ],
             "aliases": {}
+=======
             "aliases": {
 
             }
