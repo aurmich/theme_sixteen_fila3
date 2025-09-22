@@ -212,7 +212,7 @@ Roadmap dettagliata per l'implementazione dei 38+ componenti Bootstrap Italia ma
 **Priorità**: Media • **Stima**: 1 giorno
 ```blade
 {{-- Implementazione prevista --}}
-<x-rating
+<x-media.rating
     :value="4.5"
     max="5"
     size="lg"

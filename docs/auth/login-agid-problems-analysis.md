@@ -42,7 +42,7 @@
     </x-slot>
 
     <!-- Login Card AGID-Compliant -->
-    <x-pub_theme::blocks.forms.login-card-agid 
+    <x-pub_theme::forms.login-card-agid 
         title="Accedi ai servizi digitali"
         subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -70,7 +70,7 @@
 **AGID CORRETTO**: Usare componenti esistenti del tema
 ```blade
 <!-- ✅ CORRETTO - Componenti esistenti -->
-<x-pub_theme::blocks.forms.login-card-agid />
+<x-pub_theme::forms.login-card-agid />
 ```
 
 ### 3. **Architettura Sbagliata**
@@ -88,7 +88,7 @@
 **AGID CORRETTO**:
 ```blade
 <!-- ✅ CORRETTO - Componente standard AGID -->
-<x-pub_theme::blocks.forms.login-card-agid 
+<x-pub_theme::forms.login-card-agid 
     title="Accedi ai servizi digitali"
     subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
     livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -174,7 +174,7 @@ name('login');
     </x-slot>
 
     <!-- Login Card AGID-Compliant -->
-    <x-pub_theme::blocks.forms.login-card-agid 
+    <x-pub_theme::forms.login-card-agid 
         title="Accedi ai servizi digitali"
         subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -209,7 +209,7 @@ find laravel/Themes/Sixteen/resources/views/components -name "*.blade.php" | gre
 
 ### ✅ FASE 2: Struttura AGID
 - [ ] Usare `<x-layouts.guest-agid>` invece di `<x-layouts.guest>`
-- [ ] Usare componente `<x-pub_theme::blocks.forms.login-card-agid>`
+- [ ] Usare componente `<x-pub_theme::forms.login-card-agid>`
 - [ ] Rimuovere HTML duplicato
 - [ ] Verificare che layout includa elementi AGID
 
@@ -244,9 +244,9 @@ find laravel/Themes/Sixteen/resources/views/components -name "*.blade.php" | gre
 ### 2. **Componenti Standard**
 ```blade
 <!-- ✅ SEMPRE USARE -->
-<x-pub_theme::blocks.forms.login-card-agid />
-<x-pub_theme::blocks.forms.register-card-agid />
-<x-pub_theme::blocks.forms.password-reset-card-agid />
+<x-pub_theme::forms.login-card-agid />
+<x-pub_theme::forms.register-card-agid />
+<x-pub_theme::forms.password-reset-card-agid />
 ```
 
 ### 3. **Non Duplicare**
@@ -291,7 +291,7 @@ name('login');
     </x-slot>
 
     <!-- Login Card AGID-Compliant -->
-    <x-pub_theme::blocks.forms.login-card-agid 
+    <x-pub_theme::forms.login-card-agid 
         title="Accedi ai servizi digitali"
         subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"

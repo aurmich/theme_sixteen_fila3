@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <!-- Logo -->
             <a href="{{ route('dashboard') }}" class="flex items-center shrink-0">
-                <x-ui.logo class="block w-auto text-gray-800 fill-current h-7 dark:text-gray-200" />
+                <x-utilities.logo class="block w-auto text-gray-800 fill-current h-7 dark:text-gray-200" />
             </a>
 
             <!-- Navigation -->

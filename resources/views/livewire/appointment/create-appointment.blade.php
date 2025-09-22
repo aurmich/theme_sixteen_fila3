@@ -66,17 +66,17 @@
                 </p>
 
                 <div class="flex justify-center space-x-4">
-                    <x-button 
+                    <x-utilities.button 
                         href="{{ route('appointments.index') }}"
                         variant="primary">
                         Le Mie Prenotazioni
-                    </x-button>
+                    </x-utilities.button>
                     
-                    <x-button 
+                    <x-utilities.button 
                         wire:click="restart"
                         variant="secondary">
                         Nuova Prenotazione
-                    </x-button>
+                    </x-utilities.button>
                 </div>
             </div>
         @else
@@ -258,18 +258,18 @@
                                         Codice Fiscale della persona
                                     </label>
                                     <div class="flex space-x-2">
-                                        <x-input 
+                                        <x-forms.input 
                                             type="text"
                                             wire:model="citizenData.fiscal_code"
                                             placeholder="Inserisci codice fiscale"
                                             class="flex-1"
                                             wire:keydown.enter="searchCitizen($event.target.value)" />
-                                        <x-button 
+                                        <x-utilities.button 
                                             type="button"
                                             wire:click="searchCitizen($citizenData['fiscal_code'] ?? '')"
                                             variant="secondary">
                                             Cerca
-                                        </x-button>
+                                        </x-utilities.button>
                                     </div>
                                 </div>
 
@@ -313,7 +313,7 @@
                             <label class="block text-sm font-medium text-gray-700 mb-2">
                                 Note aggiuntive (opzionale)
                             </label>
-                            <x-textarea 
+                            <x-forms.textarea 
                                 wire:model="notes"
                                 placeholder="Eventuali note o informazioni aggiuntive..."
                                 rows="3" />
@@ -323,7 +323,7 @@
                             <label class="block text-sm font-medium text-gray-700 mb-2">
                                 Contatto di emergenza (opzionale)
                             </label>
-                            <x-input 
+                            <x-forms.input 
                                 type="text"
                                 wire:model="emergencyContact"
                                 placeholder="Nome e telefono di riferimento" />
@@ -399,29 +399,29 @@
 
             {{-- Navigation Buttons --}}
             <div class="flex justify-between">
-                <x-button 
+                <x-utilities.button 
                     wire:click="previousStep"
                     variant="secondary"
                     {{ $isFirstStep ? 'disabled' : '' }}>
                     <x-heroicon-o-arrow-left class="w-4 h-4 mr-2" />
                     Indietro
-                </x-button>
+                </x-utilities.button>
 
                 @if($currentStep < $totalSteps)
-                    <x-button 
+                    <x-utilities.button 
                         wire:click="nextStep"
                         variant="primary">
                         Avanti
                         <x-heroicon-o-arrow-right class="w-4 h-4 ml-2" />
-                    </x-button>
+                    </x-utilities.button>
                 @else
-                    <x-button 
+                    <x-utilities.button 
                         wire:click="confirmAppointment"
                         variant="primary"
                         wire:loading.attr="disabled">
                         <span wire:loading.remove>Conferma Prenotazione</span>
                         <span wire:loading>Conferma in corso...</span>
-                    </x-button>
+                    </x-utilities.button>
                 @endif
             </div>
         @endif

@@ -9,18 +9,18 @@
 {{-- 
 Utilizzo:
 
-<x-dropdown text="Menu">
-    <x-dropdown-item href="#">
+<x-overlays.dropdown text="Menu">
+    <x-overlays.dropdown-item href="#">
         Elemento 1
-    </x-dropdown-item>
-    <x-dropdown-item href="#">
+    </x-overlays.dropdown-item>
+    <x-overlays.dropdown-item href="#">
         Elemento 2
-    </x-dropdown-item>
+    </x-overlays.dropdown-item>
     
-    <x-dropdown-divider />
+    <x-overlays.dropdown-divider />
     
-    <x-dropdown-item href="#" variant="danger">
+    <x-overlays.dropdown-item href="#" variant="danger">
         Azione pericolosa
-    </x-dropdown-item>
-</x-dropdown>
+    </x-overlays.dropdown-item>
+</x-overlays.dropdown>
 --}}

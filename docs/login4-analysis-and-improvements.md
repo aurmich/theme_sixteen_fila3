@@ -29,9 +29,9 @@
 #### ❌ **Struttura HTML Duplicata**
 ```blade
 <!-- PROBLEMA: Header/Footer duplicati -->
-<x-pub_theme::blocks.navigation.header-slim />
-<x-pub_theme::blocks.navigation.header-main />
-<x-pub_theme::blocks.navigation.footer-institutional />
+<x-pub_theme::navigation.header-slim />
+<x-pub_theme::navigation.header-main />
+<x-pub_theme::navigation.footer-institutional />
 ```
 
 **PROBLEMA**: Il layout `guest` già include header e footer. Aggiungere componenti header/footer negli slot crea duplicazione.
@@ -257,7 +257,7 @@ Deprecate login4 e usare login2 come standard:
 **Versione**: 1.0  
 **Status**: Analisi Completa - Miglioramenti Identificati
 - **Layout**: `<x-layouts.guest>` ✅ (corretto)
-- **Form Component**: `<x-pub_theme::blocks.forms.login-card>` ✅ (corretto)
+- **Form Component**: `<x-pub_theme::forms.login-card>` ✅ (corretto)
 - **Livewire**: Volt component integrato ⚠️ (problematico)
 
 ## ❌ **PROBLEMI IDENTIFICATI**
@@ -318,7 +318,7 @@ Deprecate login4 e usare login2 come standard:
 - Rispetta naming convention ✅
 
 ### 2. **Componente Form Corretto**
-- Usa `<x-pub_theme::blocks.forms.login-card>` ✅
+- Usa `<x-pub_theme::forms.login-card>` ✅
 - Nessun suffisso "agid" ridondante ✅
 
 ### 3. **Funzionalità Avanzate**
@@ -338,7 +338,7 @@ Deprecate login4 e usare login2 come standard:
 
 ✅ MANTENERE SOLO:
 <x-layouts.guest>
-    <x-pub_theme::blocks.forms.login-card 
+    <x-pub_theme::forms.login-card 
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
     />
 </x-layouts.guest>
@@ -366,7 +366,7 @@ Deprecate login4 e usare login2 come standard:
     <!-- Main Content -->
     <main id="main-content" role="main">
         <div id="login-form">
-            <x-pub_theme::blocks.forms.login-card />
+            <x-pub_theme::forms.login-card />
         </div>
     </main>
 

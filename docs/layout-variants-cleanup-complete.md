@@ -97,7 +97,7 @@ name('login');
     </x-slot>
 
     <!-- Login Card AGID-Compliant (Componente Standard) -->
-    <x-pub_theme::blocks.forms.login-card 
+    <x-pub_theme::forms.login-card 
         title="{{ __('auth.login.title') }}"
         subtitle="{{ __('auth.login.description', ['service' => config('app.name')]) }}"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"

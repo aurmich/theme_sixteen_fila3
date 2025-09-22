@@ -110,9 +110,9 @@ Themes/Sixteen/
 </x-bootstrap-italia.button>
 
 <!-- Card -->
-<x-blocks.cards.italia title="Titolo" subtitle="Sottotitolo">
+<x-cards.italia title="Titolo" subtitle="Sottotitolo">
     Contenuto della card
-</x-blocks.cards.italia>
+</x-cards.italia>
 ```
 
 ### Container

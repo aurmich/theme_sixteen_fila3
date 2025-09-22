@@ -26,7 +26,7 @@
     <!-- Body Card -->
     <div class="px-6 py-8">
         <!-- Livewire Login Component -->
-        @livewire($livewireComponent)
+        {{-- @livewire($livewireComponent) --}}
     </div>
     
     <!-- Footer Card con Assistenza -->

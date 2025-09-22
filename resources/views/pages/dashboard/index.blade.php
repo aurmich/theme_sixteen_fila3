@@ -25,7 +25,7 @@ new class extends Component
                     <div class="flex justify-between items-center w-full h-100 bg-pink- overflow-hidden border border-dashed bg-gradient-to-br from-white to-zinc-50 rounded-lg border-zinc-200 max-h-[500px]">
                         <div class="relative flex flex-col p-10">
                             <div class="flex items-center space-x-1.5 text-lg border-b border-dotted border-zinc-200 pb-5 mb-5 font-bold uppercase">
-                                <x-ui.logo class="block w-auto text-gray-800 fill-current h-7 dark:text-gray-200" />
+                                <x-utilities.logo class="block w-auto text-gray-800 fill-current h-7 dark:text-gray-200" />
                                 <span>Genesis</span>
                             </div>
                             <p class="mb-5 text-sm text-zinc-500">This is the default dashboard which you can use and customize. Alternatively we also have three dashboard starter templates available.</p>

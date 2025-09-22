@@ -188,6 +188,7 @@ Ho aggiornato la documentazione con esempi corretti:
 
 ```blade
 {{-- Esempio corretto per Alert --}}
+<<<<<<< HEAD
 <x-pub_theme::blocks.alerts.alert variant="info" dismissible="true">
 <<<<<<< HEAD
 <x-sixteen::blocks.alerts.alert variant="info" dismissible="true">
@@ -204,19 +205,26 @@ Ho aggiornato la documentazione con esempi corretti:
     Badge con pulsante di chiusura
 </x-sixteen::blocks.utilities.badge>
 =======
+=======
+<x-pub_theme::alerts.alert variant="info" dismissible="true">
+>>>>>>> c979680 (.)
     Messaggio informativo
-</x-pub_theme::blocks.alerts.alert>
+</x-pub_theme::alerts.alert>
 
 {{-- Esempio corretto per Toast --}}
-<x-pub_theme::blocks.alerts.toast variant="success" position="top-right">
+<x-pub_theme::alerts.toast variant="success" position="top-right">
     Operazione completata con successo
-</x-pub_theme::blocks.alerts.toast>
+</x-pub_theme::alerts.toast>
 
 {{-- Esempio corretto per Badge --}}
-<x-pub_theme::blocks.utilities.badge variant="primary" dismissible="true">
+<x-pub_theme::utilities.badge variant="primary" dismissible="true">
     Badge con pulsante di chiusura
+<<<<<<< HEAD
 </x-pub_theme::blocks.utilities.badge>
 >>>>>>> 109edea (.)
+=======
+</x-pub_theme::utilities.badge>
+>>>>>>> c979680 (.)
 ```
 
 ## 🚨 Errori Comuni da Evitare

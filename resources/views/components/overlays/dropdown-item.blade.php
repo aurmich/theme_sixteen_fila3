@@ -125,32 +125,32 @@ $classes = array_merge(
 Utilizzo:
 
 <!-- Link semplice -->
-<x-dropdown-item href="/profilo">
+<x-overlays.dropdown-item href="/profilo">
     Il mio profilo
 </x-dropdown-item>
 
 <!-- Link con icona -->
-<x-dropdown-item href="/settings" icon="heroicon-o-cog-6-tooth">
+<x-overlays.dropdown-item href="/settings" icon="heroicon-o-cog-6-tooth">
     Impostazioni
 </x-dropdown-item>
 
 <!-- Button con azione JavaScript -->
-<x-dropdown-item icon="heroicon-o-arrow-right-on-rectangle" variant="danger">
+<x-overlays.dropdown-item icon="heroicon-o-arrow-right-on-rectangle" variant="danger">
     Logout
 </x-dropdown-item>
 
 <!-- Item disabilitato -->
-<x-dropdown-item disabled>
+<x-overlays.dropdown-item disabled>
     Funzione non disponibile
 </x-dropdown-item>
 
 <!-- Item attivo -->
-<x-dropdown-item href="/dashboard" active>
+<x-overlays.dropdown-item href="/dashboard" active>
     Dashboard
 </x-dropdown-item>
 
 <!-- Link esterno -->
-<x-dropdown-item href="https://example.com" target="_blank" icon="heroicon-o-arrow-top-right-on-square">
+<x-overlays.dropdown-item href="https://example.com" target="_blank" icon="heroicon-o-arrow-top-right-on-square">
     Link esterno
 </x-dropdown-item>
 --}}

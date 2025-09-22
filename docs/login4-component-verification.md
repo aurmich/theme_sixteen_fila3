@@ -9,7 +9,7 @@
 
 **Uso in login4**:
 ```blade
-<x-pub_theme::blocks.navigation.header-slim 
+<x-pub_theme::navigation.header-slim 
     :enteName="config('app.name', 'Ente Pubblico')"
     :enteUrl="route('home')"
     :showLinks="true"
@@ -23,7 +23,7 @@
 
 **Uso in login4**:
 ```blade
-<x-pub_theme::blocks.navigation.header-main 
+<x-pub_theme::navigation.header-main 
     :logoSrc="asset('themes/Sixteen/images/logo-pa.svg')"
     :enteName="config('app.name', 'Ente Pubblico')"
     :serviceTagline="config('app.tagline', 'Servizi digitali per i cittadini')"
@@ -38,7 +38,7 @@
 
 **Uso in login4**:
 ```blade
-<x-pub_theme::blocks.navigation.breadcrumb 
+<x-pub_theme::navigation.breadcrumb 
     :items="[
         ['url' => route('home'), 'title' => 'Home'],
         ['title' => 'Accesso al sistema']
@@ -53,7 +53,7 @@
 
 **Uso in login4**:
 ```blade
-<x-pub_theme::blocks.navigation.footer-institutional 
+<x-pub_theme::navigation.footer-institutional 
     :enteName="config('app.name', 'Ente Pubblico')"
     :enteDescription="config('app.tagline', 'Servizi digitali per i cittadini')"
     :logoSrc="asset('themes/Sixteen/images/logo-white.svg')"
@@ -71,7 +71,7 @@
 
 **Uso in login4**:
 ```blade
-<x-pub_theme::blocks.forms.login-card 
+<x-pub_theme::forms.login-card 
     title="{{ __('Accedi al tuo account') }}"
     subtitle="{{ __('Inserisci le tue credenziali per accedere') }}"
     livewire-component="\Modules\User\Http\Livewire\Auth\Login"

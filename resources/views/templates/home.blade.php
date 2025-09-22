@@ -20,19 +20,19 @@
                     
                     {{-- Quick Actions --}}
                     <div class="flex flex-wrap gap-4">
-                        <x-button 
+                        <x-utilities.button 
                             href="{{ route('services') }}"
                             variant="primary"
                             size="lg">
                             Servizi Online
-                        </x-button>
+                        </x-utilities.button>
                         
-                        <x-button 
+                        <x-utilities.button 
                             href="{{ route('news') }}"
                             variant="outline"
                             size="lg">
                             Notizie
-                        </x-button>
+                        </x-utilities.button>
                     </div>
                 </div>
                 
@@ -59,28 +59,28 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {{-- Service Cards --}}
-                <x-blocks.cards.service 
+                <x-data-display.service-card 
                     title="Anagrafe"
                     description="Certificati e documenti anagrafici"
                     icon="heroicon-o-identification"
                     href="{{ route('services.anagrafe') }}"
                     variant="primary" />
                 
-                <x-blocks.cards.service 
+                <x-data-display.service-card 
                     title="Tributi"
                     description="Pagamento tasse e imposte"
                     icon="heroicon-o-credit-card"
                     href="{{ route('services.tributi') }}"
                     variant="primary" />
                 
-                <x-blocks.cards.service 
+                <x-data-display.service-card 
                     title="SUAP"
                     description="Sportello Unico Attività Produttive"
                     icon="heroicon-o-building-storefront"
                     href="{{ route('services.suap') }}"
                     variant="primary" />
                 
-                <x-blocks.cards.service 
+                <x-data-display.service-card 
                     title="Segnalazioni"
                     description="Segnala problemi e disservizi"
                     icon="heroicon-o-chat-bubble-left-ellipsis"
@@ -89,11 +89,11 @@
             </div>
             
             <div class="text-center mt-8">
-                <x-button 
+                <x-utilities.button 
                     href="{{ route('services') }}"
                     variant="secondary">
                     Tutti i Servizi
-                </x-button>
+                </x-utilities.button>
             </div>
         </div>
     </section>
@@ -103,17 +103,17 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-gray-900">Ultime Notizie</h2>
-                <x-button 
+                <x-utilities.button 
                     href="{{ route('news') }}"
                     variant="link">
                     Vedi tutte
-                </x-button>
+                </x-utilities.button>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {{-- News Cards --}}
                 @foreach($latestNews as $news)
-                    <x-blocks.cards.news-card 
+                    <x-data-display.card 
                         :title="$news->title"
                         :href="route('news.show', $news)"
                         :date="$news->published_at"
@@ -131,17 +131,17 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-gray-900">Prossimi Eventi</h2>
-                <x-button 
+                <x-utilities.button 
                     href="{{ route('events') }}"
                     variant="link">
                     Calendario completo
-                </x-button>
+                </x-utilities.button>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {{-- Event Cards --}}
                 @foreach($upcomingEvents as $event)
-                    <x-blocks.cards.event-card 
+                    <x-data-display.card 
                         :title="$event->title"
                         :href="route('events.show', $event)"
                         :date="$event->start_date"
@@ -158,25 +158,25 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Amministrazione Trasparente</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <x-blocks.cards.basic 
+                <x-data-display.card 
                     title="Albo Pretorio"
                     description="Atti e documenti ufficiali"
                     icon="heroicon-o-document-text"
                     href="{{ route('transparency.albo-pretorio') }}" />
                 
-                <x-blocks.cards.basic 
+                <x-data-display.card 
                     title="Bandi di Gara"
                     description="Concorsi e appalti pubblici"
                     icon="heroicon-o-clipboard-document-list"
                     href="{{ route('transparency.bandi') }}" />
                 
-                <x-blocks.cards.basic 
+                <x-data-display.card 
                     title="Bilanci"
                     description="Documenti contabili e finanziari"
                     icon="heroicon-o-calculator"
                     href="{{ route('transparency.bilanci') }}" />
                 
-                <x-blocks.cards.basic 
+                <x-data-display.card 
                     title="Statistiche"
                     description="Dati e indicatori dell'ente"
                     icon="heroicon-o-chart-bar"

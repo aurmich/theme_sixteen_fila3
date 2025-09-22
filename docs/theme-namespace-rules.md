@@ -11,7 +11,7 @@
 // Views
 @extends('pub_theme::layouts.base')
 <x-pub_theme::ui.logo />
-<x-pub_theme::blocks.navigation.header-slim />
+<x-pub_theme::navigation.header-slim />
 
 // Translations
 {{ __('pub_theme::cookies.title') }}

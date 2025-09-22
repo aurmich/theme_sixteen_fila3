@@ -45,7 +45,7 @@ components/agid/
 <x-pub_theme::footer-institutional />
 <x-pub_theme::header-institutional />
 <x-pub_theme::login-form />
-<x-pub_theme::blocks.forms.login-card />
+<x-pub_theme::forms.login-card />
 ```
 
 ### ❌ ERRATO
@@ -54,7 +54,7 @@ components/agid/
 <x-pub_theme::agid.footer-institutional />
 <x-pub_theme::agid.header-institutional />
 <x-pub_theme::agid.login-form />
-<x-pub_theme::blocks.forms.login-card-agid />
+<x-pub_theme::forms.login-card-agid />
 ```
 
 ## Implementazione

@@ -31,7 +31,7 @@
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-4">
-                        <x-pub_theme::ui.logo class="h-8 w-auto text-white" />
+                        <x-utilities.logo class="h-8 w-auto text-white" />
                         <span class="font-semibold">{{ config('app.institution_name', 'Ente di appartenenza') }}</span>
                     </div>
                     @if(config('app.institution_url'))
@@ -71,7 +71,7 @@
                 <!-- Page Header -->
                 <div class="text-center mb-8">
                     <div class="flex justify-center mb-6">
-                        <x-pub_theme::ui.logo class="h-16 w-auto text-blue-600" />
+                        <x-utilities.logo class="h-16 w-auto text-blue-600" />
                     </div>
                     
                     <h1 class="text-3xl font-bold text-gray-900 mb-2">
@@ -165,7 +165,7 @@
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="flex items-center space-x-4">
-                        <x-pub_theme::ui.logo class="h-10 w-auto text-white" />
+                        <x-utilities.logo class="h-10 w-auto text-white" />
                         <div>
                             <h3 class="text-lg font-semibold">{{ config('app.name', 'Nome Ente') }}</h3>
                             <p class="text-sm opacity-80 mt-1">{{ config('app.tagline', 'Servizi digitali per i cittadini') }}</p>

@@ -10,6 +10,7 @@ name('login');
 ?>
 
 <x-layouts.app>
+<<<<<<< HEAD
     <x-slot name="title">
         {{ __('Login') }}
     </x-slot>
@@ -111,4 +112,7 @@ name('login');
     </section>
 >>>>>>> d7e6e2d (.)
 >>>>>>> 816cdc7 (.)
+=======
+>>>>>>> origin/dev
+>>>>>>> c979680 (.)
 </x-layouts.app>

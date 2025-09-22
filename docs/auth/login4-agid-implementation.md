@@ -93,7 +93,7 @@
     </x-slot>
 
     <!-- Login Card AGID-Compliant (Componente Corretto) -->
-    <x-pub_theme::blocks.forms.login-card 
+    <x-pub_theme::forms.login-card 
         title="{{ __('Accedi al tuo account') }}"
         subtitle="{{ __('Inserisci le tue credenziali per accedere') }}"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -171,14 +171,14 @@ Il tema Sixteen usa `<x-layouts.guest>` che include già:
 ### Componenti Blocks
 ```blade
 <!-- Forms -->
-<x-pub_theme::blocks.forms.login-card />
-<x-pub_theme::blocks.forms.contact-form />
+<x-pub_theme::forms.login-card />
+<x-pub_theme::forms.contact-form />
 
 <!-- Navigation -->
-<x-pub_theme::blocks.navigation.header-slim />
-<x-pub_theme::blocks.navigation.header-main />
-<x-pub_theme::blocks.navigation.breadcrumb />
-<x-pub_theme::blocks.navigation.footer />
+<x-pub_theme::navigation.header-slim />
+<x-pub_theme::navigation.header-main />
+<x-pub_theme::navigation.breadcrumb />
+<x-pub_theme::navigation.footer />
 
 <!-- UI -->
 <x-pub_theme::ui.logo />

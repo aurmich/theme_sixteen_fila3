@@ -55,7 +55,7 @@ resources/views/components/blocks/
 
 **Esempio di Utilizzo**:
 ```blade
-<x-blocks.cards.basic
+<x-cards.basic
     title="Servizio Anagrafe"
     subtitle="Servizi demografici"
     content="Richiesta certificati anagrafici online"
@@ -64,7 +64,7 @@ resources/views/components/blocks/
     link="/servizi/anagrafe"
 />
 
-<x-blocks.cards.featured
+<x-cards.featured
     title="Servizio in Evidenza"
     content="Contenuto del servizio principale"
     variant="primary"
@@ -100,7 +100,7 @@ resources/views/components/blocks/
 
 **Esempio di Utilizzo**:
 ```blade
-<x-blocks.buttons.primary
+<x-buttons.primary
     text="Accedi al Servizio"
     icon="<svg>...</svg>"
     iconPosition="right"
@@ -110,7 +110,7 @@ resources/views/components/blocks/
     href="/login"
 />
 
-<x-blocks.buttons.cta
+<x-buttons.cta
     text="Inizia Ora"
     size="xl"
     color="success"
@@ -160,7 +160,7 @@ public function form(Form $form): Form
 }
 
 // Nel template Blade
-<x-blocks.cards.{{ $record->card_variant }}
+<x-cards.{{ $record->card_variant }}
     :title="$record->title"
     :content="$record->content"
     :variant="$record->variant"
@@ -184,7 +184,7 @@ $blockData = [
 
 ```blade
 {{-- Nel template --}}
-<x-blocks.cards.{{ $blockType }} v-bind="$blockData" />
+<x-cards.{{ $blockType }} v-bind="$blockData" />
 ```
 
 ## Best Practices
@@ -252,9 +252,9 @@ $testProps = [
 ];
 
 // Deve funzionare con qualsiasi variante
-<x-blocks.cards.basic v-bind="$testProps" />
-<x-blocks.cards.featured v-bind="$testProps" />  
-<x-blocks.cards.service v-bind="$testProps" />
+<x-cards.basic v-bind="$testProps" />
+<x-cards.featured v-bind="$testProps" />  
+<x-cards.service v-bind="$testProps" />
 ```
 
 ## Roadmap

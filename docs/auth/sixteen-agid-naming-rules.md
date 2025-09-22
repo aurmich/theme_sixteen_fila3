@@ -64,7 +64,7 @@ resources/views/components/layouts/
 
 ### **Utilizzo Corretto**
 ```blade
-<x-pub_theme::blocks.forms.login-card 
+<x-pub_theme::forms.login-card 
     title="Accedi ai servizi digitali"
     subtitle="Utilizza le tue credenziali per accedere all'area riservata"
     livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -94,7 +94,7 @@ resources/views/components/layouts/
 ### **Prima (ERRATO)**
 ```blade
 <!-- ERRORE: componente inesistente -->
-<x-pub_theme::blocks.forms.login-card-agid 
+<x-pub_theme::forms.login-card-agid 
     title="..."
     subtitle="..."
 />
@@ -103,7 +103,7 @@ resources/views/components/layouts/
 ### **Dopo (CORRETTO)**
 ```blade
 <!-- CORRETTO: componente esistente e AGID-compliant -->
-<x-pub_theme::blocks.forms.login-card 
+<x-pub_theme::forms.login-card 
     title="Accedi ai servizi digitali"
     subtitle="Utilizza le tue credenziali per accedere all'area riservata"
     livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -142,7 +142,7 @@ Tutti i blocchi nella stessa categoria condividono **identici props**:
 ### **Naming Errato**
 ```blade
 <!-- MAI FARE QUESTO -->
-<x-pub_theme::blocks.forms.login-card-agid />
+<x-pub_theme::forms.login-card-agid />
 <x-pub_theme::layouts.auth-agid />
 <x-pub_theme::components.button-agid />
 <x-pub_theme::agid.login-form />
@@ -163,7 +163,7 @@ Tutti i blocchi nella stessa categoria condividono **identici props**:
 ### **Naming Corretto**
 ```blade
 <!-- SEMPRE FARE QUESTO -->
-<x-pub_theme::blocks.forms.login-card />
+<x-pub_theme::forms.login-card />
 <x-pub_theme::layouts.guest />
 <x-pub_theme::components.button />
 <x-layouts.guest />  <!-- Shortcut registrato -->

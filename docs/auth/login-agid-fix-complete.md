@@ -29,7 +29,7 @@
     </x-slot>
 
     <!-- Login Card AGID-Compliant -->
-    <x-pub_theme::blocks.forms.login-card-agid 
+    <x-pub_theme::forms.login-card-agid 
         title="Accedi ai servizi digitali"
         subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -57,7 +57,7 @@
 **SOLUZIONE**: Usato componenti standard del tema
 ```blade
 <!-- ✅ CORRETTO - Componenti esistenti -->
-<x-pub_theme::blocks.forms.login-card-agid />
+<x-pub_theme::forms.login-card-agid />
 ```
 
 ### 4. **Design AGID Corretto** ✅
@@ -74,10 +74,10 @@
 Il layout include automaticamente:
 
 #### ✅ Elementi AGID Automatici
-- **Header Slim AGID**: `<x-pub_theme::blocks.navigation.header-slim>`
-- **Header Main AGID**: `<x-pub_theme::blocks.navigation.header-main>`
-- **Breadcrumb AGID**: `<x-pub_theme::blocks.navigation.breadcrumb-agid>`
-- **Footer Istituzionale**: `<x-pub_theme::blocks.navigation.footer-institutional>`
+- **Header Slim AGID**: `<x-pub_theme::navigation.header-slim>`
+- **Header Main AGID**: `<x-pub_theme::navigation.header-main>`
+- **Breadcrumb AGID**: `<x-pub_theme::navigation.breadcrumb-agid>`
+- **Footer Istituzionale**: `<x-pub_theme::navigation.footer-institutional>`
 - **Skip Links**: Per accessibilità WCAG 2.1 AA
 - **Focus Management**: Script automatico
 - **Colori AGID**: CSS variables con palette istituzionale
@@ -137,7 +137,7 @@ name('login');
     </x-slot>
 
     <!-- Login Card AGID-Compliant -->
-    <x-pub_theme::blocks.forms.login-card-agid 
+    <x-pub_theme::forms.login-card-agid 
         title="Accedi ai servizi digitali"
         subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -183,9 +183,9 @@ name('login');
 ### 2. **Componenti Standard - SEMPRE USARE**
 ```blade
 <!-- ✅ CORRETTO -->
-<x-pub_theme::blocks.forms.login-card-agid />
-<x-pub_theme::blocks.navigation.header-slim />
-<x-pub_theme::blocks.navigation.footer-institutional />
+<x-pub_theme::forms.login-card-agid />
+<x-pub_theme::navigation.header-slim />
+<x-pub_theme::navigation.footer-institutional />
 
 <!-- ❌ ERRATO -->
 <!-- Non creare HTML personalizzato -->
@@ -280,7 +280,7 @@ cat laravel/Themes/Sixteen/resources/views/components/blocks/forms/login-card-ag
         Accesso - {{ config('app.name') }}
     </x-slot>
 
-    <x-pub_theme::blocks.forms.login-card-agid 
+    <x-pub_theme::forms.login-card-agid 
         title="Accedi ai servizi digitali"
         subtitle="Utilizza le tue credenziali per accedere all'area riservata dei servizi online"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -297,7 +297,7 @@ cat laravel/Themes/Sixteen/resources/views/components/blocks/forms/login-card-ag
 
 ### ✅ FASE 2: Struttura AGID
 - [x] Usare `<x-layouts.guest-agid>` invece di `<x-layouts.guest>`
-- [x] Usare componente `<x-pub_theme::blocks.forms.login-card-agid>`
+- [x] Usare componente `<x-pub_theme::forms.login-card-agid>`
 - [x] Rimuovere tutto l'HTML duplicato
 - [x] Verificare che layout includa elementi AGID
 

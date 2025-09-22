@@ -180,14 +180,14 @@ return [
     {{-- Header Istituzionale AGID-Compliant --}}
     <x-slot name="header">
         {{-- Header Slim (Ente + Link Istituzionali) --}}
-        <x-pub_theme::blocks.navigation.header-slim 
+        <x-pub_theme::navigation.header-slim 
             :enteName="config('app.name', __('config.app.default_ente'))"
             :enteUrl="route('home')"
             :showLinks="true"
         />
 
         {{-- Header Main (Logo + Nome Ente + Tagline) --}}
-        <x-pub_theme::blocks.navigation.header-main 
+        <x-pub_theme::navigation.header-main 
             :logoSrc="asset('themes/Sixteen/images/logo-pa.svg')"
             :enteName="config('app.name', __('config.app.default_ente'))"
             :serviceTagline="config('app.tagline', __('config.app.default_tagline'))"
@@ -195,7 +195,7 @@ return [
         />
 
         {{-- Breadcrumb Navigation Semantica --}}
-        <x-pub_theme::blocks.navigation.breadcrumb 
+        <x-pub_theme::navigation.breadcrumb 
             :items="[
                 ['url' => route('home'), 'title' => __('auth.login.breadcrumb_home')],
                 ['title' => __('auth.login.breadcrumb_login')]
@@ -313,7 +313,7 @@ return [
 
     {{-- Footer Istituzionale AGID-Compliant --}}
     <x-slot name="footer">
-        <x-pub_theme::blocks.navigation.footer-institutional 
+        <x-pub_theme::navigation.footer-institutional 
             :enteName="config('app.name', __('config.app.default_ente'))"
             :enteDescription="config('app.tagline', __('config.app.default_tagline'))"
             :logoSrc="asset('themes/Sixteen/images/logo-white.svg')"

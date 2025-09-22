@@ -39,7 +39,7 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-2 sm:space-y-0">
                 <div class="flex items-center space-x-4">
-                    <x-pub_theme::ui.logo class="h-10 w-auto text-white flex-shrink-0" />
+                    <x-utilities.logo class="h-10 w-auto text-white flex-shrink-0" />
                     <div class="flex flex-col">
                         <h1 class="text-lg font-bold leading-tight">
                             {{ config('app.institution_name', 'Ente di appartenenza') }}

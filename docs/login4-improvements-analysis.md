@@ -58,10 +58,10 @@ Il file contiene ancora il blocco `@volt` che è stato rimosso ma non completame
 Il file fa riferimento a componenti che potrebbero non esistere:
 
 ```blade
-<x-pub_theme::blocks.navigation.header-slim />
-<x-pub_theme::blocks.navigation.header-main />
-<x-pub_theme::blocks.navigation.breadcrumb />
-<x-pub_theme::blocks.navigation.footer-institutional />
+<x-pub_theme::navigation.header-slim />
+<x-pub_theme::navigation.header-main />
+<x-pub_theme::navigation.breadcrumb />
+<x-pub_theme::navigation.footer-institutional />
 ```
 
 ### Verifica Necessaria
@@ -73,7 +73,7 @@ Il file fa riferimento a componenti che potrebbero non esistere:
 ### Soluzione
 ```blade
 {{-- ✅ CORRETTO - Usare solo componenti verificati --}}
-<x-pub_theme::blocks.forms.login-card 
+<x-pub_theme::forms.login-card 
     title="{{ __('Accedi al tuo account') }}"
     subtitle="{{ __('Inserisci le tue credenziali per accedere') }}"
     livewire-component="\Modules\User\Http\Livewire\Auth\Login"
@@ -209,9 +209,9 @@ Il file è troppo complesso e dovrebbe essere semplificato:
 ```blade
 {{-- ❌ TROPPO COMPLESSO --}}
 <x-slot name="header">
-    <x-pub_theme::blocks.navigation.header-slim />
-    <x-pub_theme::blocks.navigation.header-main />
-    <x-pub_theme::blocks.navigation.breadcrumb />
+    <x-pub_theme::navigation.header-slim />
+    <x-pub_theme::navigation.header-main />
+    <x-pub_theme::navigation.breadcrumb />
 </x-slot>
 ```
 
@@ -223,7 +223,7 @@ Il file è troppo complesso e dovrebbe essere semplificato:
         {{ __('Accedi') }}
     </x-slot>
     
-    <x-pub_theme::blocks.forms.login-card 
+    <x-pub_theme::forms.login-card 
         title="{{ __('Accedi al tuo account') }}"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"
     />
@@ -293,7 +293,7 @@ Hai problemi di accesso?
     </x-slot>
 
     <!-- Login Card AGID-Compliant -->
-    <x-pub_theme::blocks.forms.login-card 
+    <x-pub_theme::forms.login-card 
         title="{{ __('Accedi al tuo account') }}"
         subtitle="{{ __('Inserisci le tue credenziali per accedere') }}"
         livewire-component="\Modules\User\Http\Livewire\Auth\Login"

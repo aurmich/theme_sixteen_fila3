@@ -92,10 +92,10 @@ font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', Rob
 
 ### **2. Componenti Riutilizzabili**
 ```blade
-<x-pub_theme::blocks.navigation.header-slim />
-<x-pub_theme::blocks.navigation.header-main />
-<x-pub_theme::blocks.navigation.breadcrumb />
-<x-pub_theme::blocks.navigation.footer-institutional />
+<x-pub_theme::navigation.header-slim />
+<x-pub_theme::navigation.header-main />
+<x-pub_theme::navigation.breadcrumb />
+<x-pub_theme::navigation.footer-institutional />
 ```
 
 ### **3. Livewire Integration**

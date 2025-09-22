@@ -66,7 +66,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 {{-- SUAP --}}
-                <x-agid.service-card
+                <x-data-display.service-card
                     title="SUAP - Sportello Unico"
                     description="Presenta pratiche edilizie, richieste di permessi e consulta lo stato delle procedure online"
                     icon="heroicon-o-building-office"
@@ -78,7 +78,7 @@
                 />
 
                 {{-- Anagrafe --}}
-                <x-agid.service-card
+                <x-data-display.service-card
                     title="Certificati Anagrafici"
                     description="Richiedi e scarica certificati di nascita, residenza e stato di famiglia direttamente online"
                     icon="heroicon-o-document-text"
@@ -89,7 +89,7 @@
                 />
 
                 {{-- Tributi --}}
-                <x-agid.service-card
+                <x-data-display.service-card
                     title="Pagamento Tributi"
                     description="Paga tasse, multe e tributi comunali in modo sicuro con il sistema PagoPA"
                     icon="heroicon-o-currency-euro"
@@ -99,7 +99,7 @@
                 />
 
                 {{-- Segnalazioni --}}
-                <x-agid.service-card
+                <x-data-display.service-card
                     title="Segnalazioni"
                     description="Segnala guasti, disservizi o problematiche sul territorio comunale"
                     icon="heroicon-o-exclamation-triangle"
@@ -109,7 +109,7 @@
                 />
 
                 {{-- Prenotazioni --}}
-                <x-agid.service-card
+                <x-data-display.service-card
                     title="Prenotazione Appuntamenti"
                     description="Prenota online appuntamenti con gli uffici comunali senza code né attese"
                     icon="heroicon-o-calendar"
@@ -119,7 +119,7 @@
                 />
 
                 {{-- Sociali --}}
-                <x-agid.service-card
+                <x-data-display.service-card
                     title="Servizi Sociali"
                     description="Accedi ai servizi sociali, richiedi contributi e supporto per le famiglie"
                     icon="heroicon-o-heart"
@@ -149,7 +149,7 @@
                     <h3 class="text-2xl font-semibold text-gray-900">Anagrafe e Stato Civile</h3>
                 </div>
                 
-                <x-agid.services-grid 
+                <x-data-display.services-grid 
                     :services="[
                         ['title' => 'Certificati Anagrafici', 'description' => 'Richiedi e scarica certificati online', 'category' => 'anagrafe', 'status' => 'active', 'requiresAuth' => true],
                         ['title' => 'Iscrizione Anagrafica', 'description' => 'Iscrizione e variazione residenza', 'category' => 'anagrafe', 'status' => 'active', 'requiresAuth' => true],
@@ -167,7 +167,7 @@
                     <h3 class="text-2xl font-semibold text-gray-900">Tributi e Imposte</h3>
                 </div>
                 
-                <x-agid.services-grid 
+                <x-data-display.services-grid 
                     :services="[
                         ['title' => 'Pagamento TASI', 'description' => 'Pagamento tassa sui servizi indivisibili', 'category' => 'tributi', 'status' => 'active'],
                         ['title' => 'Pagamento IMU', 'description' => 'Pagamento imposta municipale propria', 'category' => 'tributi', 'status' => 'active'],
@@ -185,7 +185,7 @@
                     <h3 class="text-2xl font-semibold text-gray-900">Urbanistica e Edilizia</h3>
                 </div>
                 
-                <x-agid.services-grid 
+                <x-data-display.services-grid 
                     :services="[
                         ['title' => 'SUAP Online', 'description' => 'Sportello Unico Attività Produttive', 'category' => 'urbanistica', 'status' => 'active', 'requiresAuth' => true],
                         ['title' => 'Permessi di Costruire', 'description' => 'Richiesta permessi edilizi', 'category' => 'urbanistica', 'status' => 'active', 'requiresAuth' => true],
@@ -203,7 +203,7 @@
                     <h3 class="text-2xl font-semibold text-gray-900">Servizi Sociali</h3>
                 </div>
                 
-                <x-agid.services-grid 
+                <x-data-display.services-grid 
                     :services="[
                         ['title' => 'Asili Nido', 'description' => 'Iscrizione e informazioni asili nido', 'category' => 'sociale', 'status' => 'active', 'requiresAuth' => true],
                         ['title' => 'Contributi Famiglie', 'description' => 'Richiesta contributi economici', 'category' => 'sociale', 'status' => 'active', 'requiresAuth' => true],
@@ -217,11 +217,13 @@
             {{-- Ambiente e Verde --}}
             <div id="ambiente">
                 <div class="flex items-center mb-8">
-                    <x-heroicon-o-leaf class="w-8 h-8 text-primary-600 mr-3" />
+                    <svg class="w-8 h-8 text-primary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
                     <h3 class="text-2xl font-semibold text-gray-900">Ambiente e Verde</h3>
                 </div>
                 
-                <x-agid.services-grid 
+                <x-data-display.services-grid 
                     :services="[
                         ['title' => 'Raccolta Differenziata', 'description' => 'Informazioni e calendario raccolta', 'category' => 'ambiente', 'status' => 'active'],
                         ['title' => 'Segnalazione Rifiuti', 'description' => 'Segnala abbandono rifiuti', 'category' => 'ambiente', 'status' => 'active'],

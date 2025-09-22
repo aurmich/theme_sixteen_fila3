@@ -49,6 +49,7 @@ login.blade.php (Layout AGID + Branding PA)
 
 #### Layout Components
 - `x-pub_theme::layouts.guest` - Layout base per utenti non autenticati
+<<<<<<< HEAD
 - `x-pub_theme::blocks.layout.container` - Container responsive
 - `x-pub_theme::blocks.layout.grid` - Sistema griglia
 <<<<<<< HEAD
@@ -66,23 +67,33 @@ login.blade.php (Layout AGID + Branding PA)
 - `x-sixteen::blocks.alerts.alert` - Messaggi di errore
 - `x-sixteen::blocks.utilities.badge` - Badge social login
 =======
+=======
+- `x-pub_theme::layout.container` - Container responsive
+- `x-pub_theme::layout.grid` - Sistema griglia
+>>>>>>> c979680 (.)
 
 #### Form Components
-- `x-pub_theme::blocks.forms.input` - Input email e password
-- `x-pub_theme::blocks.forms.checkbox` - Checkbox "Ricordami"
-- `x-pub_theme::blocks.buttons.button` - Pulsante submit
+- `x-pub_theme::forms.input` - Input email e password
+- `x-pub_theme::forms.checkbox` - Checkbox "Ricordami"
+- `x-pub_theme::buttons.button` - Pulsante submit
 
 #### UI Components
+<<<<<<< HEAD
 - `x-pub_theme::blocks.cards.card` - Card contenitore form
 - `x-pub_theme::blocks.alerts.alert` - Messaggi di errore
 - `x-pub_theme::blocks.utilities.badge` - Badge social login
 >>>>>>> 109edea (.)
+=======
+- `x-pub_theme::cards.card` - Card contenitore form
+- `x-pub_theme::alerts.alert` - Messaggi di errore
+- `x-pub_theme::utilities.badge` - Badge social login
+>>>>>>> c979680 (.)
 
 ### 3. Struttura HTML Proposta
 
 ```blade
 <x-pub_theme::layouts.guest>
-    <x-pub_theme::blocks.layout.container>
+    <x-pub_theme::layout.container>
         <!-- Header PA -->
         <div class="text-center mb-8">
             <x-pub_theme::ui.logo class="mx-auto h-16 w-auto" />
@@ -103,8 +114,9 @@ login.blade.php (Layout AGID + Branding PA)
         </div>
 
         <!-- Form Card -->
-        <x-pub_theme::blocks.cards.card class="max-w-md mx-auto">
+        <x-pub_theme::cards.card class="max-w-md mx-auto">
             @livewire(\Modules\User\Http\Livewire\Auth\Login::class)
+<<<<<<< HEAD
         </x-pub_theme::blocks.cards.card>
 <<<<<<< HEAD
         <x-sixteen::blocks.cards.card class="max-w-md mx-auto">
@@ -112,6 +124,9 @@ login.blade.php (Layout AGID + Branding PA)
         </x-sixteen::blocks.cards.card>
 =======
 >>>>>>> 109edea (.)
+=======
+        </x-pub_theme::cards.card>
+>>>>>>> c979680 (.)
 
         <!-- Footer PA -->
         <div class="mt-8 text-center text-sm text-gray-500">
@@ -122,7 +137,7 @@ login.blade.php (Layout AGID + Branding PA)
                 <a href="/contatti" class="hover:text-gray-700">Contatti</a>
             </div>
         </div>
-    </x-pub_theme::blocks.layout.container>
+    </x-pub_theme::layout.container>
 </x-pub_theme::layouts.guest>
 <<<<<<< HEAD
     </x-sixteen::blocks.layout.container>

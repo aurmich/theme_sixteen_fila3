@@ -313,13 +313,13 @@ Utilizzo:
     action="/users"
     name="user-form"
 >
-    <x-input 
+    <x-forms.input 
         name="name"
         label="Nome"
         required
     />
     
-    <x-input 
+    <x-forms.input 
         name="email"
         type="email"
         label="Email"
@@ -327,9 +327,9 @@ Utilizzo:
     />
     
     <x-slot name="actions">
-        <x-button type="submit">
+        <x-utilities.button type="submit">
             Salva
-        </x-button>
+        </x-utilities.button>
     </x-slot>
 </x-form>
 
@@ -340,14 +340,14 @@ Utilizzo:
     x-data="contactForm()"
     @form-submit="handleContactSubmit"
 >
-    <x-input 
+    <x-forms.input 
         name="subject"
         label="Oggetto"
         required
         maxlength="100"
     />
     
-    <x-textarea 
+    <x-forms.textarea 
         name="message"
         label="Messaggio"
         required
@@ -356,21 +356,21 @@ Utilizzo:
     />
     
     <x-slot name="actions">
-        <x-button 
+        <x-utilities.button 
             type="button" 
             variant="secondary"
             @click="resetForm()"
         >
             Annulla
-        </x-button>
+        </x-utilities.button>
         
-        <x-button 
+        <x-utilities.button 
             type="submit"
             :disabled="isSubmitting"
         >
             <span x-show="!isSubmitting">Invia</span>
             <span x-show="isSubmitting">Invio in corso...</span>
-        </x-button>
+        </x-utilities.button>
     </x-slot>
 </x-form>
 
@@ -380,7 +380,7 @@ Utilizzo:
     action="/upload"
     enctype="multipart/form-data"
 >
-    <x-input 
+    <x-forms.input 
         name="file"
         type="file"
         label="Carica file"
@@ -389,9 +389,9 @@ Utilizzo:
     />
     
     <x-slot name="actions">
-        <x-button type="submit">
+        <x-utilities.button type="submit">
             Carica
-        </x-button>
+        </x-utilities.button>
     </x-slot>
 </x-form>
 
@@ -400,7 +400,7 @@ Utilizzo:
     method="PUT" 
     action="/users/{{ $user->id }}"
 >
-    <x-input 
+    <x-forms.input 
         name="name"
         label="Nome"
         :value="$user->name"
@@ -408,9 +408,9 @@ Utilizzo:
     />
     
     <x-slot name="actions">
-        <x-button type="submit">
+        <x-utilities.button type="submit">
             Aggiorna
-        </x-button>
+        </x-utilities.button>
     </x-slot>
 </x-form>
 
