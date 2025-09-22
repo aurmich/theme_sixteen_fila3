@@ -6,10 +6,15 @@ import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import colors from 'tailwindcss/colors';
 
+<<<<<<< HEAD
 
 
 module.exports = {
      presets: [preset],
+=======
+module.exports = {
+    presets: [preset],
+>>>>>>> 109edea (.)
     darkMode: 'class',
     theme: {
         extend: {
@@ -66,6 +71,10 @@ module.exports = {
                     800: '#B37F00',
                     900: '#996D00',
                 },
+<<<<<<< HEAD
+=======
+                // Compatibilità con i colori esistenti
+>>>>>>> 109edea (.)
                 primary: {
                     50: '#eff6ff',
                     100: '#dbeafe',
@@ -125,10 +134,13 @@ module.exports = {
     },
 
     content: [
+<<<<<<< HEAD
 
         '../../app/Filament/**/*.php',
         '../../resources/views/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
+=======
+>>>>>>> 109edea (.)
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
@@ -146,6 +158,7 @@ module.exports = {
         "../../Modules/**/resources/views/**/*.blade.php",
         "../../storage/framework/views/*.php",
         "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+<<<<<<< HEAD
         "./node_modules/flowbite/**/*.js",
         "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
@@ -154,6 +167,12 @@ module.exports = {
         "./node_modules/flowbite/**/*.js",
         "./resources/views/**/*.blade.php",  //----------- e' un tema !!!!
         "../../Themes/**/resources/views/**/*.blade.php",  //----------- e' un tema !!!!
+=======
+        "../../Themes/**/resources/views/**/*.blade.php",
+        
+        "./node_modules/flowbite/**/*.js",
+        "../../../public_html/vendor/**/*.blade.php",
+>>>>>>> 109edea (.)
         "../../../public_html/vendor/**/*.blade.php",
     ],
     // Filament preset palette (for compatibility with plugins expecting these keys)

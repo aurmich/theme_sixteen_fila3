@@ -45,5 +45,8 @@ docs/cache/
 *.old
 *.old1
 *.bakcup
+<<<<<<< HEAD
 *.backup
+=======
+>>>>>>> 109edea (.)
 *.backup.*

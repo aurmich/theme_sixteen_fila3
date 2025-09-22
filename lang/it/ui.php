@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
     // Login page
     'Login' => 'Accedi',
     'Accedi ai servizi' => 'Accedi ai servizi',
@@ -52,4 +53,7 @@ return [
     'menu' => 'Menu',
     'close' => 'Chiudi',
     'open' => 'Apri',
+=======
+
+>>>>>>> 109edea (.)
 ];

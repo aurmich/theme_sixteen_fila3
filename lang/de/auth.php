@@ -24,11 +24,19 @@ return [
     // Anmeldung
     'login' => [
         'title' => 'Anmelden',
+<<<<<<< HEAD
+=======
+
+>>>>>>> 109edea (.)
         'email' => 'E-Mail',
         'password' => 'Passwort',
         'remember_me' => 'Angemeldet bleiben',
         'forgot_password' => 'Passwort vergessen?',
         'submit' => 'Anmelden',
+<<<<<<< HEAD
+=======
+
+>>>>>>> 109edea (.)
         'or' => 'oder',
         'create_account' => 'ein neues Konto erstellen',
         'link' => 'Anmelden',

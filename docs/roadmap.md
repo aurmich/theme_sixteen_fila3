@@ -3,8 +3,11 @@
 ## 🔄 Collegamenti
 - [Roadmap Principale](../../../../project_docs/roadmap.md)
 - [Analisi Tema Sixteen](../../../../project_docs/roadmap/themes/sixteen/analysis.md)
+<<<<<<< HEAD
 - [Roadmap Principale](../../../../docs/roadmap.md)
 - [Analisi Tema Sixteen](../../../../docs/roadmap/themes/sixteen/analysis.md)
+=======
+>>>>>>> 109edea (.)
 
 ## ⚠️ Priorità Critiche
 | Priorità | Task | Stato | Scadenza | Dettagli |
@@ -74,11 +77,14 @@
 - [ ] [Analisi Trend](monitoring/trend_analysis.md) (50%)
 
 ## 🔗 Dipendenze
+<<<<<<< HEAD
 - [UI Module](../../../../docs/roadmap/modules/ui/roadmap.md)
 - [User Module](../../../../docs/roadmap/modules/user/roadmap.md)
 - [Rating Module](../../../../docs/roadmap/modules/rating/roadmap.md)
 - [Seo Module](../../../../docs/roadmap/modules/seo/roadmap.md)
 - [Tenant Module](../../../../docs/roadmap/modules/tenant/roadmap.md)
+=======
+>>>>>>> 109edea (.)
 - [UI Module](../../../Modules/UI/docs/roadmap.md)
 - [User Module](../../../Modules/User/docs/roadmap.md)
 - [Rating Module](../../../Modules/Rating/docs/roadmap.md)
@@ -90,5 +96,8 @@
 ## Collegamenti
 
 [⬅️ Torna alla Roadmap Principale](../../../../project_docs/roadmap.md)
+<<<<<<< HEAD
 [⬅️ Torna alla Roadmap Principale](/docs/roadmap.md)
+=======
+>>>>>>> 109edea (.)
 

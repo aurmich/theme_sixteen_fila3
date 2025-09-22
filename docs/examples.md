@@ -11,6 +11,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 ```blade
 <!-- Alert Informazione -->
 <x-pub_theme::blocks.alerts.alert variant="info" title="Informazione">
+<<<<<<< HEAD
 <x-sixteen::blocks.alerts.alert variant="info" title="Informazione">
     Questo è un messaggio informativo per l'utente.
 </x-sixteen::blocks.alerts.alert>
@@ -29,34 +30,65 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <x-sixteen::blocks.alerts.alert variant="danger" title="Errore">
     Si è verificato un errore durante l'operazione.
 </x-sixteen::blocks.alerts.alert>
+=======
+    Questo è un messaggio informativo per l'utente.
+</x-pub_theme::blocks.alerts.alert>
+
+<!-- Alert Successo -->
+<x-pub_theme::blocks.alerts.alert variant="success" title="Operazione completata">
+    L'operazione è stata completata con successo.
+</x-pub_theme::blocks.alerts.alert>
+
+<!-- Alert Warning -->
+<x-pub_theme::blocks.alerts.alert variant="warning" title="Attenzione">
+    Attenzione: questa azione non può essere annullata.
+</x-pub_theme::blocks.alerts.alert>
+
+<!-- Alert Errore -->
+<x-pub_theme::blocks.alerts.alert variant="danger" title="Errore">
+    Si è verificato un errore durante l'operazione.
+</x-pub_theme::blocks.alerts.alert>
+>>>>>>> 109edea (.)
 ```
 
 ### Alert Dismissible
 
 ```blade
 <x-pub_theme::blocks.alerts.alert 
+<<<<<<< HEAD
 <x-sixteen::blocks.alerts.alert 
+=======
+>>>>>>> 109edea (.)
     variant="info" 
     dismissible="true"
     title="Messaggio importante"
 >
     Questo alert può essere chiuso dall'utente.
 </x-pub_theme::blocks.alerts.alert>
+<<<<<<< HEAD
 </x-sixteen::blocks.alerts.alert>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Alert con Link
 
 ```blade
 <x-pub_theme::blocks.alerts.alert-link 
+<<<<<<< HEAD
 <x-sixteen::blocks.alerts.alert-link 
+=======
+>>>>>>> 109edea (.)
     variant="success"
     href="/dettagli-operazione"
     link-text="Visualizza dettagli"
 >
     Operazione completata. Clicca per vedere i dettagli.
 </x-pub_theme::blocks.alerts.alert-link>
+<<<<<<< HEAD
 </x-sixteen::blocks.alerts.alert-link>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Toast Notifications
@@ -64,7 +96,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 ```blade
 <!-- Toast di successo -->
 <x-pub_theme::blocks.alerts.toast 
+<<<<<<< HEAD
 <x-sixteen::blocks.alerts.toast 
+=======
+>>>>>>> 109edea (.)
     variant="success"
     position="top-right"
     duration="5000"
@@ -74,17 +109,23 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 
 <!-- Toast di errore -->
 <x-pub_theme::blocks.alerts.toast 
+<<<<<<< HEAD
 </x-sixteen::blocks.alerts.toast>
 
 <!-- Toast di errore -->
 <x-sixteen::blocks.alerts.toast 
+=======
+>>>>>>> 109edea (.)
     variant="danger"
     position="top-center"
     duration="8000"
 >
     Errore durante il salvataggio.
 </x-pub_theme::blocks.alerts.toast>
+<<<<<<< HEAD
 </x-sixteen::blocks.alerts.toast>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ## Pulsanti e Azioni
@@ -94,6 +135,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 ```blade
 <!-- Pulsante Primario -->
 <x-pub_theme::blocks.buttons.button variant="primary" size="md">
+<<<<<<< HEAD
 <x-sixteen::blocks.buttons.button variant="primary" size="md">
     Conferma Azione
 </x-sixteen::blocks.buttons.button>
@@ -117,6 +159,30 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <x-sixteen::blocks.buttons.button variant="danger" size="md">
     Elimina
 </x-sixteen::blocks.buttons.button>
+=======
+    Conferma Azione
+</x-pub_theme::blocks.buttons.button>
+
+<!-- Pulsante Secondario -->
+<x-pub_theme::blocks.buttons.button variant="secondary" size="md">
+    Annulla
+</x-pub_theme::blocks.buttons.button>
+
+<!-- Pulsante Outline -->
+<x-pub_theme::blocks.buttons.button variant="outline" size="md">
+    Modifica
+</x-pub_theme::blocks.buttons.button>
+
+<!-- Pulsante Ghost -->
+<x-pub_theme::blocks.buttons.button variant="ghost" size="md">
+    Visualizza
+</x-pub_theme::blocks.buttons.button>
+
+<!-- Pulsante Pericolo -->
+<x-pub_theme::blocks.buttons.button variant="danger" size="md">
+    Elimina
+</x-pub_theme::blocks.buttons.button>
+>>>>>>> 109edea (.)
 ```
 
 ### Pulsanti con Icone
@@ -124,7 +190,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 ```blade
 <!-- Pulsante con icona a sinistra -->
 <x-pub_theme::blocks.buttons.button 
+<<<<<<< HEAD
 <x-sixteen::blocks.buttons.button 
+=======
+>>>>>>> 109edea (.)
     variant="primary" 
     icon="heroicon-o-plus"
     icon-position="left"
@@ -134,17 +203,23 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 
 <!-- Pulsante con icona a destra -->
 <x-pub_theme::blocks.buttons.button 
+<<<<<<< HEAD
 </x-sixteen::blocks.buttons.button>
 
 <!-- Pulsante con icona a destra -->
 <x-sixteen::blocks.buttons.button 
+=======
+>>>>>>> 109edea (.)
     variant="outline" 
     icon="heroicon-o-arrow-right"
     icon-position="right"
 >
     Avanti
 </x-pub_theme::blocks.buttons.button>
+<<<<<<< HEAD
 </x-sixteen::blocks.buttons.button>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Gruppi di Pulsanti
@@ -152,6 +227,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 ```blade
 <x-pub_theme::blocks.buttons.button-group>
     <x-pub_theme::blocks.buttons.button-group-item variant="outline">
+<<<<<<< HEAD
 <x-sixteen::blocks.buttons.button-group>
     <x-sixteen::blocks.buttons.button-group-item variant="outline">
         <x-heroicon-o-chevron-left class="h-4 w-4" />
@@ -167,6 +243,21 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         <x-heroicon-o-chevron-right class="h-4 w-4" />
     </x-sixteen::blocks.buttons.button-group-item>
 </x-sixteen::blocks.buttons.button-group>
+=======
+        <x-heroicon-o-chevron-left class="h-4 w-4" />
+        Precedente
+    </x-pub_theme::blocks.buttons.button-group-item>
+    
+    <x-pub_theme::blocks.buttons.button-group-item variant="primary">
+        Pagina 1
+    </x-pub_theme::blocks.buttons.button-group-item>
+    
+    <x-pub_theme::blocks.buttons.button-group-item variant="outline">
+        Successivo
+        <x-heroicon-o-chevron-right class="h-4 w-4" />
+    </x-pub_theme::blocks.buttons.button-group-item>
+</x-pub_theme::blocks.buttons.button-group>
+>>>>>>> 109edea (.)
 ```
 
 ## Card e Contenitori
@@ -179,11 +270,14 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         Questa è una card semplice con contenuto di testo.
     </p>
 </x-pub_theme::blocks.cards.card>
+<<<<<<< HEAD
 <x-sixteen::blocks.cards.card>
     <p class="text-gray-600">
         Questa è una card semplice con contenuto di testo.
     </p>
 </x-sixteen::blocks.cards.card>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Card con Header e Footer
@@ -194,11 +288,14 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         <div class="flex items-center justify-between">
             <h3 class="text-lg font-semibold text-gray-900">Titolo Card</h3>
             <x-pub_theme::blocks.utilities.badge variant="success">Nuovo</x-pub_theme::blocks.utilities.badge>
+<<<<<<< HEAD
 <x-sixteen::blocks.cards.card with-header="true" with-footer="true">
     <x-slot name="header">
         <div class="flex items-center justify-between">
             <h3 class="text-lg font-semibold text-gray-900">Titolo Card</h3>
             <x-sixteen::blocks.utilities.badge variant="success">Nuovo</x-sixteen::blocks.utilities.badge>
+=======
+>>>>>>> 109edea (.)
         </div>
     </x-slot>
     
@@ -215,6 +312,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     <x-slot name="footer">
         <div class="flex justify-end space-x-2">
             <x-pub_theme::blocks.buttons.button variant="outline" size="sm">
+<<<<<<< HEAD
             <x-sixteen::blocks.buttons.button variant="outline" size="sm">
                 Annulla
             </x-sixteen::blocks.buttons.button>
@@ -224,13 +322,26 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         </div>
     </x-slot>
 </x-sixteen::blocks.cards.card>
+=======
+                Annulla
+            </x-pub_theme::blocks.buttons.button>
+            <x-pub_theme::blocks.buttons.button variant="primary" size="sm">
+                Salva
+            </x-pub_theme::blocks.buttons.button>
+        </div>
+    </x-slot>
+</x-pub_theme::blocks.cards.card>
+>>>>>>> 109edea (.)
 ```
 
 ### Card con Overlay
 
 ```blade
 <x-pub_theme::blocks.cards.card-overlay 
+<<<<<<< HEAD
 <x-sixteen::blocks.cards.card-overlay 
+=======
+>>>>>>> 109edea (.)
     image-src="/images/hero-bg.jpg"
     overlay-title="Servizi Digitali"
     overlay-subtitle="Soluzioni innovative per la PA"
@@ -242,11 +353,18 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
             Scopri le nostre soluzioni digitali per la pubblica amministrazione.
         </p>
         <x-pub_theme::blocks.buttons.button variant="primary" size="sm">
+<<<<<<< HEAD
         <x-sixteen::blocks.buttons.button variant="primary" size="sm">
             Scopri di più
         </x-sixteen::blocks.buttons.button>
     </div>
 </x-sixteen::blocks.cards.card-overlay>
+=======
+            Scopri di più
+        </x-pub_theme::blocks.buttons.button>
+    </div>
+</x-pub_theme::blocks.cards.card-overlay>
+>>>>>>> 109edea (.)
 ```
 
 ## Form e Input
@@ -257,7 +375,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <form class="space-y-6">
     <!-- Input Email -->
     <x-pub_theme::blocks.forms.input 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.input 
+=======
+>>>>>>> 109edea (.)
         name="email"
         type="email"
         label="Indirizzo email"
@@ -269,7 +390,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Input Password -->
     <x-pub_theme::blocks.forms.input 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.input 
+=======
+>>>>>>> 109edea (.)
         name="password"
         type="password"
         label="Password"
@@ -282,7 +406,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Select Paese -->
     <x-pub_theme::blocks.forms.select 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.select 
+=======
+>>>>>>> 109edea (.)
         name="country"
         label="Paese di residenza"
         placeholder="Seleziona un paese"
@@ -297,7 +424,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Checkbox Termini -->
     <x-pub_theme::blocks.forms.checkbox 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.checkbox 
+=======
+>>>>>>> 109edea (.)
         name="terms"
         label="Accetto i termini e condizioni"
         help-text="Devi accettare i termini per continuare"
@@ -309,19 +439,28 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         <label class="block text-sm font-medium text-gray-700">Genere</label>
         <div class="space-y-2">
             <x-pub_theme::blocks.forms.radio 
+<<<<<<< HEAD
             <x-sixteen::blocks.forms.radio 
+=======
+>>>>>>> 109edea (.)
                 name="gender"
                 value="male"
                 label="Maschio"
             />
             <x-pub_theme::blocks.forms.radio 
+<<<<<<< HEAD
             <x-sixteen::blocks.forms.radio 
+=======
+>>>>>>> 109edea (.)
                 name="gender"
                 value="female"
                 label="Femmina"
             />
             <x-pub_theme::blocks.forms.radio 
+<<<<<<< HEAD
             <x-sixteen::blocks.forms.radio 
+=======
+>>>>>>> 109edea (.)
                 name="gender"
                 value="other"
                 label="Altro"
@@ -331,7 +470,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Switch Notifiche -->
     <x-pub_theme::blocks.forms.switch 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.switch 
+=======
+>>>>>>> 109edea (.)
         name="notifications"
         label="Ricevi notifiche"
         help-text="Riceverai notifiche via email"
@@ -339,7 +481,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Textarea Descrizione -->
     <x-pub_theme::blocks.forms.textarea 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.textarea 
+=======
+>>>>>>> 109edea (.)
         name="description"
         label="Descrizione"
         placeholder="Inserisci una descrizione dettagliata..."
@@ -350,7 +495,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- File Upload -->
     <x-pub_theme::blocks.forms.file-upload 
+<<<<<<< HEAD
     <x-sixteen::blocks.forms.file-upload 
+=======
+>>>>>>> 109edea (.)
         name="documents"
         label="Carica documenti"
         accept=".pdf,.doc,.docx,.jpg,.png"
@@ -363,12 +511,20 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     <!-- Pulsanti Form -->
     <div class="flex justify-end space-x-3">
         <x-pub_theme::blocks.buttons.button variant="outline">
+<<<<<<< HEAD
         <x-sixteen::blocks.buttons.button variant="outline">
             Annulla
         </x-sixteen::blocks.buttons.button>
         <x-sixteen::blocks.buttons.button variant="primary">
             Salva
         </x-sixteen::blocks.buttons.button>
+=======
+            Annulla
+        </x-pub_theme::blocks.buttons.button>
+        <x-pub_theme::blocks.buttons.button variant="primary">
+            Salva
+        </x-pub_theme::blocks.buttons.button>
+>>>>>>> 109edea (.)
     </div>
 </form>
 ```
@@ -379,7 +535,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 
 ```blade
 <x-pub_theme::blocks.navigation.navbar 
+<<<<<<< HEAD
 <x-sixteen::blocks.navigation.navbar 
+=======
+>>>>>>> 109edea (.)
     brand="Logo Azienda"
     brand-href="/"
     variant="light"
@@ -417,14 +576,20 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         </div>
     </x-slot>
 </x-pub_theme::blocks.navigation.navbar>
+<<<<<<< HEAD
 </x-sixteen::blocks.navigation.navbar>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Breadcrumb
 
 ```blade
 <x-pub_theme::blocks.navigation.breadcrumb 
+<<<<<<< HEAD
 <x-sixteen::blocks.navigation.breadcrumb 
+=======
+>>>>>>> 109edea (.)
     :items="[
         ['label' => 'Home', 'href' => '/'],
         ['label' => 'Servizi', 'href' => '/servizi'],
@@ -438,7 +603,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 
 ```blade
 <x-pub_theme::blocks.navigation.pagination 
+<<<<<<< HEAD
 <x-sixteen::blocks.navigation.pagination 
+=======
+>>>>>>> 109edea (.)
     :current-page="5"
     :total-pages="20"
     base-url="/prodotti"
@@ -455,7 +623,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 
 ```blade
 <x-pub_theme::blocks.layout.container>
+<<<<<<< HEAD
 <x-sixteen::blocks.layout.container>
+=======
+>>>>>>> 109edea (.)
     <div class="space-y-8">
         <!-- Header Section -->
         <div class="text-center">
@@ -468,8 +639,11 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         <!-- Grid di Card -->
         <x-pub_theme::blocks.layout.grid cols="3" gap="lg" responsive="true">
             <x-pub_theme::blocks.cards.card>
+<<<<<<< HEAD
         <x-sixteen::blocks.layout.grid cols="3" gap="lg" responsive="true">
             <x-sixteen::blocks.cards.card>
+=======
+>>>>>>> 109edea (.)
                 <div class="text-center">
                     <x-heroicon-o-computer-desktop class="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <h3 class="text-lg font-semibold mb-2">Digitalizzazione</h3>
@@ -478,9 +652,12 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
             </x-pub_theme::blocks.cards.card>
             
             <x-pub_theme::blocks.cards.card>
+<<<<<<< HEAD
             </x-sixteen::blocks.cards.card>
             
             <x-sixteen::blocks.cards.card>
+=======
+>>>>>>> 109edea (.)
                 <div class="text-center">
                     <x-heroicon-o-shield-check class="h-12 w-12 text-green-600 mx-auto mb-4" />
                     <h3 class="text-lg font-semibold mb-2">Sicurezza</h3>
@@ -489,9 +666,12 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
             </x-pub_theme::blocks.cards.card>
             
             <x-pub_theme::blocks.cards.card>
+<<<<<<< HEAD
             </x-sixteen::blocks.cards.card>
             
             <x-sixteen::blocks.cards.card>
+=======
+>>>>>>> 109edea (.)
                 <div class="text-center">
                     <x-heroicon-o-chart-bar class="h-12 w-12 text-purple-600 mx-auto mb-4" />
                     <h3 class="text-lg font-semibold mb-2">Analytics</h3>
@@ -501,10 +681,13 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         </x-pub_theme::blocks.layout.grid>
     </div>
 </x-pub_theme::blocks.layout.container>
+<<<<<<< HEAD
             </x-sixteen::blocks.cards.card>
         </x-sixteen::blocks.layout.grid>
     </div>
 </x-sixteen::blocks.layout.container>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ## Feedback
@@ -515,7 +698,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <div class="space-y-6">
     <!-- Progress Base -->
     <x-pub_theme::blocks.feedback.progress 
+<<<<<<< HEAD
     <x-sixteen::blocks.feedback.progress 
+=======
+>>>>>>> 109edea (.)
         :value="75"
         :max="100"
         variant="primary"
@@ -525,7 +711,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Progress Animato -->
     <x-pub_theme::blocks.feedback.progress 
+<<<<<<< HEAD
     <x-sixteen::blocks.feedback.progress 
+=======
+>>>>>>> 109edea (.)
         :value="60"
         :max="100"
         variant="success"
@@ -537,7 +726,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Progress con Varianti -->
     <x-pub_theme::blocks.feedback.progress 
+<<<<<<< HEAD
     <x-sixteen::blocks.feedback.progress 
+=======
+>>>>>>> 109edea (.)
         :value="90"
         :max="100"
         variant="warning"
@@ -554,7 +746,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <div class="space-y-6">
     <!-- Spinner Base -->
     <x-pub_theme::blocks.feedback.spinner 
+<<<<<<< HEAD
     <x-sixteen::blocks.feedback.spinner 
+=======
+>>>>>>> 109edea (.)
         variant="primary"
         size="md"
         label="Caricamento in corso..."
@@ -562,7 +757,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Spinner Grande -->
     <x-pub_theme::blocks.feedback.spinner 
+<<<<<<< HEAD
     <x-sixteen::blocks.feedback.spinner 
+=======
+>>>>>>> 109edea (.)
         variant="success"
         size="lg"
         label="Elaborazione dati..."
@@ -570,7 +768,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Spinner Senza Label -->
     <x-pub_theme::blocks.feedback.spinner 
+<<<<<<< HEAD
     <x-sixteen::blocks.feedback.spinner 
+=======
+>>>>>>> 109edea (.)
         variant="primary"
         size="sm"
     />
@@ -586,6 +787,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     <!-- Badge Base -->
     <div class="flex items-center space-x-2">
         <x-pub_theme::blocks.utilities.badge variant="primary">
+<<<<<<< HEAD
         <x-sixteen::blocks.utilities.badge variant="primary">
             Nuovo
         </x-sixteen::blocks.utilities.badge>
@@ -601,11 +803,28 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         <x-sixteen::blocks.utilities.badge variant="danger">
             Errore
         </x-sixteen::blocks.utilities.badge>
+=======
+            Nuovo
+        </x-pub_theme::blocks.utilities.badge>
+        
+        <x-pub_theme::blocks.utilities.badge variant="success">
+            Completato
+        </x-pub_theme::blocks.utilities.badge>
+        
+        <x-pub_theme::blocks.utilities.badge variant="warning">
+            In attesa
+        </x-pub_theme::blocks.utilities.badge>
+        
+        <x-pub_theme::blocks.utilities.badge variant="danger">
+            Errore
+        </x-pub_theme::blocks.utilities.badge>
+>>>>>>> 109edea (.)
     </div>
     
     <!-- Badge Pill -->
     <div class="flex items-center space-x-2">
         <x-pub_theme::blocks.utilities.badge variant="primary" pill="true">
+<<<<<<< HEAD
         <x-sixteen::blocks.utilities.badge variant="primary" pill="true">
             Pill Badge
         </x-sixteen::blocks.utilities.badge>
@@ -617,12 +836,27 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Badge Dismissible -->
     <x-sixteen::blocks.utilities.badge 
+=======
+            Pill Badge
+        </x-pub_theme::blocks.utilities.badge>
+        
+        <x-pub_theme::blocks.utilities.badge variant="success" pill="true">
+            Success Pill
+        </x-pub_theme::blocks.utilities.badge>
+    </div>
+    
+    <!-- Badge Dismissible -->
+    <x-pub_theme::blocks.utilities.badge 
+>>>>>>> 109edea (.)
         variant="info" 
         dismissible="true"
     >
         Badge rimovibile
     </x-pub_theme::blocks.utilities.badge>
+<<<<<<< HEAD
     </x-sixteen::blocks.utilities.badge>
+=======
+>>>>>>> 109edea (.)
 </div>
 ```
 
@@ -632,7 +866,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <div class="space-y-4">
     <!-- Tooltip Top -->
     <x-pub_theme::blocks.utilities.tooltip 
+<<<<<<< HEAD
     <x-sixteen::blocks.utilities.tooltip 
+=======
+>>>>>>> 109edea (.)
         content="Informazioni aggiuntive"
         position="top"
         variant="dark"
@@ -644,10 +881,13 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Tooltip Bottom -->
     <x-pub_theme::blocks.utilities.tooltip 
+<<<<<<< HEAD
     </x-sixteen::blocks.utilities.tooltip>
     
     <!-- Tooltip Bottom -->
     <x-sixteen::blocks.utilities.tooltip 
+=======
+>>>>>>> 109edea (.)
         content="Descrizione dettagliata"
         position="bottom"
         variant="light"
@@ -659,10 +899,13 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
     
     <!-- Tooltip Click -->
     <x-pub_theme::blocks.utilities.tooltip 
+<<<<<<< HEAD
     </x-sixteen::blocks.utilities.tooltip>
     
     <!-- Tooltip Click -->
     <x-sixteen::blocks.utilities.tooltip 
+=======
+>>>>>>> 109edea (.)
         content="Clicca per vedere il tooltip"
         position="right"
         trigger="click"
@@ -671,7 +914,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
             Click me
         </button>
     </x-pub_theme::blocks.utilities.tooltip>
+<<<<<<< HEAD
     </x-sixteen::blocks.utilities.tooltip>
+=======
+>>>>>>> 109edea (.)
 </div>
 ```
 
@@ -690,7 +936,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 <body class="bg-gray-50">
     <!-- Navbar -->
     <x-pub_theme::blocks.navigation.navbar 
+<<<<<<< HEAD
     <x-sixteen::blocks.navigation.navbar 
+=======
+>>>>>>> 109edea (.)
         brand="Tema Sixteen"
         brand-href="/"
         variant="light"
@@ -702,6 +951,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
             <a href="/documentazione" class="text-gray-700 hover:text-blue-600">Documentazione</a>
         </div>
     </x-pub_theme::blocks.navigation.navbar>
+<<<<<<< HEAD
     </x-sixteen::blocks.navigation.navbar>
     
     <!-- Main Content -->
@@ -709,6 +959,14 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
         <x-sixteen::blocks.layout.container>
             <!-- Breadcrumb -->
             <x-sixteen::blocks.navigation.breadcrumb 
+=======
+    
+    <!-- Main Content -->
+    <main class="py-8">
+        <x-pub_theme::blocks.layout.container>
+            <!-- Breadcrumb -->
+            <x-pub_theme::blocks.navigation.breadcrumb 
+>>>>>>> 109edea (.)
                 :items="[
                     ['label' => 'Home', 'href' => '/'],
                     ['label' => 'Componenti'],
@@ -731,6 +989,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                 <h2 class="text-2xl font-semibold text-gray-900 mb-6">Alert e Notifiche</h2>
                 <div class="space-y-4">
                     <x-pub_theme::blocks.alerts.alert variant="info" title="Informazione">
+<<<<<<< HEAD
                     <x-sixteen::blocks.alerts.alert variant="info" title="Informazione">
                         Questo è un esempio di alert informativo.
                     </x-sixteen::blocks.alerts.alert>
@@ -738,6 +997,14 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                     <x-sixteen::blocks.alerts.alert variant="success" title="Successo">
                         Operazione completata con successo!
                     </x-sixteen::blocks.alerts.alert>
+=======
+                        Questo è un esempio di alert informativo.
+                    </x-pub_theme::blocks.alerts.alert>
+                    
+                    <x-pub_theme::blocks.alerts.alert variant="success" title="Successo">
+                        Operazione completata con successo!
+                    </x-pub_theme::blocks.alerts.alert>
+>>>>>>> 109edea (.)
                 </div>
             </section>
             
@@ -748,10 +1015,13 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <x-pub_theme::blocks.forms.input 
+<<<<<<< HEAD
                 <x-sixteen::blocks.cards.card>
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <x-sixteen::blocks.forms.input 
+=======
+>>>>>>> 109edea (.)
                                 name="nome"
                                 label="Nome"
                                 placeholder="Inserisci il tuo nome"
@@ -759,7 +1029,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                             />
                             
                             <x-pub_theme::blocks.forms.input 
+<<<<<<< HEAD
                             <x-sixteen::blocks.forms.input 
+=======
+>>>>>>> 109edea (.)
                                 name="cognome"
                                 label="Cognome"
                                 placeholder="Inserisci il tuo cognome"
@@ -768,7 +1041,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                         </div>
                         
                         <x-pub_theme::blocks.forms.input 
+<<<<<<< HEAD
                         <x-sixteen::blocks.forms.input 
+=======
+>>>>>>> 109edea (.)
                             name="email"
                             type="email"
                             label="Email"
@@ -778,7 +1054,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                         />
                         
                         <x-pub_theme::blocks.forms.select 
+<<<<<<< HEAD
                         <x-sixteen::blocks.forms.select 
+=======
+>>>>>>> 109edea (.)
                             name="categoria"
                             label="Categoria"
                             placeholder="Seleziona una categoria"
@@ -791,7 +1070,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                         />
                         
                         <x-pub_theme::blocks.forms.textarea 
+<<<<<<< HEAD
                         <x-sixteen::blocks.forms.textarea 
+=======
+>>>>>>> 109edea (.)
                             name="messaggio"
                             label="Messaggio"
                             placeholder="Inserisci il tuo messaggio..."
@@ -799,7 +1081,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                         />
                         
                         <x-pub_theme::blocks.forms.checkbox 
+<<<<<<< HEAD
                         <x-sixteen::blocks.forms.checkbox 
+=======
+>>>>>>> 109edea (.)
                             name="newsletter"
                             label="Iscriviti alla newsletter"
                             help-text="Riceverai aggiornamenti sui nostri servizi"
@@ -807,6 +1092,7 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                         
                         <div class="flex justify-end space-x-3">
                             <x-pub_theme::blocks.buttons.button variant="outline">
+<<<<<<< HEAD
                             <x-sixteen::blocks.buttons.button variant="outline">
                                 Annulla
                             </x-sixteen::blocks.buttons.button>
@@ -816,6 +1102,16 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                         </div>
                     </form>
                 </x-sixteen::blocks.cards.card>
+=======
+                                Annulla
+                            </x-pub_theme::blocks.buttons.button>
+                            <x-pub_theme::blocks.buttons.button variant="primary">
+                                Invia
+                            </x-pub_theme::blocks.buttons.button>
+                        </div>
+                    </form>
+                </x-pub_theme::blocks.cards.card>
+>>>>>>> 109edea (.)
             </section>
             
             <!-- Progress Section -->
@@ -823,7 +1119,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                 <h2 class="text-2xl font-semibold text-gray-900 mb-6">Barre di Progresso</h2>
                 <div class="space-y-4">
                     <x-pub_theme::blocks.feedback.progress 
+<<<<<<< HEAD
                     <x-sixteen::blocks.feedback.progress 
+=======
+>>>>>>> 109edea (.)
                         :value="75"
                         :max="100"
                         variant="primary"
@@ -832,7 +1131,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                     />
                     
                     <x-pub_theme::blocks.feedback.progress 
+<<<<<<< HEAD
                     <x-sixteen::blocks.feedback.progress 
+=======
+>>>>>>> 109edea (.)
                         :value="45"
                         :max="100"
                         variant="success"
@@ -847,7 +1149,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
             <section class="mb-12">
                 <h2 class="text-2xl font-semibold text-gray-900 mb-6">Paginazione</h2>
                 <x-pub_theme::blocks.navigation.pagination 
+<<<<<<< HEAD
                 <x-sixteen::blocks.navigation.pagination 
+=======
+>>>>>>> 109edea (.)
                     :current-page="3"
                     :total-pages="15"
                     base-url="/esempi"
@@ -855,7 +1160,10 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                 />
             </section>
         </x-pub_theme::blocks.layout.container>
+<<<<<<< HEAD
         </x-sixteen::blocks.layout.container>
+=======
+>>>>>>> 109edea (.)
     </main>
     
     <!-- Footer -->
@@ -865,11 +1173,14 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
                 <p>&copy; 2024 Tema Sixteen. Tutti i diritti riservati.</p>
             </div>
         </x-pub_theme::blocks.layout.container>
+<<<<<<< HEAD
         <x-sixteen::blocks.layout.container>
             <div class="text-center">
                 <p>&copy; 2024 Tema Sixteen. Tutti i diritti riservati.</p>
             </div>
         </x-sixteen::blocks.layout.container>
+=======
+>>>>>>> 109edea (.)
     </footer>
 </body>
 </html>
@@ -901,4 +1212,8 @@ Questa documentazione fornisce esempi pratici di utilizzo di tutti i componenti 
 
 **Ultimo aggiornamento**: Dicembre 2024
 **Versione**: 1.0
+<<<<<<< HEAD
 **Compatibilità**: Tailwind CSS 3.x, Alpine.js 3.x, Laravel 10.x 
+=======
+**Compatibilità**: Tailwind CSS 3.x, Alpine.js 3.x, Laravel 10.x 
+>>>>>>> 109edea (.)

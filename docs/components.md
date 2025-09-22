@@ -11,6 +11,7 @@ Layout principale per le applicazioni web della PA.
 
 ```blade
 <x-pub_theme::layout.app>
+<<<<<<< HEAD
 <x-sixteen::layout.app>
     <x-slot name="header">
         <x-sixteen::header.main>
@@ -29,6 +30,25 @@ Layout principale per le applicazioni web della PA.
     
     <x-slot name="footer">
         <x-sixteen::footer.main />
+=======
+    <x-slot name="header">
+        <x-pub_theme::header.main>
+            <x-slot name="logo">
+                <x-pub_theme::logo />
+            </x-slot>
+            <x-slot name="navigation">
+                <x-pub_theme::navigation.main />
+            </x-slot>
+        </x-pub_theme::header.main>
+    </x-slot>
+    
+    <x-slot name="sidebar">
+        <x-pub_theme::sidebar.main />
+    </x-slot>
+    
+    <x-slot name="footer">
+        <x-pub_theme::footer.main />
+>>>>>>> 109edea (.)
     </x-slot>
     
     <!-- Main content -->
@@ -36,7 +56,10 @@ Layout principale per le applicazioni web della PA.
         {{ $slot }}
     </main>
 </x-pub_theme::layout.app>
+<<<<<<< HEAD
 </x-sixteen::layout.app>
+=======
+>>>>>>> 109edea (.)
 ```
 
 **Proprietà:**
@@ -53,11 +76,14 @@ Container responsive per contenuti centrati.
         {{ $slot }}
     </div>
 </x-pub_theme::layout.container>
+<<<<<<< HEAD
 <x-sixteen::layout.container size="lg">
     <div class="prose prose-lg max-w-none">
         {{ $slot }}
     </div>
 </x-sixteen::layout.container>
+=======
+>>>>>>> 109edea (.)
 ```
 
 **Sizes disponibili:**
@@ -74,7 +100,10 @@ Campo di input con validazione e accessibilità.
 
 ```blade
 <x-pub_theme::form.input
+<<<<<<< HEAD
 <x-sixteen::form.input
+=======
+>>>>>>> 109edea (.)
     name="email"
     type="email"
     label="Indirizzo Email"
@@ -100,7 +129,10 @@ Campo select con opzioni dinamiche.
 
 ```blade
 <x-pub_theme::form.select
+<<<<<<< HEAD
 <x-sixteen::form.select
+=======
+>>>>>>> 109edea (.)
     name="provincia"
     label="Provincia"
     :options="$province"
@@ -121,7 +153,10 @@ Campo di testo multi-riga.
 
 ```blade
 <x-pub_theme::form.textarea
+<<<<<<< HEAD
 <x-sixteen::form.textarea
+=======
+>>>>>>> 109edea (.)
     name="descrizione"
     label="Descrizione"
     placeholder="Inserisci una descrizione dettagliata"
@@ -136,7 +171,10 @@ Campo checkbox con label personalizzabile.
 
 ```blade
 <x-pub_theme::form.checkbox
+<<<<<<< HEAD
 <x-sixteen::form.checkbox
+=======
+>>>>>>> 109edea (.)
     name="privacy"
     label="Accetto la privacy policy"
     required
@@ -149,7 +187,10 @@ Gruppo di radio button.
 
 ```blade
 <x-pub_theme::form.radio-group
+<<<<<<< HEAD
 <x-sixteen::form.radio-group
+=======
+>>>>>>> 109edea (.)
     name="tipo_utente"
     label="Tipo di utente"
     :options="[
@@ -168,7 +209,10 @@ Pulsante per azioni principali.
 
 ```blade
 <x-pub_theme::button.primary
+<<<<<<< HEAD
 <x-sixteen::button.primary
+=======
+>>>>>>> 109edea (.)
     type="submit"
     :disabled="$isLoading"
     wire:loading.attr="disabled"
@@ -176,9 +220,12 @@ Pulsante per azioni principali.
     <x-pub_theme::icon.spinner wire:loading />
     Conferma Operazione
 </x-pub_theme::button.primary>
+<<<<<<< HEAD
     <x-sixteen::icon.spinner wire:loading />
     Conferma Operazione
 </x-sixteen::button.primary>
+=======
+>>>>>>> 109edea (.)
 ```
 
 **Varianti:**
@@ -194,7 +241,10 @@ Pulsante con icona.
 
 ```blade
 <x-pub_theme::button.icon
+<<<<<<< HEAD
 <x-sixteen::button.icon
+=======
+>>>>>>> 109edea (.)
     variant="primary"
     icon="heroicon-o-plus"
     aria-label="Aggiungi elemento"
@@ -207,6 +257,7 @@ Gruppo di pulsanti correlati.
 ```blade
 <x-pub_theme::button.group>
     <x-pub_theme::button.secondary>
+<<<<<<< HEAD
 <x-sixteen::button.group>
     <x-sixteen::button.secondary>
         Annulla
@@ -215,6 +266,14 @@ Gruppo di pulsanti correlati.
         Salva
     </x-sixteen::button.primary>
 </x-sixteen::button.group>
+=======
+        Annulla
+    </x-pub_theme::button.secondary>
+    <x-pub_theme::button.primary>
+        Salva
+    </x-pub_theme::button.primary>
+</x-pub_theme::button.group>
+>>>>>>> 109edea (.)
 ```
 
 ## Alert Components
@@ -224,12 +283,20 @@ Alert per operazioni completate con successo.
 
 ```blade
 <x-pub_theme::alert.success>
+<<<<<<< HEAD
 <x-sixteen::alert.success>
     <x-slot name="icon">
         <x-sixteen::icon.check-circle />
     </x-slot>
     Operazione completata con successo
 </x-sixteen::alert.success>
+=======
+    <x-slot name="icon">
+        <x-pub_theme::icon.check-circle />
+    </x-slot>
+    Operazione completata con successo
+</x-pub_theme::alert.success>
+>>>>>>> 109edea (.)
 ```
 
 ### Warning Alert
@@ -237,12 +304,20 @@ Alert per avvisi e informazioni importanti.
 
 ```blade
 <x-pub_theme::alert.warning>
+<<<<<<< HEAD
 <x-sixteen::alert.warning>
     <x-slot name="icon">
         <x-sixteen::icon.exclamation-triangle />
     </x-slot>
     Attenzione: alcuni dati potrebbero essere incompleti
 </x-sixteen::alert.warning>
+=======
+    <x-slot name="icon">
+        <x-pub_theme::icon.exclamation-triangle />
+    </x-slot>
+    Attenzione: alcuni dati potrebbero essere incompleti
+</x-pub_theme::alert.warning>
+>>>>>>> 109edea (.)
 ```
 
 ### Error Alert
@@ -250,12 +325,20 @@ Alert per errori e problemi.
 
 ```blade
 <x-pub_theme::alert.error>
+<<<<<<< HEAD
 <x-sixteen::alert.error>
     <x-slot name="icon">
         <x-sixteen::icon.x-circle />
     </x-slot>
     Si è verificato un errore durante l'operazione
 </x-sixteen::alert.error>
+=======
+    <x-slot name="icon">
+        <x-pub_theme::icon.x-circle />
+    </x-slot>
+    Si è verificato un errore durante l'operazione
+</x-pub_theme::alert.error>
+>>>>>>> 109edea (.)
 ```
 
 ### Info Alert
@@ -263,12 +346,20 @@ Alert per informazioni generali.
 
 ```blade
 <x-pub_theme::alert.info>
+<<<<<<< HEAD
 <x-sixteen::alert.info>
     <x-slot name="icon">
         <x-sixteen::icon.information-circle />
     </x-slot>
     Informazione importante per l'utente
 </x-sixteen::alert.info>
+=======
+    <x-slot name="icon">
+        <x-pub_theme::icon.information-circle />
+    </x-slot>
+    Informazione importante per l'utente
+</x-pub_theme::alert.info>
+>>>>>>> 109edea (.)
 ```
 
 ## Card Components
@@ -278,7 +369,10 @@ Card semplice per contenuti.
 
 ```blade
 <x-pub_theme::card>
+<<<<<<< HEAD
 <x-sixteen::card>
+=======
+>>>>>>> 109edea (.)
     <x-slot name="header">
         <h3 class="text-lg font-semibold">Titolo Card</h3>
     </x-slot>
@@ -288,18 +382,24 @@ Card semplice per contenuti.
     </div>
     
     <x-slot name="footer">
+<<<<<<< HEAD
         <x-sixteen::button.group>
             <x-sixteen::button.secondary>Annulla</x-sixteen::button.secondary>
             <x-sixteen::button.primary>Salva</x-sixteen::button.primary>
         </x-sixteen::button.group>
+=======
+>>>>>>> 109edea (.)
         <x-pub_theme::button.group>
             <x-pub_theme::button.secondary>Annulla</x-pub_theme::button.secondary>
             <x-pub_theme::button.primary>Salva</x-pub_theme::button.primary>
         </x-pub_theme::button.group>
     </x-slot>
 </x-pub_theme::card>
+<<<<<<< HEAD
     </x-slot>
 </x-sixteen::card>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Interactive Card
@@ -310,10 +410,13 @@ Card con interazioni.
     <x-slot name="header">
         <h3 class="text-lg font-semibold">Card Interattiva</h3>
         <x-pub_theme::button.icon
+<<<<<<< HEAD
 <x-sixteen::card.interactive>
     <x-slot name="header">
         <h3 class="text-lg font-semibold">Card Interattiva</h3>
         <x-sixteen::button.icon
+=======
+>>>>>>> 109edea (.)
             variant="ghost"
             icon="heroicon-o-ellipsis-vertical"
             size="sm"
@@ -322,7 +425,10 @@ Card con interazioni.
     
     Contenuto della card interattiva
 </x-pub_theme::card.interactive>
+<<<<<<< HEAD
 </x-sixteen::card.interactive>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ## Navigation Components
@@ -333,8 +439,11 @@ Navigazione principale dell'applicazione.
 ```blade
 <x-pub_theme::navigation.main>
     <x-pub_theme::navigation.item
+<<<<<<< HEAD
 <x-sixteen::navigation.main>
     <x-sixteen::navigation.item
+=======
+>>>>>>> 109edea (.)
         href="/dashboard"
         icon="heroicon-o-home"
         :active="request()->is('dashboard*')"
@@ -343,9 +452,12 @@ Navigazione principale dell'applicazione.
     </x-pub_theme::navigation.item>
     
     <x-pub_theme::navigation.item
+<<<<<<< HEAD
     </x-sixteen::navigation.item>
     
     <x-sixteen::navigation.item
+=======
+>>>>>>> 109edea (.)
         href="/users"
         icon="heroicon-o-users"
         :active="request()->is('users*')"
@@ -353,8 +465,11 @@ Navigazione principale dell'applicazione.
         Utenti
     </x-pub_theme::navigation.item>
 </x-pub_theme::navigation.main>
+<<<<<<< HEAD
     </x-sixteen::navigation.item>
 </x-sixteen::navigation.main>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Breadcrumb
@@ -363,6 +478,7 @@ Navigazione a breadcrumb.
 ```blade
 <x-pub_theme::navigation.breadcrumb>
     <x-pub_theme::navigation.breadcrumb-item href="/">
+<<<<<<< HEAD
 <x-sixteen::navigation.breadcrumb>
     <x-sixteen::navigation.breadcrumb-item href="/">
         Home
@@ -374,6 +490,17 @@ Navigazione a breadcrumb.
         Dettagli Utente
     </x-sixteen::navigation.breadcrumb-item>
 </x-sixteen::navigation.breadcrumb>
+=======
+        Home
+    </x-pub_theme::navigation.breadcrumb-item>
+    <x-pub_theme::navigation.breadcrumb-item href="/users">
+        Utenti
+    </x-pub_theme::navigation.breadcrumb-item>
+    <x-pub_theme::navigation.breadcrumb-item>
+        Dettagli Utente
+    </x-pub_theme::navigation.breadcrumb-item>
+</x-pub_theme::navigation.breadcrumb>
+>>>>>>> 109edea (.)
 ```
 
 ## Table Components
@@ -383,6 +510,7 @@ Tabella dati con ordinamento e paginazione.
 
 ```blade
 <x-pub_theme::table.data>
+<<<<<<< HEAD
 <x-sixteen::table.data>
     <x-slot name="header">
         <x-sixteen::table.header-cell sortable="name">
@@ -412,6 +540,36 @@ Tabella dati con ordinamento e paginazione.
             </x-sixteen::table.cell>
             <x-sixteen::table.cell>
                 <x-sixteen::button.icon
+=======
+    <x-slot name="header">
+        <x-pub_theme::table.header-cell sortable="name">
+            Nome
+        </x-pub_theme::table.header-cell>
+        <x-pub_theme::table.header-cell sortable="email">
+            Email
+        </x-pub_theme::table.header-cell>
+        <x-pub_theme::table.header-cell sortable="created_at">
+            Data Creazione
+        </x-pub_theme::table.header-cell>
+        <x-pub_theme::table.header-cell>
+            Azioni
+        </x-pub_theme::table.header-cell>
+    </x-slot>
+    
+    @foreach($users as $user)
+        <x-pub_theme::table.row>
+            <x-pub_theme::table.cell>
+                {{ $user->name }}
+            </x-pub_theme::table.cell>
+            <x-pub_theme::table.cell>
+                {{ $user->email }}
+            </x-pub_theme::table.cell>
+            <x-pub_theme::table.cell>
+                {{ $user->created_at->format('d/m/Y') }}
+            </x-pub_theme::table.cell>
+            <x-pub_theme::table.cell>
+                <x-pub_theme::button.icon
+>>>>>>> 109edea (.)
                     variant="ghost"
                     icon="heroicon-o-pencil"
                     size="sm"
@@ -420,10 +578,13 @@ Tabella dati con ordinamento e paginazione.
         </x-pub_theme::table.row>
     @endforeach
 </x-pub_theme::table.data>
+<<<<<<< HEAD
             </x-sixteen::table.cell>
         </x-sixteen::table.row>
     @endforeach
 </x-sixteen::table.data>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ## Modal Components
@@ -433,7 +594,10 @@ Modal semplice per contenuti.
 
 ```blade
 <x-pub_theme::modal
+<<<<<<< HEAD
 <x-sixteen::modal
+=======
+>>>>>>> 109edea (.)
     name="confirm-delete"
     title="Conferma Eliminazione"
     description="Sei sicuro di voler eliminare questo elemento? Questa azione è irreversibile."
@@ -441,6 +605,7 @@ Modal semplice per contenuti.
     <x-slot name="footer">
         <x-pub_theme::button.group>
             <x-pub_theme::button.secondary wire:click="closeModal">
+<<<<<<< HEAD
         <x-sixteen::button.group>
             <x-sixteen::button.secondary wire:click="closeModal">
                 Annulla
@@ -451,6 +616,16 @@ Modal semplice per contenuti.
         </x-sixteen::button.group>
     </x-slot>
 </x-sixteen::modal>
+=======
+                Annulla
+            </x-pub_theme::button.secondary>
+            <x-pub_theme::button.danger wire:click="delete">
+                Elimina
+            </x-pub_theme::button.danger>
+        </x-pub_theme::button.group>
+    </x-slot>
+</x-pub_theme::modal>
+>>>>>>> 109edea (.)
 ```
 
 ### Form Modal
@@ -458,20 +633,29 @@ Modal con form integrato.
 
 ```blade
 <x-pub_theme::modal.form
+<<<<<<< HEAD
 <x-sixteen::modal.form
+=======
+>>>>>>> 109edea (.)
     name="edit-user"
     title="Modifica Utente"
     wire:submit="save"
 >
     <x-pub_theme::form.input
+<<<<<<< HEAD
     <x-sixteen::form.input
+=======
+>>>>>>> 109edea (.)
         name="name"
         label="Nome"
         wire:model="form.name"
     />
     
     <x-pub_theme::form.input
+<<<<<<< HEAD
     <x-sixteen::form.input
+=======
+>>>>>>> 109edea (.)
         name="email"
         type="email"
         label="Email"
@@ -481,6 +665,7 @@ Modal con form integrato.
     <x-slot name="footer">
         <x-pub_theme::button.group>
             <x-pub_theme::button.secondary wire:click="closeModal">
+<<<<<<< HEAD
         <x-sixteen::button.group>
             <x-sixteen::button.secondary wire:click="closeModal">
                 Annulla
@@ -491,6 +676,16 @@ Modal con form integrato.
         </x-sixteen::button.group>
     </x-slot>
 </x-sixteen::modal.form>
+=======
+                Annulla
+            </x-pub_theme::button.secondary>
+            <x-pub_theme::button.primary type="submit">
+                Salva
+            </x-pub_theme::button.primary>
+        </x-pub_theme::button.group>
+    </x-slot>
+</x-pub_theme::modal.form>
+>>>>>>> 109edea (.)
 ```
 
 ## Icon Components
@@ -502,9 +697,12 @@ Icone da Heroicons.
 <x-pub_theme::icon.home />
 <x-pub_theme::icon.user class="w-6 h-6" />
 <x-pub_theme::icon.arrow-right class="text-blue-600" />
+<<<<<<< HEAD
 <x-sixteen::icon.home />
 <x-sixteen::icon.user class="w-6 h-6" />
 <x-sixteen::icon.arrow-right class="text-blue-600" />
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Custom Icons
@@ -513,8 +711,11 @@ Icone personalizzate del tema.
 ```blade
 <x-pub_theme::icon.logo class="w-8 h-8" />
 <x-pub_theme::icon.flag-italy class="w-4 h-4" />
+<<<<<<< HEAD
 <x-sixteen::icon.logo class="w-8 h-8" />
 <x-sixteen::icon.flag-italy class="w-4 h-4" />
+=======
+>>>>>>> 109edea (.)
 ```
 
 ## Utility Components
@@ -526,9 +727,12 @@ Indicatore di caricamento.
 <x-pub_theme::loading.spinner />
 <x-pub_theme::loading.spinner size="lg" />
 <x-pub_theme::loading.spinner color="primary" />
+<<<<<<< HEAD
 <x-sixteen::loading.spinner />
 <x-sixteen::loading.spinner size="lg" />
 <x-sixteen::loading.spinner color="primary" />
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Empty State
@@ -536,7 +740,10 @@ Stato vuoto per liste o contenuti.
 
 ```blade
 <x-pub_theme::empty-state
+<<<<<<< HEAD
 <x-sixteen::empty-state
+=======
+>>>>>>> 109edea (.)
     icon="heroicon-o-document"
     title="Nessun documento trovato"
     description="Non ci sono documenti da visualizzare al momento."
@@ -545,20 +752,26 @@ Stato vuoto per liste o contenuti.
         Crea Primo Documento
     </x-pub_theme::button.primary>
 </x-pub_theme::empty-state>
+<<<<<<< HEAD
     <x-sixteen::button.primary>
         Crea Primo Documento
     </x-sixteen::button.primary>
 </x-sixteen::empty-state>
+=======
+>>>>>>> 109edea (.)
 ```
 
 ### Badge
 Badge per etichette e stati.
 
 ```blade
+<<<<<<< HEAD
 <x-sixteen::badge.success>Attivo</x-sixteen::badge.success>
 <x-sixteen::badge.warning>In Attesa</x-sixteen::badge.warning>
 <x-sixteen::badge.error>Errore</x-sixteen::badge.error>
 <x-sixteen::badge.info>Info</x-sixteen::badge.info>
+=======
+>>>>>>> 109edea (.)
 <x-pub_theme::badge.success>Attivo</x-pub_theme::badge.success>
 <x-pub_theme::badge.warning>In Attesa</x-pub_theme::badge.warning>
 <x-pub_theme::badge.error>Errore</x-pub_theme::badge.error>
@@ -615,4 +828,8 @@ Tutti i componenti sono progettati per essere accessibili:
 
 **Versione**: 1.0.0  
 **Ultimo aggiornamento**: Gennaio 2025  
+<<<<<<< HEAD
 **Compatibilità**: Laravel 10+, Filament 3.x, Tailwind CSS 3.x 
+=======
+**Compatibilità**: Laravel 10+, Filament 3.x, Tailwind CSS 3.x 
+>>>>>>> 109edea (.)

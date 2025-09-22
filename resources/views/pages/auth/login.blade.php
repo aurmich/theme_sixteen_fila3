@@ -14,8 +14,12 @@ name('login');
         {{ __('Login') }}
     </x-slot>
 
+<<<<<<< HEAD
     <!-- Beautiful Login Page Section -->
     <section class="login-page-bg flex items-center justify-center p-4">
         @livewire(\Modules\User\Filament\Widgets\Auth\LoginWidget::class)
     </section>
+=======
+    @livewire(\Modules\User\Filament\Widgets\Auth\LoginWidget::class)
+>>>>>>> 109edea (.)
 </x-layouts.app>

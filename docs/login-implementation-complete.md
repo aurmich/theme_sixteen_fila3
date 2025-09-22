@@ -8,9 +8,13 @@
 ### Modifiche Implementate
 
 #### 1. Layout AGID Compliant ✅
+<<<<<<< HEAD
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-sixteen::layouts.guest`
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-pub_theme::layouts.guest`
 - ✅ Sostituito `x-pub_theme::layouts.main` con `x-sixteen::layouts.guest`
+=======
+- ✅ Sostituito `x-pub_theme::layouts.main` con `x-pub_theme::layouts.guest`
+>>>>>>> 109edea (.)
 - ✅ Utilizzato layout conforme alle linee guida PA
 - ✅ Implementato design system AGID
 
@@ -40,9 +44,13 @@ middleware(['guest']);
 name('login');
 ?>
 
+<<<<<<< HEAD
 <x-sixteen::layouts.guest>
 <x-pub_theme::layouts.guest>
 <x-sixteen::layouts.guest>
+=======
+<x-pub_theme::layouts.guest>
+>>>>>>> 109edea (.)
     <x-slot name="title">
         {{ __('auth.login.title') }} - {{ config('app.name') }}
     </x-slot>
@@ -50,9 +58,13 @@ name('login');
     <!-- Header PA con Logo e Branding -->
     <div class="text-center mb-8">
         <div class="flex justify-center">
+<<<<<<< HEAD
             <x-sixteen::ui.logo class="h-16 w-auto text-blue-600" />
             <x-pub_theme::ui.logo class="h-16 w-auto text-blue-600" />
             <x-sixteen::ui.logo class="h-16 w-auto text-blue-600" />
+=======
+            <x-pub_theme::ui.logo class="h-16 w-auto text-blue-600" />
+>>>>>>> 109edea (.)
         </div>
         
         <h1 class="mt-6 text-3xl font-bold text-gray-900">
@@ -106,9 +118,13 @@ name('login');
             <p>{{ __('auth.login.certified_service') }}</p>
         </div>
     </div>
+<<<<<<< HEAD
 </x-sixteen::layouts.guest>
 </x-pub_theme::layouts.guest>
 </x-sixteen::layouts.guest>
+=======
+</x-pub_theme::layouts.guest>
+>>>>>>> 109edea (.)
 ```
 
 ## 🎨 Design System AGID Implementato
